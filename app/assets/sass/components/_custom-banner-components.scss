@@ -1,3 +1,11 @@
 .nhsuk-header-border {
   border-bottom: 1px solid #93B9DD;
 }
+
+.find-patient-link {
+  float:right;
+  padding: 12px;
+  a {
+    color: $color_nhsuk-white;
+  }
+}
