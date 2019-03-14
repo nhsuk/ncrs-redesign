@@ -69,6 +69,13 @@
   margin-left: -2rem;
 }
 
+@media screen and (max-width: 769px) {
+  .scra-blue-tabs {
+    margin-left: -1rem;
+    display: flex;
+  }
+}
+
 .full-width-container {
   .scra-blue-tabs {
     margin-left: 0;
@@ -80,6 +87,7 @@
   padding: 1rem 2rem;
   margin-bottom: 0;
   font-size: 90%;
+
 
   a {
     text-decoration: none;
@@ -127,6 +135,13 @@
 .scra-bordered-tabs {
   padding: 0;
   margin-bottom: 0;
+}
+
+@media screen and (max-width: 769px) {
+  .scra-bordered-tabs {
+    margin-left: -1rem;
+    display: flex;
+  }
 }
 
 .scra-bordered-tabs-item {
