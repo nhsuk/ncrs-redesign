@@ -1,0 +1,33 @@
+// Import NHS.UK frontend library
+
+@import 'node_modules/nhsuk-frontend/packages/nhsuk';
+
+// Import GOV.UK front end library
+
+@import 'node_modules/govuk-frontend/components/tabs/tabs';
+@import 'node_modules/govuk-frontend/components/accordion/accordion';
+
+
+
+// Patterns that are not in the NHS.UK frontend library
+@import 'patterns/check-your-answers';
+
+// Components that are not in the NHS.UK frontend library
+@import 'components/panel-confirmation';
+@import 'components/related-nav';
+
+// Add your extra styles here...
+
+@import 'tools/scra-grid';
+
+@import 'components/full-width-container';
+@import 'components/white-header';
+@import 'components/patient-banner';
+@import 'components/custom-banner-components';
+@import 'components/hero';
+@import 'components/tabs';
+@import 'components/forms';
+@import 'components/search-results';
+@import 'components/overview';
+@import 'components/accordion';
+@import 'components/card';

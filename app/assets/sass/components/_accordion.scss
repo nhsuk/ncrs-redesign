@@ -1,0 +1,43 @@
+.scra-accordion__header {
+  background-color: #003087;
+  padding-left: 1rem;
+}
+
+.scra-accordion__header:hover {
+  background-color: #003087!important;
+}
+
+.scra-accordion__heading {
+  button {
+    color: $color_nhsuk-white!important;
+    font-size: 16px;
+    font-family: "Frutiger W01", "Helvetica", "Arial", sans-serif!important;
+    font-weight: 400;
+  }
+  span:before, span:after {
+    background-color: $color_nhsuk-white!important;
+  }
+}
+
+
+
+.scra-accordion__section-content {
+  background-color: $color_nhsuk-white;
+  ul {
+    list-style-type: none;
+  }
+}
+
+.scra-accordion__link {
+  font-size: 14px;
+  text-decoration: none;
+}
+
+@media screen and (min-width: 1024px) {
+  .scra-accordion__heading {
+    font-size: 19px;
+  }
+  .scra-accordion__link {
+    font-size: 16px;
+  }
+}

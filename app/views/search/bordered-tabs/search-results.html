@@ -1,0 +1,92 @@
+{% extends 'layouts/layout.html' %}
+
+{% block pageTitle %}
+  Find a patient
+{% endblock %}
+
+{% block beforeContent %}
+
+  <section class="nhsuk-hero">
+
+    <div class="nhsuk-width-container">
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-two-thirds">
+          <div class="nhsuk-hero__wrapper">
+            <h1 class="nhsuk-u-margin-bottom-3 nhsuk-heading-l">Find a patient</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+    <div class="nhsuk-width-container">
+      <ol class="nhsuk-breadcrumb__list">
+        <li class="nhsuk-breadcrumb__item">
+          <a class="nhsuk-breadcrumb__link" href="nhs-search">Find a patient</a>
+        </li>
+        <li class="nhsuk-breadcrumb__item">
+          <a class="nhsuk-breadcrumb__link" href="#">Search results</a>
+        </li>
+      </ol>
+      <p class="nhsuk-breadcrumb__back">
+        <a class="nhsuk-breadcrumb__backlink" href="/level-one/level-two/level-three">Find a patient</a>
+      </p>
+    </div>
+  </nav>
+
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-three-quarters">
+
+      <h2 class="nhsuk-heading-l">Search results</h2>
+      <p>
+        We found
+        <strong>1</strong>
+        result with the NHS Number
+        <strong>123 456 7890</strong>
+      </p>
+
+      <div class="nhsuk-grid-row nhsuk-promo-group">
+        <div class="nhsuk-grid-column-full nhsuk-promo-group__item">
+
+          <div class="nhsuk-promo">
+            <a class="nhsuk-promo__link-wrapper" href="patient-overview">
+              <div class="nhsuk-promo__content">
+                <h3 class="nhsuk-promo__heading">William Shakespeare</h3>
+                <div class="nhsuk-grid-row">
+                  <div class="nhsuk-grid-column-full">
+                    <p class="nhsuk-promo__description search-results-description">1 Town Street, Stratford-upon-Avon, Warwickshire</p>
+                  </div>
+                </div>
+                <div class="nhsuk-grid-row">
+                  <div class="nhsuk-grid-column-one-half">
+                    <p class="nhsuk-promo__description search-results-description">NHS Number: 123 456 7890</p>
+                  </div>
+                  <div class="nhsuk-grid-column-one-half">
+                    <p class="nhsuk-promo__description search-results-description">Date of birth: 01-Dec-1970</p>
+                  </div>
+                </div>
+                <div class="nhsuk-grid-row">
+                  <div class="nhsuk-grid-column-one-half">
+                    <p class="nhsuk-promo__description search-results-description">Gender: Male</p>
+                  </div>
+                  <div class="nhsuk-grid-column-one-half">
+                    <p class="nhsuk-promo__description search-results-description">Postcode: AB1 2CD</p>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+{% endblock %}

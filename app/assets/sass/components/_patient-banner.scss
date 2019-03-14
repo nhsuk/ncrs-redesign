@@ -1,0 +1,55 @@
+.patient-banner {
+  background-color: $color_nhsuk-blue;
+  color: $color_nhsuk-white;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+@media (max-width: 1024px) {
+  .patient-banner {
+    font-size: 0.8rem;
+  }
+}
+
+.patient-banner-item {
+  span {
+    display: block;
+  }
+}
+
+.patient-banner-item-label {
+  font-weight: 200;
+}
+
+
+// Banner V2
+
+.banner-list {
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+.banner-list-item {
+  display: inline-block;
+  font-size: 80%;
+  padding-right: 1rem;
+}
+
+@media screen and (max-width: 641px) {
+  .banner-name {
+    margin-bottom: 0.5rem;
+  }
+  .banner-list-item {
+    display: block;
+  }
+}
+
+.patient-banner-name {
+  font-size: 120%;
+  font-weight: 600;
+}
+
+.patient-banner-age-gender {
+  font-weight: 200;
+  margin-left: 1rem;
+}

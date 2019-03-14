@@ -1,0 +1,136 @@
+{% extends 'layouts/layout.html' %}
+
+{% block pageTitle %}
+  Find a patient
+{% endblock %}
+
+{% block beforeContent %}
+
+  <section class="nhsuk-hero">
+
+    <div class="nhsuk-width-container">
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-two-thirds">
+          <div class="nhsuk-hero__wrapper">
+            <h1 class="nhsuk-u-margin-bottom-3 nhsuk-heading-l">Find a patient</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <div class="nhsuk-full-width-container">
+    <div class='scra-blue-tabs-container'>
+      <div class="nhsuk-width-container">
+        <ul class="scra-blue-tabs">
+          <li class="scra-blue-tabs-item">
+            <a class="scra-blue-tabs-link" href="nhs-search">By NHS Number</a>
+          </li>
+          <li class="scra-blue-tabs-item scra-blue-tabs-item-active">
+            <a class="scra-blue-tabs-link" href="details-search">By Patient Details</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-three-quarters">
+
+      <h2 class="nhsuk-heading-m">Enter as many details as you know</h1>
+      <!--- Gender Radio Buttons --->
+      <form action="search-results">
+        <div class="nhsuk-form-group">
+          <fieldset class="nhsuk-fieldset" aria-describedby="gender-radio">
+            <legend class="nhsuk-fieldset__legend nhsuk-label__strong">
+              Gender
+            </legend>
+            <div class="nhsuk-radios nhsuk-radios--inline">
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="gender-female" name="gender" type="radio" value="female">
+                <label class="nhsuk-label nhsuk-radios__label" for="gender-female">
+                  Female
+                </label>
+              </div>
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="gender-male" name="gender" type="radio" value="male">
+                <label class="nhsuk-label nhsuk-radios__label" for="gender-male">
+                  Male
+                </label>
+              </div>
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="gender-not-known" name="gender" type="radio" value="not known">
+                <label class="nhsuk-label nhsuk-radios__label" for="gender-not-known">
+                  Not known
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+        <!--- First name text input --->
+        <div class="nhsuk-form-group">
+          <label class="nhsuk-label nhsuk-label__strong" for="first-name">
+            First name
+          </label>
+          <input class="nhsuk-input nhsuk-input--width-20" id="first-name" name="first-name" type="text">
+        </div>
+        <!--- Last name text input --->
+        <div class="nhsuk-form-group">
+          <label class="nhsuk-label nhsuk-label__strong" for="last-name">
+            Last name
+          </label>
+          <input class="nhsuk-input nhsuk-input--width-20" id="last-name" name="last-name" type="text">
+        </div>
+        <!--- Date of birth text input --->
+        <fieldset class="nhsuk-fieldset" aria-describedby="dob-hint" role="group">
+          <legend class="nhsuk-fieldset__legend nhsuk-label__strong">
+            Date of birth
+          </legend>
+          <div class="nhsuk-date-input" id="dob">
+            <div class="nhsuk-date-input__item">
+              <div class="nhsuk-form-group">
+                <label class="nhsuk-label nhsuk-date-input__label" for="dob-day">
+                  Day
+                </label>
+                <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="dob-day" name="dob-day" type="number" pattern="[0-9]*">
+              </div>
+            </div>
+            <div class="nhsuk-date-input__item">
+              <div class="nhsuk-form-group">
+                <label class="nhsuk-label nhsuk-date-input__label" for="dob-month">
+                  Month
+                </label>
+                <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="dob-month" name="dob-month" type="number" pattern="[0-9]*">
+              </div>
+            </div>
+            <div class="nhsuk-date-input__item">
+              <div class="nhsuk-form-group">
+                <label class="nhsuk-label nhsuk-date-input__label" for="dob-year">
+                  Year
+                </label>
+                <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="dob-year" name="dob-year" type="number" pattern="[0-9]*">
+              </div>
+            </div>
+          </div>
+        </fieldset>
+        <!--- Postcode text input --->
+        <div class="nhsuk-form-group">
+          <label class="nhsuk-label nhsuk-label__strong" for="postcode-input">
+            Postcode
+          </label>
+          <input class="nhsuk-input nhsuk-input--width-10" id="postcode-input" name="postcode" type="text">
+        </div>
+        <button class="nhsuk-button" type="submit">
+          Find patient
+        </button>
+      </form>
+
+    </div>
+
+  </div>
+{% endblock %}

@@ -1,0 +1,41 @@
+.scra-card {
+  background-color: $color_nhsuk-white;
+  padding: 16px;
+  box-shadow: 0 4px 0 0 #d8dde0;
+  margin-bottom: 28px;
+}
+
+@media screen and (min-width: 1024px) {
+  .scra-card {
+    padding: 32px;
+    margin-bottom: 36px;
+  }
+}
+
+.scra-card-content {
+  vertical-align: bottom;
+  .nhsuk-grid-row {
+    margin-bottom: 30px;
+  }
+}
+
+.card-content-section {
+  span {
+    display: block;
+  }
+  .card-content-label {
+    font-weight: 200;
+  }
+  .card-content-name {
+    font-size: 120%;
+    font-weight: 600;
+  }
+}
+
+// Clinical Details
+
+.scra-card-content {
+  .nhsuk-table-responsive {
+    margin: 0;
+  }
+}

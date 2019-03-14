@@ -1,0 +1,40 @@
+{% extends 'layouts/layout-application.html' %}
+
+{% block pageTitle %}
+  Dashboard
+{% endblock %}
+
+{% block beforeContent %}
+
+
+<div class="nhsuk-full-width-container">
+  <div class='scra-blue-tabs-container'>
+    <div class="full-width-container">
+      <ul class="scra-blue-tabs">
+        <li class="scra-blue-tabs-item">
+          <a class="scra-blue-tabs-link" href="patient-overview">Overview</a>
+        </li>
+        <li class="scra-blue-tabs-item">
+          <a class="scra-blue-tabs-link" href="patient-details">Patient</a>
+        </li>
+        <li class="scra-blue-tabs-item scra-blue-tabs-item-active">
+          <a class="scra-blue-tabs-link" href="patient-clinical">Clinical</a>
+        </li>
+        <li class="scra-blue-tabs-item">
+          <a class="scra-blue-tabs-link" href="#">Providers</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    {% include "includes/clinical-details.html" %}
+
+  </div>
+{% endblock %}

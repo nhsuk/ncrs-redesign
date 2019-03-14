@@ -1,0 +1,18 @@
+.nhsuk-hero__wrapper {
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+@media (min-width: 40.0625em) {
+  .nhsuk-hero__wrapper {
+    padding-top: 32px;
+  }
+}
+@media (min-width: 40.0625em) {
+  .nhsuk-hero__wrapper {
+    padding-bottom: 32px;
+  }
+}
+
+.nhsuk-header__navigation-list {
+  border-top:none;
+}

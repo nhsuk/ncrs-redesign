@@ -1,0 +1,215 @@
+.nhsuk-grid-column-one-fifth {
+  box-sizing: border-box;
+  padding: 0 16px;
+}
+@media (min-width: 48.0625em) {
+  .nhsuk-grid-column-one-fifth {
+    float: left;
+    width: 20%;
+  }
+}
+
+.nhsuk-grid-column-four-fifths {
+  box-sizing: border-box;
+  padding: 0 16px;
+}
+@media (min-width: 48.0625em) {
+  .nhsuk-grid-column-four-fifths {
+    float: left;
+    width: 80%;
+  }
+}
+
+.nhsuk-grid-column-one-sixth {
+  box-sizing: border-box;
+  padding: 0 16px;
+}
+@media (min-width: 48.0625em) {
+  .nhsuk-grid-column-one-sixth {
+    float: left;
+    width: percentage(1 / 6);
+  }
+}
+
+.nhsuk-u-one-fifth {
+  float: left;
+  width: percentage(1 / 5) !important;
+}
+
+.nhsuk-u-one-sixth {
+  float: left;
+  width: percentage(1 / 6) !important;
+}
+
+.nhsuk-u-one-seventh {
+  float: left;
+  width: percentage(1 / 7) !important;
+}
+
+.nhsuk-u-one-eighth {
+  float: left;
+  width: percentage(1 / 8) !important;
+}
+
+.nhsuk-u-one-tenth {
+  float: left;
+  width: percentage(1 / 10) !important;
+}
+
+.nhsuk-u-one-twelfth {
+  float: left;
+  width: percentage(1 / 12) !important;
+}
+@media (max-width:1024px) {
+  .nhsuk-u-one-third-tablet {
+    float: left;
+    width: percentage(1 / 3) !important;
+  }
+
+  .nhsuk-u-one-quarter-tablet {
+    float: left;
+    width: percentage(1 / 4) !important;
+  }
+
+  .nhsuk-u-one-fifth-tablet {
+    float: left;
+    width: percentage(1 / 5) !important;
+  }
+
+  .nhsuk-u-one-sixth-tablet {
+    float: left;
+    width: percentage(1 / 6) !important;
+  }
+
+  .nhsuk-u-one-seventh-tablet {
+    float: left;
+    width: percentage(1 / 7) !important;
+  }
+
+  .nhsuk-u-one-eighth-tablet {
+    float: left;
+    width: percentage(1 / 8) !important;
+  }
+
+  .nhsuk-u-one-tenth-tablet {
+    float: left;
+    width: percentage(1 / 10) !important;
+  }
+
+  .nhsuk-u-one-twelfth-tablet {
+    float: left;
+    width: percentage(1 / 12) !important;
+  }
+}
+@media (max-width:641px) {
+  .nhsuk-u-full-width-phone {
+    float: left;
+    width: percentage(1 / 1) !important;
+  }
+
+  .nhsuk-u-half-phone {
+    float: left;
+    width: percentage(1 / 2) !important;
+  }
+
+  .nhsuk-u-one-third-phone {
+    float: left;
+    width: percentage(1 / 3) !important;
+  }
+
+  .nhsuk-u-two-thirds-phone {
+    float: left;
+    width: percentage(2 / 3) !important;
+  }
+
+  .nhsuk-u-one-quarter-phone {
+    float: left;
+    width: percentage(1 / 4) !important;
+  }
+
+  .nhsuk-u-three-quarters-phone {
+    float: left;
+    width: percentage(3 / 4) !important;
+  }
+
+  .nhsuk-u-one-fifth-phone {
+    float: left;
+    width: percentage(1 / 5) !important;
+  }
+
+  .nhsuk-u-one-sixth-phone {
+    float: left;
+    width: percentage(1 / 6) !important;
+  }
+
+  .nhsuk-u-one-seventh-phone {
+    float: left;
+    width: percentage(1 / 7) !important;
+  }
+
+  .nhsuk-u-one-eighth-phone {
+    float: left;
+    width: percentage(1 / 8) !important;
+  }
+
+  .nhsuk-u-one-tenth-phone {
+    float: left;
+    width: percentage(1 / 10) !important;
+  }
+
+  .nhsuk-u-one-twelfth-phone {
+    float: left;
+    width: percentage(1 / 12) !important;
+  }
+}
+/*
+
+.nhsuk-u-one-fifth {
+  width: 100% !important;
+  @include mq($from: tablet) {
+    float: left;
+    width: percentage(1 / 5) !important;
+  }
+}
+
+.nhsuk-u-one-sixth {
+  width: 100% !important;
+  @include mq($from: tablet) {
+    float: left;
+    width: percentage(1 / 6) !important;
+  }
+}
+
+.nhsuk-u-one-seventh {
+  width: 100% !important;
+  @include mq($from: tablet) {
+    float: left;
+    width: percentage(1 / 7) !important;
+  }
+}
+
+.nhsuk-u-one-eighth {
+  width: 100% !important;
+  @include mq($from: tablet) {
+    float: left;
+    width: percentage(1 / 8) !important;
+  }
+}
+
+.nhsuk-u-one-tenth {
+  width: 100% !important;
+  @include mq($from: tablet) {
+    float: left;
+    width: percentage(1 / 10) !important;
+  }
+}
+
+.nhsuk-u-one-twelfth {
+  width: 100% !important;
+  @include mq($from: tablet) {
+    float: left;
+    width: percentage(1 / 12) !important;
+  }
+}
+
+*/
