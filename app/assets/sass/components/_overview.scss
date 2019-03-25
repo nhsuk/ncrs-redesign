@@ -2,6 +2,15 @@
   margin-top: 0;
 }
 
+.overview-card__footer-container {
+  margin-left: -24px;
+  margin-right: -24px;
+  margin-bottom: -32px!important;
+  margin-top: 32px;
+  padding-right: 16px;
+  text-align: right;
+}
+
 .overview-card__heading-container {
   padding: 8px 24px;
 }
@@ -35,5 +44,9 @@
     p {
       margin-bottom: 12px;
     }
+  }
+  .overview-card__footer-container {
+    margin-bottom: -40px!important;
+    margin-top: 40px;
   }
 }

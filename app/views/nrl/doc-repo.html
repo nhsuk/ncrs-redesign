@@ -9,19 +9,22 @@
 
   <div class="nhsuk-full-width-container">
     <div class='scra-white-tabs-container'>
-      <div class="nhsuk-width-container-fluid">
+      <div class="full-width-container">
         <ul class="scra-white-tabs">
           <li class="scra-white-tabs-item">
             <a class="scra-white-tabs-link" href="patient-overview">Overview</a>
           </li>
-          <li class="scra-white-tabs-item ">
+          <li class="scra-white-tabs-item">
             <a class="scra-white-tabs-link" href="patient-details">Patient</a>
           </li>
-          <li class="scra-white-tabs-item scra-white-tabs-item-active">
-            <a class="scra-white-tabs-link" href="#">Clinical</a>
+          <li class="scra-white-tabs-item">
+            <a class="scra-white-tabs-link" href="patient-clinical">Clinical</a>
           </li>
           <li class="scra-white-tabs-item">
             <a class="scra-white-tabs-link" href="#">Providers</a>
+          </li>
+          <li class="scra-white-tabs-item scra-white-tabs-item-active">
+            <a class="scra-white-tabs-link" href="#">Documents</a>
           </li>
         </ul>
       </div>
@@ -34,7 +37,9 @@
 {% block content %}
   <div class="nhsuk-grid-row">
 
-    {% include "includes/clinical-details.html" %}
+    <div class="nhsuk-grid-column-full">
+      <h1 class="nhsuk-heading-l">Patient documents</h1>
+    </div>
 
   </div>
 {% endblock %}

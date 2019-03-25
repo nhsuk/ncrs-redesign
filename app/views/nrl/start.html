@@ -1,0 +1,74 @@
+{% extends 'layouts/layout-transactional.html' %}
+
+{% block pageTitle %}
+  SCRa redesign - Index
+{% endblock %}
+
+{% block beforeContent %}
+
+  <section class="nhsuk-hero">
+
+    <div class="nhsuk-width-container nhsuk-hero--border">
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-two-thirds">
+          <div class="nhsuk-hero__wrapper">
+            <h1 class="nhsuk-u-margin-bottom-3">SCRa redesign</h1>
+            <p class="nhsuk-body-l nhsuk-u-margin-bottom-0">National Record Locator prototypes</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-three-quarters">
+
+      <div class="section">
+        <h2 class='nhs-heading-l'>Initial designs</h2>
+
+        <p class="nhsuk-body">
+          These prototypes explore the initial ideas floated for onboarding the National Record Locator service within the redesigned Summary Care Record application. <strong>NB - the layout used in this prototype is still in development and likely to change.</strong>
+        </p>
+        <p class="nhsuk-body">
+          We explored the possibility of linking out to more detailed record information from the patient overview 'dashboard', and designed what this would look like in 3 different scenarios:
+        </p>
+        <ul class="nhsuk-list nhsuk-list--bullet">
+          <li><a href="patient-overview-few">Few records</a></li>
+          <li><a href="patient-overview-many">Many records</a></li>
+          <li><a href="patient-overview-none">No records</a></li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2 class='nhs-heading-l'>Hypotheses</h2>
+        <p class="nhsuk-body">
+          <strong>If</strong> we allow users to view available care plans on the overview page
+        </p>
+        <p class="nhsuk-body">
+          <strong>Then</strong> they will be able to quickly recognise whether or not the user has any exisiting care plans/documentation
+        </p>
+        <p class="nhsuk-body">
+          <strong>Because</strong> the information they need is available readily as soon as they reach the overview page.
+        </p>
+        <br />
+        <p class="nhsuk-body">
+          <strong>If</strong> we provide links to detailed information about a patient's care plan(s) on the overview page
+        </p>
+        <p class="nhsuk-body">
+          <strong>Then</strong> users will be able identify they information they need from a non-cluttered interface
+        </p>
+        <p class="nhsuk-body">
+          <strong>Because</strong> the majority of the information will be stored in a separate page, linked to via the overview page.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+{% endblock %}
