@@ -39,3 +39,34 @@
     margin: 0;
   }
 }
+
+// NRL Landing Page
+
+.scra-cards__subheading {
+    color: $color_nhsuk-grey-1;
+    @include nhsuk-responsive-margin(4, 'bottom');
+}
+
+.nrl-card__wrapper {
+  img {
+    padding: 1rem;
+    height: 100px;
+    background-color: $color_nhsuk-grey-4;
+  }
+  .nhsuk-promo__content {
+    padding: 1rem;
+  }
+}
+
+.nrl-card__pointer-content {
+  .nhsuk-promo__heading {
+    text-decoration:  none;
+  }
+  .nrl-card__pointer-trust {
+    margin-bottom: 0;
+  }
+}
+
+.nrl-card__date {
+  color: $color_nhsuk-grey-2;
+}
