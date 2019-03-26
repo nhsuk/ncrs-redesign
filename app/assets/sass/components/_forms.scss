@@ -3,3 +3,18 @@
 .nhsuk-label__strong {
   font-weight: 600;
 }
+
+.advanced-search {
+  margin-top: 12px;
+  margin-left: 2rem;
+  position: absolute;
+}
+
+@media screen and (min-width: 768px) {
+  .advanced-search {
+    font-size: 120%;
+    margin-top: 12px;
+    margin-left: 2rem;
+    position: absolute;
+  }
+}
