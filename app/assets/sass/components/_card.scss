@@ -50,11 +50,44 @@
 .nrl-card__wrapper {
   img {
     padding: 1rem;
-    height: 100px;
+    height: 80px;
     background-color: $color_nhsuk-grey-4;
   }
   .nhsuk-promo__content {
     padding: 1rem;
+  }
+}
+
+.nrl-card__heading {
+  font-size: 14px!important;
+}
+
+@media screen and (min-width:768px) {
+  .nrl-card__heading {
+    font-size: 16px!important;
+  }
+}
+
+.nrl-card__description{
+  font-size: 14px!important;
+  color: $color_nhsuk-black;
+  margin-bottom: 8px;
+}
+
+@media screen and (min-width:768px) {
+  .nrl-card__description {
+    font-size: 16px!important;
+  }
+}
+
+.nrl-card__date {
+  color: $color_nhsuk-grey-2;
+  font-size: 12px!important;
+}
+
+@media screen and (min-width:768px) {
+  .nrl-card__date {
+    font-size: 14px!important;
   }
 }
 
@@ -65,8 +98,4 @@
   .nrl-card__pointer-trust {
     margin-bottom: 0;
   }
-}
-
-.nrl-card__date {
-  color: $color_nhsuk-grey-2;
 }
