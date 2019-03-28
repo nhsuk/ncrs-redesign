@@ -123,6 +123,9 @@
             Postcode (optional)
           </label>
           <input class="nhsuk-input nhsuk-input--width-10" id="postcode-input" name="postcode" type="text">
+          <span class="address-lookup">
+            <a href="#">Address & Postcode lookup</a>
+          </span>
         </div>
 
       </form>
@@ -131,14 +134,18 @@
 
   </div>
 
-  <div class="nhsuk-grid-row">
-    <div class="nhsuk-grid-column-full">
-      <button class="nhsuk-button" type="submit">
-        Find patient
-      </button>
-        <span class="advanced-search">
-          <a href="advanced-search-alt">Advanced search</a>
-        </span>
+  <form action="search-results">
+    <div class="nhsuk-form-group">
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-full">
+          <button class="nhsuk-button" type="submit">
+            Find patient
+          </button>
+          <span class="advanced-search">
+            <a href="advanced-search-alt">Advanced search</a>
+          </span>
+        </div>
       </div>
-  </div>
+    </div>
+  </form>
 {% endblock %}
