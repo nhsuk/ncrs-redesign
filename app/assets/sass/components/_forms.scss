@@ -7,7 +7,6 @@
 .nhsuk-form-group:last-child {
   margin-bottom: 24px;
 }
-
 @media screen and (min-width: 768px) {
   .nhsuk-form-group:last-child {
     margin-bottom: 32px;
@@ -19,7 +18,6 @@
   position: relative;
   display: inline-block;
 }
-
 @media screen and (min-width: 768px) {
   .address-lookup {
     font-size: 120%;
@@ -34,7 +32,6 @@
   margin-left: 2rem;
   position: absolute;
 }
-
 @media screen and (min-width: 768px) {
   .advanced-search {
     font-size: 120%;
@@ -42,4 +39,27 @@
     margin-left: 2rem;
     position: absolute;
   }
+}
+
+.nhsuk-form-group__age-selector {
+  .fuzzy-age {
+    display: inline-block;
+    margin-bottom: 16px;
+
+    label {
+      display: inline-block;
+      margin-left: 0.5rem;
+    }
+  }
+}
+@media screen and (min-width: 769px) {
+  .nhsuk-form-group__age-selector {
+    .fuzzy-age {
+      margin-bottom:24px;
+    }
+  }
+}
+
+.age-range-separator {
+  margin: 0 1rem;
 }

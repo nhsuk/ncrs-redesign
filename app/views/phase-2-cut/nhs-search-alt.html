@@ -1,0 +1,58 @@
+{% extends 'layouts/layout.html' %}
+
+{% block pageTitle %}
+  Find a patient
+{% endblock %}
+
+{% block beforeContent %}
+
+  <section class="nhsuk-hero">
+
+    <div class="nhsuk-width-container">
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-two-thirds">
+          <div class="nhsuk-hero__wrapper">
+            <h1 class="nhsuk-u-margin-bottom-3 nhsuk-heading-l">Find a patient</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <div class="nhsuk-full-width-container">
+    <div class='scra-bordered-tabs-container'>
+      <div class="nhsuk-width-container">
+        <ul class="scra-bordered-tabs">
+          <li class="scra-bordered-tabs-item scra-bordered-tabs-item-active">
+            <a class="scra-bordered-tabs-link" href="#">By NHS Number</a>
+          </li>
+          <li class="scra-bordered-tabs-item">
+            <a class="scra-bordered-tabs-link" href="details-search-alt">By Patient Details</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-three-quarters">
+      <form action="search-results">
+        <div class="nhsuk-form-group">
+          <label class="nhsuk-label nhsuk-label__strong" for="input-with-hint-text">
+            NHS number
+          </label>
+          <input class="nhsuk-input nhsuk-input--width-10" id="input-with-hint-text" name="test-name-2" type="text" aria-describedby="input-with-hint-text-hint">
+        </div>
+        <button class="nhsuk-button" type="submit">
+          Find patient
+        </button>
+      </form>
+    </div>
+
+  </div>
+{% endblock %}

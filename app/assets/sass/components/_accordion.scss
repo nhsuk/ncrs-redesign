@@ -19,8 +19,6 @@
   }
 }
 
-
-
 .scra-accordion__section-content {
   background-color: $color_nhsuk-white;
   ul {
@@ -31,6 +29,10 @@
 .scra-accordion__link {
   font-size: 14px;
   text-decoration: none;
+}
+
+.scra-accordion__link:visited {
+  color: $color_nhsuk-blue;
 }
 
 @media screen and (min-width: 1024px) {

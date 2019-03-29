@@ -1,0 +1,170 @@
+{% extends 'layouts/layout.html' %}
+
+{% block pageTitle %}
+  Find a patient
+{% endblock %}
+
+{% block beforeContent %}
+
+  <section class="nhsuk-hero">
+
+    <div class="nhsuk-width-container">
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-two-thirds">
+          <div class="nhsuk-hero__wrapper">
+            <h1 class="nhsuk-u-margin-bottom-3 nhsuk-heading-l">Find a patient</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <div class="nhsuk-full-width-container">
+    <div class='scra-bordered-tabs-container'>
+      <div class="nhsuk-width-container">
+        <ul class="scra-bordered-tabs">
+          <li class="scra-bordered-tabs-item">
+            <a class="scra-bordered-tabs-link" href="nhs-search">By NHS Number</a>
+          </li>
+          <li class="scra-bordered-tabs-item scra-bordered-tabs-item-active">
+            <a class="scra-bordered-tabs-link" href="details-search-age">By Patient Details</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-three-quarters">
+      <h2 class="nhsuk-heading-m">Enter as many details as you know</h1>
+      <!--- Gender Radio Buttons --->
+      <form action="search-results">
+
+        <div class="nhsuk-form-group">
+          <fieldset class="nhsuk-fieldset" aria-describedby="gender-radio">
+            <legend class="nhsuk-fieldset__legend nhsuk-label__strong">
+              Gender
+            </legend>
+            <div class="nhsuk-radios nhsuk-radios--inline">
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="gender-female" name="gender" type="radio" value="female">
+                <label class="nhsuk-label nhsuk-radios__label" for="gender-female">
+                  Female
+                </label>
+              </div>
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="gender-male" name="gender" type="radio" value="male">
+                <label class="nhsuk-label nhsuk-radios__label" for="gender-male">
+                  Male
+                </label>
+              </div>
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="gender-not-specified" name="gender" type="radio" value="not specified">
+                <label class="nhsuk-label nhsuk-radios__label" for="gender-not-specified">
+                  Not specified
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+        <!--- First name text input --->
+        <div class="nhsuk-form-group">
+          <label class="nhsuk-label nhsuk-label__strong" for="first-name">
+            First name
+          </label>
+          <input class="nhsuk-input nhsuk-input--width-20" id="first-name" name="first-name" type="text">
+        </div>
+        <!--- Last name text input --->
+        <div class="nhsuk-form-group">
+          <label class="nhsuk-label nhsuk-label__strong" for="last-name">
+            Last name
+          </label>
+          <input class="nhsuk-input nhsuk-input--width-20" id="last-name" name="last-name" type="text">
+        </div>
+        <div class="nhsuk-form-group">
+
+          <fieldset class="nhsuk-fieldset" aria-describedby="widen-search">
+
+            <div class="nhsuk-checkboxes">
+
+              <div class="nhsuk-checkboxes__item">
+                <input class="nhsuk-checkboxes__input" id="widen-search-checkbox" name="widen search to similar names and misspellings" type="checkbox" value="widen-search">
+                <label class="nhsuk-label nhsuk-checkboxes__label" for="widen-search-checkbox">
+                  Widen search to include similar names and misspellings
+                </label>
+              </div>
+
+            </div>
+          </fieldset>
+
+        </div>
+        <!--- Date of birth text input --->
+        <div class="nhsuk-form-group nhsuk-form-group__age-selector">
+          <label class="nhsuk-label nhsuk-label__strong" for="age">
+            Age range
+          </label>
+          <input class="nhsuk-input nhsuk-input--width-3" id="age-from" name="age-from" type="text">
+
+          <div class="fuzzy-age">
+            <label class="nhsuk-label nhsuk-label__strong" for="age-plus-minus">
+              +/-
+            </label>
+            <input class="nhsuk-input nhsuk-input--width-2" id="age-plus-minus" name="age-plus-minus" type="text">
+            <select class="nhsuk-select" id="age-select" name="age-selector">
+              <option value="week">Exact age</option>
+              <option value="week">Week(s)</option>
+              <option value="month">Month(s)</option>
+              <option value="year">Year(s)</option>
+            </select>
+          </div>
+
+          <div class="nhsuk-checkboxes">
+
+            <div class="nhsuk-checkboxes__item">
+              <input class="nhsuk-checkboxes__input" id="deceased-checkbox" name="include-deceased-patients" type="checkbox" value="include-deceased-patients">
+              <label class="nhsuk-label nhsuk-checkboxes__label" for="deceased-checkbox">
+                Include deceased patients
+              </label>
+            </div>
+
+          </div>
+
+        </div>
+        <!--- Postcode text input --->
+        <div class="nhsuk-form-group">
+          <label class="nhsuk-label nhsuk-label__strong" for="postcode-input">
+            Postcode
+          </label>
+          <input class="nhsuk-input nhsuk-input--width-10" id="postcode-input" name="postcode" type="text">
+        </div>
+        
+        <!--- GP Practice Code --->
+        <div class="nhsuk-form-group">
+          <label class="nhsuk-label nhsuk-label__strong" for="gp-input">
+            GP Practice Code
+          </label>
+          <input class="nhsuk-input nhsuk-input--width-10" id="gp-input" name="postcode" type="text">
+        </div>
+      </form>
+
+      <form action="search-results">
+        <div class="nhsuk-form-group">
+          <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-full">
+              <button class="nhsuk-button" type="submit">
+                Find patient
+              </button>
+            </div>
+          </div>
+        </div>
+      </form>
+
+    </div>
+
+  </div>
+{% endblock %}

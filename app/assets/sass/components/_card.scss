@@ -12,6 +12,15 @@
   }
 }
 
+.nav-anchor {
+  color:$color_nhsuk-black;
+}
+
+.nav-anchor:hover {
+  background-color: transparent;
+  box-shadow: none;
+}
+
 .scra-card-content {
   vertical-align: bottom;
   .nhsuk-grid-row {
