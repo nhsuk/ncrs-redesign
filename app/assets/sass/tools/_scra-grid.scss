@@ -1,6 +1,6 @@
 // Allow column sizes less than 100% in tablet view using class
 
-@media screen and (min-width: 641px) and (max-width: 1024px) {
+@media screen and (min-width: 641px) {
   @include govuk-grid-column(one-quarter, $class: 'nhsuk-grid-column-tablet');
   @include govuk-grid-column(one-third, $class: 'nhsuk-grid-column-tablet');
   @include govuk-grid-column(one-half, $class: 'nhsuk-grid-column-tablet');
