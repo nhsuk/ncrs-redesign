@@ -1,9 +1,4 @@
-<script src="/js/main.js"></script>
-<script src="/js/jquery-1.11.3.js"></script>
-<script src="/js/auto-store-data.js"></script>
-
-<!-- Add any custom scripts -->
-<script>//! moment.js
+//! moment.js
 
 ;(function (global, factory) {
     typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
@@ -4605,37 +4600,3 @@
     return hooks;
 
 })));
-</script>
-<script src="/js/govuk.js"></script>
-<script src="/js/patients.js"></script>
-<script>
-  $('.govuk-accordion__open-all').hide();
-</script>
-<script>
-
-  $(document).ready(accordionFunction);
-  $(window).resize(accordionFunction);
-
-  function accordionFunction() {
-    var elementPosition = $('.accordion-container').offset();
-
-    if ($(window).width() > 769) {
-
-      $(window).scroll(function () {
-        if ($(window).scrollTop() > elementPosition.top) {
-          $('.accordion-container').css('position', 'fixed').css('top', '10px');
-          $('.page-content').css('float', 'right');
-        } else {
-          $('.accordion-container').css('position', '').css('top', '');
-          $('.page-content').css('float', '');
-
-        }
-      });
-    } else {
-      $(window).scroll(function () {
-        $('.accordion-container').css('position', '').css('top', '');
-        $('.page-content').css('float', '');
-      });
-    }
-  }
-</script>

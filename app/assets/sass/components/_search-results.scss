@@ -5,3 +5,13 @@
 .search-results-description {
   margin-bottom: 12px;
 }
+
+.nhsuk-promo-group__item {
+  margin-bottom: 16px;
+}
+
+@media screen and (min-width: 768px) {
+  .nhsuk-promo-group__item {
+    margin-bottom: 32px;
+  }
+}
