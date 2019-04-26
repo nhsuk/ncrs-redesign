@@ -5,6 +5,7 @@ var patientsList = [
   ['5974163354', 'Jordanna', 'Collop', '285 Chinook Trail', 'Bradford', 'E83JZ', 'Female', '27-Feb-2006'],
   ['5974163355', 'Justina', 'Collop', '285 Chinook Trail', 'Bradford', 'E83JZ', 'Female', '27-Feb-2006'],
   ['9015678065', 'Ranna', 'Enochsson', '6 Steensland Circle', 'Burnside', 'EB717QM', 'Female', '10-Mar-1967'],
+  ['9397085291', 'Quincy', 'Cramphorn', '519 Raven Way', 'West End', 'DN36 7TU', 'Male', '22-Sep-1963'],
   ['9762318315', 'Angelle', 'Peeke-Vout', '4473 Fair Oaks Alley', 'Preston', 'F348ZS', 'Female', '16-Dec-1998'],
   ['9453238023', 'Giacobo', 'Erni', '05584 Luster Point', 'Sheffield', 'S52NF', 'Male', '01-Sep-2004'],
   ['9397084291', 'Raquel', 'Twinbrow', '9451 Burning Wood Lane', 'Whitwell', 'N94AL', 'Female', '04-Apr-2008'],
@@ -12,6 +13,16 @@ var patientsList = [
   ['5655050595', 'Jacynth', 'Petett', '71016 Kings Plaza', 'Belfast', 'M061CP', 'Female', '07-Oct-1956'],
   ['7472972134', 'Gamaliel', 'Potkins', '14 Utah Drive', 'Whitchurch', 'UE60LF', 'Male', '02-Oct-1944'],
   ['2063825688', 'Lizzie', 'Arnecke', '1 Bayside Circle', 'Linton', 'AY05XG', 'Female', '02-Jun-2013'],
+  ['1316950344', 'Dorella', 'Smith', '80 Holmberg Lane', 'Upton', 'BS13 0LQ', 'Female', '26-Apr-1998'],
+  ['8344690382', 'Hali', 'Smith', '2169 Ludington Terrace', 'Upton', 'BR5 4HN', 'Female', '26-Apr-1998'],
+  ['5275198353', 'Neddy', 'Smith', '38301 Vidon Trail', 'Langley', 'FY8 1UB', 'Female', '26-Apr-1998'],
+  ['2977560009', 'Leland', 'Smith', '31599 Dunning Street', 'London', 'MK18 3EW', 'Female', '26-Apr-1998'],
+  ['0344362957', 'Tome', 'Smith', '693 Spenser Pass', 'Hatton', 'RG19 3PQ', 'Female', '26-Apr-1998'],
+  ['8825402473', 'Avie', 'Smith', '9768 Gerald Terrace', 'London', 'BD22 6DF', 'Female', '26-Apr-1998'],
+  ['0135644305', 'Osbert', 'Smith', '55 Stang Trail', 'Normanton', 'SK8 7DJ', 'Female', '26-Apr-1998'],
+  ['5217192623', 'Timoteo', 'Smith', '13416 Bashford Drive', 'Marston', 'BA2 5AB', 'Female', '26-Apr-1998'],
+  ['6705809256', 'Katharine', 'Smith', '9621 Kedzie Center', 'Whitwell', 'PA30 8HU', 'Female', '26-Apr-1998'],
+  ['7479065205', 'Carroll', 'Smith', '94894 Hagan Avenue', 'Whitwell', 'OX11 0PG', 'Female', '26-Apr-1998']
 ]
 
 /*$(document).ready(function() {
@@ -283,7 +294,7 @@ for (var i in patientsList) {
   }
   /* Patient Details search */
   if ((patientFirstNameSearch == "") && (patientPostcodeSearchFormatted == "")) {
-    if ((patientGenderSearch == patientsList[i][6]) && (patientLastNameSearch == patientsList[i][2]) && (patientFormattedDob == patientsList[i][7])) {
+    if ((patientGenderSearch == patientsList[i][6] || patientGenderSearch == "Not known") && (patientLastNameSearch == patientsList[i][2]) && (patientFormattedDob == patientsList[i][7])) {
       var returnedPatients = (patientsList[i]);
       returnedPatientsList.push(returnedPatients);
       sessionStorage.setItem("returnedPatients", returnedPatients)
@@ -291,7 +302,7 @@ for (var i in patientsList) {
 
     }
   } else if (patientPostcodeSearchFormatted == "") {
-    if ((patientGenderSearch == patientsList[i][6]) && (patientLastNameSearch == patientsList[i][2]) && (patientFormattedDob == patientsList[i][7]) && (patientFirstNameSearch == patientsList[i][1])) {
+    if ((patientGenderSearch == patientsList[i][6] || patientGenderSearch == "Not known") && (patientLastNameSearch == patientsList[i][2]) && (patientFormattedDob == patientsList[i][7]) && (patientFirstNameSearch == patientsList[i][1])) {
       var returnedPatients = (patientsList[i]);
       returnedPatientsList.push(returnedPatients);
       sessionStorage.setItem("returnedPatients", returnedPatients)
@@ -300,14 +311,14 @@ for (var i in patientsList) {
     }
 
   } else if (patientFirstNameSearch == "") {
-    if ((patientGenderSearch == patientsList[i][6]) && (patientLastNameSearch == patientsList[i][2]) && (patientFormattedDob == patientsList[i][7]) && (patientPostcodeSearchFormatted == patientsList[i][5])) {
+    if ((patientGenderSearch == patientsList[i][6] || patientGenderSearch == "Not known") && (patientLastNameSearch == patientsList[i][2]) && (patientFormattedDob == patientsList[i][7]) && (patientPostcodeSearchFormatted == patientsList[i][5])) {
       var returnedPatients = (patientsList[i]);
       returnedPatientsList.push(returnedPatients);
       sessionStorage.setItem("returnedPatients", returnedPatients)
     } else {
 
     }
-  } else if ((patientGenderSearch == patientsList[i][6]) && (patientLastNameSearch == patientsList[i][2]) && (patientFormattedDob == patientsList[i][7]) && (patientPostcodeSearchFormatted == patientsList[i][5]) && (patientFirstNameSearch == patientsList[i][1])) {
+  } else if ((patientGenderSearch == patientsList[i][6] || patientGenderSearch == "Not known") && (patientLastNameSearch == patientsList[i][2]) && (patientFormattedDob == patientsList[i][7]) && (patientPostcodeSearchFormatted == patientsList[i][5]) && (patientFirstNameSearch == patientsList[i][1])) {
     var returnedPatients = (patientsList[i]);
     returnedPatientsList.push(returnedPatients);
     sessionStorage.setItem("returnedPatients", returnedPatients)
@@ -321,7 +332,7 @@ for (var i in patientsList) {
 
   var wholeDate = moment(dateString, 'DD-MMM-YYYY').format("MM/DD/YYYY")
 
-  if ((patientGenderAdvanced == patientsList[i][6]) && ((patientFirstNameAdvanced == '') || (patientFirstNameAdvanced !== ''  && patientFirstNameAdvanced == patientsList[i][1])) && (patientLastNameAdvanced == patientsList[i][2]) && ((patientPostcodeAdvanced == '') || (patientPostcodeAdvanced !== ''  && patientPostcodeAdvanced == patientsList[i][5])) && (moment(wholeDate).isBetween(dobFrom, dobTo, null, '[]')) ) {
+  if ((patientGenderAdvanced == patientsList[i][6] || patientGenderAdvanced == "Not known") && ((patientFirstNameAdvanced == '') || (patientFirstNameAdvanced !== '' && patientFirstNameAdvanced == patientsList[i][1])) && (patientLastNameAdvanced == patientsList[i][2]) && ((patientPostcodeAdvanced == '') || (patientPostcodeAdvanced !== '' && patientPostcodeAdvanced == patientsList[i][5])) && (moment(wholeDate).isBetween(dobFrom, dobTo, null, '[]'))) {
     var returnedPatients = (patientsList[i]);
     returnedPatientsList.push(returnedPatients);
     sessionStorage.setItem("returnedPatients", returnedPatients)
@@ -374,12 +385,11 @@ var patientAge = sessionStorage.getItem("patientAge");
 var patientAddressWithPostcode = patientAddress + ", " + patientPostcode;
 
 var parsedDob = moment(patientDob, "DD-MMM-YYYY").format("DD-MM-YYYY");
-var patientAge = moment(new Date()).diff(moment(parsedDob, "DD-MM-YYYY"), 'years',false)
-console.log(parsedDob)
+var patientAge = moment(new Date()).diff(moment(parsedDob, "DD-MM-YYYY"), 'years', false)
 
 $('.patient-banner-name').text(patientName);
 $('.patient-banner-dob').text(patientDob);
-$('.patient-banner-nhs-no').text(patientNhsNo.substr(0,3) + " " + patientNhsNo.substr(2,3) + " " + patientNhsNo.substr(5,4));
+$('.patient-banner-nhs-no').text(patientNhsNo.substr(0, 3) + " " + patientNhsNo.substr(2, 3) + " " + patientNhsNo.substr(5, 4));
 $('.patient-banner-address').text(patientAddressWithPostcode);
 $('.patient-banner-gender').text(patientGender);
 $('.patient-banner-age').text(patientAge + " years old");
