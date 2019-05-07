@@ -18,7 +18,7 @@
     "@babel/preset-env": "^7.2.3",
     "basic-auth": "^2.0.1",
     "body-parser": "^1.18.3",
-    "browser-sync": "^2.26.3",
+    "browser-sync": "^2.26.5",
     "browserify": "^16.2.3",
     "client-sessions": "^0.8.0",
     "dotenv": "^6.0.0",

@@ -2,14 +2,24 @@
   color: $color_nhsuk-blue;
 }
 
+.search-results-name {
+  color: $color_nhsuk-blue;
+}
+
 .search-results-description {
   margin-bottom: 12px;
+  color: $color_nhsuk-black;
+  text-decoration: none;
+}
+@media screen and (min-width: 768px) {
+  .search-results-dob {
+    float: right;
+  }
 }
 
 .nhsuk-promo-group__item {
   margin-bottom: 16px;
 }
-
 @media screen and (min-width: 768px) {
   .nhsuk-promo-group__item {
     margin-bottom: 32px;

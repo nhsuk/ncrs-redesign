@@ -344,7 +344,10 @@ for (var i in patientsList) {
 };
 
 for (var i in returnedPatientsList) {
-  $('.search-results-container').append("<div class='nhsuk-grid-row nhsuk-promo-group search-result-item'><div class='nhsuk-grid-column-full nhsuk-promo-group__item'><div class='nhsuk-promo'><a class='nhsuk-promo__link-wrapper' href='patient-overview'><div class='nhsuk-promo__content'><h3 class='nhsuk-promo__heading search-results-name'>" + returnedPatientsList[i][1] + " " + returnedPatientsList[i][2] + "</h3><div class='nhsuk-grid-row'><div class='nhsuk-grid-column-full'><p class='nhsuk-promo__description search-results-description search-results-address'>" + returnedPatientsList[i][3] + ", " + returnedPatientsList[i][4] + "</p></div></div><div class='nhsuk-grid-row'><div class='nhsuk-grid-column-one-half'><p class='nhsuk-promo__description search-results-description'>NHS Number: <span class='search-results-nhs-no'>" + returnedPatientsList[i][0] + "</span></p></div><div class='nhsuk-grid-column-one-half'><p class='nhsuk-promo__description search-results-description'>Date of birth: <span class='search-results-dob'>" + returnedPatientsList[i][7] + "</span></p></div></div><div class='nhsuk-grid-row'><div class='nhsuk-grid-column-one-half'><p class='nhsuk-promo__description search-results-description'>Gender: <span class='search-results-gender'>" + returnedPatientsList[i][6] + "</span></p></div><div class='nhsuk-grid-column-one-half'><p class='nhsuk-promo__description search-results-description'>Postcode: <span class='search-results-postcode'>" + returnedPatientsList[i][5].replace(/^(.*)(\d)/, '$1 $2') + "</span></p></div></div></div></a></div></div></div>");
+
+  $('.search-results-container').append("<div class='nhsuk-grid-row nhsuk-promo-group search-result-item'><div class='nhsuk-grid-column-full nhsuk-promo-group__item'><div class='nhsuk-promo'><a class='nhsuk-promo__link-wrapper' href='patient-overview'><div class='nhsuk-promo__content'><div class='nhsuk-grid-row'><div class='nhsuk-grid-column-one-half nhsuk-grid-column-mobile-one-half'><h3 class='nhsuk-promo__heading search-results-name'>" + returnedPatientsList[i][1] + " " + returnedPatientsList[i][2] + "</h3></div><div class='nhsuk-grid-column-one-half nhsuk-grid-column-mobile-one-half'><h4 class='nhsuk-promo__heading search-results-description'><span class='search-results-dob'>Born: " + returnedPatientsList[i][7] + "</span></h4></div></div><div class='nhsuk-grid-row'><div class='nhsuk-grid-column-full'><p class='nhsuk-promo__description search-results-description search-results-address'>" + returnedPatientsList[i][3] + ", " + returnedPatientsList[i][4] + ", " + returnedPatientsList[i][5].replace(/^(.*)(\d)/, '$1 $2') + "</p></div></div><div class='nhsuk-grid-row'><div class='nhsuk-grid-column-full'><p class='nhsuk-promo__description search-results-description'>NHS Number: <span class='search-results-nhs-no'>" + returnedPatientsList[i][0].substr(0, 3) + " " + returnedPatientsList[i][0].substr(2, 3) + " " + returnedPatientsList[i][0].substr(5, 4) + "</span></p></div></div><div class='nhsuk-grid-row'><div class='nhsuk-grid-column-full'><p class='nhsuk-promo__description search-results-description'>Gender: <span class='search-results-gender'>" + returnedPatientsList[i][6] + "</span></p></div></div></div></a></div></div></div>");
+
+
 }
 
 
@@ -387,9 +390,11 @@ var patientAddressWithPostcode = patientAddress + ", " + patientPostcode;
 var parsedDob = moment(patientDob, "DD-MMM-YYYY").format("DD-MM-YYYY");
 var patientAge = moment(new Date()).diff(moment(parsedDob, "DD-MM-YYYY"), 'years', false)
 
-$('.patient-banner-name').text(patientName);
-$('.patient-banner-dob').text(patientDob);
-$('.patient-banner-nhs-no').text(patientNhsNo.substr(0, 3) + " " + patientNhsNo.substr(2, 3) + " " + patientNhsNo.substr(5, 4));
+$('.patient-banner-name, .card-content-name').text(patientName);
+$('.patient-banner-dob, .card-content-detail-dob').text(patientDob);
+$('.patient-banner-nhs-no, .card-content-detail-nhs-no').text(patientNhsNo);
 $('.patient-banner-address').text(patientAddressWithPostcode);
-$('.patient-banner-gender').text(patientGender);
+$('.patient-banner-gender, .card-content-detail-gender').text(patientGender);
 $('.patient-banner-age').text(patientAge + " years old");
+$('.card-content-detail-pob').text(patientAddress.substring(patientAddress.lastIndexOf(", ") + 1));
+$('.card-content-detail-address').html(patientAddressWithPostcode.replace(/\,/g,'<br/>'))

@@ -5,6 +5,7 @@ var patientsList = [
   ['5974163354', 'Jordanna', 'Collop', '285 Chinook Trail', 'Bradford', 'E83JZ', 'Female', '27-Feb-2006'],
   ['5974163355', 'Justina', 'Collop', '285 Chinook Trail', 'Bradford', 'E83JZ', 'Female', '27-Feb-2006'],
   ['9015678065', 'Ranna', 'Enochsson', '6 Steensland Circle', 'Burnside', 'EB717QM', 'Female', '10-Mar-1967'],
+  ['9397085291', 'Quincy', 'Cramphorn', '519 Raven Way', 'West End', 'DN36 7TU', 'Male', '22-Sep-1963'],
   ['9762318315', 'Angelle', 'Peeke-Vout', '4473 Fair Oaks Alley', 'Preston', 'F348ZS', 'Female', '16-Dec-1998'],
   ['9453238023', 'Giacobo', 'Erni', '05584 Luster Point', 'Sheffield', 'S52NF', 'Male', '01-Sep-2004'],
   ['9397084291', 'Raquel', 'Twinbrow', '9451 Burning Wood Lane', 'Whitwell', 'N94AL', 'Female', '04-Apr-2008'],
@@ -12,6 +13,16 @@ var patientsList = [
   ['5655050595', 'Jacynth', 'Petett', '71016 Kings Plaza', 'Belfast', 'M061CP', 'Female', '07-Oct-1956'],
   ['7472972134', 'Gamaliel', 'Potkins', '14 Utah Drive', 'Whitchurch', 'UE60LF', 'Male', '02-Oct-1944'],
   ['2063825688', 'Lizzie', 'Arnecke', '1 Bayside Circle', 'Linton', 'AY05XG', 'Female', '02-Jun-2013'],
+  ['1316950344', 'Dorella', 'Smith', '80 Holmberg Lane', 'Upton', 'BS13 0LQ', 'Female', '26-Apr-1998'],
+  ['8344690382', 'Hali', 'Smith', '2169 Ludington Terrace', 'Upton', 'BR5 4HN', 'Female', '26-Apr-1998'],
+  ['5275198353', 'Neddy', 'Smith', '38301 Vidon Trail', 'Langley', 'FY8 1UB', 'Female', '26-Apr-1998'],
+  ['2977560009', 'Leland', 'Smith', '31599 Dunning Street', 'London', 'MK18 3EW', 'Female', '26-Apr-1998'],
+  ['0344362957', 'Tome', 'Smith', '693 Spenser Pass', 'Hatton', 'RG19 3PQ', 'Female', '26-Apr-1998'],
+  ['8825402473', 'Avie', 'Smith', '9768 Gerald Terrace', 'London', 'BD22 6DF', 'Female', '26-Apr-1998'],
+  ['0135644305', 'Osbert', 'Smith', '55 Stang Trail', 'Normanton', 'SK8 7DJ', 'Female', '26-Apr-1998'],
+  ['5217192623', 'Timoteo', 'Smith', '13416 Bashford Drive', 'Marston', 'BA2 5AB', 'Female', '26-Apr-1998'],
+  ['6705809256', 'Katharine', 'Smith', '9621 Kedzie Center', 'Whitwell', 'PA30 8HU', 'Female', '26-Apr-1998'],
+  ['7479065205', 'Carroll', 'Smith', '94894 Hagan Avenue', 'Whitwell', 'OX11 0PG', 'Female', '26-Apr-1998']
 ]
 
 /*$(document).ready(function() {
@@ -57,10 +68,6 @@ $("#nhs-number-search-button").submit(function(e) {
 
 var patientNhsSearch = sessionStorage.getItem("patientNhsSearch");
 
-for (var i in returnedPatientsList) {
-  $('.search-results-container').append("<div class='nhsuk-grid-row nhsuk-promo-group search-result-item'><div class='nhsuk-grid-column-full nhsuk-promo-group__item'><div class='nhsuk-promo'><a class='nhsuk-promo__link-wrapper' href='patient-overview'><div class='nhsuk-promo__content'><h3 class='nhsuk-promo__heading search-results-name'>" + returnedPatientsList[i][1] + " " + returnedPatientsList[i][2] + "</h3><div class='nhsuk-grid-row'><div class='nhsuk-grid-column-full'><p class='nhsuk-promo__description search-results-description search-results-address'>" + returnedPatientsList[i][3] + ", " + returnedPatientsList[i][4] + "</p></div></div><div class='nhsuk-grid-row'><div class='nhsuk-grid-column-one-half'><p class='nhsuk-promo__description search-results-description'>NHS Number: <span class='search-results-nhs-no'>" + returnedPatientsList[i][0] + "</span></p></div><div class='nhsuk-grid-column-one-half'><p class='nhsuk-promo__description search-results-description'>Date of birth: <span class='search-results-dob'>" + returnedPatientsList[i][7] + "</span></p></div></div><div class='nhsuk-grid-row'><div class='nhsuk-grid-column-one-half'><p class='nhsuk-promo__description search-results-description'>Gender: <span class='search-results-gender'>" + returnedPatientsList[i][6] + "</span></p></div><div class='nhsuk-grid-column-one-half'><p class='nhsuk-promo__description search-results-description'>Postcode: <span class='search-results-postcode'>" + returnedPatientsList[i][5].replace(/^(.*)(\d)/, '$1 $2') + "</span></p></div></div></div></a></div></div></div>");
-}
-
 /* Convert date format */
 
 function parseDate(s) {
@@ -97,17 +104,17 @@ for (var i in patientsList) {
     sessionStorage.setItem("patientAge", age);
     var gender = patientDetails[6];
 
+
   } else {
 
   }
 }
 
-
 /* Patient Details */
 
 $("#patient-details-search-button").submit(function(e) {
   sessionStorage.clear();
-  var patientGenderSearch = $('input[name=gender]:checked', '#patient-details-search').val()
+  var patientGenderSearch = $('input[name=gender]:checked', '#patient-details-search').val();
   var patientFirstNameSearch = $('#first-name').val();
   var patientLastNameSearch = $('#last-name').val();
   var patientDobDaySearch = $('#dob-day').val();
@@ -162,72 +169,71 @@ $("#patient-details-search-button").submit(function(e) {
 
 })
 
+var patientGenderSearch = sessionStorage.getItem("patientGenderSearch");
+var patientFirstNameSearch = sessionStorage.getItem("patientFirstNameSearch");
+var patientLastNameSearch = sessionStorage.getItem("patientLastNameSearch");
+var patientDobDaySearch = sessionStorage.getItem("patientDobDaySearch");
+var patientDobMonthSearch = sessionStorage.getItem("patientDobMonthSearch");
+var patientDobYearSearch = sessionStorage.getItem("patientDobYearSearch");
+var patientDate = sessionStorage.getItem("date");
+var patientParsedDob = sessionStorage.getItem("parsedDob");
+var patientFormattedDob = sessionStorage.getItem("formattedDob");
+var patientDobFrom = sessionStorage.getItem("dobFrom");
+var patientFormattedDobFrom = sessionStorage.getItem("formattedDobFrom");
+var patientDobTo = sessionStorage.getItem("dobTo");
+var patientFormattedDobTo = sessionStorage.getItem("formattedDobTo");
+var patientFormattedDodFrom = sessionStorage.getItem("formattedDodFrom");
+var patientFormattedDodTo = sessionStorage.getItem("formattedDodTo");
+var patientPostcodeSearch = sessionStorage.getItem("patientPostcodeSearch");
+var patientPostcodeSearchFormatted = sessionStorage.getItem("patientPostcodeSearchFormatted");
+
 /*Advanced Search */
 
 $("#advanced-search-button").submit(function(e) {
   sessionStorage.clear();
-  var patientGenderSearch = $('input[name=gender-advanced]:checked', '#advanced-details-search').val();
-  sessionStorage.setItem("patientGenderSearch", patientGenderSearch);
-  var patientFirstNameSearch = $('#first-name-advanced').val();
-  sessionStorage.setItem("patientFirstNameSearch", patientFirstNameSearch);
-  var patientLastNameSearch = $('#last-name-advanced').val();
-  sessionStorage.setItem("patientLastNameSearch", patientLastNameSearch);
-  var patientWidenSearch = $('input[name=widen-search]:checked', '#advanced-details-search').val();
+  var patientGenderAdvanced = $('input[name=gender-advanced]:checked', '#advanced-details-search').val();
+  sessionStorage.setItem("patientGenderAdvanced", patientGenderAdvanced);
 
-  var patientPostcodeSearch = $('#postcode-input-advanced').val();
-  var patientPostcodeSearchUpper = patientPostcodeSearch.toUpperCase();
-  var patientPostcodeSearchFormatted = patientPostcodeSearchUpper.replace(/\s/g, '');
-  sessionStorage.setItem("patientPostcodeSearchFormatted", patientPostcodeSearchFormatted);
+  var patientFirstNameAdvanced = $('#first-name-advanced').val();
+  sessionStorage.setItem("patientFirstNameAdvanced", patientFirstNameAdvanced);
 
-  var patientDobDayFromSearch = $('#dob-day-from').val();
-  var patientDobMonthFromSearch = $('#dob-month-from').val();
-  var patientDobYearFromSearch = $('#dob-year-from').val();
-  var dobFrom = new Date(Date.UTC(patientDobYearFromSearch, patientDobMonthFromSearch, patientDobDayFromSearch));
-  var dobOptionsFrom = {
-    year: 'numeric',
-    month: 'short',
-    day: '2-digit'
-  };
-  var formattedDobFrom = dobFrom.toLocaleDateString('en-GB', dobOptionsFrom).replace(/\s/g, '-');
+  var patientLastNameAdvanced = $('#last-name-advanced').val();
+  sessionStorage.setItem("patientLastNameAdvanced", patientLastNameAdvanced);
+
+  var patientPostcodeAdvanced = $('#postcode-advanced').val();
+  var patientPostcodeAdvancedUpper = patientPostcodeAdvanced.toUpperCase();
+  var patientPostcodeAdvancedFormatted = patientPostcodeAdvancedUpper.replace(/\s/g, '');
+  sessionStorage.setItem("patientPostcodeAdvanced", patientPostcodeAdvancedFormatted);
+
+  var patientDobDayFrom = $('#dob-day-from').val();
+  var patientDobMonthFrom = ($('#dob-month-from').val());
+  var patientDobYearFrom = $('#dob-year-from').val()
+  var fullDobFrom = patientDobDayFrom + "/" + patientDobMonthFrom + "/" + patientDobYearFrom;
+  var dobFrom = moment(fullDobFrom, "DD-MM-YYYY").format("MM/DD/YYYY");
   sessionStorage.setItem("dobFrom", dobFrom);
-  sessionStorage.setItem("formattedDobFrom", formattedDobFrom);
 
-  var patientDobDayToSearch = $('#dob-day-to').val();
-  var patientDobMonthToSearch = $('#dob-month-to').val();
-  var patientDobYearToSearch = $('#dob-year-to').val();
-  var dobTo = new Date(Date.UTC(patientDobYearToSearch, patientDobMonthToSearch, patientDobDayToSearch));
-  var dodOptionsTo = {
-    year: 'numeric',
-    month: 'short',
-    day: '2-digit'
-  };
-  var formattedDobTo = dobTo.toLocaleDateString('en-GB', dodOptionsTo).replace(/\s/g, '-');
+  var patientDobDayTo = $('#dob-day-to').val();
+  var patientDobMonthTo = ($('#dob-month-to').val());
+  var patientDobYearTo = $('#dob-year-to').val()
+  var fullDobTo = patientDobDayTo + "/" + patientDobMonthTo + "/" + patientDobYearTo;
+  var dobTo = moment(fullDobTo, "DD-MM-YYYY").format("MM/DD/YYYY");
   sessionStorage.setItem("dobTo", dobTo);
-  sessionStorage.setItem("formattedDobTo", formattedDobTo);
 
-  var patientDodDayFromSearch = $('#dod-day-from').val();
-  var patientDodMonthFromSearch = $('#dod-month-from').val();
-  var patientDodYearFromSearch = $('#dod-year-from').val();
-  var dodFrom = new Date(Date.UTC(patientDodYearFromSearch, patientDodMonthFromSearch, patientDodDayFromSearch));
-  var dodOptionsFrom = {
-    year: 'numeric',
-    month: 'short',
-    day: '2-digit'
-  };
-  var formattedDodFrom = dodFrom.toLocaleDateString('en-GB', dodOptionsFrom).replace(/\s/g, '-');
-  sessionStorage.setItem("formattedDodFrom", formattedDodFrom);
+  var patientDeathDayFrom = $('#dod-day-from').val();
+  var patientDeathMonthFrom = ($('#dod-month-from').val() - 1);
+  var patientDeathYearFrom = $('#dod-year-from').val()
+  var deathFromDate = moment().year(patientDeathYearFrom).month(patientDeathMonthFrom).date(patientDeathDayFrom).format("DD/MM/YYYY");
+  sessionStorage.setItem("deathFromDate", deathFromDate);
 
-  var patientDodDayToSearch = $('#dod-day-to').val();
-  var patientDodMonthToSearch = $('#dod-month-to').val();
-  var patientDodYearToSearch = $('#dod-year-to').val();
-  var dodTo = new Date(Date.UTC(patientDodYearToSearch, patientDodMonthToSearch, patientDodDayToSearch));
-  var dodOptionsTo = {
-    year: 'numeric',
-    month: 'short',
-    day: '2-digit'
-  };
-  var formattedDodTo = dodTo.toLocaleDateString('en-GB', dodOptionsTo).replace(/\s/g, '-');
-  sessionStorage.setItem("formattedDodTo", formattedDodTo);
+  var patientDeathDayTo = $('#dod-day-to').val();
+  var patientDeathMonthTo = ($('#dod-month-to').val() - 1);
+  var patientDeathYearTo = $('#dod-year-to').val()
+  var deathToDate = moment().year(patientDeathYearTo).month(patientDeathMonthTo).date(patientDeathDayTo).format("DD/MM/YYYY");
+  sessionStorage.setItem("deathToDate", deathToDate);
+
+  var patientGpAdvanced = $('#gp-input').val();
+  sessionStorage.setItem("patientGpAdvanced", patientGpAdvanced);
+
 
   if (!$('input[name=gender-advanced]').is(':checked')) {
     $('#advanced-gender-error-error').show();
@@ -264,25 +270,16 @@ $("#advanced-search-button").submit(function(e) {
 
 });
 
-var patientGenderSearch = sessionStorage.getItem("patientGenderSearch");
-var patientFirstNameSearch = sessionStorage.getItem("patientFirstNameSearch");
-var patientLastNameSearch = sessionStorage.getItem("patientLastNameSearch");
-var patientDobDaySearch = sessionStorage.getItem("patientDobDaySearch");
-var patientDobMonthSearch = sessionStorage.getItem("patientDobMonthSearch");
-var patientDobYearSearch = sessionStorage.getItem("patientDobYearSearch");
-var patientDate = sessionStorage.getItem("date");
-var patientParsedDob = sessionStorage.getItem("parsedDob");
-var patientFormattedDob = sessionStorage.getItem("formattedDob");
-var patientDobFrom = sessionStorage.getItem("dobFrom");
-var patientFormattedDobFrom = sessionStorage.getItem("formattedDobFrom");
-var patientDobTo = sessionStorage.getItem("dobTo");
-var patientFormattedDobTo = sessionStorage.getItem("formattedDobTo");
-var patientFormattedDodFrom = sessionStorage.getItem("formattedDodFrom");
-var patientFormattedDodTo = sessionStorage.getItem("formattedDodTo");
-var patientPostcodeSearch = sessionStorage.getItem("patientPostcodeSearch");
-var patientPostcodeSearchFormatted = sessionStorage.getItem("patientPostcodeSearchFormatted");
-
-
+var patientGenderAdvanced = sessionStorage.getItem("patientGenderAdvanced");
+var patientFirstNameAdvanced = sessionStorage.getItem("patientFirstNameAdvanced");
+var patientLastNameAdvanced = sessionStorage.getItem("patientLastNameAdvanced");
+var patientPostcodeAdvanced = sessionStorage.getItem("patientPostcodeAdvanced");
+var dobFrom = sessionStorage.getItem("dobFrom");
+var dobTo = sessionStorage.getItem("dobTo");
+var deathFromDate = sessionStorage.getItem("deathFromDate");
+var deathToDate = sessionStorage.getItem("deathToDate");
+var patientGpAdvanced = sessionStorage.getItem("patientGpAdvanced");
+var parsedDob = sessionStorage.getItem("parsedDob");
 
 /* Find patient in patientList */
 
@@ -297,7 +294,7 @@ for (var i in patientsList) {
   }
   /* Patient Details search */
   if ((patientFirstNameSearch == "") && (patientPostcodeSearchFormatted == "")) {
-    if ((patientGenderSearch == patientsList[i][6]) && (patientLastNameSearch == patientsList[i][2]) && (patientFormattedDob == patientsList[i][7])) {
+    if ((patientGenderSearch == patientsList[i][6] || patientGenderSearch == "Not known") && (patientLastNameSearch == patientsList[i][2]) && (patientFormattedDob == patientsList[i][7])) {
       var returnedPatients = (patientsList[i]);
       returnedPatientsList.push(returnedPatients);
       sessionStorage.setItem("returnedPatients", returnedPatients)
@@ -305,7 +302,7 @@ for (var i in patientsList) {
 
     }
   } else if (patientPostcodeSearchFormatted == "") {
-    if ((patientGenderSearch == patientsList[i][6]) && (patientLastNameSearch == patientsList[i][2]) && (patientFormattedDob == patientsList[i][7]) && (patientFirstNameSearch == patientsList[i][1])) {
+    if ((patientGenderSearch == patientsList[i][6] || patientGenderSearch == "Not known") && (patientLastNameSearch == patientsList[i][2]) && (patientFormattedDob == patientsList[i][7]) && (patientFirstNameSearch == patientsList[i][1])) {
       var returnedPatients = (patientsList[i]);
       returnedPatientsList.push(returnedPatients);
       sessionStorage.setItem("returnedPatients", returnedPatients)
@@ -314,14 +311,14 @@ for (var i in patientsList) {
     }
 
   } else if (patientFirstNameSearch == "") {
-    if ((patientGenderSearch == patientsList[i][6]) && (patientLastNameSearch == patientsList[i][2]) && (patientFormattedDob == patientsList[i][7]) && (patientPostcodeSearchFormatted == patientsList[i][5])) {
+    if ((patientGenderSearch == patientsList[i][6] || patientGenderSearch == "Not known") && (patientLastNameSearch == patientsList[i][2]) && (patientFormattedDob == patientsList[i][7]) && (patientPostcodeSearchFormatted == patientsList[i][5])) {
       var returnedPatients = (patientsList[i]);
       returnedPatientsList.push(returnedPatients);
       sessionStorage.setItem("returnedPatients", returnedPatients)
     } else {
 
     }
-  } else if ((patientGenderSearch == patientsList[i][6]) && (patientLastNameSearch == patientsList[i][2]) && (patientFormattedDob == patientsList[i][7]) && (patientPostcodeSearchFormatted == patientsList[i][5]) && (patientFirstNameSearch == patientsList[i][1])) {
+  } else if ((patientGenderSearch == patientsList[i][6] || patientGenderSearch == "Not known") && (patientLastNameSearch == patientsList[i][2]) && (patientFormattedDob == patientsList[i][7]) && (patientPostcodeSearchFormatted == patientsList[i][5]) && (patientFirstNameSearch == patientsList[i][1])) {
     var returnedPatients = (patientsList[i]);
     returnedPatientsList.push(returnedPatients);
     sessionStorage.setItem("returnedPatients", returnedPatients)
@@ -329,29 +326,31 @@ for (var i in patientsList) {
 
   };
 
-  console.log(patientFormattedDob);
-  console.log(patientsList[i][7])
   /* Advanced Search details */
 
-  /*if ((patientGenderSearch == patientsList[i][6]) && ((patientFirstNameSearch == '') || (patientFirstNameSearch !== ''  && patientFirstNameSearch == patientsList[i][1])) && ((patientPostcodeSearchFormatted == '') || (patientPostcodeSearchFormatted !== ''  && patientPostcodeSearchFormatted == patientsList[i][5])) && (patientLastNameSearch == patientsList[i][2]) && (parseDate(patientFormattedDobFrom) <= parseDate(patientsList[i][7])) && (parseDate(patientFormattedDobTo) >= parseDate(patientsList[i][7]))) {
+  var dateString = patientsList[i][7];
+
+  var wholeDate = moment(dateString, 'DD-MMM-YYYY').format("MM/DD/YYYY")
+
+  if ((patientGenderAdvanced == patientsList[i][6] || patientGenderAdvanced == "Not known") && ((patientFirstNameAdvanced == '') || (patientFirstNameAdvanced !== '' && patientFirstNameAdvanced == patientsList[i][1])) && (patientLastNameAdvanced == patientsList[i][2]) && ((patientPostcodeAdvanced == '') || (patientPostcodeAdvanced !== '' && patientPostcodeAdvanced == patientsList[i][5])) && (moment(wholeDate).isBetween(dobFrom, dobTo, null, '[]'))) {
     var returnedPatients = (patientsList[i]);
     returnedPatientsList.push(returnedPatients);
     sessionStorage.setItem("returnedPatients", returnedPatients)
 
   } else {
 
-  };*/
+  };
 
 };
 
 for (var i in returnedPatientsList) {
-  $('.search-results-container').append("<div class='nhsuk-grid-row nhsuk-promo-group search-result-item'><div class='nhsuk-grid-column-full nhsuk-promo-group__item'><div class='nhsuk-promo'><a class='nhsuk-promo__link-wrapper' href='patient-overview'><div class='nhsuk-promo__content'><h3 class='nhsuk-promo__heading search-results-name'>" + returnedPatientsList[i][1] + " " + returnedPatientsList[i][2] + "</h3><div class='nhsuk-grid-row'><div class='nhsuk-grid-column-full'><p class='nhsuk-promo__description search-results-description search-results-address'>" + returnedPatientsList[i][3] + ", " + returnedPatientsList[i][4] + "</p></div></div><div class='nhsuk-grid-row'><div class='nhsuk-grid-column-one-half'><p class='nhsuk-promo__description search-results-description'>NHS Number: <span class='search-results-nhs-no'>" + returnedPatientsList[i][0] + "</span></p></div><div class='nhsuk-grid-column-one-half'><p class='nhsuk-promo__description search-results-description'>Date of birth: <span class='search-results-dob'>" + returnedPatientsList[i][7] + "</span></p></div></div><div class='nhsuk-grid-row'><div class='nhsuk-grid-column-one-half'><p class='nhsuk-promo__description search-results-description'>Gender: <span class='search-results-gender'>" + returnedPatientsList[i][6] + "</span></p></div><div class='nhsuk-grid-column-one-half'><p class='nhsuk-promo__description search-results-description'>Postcode: <span class='search-results-postcode'>" + returnedPatientsList[i][5].replace(/^(.*)(\d)/, '$1 $2') + "</span></p></div></div></div></a></div></div></div>");
+  $('.search-results-container').append("<div class='nhsuk-grid-row nhsuk-promo-group search-result-item'><div class='nhsuk-grid-column-full nhsuk-promo-group__item'><div class='nhsuk-promo'><a class='nhsuk-promo__link-wrapper' href='patient-overview'><div class='nhsuk-promo__content'><h3 class='nhsuk-promo__heading search-results-name'>" + returnedPatientsList[i][1] + " " + returnedPatientsList[i][2] + "</h3><div class='nhsuk-grid-row'><div class='nhsuk-grid-column-full'><p class='nhsuk-promo__description search-results-description search-results-address'>" + returnedPatientsList[i][3] + ", " + returnedPatientsList[i][4] + "</p></div></div><div class='nhsuk-grid-row'><div class='nhsuk-grid-column-one-half'><p class='nhsuk-promo__description search-results-description'>NHS Number: <span class='search-results-nhs-no'>" + returnedPatientsList[i][0].substr(0, 3) + " " + returnedPatientsList[i][0].substr(2, 3) + " " + returnedPatientsList[i][0].substr(5, 4) + "</span></p></div><div class='nhsuk-grid-column-one-half'><p class='nhsuk-promo__description search-results-description'>Date of birth: <span class='search-results-dob'>" + returnedPatientsList[i][7] + "</span></p></div></div><div class='nhsuk-grid-row'><div class='nhsuk-grid-column-one-half'><p class='nhsuk-promo__description search-results-description'>Gender: <span class='search-results-gender'>" + returnedPatientsList[i][6] + "</span></p></div><div class='nhsuk-grid-column-one-half'><p class='nhsuk-promo__description search-results-description'>Postcode: <span class='search-results-postcode'>" + returnedPatientsList[i][5].replace(/^(.*)(\d)/, '$1 $2') + "</span></p></div></div></div></a></div></div></div>");
 }
 
 
-if (returnedPatientsList.length == 0 ) {
+if (returnedPatientsList.length == 0) {
   $('.number-of-results').html("Sorry, there were no results matching your search. You can try <a href='nhs-search-alt'>searching again</a>.")
-} else if ((returnedPatientsList.length == 1 )){
+} else if ((returnedPatientsList.length == 1)) {
   $('.number-of-results').html("We found " + returnedPatientsList.length + " result matching your search.")
 } else {
   $('.number-of-results').html("We found " + returnedPatientsList.length + " results matching your search.")
@@ -374,6 +373,7 @@ $(".nhsuk-promo").click(function() {
   sessionStorage.setItem("patientPostcode", patientPostcode);
 
 });
+
 /* Retrieve patient details to session storage when document is ready*/
 var patientName = sessionStorage.getItem("patientName");
 var patientAddress = sessionStorage.getItem("patientAddress");
@@ -384,9 +384,14 @@ var patientPostcode = sessionStorage.getItem("patientPostcode");
 var patientAge = sessionStorage.getItem("patientAge");
 var patientAddressWithPostcode = patientAddress + ", " + patientPostcode;
 
-$('.patient-banner-name').text(patientName);
-$('.patient-banner-dob').text(patientDob);
-$('.patient-banner-nhs-no').text(patientNhsNo);
+var parsedDob = moment(patientDob, "DD-MMM-YYYY").format("DD-MM-YYYY");
+var patientAge = moment(new Date()).diff(moment(parsedDob, "DD-MM-YYYY"), 'years', false)
+
+$('.patient-banner-name, .card-content-name').text(patientName);
+$('.patient-banner-dob, .card-content-detail-dob').text(patientDob);
+$('.patient-banner-nhs-no, .card-content-detail-nhs-no').text(patientNhsNo.substr(0, 3) + " " + patientNhsNo.substr(2, 3) + " " + patientNhsNo.substr(5, 4));
 $('.patient-banner-address').text(patientAddressWithPostcode);
-$('.patient-banner-gender').text(patientGender);
+$('.patient-banner-gender, .card-content-detail-gender').text(patientGender);
 $('.patient-banner-age').text(patientAge + " years old");
+$('.card-content-detail-pob').text(patientAddress.substring(patientAddress.lastIndexOf(", ") + 1));
+$('.card-content-detail-address').html(patientAddressWithPostcode.replace(/\,/g,'<br/>'))
