@@ -198,13 +198,20 @@ var patientPostcodeSearchFormatted = sessionStorage.getItem("patientPostcodeSear
 
 $("#advanced-search-button").submit(function(e) {
   sessionStorage.clear();
+  function formatString(str) {
+    return str
+      .replace(/(\B)[^ ]*/g, match => (match.toLowerCase()))
+      .replace(/^[^ ]/g, match => (match.toUpperCase()));
+  }
   var patientGenderAdvanced = $('input[name=gender-advanced]:checked', '#advanced-details-search').val();
   sessionStorage.setItem("patientGenderAdvanced", patientGenderAdvanced);
 
-  var patientFirstNameAdvanced = $('#first-name-advanced').val();
+  var patientFirstNameCapitalise = formatString($('#first-name-advanced').val());
+  var patientFirstNameAdvanced = patientFirstNameCapitalise;
   sessionStorage.setItem("patientFirstNameAdvanced", patientFirstNameAdvanced);
 
-  var patientLastNameAdvanced = $('#last-name-advanced').val();
+  var patientLastNameCapitalise = formatString($('#last-name-advanced').val());
+  var patientLastNameAdvanced = patientLastNameCapitalise;
   sessionStorage.setItem("patientLastNameAdvanced", patientLastNameAdvanced);
 
   var patientPostcodeAdvanced = $('#postcode-advanced').val();
