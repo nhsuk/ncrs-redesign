@@ -73,7 +73,7 @@
             <span id="advanced-gender-error-error" class="nhsuk-error-message" style="display: none">
               You must select a gender
             </span>
-            <div class="nhsuk-radios nhsuk-radios--inline">
+            <div class="nhsuk-radios nhsuk-radios--inline" id="gender-radio">
               <div class="nhsuk-radios__item">
                 <input class="nhsuk-radios__input" id="gender-female-advanced" name="gender-advanced" type="radio" value="Female">
                 <label class="nhsuk-label nhsuk-radios__label" for="gender-female-advanced">
@@ -120,7 +120,7 @@
         </div>
         <div class="nhsuk-form-group">
 
-          <fieldset class="nhsuk-fieldset" aria-describedby="widen-search">
+          <fieldset class="nhsuk-fieldset" aria-describedby="widen-search-checkbox">
 
             <div class="nhsuk-checkboxes">
 
@@ -149,7 +149,7 @@
           <div class="nhsuk-grid-row">
             <div class="nhsuk-form-group">
               <div class="nhsuk-grid-column-one-half nhsuk-grid-column-tablet-one-half">
-                <fieldset class="nhsuk-fieldset" aria-describedby="dob-hint" role="group">
+                <fieldset class="nhsuk-fieldset" aria-describedby="dob-from" role="group">
                   <legend class="nhsuk-fieldset__legend nhsuk-label__strong">
                     Date of birth from
                   </legend>
@@ -185,7 +185,7 @@
                 </fieldset>
               </div>
               <div class="nhsuk-grid-column-one-half nhsuk-grid-column-tablet-one-half">
-                <fieldset class="nhsuk-fieldset" aria-describedby="dob-hint" role="group">
+                <fieldset class="nhsuk-fieldset" aria-describedby="dob-to" role="group">
                   <legend class="nhsuk-fieldset__legend nhsuk-label__strong">
                     Date of birth to
                   </legend>
@@ -228,7 +228,7 @@
           <div class="nhsuk-grid-row">
             <div id="nhsuk-form-group-dod" class="nhsuk-form-group">
               <div class="nhsuk-grid-column-one-half nhsuk-grid-column-tablet-one-half">
-                <fieldset class="nhsuk-fieldset" aria-describedby="dod-hint" role="group">
+                <fieldset class="nhsuk-fieldset" aria-describedby="dod-from" role="group">
                   <legend class="nhsuk-fieldset__legend nhsuk-label__strong">
                     Date of death from (optional)
                   </legend>
@@ -261,11 +261,11 @@
                 </fieldset>
               </div>
               <div class="nhsuk-grid-column-one-half nhsuk-grid-column-tablet-one-half">
-                <fieldset class="nhsuk-fieldset" aria-describedby="dod-hint" role="group">
+                <fieldset class="nhsuk-fieldset" aria-describedby="dod-to" role="group">
                   <legend class="nhsuk-fieldset__legend nhsuk-label__strong">
                     Date of death to (optional)
                   </legend>
-                  <div class="nhsuk-date-input" id="dob-to">
+                  <div class="nhsuk-date-input" id="dod-to">
                     <div class="nhsuk-date-input__item">
                       <div class="nhsuk-form-group">
                         <label class="nhsuk-label nhsuk-date-input__label" for="dod-day-to">

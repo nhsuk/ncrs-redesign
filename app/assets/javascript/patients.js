@@ -3,7 +3,7 @@
 var patientsList = [
   ['9550972968', 'Elisha', 'Sapsed', '55 Troy Place', 'Sutton', 'X563TG', 'Female', '06-Sep-1968'],
   ['5974163354', 'Jordanna', 'Collop', '285 Chinook Trail', 'Bradford', 'E83JZ', 'Female', '27-Feb-2006'],
-  ['5974163355', 'Justina', 'Collop', '285 Chinook Trail', 'Bradford', 'E83JZ', 'Female', '27-Feb-2006'],
+  ['4126104984', 'Justina', 'Collop', '285 Chinook Trail', 'Bradford', 'E83JZ', 'Female', '27-Feb-2006'],
   ['9015678065', 'Ranna', 'Enochsson', '6 Steensland Circle', 'Burnside', 'EB717QM', 'Female', '10-Mar-1967'],
   ['9397085291', 'Quincy', 'Cramphorn', '519 Raven Way', 'West End', 'DN36 7TU', 'Male', '22-Sep-1963'],
   ['9762318315', 'Angelle', 'Peeke-Vout', '4473 Fair Oaks Alley', 'Preston', 'F348ZS', 'Female', '16-Dec-1998'],
@@ -114,9 +114,16 @@ for (var i in patientsList) {
 
 $("#patient-details-search-button").submit(function(e) {
   sessionStorage.clear();
+  function formatString(str) {
+    return str
+      .replace(/(\B)[^ ]*/g, match => (match.toLowerCase()))
+      .replace(/^[^ ]/g, match => (match.toUpperCase()));
+  }
   var patientGenderSearch = $('input[name=gender]:checked', '#patient-details-search').val();
-  var patientFirstNameSearch = $('#first-name').val();
-  var patientLastNameSearch = $('#last-name').val();
+  var patientFirstNameCapitalise = formatString($('#first-name').val());
+  var patientFirstNameSearch = patientFirstNameCapitalise;
+  var patientLastNameCapitalise = formatString($('#last-name').val());
+  var patientLastNameSearch = patientLastNameCapitalise;
   var patientDobDaySearch = $('#dob-day').val();
   var patientDobMonthSearch = ($('#dob-month').val() - 1);
   var patientDobYearSearch = $('#dob-year').val();
@@ -344,12 +351,10 @@ for (var i in patientsList) {
 };
 
 for (var i in returnedPatientsList) {
-
-  $('.search-results-container').append("<div class='nhsuk-grid-row nhsuk-promo-group search-result-item'><div class='nhsuk-grid-column-full nhsuk-promo-group__item'><div class='nhsuk-promo'><a class='nhsuk-promo__link-wrapper' href='patient-overview'><div class='nhsuk-promo__content'><div class='nhsuk-grid-row'><div class='nhsuk-grid-column-one-half nhsuk-grid-column-mobile-one-half'><h3 class='nhsuk-promo__heading search-results-name'>" + returnedPatientsList[i][1] + " " + returnedPatientsList[i][2] + "</h3></div><div class='nhsuk-grid-column-one-half nhsuk-grid-column-mobile-one-half'><h4 class='nhsuk-promo__heading search-results-description'><span class='search-results-dob'>Born: " + returnedPatientsList[i][7] + "</span></h4></div></div><div class='nhsuk-grid-row'><div class='nhsuk-grid-column-full'><p class='nhsuk-promo__description search-results-description search-results-address'>" + returnedPatientsList[i][3] + ", " + returnedPatientsList[i][4] + ", " + returnedPatientsList[i][5].replace(/^(.*)(\d)/, '$1 $2') + "</p></div></div><div class='nhsuk-grid-row'><div class='nhsuk-grid-column-full'><p class='nhsuk-promo__description search-results-description'>NHS Number: <span class='search-results-nhs-no'>" + returnedPatientsList[i][0].substr(0, 3) + " " + returnedPatientsList[i][0].substr(2, 3) + " " + returnedPatientsList[i][0].substr(5, 4) + "</span></p></div></div><div class='nhsuk-grid-row'><div class='nhsuk-grid-column-full'><p class='nhsuk-promo__description search-results-description'>Gender: <span class='search-results-gender'>" + returnedPatientsList[i][6] + "</span></p></div></div></div></a></div></div></div>");
-
+  var patientNhsNo = returnedPatientsList[i][0];
+  $('.search-results-container').append("<div class='nhsuk-grid-row nhsuk-promo-group search-result-item'><div class='nhsuk-grid-column-full nhsuk-promo-group__item'><div class='nhsuk-promo'><a class='nhsuk-promo__link-wrapper' href='patient-overview'><div class='nhsuk-promo__content'><div class='nhsuk-grid-row'><div class='nhsuk-grid-column-one-half nhsuk-grid-column-mobile-one-half'><h3 class='nhsuk-promo__heading search-results-name'>" + returnedPatientsList[i][1] + " " + returnedPatientsList[i][2] + "</h3></div><div class='nhsuk-grid-column-one-half nhsuk-grid-column-mobile-one-half'><h4 class='nhsuk-promo__heading search-results-description'><span class='search-results-dob'>Born: " + returnedPatientsList[i][7] + "</span></h4></div></div><div class='nhsuk-grid-row'><div class='nhsuk-grid-column-full'><p class='nhsuk-promo__description search-results-description search-results-address'>" + returnedPatientsList[i][3] + ", " + returnedPatientsList[i][4] + ", " + returnedPatientsList[i][5].replace(/^(.*)(\d)/, '$1 $2') + "</p></div></div><div class='nhsuk-grid-row'><div class='nhsuk-grid-column-full'><p class='nhsuk-promo__description search-results-description'>NHS Number: <span class='search-results-nhs-no'>" + patientNhsNo.substr(0, 3) + " " + patientNhsNo.substr(3, 3) + " " + patientNhsNo.substr(6, 4) + "</span></p></div></div><div class='nhsuk-grid-row'><div class='nhsuk-grid-column-full'><p class='nhsuk-promo__description search-results-description'>Gender: <span class='search-results-gender'>" + returnedPatientsList[i][6] + "</span></p></div></div></div></a></div></div></div>");
 
 }
-
 
 if (returnedPatientsList.length == 0) {
   $('.number-of-results').html("Sorry, there were no results matching your search. You can try <a href='nhs-search-alt'>searching again</a>.")
@@ -397,4 +402,4 @@ $('.patient-banner-address').text(patientAddressWithPostcode);
 $('.patient-banner-gender, .card-content-detail-gender').text(patientGender);
 $('.patient-banner-age').text(patientAge + " years old");
 $('.card-content-detail-pob').text(patientAddress.substring(patientAddress.lastIndexOf(", ") + 1));
-$('.card-content-detail-address').html(patientAddressWithPostcode.replace(/\,/g,'<br/>'))
+$('.card-content-detail-address').html(patientAddressWithPostcode.replace(/\,/g, '<br/>'))

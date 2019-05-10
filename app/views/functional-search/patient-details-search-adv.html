@@ -45,7 +45,7 @@
 
     <div class="nhsuk-grid-column-three-quarters">
       <!--- Gender Radio Buttons --->
-      <form id="patient-details-search" action="search-results">
+      <form id="patient-details-search" action="search-results-tabs">
 
         <!---Error Summary--->
 
@@ -76,7 +76,7 @@
               You must select a gender
             </span>
 
-            <div class="nhsuk-radios nhsuk-radios--inline nhsuk-gender--radios">
+            <div class="nhsuk-radios nhsuk-radios--inline nhsuk-gender--radios" id="gender-radio">
               <div class="nhsuk-radios__item">
                 <input class="nhsuk-radios__input" id="gender-female" name="gender" type="radio" value="Female">
                 <label class="nhsuk-label nhsuk-radios__label" for="gender-female">
@@ -118,7 +118,7 @@
         <!--- Date of birth text input --->
         <div id="nhsuk-form-group-dob" class="nhsuk-form-group">
 
-          <fieldset class="nhsuk-fieldset" aria-describedby="dob-hint" role="group">
+          <fieldset class="nhsuk-fieldset" aria-describedby="dob" role="group">
             <legend class="nhsuk-fieldset__legend nhsuk-label__strong">
               Date of birth
             </legend>
