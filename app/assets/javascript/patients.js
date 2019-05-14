@@ -364,7 +364,7 @@ for (var i in returnedPatientsList) {
 }
 
 if (returnedPatientsList.length == 0) {
-  $('.number-of-results').html("Sorry, there were no results matching your search. You can try <a href='nhs-search-alt'>searching again</a>.")
+  $('.number-of-results').html("Sorry, there were no results matching your search. You can try <a href='nhs-number-search-adv'>searching again</a>.")
 } else if ((returnedPatientsList.length == 1)) {
   $('.number-of-results').html("We found " + returnedPatientsList.length + " result matching your search.")
 } else {
