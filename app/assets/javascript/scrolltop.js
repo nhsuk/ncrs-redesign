@@ -10,7 +10,7 @@ jQuery(document).ready(function($) {
     }
     if ($(window).scrollTop() + $(window).height() < $(document).height() - $("#nhsuk-footer").height() - 92) {
       $('.scrollToTop').css("position", "fixed"); //resetting it
-      $('.scrollToTop').css("bottom", "10px"); //resetting it
+      $('.scrollToTop').css("bottom", "20px"); //resetting it
       $('.scrollToTop').css("right", "20px"); //resetting it
     }
     if ($(window).scrollTop() + $(window).height() > $(document).height() - $("#nhsuk-footer").height() - 92) {
