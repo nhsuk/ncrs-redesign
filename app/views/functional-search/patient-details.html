@@ -1,7 +1,7 @@
 {% extends 'layouts/layout-application.html' %}
 
 {% block pageTitle %}
-  Dashboard
+  Patient details
 {% endblock %}
 
 {% block beforeContent %}
@@ -33,6 +33,7 @@
   <div class="nhsuk-grid-row">
 
     {% include "includes/functional-patient-details.html" %}
+    {% include "globals/scroll-top.html" %}
 
   </div>
 {% endblock %}
