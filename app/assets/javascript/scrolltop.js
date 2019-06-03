@@ -8,14 +8,14 @@ jQuery(document).ready(function($) {
     } else {
         $(".scrollToTop").fadeOut();
     }
-    if ($(window).scrollTop() + $(window).height() < $(document).height() - $("#nhsuk-footer").height()) {
+    if ($(window).scrollTop() + $(window).height() < $(document).height() - $("#nhsuk-footer").height() - 92) {
       $('.scrollToTop').css("position", "fixed"); //resetting it
-      $('.scrollToTop').css("bottom", "0"); //resetting it
-      $('.scrollToTop').css("margin", "0 20px 20px 0");
+      $('.scrollToTop').css("bottom", "10px"); //resetting it
+      $('.scrollToTop').css("right", "20px"); //resetting it
     }
-    if ($(window).scrollTop() + $(window).height() > $(document).height() - $("#nhsuk-footer").height()) {
+    if ($(window).scrollTop() + $(window).height() > $(document).height() - $("#nhsuk-footer").height() - 92) {
       $('.scrollToTop').css("position", "relative"); // make it related
-      $('.scrollToTop').css("bottom", "-32px"); // 60 px, height of #toTop
+      $('.scrollToTop').css("bottom", "62px"); // 60 px, height of #toTop
     }
   });
 

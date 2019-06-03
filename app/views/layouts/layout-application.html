@@ -51,6 +51,8 @@
 
 <!-- Footer goes inside this block -->
 {% block footer %}
+{% include "globals/scroll-top.html" %}
+
   {{ footer({
   })}}
 {% endblock %}
@@ -59,7 +61,7 @@
   {% block scripts %}
     <!-- Custom JavaScript files can be added to this file -->
     {% include "includes/scripts.html" %}
-  
+
     {% block pageScripts %}{% endblock %}
   {% endblock %}
 {% endblock %}
