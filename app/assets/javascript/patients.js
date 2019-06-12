@@ -463,6 +463,8 @@ $(function() {
   $('.results-count').html("Showing " + numShown + " of " + numRows + " results")
 });
 
+/* Populate search results parameters */
+
 $.urlParam = function (name) {
     var results = new RegExp('[\?&]' + name + '=([^&#]*)')
                       .exec(window.location.search);
@@ -481,11 +483,10 @@ if (patientGenderSearch !== null) {
 }
 
 if (patientFirstNameAdvanced == "") {
-  var firstName = ""
+  var firstNameFormatted = ""
 } else {
   var firstName = $.urlParam("first-name");
-  var firstNameFormatted = "first name " + capitalizeFirstLetter(firstName)+ ", "
-
+  var firstNameFormatted = "first name " + capitalizeFirstLetter(firstName)+ ", ";
 }
 
 if (patientLastNameSearch !== null) {
@@ -541,6 +542,8 @@ if (patientPostcodeAdvanced) {
 
 var resultsList = gender + firstNameFormatted + lastNameFormatted + dob + address + houseNum + street + townCity + county + postcode;
 var formattedResultsList = resultsList.replace(/,\s*$/, "");
+
+console.log(firstNameFormatted)
 
 if (returnedPatientsList.length == 0) {
   $(".search-results-container").css("display", "none");
