@@ -1,1 +1,133 @@
+.responsive-table {
+  $mobile: 768px;
+  width: 100%;
 
+  thead {
+    border: 0;
+    clip: rect(1px, 1px, 1px, 1px);
+    height: 1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    @media (min-width: $mobile) {
+      clip: auto;
+      display: table-header-group;
+      height: auto;
+      overflow: auto;
+      position: relative;
+      width: auto;
+    }
+  }
+
+  tbody {
+    @media (min-width: $mobile) {
+      display: table-row-group;
+    }
+
+    td {
+      display: block; // For browsers that don't support flexbox
+      display: flex;
+      justify-content: space-between;
+      vertical-align: middle;
+      @media (min-width: $mobile) {
+        display: table-cell;
+      }
+    }
+
+    .table-heading {
+      font-weight: 700;
+      text-align: left;
+      padding-right: 1em;
+      display: block;
+      @media (min-width: $mobile) {
+        display: none;
+      }
+    }
+
+    tr {
+      margin-bottom: 1em;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+      @media (min-width: $mobile) {
+        display: table-row;
+      }
+
+      th {
+        text-align: right;
+        @media (min-width: $mobile) {
+          text-align: left;
+        }
+      }
+
+      td {
+        min-width: 1px;
+        text-align: right;
+        vertical-align: text-top;
+        @media (min-width: $mobile) {
+          text-align: left;
+        }
+
+        &.numeric {
+          text-align: left;
+          @media (min-width: $mobile) {
+            text-align: right;
+          }
+        }
+      }
+    }
+
+    .total {
+      @media (max-width: $mobile) {
+        display: block;
+      }
+    }
+  }
+}
+
+.table-foot {
+  display: flex;
+  font-weight: 700;
+  justify-content: space-between;
+}
+/* Customisations */
+table {
+  @media (max-width: 767px) {
+    border-spacing: 0 16px;
+  }
+}
+
+.dob-results-td,
+.dob-results-th,
+.nhs-no-results-td,
+.nhs-no-results-th {
+  white-space: nowrap;
+}
+
+.address-results-td {
+  @media (min-width: 768px) {
+    display: -webkit-flex;
+    /* Safari */
+    -webkit-flex-wrap: wrap;
+    /* Safari 6.1+ */
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+.name-results-td {
+  font-weight: 600;
+  text-decoration: none;
+  display: -webkit-flex;
+  /* Safari */
+  -webkit-flex-wrap: wrap;
+  /* Safari 6.1+ */
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.patient-search-result {
+  background: $color_nhsuk-white;
+}

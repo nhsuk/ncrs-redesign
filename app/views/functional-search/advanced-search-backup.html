@@ -45,6 +45,7 @@
       <h2 class="nhsuk-heading-m">Enter as many details as you know</h1>
 
       <form id="advanced-details-search" action="search-results">
+        <fieldset class="nhsuk-fieldset">
 
         <!--- Error Summary --->
 
@@ -144,10 +145,10 @@
         <!--- Postcode text input --->
 
         <div class="nhsuk-form-group">
-          <label class="nhsuk-label nhsuk-label__strong" for="address-postcode">
+          <label class="nhsuk-label nhsuk-label__strong" for="postcode-advanced">
             Postcode (optional)
           </label>
-          <input class="nhsuk-input nhsuk-input--width-10" id="address-postcode" name="postcode" type="text">
+          <input class="nhsuk-input nhsuk-input--width-10" id="postcode-advanced" name="postcode" type="text">
         </div>
 
         <!--- Date of birth text input --->
@@ -309,6 +310,7 @@
           </label>
           <input class="nhsuk-input nhsuk-input--width-10" id="gp-input" name="postcode" type="text">
         </div>
+
         <div class="nhsuk-form-group">
           <div class="nhsuk-grid-row">
             <div class="nhsuk-grid-column-full">
@@ -318,7 +320,9 @@
             </div>
           </div>
         </div>
+      </fieldset>
       </form>
     </div>
   </div>
+
 {% endblock %}

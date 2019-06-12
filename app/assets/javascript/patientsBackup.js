@@ -13,16 +13,16 @@ var patientsList = [
   ['5655050595', 'Jacynth', 'Petett', '71016 Kings Plaza', 'Belfast', 'M061CP', 'Female', '07-Oct-1956'],
   ['7472972134', 'Gamaliel', 'Potkins', '14 Utah Drive', 'Whitchurch', 'UE60LF', 'Male', '02-Oct-1944'],
   ['2063825688', 'Lizzie', 'Arnecke', '1 Bayside Circle', 'Linton', 'AY05XG', 'Female', '02-Jun-2013'],
-  ['1316950344', 'Dorella', 'Smith', '80 Holmberg Lane', 'Upton', 'BS130LQ', 'Female', '26-Apr-1998'],
-  ['8344690382', 'Hali', 'Smith', '2169 Ludington Terrace', 'Upton', 'BR54HN', 'Female', '26-Apr-1998'],
-  ['5275198353', 'Neddy', 'Smith', '38301 Vidon Trail', 'Langley', 'FY81UB', 'Female', '26-Apr-1998'],
-  ['2977560009', 'Leland', 'Smith', '31599 Dunning Street', 'London', 'MK183EW', 'Female', '26-Apr-1998'],
-  ['0344362957', 'Tome', 'Smith', '693 Spenser Pass', 'Hatton', 'RG193PQ', 'Female', '26-Apr-1998'],
-  ['8825402473', 'Avie', 'Smith', '9768 Gerald Terrace', 'London', 'BD226DF', 'Female', '26-Apr-1998'],
-  ['0135644305', 'Osbert', 'Smith', '55 Stang Trail', 'Normanton', 'SK87DJ', 'Female', '26-Apr-1998'],
-  ['5217192623', 'Timoteo', 'Smith', '13416 Bashford Drive', 'Marston', 'BA25AB', 'Female', '26-Apr-1998'],
-  ['6705809256', 'Katharine', 'Smith', '9621 Kedzie Center', 'Whitwell', 'PA308HU', 'Female', '26-Apr-1998'],
-  ['7479065205', 'Carroll', 'Smith', '94894 Hagan Avenue', 'Whitwell', 'OX110PG', 'Female', '26-Apr-1998']
+  ['1316950344', 'Dorella', 'Smith', '80 Holmberg Lane', 'Upton', 'BS13 0LQ', 'Female', '26-Apr-1998'],
+  ['8344690382', 'Hali', 'Smith', '2169 Ludington Terrace', 'Upton', 'BR5 4HN', 'Female', '26-Apr-1998'],
+  ['5275198353', 'Neddy', 'Smith', '38301 Vidon Trail', 'Langley', 'FY8 1UB', 'Female', '26-Apr-1998'],
+  ['2977560009', 'Leland', 'Smith', '31599 Dunning Street', 'London', 'MK18 3EW', 'Female', '26-Apr-1998'],
+  ['0344362957', 'Tome', 'Smith', '693 Spenser Pass', 'Hatton', 'RG19 3PQ', 'Female', '26-Apr-1998'],
+  ['8825402473', 'Avie', 'Smith', '9768 Gerald Terrace', 'London', 'BD22 6DF', 'Female', '26-Apr-1998'],
+  ['0135644305', 'Osbert', 'Smith', '55 Stang Trail', 'Normanton', 'SK8 7DJ', 'Female', '26-Apr-1998'],
+  ['5217192623', 'Timoteo', 'Smith', '13416 Bashford Drive', 'Marston', 'BA2 5AB', 'Female', '26-Apr-1998'],
+  ['6705809256', 'Katharine', 'Smith', '9621 Kedzie Center', 'Whitwell', 'PA30 8HU', 'Female', '26-Apr-1998'],
+  ['7479065205', 'Carroll', 'Smith', '94894 Hagan Avenue', 'Whitwell', 'OX11 0PG', 'Female', '26-Apr-1998']
 ]
 
 /* Capture search details */
@@ -255,42 +255,33 @@ $("#advanced-details-search").submit(function(e) {
   var patientGpAdvanced = $('#gp-input').val();
   sessionStorage.setItem("patientGpAdvanced", patientGpAdvanced);
   */
-  if ($("#address-name-number").length > 0) {
-    var patientHouseNum = $("#address-name-number").val()
-  } else {
-    var patientHouseNum = "";
-  }
-  sessionStorage.setItem("patientHouseNum", patientHouseNum);
+if ($("#address-name-number").length > 0 ) {
+  var patientHouseNum = $("#address-name-number").val()
+} else {
+  var patientHouseNum = "";
+}
+sessionStorage.setItem("patientHouseNum", patientHouseNum);
 
-  if ($("#address-street").length > 0) {
-    var patientStreet = $("#address-street").val().toLowerCase();
-  } else {
-    var patientStreet = "";
-  }
-  sessionStorage.setItem("patientStreet", patientStreet);
+if ($("#address-street").length > 0 ) {
+  var patientStreet = $("#address-street").val()
+} else {
+  var patientStreet = "";
+}
+sessionStorage.setItem("patientStreet", patientStreet);
 
-  if ($("#address-town-city").length > 0) {
-    var patientTownCity = $("#address-town-city").val().toLowerCase();
-  } else {
-    var patientTownCity = "";
-  }
-  sessionStorage.setItem("patientTownCity", patientTownCity);
+if ($("#address-town-city").length > 0 ) {
+  var patientTownCity = $("#address-town-city").val()
+} else {
+  var patientTownCity = "";
+}
+sessionStorage.setItem("patientTownCity", patientTownCity);
 
-  if ($("#address-county").length > 0) {
-    var patientCounty = $("#address-county").val().toLowerCase();
-  } else {
-    var patientCounty = "";
-  }
-  sessionStorage.setItem("patientCounty", patientCounty);
-
-  if ($("#address-postcode").length > 0) {
-    var patientPostcodeAdvanced = $('#address-postcode').val();
-    var patientPostcodeAdvancedUpper = patientPostcodeAdvanced.toUpperCase();
-    var patientPostcodeAdvancedFormatted = patientPostcodeAdvancedUpper.replace(/\s/g, '');
-  } else {
-    var patientPostcodeAdvancedFormatted = "";
-  }
-  sessionStorage.setItem("patientPostcodeAdvanced", patientPostcodeAdvancedFormatted);
+if ($("#address-county").length > 0 ) {
+  var patientCounty = $("#address-county").val()
+} else {
+  var patientCounty = "";
+}
+sessionStorage.setItem("patientCounty", patientCounty);
 
 
   if (!$('input[name=gender-advanced]').is(':checked')) {
@@ -338,10 +329,6 @@ var deathFromDate = sessionStorage.getItem("deathFromDate");
 var deathToDate = sessionStorage.getItem("deathToDate");
 var patientGpAdvanced = sessionStorage.getItem("patientGpAdvanced");
 var parsedDob = sessionStorage.getItem("parsedDob");
-var patientHouseNum = sessionStorage.getItem("patientHouseNum");
-var patientStreet = sessionStorage.getItem("patientStreet");
-var patientTownCity = sessionStorage.getItem("patientTownCity");
-var patientCounty = sessionStorage.getItem("patientCounty");
 
 /* Find patient in patientList */
 
@@ -394,163 +381,29 @@ for (var i in patientsList) {
 
   var wholeDate = moment(dateString, 'DD-MMM-YYYY').format("MM/DD/YYYY")
 
-  if ((patientGenderAdvanced == patientsList[i][6] || patientGenderAdvanced == "Not known") && ((patientFirstNameAdvanced == "") || (patientFirstNameAdvanced !== "" && patientFirstNameAdvanced == patientsList[i][1])) && (patientLastNameAdvanced == patientsList[i][2]) && ((moment(wholeDate).isBetween(dobFrom, dobTo, null, '[]'))) && ((patientHouseNum == "") || (patientHouseNum !== "" && patientsList[i][3].includes(patientHouseNum))) && ((patientStreet == "") || (patientStreet !== "" && patientsList[i][3].toLowerCase().includes(patientStreet))) && ((patientTownCity == "") || (patientTownCity !== "" && patientsList[i][4].toLowerCase().includes(patientTownCity))) && ((patientPostcodeAdvanced == "") || (patientPostcodeAdvanced !== "" && patientPostcodeAdvanced == patientsList[i][5]))) /*&& ((patientFirstNameAdvanced == '') || (patientFirstNameAdvanced !== '' && patientFirstNameAdvanced == patientsList[i][1])) && (patientLastNameAdvanced == patientsList[i][2]) && ((patientPostcodeAdvanced == '') || (patientPostcodeAdvanced !== '' && patientPostcodeAdvanced == patientsList[i][5])) && (moment(wholeDate).isBetween(dobFrom, dobTo, null, '[]')))*/ {
+  if ((patientGenderAdvanced == patientsList[i][6] || patientGenderAdvanced == "Not known") && ((patientFirstNameAdvanced == '') || (patientFirstNameAdvanced !== '' && patientFirstNameAdvanced == patientsList[i][1])) && (patientLastNameAdvanced == patientsList[i][2]) && ((patientPostcodeAdvanced == '') || (patientPostcodeAdvanced !== '' && patientPostcodeAdvanced == patientsList[i][5])) && (moment(wholeDate).isBetween(dobFrom, dobTo, null, '[]'))) {
     var returnedPatients = (patientsList[i]);
     returnedPatientsList.push(returnedPatients);
-    sessionStorage.setItem("returnedPatients", returnedPatients);
+    sessionStorage.setItem("returnedPatients", returnedPatients)
+
   } else {
 
   };
 
 };
 
-
 for (var i in returnedPatientsList) {
-
   var patientNhsNo = returnedPatientsList[i][0];
-  $('.patient-results').append('<tr role="row" class="patient-search-result"><td role="gridcell"><span class="table-heading" aria-hidden="true">Name</span><span><a href="patient-overview" class="name-results-td">' + returnedPatientsList[i][1] + " " + returnedPatientsList[i][2] + '</span></a></td><td role="gridcell"><span class="table-heading" aria-hidden="true">Date of birth</span><span class="dob-results-td">' + returnedPatientsList[i][7] + '</span></td><td role="gridcell"><span class="table-heading" aria-hidden="true">NHS Number</span><span class="nhs-no-results-td">' + returnedPatientsList[i][0].substr(0, 3) + " " + returnedPatientsList[i][0].substr(2, 3) + " " + returnedPatientsList[i][0].substr(5, 4) + '</span></td><td role="gridcell"><span class="table-heading" aria-hidden="true">Gender</span><span class="gender-results-td">' + returnedPatientsList[i][6] + '</span></td><td role="gridcell"><span class="table-heading" aria-hidden="true">Address</span><span class="address-results-td">' + returnedPatientsList[i][3] + ", " + returnedPatientsList[i][4] + "," + "&nbsp;" + "<span class='postcode-results-td'>" + returnedPatientsList[i][5].replace(/^(.*)(\d)/, '$1 $2') + "</span></span>" + '</td></tr>');
-
-  /*$('.search-results-container').append("<div class='nhsuk-grid-row nhsuk-promo-group search-result-item'><div class='nhsuk-grid-column-full nhsuk-promo-group__item'><div class='nhsuk-promo'><a class='nhsuk-promo__link-wrapper' href='patient-overview'><div class='nhsuk-promo__content'><h3 class='nhsuk-promo__heading search-results-name'>" + returnedPatientsList[i][1] + " " + returnedPatientsList[i][2] + "</h3><div class='nhsuk-grid-row'><div class='nhsuk-grid-column-full'><p class='nhsuk-promo__description search-results-description search-results-address'>" + returnedPatientsList[i][3] + ", " + returnedPatientsList[i][4] + "</p></div></div><div class='nhsuk-grid-row'><div class='nhsuk-grid-column-one-half'><p class='nhsuk-promo__description search-results-description'>NHS Number: <span class='search-results-nhs-no'>" + returnedPatientsList[i][0].substr(0, 3) + " " + returnedPatientsList[i][0].substr(2, 3) + " " + returnedPatientsList[i][0].substr(5, 4) + "</span></p></div><div class='nhsuk-grid-column-one-half'><p class='nhsuk-promo__description search-results-description'>Date of birth: <span class='search-results-dob'>" + returnedPatientsList[i][7] + "</span></p></div></div><div class='nhsuk-grid-row'><div class='nhsuk-grid-column-one-half'><p class='nhsuk-promo__description search-results-description'>Gender: <span class='search-results-gender'>" + returnedPatientsList[i][6] + "</span></p></div><div class='nhsuk-grid-column-one-half'><p class='nhsuk-promo__description search-results-description'>Postcode: <span class='search-results-postcode'>" + returnedPatientsList[i][5].replace(/^(.*)(\d)/, '$1 $2') + "</span></p></div></div></div></a></div></div></div>");*/
-
-};
-
-/*$('#search-results-table').each(function() {
-  $(this).find('tr:gt(5)').hide();
-});*/
-if (returnedPatientsList.length < 5) {
-  var numShown = returnedPatientsList.length
-} else {
-  var numShown = 5; // Initial rows shown & index
-}
-var numMore = 5; // Increment
-
-var $table = $('table').find('tbody'); // tbody containing all the rows
-var numRows = $table.find('tr').length; // Total # rows
-
-$(function() {
-  // Hide rows and add clickable div
-  $table.find('tr:gt(' + (numShown - 1) + ')').hide().end()
-  if (numShown >= 5) {
-    $(".load-more").html('<a class="nhsuk-button" id="more"><tr><td colspan="' +
-      $table.find('tr:first td').length + '"><div>Show <span>' +
-      numMore + '</span> More</div</a></td></tr>');
-  } else {
-
-  }
-
-  $('#more').click(function() {
-    $("html, body").animate({
-      scrollTop: $(document).height()
-    }, 1000);
-    numShown = numShown + numMore;
-    // no more "show more" if done
-    if (numShown >= numRows) {
-      $('#more').remove();
-    }
-    // change rows remaining if less than increment
-    if (numRows - numShown < numMore) {
-      $('#more span').html(numRows - numShown);
-
-    }
-    $table.find('tr:lt(' + numShown + ')').show();
-    if (numShown <= numRows) {
-      $('.results-count').html("Showing " + numShown + " of " + numRows + " results")
-    } else {
-      $('.results-count').html("Showing " + (numShown - (numShown - numRows)) + " of " + numRows + " results")
-    }
-  });
-
-  $('.results-count').html("Showing " + numShown + " of " + numRows + " results")
-});
-
-$.urlParam = function (name) {
-    var results = new RegExp('[\?&]' + name + '=([^&#]*)')
-                      .exec(window.location.search);
-
-    return (results !== null) ? results[1] || 0 : false;
-}
-
-function capitalizeFirstLetter(string) {
-    return string.charAt(0).toUpperCase() + string.slice(1);
-}
-
-if (patientGenderSearch !== null) {
-  var gender = "gender " + $.urlParam("gender") + ", "
-} else {
-  var gender = "gender " + $.urlParam("gender-advanced")+ ", "
-}
-
-if (patientFirstNameAdvanced == "") {
-  var firstName = ""
-} else {
-  var firstName = $.urlParam("first-name");
-  var firstNameFormatted = "first name " + capitalizeFirstLetter(firstName)+ ", "
+  $('.search-results-container').append("<div class='nhsuk-grid-row nhsuk-promo-group search-result-item'><div class='nhsuk-grid-column-full nhsuk-promo-group__item'><div class='nhsuk-promo'><a class='nhsuk-promo__link-wrapper' href='patient-overview'><div class='nhsuk-promo__content'><div class='nhsuk-grid-row'><div class='nhsuk-grid-column-one-half nhsuk-grid-column-mobile-one-half'><h3 class='nhsuk-promo__heading search-results-name'>" + returnedPatientsList[i][1] + " " + returnedPatientsList[i][2] + "</h3></div><div class='nhsuk-grid-column-one-half nhsuk-grid-column-mobile-one-half'><h4 class='nhsuk-promo__heading search-results-description'><span class='search-results-dob'>Born: " + returnedPatientsList[i][7] + "</span></h4></div></div><div class='nhsuk-grid-row'><div class='nhsuk-grid-column-full'><p class='nhsuk-promo__description search-results-description search-results-address'>" + returnedPatientsList[i][3] + ", " + returnedPatientsList[i][4] + ", " + returnedPatientsList[i][5].replace(/^(.*)(\d)/, '$1 $2') + "</p></div></div><div class='nhsuk-grid-row'><div class='nhsuk-grid-column-full'><p class='nhsuk-promo__description search-results-description'>NHS Number: <span class='search-results-nhs-no'>" + patientNhsNo.substr(0, 3) + " " + patientNhsNo.substr(3, 3) + " " + patientNhsNo.substr(6, 4) + "</span></p></div></div><div class='nhsuk-grid-row'><div class='nhsuk-grid-column-full'><p class='nhsuk-promo__description search-results-description'>Gender: <span class='search-results-gender'>" + returnedPatientsList[i][6] + "</span></p></div></div></div></a></div></div></div>");
 
 }
-
-if (patientLastNameSearch !== null) {
-  var lastName = $.urlParam("last-name");
-  var lastNameFormatted = "last name " + capitalizeFirstLetter(lastName)+ ", "
-} else {
-  var lastName = $.urlParam("last-name");
-  var lastNameFormatted = "last name " + capitalizeFirstLetter(lastName)+ ", "
-
-}
-
-if (patientFormattedDob !== null) {
-  var dob = "date of birth " + patientFormattedDob + ", "
-} else {
-  var dob = "date of birth between " + moment(patientDobFrom, "MMDDYYYY").format("DD-MMM-YYYY") + " and " + moment(patientDobTo, "MMDDYYYY").format("DD-MMM-YYYY") + ", "
-}
-
-if (patientHouseNum || patientStreet || patientTownCity || patientCounty || patientPostcodeAdvanced) {
-  var address = "address ";
-} else {
-  var address = "";
-}
-
-if (patientHouseNum) {
-  var houseNum = patientHouseNum + " ";
-} else {
-  var houseNum = "";
-}
-
-if (patientStreet) {
-  var street = patientStreet + ", ";
-} else {
-  var street = "";
-}
-
-if (patientTownCity) {
-  var townCity = patientTownCity + ", ";
-} else {
-  var townCity = "";
-}
-
-if (patientCounty) {
-  var county = patientCounty + ", ";
-} else {
-  var county = "";
-}
-
-if (patientPostcodeAdvanced) {
-  var postcode = patientPostcodeAdvanced;
-} else {
-  var postcode = "";
-}
-
-var resultsList = gender + firstNameFormatted + lastNameFormatted + dob + address + houseNum + street + townCity + county + postcode;
-var formattedResultsList = resultsList.replace(/,\s*$/, "");
 
 if (returnedPatientsList.length == 0) {
-  $(".search-results-container").css("display", "none");
-  $('.number-of-results').html("<h3 class='nhsuk-heading-m'>Sorry. We couldn't find any patients with " + formattedResultsList +"</h3>")
-  $('.number-of-results').append("<p>You can try adding more details using <a href='advanced-details-search'>an advanced details search</a></p>")
-
+  $('.number-of-results').html("Sorry, there were no results matching your search. You can try <a href='nhs-number-search-adv'>searching again</a>.")
 } else if ((returnedPatientsList.length == 1)) {
-  $('.number-of-results').html("We found " + returnedPatientsList.length + " result matching your search for " + formattedResultsList)
+  $('.number-of-results').html("We found " + returnedPatientsList.length + " result matching your search.")
 } else {
-  $('.number-of-results').html("We found " + returnedPatientsList.length + " results matching your search for " + formattedResultsList)
+  $('.number-of-results').html("We found " + returnedPatientsList.length + " results matching your search.")
 }
 
 /* Save patient details to session storage when clicking a search result*/
@@ -571,22 +424,6 @@ $(".nhsuk-promo").click(function() {
 
 });
 
-$(".patient-search-result").click(function() {
-  var patientName = $(this).find(".name-results-td").text();
-  var patientAddress = $(this).find(".address-results-td").text();
-  var patientNhsNo = $(this).find(".nhs-no-results-td").text();
-  var patientDob = $(this).find(".dob-results-td").text();
-  var patientGender = $(this).find(".gender-results-td").text();
-  var patientPostcode = $(this).find(".postcode-results-td").text();
-
-  sessionStorage.setItem("patientName", patientName);
-  sessionStorage.setItem("patientAddress", patientAddress);
-  sessionStorage.setItem("patientNhsNo", patientNhsNo);
-  sessionStorage.setItem("patientDob", patientDob);
-  sessionStorage.setItem("patientGender", patientGender);
-  sessionStorage.setItem("patientPostcode", patientPostcode);
-});
-
 /* Retrieve patient details to session storage when document is ready*/
 var patientName = sessionStorage.getItem("patientName");
 var patientAddress = sessionStorage.getItem("patientAddress");
@@ -596,8 +433,6 @@ var patientGender = sessionStorage.getItem("patientGender");
 var patientPostcode = sessionStorage.getItem("patientPostcode");
 var patientAge = sessionStorage.getItem("patientAge");
 var patientAddressWithPostcode = patientAddress + patientPostcode;
-
-
 
 var parsedDob = moment(patientDob, "DD-MMM-YYYY").format("DD-MM-YYYY");
 var patientAge = moment(new Date()).diff(moment(parsedDob, "DD-MM-YYYY"), 'years', false)

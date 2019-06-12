@@ -60,9 +60,15 @@
               You must correct the following errors
             </p>
             <ul class="nhsuk-list nhsuk-error-summary__list">
-              <li><a id="error-summary-advanced-gender" href="#nhsuk-form-group-gender" style="display:none">You must select a gender for the patient</a></li>
-              <li><a id="error-summary-advanced-last-name" href="#nhsuk-form-group-last-name" style="display:none">You must enter a last name for the patient</a></li>
-              <li><a id="error-summary-advanced-dob" href="#nhsuk-form-group-dob" style="display:none">You must enter a date of birth range for the patient in the format 31 3 1980</a></li>
+              <li>
+                <a id="error-summary-advanced-gender" href="#nhsuk-form-group-gender" style="display:none">You must select a gender for the patient</a>
+              </li>
+              <li>
+                <a id="error-summary-advanced-last-name" href="#nhsuk-form-group-last-name" style="display:none">You must enter a last name for the patient</a>
+              </li>
+              <li>
+                <a id="error-summary-advanced-dob" href="#nhsuk-form-group-dob" style="display:none">You must enter a date of birth range for the patient in the format 31 3 1980</a>
+              </li>
             </ul>
           </div>
         </div>
@@ -141,10 +147,10 @@
         <!--- Postcode text input --->
 
         <div class="nhsuk-form-group">
-          <label class="nhsuk-label nhsuk-label__strong" for="postcode-advanced">
+          <label class="nhsuk-label nhsuk-label__strong" for="address-postcode">
             Postcode (optional)
           </label>
-          <input class="nhsuk-input nhsuk-input--width-10" id="postcode-advanced" name="postcode" type="text">
+          <input class="nhsuk-input nhsuk-input--width-10" id="address-postcode" name="postcode" type="text">
         </div>
 
         <!--- Date of birth text input --->
@@ -306,21 +312,18 @@
           </label>
           <input class="nhsuk-input nhsuk-input--width-10" id="gp-input" name="postcode" type="text">
         </div>
+        <div class="nhsuk-form-group">
+          <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-full">
+              <button class="nhsuk-button" type="submit">
+                Find patient
+              </button>
+            </div>
+          </div>
+        </div>
       </form>
 
     </div>
-
   </div>
 
-  <form id="advanced-search-button" action="search-results-tabs">
-    <div class="nhsuk-form-group">
-      <div class="nhsuk-grid-row">
-        <div class="nhsuk-grid-column-full">
-          <button class="nhsuk-button" type="submit">
-            Find patient
-          </button>
-        </div>
-      </div>
-    </div>
-  </form>
 {% endblock %}
