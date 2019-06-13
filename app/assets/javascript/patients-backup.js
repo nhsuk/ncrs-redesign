@@ -251,6 +251,7 @@ $("#advanced-search-button").submit(function(e) {
   } else {
     return true;
   }
+  
   if (!$('input[name=dob-day-from]').val() || !$('input[name=dob-month-from]').val() || !$('input[name=dob-year-from]').val() || !$('input[name=dob-day-to]').val() || !$('input[name=dob-month-to]').val() || !$('input[name=dob-year-to]').val()) {
     $('#dob-from-error-error').show();
     $('#dob-to-error-error').show();
