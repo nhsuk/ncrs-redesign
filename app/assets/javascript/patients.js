@@ -385,7 +385,6 @@ if (patientLastNameAdvanced) {
   $("#last-name-advanced").val("");
 }
 
-console.log(patientLastNameAdvanced);
 
 if (sessionStorage.getItem('dobDayFrom')) {
   $("#dob-day-from").val(sessionStorage.getItem('dobDayFrom'));
@@ -508,9 +507,9 @@ for (var i in patientsList) {
 
 for (var i in returnedPatientsList) {
 
-  var patientNhsNo = returnedPatientsList[i][0];
-  $('.patient-results').append('<tr role="row" class="patient-search-result"><td role="gridcell"><span class="table-heading" aria-hidden="true">Name</span><span><a href="patient-overview" class="name-results-td">' + returnedPatientsList[i][1] + " " + returnedPatientsList[i][2] + '</span></a></td><td role="gridcell"><span class="table-heading" aria-hidden="true">Date of birth</span><span class="dob-results-td">' + returnedPatientsList[i][7] + '</span></td><td role="gridcell"><span class="table-heading" aria-hidden="true">NHS Number</span><span class="nhs-no-results-td">' + returnedPatientsList[i][0].substr(0, 3) + " " + returnedPatientsList[i][0].substr(2, 3) + " " + returnedPatientsList[i][0].substr(5, 4) + '</span></td><td role="gridcell"><span class="table-heading" aria-hidden="true">Gender</span><span class="gender-results-td">' + returnedPatientsList[i][6] + '</span></td><td role="gridcell"><span class="table-heading" aria-hidden="true">Address</span><span class="address-results-td">' + returnedPatientsList[i][3] + ", " + returnedPatientsList[i][4] + "," + "&nbsp;" + "<span class='postcode-results-td'>" + returnedPatientsList[i][5].replace(/^(.*)(\d)/, '$1 $2') + "</span></span>" + '</td></tr>');
 
+  var patientNhsNo = returnedPatientsList[i][0];
+  $('.patient-results').append('<tr role="row" class="patient-search-result"><td role="gridcell"><span class="table-heading" aria-hidden="true">Name</span><span><a href="patient-overview" class="name-results-td">' + returnedPatientsList[i][1] + " " + returnedPatientsList[i][2] + '</span></a></td><td role="gridcell"><span class="table-heading" aria-hidden="true">Date of birth</span><span class="dob-results-td">' + returnedPatientsList[i][7] + '</span></td><td role="gridcell"><span class="table-heading" aria-hidden="true">NHS Number</span><span class="nhs-no-results-td">' + returnedPatientsList[i][0].substr(0, 3) + " " + returnedPatientsList[i][0].substr(2, 3) + " " + returnedPatientsList[i][0].substr(5, 4) + '</span></td><td role="gridcell"><span class="table-heading" aria-hidden="true">Gender</span><span class="gender-results-td">' + returnedPatientsList[i][6] + '</span></td><td role="gridcell"><span class="table-heading" aria-hidden="true">Address</span><span class="address-results-td">' + returnedPatientsList[i][3] + ", " + "<span class='patient-pob-td'>" + returnedPatientsList[i][4] + "</span>" + "," + "&nbsp;" + "<span class='postcode-results-td'>" + returnedPatientsList[i][5].replace(/^(.*)(\d)/, '$1 $2') + "</span></span>" + '</td></tr>');
 }
 
 /* Populate search results page */
@@ -682,6 +681,8 @@ $(".patient-search-result").click(function() {
   var patientDob = $(this).find(".dob-results-td").text();
   var patientGender = $(this).find(".gender-results-td").text();
   var patientPostcode = $(this).find(".postcode-results-td").text();
+  var patientPob = $(this).find(".patient-pob-td").text();
+
 
   sessionStorage.setItem("patientName", patientName);
   sessionStorage.setItem("patientAddress", patientAddress);
@@ -689,6 +690,7 @@ $(".patient-search-result").click(function() {
   sessionStorage.setItem("patientDob", patientDob);
   sessionStorage.setItem("patientGender", patientGender);
   sessionStorage.setItem("patientPostcode", patientPostcode);
+  sessionStorage.setItem("patientPob", patientPob);
 });
 
 /* Retrieve patient details to session storage when document is ready*/
@@ -699,7 +701,7 @@ var patientDob = sessionStorage.getItem("patientDob");
 var patientGender = sessionStorage.getItem("patientGender");
 var patientPostcode = sessionStorage.getItem("patientPostcode");
 var patientAge = sessionStorage.getItem("patientAge");
-var patientAddressWithPostcode = patientAddress + patientPostcode;
+var patientAddressWithPostcode = patientAddress;
 
 
 
@@ -722,6 +724,6 @@ if (patientName == "") {
   $('.patient-banner-address').text(patientAddressWithPostcode);
   $('.patient-banner-gender, .card-content-detail-gender').text(patientGender);
   $('.patient-banner-age').text(patientAge + " years old");
-  $('.card-content-detail-pob').text(patientAddress.substring(patientAddress.lastIndexOf(", ") + 1));
+  $('.card-content-detail-pob').text(sessionStorage.getItem("patientPob"));
   $('.card-content-detail-address').html(patientAddressWithPostcode.replace(/\,/g, '<br/>'));
 }
