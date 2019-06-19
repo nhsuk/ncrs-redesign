@@ -25,7 +25,6 @@ var patientsList = [
   ['6705809256', 'Katharine', 'Smith', '9621 Kedzie Center', 'Whitwell', 'PA308HU', 'Female', '26-Apr-1998'],
   ['7479065205', 'Carroll', 'Smith', '94894 Hagan Avenue', 'Whitwell', 'OX110PG', 'Female', '26-Apr-1998']
 ];
-
 /* Capture search details */
 
 /* NHS Number */

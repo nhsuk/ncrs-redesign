@@ -1,0 +1,261 @@
+{% extends 'layouts/layout-transactional.html' %}
+
+{% block pageTitle %}
+SCRa redesign - Index
+{% endblock %}
+
+{% block beforeContent %}
+
+<section class="nhsuk-hero">
+
+  <div class="nhsuk-width-container nhsuk-hero--border">
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-two-thirds">
+        <div class="nhsuk-hero__wrapper">
+          <h1 class="nhsuk-u-margin-bottom-3">SCRa redesign</h1>
+          <p class="nhsuk-body-l nhsuk-u-margin-bottom-0">Patient list for search functionality</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+  <div class="nhsuk-width-container">
+    <ol class="nhsuk-breadcrumb__list">
+      <li class="nhsuk-breadcrumb__item">
+        <a class="nhsuk-breadcrumb__link" id="find-patient" href="start">Search modifications</a>
+      </li>
+      <li class="nhsuk-breadcrumb__item">
+        <a class="nhsuk-breadcrumb__link" href="#">Patient list</a>
+      </li>
+    </ol>
+    <p class="nhsuk-breadcrumb__back">
+      <a class="nhsuk-breadcrumb__backlink" href="start">Search modifications</a>
+    </p>
+  </div>
+</nav>
+
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-grid-column-two-thirds">
+
+    <div class="section">
+
+      <table class="responsive-table">
+        <tr>
+          <th>NHS Number</th>
+          <th>Full Name</th>
+          <th>Address</th>
+          <th>City</th>
+          <th>Postcode</th>
+          <th>Gender</th>
+          <th>Date of Birth</th>
+        </tr>
+        <tr>
+          <td role="gridrow">9550972968</td>
+          <td role="gridrow">Elisha Sapsed</td>
+          <td role="gridrow">55 Troy Place</td>
+          <td role="gridrow">Sutton</td>
+          <td role="gridrow">X563TG</td>
+          <td role="gridrow">Female</td>
+          <td role="gridrow">06-Sep-1968</td>
+        </tr>
+        <tr>
+          <td role="gridrow"> 5974163354</td>
+          <td role="gridrow">Jordanna Collop</td>
+          <td role="gridrow">285 Chinook Trail</td>
+          <td role="gridrow">Bradford</td>
+          <td role="gridrow">E83JZ</td>
+          <td role="gridrow">Female</td>
+          <td role="gridrow">27-Feb-2006</td>
+        </tr>
+        <tr>
+          <td role="gridrow"> 4126104984</td>
+          <td role="gridrow">Justina Collop</td>
+          <td role="gridrow">285 Chinook Trail</td>
+          <td role="gridrow">Bradford</td>
+          <td role="gridrow">E83JZ</td>
+          <td role="gridrow">Female</td>
+          <td role="gridrow">27-Feb-2006</td>
+        </tr>
+        <tr>
+          <td role="gridrow"> 9015678065</td>
+          <td role="gridrow">Ranna Enochsson</td>
+          <td role="gridrow">6 Steensland Circle</td>
+          <td role="gridrow">Burnside</td>
+          <td role="gridrow">EB717QM</td>
+          <td role="gridrow">Female</td>
+          <td role="gridrow">10-Mar-1967</td>
+        </tr>
+        <tr>
+          <td role="gridrow"> 9397085291</td>
+          <td role="gridrow">Quincy Cramphorn</td>
+          <td role="gridrow">519 Raven Way</td>
+          <td role="gridrow">West End</td>
+          <td role="gridrow">DN36 7TU</td>
+          <td role="gridrow">Male</td>
+          <td role="gridrow">22-Sep-1963</td>
+        </tr>
+        <tr>
+          <td role="gridrow"> 9762318315</td>
+          <td role="gridrow">Angelle Peeke-Vout</td>
+          <td role="gridrow">4473 Fair Oaks Alley</td>
+          <td role="gridrow">Preston</td>
+          <td role="gridrow">F348ZS</td>
+          <td role="gridrow">Female</td>
+          <td role="gridrow">16-Dec-1998</td>
+        </tr>
+        <tr>
+          <td role="gridrow"> 9453238023</td>
+          <td role="gridrow">Giacobo Erni</td>
+          <td role="gridrow">05584 Luster Point</td>
+          <td role="gridrow">Sheffield</td>
+          <td role="gridrow">S52NF</td>
+          <td role="gridrow">Male</td>
+          <td role="gridrow">01-Sep-2004</td>
+        </tr>
+        <tr>
+          <td role="gridrow"> 9397084291</td>
+          <td role="gridrow">Raquel Twinbrow</td>
+          <td role="gridrow">9451 Burning Wood Lane</td>
+          <td role="gridrow">Whitwell</td>
+          <td role="gridrow">N94AL</td>
+          <td role="gridrow">Female</td>
+          <td role="gridrow">04-Apr-2008</td>
+        </tr>
+        <tr>
+          <td role="gridrow"> 0768832756</td>
+          <td role="gridrow">Georgia Lamba</td>
+          <td role="gridrow">4560 Portage Trail</td>
+          <td role="gridrow">Linton</td>
+          <td role="gridrow">PM151DJ</td>
+          <td role="gridrow">Female</td>
+          <td role="gridrow">20-Apr-1994</td>
+        </tr>
+        <tr>
+          <td role="gridrow"> 5655050595</td>
+          <td role="gridrow">Jacynth Petett</td>
+          <td role="gridrow">71016 Kings Plaza</td>
+          <td role="gridrow">Belfast</td>
+          <td role="gridrow">M061CP</td>
+          <td role="gridrow">Female</td>
+          <td role="gridrow">07-Oct-1956</td>
+        </tr>
+        <tr>
+          <td role="gridrow"> 7472972134</td>
+          <td role="gridrow">Gamaliel Potkins</td>
+          <td role="gridrow">14 Utah Drive</td>
+          <td role="gridrow">Whitchurch</td>
+          <td role="gridrow">UE60LF</td>
+          <td role="gridrow">Male</td>
+          <td role="gridrow">02-Oct-1944</td>
+        </tr>
+        <tr>
+          <td role="gridrow"> 2063825688</td>
+          <td role="gridrow">Lizzie Arnecke</td>
+          <td role="gridrow">1 Bayside Circle</td>
+          <td role="gridrow">Linton</td>
+          <td role="gridrow">AY05XG</td>
+          <td role="gridrow">Female</td>
+          <td role="gridrow">02-Jun-2013</td>
+        </tr>
+        <tr>
+          <td role="gridrow"> 1316950344</td>
+          <td role="gridrow">Dorella Smith</td>
+          <td role="gridrow">80 Holmberg Lane</td>
+          <td role="gridrow">Upton</td>
+          <td role="gridrow">BS130LQ</td>
+          <td role="gridrow">Female</td>
+          <td role="gridrow">26-Apr-1998</td>
+        </tr>
+        <tr>
+          <td role="gridrow"> 8344690382</td>
+          <td role="gridrow">Hali Smith</td>
+          <td role="gridrow">2169 Ludington Terrace</td>
+          <td role="gridrow">Upton</td>
+          <td role="gridrow">BR54HN</td>
+          <td role="gridrow">Female</td>
+          <td role="gridrow">26-Apr-1998</td>
+        </tr>
+        <tr>
+          <td role="gridrow"> 5275198353</td>
+          <td role="gridrow">Neddy Smith</td>
+          <td role="gridrow">38301 Vidon Trail</td>
+          <td role="gridrow">Langley</td>
+          <td role="gridrow">FY81UB</td>
+          <td role="gridrow">Female</td>
+          <td role="gridrow">26-Apr-1998</td>
+        </tr>
+        <tr>
+          <td role="gridrow"> 2977560009</td>
+          <td role="gridrow">Leland Smith</td>
+          <td role="gridrow">31599 Dunning Street</td>
+          <td role="gridrow">London</td>
+          <td role="gridrow">MK183EW</td>
+          <td role="gridrow">Female</td>
+          <td role="gridrow">26-Apr-1998</td>
+        </tr>
+        <tr>
+          <td role="gridrow"> 0344362957</td>
+          <td role="gridrow">Tome Smith</td>
+          <td role="gridrow">693 Spenser Pass</td>
+          <td role="gridrow">Hatton</td>
+          <td role="gridrow">RG193PQ</td>
+          <td role="gridrow">Female</td>
+          <td role="gridrow">26-Apr-1998</td>
+        </tr>
+        <tr>
+          <td role="gridrow"> 8825402473</td>
+          <td role="gridrow">Avie Smith</td>
+          <td role="gridrow">9768 Gerald Terrace</td>
+          <td role="gridrow">London</td>
+          <td role="gridrow">BD226DF</td>
+          <td role="gridrow">Female</td>
+          <td role="gridrow">26-Apr-1998</td>
+        </tr>
+        <tr>
+          <td role="gridrow"> 0135644305</td>
+          <td role="gridrow">Osbert Smith</td>
+          <td role="gridrow">55 Stang Trail</td>
+          <td role="gridrow">Normanton</td>
+          <td role="gridrow">SK87DJ</td>
+          <td role="gridrow">Female</td>
+          <td role="gridrow">26-Apr-1998</td>
+        </tr>
+        <tr>
+          <td role="gridrow"> 5217192623</td>
+          <td role="gridrow">Timoteo Smith</td>
+          <td role="gridrow">13416 Bashford Drive</td>
+          <td role="gridrow">Marston</td>
+          <td role="gridrow">BA25AB</td>
+          <td role="gridrow">Female</td>
+          <td role="gridrow">26-Apr-1998</td>
+        </tr>
+        <tr>
+          <td role="gridrow"> 6705809256</td>
+          <td role="gridrow">Katharine Smith</td>
+          <td role="gridrow">9621 Kedzie Center</td>
+          <td role="gridrow">Whitwell</td>
+          <td role="gridrow">PA308HU</td>
+          <td role="gridrow">Female</td>
+          <td role="gridrow">26-Apr-1998</td>
+        </tr>
+        <tr>
+          <td role="gridrow"> 7479065205</td>
+          <td role="gridrow">Carroll Smith</td>
+          <td role="gridrow">94894 Hagan Avenue</td>
+          <td role="gridrow">Whitwell</td>
+          <td role="gridrow">OX110PG</td>
+          <td role="gridrow">Female</td>
+          <td role="gridrow">26-Apr-1998</td>
+        </tr>
+      </table>
+    </div>
+
+  </div>
+  {% endblock %}
