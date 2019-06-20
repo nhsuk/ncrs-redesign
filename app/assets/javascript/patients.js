@@ -517,6 +517,12 @@ function capitalizeFirstLetter(string) {
   return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
+if (patientNhsSearch) {
+  var nhsNo = "NHS Number " + patientNhsSearch;
+} else {
+  var nhsNo = "";
+}
+
 if (patientGenderSearch) {
   var gender = "gender " + patientGenderSearch + ", ";
 } else if (patientGenderAdvanced !== null) {
@@ -583,7 +589,7 @@ if (patientPostcodeAdvanced) {
   var postcode = "";
 }
 
-var resultsList = gender + firstNameFormatted + lastNameFormatted + dob + address + houseNum;
+var resultsList = nhsNo + gender + firstNameFormatted + lastNameFormatted + dob + address + houseNum;
 var formattedResults = resultsList.replace(/,\s*$/, "");
 
 function insertBeforeLastOccurrence(strToSearch, strToFind, strToInsert) {
