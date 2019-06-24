@@ -436,6 +436,10 @@ $("#find-patient-link").click(function() {
   sessionStorage.clear();
 });
 
+$(".index-page-link").click(function() {
+  sessionStorage.clear();
+});
+
 $("#index-page-link").click(function() {
   sessionStorage.clear();
 });
@@ -713,7 +717,7 @@ var patientAddressWithPostcode = patientAddress;
 var parsedDob = moment(patientDob, "DD-MMM-YYYY").format("DD-MM-YYYY");
 var patientAge = moment(new Date()).diff(moment(parsedDob, "DD-MM-YYYY"), 'years', false);
 
-if (patientName == "") {
+if (!patientName) {
   $('.patient-banner-name, .card-content-name').text("William Shakespeare");
   $('.patient-banner-dob, .card-content-detail-dob').text("30-Jan-1970");
   $('.patient-banner-nhs-no, .card-content-detail-nhs-no').text("123 456 7890");
