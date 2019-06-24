@@ -367,8 +367,7 @@ $("#refine-search-link").click(function() {
 
 if (patientGenderSearch) {
   $("input[name=gender-advanced][value='" + sessionStorage.getItem('patientGenderSearch') + "']").attr('checked', true);
-}
-else if (patientGenderAdvanced) {
+} else if (patientGenderAdvanced) {
   $("input[name=gender-advanced][value='" + sessionStorage.getItem('patientGenderAdvanced') + "']").attr('checked', true);
 }
 
@@ -432,7 +431,7 @@ $("#nhs-number-link").click(function() {
   sessionStorage.clear();
 });
 
-$("#find-patient-link").click(function() {
+$("#find-patient").click(function() {
   sessionStorage.clear();
 });
 
