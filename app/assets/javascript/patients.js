@@ -22,8 +22,12 @@ var patientsList = [
   ['8825402473', 'Avie', 'Smith', '9768 Gerald Terrace', 'London', 'BD226DF', 'Female', '26-Apr-1998'],
   ['0135644305', 'Osbert', 'Smith', '55 Stang Trail', 'Normanton', 'SK87DJ', 'Female', '26-Apr-1998'],
   ['5217192623', 'Timoteo', 'Smith', '13416 Bashford Drive', 'Marston', 'BA25AB', 'Female', '26-Apr-1998'],
-  ['6705809256', 'Katharine', 'Smith', '9621 Kedzie Center', 'Whitwell', 'PA308HU', 'Female', '26-Apr-1998'],
-  ['7479065205', 'Carroll', 'Smith', '94894 Hagan Avenue', 'Whitwell', 'OX110PG', 'Female', '26-Apr-1998']
+  ['6705809256', 'Katharine', 'Smith', '9621 Kedzie Center', 'London', 'PA308HU', 'Female', '26-Apr-1998'],
+  ['7479065205', 'Carroll', 'Smith', '94894 Hagan Avenue', 'London', 'OX110PG', 'Female', '26-Apr-1998'],
+  ['5298187064', 'Katie', 'Smith', '25 Guild Street', 'London', 'EC1V7QZ', 'Female', '21-Mar-1953'],
+  ['9887780707', 'Louise', 'Smith', '65 Main Road', 'London', 'RH54JJ', 'Female', '02-Aug-1989'],
+  ['2441861271', 'Lauren', 'Smith', '57 Crown Street', 'London', 'W1D4LD', 'Female', '20-Oct-1987'],
+  ['1991798466', 'Joe', 'Pearson', '98 Manor Close', 'Bristol', 'BS1 3ZR', 'Male', '20-Oct-1987']
 ];
 /* Capture search details */
 
@@ -215,6 +219,16 @@ $("#advanced-details-search").submit(function(e) {
   var patientLastNameAdvanced = patientLastNameCapitalise;
   sessionStorage.setItem("patientLastNameAdvanced", patientLastNameAdvanced);
 
+if ($('input[name=widen-search]:checked').length > 0 ) {
+  var widenSearch = true;
+} else {
+  var widenSearch = false;
+}
+
+sessionStorage.setItem("widenSearch", widenSearch);
+
+
+
   if ($('#postcode-advanced').length > 0) {
     var patientPostcodeAdvanced = $('#postcode-advanced').val();
     var patientPostcodeAdvancedUpper = patientPostcodeAdvanced.toUpperCase();
@@ -302,17 +316,13 @@ $("#advanced-details-search").submit(function(e) {
     $('#advanced-gender-error-error').show();
     $('#nhsuk-form-group-gender-advanced').addClass('nhsuk-form-group--error');
     $('#error-summary-advanced-gender').show();
-  } else {
-    return true;
   }
 
-  if (!$('input[name=last-name-advanced]').val()) {
+  if (!$('input[name=last-name]').val()) {
     $('#advanced-last-name-error-error').show();
     $('#last-name-advanced').addClass('nhsuk-input--error');
     $('#nhsuk-form-group-last-name-advanced').addClass('nhsuk-form-group--error');
     $('#error-summary-advanced-last-name').show();
-  } else {
-    return true;
   }
   if (!$('input[name=dob-day-from]').val() || !$('input[name=dob-month-from]').val() || !$('input[name=dob-year-from]').val() || !$('input[name=dob-day-to]').val() || !$('input[name=dob-month-to]').val() || !$('input[name=dob-year-to]').val()) {
     $('#dob-from-error-error').show();
@@ -320,8 +330,6 @@ $("#advanced-details-search").submit(function(e) {
     $('.nhsuk-dob-input__input').addClass('nhsuk-input--error');
     $('#nhsuk-form-group-dob-advanced').addClass('nhsuk-form-group--error');
     $('#error-summary-advanced-dob').show();
-  } else {
-    return true;
   }
 
   if (!$('input[name=gender-advanced]').is(':checked') || !$('#last-name-advanced').val() || !$('#dob-day-from').val() || !$('#dob-month-from').val() || !$('#dob-year-from').val() || !$('#dob-day-to').val() || !$('#dob-month-to').val() || !$('#dob-year-to').val()) {
@@ -336,6 +344,7 @@ $("#advanced-details-search").submit(function(e) {
 var patientGenderAdvanced = sessionStorage.getItem("patientGenderAdvanced");
 var patientFirstNameAdvanced = sessionStorage.getItem("patientFirstNameAdvanced");
 var patientLastNameAdvanced = sessionStorage.getItem("patientLastNameAdvanced");
+var widenSearch = sessionStorage.getItem("widenSearch");
 var patientPostcodeAdvanced = sessionStorage.getItem("patientPostcodeAdvanced");
 var dobFrom = sessionStorage.getItem("dobFrom");
 var dobTo = sessionStorage.getItem("dobTo");
@@ -495,7 +504,7 @@ for (var i in patientsList) {
 
   var wholeDate = moment(dateString, 'DD-MMM-YYYY').format("MM/DD/YYYY");
 
-  if ((patientGenderAdvanced == patientsList[i][6] || patientGenderAdvanced == "Not known") && ((patientFirstNameAdvanced == "") || (patientFirstNameAdvanced !== "" && patientFirstNameAdvanced == patientsList[i][1])) && (patientLastNameAdvanced == patientsList[i][2]) && ((moment(wholeDate).isBetween(dobFrom, dobTo, null, '[]'))) && ((patientHouseNum == "") || (patientHouseNum !== "" && patientsList[i][3].includes(patientHouseNum))) && ((patientStreet == "") || (patientStreet !== "" && patientsList[i][3].toLowerCase().includes(patientStreet))) && ((patientTownCity == "") || (patientTownCity !== "" && patientsList[i][4].toLowerCase().includes(patientTownCity))) && ((patientPostcodeAdvanced == "") || (patientPostcodeAdvanced !== "" && patientPostcodeAdvanced == patientsList[i][5]))) {
+  if ((patientGenderAdvanced == patientsList[i][6] || patientGenderAdvanced == "Not known") && ((patientFirstNameAdvanced == "") || (patientFirstNameAdvanced !== "" && patientFirstNameAdvanced == patientsList[i][1]) || (patientsList[i][1].includes(patientFirstNameAdvanced) && widenSearch == "true")) && (patientLastNameAdvanced == patientsList[i][2]) && ((moment(wholeDate).isBetween(dobFrom, dobTo, null, '[]'))) && ((patientHouseNum == "") || (patientHouseNum !== "" && patientsList[i][3].includes(patientHouseNum))) && ((patientStreet == "") || (patientStreet !== "" && patientsList[i][3].toLowerCase().includes(patientStreet))) && ((patientTownCity == "") || (patientTownCity !== "" && patientsList[i][4].toLowerCase().includes(patientTownCity))) && ((patientPostcodeAdvanced == "") || (patientPostcodeAdvanced !== "" && patientPostcodeAdvanced == patientsList[i][5]))) {
     var returnedPatients = (patientsList[i]);
     returnedPatientsList.push(returnedPatients);
     sessionStorage.setItem("returnedPatients", returnedPatients);
@@ -503,15 +512,15 @@ for (var i in patientsList) {
 
   }
 
-
-
 }
+
+console.log(sessionStorage.getItem("widenSearch"));
 
 for (var i in returnedPatientsList) {
 
 
   var patientNhsNo = returnedPatientsList[i][0];
-  $('.patient-results').append('<tr role="row" class="patient-search-result"><td role="gridcell"><span class="table-heading" aria-hidden="true">Name</span><span><a href="patient-overview" class="name-results-td">' + returnedPatientsList[i][1] + " " + returnedPatientsList[i][2] + '</span></a></td><td role="gridcell"><span class="table-heading" aria-hidden="true">Date of birth</span><span class="dob-results-td">' + returnedPatientsList[i][7] + '</span></td><td role="gridcell"><span class="table-heading" aria-hidden="true">NHS Number</span><span class="nhs-no-results-td">' + returnedPatientsList[i][0].substr(0, 3) + " " + returnedPatientsList[i][0].substr(2, 3) + " " + returnedPatientsList[i][0].substr(5, 4) + '</span></td><td role="gridcell"><span class="table-heading" aria-hidden="true">Gender</span><span class="gender-results-td">' + returnedPatientsList[i][6] + '</span></td><td role="gridcell"><span class="table-heading" aria-hidden="true">Address</span><span class="address-results-td">' + returnedPatientsList[i][3] + ", " + "<span class='patient-pob-td'>" + returnedPatientsList[i][4] + "</span>" + "," + "&nbsp;" + "<span class='postcode-results-td'>" + returnedPatientsList[i][5].replace(/^(.*)(\d)/, '$1 $2') + "</span></span>" + '</td></tr>');
+  $('.patient-results').append('<tr role="row" class="patient-search-result"><td role="gridcell"><span class="table-heading" aria-hidden="true">Name</span><span><a href="patient-overview" class="name-results-td">' + returnedPatientsList[i][1] + " " + returnedPatientsList[i][2] + '</span></a></td><td role="gridcell"><span class="table-heading" aria-hidden="true">Date of birth</span><span class="dob-results-td">' + returnedPatientsList[i][7] + '</span></td><td role="gridcell"><span class="table-heading" aria-hidden="true">NHS Number</span><span class="nhs-no-results-td">' + returnedPatientsList[i][0].substr(0, 3) + " " + returnedPatientsList[i][0].substr(2, 3) + " " + returnedPatientsList[i][0].substr(5, 4) + '</span></td><td role="gridcell"><span class="table-heading" aria-hidden="true">Gender</span><span class="gender-results-td">' + returnedPatientsList[i][6] + '</span></td><td role="gridcell"><span class="table-heading" aria-hidden="true">Address</span><span class="address-results-td">' + returnedPatientsList[i][3] + "," + "&nbsp;" + "<span class='patient-pob-td'>" + returnedPatientsList[i][4] + "</span>" + "," + "&nbsp;" + "<span class='postcode-results-td'>" + returnedPatientsList[i][5].replace(/^(.*)(\d)/, '$1 $2') + "</span></span>" + '</td></tr>');
 }
 
 /* Populate search results page */
