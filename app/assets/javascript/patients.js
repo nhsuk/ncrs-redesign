@@ -331,8 +331,34 @@ sessionStorage.setItem("widenSearch", widenSearch);
     $('#nhsuk-form-group-dob-advanced').addClass('nhsuk-form-group--error');
     $('#error-summary-advanced-dob').show();
   }
+  if ((!$('input[name=first-name]').val() && !$('input[name=address-postcode]').val()) && $('input[name=widen-search]:checked').length > 0) {
 
-  if (!$('input[name=gender-advanced]').is(':checked') || !$('#last-name-advanced').val() || !$('#dob-day-from').val() || !$('#dob-month-from').val() || !$('#dob-year-from').val() || !$('#dob-day-to').val() || !$('#dob-month-to').val() || !$('#dob-year-to').val()) {
+    if (!$('input[name=first-name]').val()) {
+      $('#advanced-first-name-error-error').show();
+      $('#first-name-advanced').addClass('nhsuk-input--error');
+      $('#nhsuk-form-group-first-name-advanced').addClass('nhsuk-form-group--error');
+      $('#error-summary-advanced-first-name').show();
+    } /*else {
+      $('#advanced-first-name-error-error').hide();
+      $('#first-name-advanced').removeClass('nhsuk-input--error');
+      $('#nhsuk-form-group-first-name-advanced').removeClass('nhsuk-form-group--error');
+      $('#error-summary-advanced-first-name').hide();
+    }*/
+
+    if (!$('input[name=address-postcode]').val()) {
+      $('#advanced-postcode-error-error').show();
+      $('#address-postcode').addClass('nhsuk-input--error');
+      $('#nhsuk-form-group-postcode-advanced').addClass('nhsuk-form-group--error');
+      $('#error-summary-advanced-postcode').show();
+    } /*else {
+      $('#advanced-postcode-error-error').hide();
+      $('#address-postcode').removeClass('nhsuk-input--error');
+      $('#nhsuk-form-group-postcode-advanced').removeClass('nhsuk-form-group--error');
+      $('#error-summary-advanced-postcode').hide();
+    }*/
+  }
+
+  if (!$('input[name=gender-advanced]').is(':checked') || !$('#last-name-advanced').val() || !$('#dob-day-from').val() || !$('#dob-month-from').val() || !$('#dob-year-from').val() || !$('#dob-day-to').val() || !$('#dob-month-to').val() || !$('#dob-year-to').val() || ((!$('input[name=first-name]').val() && !$('input[name=address-postcode]').val()) && $('input[name=widen-search]:checked').length > 0) ) {
     $('#nhsuk-advanced-error-summary').show();
     e.preventDefault();
   } else {

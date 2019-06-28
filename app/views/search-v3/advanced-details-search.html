@@ -45,7 +45,7 @@
 
     <div class="nhsuk-grid-column-three-quarters">
 
-      <h2 class="nhsuk-heading-m">Enter as many details as you know</h1>
+      <h2 class="nhsuk-heading-m">Enter as many details as you know</h2>
 
       <form id="advanced-details-search" action="search-results">
 
@@ -64,10 +64,16 @@
                 <a id="error-summary-advanced-gender" href="#nhsuk-form-group-gender" style="display:none">You must select a gender for the patient</a>
               </li>
               <li>
+                <a id="error-summary-advanced-first-name" href="#nhsuk-form-group-first-name" style="display:none">You must enter a first name and/or a postcode for the patient if you want to widen your search</a>
+              </li>
+              <li>
                 <a id="error-summary-advanced-last-name" href="#nhsuk-form-group-last-name" style="display:none">You must enter a last name for the patient</a>
               </li>
               <li>
                 <a id="error-summary-advanced-dob" href="#nhsuk-form-group-dob" style="display:none">You must enter a date of birth range for the patient in the format 31 3 1980</a>
+              </li>
+              <li>
+                <a id="error-summary-advanced-postcode" href="#nhsuk-form-group-postcode" style="display:none">You must enter a postcode and/or first name for the patient if you want to widen your search</a>
               </li>
             </ul>
           </div>
@@ -105,10 +111,13 @@
           </fieldset>
         </div>
         <!--- First name text input --->
-        <div class="nhsuk-form-group">
+        <div class="nhsuk-form-group" id="nhsuk-form-group-first-name-advanced">
           <label class="nhsuk-label nhsuk-label__strong" for="first-name-advanced">
             First name
           </label>
+          <span id="advanced-first-name-error-error" class="nhsuk-error-message" style="display: none">
+            You must enter a first name
+          </span>
           <input class="nhsuk-input nhsuk-input--width-20" id="first-name-advanced" name="first-name" type="text">
         </div>
         <!--- Last name text input --->
@@ -216,12 +225,12 @@
         </div>
 
         <div class="nhsuk-form-group">
-          <label class="nhsuk-label nhsuk-label__strong" for="address-form-group">
+          <!--<label class="nhsuk-label nhsuk-label__strong" for="address-form-group">
             Address (enter as many parts as you know)
-          </label>
+          </label>-->
           <fieldset class="nhsuk-fieldset" id="address-form-group" aria-describedby="address" role="group">
 
-            <div class="nhsuk-form-group">
+            <!--<div class="nhsuk-form-group">
               <label class="nhsuk-label" for="address-name-number">
                 House name or number
               </label>
@@ -247,12 +256,15 @@
                 County
               </label>
               <input class="nhsuk-input nhsuk-input--width-10" id="address-county" name="address-county" type="text">
-            </div>
+            </div>-->
 
-            <div class="nhsuk-form-group">
-              <label class="nhsuk-label" for="address-postcode">
+            <div class="nhsuk-form-group" id="nhsuk-form-group-postcode-advanced">
+              <label class="nhsuk-label nhsuk-label__strong" for="address-postcode">
                 Postcode
               </label>
+              <span id="advanced-postcode-error-error" class="nhsuk-error-message" style="display: none">
+                You must enter a postcode
+              </span>
               <input class="nhsuk-input nhsuk-input--width-10" id="address-postcode" name="address-postcode" type="text">
             </div>
 
