@@ -316,6 +316,10 @@ sessionStorage.setItem("widenSearch", widenSearch);
     $('#advanced-gender-error-error').show();
     $('#nhsuk-form-group-gender-advanced').addClass('nhsuk-form-group--error');
     $('#error-summary-advanced-gender').show();
+  } else {
+    $('#advanced-gender-error-error').hide();
+    $('#nhsuk-form-group-gender-advanced').removeClass('nhsuk-form-group--error');
+    $('#error-summary-advanced-gender').hide();
   }
 
   if (!$('input[name=last-name]').val()) {
@@ -323,13 +327,25 @@ sessionStorage.setItem("widenSearch", widenSearch);
     $('#last-name-advanced').addClass('nhsuk-input--error');
     $('#nhsuk-form-group-last-name-advanced').addClass('nhsuk-form-group--error');
     $('#error-summary-advanced-last-name').show();
+  } else {
+    $('#advanced-last-name-error-error').hide();
+    $('#last-name-advanced').removeClass('nhsuk-input--error');
+    $('#nhsuk-form-group-last-name-advanced').removeClass('nhsuk-form-group--error');
+    $('#error-summary-advanced-last-name').hide();
   }
+
   if (!$('input[name=dob-day-from]').val() || !$('input[name=dob-month-from]').val() || !$('input[name=dob-year-from]').val() || !$('input[name=dob-day-to]').val() || !$('input[name=dob-month-to]').val() || !$('input[name=dob-year-to]').val()) {
     $('#dob-from-error-error').show();
     $('#dob-to-error-error').show();
     $('.nhsuk-dob-input__input').addClass('nhsuk-input--error');
     $('#nhsuk-form-group-dob-advanced').addClass('nhsuk-form-group--error');
     $('#error-summary-advanced-dob').show();
+  } else {
+    $('#dob-from-error-error').hide();
+    $('#dob-to-error-error').hide();
+    $('.nhsuk-dob-input__input').removeClass('nhsuk-input--error');
+    $('#nhsuk-form-group-dob-advanced').removeClass('nhsuk-form-group--error');
+    $('#error-summary-advanced-dob').hide();
   }
   if ((!$('input[name=first-name]').val() && !$('input[name=address-postcode]').val()) && $('input[name=widen-search]:checked').length > 0) {
 
