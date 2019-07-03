@@ -18,11 +18,11 @@
 
 .role-permissions-content {
   color: $color_nhsuk-black;
-  border-left: 4px solid $color_nhsuk-grey-4;
   margin-top: 16px;
-
+  .nhsuk-do-dont-list {
+    background-color: $color_nhsuk-grey-5;
+  }
   ul {
-    padding-left: 0;
     list-style-type: none;
   }
 }
@@ -60,7 +60,7 @@
 .role-permissions-solitary:hover {
   box-shadow: 0 4px 0 0 #d8dde0;
 
-  h3 {
+  .role-type {
     color: $color_nhsuk-black;
   }
 }
