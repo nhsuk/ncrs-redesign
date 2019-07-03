@@ -14,4 +14,24 @@
   .nhsuk-header__navigation-link {
     padding: 18px;
   }
+  #scra-service-name {
+    padding-top: 14px;
+  }
+  .landing-page-nav li a {
+    padding: 26px;
+  }
+}
+
+#scra-service-name {
+  padding-top: 16px;
+}
+
+.landing-page-menu-btn {
+  margin: 16px 0;
+}
+
+@media (max-width: 40.0525em) {
+  .landing-page-menu-btn {
+    margin-right: 16px;
+  }
 }

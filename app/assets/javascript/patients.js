@@ -748,6 +748,8 @@ $(".patient-search-result").click(function() {
   sessionStorage.setItem("patientGender", patientGender);
   sessionStorage.setItem("patientPostcode", patientPostcode);
   sessionStorage.setItem("patientPob", patientPob);
+
+  window.location.href = "patient-overview"
 });
 
 /* Retrieve patient details to session storage when document is ready*/

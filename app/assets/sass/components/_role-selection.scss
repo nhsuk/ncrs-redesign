@@ -1,0 +1,74 @@
+.scra-promo-roles {
+  margin-bottom: 16px;
+}
+
+.scra-promo-roles:last-child {
+  margin-bottom: 16px;
+}
+
+@media screen and (min-width: 768px) {
+  .scra-promo-roles:last-child {
+    margin-bottom: 32px;
+  }
+}
+
+.role-type {
+  margin-bottom: 8px;
+}
+
+.role-permissions-content {
+  color: $color_nhsuk-black;
+  border-left: 4px solid $color_nhsuk-grey-4;
+  margin-top: 16px;
+
+  ul {
+    padding-left: 0;
+    list-style-type: none;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.role-permissions-content.open {
+  display: inline-block
+}
+
+@media (max-width: 40.0525em) {
+  .role-permissions-link {
+    margin-top: 16px;
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .role-permissions-content {
+    margin-top: 32px;
+  }
+}
+
+
+/* Solitary role page */
+
+.role-permissions-solitary {
+  h3 {
+    text-decoration: none;
+  }
+}
+
+.role-permissions-solitary:hover {
+  box-shadow: 0 4px 0 0 #d8dde0;
+
+  h3 {
+    color: $color_nhsuk-black;
+  }
+}
+
+.role-location {
+  margin-bottom: 0;
+}
+
+.nhsuk-promo__link-wrapper:focus .nhsuk-promo__heading {
+  color: $color_nhsuk-blue;
+}
