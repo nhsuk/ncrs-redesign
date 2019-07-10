@@ -1,0 +1,56 @@
+{% extends 'layouts/layout-application.html' %}
+
+{% block pageTitle %}
+Crisis contingency & relapse prevention plan
+{% endblock %}
+
+{% block beforeContent %}
+
+
+<div class="nhsuk-full-width-container">
+  <div class='scra-bordered-tabs-container'>
+    <div class="nhsuk-width-container-fluid">
+      <ul class="scra-bordered-tabs">
+        <li class="scra-bordered-tabs-item">
+          <a class="scra-bordered-tabs-link" href="patient-overview">Overview</a>
+        </li>
+        <li class="scra-bordered-tabs-item">
+          <a class="scra-bordered-tabs-link" href="patient-details">Patient</a>
+        </li>
+        <li class="scra-bordered-tabs-item">
+          <a class="scra-bordered-tabs-link" href="patient-clinical">Clinical</a>
+        </li>
+        <li class="scra-bordered-tabs-item scra-bordered-tabs-item-active">
+          <a class="scra-bordered-tabs-link" href="plans-landing-page-table">Documents</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+    <h1 class="nhsuk-heading-l">
+      <span role="text">Crisis contingency & relapse prevention plan
+        <span class="nhsuk-caption-m nhsuk-caption--bottom">
+          <span class="nhsuk-u-visually-hidden"> - </span>
+          Leeds Teaching Hospitals NHS Trust, 06-Sep-2018
+        </span>
+      </span>
+    </h1>
+    <div class="nhsuk-back-link">
+      <a class="nhsuk-back-link__link" href="plans-landing-page-table">
+        <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+        </svg>
+        Go back to Available documents</a>
+    </div>
+
+    <iframe class="pdf-iframe" src="../images/mhcp.pdf" height="600px"></iframe>
+  </div>
+</div>
+{% endblock %}
