@@ -131,3 +131,36 @@ table {
 .patient-search-result {
   background: $color_nhsuk-white;
 }
+@media (max-width: 768px) {
+  .nrl-results {
+    tr {
+      background-color: white;
+    }
+  }
+
+  .nrl-contact-link {
+    margin-bottom: 0
+  }
+
+  .nrl-action-link {
+    margin-bottom: 0;
+  }
+
+  .multiple-doc-td {
+    display: block!important;
+
+    .nrl-contact-link {
+      margin-top:16px;
+    }
+  }
+}
+
+.multiple-doc-td {
+  .nrl-action-link {
+    margin-bottom: 16px;
+  }
+}
+
+.nrl-action-link {
+  margin-bottom: 0;
+}

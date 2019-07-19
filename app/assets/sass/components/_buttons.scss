@@ -6,3 +6,12 @@
 .nhsuk-button--blue:hover {
   background-color: #002D88;
 }
+
+.nrl-button {
+  font-size: 1rem;
+  margin-bottom: 0;
+  padding: 8px 12px;
+  @media (min-width: 769px) {
+    display: block;
+  }
+}
