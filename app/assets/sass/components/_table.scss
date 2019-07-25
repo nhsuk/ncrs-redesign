@@ -128,6 +128,26 @@ table {
   flex-wrap: wrap;
 }
 
+#search-results-table {
+  border-collapse: collapse;
+
+  tr {
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
+  }
+
+  tbody {
+    tr:hover {
+      cursor: pointer;
+      border: 3px solid $color_nhsuk-warm-yellow;
+    }
+    a:hover {
+      background-color: transparent;
+      box-shadow: none;
+    }
+  }
+}
+
 .patient-search-result {
   background: $color_nhsuk-white;
 }
@@ -139,7 +159,7 @@ table {
   }
 
   .nrl-contact-link {
-    margin-bottom: 0
+    margin-bottom: 0;
   }
 
   .nrl-action-link {
@@ -150,7 +170,7 @@ table {
     display: block!important;
 
     .nrl-contact-link {
-      margin-top:16px;
+      margin-top: 16px;
     }
   }
 }
