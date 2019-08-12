@@ -4,9 +4,9 @@ jQuery(document).ready(function($) {
   //Check to see if the window is top if not then display button
   $(window).scroll(function() {
     if ($(this).scrollTop()) {
-        $(".scrollToTop").fadeIn();
+      $(".scrollToTop").fadeIn();
     } else {
-        $(".scrollToTop").fadeOut();
+      $(".scrollToTop").fadeOut();
     }
     if ($(window).scrollTop() + $(window).height() < $(document).height() - $("#nhsuk-footer").height() - 92) {
       $('.scrollToTop').css("position", "fixed"); //resetting it
@@ -21,7 +21,9 @@ jQuery(document).ready(function($) {
 
   //Click event to scroll to top
   $(".scrollToTop").click(function() {
-    $("html, body").animate({scrollTop: 0}, 1000);
-    });
+    $("html, body").animate({
+      scrollTop: 0
+    }, 1000);
+  });
 
 });
