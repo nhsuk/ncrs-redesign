@@ -141,6 +141,7 @@ table {
       cursor: pointer;
       border: 3px solid $color_nhsuk-warm-yellow;
     }
+
     a:hover {
       background-color: transparent;
       box-shadow: none;
@@ -151,10 +152,25 @@ table {
 .patient-search-result {
   background: $color_nhsuk-white;
 }
+
+.nrl-results {
+  tr {
+    background-color: white;
+    td {
+      vertical-align: top!important;
+    }
+  }
+}
 @media (max-width: 768px) {
+  #nrl-table {
+    border-spacing: 0 32px;
+  }
+
   .nrl-results {
     tr {
-      background-color: white;
+      td:last-child {
+        border-bottom: 4px solid $color_nhsuk-grey-4;
+      }
     }
   }
 
@@ -179,6 +195,11 @@ table {
   .nrl-action-link {
     margin-bottom: 16px;
   }
+}
+
+.nrl-trust-details {
+  list-style-type: none;
+  margin-bottom: 0;
 }
 
 .nrl-action-link {
