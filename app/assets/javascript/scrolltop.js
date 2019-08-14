@@ -15,7 +15,7 @@ jQuery(document).ready(function($) {
     }
     if ($(window).scrollTop() + $(window).height() > $(document).height() - $("#nhsuk-footer").height() - 92) {
       $('.scrollToTop').css("position", "relative"); // make it related
-      $('.scrollToTop').css("bottom", "62px"); // 60 px, height of #toTop
+      $('.scrollToTop').css("bottom", "42px"); // 60 px, height of #toTop
     }
   });
 
