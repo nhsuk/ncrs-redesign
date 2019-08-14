@@ -805,6 +805,7 @@ if (!patientName) {
   $('.patient-banner-age').text("49 years old");
   $('.card-content-detail-pob').text("Stratford-upon-Avon");
   $('.card-content-detail-address').html("1 Town Street, Stratford-upon-Avon, Warwickshire, AB1 2CD");
+  $('.name-dob-floater').html("William Shakespeare | 30-Jan-1970");
 } else {
   $('.patient-banner-name, .card-content-name').text(patientName);
   $('.patient-banner-dob, .card-content-detail-dob').text(patientDob);
@@ -814,4 +815,5 @@ if (!patientName) {
   $('.patient-banner-age').text(patientAge + " years old");
   $('.card-content-detail-pob').text(sessionStorage.getItem("patientPob"));
   $('.card-content-detail-address').html(patientAddressWithPostcode.replace(/\,/g, '<br/>'));
+  $('.name-dob-floater').html(patientName + " | " + patientDob);
 }

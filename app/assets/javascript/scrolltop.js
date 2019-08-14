@@ -1,6 +1,8 @@
 jQuery(document).ready(function($) {
 
   var visible = false;
+  var topofDiv = $(".nhsuk-header").offset().top; //gets offset of header
+  var height = $(".patient-banner").outerHeight() + $(".nhsuk-header").outerHeight(); //gets height of header
   //Check to see if the window is top if not then display button
   $(window).scroll(function() {
     if ($(this).scrollTop()) {
@@ -17,6 +19,14 @@ jQuery(document).ready(function($) {
       $('.scrollToTop').css("position", "relative"); // make it related
       $('.scrollToTop').css("bottom", "42px"); // 60 px, height of #toTop
     }
+
+    if($(window).scrollTop() > (topofDiv + height)){
+       $(".name-dob-floater").fadeIn();
+    }
+    else{
+       $(".name-dob-floater").fadeOut();
+    }
+
   });
 
   //Click event to scroll to top
@@ -25,5 +35,6 @@ jQuery(document).ready(function($) {
       scrollTop: 0
     }, 1000);
   });
+
 
 });
