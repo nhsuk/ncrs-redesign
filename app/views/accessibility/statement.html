@@ -1,0 +1,99 @@
+{% extends 'layouts/layout-transactional.html' %}
+
+{% block pageTitle %}
+Mobile SCRa - Accessibility Statement
+{% endblock %}
+
+{% block beforeContent %}
+
+<section class="nhsuk-hero">
+
+  <div class="nhsuk-width-container nhsuk-hero--border">
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-two-thirds">
+        <div class="nhsuk-hero__wrapper">
+          <h1 class="nhsuk-u-margin-bottom-3">Accessibility Statement for Mobile Summary Care Record application</h1>
+          <p class="nhsuk-body-l nhsuk-u-margin-bottom-0">Updated September 2019</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+{% endblock %}
+
+{% block content %}
+<section>
+  <div class="nhsuk-width-container">
+    <main class="nhsuk-main-wrapper" id="maincontent">
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-full">
+          <div class="nhsuk-u-reading-width">
+            <p>This website is run by NHS Digital. We want as many people as possible to be able to use this website. For example, that means you should be able to:</p>
+            <ul>
+              <li>change colours, contrast levels and fonts</li>
+              <li>zoom in up to 300% without the text spilling off the screen</li>
+              <li>navigate most of the website using just a keyboard</li>
+              <li>navigate most of the website using speech recognition software</li>
+              <li>listen to most of the website using a screen reader (including the most recent versions of JAWS, NVDA and VoiceOver)</li>
+            </ul>
+            <p><a rel="external" href="https://mcmw.abilitynet.org.uk/">AbilityNet</a> has advice on making your device easier to use if you have a disability.</p>
+
+
+            <h2>How accessible this website is</h2>
+            <p>
+              We know that some parts of this service aren't fully accessible:
+            </p>
+            <ul>
+              <li>
+                Tables within a patient's clinical information tab require horizontal scrolling when viewed at 200% zoom
+              </li>
+              <li>
+                The 'Copy' button within the patient header does not have a colour contrast of 3:1
+              </li>
+              <li>
+                [REQUIRES EDITING] Text spacing can not be amended using the spacing bookmarklet
+              </li>
+              <li>
+                The search results page can not be navigated using a keyboard
+              </li>
+              <li>
+                Our page titles aren't unique and don't indicate context sufficiently
+              </li>
+              <li>
+                We do not have a correct heading structure on confirm/change role pages, our search results page and our overview, patient and cinical pages which may cause issues with some screen reading software
+              </li>
+              <li>
+                Our patient search forms do not have all the correct labels and ARIA references
+              </li>
+              <li>
+                [REQUIRES CONFIRMING] Pages will not work correctly if JavaScript is disabled
+              </li>
+            </ul>
+
+            <h2>What to do if you can’t access parts of this website</h2>
+
+            <p>
+              [REQUIRES INFORMATION ADDING]
+            </p>
+
+            <h2>Reporting accessibility problems with this website</h2>
+
+            <p>
+              We’re always looking to improve the accessibility of this website. If you find any problems that aren’t listed on this page or think we’re not meeting accessibility requirements, contact: [REQUIRES CONTACT DETAILS].
+            </p>
+
+            <h2>Enforcement procedure</h2>
+
+            <p>The Equality and Human Rights Commission (EHRC) is responsible for enforcing the Public Sector Bodies (Websites and Mobile Applications) (No. 2) Accessibility Regulations 2018
+              (the ‘accessibility regulations’). If you’re not happy with how we respond to your complaint, <a rel="external" href="https://www.equalityadvisoryservice.com/">contact the Equality Advisory and Support Service (EASS)</a>.</p>
+
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+</section>
+{% endblock %}

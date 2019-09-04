@@ -6,6 +6,23 @@ a:visited {
   width: 100%;
 }
 
+.pdf-controls {
+  width: 752px;
+  height: auto;
+  background-color: $color_nhsuk-grey_1;
+  margin-bottom:0;
+  ul {
+    list-style-type: none;
+    display: inline-block;
+    margin-bottom: 0;
+    li a {
+      color: white;
+      text-decoration: none;
+    }
+  }
+}
+
+
 @media (min-width: 1440px) {
   .pdf-iframe {
     width: 50%;
