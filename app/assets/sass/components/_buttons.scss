@@ -7,6 +7,15 @@
   background-color: #002D88;
 }
 
+.nhsuk-button--red {
+  background-color: $color_nhsuk-red;
+  box-shadow: 0 4px 0 #8A1538;
+}
+
+.nhsuk-button--red:hover {
+  background-color: #8A1538;
+}
+
 .nrl-button {
   font-size: 1rem;
   margin-bottom: 0;
