@@ -123,12 +123,18 @@
         </div>
       </div>
       <div class="nhsuk-grid-row">
-        <div class="nhsuk-form-group">
+        <div class="nhsuk-form-group" id="explanation-form-group">
           <label class="nhsuk-label" for="more-detail">
             Explanation
           </label>
           <span class="nhsuk-hint" id="more-detail-hint">
             Please provide an explanation for accessing the patient's record
+          </span>
+          <span class="nhsuk-error-message hidden" id="ptv-char-length-error">
+            <span class="nhsuk-u-visually-hidden">Error:</span> Explanation must be between 4 and 50 characters
+          </span>
+          <span class="nhsuk-error-message hidden" id="ptv-char-forbidden-error">
+            <span class="nhsuk-u-visually-hidden">Error:</span> Explanation must only include characters: A-Z, a-z, 0-9, space, -, '
           </span>
           <textarea class="nhsuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
         </div>
@@ -136,7 +142,7 @@
       <div class="nhsuk-grid-row">
         <div class="nhsuk-grid-column-full-width">
           <div class="nhsuk-grid-column-one-half">
-            <a class="nhsuk-button nhsuk-button--blue" type="submit" style="width:100%;" href="patient-clinical">
+            <a class="nhsuk-button nhsuk-button--blue" id="submit-ptv" type="submit" style="width:100%;" href="patient-clinical">
               Continue
             </a>
           </div>
@@ -144,6 +150,14 @@
             <button class="nhsuk-button nhsuk-button--reverse close-btn" type="submit" style="width:100%;">
               Cancel
             </button>
+          </div>
+        </div>
+      </div>
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-two-thirds">
+          <div class="nhsuk-warning-callout">
+            <h3 class="nhsuk-warning-callout__label">Privacy information</h3>
+            <p>Any inappropriate breach of patient confidentiality will be a matter for disciplinary and potentially legal and/or professional proceedings. If in doubt speak to your manager or privacy officer.</p>
           </div>
         </div>
       </div>
