@@ -98,14 +98,22 @@
           </div>
         </div>
         <div class="nhsuk-grid-row">
-
-          <div class="nhsuk-grid-column-full-width">
-            <div class="nhsuk-grid-column-one-half">
-              <button class="nhsuk-button nhsuk-button--reverse" type="submit" style="width:100%;">
-                I need to access the record for other reasons
-              </button>
+            <div class="nhsuk-grid-column-one-third">
+              <div class="nhsuk-form-group" id="explanation-form-group">
+                <label class="nhsuk-label" for="explanation">
+                  Provide more information
+                </label>
+                <span class="nhsuk-hint" id="explanation-hint">
+                  Add any extra information you wish to add about the access
+                </span>
+                <textarea class="nhsuk-textarea" id="explanation" name="explanation" rows="3" aria-describedby="explanation-hint"></textarea>
+              </div>
             </div>
-          </div>
+            <div class="nhsuk-grid-column-two-thirds">
+              <p>
+                <a href="#">I need to access the record for other reasons</a>
+              </p>
+            </div>
         </div>
 
       </div>
