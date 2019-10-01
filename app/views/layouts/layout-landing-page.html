@@ -39,9 +39,14 @@
 {% from 'textarea/macro.njk' import textarea %}
 
 <!-- Set the page title inside this block -->
-{% block pageTitle %}
-  Dashboard
+{% block head %}
+  {% block pageTitle %}
+    Dashboard
+  {% endblock %}
 {% endblock %}
+
+
+
 
 <!-- Header goes inside this block -->
 {% block header %}
