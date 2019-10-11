@@ -41,6 +41,16 @@
   }
 }
 
+
+.alert-card__heading-container {
+  background-color: $color_nhsuk-warm-yellow!important;
+  color: $color_nhsuk-black!important;
+}
+
+.alert-card__arrow:before, .alert-card__arrow:after {
+  border: solid 32px $color_nhsuk-warm-yellow!important;
+}
+
 // Clinical Details
 
 .scra-card-content {

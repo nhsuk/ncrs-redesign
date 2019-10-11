@@ -5,3 +5,49 @@
 .nhsuk-bulletin-panel:first-of-type  {
   margin-top: 0;
 }
+
+.added-adjustments-list {
+  background-color: $color_nhsuk-white;
+  border-top: 3px solid $color_nhsuk-blue;
+  padding: 24px;
+}
+
+
+/* RA FLAG */
+
+.ra-list-text {
+  margin-bottom: 0;
+}
+
+.flag-category {
+  font-size: 14px;
+  margin-bottom: 2px;
+  color: $color_nhsuk-grey_1;
+  display: block;
+}
+
+.flag-desc {
+  font-size: 16px;
+}
+
+.hr-ra {
+  margin: 12px 0;
+}
+
+@media screen and (min-width: 768px) {
+  .flag-category {
+    font-size: 16px;
+  }
+  .flag-desc {
+    font-size: 19px;
+  }
+}
+
+.ra-edit {
+  width: 100%;
+  margin-bottom: 12px;
+}
+
+.ra-delete {
+  width: 100%;
+}

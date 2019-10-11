@@ -106,7 +106,7 @@
 }
 
 .ui-autocomplete {
-	max-height: 200px;
+	max-height: 400px;
 	overflow-y: auto;
 	/* prevent horizontal scrollbar */
 	overflow-x: hidden;
@@ -139,7 +139,8 @@
 }
 
 .ui-menu-item:hover {
-	background-color: $color_nhsuk-warm-yellow;
+	background-color: $color_nhsuk-blue;
+	color: $color_nhsuk-white;
 	border: 1px solid $color_nhsuk-black;
 }
 
@@ -1094,9 +1095,9 @@ a.ui-button:hover {
 .ui-widget-content .ui-state-active,
 .ui-widget-header .ui-state-active,
 a.ui-button:active {
-	background: $color_nhsuk-warm-yellow;
+	background: $color_nhsuk-blue;
 	font-weight: normal;
-	color: $color_nhsuk-black;
+	color: $color_nhsuk-white;
 }
 
 .ui-icon-background,
@@ -1962,4 +1963,16 @@ a.ui-button:active {
 .ui-widget-shadow {
 	-webkit-box-shadow: 0 0 5px #666666;
 	box-shadow: 0 0 5px #666666;
+}
+
+
+/* -------- CUSTOM STYLES --------- */
+
+.ui-autocomplete-category {
+	background-color: $color_nhsuk-grey_1;
+	color: white;
+	margin-bottom: 0;
+	padding-left: 8px;
+	font-weight: 400;
+	font-size: 16px;
 }

@@ -55,11 +55,21 @@
 @media screen and (min-width: 769px) {
   .nhsuk-form-group__age-selector {
     .fuzzy-age {
-      margin-bottom:24px;
+      margin-bottom: 24px;
     }
   }
 }
 
 .age-range-separator {
   margin: 0 1rem;
+}
+
+.nhsuk-input--autocomplete {
+  margin-bottom: 16px;
+}
+
+@media screen and (min-width: 768px) {
+  .nhsuk-input--autocomplete {
+    width: 80%;
+  }
 }

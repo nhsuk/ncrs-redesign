@@ -354,3 +354,223 @@ $("#confirm-locum-site").submit(function(e) {
   }
 
 });
+
+
+
+/* ---------- REASONABLE ADJUSTMENTS ---------- */
+
+
+
+$(function() {
+  $.widget("custom.catcomplete", $.ui.autocomplete, {
+    _create: function() {
+      this._super();
+      this.widget().menu("option", "items", "> :not(.ui-autocomplete-category)");
+    },
+    _renderMenu: function(ul, items) {
+      var that = this,
+        currentCategory = "";
+      $.each(items, function(index, item) {
+        var li;
+        if (item.category != currentCategory) {
+          ul.append("<li class='ui-autocomplete-category'>" + item.category + "</li>");
+          currentCategory = item.category;
+        }
+        li = that._renderItemData(ul, item);
+        if (item.category) {
+          li.attr("aria-label", item.category + " : " + item.label);
+        }
+      });
+    }
+  });
+  var flags = [{
+      label: "Does lip read",
+      category: "Communication support"
+    },
+    {
+      label: "Does use communication device",
+      category: "Communication support"
+    },
+    {
+      label: "Does using hearing aid ",
+      category: "Communication support"
+    },
+    {
+      label: "Preferred method of communication: written",
+      category: "Communication support"
+    },
+    {
+      label: "Uses a citizen advocate",
+      category: "Communication support"
+    },
+    {
+      label: "Uses a legal advocate",
+      category: "Communication support"
+    },
+    {
+      label: "Uses alternative communication skill",
+      category: "Communication support"
+    },
+    {
+      label: "Uses British Sign Language",
+      category: "Communication support"
+    },
+    {
+      label: "Uses cued speech transliterator",
+      category: "Communication support"
+    },
+    {
+      label: "Uses Deafblind Manual Alphabet",
+      category: "Communication support"
+    },
+    {
+      label: "Uses electronic note taker",
+      category: "Communication support"
+    },
+    {
+      label: "Uses lipspeaker",
+      category: "Communication support"
+    },
+    {
+      label: "Uses Makaton sign language",
+      category: "Communication support"
+    },
+    {
+      label: "Uses manual note taker",
+      category: "Communication support"
+    },
+    {
+      label: "Uses personal audio recording device to record information",
+      category: "Communication support"
+    },
+    {
+      label: "Uses Personal Communication Passport",
+      category: "Communication support"
+    },
+    {
+      label: "Uses sign language",
+      category: "Communication support"
+    },
+    {
+      label: "Uses speech to text reporter",
+      category: "Communication support"
+    },
+    {
+      label: "Uses telecommunications device for the deaf",
+      category: "Communication support"
+    },
+    {
+      label: "British Sign Language interpreter needed",
+      category: "Requires communication professional"
+    },
+    {
+      label: "Hands-on signing interpreter needed",
+      category: "Requires communication professional"
+    },
+    {
+      label: "Makaton Sign Language interpreter needed",
+      category: "Requires communication professional"
+    },
+    {
+      label: "Needs an advocate",
+      category: "Requires communication professional"
+    },
+    {
+      label: "Requires deafblind block alphabet interpreter",
+      category: "Requires communication professional"
+    },
+    {
+      label: "Requires deafblind communicator guide",
+      category: "Requires communication professional"
+    },
+    {
+      label: "Requires deafblind haptic communication interpreter",
+      category: "Requires communication professional"
+    },
+    {
+      label: "Requires deafblind manual alphabet interpreter",
+      category: "Requires communication professional"
+    },
+    {
+      label: "Requires lipspeaker",
+      category: "Requires communication professional"
+    },
+    {
+      label: "Requires manual note taker",
+      category: "Requires communication professional"
+    },
+    {
+      label: "Requires sighted guide",
+      category: "Requires communication professional"
+    },
+    {
+      label: "Requires speech to text reporter",
+      category: "Requires communication professional"
+    },
+    {
+      label: "Sign Supported English interpreter needed",
+      category: "Requires communication professional"
+    },
+    {
+      label: "Visual frame sign language interpreter needed",
+      category: "Requires communication professional"
+    },
+    {
+      label: "Requires audible alert",
+      category: "Requires specific contact method"
+    },
+    {
+      label: "Requires contact by email",
+      category: "Requires specific contact method"
+    },
+    {
+      label: "Requires contact by letter",
+      category: "Requires specific contact method"
+    },
+    {
+      label: "Requires contact by short message service text message",
+      category: "Requires specific contact method"
+    },
+    {
+      label: "Requires contact by telephone",
+      category: "Requires specific contact method"
+    },
+    {
+      label: "Requires contact by text relay",
+      category: "Requires specific contact method"
+    },
+    {
+      label: "Requires contact via carer",
+      category: "Requires specific contact method"
+    },
+    {
+      label: "Requires tactile alert",
+      category: "Requires specific contact method"
+    },
+    {
+      label: "Requires visual alert",
+      category: "Requires specific contact method"
+    }
+  ];
+
+  $("#ra-flags").catcomplete({
+    delay: 0,
+    source: flags
+  });
+
+  $('#add-ra-flag-btn').click(function() {
+    var flagVal = $("#ra-flags").val();
+    var catVal = (flags.find(x => x.label === flagVal).category);
+    var numFlags = $(".added-ra-flag").length;
+    if (flagVal != "" && numFlags > 0) {
+      $(".added-adjustments-list").append("<hr class='hr-ra'><div class='added-ra-flag'><span class='flag-category'>" + catVal + "</span><span class='flag-desc'>" + flagVal +"</span></div>");
+      $("#ra-flags").val("");
+      var numFlags = $(".added-ra-flag").length;
+    } else if (flagVal != "") {
+      $('.no-adjustments-placeholder').hide();
+      $(".added-adjustments-list").append("<div class='added-ra-flag'><span class='flag-category'>" + catVal + "</span><span class='flag-desc'>" + flagVal +"</span></div>");
+      $("#ra-flags").val("");
+    }
+  });
+
+});

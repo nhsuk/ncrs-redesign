@@ -1,0 +1,79 @@
+{% extends 'layouts/layout-application.html' %}
+
+{% block pageTitle %}
+Recording consent
+{% endblock %}
+
+{% block beforeContent %}
+
+
+<div class="nhsuk-full-width-container">
+  <div class='scra-bordered-tabs-container'>
+    <div class="nhsuk-width-container-fluid">
+      <ul class="scra-bordered-tabs">
+        <li class="scra-bordered-tabs-item">
+          <a class="scra-bordered-tabs-link" href="patient-overview">Overview</a>
+        </li>
+        <li class="scra-bordered-tabs-item">
+          <a class="scra-bordered-tabs-link" href="patient-details">Patient</a>
+        </li>
+        <li class="scra-bordered-tabs-item">
+          <a class="scra-bordered-tabs-link" href="patient-clinical">Clinical</a>
+        </li>
+        <li class="scra-bordered-tabs-item">
+          <a class="scra-bordered-tabs-link" href="#">Documents</a>
+        </li>
+        <li class="scra-bordered-tabs-item scra-bordered-tabs-item-active">
+          <a class="scra-bordered-tabs-link" href="#">Manage Alerts</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-width-container">
+
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+      <div class="nhsuk-u-reading-width">
+        <h2 class="nhsuk-heading-l">
+          <span role="text">Add Adjustment details</span>
+          <span class="nhsuk-caption-l nhsuk-caption--bottom">Step 4 of 5</span>
+        </h2>
+        <p class="nhsuk-body">
+          Where possible, please add the details of each reasonable adjustment you have added.
+        </p>
+        <form action="ra-step-5">
+
+          <div class="nhsuk-form-group">
+            <h3 class="nhsuk-heading-s">Category: Communication support</h3>
+            <label class="nhsuk-label nhsuk-label__strong" for="more-detail">
+              Uses British Sign Language (optional)
+            </label>
+            <textarea class="nhsuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
+          </div>
+
+          <div class="btn-group">
+            <button class="nhsuk-button nhsuk-button--blue" type="submit">
+              Next
+            </button>
+
+            <button class="nhsuk-button nhsuk-button--reverse" type="submit">
+              Review & save
+            </button>
+
+            <p class="cancel-btn-link"><a href="manage-alerts">Cancel</a></p>
+          </div>
+
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
