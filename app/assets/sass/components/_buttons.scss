@@ -34,3 +34,21 @@
 .nhsuk-button--autocomplete {
   padding: 4px 16px;
 }
+
+
+.ra-edit {
+  width: 75%;
+  margin-bottom: 12px;
+  float: right;
+}
+
+.ra-delete {
+  width: 75%;
+  float: right;
+}
+
+@media (min-width: 769px) {
+  .ra-edit, .ra-delete {
+    width: 60%;
+  }
+}
