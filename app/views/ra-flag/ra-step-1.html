@@ -72,17 +72,41 @@ Recording consent
                     As a best interest decision, made on behalf of the patient (Mental Capacity Act 2005)
                   </label>
                 </div>
+                <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="best-interest">
+                  <div class="nhsuk-form-group">
+                    <label class="nhsuk-label" for="bi-consent">
+                      Please provide more detail about this consent
+                    </label>
+                    <input class="nhsuk-input" id="bi-consent" name="best-interest-consent-input" type="text" spellcheck="false">
+                  </div>
+                </div>
                 <div class="nhsuk-radios__item">
-                  <input class="nhsuk-radios__input" id="consent-poa" name="consent" type="radio" value="poa">
+                  <input class="nhsuk-radios__input" id="consent-poa" name="consent" type="radio" value="power-of-attorney">
                   <label class="nhsuk-label nhsuk-radios__label" for="consent-poa">
                     Via a lasting Power of Attorney for Health and Welfare, or court-appointed deputy or equivalent
                   </label>
                 </div>
+                <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="power-of-attorney">
+                  <div class="nhsuk-form-group">
+                    <label class="nhsuk-label" for="poa-consent">
+                      Please provide more detail about this consent
+                    </label>
+                    <input class="nhsuk-input" id="poa-consent" name="poa-consent-input" type="text" spellcheck="false">
+                  </div>
+                </div>
                 <div class="nhsuk-radios__item">
-                  <input class="nhsuk-radios__input" id="consent-other" name="consent" type="radio" value="other">
+                  <input class="nhsuk-radios__input" id="consent-other" name="consent" type="radio" value="other-consent">
                   <label class="nhsuk-label nhsuk-radios__label" for="consent-other">
                     Other
                   </label>
+                </div>
+                <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="other-consent">
+                  <div class="nhsuk-form-group">
+                    <label class="nhsuk-label" for="other-consent-input">
+                      Please provide more detail about this consent
+                    </label>
+                    <input class="nhsuk-input" id="other-consent-input" name="other-consent-input" type="text" spellcheck="false">
+                  </div>
                 </div>
               </div>
             </fieldset>
@@ -107,4 +131,10 @@ Recording consent
     </div>
   </div>
 </div>
+
+
+
+{% block pageScripts %}
+<script src="/js/conditional-reveals.js"></script>
+{% endblock %}
 {% endblock %}

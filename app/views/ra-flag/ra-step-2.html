@@ -57,7 +57,7 @@ Add patient impairments
 
             <fieldset class="nhsuk-fieldset" aria-describedby="impairments-hint">
               <legend class="nhsuk-fieldset__legend nhsuk-label__strong">
-                Please select the impairments that should be considered when making reasonable adjustments
+                Please select the impairments that should be considered when making Reasonable Adjustments
               </legend>
 
               <span class="nhsuk-hint" id="impairments-hint">
@@ -72,12 +72,28 @@ Add patient impairments
                     Autism
                   </label>
                 </div>
+                <div class="nhsuk-checkboxes__conditional nhsuk-checkboxes__conditional--hidden" id="autism">
+                  <div class="nhsuk-form-group">
+                    <label class="nhsuk-label" for="autism-info">
+                      Please add additional information about this impairment (optional)
+                      </label>
+                      <textarea class="nhsuk-textarea" id="autism-info" name="autism-info" rows="3"></textarea>
+                  </div>
+                </div>
 
                 <div class="nhsuk-checkboxes__item">
                   <input class="nhsuk-checkboxes__input" id="dementia-checkbox" name="impairment" type="checkbox" value="dementia">
                   <label class="nhsuk-label nhsuk-checkboxes__label" for="dementia-checkbox">
                     Dementia
                   </label>
+                </div>
+                <div class="nhsuk-checkboxes__conditional nhsuk-checkboxes__conditional--hidden" id="dementia">
+                  <div class="nhsuk-form-group">
+                    <label class="nhsuk-label" for="dementia-info">
+                      Please add additional information about this impairment (optional)
+                      </label>
+                      <textarea class="nhsuk-textarea" id="dementia-info" name="dementia-info" rows="3"></textarea>
+                  </div>
                 </div>
 
                 <div class="nhsuk-checkboxes__item">
@@ -86,12 +102,28 @@ Add patient impairments
                     Learning disability(s)
                   </label>
                 </div>
+                <div class="nhsuk-checkboxes__conditional nhsuk-checkboxes__conditional--hidden" id="learning-disability">
+                  <div class="nhsuk-form-group">
+                    <label class="nhsuk-label" for="learning-disability-info">
+                      Please add additional information about this impairment (optional)
+                      </label>
+                      <textarea class="nhsuk-textarea" id="learning-disability-info" name="learning-disability-info" rows="3"></textarea>
+                  </div>
+                </div>
 
                 <div class="nhsuk-checkboxes__item">
                   <input class="nhsuk-checkboxes__input" id="ltc-checkbox" name="impairment" type="checkbox" value="ltc">
                   <label class="nhsuk-label nhsuk-checkboxes__label" for="ltc-checkbox">
                     Long-term condition(s)
                   </label>
+                </div>
+                <div class="nhsuk-checkboxes__conditional nhsuk-checkboxes__conditional--hidden" id="ltc">
+                  <div class="nhsuk-form-group">
+                    <label class="nhsuk-label" for="ltc-info">
+                      Please add additional information about this impairment (optional)
+                      </label>
+                      <textarea class="nhsuk-textarea" id="ltc-info" name="ltc-info" rows="3"></textarea>
+                  </div>
                 </div>
 
                 <div class="nhsuk-checkboxes__item">
@@ -100,12 +132,28 @@ Add patient impairments
                     Mental health condition(s)
                   </label>
                 </div>
+                <div class="nhsuk-checkboxes__conditional nhsuk-checkboxes__conditional--hidden" id="mhc">
+                  <div class="nhsuk-form-group">
+                    <label class="nhsuk-label" for="mhc-info">
+                      Please add additional information about this impairment (optional)
+                      </label>
+                      <textarea class="nhsuk-textarea" id="mhc-info" name="mhc-info" rows="3"></textarea>
+                  </div>
+                </div>
 
                 <div class="nhsuk-checkboxes__item">
                   <input class="nhsuk-checkboxes__input" id="physical-disability-checkbox" name="impairment" type="checkbox" value="physical-disability">
                   <label class="nhsuk-label nhsuk-checkboxes__label" for="physical-disability-checkbox">
                     Physical disability(s)
                   </label>
+                </div>
+                <div class="nhsuk-checkboxes__conditional nhsuk-checkboxes__conditional--hidden" id="physical-disability">
+                  <div class="nhsuk-form-group">
+                    <label class="nhsuk-label" for="physical-disability-info">
+                      Please add additional information about this impairment (optional)
+                      </label>
+                      <textarea class="nhsuk-textarea" id="physical-disability-info" name="physical-disability-info" rows="3"></textarea>
+                  </div>
                 </div>
 
                 <div class="nhsuk-checkboxes__item">
@@ -114,12 +162,28 @@ Add patient impairments
                     Sensory disability(s)
                   </label>
                 </div>
+                <div class="nhsuk-checkboxes__conditional nhsuk-checkboxes__conditional--hidden" id="sensory-disability">
+                  <div class="nhsuk-form-group">
+                    <label class="nhsuk-label" for="sensory-disability-info">
+                      Please add additional information about this impairment (optional)
+                      </label>
+                      <textarea class="nhsuk-textarea" id="sensory-disability-info" name="sensory-disability-info" rows="3"></textarea>
+                  </div>
+                </div>
 
                 <div class="nhsuk-checkboxes__item">
                   <input class="nhsuk-checkboxes__input" id="other-checkbox" name="impairment" type="checkbox" value="other">
                   <label class="nhsuk-label nhsuk-checkboxes__label" for="other-checkbox">
                     Other condition(s) and/or disability(s)
                   </label>
+                </div>
+                <div class="nhsuk-checkboxes__conditional nhsuk-checkboxes__conditional--hidden" id="other">
+                  <div class="nhsuk-form-group">
+                    <label class="nhsuk-label" for="other-impairment-info">
+                      Please add additional information about this impairment (optional)
+                      </label>
+                      <textarea class="nhsuk-textarea" id="other-impairment-info" name="other-impairment-info" rows="3"></textarea>
+                  </div>
                 </div>
 
                 <div class="nhsuk-checkboxes__item">
@@ -128,6 +192,7 @@ Add patient impairments
                     Patient would prefer not to say
                   </label>
                 </div>
+
 
               </div>
             </fieldset>
@@ -152,4 +217,7 @@ Add patient impairments
     </div>
   </div>
 </div>
+{% block pageScripts %}
+<script src="/js/conditional-reveals.js"></script>
+{% endblock %}
 {% endblock %}
