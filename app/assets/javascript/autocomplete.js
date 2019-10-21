@@ -563,13 +563,23 @@ $(function() {
     var catVal = (flags.find(x => x.label === flagVal).category);
     var numFlags = $(".added-ra-flag").length;
     if (flagVal != "" && numFlags > 0) {
-      $(".added-adjustments-list").append("<hr class='hr-ra'><div class='added-ra-flag'><span class='flag-category'>" + catVal + "</span><span class='flag-desc'>" + flagVal +"</span></div>");
+      $(".added-adjustments-list").append("<div class='added-ra-flag added-ra-flag-border-top'><span class='flag-category'>" + catVal + "</span><span class='flag-desc'>" + flagVal + "</span><span class='remove-flag-container'><a href='#' class='remove-flag-link'>Remove</a></span></div>");
       $("#ra-flags").val("");
       var numFlags = $(".added-ra-flag").length;
     } else if (flagVal != "") {
       $('.no-adjustments-placeholder').hide();
-      $(".added-adjustments-list").append("<div class='added-ra-flag'><span class='flag-category'>" + catVal + "</span><span class='flag-desc'>" + flagVal +"</span></div>");
+      $(".added-adjustments-list").append("<div class='added-ra-flag'><span class='flag-category'>" + catVal + "</span><span class='flag-desc'>" + flagVal + "</span><span class='remove-flag-container'><a href='#' class='remove-flag-link'>Remove</a></span></div>");
       $("#ra-flags").val("");
+    }
+  });
+
+  $(document).on('click', '.remove-flag-link', function() {
+    var numFlags = $(".added-ra-flag").length;
+    if (numFlags === 1) {
+      $('.no-adjustments-placeholder').show();
+      $(this).parent().parent().remove();
+    } else {
+      $(this).parent().parent().remove();
     }
   });
 
