@@ -22,9 +22,13 @@ jQuery(document).ready(function($) {
 
     if($(window).scrollTop() > (topofDiv + height)){
        $(".name-dob-floater").fadeIn();
+       $('.adjustments-floater').fadeIn();
+
     }
     else{
        $(".name-dob-floater").fadeOut();
+       $('.adjustments-floater').fadeOut();
+
     }
 
   });

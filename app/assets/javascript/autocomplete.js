@@ -392,7 +392,7 @@ $(function() {
       category: "Communication support"
     },
     {
-      label: "Does using hearing aid ",
+      label: "Does use hearing aid",
       category: "Communication support"
     },
     {
@@ -558,6 +558,9 @@ $(function() {
     source: flags
   });
 
+  var numFlags = $(".added-ra-flag").length;
+  $('.adjustments-floater').html("Adjustments added: " + numFlags);
+
   $('#add-ra-flag-btn').click(function() {
     var flagVal = $("#ra-flags").val();
     var catVal = (flags.find(x => x.label === flagVal).category);
@@ -571,6 +574,8 @@ $(function() {
       $(".added-adjustments-list").append("<div class='added-ra-flag'><span class='flag-category'>" + catVal + "</span><span class='flag-desc'>" + flagVal + "</span><span class='remove-flag-container'><a href='#' class='remove-flag-link'>Remove</a></span></div>");
       $("#ra-flags").val("");
     }
+    var numFlags = $(".added-ra-flag").length;
+    $('.adjustments-floater').html("Adjustments added: " + numFlags);
   });
 
   $(document).on('click', '.remove-flag-link', function() {
@@ -581,6 +586,52 @@ $(function() {
     } else {
       $(this).parent().parent().remove();
     }
+    var numFlags = $(".added-ra-flag").length;
+    $('.adjustments-floater').html("Adjustments added: " + numFlags);
   });
+
+  var numFlags = $(".added-ra-flag").length;
+
+  $(":checkbox").change(function() {
+    var flagVal = $(this).val();
+    var catVal = (flags.find(x => x.label === flagVal).category);
+    var trimFlag = flagVal.replace(/[^a-z0-9\s]/gi, '').replace(/[_\s]/g, '-');
+    var numFlags = $(".added-ra-flag").length;
+    var checkedBoxesLength = ($(":checkbox:checked").length);
+    if (checkedBoxesLength > 0) {
+      $('.no-adjustments-placeholder').hide();
+    } else {
+      $('.no-adjustments-placeholder').show();
+    }
+    if (this.checked && numFlags > 0) {
+      $(".added-adjustments-list").append("<div class='added-ra-flag added-ra-flag-border-top' id=" + trimFlag + "><span class='flag-category'>" + catVal + "</span><span class='flag-desc'>" + flagVal + "</span><span class='remove-flag-container'><a href='#' class='remove-flag-link'>Remove</a></span></div>");
+    } else if (this.checked) {
+      $(".added-adjustments-list").append("<div class='added-ra-flag' id=" + trimFlag + "><span class='flag-category'>" + catVal + "</span><span class='flag-desc'>" + flagVal + "</span><span class='remove-flag-container'><a href='#' class='remove-flag-link'>Remove</a></span></div>");
+    } else {
+      $("#" + trimFlag).remove();
+    }
+    var numFlags = $(".added-ra-flag").length;
+    $('.adjustments-floater').html("<a href='#added-adjustments-container'>Adjustments added: " + numFlags + "</a>");
+  });
+
+  $('#add-bespoke-flag-btn').click(function() {
+    var flagVal = $("#bespoke-flags").val();
+    var catVal = "Bespoke Adjustment";
+    var numFlags = $(".added-ra-flag").length;
+    if (flagVal != "" && numFlags > 0) {
+      $(".added-adjustments-list").append("<div class='added-ra-flag added-ra-flag-border-top'><span class='flag-category'>" + catVal + "</span><span class='flag-desc'>" + flagVal + "</span><span class='remove-flag-container'><a href='#' class='remove-flag-link'>Remove</a></span></div>");
+      $("#ra-flags").val("");
+      var numFlags = $(".added-ra-flag").length;
+    } else if (flagVal != "") {
+      $('.no-adjustments-placeholder').hide();
+      $(".added-adjustments-list").append("<div class='added-ra-flag'><span class='flag-category'>" + catVal + "</span><span class='flag-desc'>" + flagVal + "</span><span class='remove-flag-container'><a href='#' class='remove-flag-link'>Remove</a></span></div>");
+      $("#ra-flags").val("");
+    }
+    $("#bespoke-flags").val('');
+    var numFlags = $(".added-ra-flag").length;
+    $('.adjustments-floater').html("Adjustments added: " + numFlags);
+  });
+
+
 
 });

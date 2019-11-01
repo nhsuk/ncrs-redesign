@@ -5,3 +5,29 @@
 .app-promo--grey a {
     background: #f0f4f5;
 }
+
+/* Alerts promos */
+
+.nhsuk-promo-group__item {
+  margin-bottom: 0;
+}
+
+.nhsuk-promo--alert {
+  .nhsuk-promo__heading {
+    text-decoration: none;
+    i {
+      margin-right: 8px;
+    }
+  }
+  .nhsuk-promo__link-wrapper {
+    box-shadow: -4px 0 0 0 $color_nhsuk-black;
+  }
+  .nhsuk-promo__content {
+    background-color: $color_nhsuk-warm-yellow;
+    color: $color_nhsuk-black;
+    padding: 16px;
+  }
+  .nhsuk-promo__description {
+    color: $color_nhsuk-black;
+  }
+}
