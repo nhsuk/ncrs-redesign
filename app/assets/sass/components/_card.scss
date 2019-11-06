@@ -51,6 +51,33 @@
   border: solid 32px $color_nhsuk-warm-yellow!important;
 }
 
+// Patient Details
+
+.scra-card-header > * {
+  display: inline-block;
+}
+
+.pds-edit-link {
+  margin-left: 8px;
+  a {
+    text-decoration: none;
+  }
+}
+
+.pds-edit-card-header > * {
+  margin-bottom: 4px;
+}
+
+.pds-edit-support-text {
+  color: $color_nhsuk-grey-1;
+}
+
+@media screen and (min-width:768px) {
+  .pds-edit-card-header > * {
+    margin-bottom: 8px;
+  }
+}
+
 // Clinical Details
 
 .scra-card-content {
