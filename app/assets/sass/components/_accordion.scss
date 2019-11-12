@@ -7,6 +7,30 @@
   background-color: #003087!important;
 }
 
+ .scra-accordion__header--yellow {
+   background-color: $color_nhsuk-warm-yellow;
+   .scra-accordion__heading {
+     button {
+       color: $color_nhsuk-black!important;
+     }
+     span:before, span:after {
+       background-color: $color_nhsuk-black!important;
+     }
+   }
+ }
+
+ .scra-accordion__header--yellow:hover {
+   background-color: $color_nhsuk-warm-yellow!important;
+   .scra-accordion__heading {
+     button {
+       color: $color_nhsuk-black!important;
+     }
+     span:before, span:after {
+       background-color: $color_nhsuk-black!important;
+     }
+   }
+ }
+
 .scra-accordion__heading {
   button {
     color: $color_nhsuk-white!important;
