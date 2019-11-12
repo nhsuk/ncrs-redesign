@@ -1,10 +1,19 @@
+.nhsuk-card-group {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 36px;
+}
+
+.nhsuk-card-group__item {
+  display: flex;
+}
+
 .scra-card {
   background-color: $color_nhsuk-white;
   padding: 16px;
   box-shadow: 0 4px 0 0 #d8dde0;
   margin-bottom: 28px;
 }
-
 @media screen and (min-width: 1024px) {
   .scra-card {
     padding: 32px;
@@ -13,7 +22,7 @@
 }
 
 .nav-anchor {
-  color:$color_nhsuk-black;
+  color: $color_nhsuk-black;
 }
 
 .nav-anchor:hover {
@@ -23,42 +32,49 @@
 
 .scra-card-content {
   vertical-align: bottom;
+
   .nhsuk-grid-row {
     margin-bottom: 30px;
   }
+}
+
+.card-content-support-detail {
+  color: $color_nhsuk-grey-1;
+  margin-bottom: 0;
 }
 
 .card-content-section {
   span {
     display: block;
   }
+
   .card-content-label {
     font-weight: 200;
   }
+
   .card-content-name {
     font-size: 120%;
     font-weight: 600;
   }
 }
 
-
 .alert-card__heading-container {
   background-color: $color_nhsuk-warm-yellow!important;
   color: $color_nhsuk-black!important;
 }
 
-.alert-card__arrow:before, .alert-card__arrow:after {
+.alert-card__arrow:after,
+.alert-card__arrow:before {
   border: solid 32px $color_nhsuk-warm-yellow!important;
 }
-
 // Patient Details
-
 .scra-card-header > * {
   display: inline-block;
 }
 
 .pds-edit-link {
   margin-left: 8px;
+
   a {
     text-decoration: none;
   }
@@ -71,26 +87,21 @@
 .pds-edit-support-text {
   color: $color_nhsuk-grey-1;
 }
-
 @media screen and (min-width:768px) {
   .pds-edit-card-header > * {
     margin-bottom: 8px;
   }
 }
-
 // Clinical Details
-
 .scra-card-content {
   .nhsuk-table-responsive {
     margin: 0;
   }
 }
-
 // NRL Landing Page
-
 .scra-cards__subheading {
-    color: $color_nhsuk-grey-1;
-    @include nhsuk-responsive-margin(4, 'bottom');
+  color: $color_nhsuk-grey-1;
+  @include nhsuk-responsive-margin(4, 'bottom');
 }
 
 .nrl-card__wrapper {
@@ -99,6 +110,7 @@
     height: 80px;
     background-color: $color_nhsuk-grey-4;
   }
+
   .nhsuk-promo__content {
     padding: 1rem;
   }
@@ -107,19 +119,17 @@
 .nrl-card__heading {
   font-size: 14px!important;
 }
-
 @media screen and (min-width:768px) {
   .nrl-card__heading {
     font-size: 16px!important;
   }
 }
 
-.nrl-card__description{
+.nrl-card__description {
   font-size: 14px!important;
   color: $color_nhsuk-black;
   margin-bottom: 8px;
 }
-
 @media screen and (min-width:768px) {
   .nrl-card__description {
     font-size: 16px!important;
@@ -130,7 +140,6 @@
   color: $color_nhsuk-grey-2;
   font-size: 12px!important;
 }
-
 @media screen and (min-width:768px) {
   .nrl-card__date {
     font-size: 14px!important;
@@ -139,9 +148,19 @@
 
 .nrl-card__pointer-content {
   .nhsuk-promo__heading {
-    text-decoration:  none;
+    text-decoration: none;
   }
+
   .nrl-card__pointer-trust {
     margin-bottom: 0;
   }
+}
+/* PDS Edit */
+.pds-edit-card__heading {
+  width: 75%;
+  display: inline-block;
+}
+
+.pds-edit-remove-btn {
+  bottom: 0;
 }

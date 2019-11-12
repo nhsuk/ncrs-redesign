@@ -53,3 +53,20 @@
     width: 60%;
   }
 }
+
+.nhsuk-button--small {
+  padding: 0 16px;
+  height: 24px;
+  font-size: 1rem;
+  line-height: 1.2;
+}
+
+.nhsuk-button--pds-edit {
+  margin-bottom: 0;
+  float: right;
+  color: $color_nhsuk-black;
+}
+
+a.nhsuk-button--pds-edit:visited {
+  color: $color_nhsuk-black;
+}

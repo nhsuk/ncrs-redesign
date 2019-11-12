@@ -1,5 +1,6 @@
 .overview-card {
   margin-top: 0;
+  width: 100%;
 }
 
 .overview-card__footer-container {
@@ -40,7 +41,7 @@
 
 @media screen and (min-width: 768px) {
   .overview-card__content {
-    min-height: 220px;
+    height: 100%;
     p {
       margin-bottom: 12px;
     }

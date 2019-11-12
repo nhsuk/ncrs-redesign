@@ -781,6 +781,11 @@ $(".patient-search-result").click(function() {
   window.location.href = "patient-overview"
 });
 
+$("#confirm-name-changes-btn").click(function() {
+  var patientName = "William Tell"
+  sessionStorage.setItem("patientName", patientName);
+});
+
 /* Retrieve patient details to session storage when document is ready*/
 var patientName = sessionStorage.getItem("patientName");
 var patientAddress = sessionStorage.getItem("patientAddress");
@@ -796,8 +801,20 @@ var patientAddressWithPostcode = patientAddress;
 var parsedDob = moment(patientDob, "DD-MMM-YYYY").format("DD-MM-YYYY");
 var patientAge = moment(new Date()).diff(moment(parsedDob, "DD-MM-YYYY"), 'years', false);
 
+
+
 if (!patientName) {
   $('.patient-banner-name, .card-content-name').text("William Shakespeare");
+  $('.patient-banner-dob, .card-content-detail-dob').text("30-Jan-1970");
+  $('.patient-banner-nhs-no, .card-content-detail-nhs-no').text("123 456 7890");
+  $('.patient-banner-address').text("1 Town Street, Stratford-upon-Avon, Warwickshire, AB1 2CD");
+  $('.patient-banner-gender, .card-content-detail-gender').text("Male");
+  $('.patient-banner-age').text("49 years old");
+  $('.card-content-detail-pob').text("Stratford-upon-Avon");
+  $('.card-content-detail-address').html("1 Town Street, Stratford-upon-Avon, Warwickshire, AB1 2CD");
+  $('.name-dob-floater').html("William Shakespeare | 30-Jan-1970");
+} else if (patientName="William Tell") {
+  $('.patient-banner-name, .card-content-name').text(patientName);
   $('.patient-banner-dob, .card-content-detail-dob').text("30-Jan-1970");
   $('.patient-banner-nhs-no, .card-content-detail-nhs-no').text("123 456 7890");
   $('.patient-banner-address').text("1 Town Street, Stratford-upon-Avon, Warwickshire, AB1 2CD");
@@ -817,3 +834,9 @@ if (!patientName) {
   $('.card-content-detail-address').html(patientAddressWithPostcode.replace(/\,/g, '<br/>'));
   $('.name-dob-floater').html(patientName + " | " + patientDob);
 }
+
+
+$(".add-tel-number-btn").click(function() {
+  $(".tel-number-section").append("<div class='nhsuk-grid-row'><div class='nhsuk-grid-column-one-quarter'><div class='nhsuk-form-group'><label class='nhsuk-label' for='select-1'>Telephone number type</label><select class='nhsuk-select' id='number-type' name='select phone number type'><option value='1' selected>Main home</option><option value='2'>Mobile</option><option value='3'>Work</option></select><br /><br /><label class='nhsuk-label' for='tel-number'>Telephone number</label><input class='nhsuk-input nhsuk-input--width-10' id='tel-number' name='telephone number' input type='text' inputmode='numeric'></div></div></div><hr />");
+  $(".add-tel-number-btn").text("Add another telephone number");
+})

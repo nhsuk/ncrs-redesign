@@ -1,0 +1,148 @@
+{% extends 'layouts/layout-application.html' %}
+
+{% block pageTitle %}
+Patient details
+{% endblock %}
+
+{% block beforeContent %}
+
+<div class="nhsuk-full-width-container">
+  <div class='scra-bordered-tabs-container'>
+    <div class="nhsuk-width-container-fluid">
+      <ul class="scra-bordered-tabs">
+        <li class="scra-bordered-tabs-item">
+          <a class="scra-bordered-tabs-link" href="patient-overview">Overview</a>
+        </li>
+        <li class="scra-bordered-tabs-item scra-bordered-tabs-item-active">
+          <a class="scra-bordered-tabs-link" href="#">Patient</a>
+        </li>
+        <li class="scra-bordered-tabs-item">
+          <a class="scra-bordered-tabs-link" href="patient-clinical">Clinical</a>
+        </li>
+        <li class="scra-bordered-tabs-item">
+          <a class="scra-bordered-tabs-link" href="#">Documents</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-grid-column-one-quarter">
+    <div class="govuk-accordion" data-module="accordion" id="accordion-default">
+
+      <div class="govuk-accordion__section govuk-accordion__section--expanded">
+        <div class="govuk-accordion__section-header scra-accordion__header">
+          <h2 class="govuk-accordion__section-heading scra-accordion__heading">
+            <span class="govuk-accordion__section-button scra-accordion__section-button" id="accordion-default-heading-1">
+              Key demographics
+            </span>
+          </h2>
+        </div>
+        <div id="accordion-default-content-1" class="govuk-accordion__section-content scra-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+          <ul>
+            <li><a class="scra-accordion__link" href="#patient-details-names">Names</a></li>
+            <li><a class="scra-accordion__link" href="#patient-key-details">Key details</a></li>
+            <li><a class="scra-accordion__link" href="#patient-details-address">Address</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="govuk-accordion__section ">
+        <div class="govuk-accordion__section-header scra-accordion__header">
+          <h2 class="govuk-accordion__section-heading scra-accordion__heading">
+            <span class="govuk-accordion__section-button scra-accordion__section-button" id="accordion-default-heading-2">
+              Contacts & next of kin
+            </span>
+          </h2>
+        </div>
+        <div id="accordion-default-content-2" class="govuk-accordion__section-content scra-accordion__section-content" aria-labelledby="accordion-default-heading-2">
+
+        </div>
+      </div>
+      <div class="govuk-accordion__section ">
+        <div class="govuk-accordion__section-header scra-accordion__header">
+          <h2 class="govuk-accordion__section-heading scra-accordion__heading">
+            <span class="govuk-accordion__section-button scra-accordion__section-button" id="accordion-default-heading-3">
+              GP & Care providers
+            </span>
+          </h2>
+        </div>
+        <div id="accordion-default-content-3" class="govuk-accordion__section-content scra-accordion__section-content" aria-labelledby="accordion-default-heading-3">
+
+        </div>
+      </div>
+      <div class="govuk-accordion__section ">
+        <div class="govuk-accordion__section-header scra-accordion__header">
+          <h2 class="govuk-accordion__section-heading scra-accordion__heading">
+            <span class="govuk-accordion__section-button scra-accordion__section-button" id="accordion-default-heading-4">
+              Chargeability status
+            </span>
+          </h2>
+        </div>
+        <div id="accordion-default-content-4" class="govuk-accordion__section-content scra-accordion__section-content" aria-labelledby="accordion-default-heading-4">
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="nhsuk-grid-column-three-quarters">
+    <h2 class="nhsuk-heading-l">Review and confirm your changes</h1>
+
+      <div class="nhsuk-u-reading-width">
+        <div class="nhsuk-warning-callout">
+          <h3 class="nhsuk-warning-callout__label">Changing a patient's key details</h3>
+          <p>Changing a patient’s key details is a serious undertaking. It must be carried out with the utmost care and considertation for potential risks</p>
+        </div>
+
+
+        <h3 class="nhsuk-heading-m">Usual name</h3>
+
+        <dl class="nhsuk-summary-list">
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Was previously
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              <p>
+                Mr William Shakespeare
+              </p>
+              <p class="nhsuk-body-italics">
+                Effective from 29-Feb-2002
+              </p>
+            </dd>
+
+          </div>
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Updated to
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              <p>
+                Mr William Tell
+              </p>
+              <p class="nhsuk-body-italics">
+                Effective from 12-Nov-2019
+              </p>
+            </dd>
+
+          </div>
+
+        </dl>
+
+      </div>
+
+      <a class="nhsuk-button" id="confirm-name-changes-btn" href="patient-details-name-changed">Confirm changes</a>
+
+  </div>
+
+
+</div>
+{% endblock %}
