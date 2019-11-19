@@ -11,13 +11,13 @@ Patient details
     <div class="nhsuk-width-container-fluid">
       <ul class="scra-bordered-tabs">
         <li class="scra-bordered-tabs-item">
-          <a class="scra-bordered-tabs-link" href="patient-overview-flag-added">Overview</a>
+          <a class="scra-bordered-tabs-link" href="patient-overview">Overview</a>
         </li>
         <li class="scra-bordered-tabs-item scra-bordered-tabs-item-active">
           <a class="scra-bordered-tabs-link" href="#">Patient</a>
         </li>
         <li class="scra-bordered-tabs-item">
-          <a class="scra-bordered-tabs-link" href="patient-clinical-flag-added">Clinical</a>
+          <a class="scra-bordered-tabs-link" href="patient-clinical">Clinical</a>
         </li>
         <li class="scra-bordered-tabs-item">
           <a class="scra-bordered-tabs-link" href="#">Documents</a>
@@ -45,9 +45,10 @@ Patient details
         </div>
         <div id="accordion-default-content-1" class="govuk-accordion__section-content scra-accordion__section-content" aria-labelledby="accordion-default-heading-1">
           <ul>
-            <li><a class="scra-accordion__link" href="#patient-details-names">Names</a></li>
-            <li><a class="scra-accordion__link" href="#patient-key-details">Key details</a></li>
-            <li><a class="scra-accordion__link" href="#patient-details-address">Address</a></li>
+            <li><a class="scra-accordion__link" href="patient-details#patient-details-names">Names</a></li>
+            <li><a class="scra-accordion__link" href="patient-details#patient-key-details">Key details</a></li>
+            <li><a class="scra-accordion__link" href="patient-details#patient-details-address">Address</a></li>
+            <li><a class="scra-accordion__link" href="patient-details#patient-details-contact-info">Contact information</a></li>
           </ul>
         </div>
       </div>
@@ -60,10 +61,7 @@ Patient details
           </h2>
         </div>
         <div id="accordion-default-content-2" class="govuk-accordion__section-content scra-accordion__section-content" aria-labelledby="accordion-default-heading-2">
-          <ul>
-            <li><a class="scra-accordion__link" href="#">Contacts & next of kin</a></li>
-            <li><a class="scra-accordion__link" href="#">Power of attorney</a></li>
-          </ul>
+
         </div>
       </div>
       <div class="govuk-accordion__section ">
@@ -75,9 +73,7 @@ Patient details
           </h2>
         </div>
         <div id="accordion-default-content-3" class="govuk-accordion__section-content scra-accordion__section-content" aria-labelledby="accordion-default-heading-3">
-          <ul>
-            <li><a class="scra-accordion__link" href="#">GP Details</a></li>
-          </ul>
+
         </div>
       </div>
       <div class="govuk-accordion__section ">
@@ -89,23 +85,7 @@ Patient details
           </h2>
         </div>
         <div id="accordion-default-content-4" class="govuk-accordion__section-content scra-accordion__section-content" aria-labelledby="accordion-default-heading-4">
-          <ul>
-            <li><a class="scra-accordion__link" href="#">Chargeability status</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="govuk-accordion__section ">
-        <div class="govuk-accordion__section-header scra-accordion__header scra-accordion__header--yellow">
-          <h2 class="govuk-accordion__section-heading scra-accordion__heading">
-            <span class="govuk-accordion__section-button scra-accordion__section-button" id="accordion-default-heading-5">
-              Reasonable Adjustments
-            </span>
-          </h2>
-        </div>
-        <div id="accordion-default-content-5" class="govuk-accordion__section-content scra-accordion__section-content" aria-labelledby="accordion-default-heading-5">
-          <ul>
-            <li><a class="scra-accordion__link" href="#ra-section">Reasonable Adjustments</a></li>
-          </ul>
+
         </div>
       </div>
 
@@ -118,13 +98,14 @@ Patient details
       <div class="scra-card">
         <div class="scra-card-header">
           <h3 class="nhsuk-heading-m" id="patient-details-names">Names</h3>
+          <p id="pds-edit-names" class="pds-edit-link"><a href="edit-names">Edit</a></p>
         </div>
         <div class="scra-card-content">
           <div class="nhsuk-grid-row">
             <div class="nhsuk-grid-column-one-quarter">
               <div class="card-content-section">
                 <span class="card-content-label">Usual Name:</span>
-                <span class="card-content-name">William Shakespeare</span>
+                <span class="card-content-name">William Tell</span>
               </div>
             </div>
           </div>
@@ -153,6 +134,7 @@ Patient details
       <div class="scra-card">
         <div class="scra-card-header">
           <h3 class="nhsuk-heading-m" id="patient-key-details">Key details</h3>
+          <p id="pds-edit-names" class="pds-edit-link"><a href="#">Edit</a></p>
         </div>
         <div class="scra-card-content">
           <div class="nhsuk-grid-row">
@@ -186,6 +168,7 @@ Patient details
       <div class="scra-card">
         <div class="scra-card-header">
           <h3 class="nhsuk-heading-m" id="patient-details-address">Address</h3>
+          <p id="pds-edit-names" class="pds-edit-link"><a href="#">Edit</a></p>
         </div>
         <div class="scra-card-content">
           <div class="nhsuk-grid-row">
@@ -204,13 +187,61 @@ Patient details
           </div>
         </div>
       </div>
+      <div class="scra-card">
+        <div class="scra-card-header">
+          <h3 class="nhsuk-heading-m" id="patient-details-contact-info">Contact information</h3>
+          <p id="pds-edit-names" class="pds-edit-link"><a href="edit-contact-info">Edit</a></p>
+        </div>
+        <div class="scra-card-content">
+          <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-one-quarter">
+              <div class="card-content-section">
+                <span class="card-content-label">Telephone:</span>
+                <span class="card-content-detail">None recorded</span>
+              </div>
+            </div>
+            <div class="nhsuk-grid-column-one-quarter">
+              <div class="card-content-section">
+                <span class="card-content-label">Email:</span>
+                <span class="card-content-detail">None recorded</span>
+              </div>
+            </div>
+            <div class="nhsuk-grid-column-one-quarter">
+              <div class="card-content-section">
+                <span class="card-content-label">Fax:</span>
+                <span class="card-content-detail">None recorded</span>
+              </div>
+            </div>
+            <div class="nhsuk-grid-column-one-quarter">
+              <div class="card-content-section">
+                <span class="card-content-label">Textphone:</span>
+                <span class="card-content-detail">None recorded</span>
+              </div>
+            </div>
+          </div>
+          <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-one-quarter">
+              <div class="card-content-section">
+                <span class="card-content-label">Written communication:</span>
+                <span class="card-content-detail">None recorded</span>
+              </div>
+            </div>
+            <div class="nhsuk-grid-column-one-quarter">
+              <div class="card-content-section">
+                <span class="card-content-label">Contact preferences:</span>
+                <span class="card-content-detail">None recorded</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-
     <div class="section">
       <h2 class="nhsuk-heading-l">Contacts & next of kin</h2>
       <div class="scra-card">
         <div class="scra-card-header">
           <h3 class="nhsuk-heading-m" id="patient-details-contacts">Contacts</h3>
+          <p id="pds-edit-names" class="pds-edit-link"><a href="#">Edit</a></p>
         </div>
         <div class="scra-card-content">
           <div class="nhsuk-grid-row">
@@ -244,6 +275,7 @@ Patient details
       <div class="scra-card">
         <div class="scra-card-header">
           <h3 class="nhsuk-heading-m" id="patient-details-contacts">Next of kin</h3>
+          <p id="pds-edit-names" class="pds-edit-link"><a href="#">Edit</a></p>
         </div>
         <div class="scra-card-content">
           <div class="nhsuk-grid-row">

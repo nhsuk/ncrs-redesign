@@ -1,9 +1,15 @@
 // Allow column sizes less than 100% in tablet view using class
 
-@media screen and (min-width: 641px) and (max-width: 1024px) {
+@media screen and (min-width: 641px) and (max-width: 1023px) {
   @include govuk-grid-column(one-quarter, $class: 'nhsuk-grid-column-tablet');
   @include govuk-grid-column(one-third, $class: 'nhsuk-grid-column-tablet');
   @include govuk-grid-column(one-half, $class: 'nhsuk-grid-column-tablet');
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1600px) {
+  @include govuk-grid-column(one-quarter, $class: 'nhsuk-grid-column-tablet-landscape');
+  @include govuk-grid-column(one-third, $class: 'nhsuk-grid-column-tablet-landscape');
+  @include govuk-grid-column(one-half, $class: 'nhsuk-grid-column-tablet-landscape');
 }
 
 @media screen and (min-width: 374px) {
@@ -11,4 +17,5 @@
   @include govuk-grid-column(one-third, $class: 'nhsuk-grid-column-mobile');
   @include govuk-grid-column(two-thirds, $class: 'nhsuk-grid-column-mobile');
   @include govuk-grid-column(one-half, $class: 'nhsuk-grid-column-mobile');
+  @include govuk-grid-column(full, $class: 'nhsuk-grid-column-mobile');
 }
