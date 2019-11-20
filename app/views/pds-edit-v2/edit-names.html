@@ -55,7 +55,13 @@ Patient details
               <option value="2">Mrs</option>
               <option value="3">Ms</option>
               <option value="4">Miss</option>
-              <option value="5">Other</option>
+              <option value="5">Dr</option>
+              <option value="6">Rev</option>
+              <option value="7">Sir</option>
+              <option value="8">Lady</option>
+              <option value="9">Lord</option>
+              <option value="10">Dame</option>
+              <option value="11">Other</option>
             </select>
 
             <label class="nhsuk-label" for="pds-edit-first-name">
@@ -125,7 +131,117 @@ Patient details
               This patient does not currently have a preferred name added. You may add one preferred name.
             </p>
           </div>
-          <button class="nhsuk-button nhsuk-button--blue">Add a preferred name</button>
+          <div class="preferred-name-section">
+            <div class="nhsuk-form-group pds-edit-form-group">
+              <label class="nhsuk-label" for="select-prefix">
+                Prefix (optional)
+              </label>
+              <select class="nhsuk-select" id="pds-name-prefix" name="select-prefix">
+                <option value="0" selected>None</option>
+                <option value="1" >Mr</option>
+                <option value="2">Mrs</option>
+                <option value="3">Ms</option>
+                <option value="4">Miss</option>
+                <option value="5">Dr</option>
+                <option value="6">Rev</option>
+                <option value="7">Sir</option>
+                <option value="8">Lady</option>
+                <option value="9">Lord</option>
+                <option value="10">Dame</option>
+                <option value="11">Other</option>
+              </select>
+
+              <label class="nhsuk-label" for="pds-edit-first-name">
+                First name
+              </label>
+              <input class="nhsuk-input nhsuk-input--width-20" id="pds-edit-first-name" name="pdf-edit-first-name" type="text">
+
+              <label class="nhsuk-label" for="pds-edit-middle-name">
+                Middle name(s) (optional)
+              </label>
+              <input class="nhsuk-input nhsuk-input--width-20" id="pds-edit-middle-name" name="pdf-edit-middle-name" type="text">
+
+              <label class="nhsuk-label" for="pds-edit-last-name">
+                Surname
+              </label>
+              <input class="nhsuk-input nhsuk-input--width-20" id="pds-edit-last-name" name="pdf-edit-last-name" type="text">
+
+              <label class="nhsuk-label" for="pds-edit-suffix">
+                Suffix (optional)
+              </label>
+              <input class="nhsuk-input nhsuk-input--width-10" id="pds-edit-suffix" name="pdf-edit-suffix" type="text">
+
+              <fieldset class="nhsuk-fieldset" role="group">
+                <legend class="nhsuk-fieldset__legend">
+                  Effective since
+                </legend>
+
+                <div class="nhsuk-date-input" id="effective-date-name">
+                  <div class="nhsuk-date-input__item">
+                    <div class="nhsuk-form-group">
+                      <label class="nhsuk-label nhsuk-date-input__label" for="effective-date-name-day">
+                        Day
+                      </label>
+                      <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="effective-date-name-day" name="effective-date-name-day" type="number" pattern="[0-9]*">
+                    </div>
+                  </div>
+                  <div class="nhsuk-date-input__item">
+                    <div class="nhsuk-form-group">
+                      <label class="nhsuk-label nhsuk-date-input__label" for="effective-date-name-month">
+                        Month
+                      </label>
+                      <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="effective-date-name-month" name="effective-date-name-month" type="number" pattern="[0-9]*" >
+                    </div>
+                  </div>
+                  <div class="nhsuk-date-input__item">
+                    <div class="nhsuk-form-group">
+                      <label class="nhsuk-label nhsuk-date-input__label" for="effective-date-name-year">
+                        Year
+                      </label>
+                      <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="effective-date-name-year" name="effective-date-name-year" type="number" pattern="[0-9]*">
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+
+              <fieldset class="nhsuk-fieldset" role="group">
+                <legend class="nhsuk-fieldset__legend">
+                  Effective to
+                </legend>
+
+                <div class="nhsuk-date-input" id="effective-to-date-name">
+                  <div class="nhsuk-date-input__item">
+                    <div class="nhsuk-form-group">
+                      <label class="nhsuk-label nhsuk-date-input__label" for="effective-to-date-name-day">
+                        Day
+                      </label>
+                      <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="effective-to-date-name-day" name="effective-to-date-name-day" type="number" pattern="[0-9]*">
+                    </div>
+                  </div>
+                  <div class="nhsuk-date-input__item">
+                    <div class="nhsuk-form-group">
+                      <label class="nhsuk-label nhsuk-date-input__label" for="effective-to-date-name-month">
+                        Month
+                      </label>
+                      <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="effective-to-date-name-month" name="effective-to-date-name-month" type="number" pattern="[0-9]*" >
+                    </div>
+                  </div>
+                  <div class="nhsuk-date-input__item">
+                    <div class="nhsuk-form-group">
+                      <label class="nhsuk-label nhsuk-date-input__label" for="effective-to-date-name-year">
+                        Year
+                      </label>
+                      <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="effective-to-date-name-year" name="effective-to-date-name-year" type="number" pattern="[0-9]*">
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+
+            </div>
+          </div>
+          <button class="nhsuk-button nhsuk-button--blue" id="add-preferred-name-btn">Add a preferred name</button>
+          <button class="nhsuk-button nhsuk-button--blue" id="cancel-preferred-name-btn">Cancel</button>
+
         </div>
       </div>
 

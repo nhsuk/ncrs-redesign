@@ -840,3 +840,15 @@ $(".add-tel-number-btn").click(function() {
   $(".tel-number-section").append("<div class='nhsuk-grid-row'><div class='nhsuk-grid-column-one-quarter'><div class='nhsuk-form-group'><label class='nhsuk-label' for='select-1'>Telephone number type</label><select class='nhsuk-select' id='number-type' name='select phone number type'><option value='1' selected>Main home</option><option value='2'>Mobile</option><option value='3'>Work</option></select><br /><br /><label class='nhsuk-label' for='tel-number'>Telephone number</label><input class='nhsuk-input nhsuk-input--width-10' id='tel-number' name='telephone number' input type='text' inputmode='numeric'></div></div></div><hr />");
   $(".add-tel-number-btn").text("Add another telephone number");
 })
+
+$("#add-preferred-name-btn").click(function() {
+  $(".preferred-name-section").show();
+  $("#add-preferred-name-btn").hide();
+  $("#cancel-preferred-name-btn").show();
+})
+
+$("#cancel-preferred-name-btn").click(function() {
+  $(".preferred-name-section").hide();
+  $("#add-preferred-name-btn").show();
+  $("#cancel-preferred-name-btn").hide();
+})
