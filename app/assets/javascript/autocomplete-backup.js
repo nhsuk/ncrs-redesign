@@ -561,19 +561,9 @@ $(function() {
   var numFlags = $(".added-ra-flag").length;
   $('.adjustments-floater').html("Adjustments added: " + numFlags);
 
-  $('#select-ra-flag-btn').click(function(e) {
+  $('#add-ra-flag-btn').click(function() {
     var flagVal = $("#ra-flags").val();
     var catVal = (flags.find(x => x.label === flagVal).category);
-    $(".modal-flag-category").text(catVal);
-    $(".modal-flag-desc").text(flagVal);
-    $("#ra-flags").val("");
-  });
-
-
-  $('#add-ra-flag-btn').click(function(e) {
-    var flagVal = $(".modal-flag-desc").text();
-    var catVal = $(".modal-flag-category").text();
-    console.log(flagVal);
     var numFlags = $(".added-ra-flag").length;
     if (flagVal != "" && numFlags > 0) {
       $(".added-adjustments-list").append("<div class='added-ra-flag added-ra-flag-border-top'><span class='flag-category'>" + catVal + "</span><span class='flag-desc'>" + flagVal + "</span><span class='remove-flag-container'><a href='#' class='remove-flag-link'>Remove</a></span></div>");
@@ -604,14 +594,6 @@ $(function() {
     var flagVal = $(this).val();
     var catVal = (flags.find(x => x.label === flagVal).category);
     var trimFlag = flagVal.replace(/[^a-z0-9\s]/gi, '').replace(/[_\s]/g, '-');
-    $(".modal-flag-category").text(catVal);
-    $(".modal-flag-desc").text(flagVal);
-  });
-
-  /*$(":checkbox").change(function() {
-    var flagVal = $(this).val();
-    var catVal = (flags.find(x => x.label === flagVal).category);
-    var trimFlag = flagVal.replace(/[^a-z0-9\s]/gi, '').replace(/[_\s]/g, '-');
     var numFlags = $(".added-ra-flag").length;
     var checkedBoxesLength = ($(":checkbox:checked").length);
     if (checkedBoxesLength > 0) {
@@ -628,7 +610,7 @@ $(function() {
     }
     var numFlags = $(".added-ra-flag").length;
     $('.adjustments-floater').html("<a href='#added-adjustments-container'>Adjustments added: " + numFlags + "</a>");
-  });*/
+  });
 
   $('#add-bespoke-flag-btn').click(function() {
     var flagVal = $("#bespoke-flags").val();

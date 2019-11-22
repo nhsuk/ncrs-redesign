@@ -29,6 +29,18 @@
   width: 80%;
   /* Could be more or less, depending on screen size */
 }
+
+@media screen and (min-width: 1024px) {
+  .ra-modal-content {
+    width: 52%;
+  }
+}
+
+.added-ra {
+  margin-bottom: 24px;
+}
+
+
 /* The Close Button */
 .close {
   color: #aaa;

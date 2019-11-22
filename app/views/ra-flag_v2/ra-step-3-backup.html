@@ -64,7 +64,7 @@ Add Reasonable Adjustments
           </span>
           <div>
             <input class="nhsuk-input nhsuk-input--autocomplete" id="ra-flags" name="reasonable-adjustments" type="text">
-            <a data-target="#raModal" data-toggle="modal" href="#raModal" class="open_modal nhsuk-button nhsuk-button--blue nhsuk-button--autocomplete" id="select-ra-flag-btn">Select</a>
+            <a class="nhsuk-button nhsuk-button--blue nhsuk-button--autocomplete" id="add-ra-flag-btn">Add</a>
           </div>
         </div>
 
@@ -389,43 +389,6 @@ Add Reasonable Adjustments
       </div>
     </div>
   </div>
-
-  <!---  MODAL CONTENT --->
-
-  <div id="raModal" class="modal ra-modal">
-
-    <!-- Modal content -->
-
-    <div class="modal-content ra-modal-content">
-      <div class="nhsuk-width-container-fluid">
-        <div class="nhsuk-grid-row">
-
-          <div class="nhsuk-grid-column-full-width">
-            <span class="close">&times;</span>
-            <h3>Reasonable Adjustment selected</h3>
-          </div>
-        </div>
-
-        <div class="nhsuk-grid-row">
-          <div class="nhsuk-inset-text added-ra">
-            <span class="nhsuk-u-visually-hidden">Reasonable Adjustment information: </span>
-            <p class="flag-category modal-flag-category"></p>
-            <p class="flag-desc modal-flag-desc"></p>
-          </div>
-          <div class="nhsuk-form-group">
-            <label class="nhsuk-label" for="example">
-              Add supporting information (optional)
-            </label>
-            <textarea class="nhsuk-textarea" id="example" name="example" rows="3"></textarea>
-          </div>
-          <a class="nhsuk-button nhsuk-button--blue" id="add-ra-flag-btn">Add</a>
-          <p class="cancel-btn-link cancel-ra-btn-link"><a class="cancel-link">Cancel</a></p>
-        </div>
-
-      </div>
-    </div>
-  </div>
-
 
 </div>
 

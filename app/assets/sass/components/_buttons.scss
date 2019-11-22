@@ -17,6 +17,10 @@
   background-color: #8A1538;
 }
 
+a.nhsuk-button--reverse:visited {
+  color: inherit;
+}
+
 .nrl-button {
   font-size: 1rem;
   margin-bottom: 0;
@@ -69,4 +73,8 @@
 
 a.nhsuk-button--pds-edit:visited {
   color: $color_nhsuk-black;
+}
+
+.cancel-link {
+  cursor: pointer;
 }
