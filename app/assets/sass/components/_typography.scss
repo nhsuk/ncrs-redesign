@@ -1,0 +1,11 @@
+.nhsuk-caption-s {
+  font-size: 14px;
+  font-weight: 400;
+  color: $color_nhsuk-grey_1;
+}
+
+@media screen and (min-width: 769px) {
+  .nhsuk-caption-s {
+    font-size: 16px;
+  }
+}
