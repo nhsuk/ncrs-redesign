@@ -50,7 +50,8 @@ $(":checkbox").change(function(){
 $(document).click(function(event) {
   //if you click on anything except the modal itself or the "open modal" link, close the modal
   if (!$(event.target).closest(".modal-content,.open_modal,.nhsuk-checkboxes__item").length) {
-    $('input:checkbox').removeAttr('checked');
+    $('input[name$="comms-support"]').removeAttr('checked');
+    $('input[name$="comms-professional"]').removeAttr('checked');
     $("body").find(".modal").hide();
   }
 });

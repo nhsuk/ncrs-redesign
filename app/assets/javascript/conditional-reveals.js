@@ -7,9 +7,7 @@ $(document).ready(function() {
 
   $("input[name$='impairment']").change(function() {
     var test = $(this).val();
-
     $("#" + test).toggleClass("nhsuk-checkboxes__conditional--hidden");
-
   });
 
   $('#prefer-not-to-say-checkbox').change(function() {
