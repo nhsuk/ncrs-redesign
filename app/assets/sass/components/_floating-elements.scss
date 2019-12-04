@@ -42,16 +42,48 @@
   line-height: 12px;
   right: 20px;
   z-index: 1000;
+
   a {
     color: white!important;
     text-decoration: none;
   }
 }
 
-.adjustments-floater:hover,
+.adjustments-floater a:focus,
 .adjustments-floater a:hover,
 .adjustments-floater:focus,
-.adjustments-floater a:focus {
+.adjustments-floater:hover {
   background-color: #003087;
   box-shadow: none;
+}
+/* RA FOOTER */
+.ra-footer-container {
+  background-color: $color_nhsuk-white;
+  display: inline-block;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0;
+  border-top: 3px solid $color_nhsuk-grey-4;
+  display: none;
+  min-height: 92px;
+}
+
+.ra-footer {
+  padding: 16px;
+}
+
+.ra-count-btn {
+  width: 100%;
+  margin: 0 auto;
+  display: block;
+}
+
+@media screen and (min-width: 415px) {
+  .ra-count-btn {
+    width: 75%;
+    margin: 0 auto;
+    display: block;
+  }
 }

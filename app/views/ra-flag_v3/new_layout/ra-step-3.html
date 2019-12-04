@@ -57,27 +57,6 @@ Add Reasonable Adjustments
         <p class="nhsuk-body">
           It is possible to return and update these adjustments at a later date. </p>
 
-        <div id="nhsuk-form-group-site" class="ui-widget nhsuk-form-group">
-          <label class="nhsuk-label nhsuk-label__strong" for="reasonable-adjustments">Type keywords until you find a match</label>
-          <span class="nhsuk-hint" id="input-with-hint-text-hint">
-            <p>If you cannot find a match you can create a bespoke adjustment by continuing to type.</p>
-          </span>
-          <div>
-            <input class="nhsuk-input nhsuk-input--autocomplete" id="ra-flags" name="reasonable-adjustments" type="text">
-            <a class="nhsuk-button nhsuk-button--blue nhsuk-button--autocomplete" id="add-ra-flag-btn">Add</a>
-          </div>
-        </div>
-
-        <h3 class="nhsuk-heading-s">Alternatively, you can select pre-defined Adjustments from the Reasonable Adjustments categories</h3>
-
-        <p class="nhsuk-body">
-          Use these main categories to browse and select the Reasonable Adjustments that you wish to add.
-        </p>
-
-        <p class="nhsuk-body">
-          You can select more than one.
-        </p>
-
         <details class="nhsuk-details">
           <summary class="nhsuk-details__summary">
             <span class="nhsuk-details__summary-text">
@@ -357,6 +336,18 @@ Add Reasonable Adjustments
             </details>
           </div>
         </details>
+
+        <div id="nhsuk-form-group-site" class="ui-widget nhsuk-form-group">
+          <label class="nhsuk-label nhsuk-label__strong" for="reasonable-adjustments">Type keywords until you find a match</label>
+          <span class="nhsuk-hint" id="input-with-hint-text-hint">
+            <p>If you cannot find a match you can create a bespoke adjustment by continuing to type.</p>
+          </span>
+          <div>
+            <input class="nhsuk-input nhsuk-input--autocomplete" id="ra-flags" name="reasonable-adjustments" type="text">
+            <a data-target="#raModal" data-toggle="modal" href="#raModal" class="open_modal nhsuk-button nhsuk-button--blue nhsuk-button--autocomplete" id="select-ra-flag-btn">Select</a>
+          </div>
+        </div>
+
       </div>
     </div>
     <div class="nhsuk-grid-column-one-third added-adjustments-container" id="added-adjustments-container">
@@ -377,7 +368,7 @@ Add Reasonable Adjustments
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
       <div class="btn-group">
-        <a class="nhsuk-button nhsuk-button--blue" href="ra-step-4">
+        <a class="nhsuk-button nhsuk-button--blue" id="ra-step-3-btn" href="ra-step-4">
           Next
         </a>
 
@@ -390,9 +381,59 @@ Add Reasonable Adjustments
     </div>
   </div>
 
+
+  <!---  MODAL CONTENT --->
+
+  <div id="raModal" class="modal ra-modal">
+
+    <!-- Modal content -->
+
+    <div class="modal-content ra-modal-content">
+      <div class="nhsuk-width-container-fluid">
+        <div class="nhsuk-grid-row">
+
+          <div class="nhsuk-grid-column-full-width">
+            <span class="close">&times;</span>
+            <h3>Reasonable Adjustment selected</h3>
+          </div>
+        </div>
+
+        <div class="nhsuk-grid-row">
+          <div class="nhsuk-inset-text added-ra">
+            <span class="nhsuk-u-visually-hidden">Reasonable Adjustment information: </span>
+            <p class="flag-category modal-flag-category"></p>
+            <p class="flag-desc modal-flag-desc"></p>
+          </div>
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="ra-supporting-info">
+              Add supporting information <strong>(optional)</strong>
+            </label>
+            <textarea class="nhsuk-textarea" id="ra-supporting-info" name="ra-supporting-info" rows="3"></textarea>
+          </div>
+          <a class="nhsuk-button nhsuk-button--blue" id="add-ra-flag-btn">Add</a>
+          <p class="cancel-btn-link cancel-ra-btn-link"><a class="cancel-link">Cancel</a></p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+</div>
+
+<div class="ra-footer-container ">
+  <div class="ra-footer nhsuk-width-container-fluid">
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-full">
+        <a class="nhsuk-button ra-count-btn" href="#">
+          View Reasonable adjustments <span class="ra-count"></span>
+        </a>
+      </div>
+    </div>
+  </div>
 </div>
 
 {% block pageScripts %}
-<script src="/js/autocomplete.js"></script>
+<script src="/js/ra.js"></script>
 {% endblock %}
 {% endblock %}
