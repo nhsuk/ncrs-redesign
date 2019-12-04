@@ -195,7 +195,8 @@ $(function() {
     source: flags
   });
 
-  var numFlags = 0;
+  var numFlags = $(".added-ra-flag").length;
+  $('.adjustments-floater').html("Adjustments added: " + numFlags);
 
   $('#select-ra-flag-btn').click(function(e) {
     var flagVal = $("#ra-flags").val();
@@ -208,9 +209,11 @@ $(function() {
   var adjustmentsList = [];
 
   $('#add-ra-flag-btn').click(function(e) {
+    $('.ra-count').html(parseInt($('.ra-count').html(), 10)+1)
     var flagVal = $(".modal-flag-desc").text();
     var catVal = $(".modal-flag-category").text();
     var infoVal = $("#ra-supporting-info").val();
+    var numFlags = $(".added-ra-flag").length;
     if (infoVal == "") {
       var infoVal = "No supporting information added"
     } else {
@@ -234,6 +237,7 @@ $(function() {
 
 
   $(document).on('click', '.remove-flag-link', function() {
+    $('.ra-count').html(parseInt($('.ra-count').html(), 10)-1)
     var numFlags = $(".added-ra-flag").length;
     if (numFlags === 1) {
       $('.no-adjustments-placeholder').show();
