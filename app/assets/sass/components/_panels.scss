@@ -9,7 +9,7 @@
 .added-adjustments-list {
   background-color: $color_nhsuk-white;
   border-top: 3px solid $color_nhsuk-blue;
-  padding: 24px;
+  padding: 12px;
 }
 
 
@@ -23,6 +23,14 @@
   #added-adjustments-container {
     margin-bottom: 32px;
   }
+}
+
+.no-adjustments-placeholder {
+  padding: 12px;
+}
+
+.added-ra-flag {
+  padding: 12px;
 }
 
 .ra-list-text {
@@ -73,4 +81,14 @@ a.remove-flag-link {
   margin-top: 8px;
   padding-top: 8px;
   border-top: 1px solid $color_nhsuk-grey_4;
+}
+
+.ra-blink {
+  background-color: #005eb8 !important;
+  span {
+    color: white !important;
+    a {
+      color: white !important;
+    }
+  }
 }

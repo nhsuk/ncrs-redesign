@@ -659,10 +659,9 @@ $(function() {
 
 });
 
-if (window.location.pathname == "/ra-flag_v2/ra-step-4") {
+$(function() {
   var adjustmentsList = JSON.parse(sessionStorage.getItem("adjustmentsList"));
   var arrayLength = adjustmentsList.length;
-  console.log(arrayLength);
   if (arrayLength >= 1) {
     $(".no-adjustments-added-text").hide();
   }
@@ -670,4 +669,4 @@ if (window.location.pathname == "/ra-flag_v2/ra-step-4") {
     var adjustmentArray = adjustmentsList[i].split('|');
     $('<div class="scra-card-content"><div class="nhsuk-grid-row"><div class="nhsuk-grid-column-three-quarters nhsuk-u-three-quarters-tablet"><div class="card-content-section"><h4 class="nhsuk-heading-s"><span class="nhsuk-caption-s nhsuk-caption--bottom">' + adjustmentArray[0] + '</span><span role="text">' + adjustmentArray[1] + '</span></h4><h5 class="nhsuk-heading-xs"><span role="text">Supporting information:</span><span class="nhsuk-caption-m nhsuk-caption--bottom">' + adjustmentArray[2] + '</span></h5><p class="nhsuk-body-s">Added: 26-Apr-2019 by James Smith (GO) at Leeds Teaching Hospitals NHS Trust</p></div></div><div class="nhsuk-grid-column-one-quarter nhsuk-u-one-quarter-tablet"><a href="#" class="nhsuk-button nhsuk-button--blue ra-edit">Edit</a><a href="#" class="nhsuk-button nhsuk-button--red ra-delete">Delete</a></div></div></div>').appendTo($("#added-adjustments-summary"));
   }
-}
+});

@@ -209,7 +209,7 @@ $(function() {
   var adjustmentsList = [];
 
   $('#add-ra-flag-btn').click(function(e) {
-    $('.ra-count').html(parseInt($('.ra-count').html(), 10)+1)
+    $('.ra-count').html(parseInt($('.ra-count').html(), 10) + 1)
     var flagVal = $(".modal-flag-desc").text();
     var catVal = $(".modal-flag-category").text();
     var infoVal = $("#ra-supporting-info").val();
@@ -220,12 +220,16 @@ $(function() {
       var infoVal = $("#ra-supporting-info").val();
     }
     if (flagVal != "" && numFlags > 0) {
-      $(".added-adjustments-list").append("<div class='added-ra-flag added-ra-flag-border-top'><span class='flag-category'>" + catVal + "</span><span class='flag-desc'>" + flagVal + "</span><span class='ra-support-info'>" + infoVal + "</span><span class='remove-flag-container'><a href='#' class='remove-flag-link'>Remove</a></span></div>");
+      var appendedAdjustment = $("<div class='added-ra-flag ra-blink added-ra-flag-border-top' id='raFlag" + numFlags + "'><span class='flag-category'>" + catVal + "</span><span class='flag-desc'>" + flagVal + "</span><span class='ra-support-info'>" + infoVal + "</span><span class='remove-flag-container'><a href='#' class='remove-flag-link'>Remove</a></span></div>");
+      $(appendedAdjustment).hide().appendTo(".added-adjustments-list").fadeIn(1000);
+      $("#raFlag" + numFlags).removeClass("ra-blink", 100);
       $("#ra-flags").val("");
       var numFlags = $(".added-ra-flag").length;
     } else if (flagVal != "") {
       $('.no-adjustments-placeholder').hide();
-      $(".added-adjustments-list").append("<div class='added-ra-flag'><span class='flag-category'>" + catVal + "</span><span class='flag-desc'>" + flagVal + "</span><span class='ra-support-info'>" + infoVal + "</span><span class='remove-flag-container'><a href='#' class='remove-flag-link'>Remove</a></span></div>");
+      var appendedAdjustment = $("<div class='added-ra-flag ra-blink' id='raFlag" + numFlags + "'><span class='flag-category'>" + catVal + "</span><span class='flag-desc'>" + flagVal + "</span><span class='ra-support-info'>" + infoVal + "</span><span class='remove-flag-container'><a href='#' class='remove-flag-link'>Remove</a></span></div>");
+      $(appendedAdjustment).hide().appendTo(".added-adjustments-list").fadeIn(1000);
+      $("#raFlag" + numFlags).removeClass("ra-blink", 100);
       $("#ra-flags").val("");
     }
     $("#ra-supporting-info").val("");
@@ -233,11 +237,8 @@ $(function() {
     sessionStorage.setItem("adjustmentsList", JSON.stringify(adjustmentsList));
   });
 
-  var numFlags = $(".added-ra-flag").length;
-
-
   $(document).on('click', '.remove-flag-link', function() {
-    $('.ra-count').html(parseInt($('.ra-count').html(), 10)-1)
+    $('.ra-count').html(parseInt($('.ra-count').html(), 10) - 1)
     var numFlags = $(".added-ra-flag").length;
     if (numFlags === 1) {
       $('.no-adjustments-placeholder').show();
@@ -286,28 +287,30 @@ $(function() {
 $('#add-ra-flag-btn').click(function(e) {
   if ($(window).width() < 769) {
     $('.ra-footer-container').show();
+    $(".ra-count-btn")
+      .animate({
+        backgroundColor: "#003087"
+      }, 500)
+      .animate({
+        backgroundColor: "#005eb8"
+      }, 500);
   }
 });
 
 /* HIDE RA CONTAINER ON TABLET */
 
 $(function() {
-  if ($(window).width() < 769) {
-    $('.added-adjustments-container').hide();
-  } else {
-    $('.added-adjustments-container').show();
+  if ($(window).width() > 768) {
     $('.ra-footer-container').hide();
   }
 });
 
 $(window).resize(function() {
 
-  if ($(window).width() < 769) {
-    $('.added-adjustments-container').hide();
-    $('.ra-footer-container').show();
-  } else {
-    $('.added-adjustments-container').show();
+  if ($(window).width() > 768) {
     $('.ra-footer-container').hide();
+  } else {
+    $('.ra-footer-container').show();
   }
 
 });
