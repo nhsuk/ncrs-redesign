@@ -38,7 +38,7 @@ Patient details
       <h1 class="nhsuk-heading-l">Edit this patient's National Data Opt-Out preference</h1>
 
       <div class="nhsuk-back-link">
-        <a class="nhsuk-back-link__link" href="ra-step-1">
+        <a class="nhsuk-back-link__link open_modal" data-target="#ndopExitModal" data-toggle="modal" href="#ndopExitModal">
           <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
             <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
           </svg>
@@ -188,7 +188,8 @@ Patient details
           <input class="nhsuk-input nhsuk-input--width-10" id="nic-reference-input" name="nic-reference-input" type="text">
         </div>
 
-        <button class="nhsuk-button" type="submit">Confirm preference</a>
+        <button class="nhsuk-button" type="submit">Confirm preference</button>
+        <p class="cancel-btn-link"><a class="open_modal" data-target="#ndopExitModal" data-toggle="modal" href="#ndopExitModal">Cancel</a></p>
 
       </form>
 
@@ -196,6 +197,43 @@ Patient details
     </div>
 
   </div>
+
+  <div id="ndopExitModal" class="modal">
+
+    <!-- Modal content -->
+
+    <div class="modal-content small-modal-content">
+      <div class="nhsuk-width-container-fluid">
+        <div class="nhsuk-grid-row">
+
+          <div class="nhsuk-grid-column-full-width">
+            <span class="close">&times;</span>
+            <h3>Are you sure you want to cancel?</h3>
+          </div>
+        </div>
+
+        <div class="nhsuk-grid-row">
+
+          <p class="nhsuk-body">
+            You will be returned to the patient details screen
+          </p>
+
+          <div class="btn-group">
+            <a class="nhsuk-button nhsuk-button--blue nhsuk-button--large" id="cancel-ndop" href="patient-details">
+              Yes
+            </a>
+
+            <button class="nhsuk-button nhsuk-button--reverse nhsuk-button--large close-btn">
+              No
+            </button>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
 </div>
 
 {% block pageScripts %}
@@ -261,7 +299,15 @@ Patient details
 
   });
 
+  $('.cancel-btn-link').click(function() {
+    $('#ndopExitModal').show();
+  })
+
+  $('.nhsuk-back-link').click(function() {
+    $('#ndopExitModal').show();
+  })
 </script>
+
 {% endblock %}
 
 {% endblock %}
