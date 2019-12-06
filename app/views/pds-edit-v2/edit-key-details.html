@@ -39,99 +39,181 @@ Patient details
 
       <div class="scra-card pds-edit-card">
         <div class="scra-card-header pds-edit-card-header">
-          <h2 class="nhsuk-heading-m" id="patient-details-usual-name">Usual name</h2>
+          <h2 class="nhsuk-heading-m" id="edit-key-details">Key details</h2>
         </div>
         <div class="scra-card-content">
-          <p class="nhsuk-body-s pds-edit-support-text">
-            A patient must always have a usual name
-          </p>
 
-          <div class="nhsuk-form-group pds-edit-form-group">
-            <label class="nhsuk-label" for="select-prefix">
-              Prefix (optional)
-            </label>
-            <select class="nhsuk-select" id="pds-name-prefix" name="select-prefix">
-              <option value="1" selected>Mr</option>
-              <option value="2">Mrs</option>
-              <option value="3">Ms</option>
-              <option value="4">Miss</option>
-              <option value="5">Dr</option>
-              <option value="6">Rev</option>
-              <option value="7">Sir</option>
-              <option value="8">Lady</option>
-              <option value="9">Lord</option>
-              <option value="10">Dame</option>
-              <option value="11">Other</option>
-            </select>
+          <div class="nhsuk-form-group">
 
-            <label class="nhsuk-label" for="pds-edit-first-name">
-              First name
-            </label>
-            <input class="nhsuk-input nhsuk-input--width-20" id="pds-edit-first-name" name="pdf-edit-first-name" type="text" value="William">
-
-            <label class="nhsuk-label" for="pds-edit-middle-name">
-              Middle name(s) (optional)
-            </label>
-            <input class="nhsuk-input nhsuk-input--width-20" id="pds-edit-middle-name" name="pdf-edit-middle-name" type="text">
-
-            <label class="nhsuk-label" for="pds-edit-last-name">
-              Surname
-            </label>
-            <input class="nhsuk-input nhsuk-input--width-20" id="pds-edit-last-name" name="pdf-edit-last-name" type="text" value="Shakespeare">
-
-            <label class="nhsuk-label" for="pds-edit-suffix">
-              Suffix (optional)
-            </label>
-            <input class="nhsuk-input nhsuk-input--width-10" id="pds-edit-suffix" name="pdf-edit-suffix" type="text">
-
-            <fieldset class="nhsuk-fieldset" role="group">
-              <legend class="nhsuk-fieldset__legend">
-                Effective since
+            <fieldset class="nhsuk-fieldset" aria-describedby="gender-radio">
+              <legend class="nhsuk-fieldset__legend nhsuk-label__strong">
+                Gender
               </legend>
+              <span id="advanced-gender-error-error" class="nhsuk-error-message" style="display: none">
+                You must select a gender
+              </span>
+              <div class="nhsuk-radios nhsuk-radios--inline" id="gender-radio">
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="gender-female-advanced" name="gender-advanced" type="radio" value="Female">
+                  <label class="nhsuk-label nhsuk-radios__label" for="gender-female-advanced">
+                    Female
+                  </label>
+                </div>
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="gender-male-advanced" name="gender-advanced" type="radio" value="Male">
+                  <label class="nhsuk-label nhsuk-radios__label" for="gender-male-advanced">
+                    Male
+                  </label>
+                </div>
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="gender-not-known-advanced" name="gender-advanced" type="radio" value="Not known">
+                  <label class="nhsuk-label nhsuk-radios__label" for="gender-not-known-advanced">
+                    Not known
+                  </label>
+                </div>
+              </div>
+            </fieldset>
 
-              <div class="nhsuk-date-input" id="effective-date-name">
+          </div>
+
+          <div class="nhsuk-form-group">
+
+            <fieldset class="nhsuk-fieldset">
+
+              <div class="nhsuk-form-group">
+                <label class="nhsuk-label" for="input-width-10">
+                  NHS Number
+                </label>
+                <input class="nhsuk-input nhsuk-input--width-10" id="input-width-20" disabled name="test-width-20" value="123 456 7890" type="text">
+              </div>
+
+            </fieldset>
+
+          </div>
+
+          <div class="nhsuk-form-group">
+
+            <fieldset class="nhsuk-fieldset" aria-describedby="dob" role="group">
+              <legend class="nhsuk-fieldset__legend nhsuk-label__strong">
+                Date of birth
+              </legend>
+              <span id="dob-error-error" class="nhsuk-error-message" style="display: none">
+                You must enter a date of birth
+              </span>
+              <div class="nhsuk-date-input" id="dob">
                 <div class="nhsuk-date-input__item">
                   <div class="nhsuk-form-group">
-                    <label class="nhsuk-label nhsuk-date-input__label" for="effective-date-name-day">
+                    <label class="nhsuk-label nhsuk-date-input__label" for="dob-day">
                       Day
                     </label>
-                    <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="effective-date-name-day" name="effective-date-name-day" type="number" pattern="[0-9]*" value="29">
+                    <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="dob-day" name="dob-day" type="number" pattern="[0-9]*" value="20">
                   </div>
                 </div>
                 <div class="nhsuk-date-input__item">
                   <div class="nhsuk-form-group">
-                    <label class="nhsuk-label nhsuk-date-input__label" for="effective-date-name-month">
+                    <label class="nhsuk-label nhsuk-date-input__label" for="dob-month">
                       Month
                     </label>
-                    <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="effective-date-name-month" name="effective-date-name-month" type="number" pattern="[0-9]*" value="2">
+                    <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="dob-month" name="dob-month" type="number" pattern="[0-9]*" value="1">
                   </div>
                 </div>
                 <div class="nhsuk-date-input__item">
                   <div class="nhsuk-form-group">
-                    <label class="nhsuk-label nhsuk-date-input__label" for="effective-date-name-year">
+                    <label class="nhsuk-label nhsuk-date-input__label" for="dob-year">
                       Year
                     </label>
-                    <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="effective-date-name-year" name="effective-date-name-year" type="number" pattern="[0-9]*" value="2002">
+                    <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="dob-year" name="dob-year" type="number" pattern="[0-9]*" value="1970">
                   </div>
                 </div>
               </div>
             </fieldset>
 
           </div>
-        </div>
-      </div>
 
-      <div class="scra-card pds-edit-card">
-        <div class="scra-card-header pds-edit-card-header">
-          <h2 class="nhsuk-heading-m" id="patient-details-bachelor-name">Other previous name</h2>
-        </div>
-        <div class="scra-card-content">
-          <div class="nhsuk-u-reading-width">
-            <p class="nhsuk-body-s pds-edit-support-text">
-              This patient does not currently have an other previous name added. You may add more than one other previous name.
-            </p>
+          <div class="nhsuk-form-group">
+
+            <fieldset class="nhsuk-fieldset">
+
+              <legend class="nhsuk-fieldset__legend nhsuk-label__strong">
+                Time of birth
+              </legend>
+              <span id="dob-from-error-error" class="nhsuk-error-message" style="display: none">
+                You must enter a date
+              </span>
+              <div class="nhsuk-date-input" id="dob-time">
+                <div class="nhsuk-date-input__item">
+                  <div class="nhsuk-form-group">
+                    <label class="nhsuk-label nhsuk-date-input__label" for="dob-time-hour">
+                      Hour
+                    </label>
+                    <input class="nhsuk-input nhsuk-date-input__input nhsuk-dob-input__input nhsuk-input--width-2" id="dob-time-hour" name="dob-day-from" type="number" pattern="[0-9]*">
+                  </div>
+                </div>
+                <div class="nhsuk-date-input__item">
+                  <div class="nhsuk-form-group">
+                    <label class="nhsuk-label nhsuk-date-input__label" for="dob-time-min">
+                      Minute
+                    </label>
+                    <input class="nhsuk-input nhsuk-date-input__input nhsuk-dob-input__input nhsuk-input--width-2" id="dob-time-min" name="dob-month-from" type="number" pattern="[0-9]*">
+                  </div>
+                </div>
+              </div>
+
+            </fieldset>
+
           </div>
-          <button class="nhsuk-button nhsuk-button--blue">Add an other previous name</button>
+
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label nhsuk-label__strong" for="input-width-20">
+              Town of birth
+            </label>
+            <input class="nhsuk-input nhsuk-input--width-20" id="input-width-20" name="test-width-20" type="text">
+          </div>
+
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label nhsuk-label__strong" for="input-width-20">
+              County/Province
+            </label>
+            <input class="nhsuk-input nhsuk-input--width-20" id="input-width-20" name="test-width-20" type="text">
+          </div>
+
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label nhsuk-label__strong" for="select-1">
+              Country of birth
+            </label>
+            <select class="nhsuk-select" id="select-1" name="select-1">
+              <option value="1" selected>Select from list</option>
+            </select>
+          </div>
+
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label nhsuk-label__strong" for="select-2">
+              Language <strong>(Mandatory when interpreter required)</strong>
+            </label>
+            <select class="nhsuk-select" id="select-2" name="select-2">
+              <option value="1" selected>Select from list</option>
+            </select>
+          </div>
+
+          <div class="nhsuk-form-group">
+
+            <fieldset class="nhsuk-fieldset" aria-describedby="example-hint">
+
+              <div class="nhsuk-checkboxes">
+
+                <div class="nhsuk-checkboxes__item">
+                  <input class="nhsuk-checkboxes__input" id="example-1" name="example" type="checkbox" value="interpreter-required">
+                  <label class="nhsuk-label nhsuk-checkboxes__label" for="example-1">
+                    Interpreter required
+                  </label>
+                </div>
+
+              </div>
+            </fieldset>
+
+          </div>
+
+
         </div>
       </div>
 
