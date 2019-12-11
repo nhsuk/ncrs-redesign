@@ -31,6 +31,7 @@
 
 .added-ra-flag {
   padding: 12px;
+  position: relative;
 }
 
 .ra-list-text {
@@ -84,11 +85,17 @@ a.remove-flag-link {
 }
 
 .ra-blink {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
   background-color: #005eb8 !important;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   span {
     color: white !important;
-    a {
-      color: white !important;
-    }
   }
 }

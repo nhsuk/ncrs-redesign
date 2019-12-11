@@ -220,16 +220,16 @@ $(function() {
       var infoVal = $("#ra-supporting-info").val();
     }
     if (flagVal != "" && numFlags > 0) {
-      var appendedAdjustment = $("<div class='added-ra-flag ra-blink added-ra-flag-border-top' id='raFlag" + numFlags + "'><span class='flag-category'>" + catVal + "</span><span class='flag-desc'>" + flagVal + "</span><span class='ra-support-info'>" + infoVal + "</span><span class='remove-flag-container'><a href='#' class='remove-flag-link'>Remove</a></span></div>");
+      var appendedAdjustment = $("<div class='added-ra-flag added-ra-flag-border-top' id='raFlag" + numFlags + "'><div class='ra-blink'><span><h3 class='nhsuk-heading-xs'>Adjustment added</h3></span></div><span class='flag-category'>" + catVal + "</span><span class='flag-desc'>" + flagVal + "</span><span class='ra-support-info'>" + infoVal + "</span><span class='remove-flag-container'><a href='#' class='remove-flag-link'>Remove</a></span></div>");
       $(appendedAdjustment).hide().appendTo(".added-adjustments-list").fadeIn(1000);
-      $("#raFlag" + numFlags).removeClass("ra-blink", 100);
+      $(".ra-blink").delay(1000).fadeOut(1000);
       $("#ra-flags").val("");
       var numFlags = $(".added-ra-flag").length;
     } else if (flagVal != "") {
       $('.no-adjustments-placeholder').hide();
-      var appendedAdjustment = $("<div class='added-ra-flag ra-blink' id='raFlag" + numFlags + "'><span class='flag-category'>" + catVal + "</span><span class='flag-desc'>" + flagVal + "</span><span class='ra-support-info'>" + infoVal + "</span><span class='remove-flag-container'><a href='#' class='remove-flag-link'>Remove</a></span></div>");
+      var appendedAdjustment = $("<div class='added-ra-flag' id='raFlag" + numFlags + "'><div class='ra-blink'><span><h3 class='nhsuk-heading-xs'>Adjustment added</h3></span></div><span class='flag-category'>" + catVal + "</span><span class='flag-desc'>" + flagVal + "</span><span class='ra-support-info'>" + infoVal + "</span><span class='remove-flag-container'><a href='#' class='remove-flag-link'>Remove</a></span></div>");
       $(appendedAdjustment).hide().appendTo(".added-adjustments-list").fadeIn(1000);
-      $("#raFlag" + numFlags).removeClass("ra-blink", 100);
+      $(".ra-blink").delay(1000).fadeOut(1000);
       $("#ra-flags").val("");
     }
     $("#ra-supporting-info").val("");
