@@ -54,10 +54,6 @@ Review & save
         <p class="nhsuk-body">
           Please review your updates before creating the record. You can edit or delete details as required if you need to.
         </p>
-        <p class="nhsuk-body">
-          By continuing, you confirm that you wish to create a Reasonable Adjustment record for this patient and have obtained consent (or made a best interest decision) to include any relevant impairments and/or adjustments. Any information
-          entered into this record will be shared nationally with organisations that provide direct care across the NHS.
-        </p>
       </div>
 
       <div class="scra-card">
@@ -95,8 +91,8 @@ Review & save
               </div>
             </div>
             <div class="nhsuk-grid-column-one-quarter nhsuk-u-one-quarter-tablet">
-              <a href="#" class="nhsuk-button nhsuk-button--blue ra-edit">Edit</a>
-              <a href="#" class="nhsuk-button nhsuk-button--red ra-delete">Delete</a>
+              <a href="ra-step-2" class="nhsuk-button nhsuk-button--blue ra-edit">Edit</a>
+              <a href="ra-step-2" class="nhsuk-button nhsuk-button--red ra-delete">Delete</a>
             </div>
           </div>
         </div>
@@ -122,9 +118,15 @@ Review & save
         </div>
       </div>
 
+      <div class="nhsuk-warning-callout">
+        <h3 class="nhsuk-warning-callout__label">Creating a Reasonable Adjustment record</h3>
+        <p>By saving and completing this process, you confirm that you wish to create a Reasonable Adjustment record for this patient and have obtained consent (or made a best interest decision) to include any relevant impairments and/or adjustments.</p>
+        <p>Any information entered into this record will be shared nationally with organisations that provide direct care across the NHS.</p>
+      </div>
+
       <div class="btn-group">
         <form action="patient-overview-flag-added">
-          <button class="nhsuk-button nhsuk-button--blue" type="submit">
+          <button class="nhsuk-button" type="submit">
             Save and complete
           </button>
 
@@ -136,6 +138,6 @@ Review & save
   </div>
 </div>
 {% block pageScripts %}
-<script src="/js/autocomplete.js"></script>
+<script src="/js/ra.js"></script>
 {% endblock %}
 {% endblock %}
