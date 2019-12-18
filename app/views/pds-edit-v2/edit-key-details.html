@@ -137,6 +137,9 @@ Patient details
               <legend class="nhsuk-fieldset__legend nhsuk-label__strong">
                 Time of birth
               </legend>
+              <span class="nhsuk-hint" id="dob-errors-hint">
+                Please use a 24 hour clock time format. For example, 23 59
+              </span>
               <span id="dob-from-error-error" class="nhsuk-error-message" style="display: none">
                 You must enter a date
               </span>
@@ -187,15 +190,6 @@ Patient details
           </div>
 
           <div class="nhsuk-form-group">
-            <label class="nhsuk-label nhsuk-label__strong" for="select-2">
-              Language <strong>(Mandatory when interpreter required)</strong>
-            </label>
-            <select class="nhsuk-select" id="select-2" name="select-2">
-              <option value="1" selected>Select from list</option>
-            </select>
-          </div>
-
-          <div class="nhsuk-form-group">
 
             <fieldset class="nhsuk-fieldset" aria-describedby="example-hint">
 
@@ -212,6 +206,17 @@ Patient details
             </fieldset>
 
           </div>
+
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label nhsuk-label__strong" for="select-2">
+              Language <strong>(Mandatory when interpreter required)</strong>
+            </label>
+            <select class="nhsuk-select" id="select-2" name="select-2">
+              <option value="1" selected>Select from list</option>
+            </select>
+          </div>
+
+
 
 
         </div>
