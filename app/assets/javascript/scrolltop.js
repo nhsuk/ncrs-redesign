@@ -10,14 +10,16 @@ jQuery(document).ready(function($) {
     } else {
       $(".scrollToTop").fadeOut();
     }
+
     if ($(window).scrollTop() + $(window).height() < $(document).height() - $("#nhsuk-footer").height() - 92) {
       $('.scrollToTop').css("position", "fixed"); //resetting it
       $('.scrollToTop').css("bottom", "20px"); //resetting it
       $('.scrollToTop').css("right", "20px"); //resetting it
     }
-    if ($(window).scrollTop() + $(window).height() > $(document).height() - $("#nhsuk-footer").height() - 92) {
-      $('.scrollToTop').css("position", "relative"); // make it related
-      $('.scrollToTop').css("bottom", "42px"); // 60 px, height of #toTop
+
+    if ($(window).scrollTop() + $(window).height() > $(document).height() - $("#nhsuk-footer").height() - $(".ra-footer-container").height() - 92) {
+      $('.scrollToTop').css("position", "relative");
+      $('.scrollToTop').css("bottom", "62px");
     }
 
     if($(window).scrollTop() > (topofDiv + height)){
