@@ -208,9 +208,17 @@ $(function() {
 
   var adjustmentsList = [];
 
+  function camelize(str) {
+    return str.replace(/(?:^\w|[A-Z]|\b\w)/g, function(word, index) {
+      return index == 0 ? word.toLowerCase() : word.toUpperCase();
+    }).replace(/\s+/g, '');
+  }
+
   $('#add-ra-flag-btn').click(function(e) {
+
     $('.ra-count').html(parseInt($('.ra-count').html(), 10) + 1)
     var flagVal = $(".modal-flag-desc").text();
+    var flagClassVal = camelize(flagVal);
     var catVal = $(".modal-flag-category").text();
     var infoVal = $("#ra-supporting-info").val();
     var numFlags = $(".added-ra-flag").length;
@@ -220,21 +228,35 @@ $(function() {
       var infoVal = $("#ra-supporting-info").val();
     }
     if (flagVal != "" && numFlags > 0) {
-      var appendedAdjustment = $("<div class='added-ra-flag added-ra-flag-border-top' id='raFlag" + numFlags + "'><div class='ra-blink'><span><h3 class='nhsuk-heading-xs'>Adjustment added</h3></span></div><span class='flag-category'>" + catVal + "</span><span class='flag-desc'>" + flagVal + "</span><span class='ra-support-info'>" + infoVal + "</span><span class='remove-flag-container'><a href='#' class='remove-flag-link'>Remove</a></span></div>");
+      var appendedAdjustment = $("<div class='added-ra-flag added-ra-flag-border-top' id='" + flagClassVal + "'><div class='ra-blink'><span><h3 class='nhsuk-heading-xs'>Adjustment added</h3></span></div><span class='flag-category'>" + catVal + "</span><span class='flag-desc'>" + flagVal + "</span><span class='ra-support-info'>" + infoVal + "</span><span class='remove-flag-container'><a href='#' class='remove-flag-link'>Remove</a></span></div>");
       $(appendedAdjustment).hide().appendTo(".added-adjustments-list").fadeIn(1000);
       $(".ra-blink").delay(1000).fadeOut(1000);
       $("#ra-flags").val("");
       var numFlags = $(".added-ra-flag").length;
     } else if (flagVal != "") {
       $('.no-adjustments-placeholder').hide();
-      var appendedAdjustment = $("<div class='added-ra-flag' id='raFlag" + numFlags + "'><div class='ra-blink'><span><h3 class='nhsuk-heading-xs'>Adjustment added</h3></span></div><span class='flag-category'>" + catVal + "</span><span class='flag-desc'>" + flagVal + "</span><span class='ra-support-info'>" + infoVal + "</span><span class='remove-flag-container'><a href='#' class='remove-flag-link'>Remove</a></span></div>");
+      var appendedAdjustment = $("<div class='added-ra-flag' id='" + flagClassVal + "'><div class='ra-blink'><span><h3 class='nhsuk-heading-xs'>Adjustment added</h3></span></div><span class='flag-category'>" + catVal + "</span><span class='flag-desc'>" + flagVal + "</span><span class='ra-support-info'>" + infoVal + "</span><span class='remove-flag-container'><a href='#' class='remove-flag-link'>Remove</a></span></div>");
       $(appendedAdjustment).hide().appendTo(".added-adjustments-list").fadeIn(1000);
       $(".ra-blink").delay(1000).fadeOut(1000);
       $("#ra-flags").val("");
     }
     $("#ra-supporting-info").val("");
+    if (numFlags > 0) {
+      $('.no-adjustments-placeholder').hide();
+    }
     adjustmentsList.push(catVal + " | " + flagVal + " | " + infoVal);
     sessionStorage.setItem("adjustmentsList", JSON.stringify(adjustmentsList));
+  });
+
+  $('input[type="checkbox"]').on('change', function(e){
+     if(!e.target.checked){
+       var checkboxVal = $(this).val();
+       var checkboxVal = camelize(checkboxVal)
+       $('#' + checkboxVal).remove();
+     }
+     if (numFlags === 0) {
+       $('.no-adjustments-placeholder').show();
+     }
   });
 
   $(document).on('click', '.remove-flag-link', function() {
@@ -319,10 +341,10 @@ $(function() {
   var adjustmentsList = JSON.parse(sessionStorage.getItem("adjustmentsList"));
   var arrayLength = adjustmentsList.length;
   if (arrayLength >= 1) {
-    $(".no-adjustments-added-text").hide();
+    $(".no-adjustments-added-text").remove();
   }
   for (i = 0; i < arrayLength; i++) {
     var adjustmentArray = adjustmentsList[i].split('|');
-    $('<div class="scra-card-content"><div class="nhsuk-grid-row"><div class="nhsuk-grid-column-three-quarters nhsuk-u-three-quarters-tablet"><div class="card-content-section"><h4 class="nhsuk-heading-s"><span class="nhsuk-caption-s nhsuk-caption--bottom">' + adjustmentArray[0] + '</span><span role="text">' + adjustmentArray[1] + '</span></h4><h5 class="nhsuk-heading-xs"><span role="text">Supporting information:</span><span class="nhsuk-caption-m nhsuk-caption--bottom">' + adjustmentArray[2] + '</span></h5><p class="nhsuk-body-s">Added: 26-Apr-2019 by James Smith (GO) at Leeds Teaching Hospitals NHS Trust</p></div></div><div class="nhsuk-grid-column-one-quarter nhsuk-u-one-quarter-tablet"><a href="ra-step-3" class="nhsuk-button nhsuk-button--blue ra-edit">Edit</a><a href="ra-step-3" class="nhsuk-button nhsuk-button--red ra-delete">Delete</a></div></div></div>').appendTo($("#added-adjustments-summary"));
+    $('<div class="scra-card-content"><div class="nhsuk-grid-row"><div class="nhsuk-grid-column-three-quarters nhsuk-u-three-quarters-tablet"><div class="card-content-section"><div class="adjustment-heading"><h4 class="nhsuk-heading-s"><span class="nhsuk-caption-s nhsuk-caption--bottom">' + adjustmentArray[0] + '</span><span role="text">' + adjustmentArray[1] + '</span></h4><p class="pds-edit-link"><a href="ra-step-3">Edit</a></p></div><h5 class="nhsuk-heading-xs"><span role="text">Supporting information:</span><span class="nhsuk-caption-m nhsuk-caption--bottom">' + adjustmentArray[2] + '</span><a href="#" class="remove-adjustment-link">Remove</a></h5><p class="nhsuk-body-s">Added: 26-Apr-2019 by James Smith (GO) at Leeds Teaching Hospitals NHS Trust</p></div></div><div class="nhsuk-grid-column-one-quarter nhsuk-u-one-quarter-tablet">').appendTo($("#added-adjustments-summary"));
   }
 });

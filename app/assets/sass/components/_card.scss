@@ -188,3 +188,15 @@
 .pds-edit-remove-btn {
   bottom: 0;
 }
+
+/* Reasonable Adjustments */
+
+.impairment-heading > *,
+.adjustment-heading > * {
+  display: inline-block;
+}
+
+.remove-adjustment-link {
+  color: $nhsuk-error-color!important;
+  font-weight: 400;
+}

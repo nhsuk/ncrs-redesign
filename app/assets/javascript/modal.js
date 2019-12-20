@@ -39,10 +39,11 @@ $(".cancel-ra-btn-link").click(function(){
   $('input:checkbox').removeAttr('checked');
 })
 
-var val;
-$(":checkbox").change(function(){
-  $("#raModal").fadeIn(400);
-  var val = this.checked ? this.value : '';
+$('input[type="checkbox"]').on('change', function(e){
+   if(e.target.checked){
+     $('#raModal').fadeIn(400);
+     var val = this.checked ? this.value : '';
+   }
 });
 
 /* CLOSE MODALS BY CLICKING OUTSIDE */
