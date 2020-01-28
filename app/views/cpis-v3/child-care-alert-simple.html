@@ -1,0 +1,182 @@
+{% extends 'layouts/layout-application.html' %}
+
+{% block pageTitle %}
+Patient details
+{% endblock %}
+
+{% block beforeContent %}
+
+<div class="nhsuk-full-width-container">
+  <div class='scra-bordered-tabs-container'>
+    <div class="nhsuk-width-container-fluid">
+      <ul class="scra-bordered-tabs">
+        <li class="scra-bordered-tabs-item">
+          <a class="scra-bordered-tabs-link" href="./patient-overview-simple">Overview</a>
+        </li>
+        <li class="scra-bordered-tabs-item scra-bordered-tabs-item-active">
+          <a class="scra-bordered-tabs-link" href="./patient-details-simple">Patient</a>
+        </li>
+        <li class="scra-bordered-tabs-item">
+          <a class="scra-bordered-tabs-link" href="#">Clinical</a>
+        </li>
+        <li class="scra-bordered-tabs-item">
+          <a class="scra-bordered-tabs-link" href="#">Documents</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-width-container">
+
+    <div class="section">
+      <div class="nhsuk-back-link">
+        <a class="nhsuk-back-link__link" href="./patient-details-simple">
+          <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+          </svg>
+            Back to patient information
+          </a>
+      </div>
+      <h1 class="app-page-heading">Child care alert</h1>
+      <div class="nhsuk-inset-text">
+        <span class="nhsuk-u-visually-hidden">Information: </span>
+        <p>This child has <a href="#active-plans">1 active plan</a>.</p>
+      </div>
+      <a name="active-plans"></a>
+      <h2 class="nhsuk-heading-l nhsuk-u-padding-bottom-3">Active child protection information</h2>
+      <div class="scra-card">
+        <h3 class="nhsuk-heading-m">Child protection plan</h3>
+        <p>A plan designed to keep a child safe, setting out how things can be made better for the family and what support they will need. For more information contact the local authority.</p>
+        <div class="scra-card-content">
+          <dl class="nhsuk-summary-list">
+
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Start date
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                09-Sep-2015
+              </dd>
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                End date
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                16-Dec-2021
+              </dd>
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Responsible local authority
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                City of Bradford Metropolitan District Council (209)
+              </dd>
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Emergency duty number
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                0113 333 3333
+              </dd>
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Office hours number
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                0113 456 7890
+              </dd>
+            </div>
+
+          </dl>
+        </div>
+      </div>
+      <h2 class="nhsuk-heading-l">Previous views</h2>
+      <div class="scra-card">
+        <p>
+          Details of who has viewed this page and their organisation (up to the last 25 views). The child protection information might have been different when they viewed it, as it can change over time.
+        </p>
+        <div class="nhsuk-table-responsive">
+          <table class="nhsuk-table">
+            <caption class="nhsuk-table__caption">Details of who has looked the child's protection information and when.</caption>
+            <thead class="nhsuk-table__head">
+              <tr class="nhsuk-table__row">
+                <th class="nhsuk-table__header" scope="col">Date and time</th>
+                <th class="nhsuk-table__header" scope="col">Viewer</th>
+                <th class="nhsuk-table__header" scope="col">Role</th>
+                <th class="nhsuk-table__header" scope="col">Organisation</th>
+              </tr>
+            </thead>
+            <tbody class="nhsuk-table__body">
+              <tr class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">13-May-2019  9:32</td>
+                <td class="nhsuk-table__cell">Mr Brian Flemming</td>
+                <td class="nhsuk-table__cell">Consultant</td>
+                <td class="nhsuk-table__cell">Leeds Partnership NHS Foundation Trust</td>
+              </tr>
+              <tr class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">29-Apr-2018  10:45</td>
+                <td class="nhsuk-table__cell">Dr Jean Foster</td>
+                <td class="nhsuk-table__cell">Designated Doctor</td>
+                <td class="nhsuk-table__cell">Ashfield Medical Centre</td>
+              </tr>
+              <tr class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">28-Apr-2018  14:55</td>
+                <td class="nhsuk-table__cell">Mr Nick Raines</td>
+                <td class="nhsuk-table__cell">Children’s safeguarding lead nurse  </td>
+                <td class="nhsuk-table__cell">Ashfield Medical Centre</td>
+              </tr>
+              <tr class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">13-Mar-2018  16:12</td>
+                <td class="nhsuk-table__cell">Mr Chris Norman</td>
+                <td class="nhsuk-table__cell">Children’s safeguarding lead nurse  </td>
+                <td class="nhsuk-table__cell">York Hospitals NHS Foundation Trust</td>
+              </tr>
+              <tr class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">11-Mar-2018  11:09</td>
+                <td class="nhsuk-table__cell">Mr Chris Norman</td>
+                <td class="nhsuk-table__cell">Children’s safeguarding lead nurse  </td>
+                <td class="nhsuk-table__cell">York Hospitals NHS Foundation Trust</td>
+              </tr>
+              <tr class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">05-Mar-2018  08:02</td>
+                <td class="nhsuk-table__cell">Dr Simon Kirk</td>
+                <td class="nhsuk-table__cell">Named Doctor</td>
+                <td class="nhsuk-table__cell">Old School Medical Centre</td>
+              </tr>
+              <tr class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">21-Nov-2017  10:47</td>
+                <td class="nhsuk-table__cell">Mrs Jude Lynskey</td>
+                <td class="nhsuk-table__cell">Designated Nurse</td>
+                <td class="nhsuk-table__cell">Old School Medical Centre</td>
+              </tr>
+              <tr class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">19-Nov-2017  21:29</td>
+                <td class="nhsuk-table__cell">Mr Amit Ladwa</td>
+                <td class="nhsuk-table__cell">Designated Nurse</td>
+                <td class="nhsuk-table__cell">Old School Medical Centre</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+</div>
+{% endblock %}

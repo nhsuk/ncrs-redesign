@@ -1,0 +1,250 @@
+{% extends 'layouts/layout-application.html' %}
+
+{% block pageTitle %}
+Dashboard
+{% endblock %}
+
+{% block beforeContent %}
+
+<div class="nhsuk-full-width-container">
+  <div class='scra-bordered-tabs-container'>
+    <div class="nhsuk-width-container-fluid">
+      <ul class="scra-bordered-tabs">
+        <li class="scra-bordered-tabs-item scra-bordered-tabs-item-active">
+          <a class="scra-bordered-tabs-link" href="#">Overview</a>
+        </li>
+        <li class="scra-bordered-tabs-item">
+          <a class="scra-bordered-tabs-link" href="./patient-details-complex">Patient</a>
+        </li>
+        <li class="scra-bordered-tabs-item">
+          <a class="scra-bordered-tabs-link" href="#">Clinical</a>
+        </li>
+        <li class="scra-bordered-tabs-item">
+          <a class="scra-bordered-tabs-link" href="#">Documents</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}
+
+{% block content %}
+
+<div class="nhsuk-grid-row nhsuk-promo-group">
+  <div class="nhsuk-grid-column-one-quarter nhsuk-grid-column-tablet-landscape-one-third nhsuk-promo-group__item nhsuk-promo-group__alerts-item nhsuk-u-margin-bottom-3">
+    <div class="nhsuk-promo nhsuk-promo--alert nhsuk-promo--small">
+      <a class="nhsuk-promo__link-wrapper" href="./child-care-alert-complex">
+        <div class="nhsuk-promo__content">
+          <h3 class="nhsuk-promo__heading"><i class="fas fa-arrow-circle-right fa-lg" aria-hidden="true"></i>Child care alert present</h3>
+        </div>
+      </a>
+    </div>
+  </div>
+  <div class="nhsuk-grid-column-one-quarter nhsuk-grid-column-tablet-landscape-one-third nhsuk-promo-group__item nhsuk-promo-group__alerts-item nhsuk-u-margin-bottom-3">
+    <div class="nhsuk-promo nhsuk-promo--alert nhsuk-promo--small">
+      <a class="nhsuk-promo__link-wrapper" href="#">
+        <div class="nhsuk-promo__content">
+          <h3 class="nhsuk-promo__heading"><i class="fas fa-arrow-circle-right fa-lg" aria-hidden="true"></i>Female genital mutilation indicator</h3>
+        </div>
+      </a>
+    </div>
+  </div>
+  <div class="nhsuk-grid-column-one-quarter nhsuk-grid-column-tablet-landscape-one-third nhsuk-promo-group__item nhsuk-promo-group__alerts-item nhsuk-u-margin-bottom-3">
+    <div class="nhsuk-promo nhsuk-promo--alert nhsuk-promo--small">
+      <a class="nhsuk-promo__link-wrapper" href="#">
+        <div class="nhsuk-promo__content">
+          <h3 class="nhsuk-promo__heading"><i class="fas fa-arrow-circle-right fa-lg" aria-hidden="true"></i>Reasonable adjustment present</h3>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+
+
+<div class="nhsuk-grid-row nhsuk-card-group">
+
+
+  <div class="nhsuk-grid-column-one-quarter nhsuk-grid-column-tablet-landscape-one-third nhsuk-grid-column-tablet-one-half nhsuk-card-group__item nhsuk-u-margin-bottom-3">
+    <div class="nhsuk-care-card nhsuk-care-card--non-urgent overview-card">
+      <div class="nhsuk-care-card__heading-container overview-card__heading-container">
+        <h3 class="nhsuk-care-card__heading overview-card__heading"><span role="text"><span class="nhsuk-u-visually-hidden">Patient details:
+            </span>Patient</span>
+        </h3>
+        <span class="nhsuk-care-card__arrow" aria-hidden="true"></span>
+      </div>
+      <div class="nhsuk-care-card__content overview-card__content">
+
+        <ul class="overview-card__list">
+          <li class="overview-card__list-item"><a href="./patient-details-complex">Demographics</a></li>
+          <li class="overview-card__list-item"><a href="./patient-details-complex">Contacts & next of kin</a></li>
+          <li class="overview-card__list-item"><a href="./patient-details-complex">Power of attorney</a></li>
+          <li class="overview-card__list-item"><a href="./patient-details-complex">Chargeability status</a></li>
+          <li class="overview-card__list-item"><a href="./child-care-alert-complex">Child care alert</a></li>
+          <li class="overview-card__list-item"><a href="./patient-details-complex">Female genital mutilation</a></li>
+          <li class="overview-card__list-item"><a href="./patient-details-complex">Reasonable</a></li>
+        </ul>
+
+      </div>
+    </div>
+  </div>
+  <div class="nhsuk-grid-column-one-quarter nhsuk-grid-column-tablet-landscape-one-third nhsuk-grid-column-tablet-one-half nhsuk-card-group__item">
+    <div class="nhsuk-care-card nhsuk-care-card--non-urgent overview-card">
+      <div class="nhsuk-care-card__heading-container overview-card__heading-container">
+        <h3 class="nhsuk-care-card__heading overview-card__heading"><span role="text"><span class="nhsuk-u-visually-hidden">Clinical details:
+            </span>Clinical</span>
+        </h3>
+        <span class="nhsuk-care-card__arrow" aria-hidden="true"></span>
+      </div>
+      <div class="nhsuk-care-card__content overview-card__content">
+
+        <ul class="overview-card__list">
+          <li class="overview-card__list-item"><a data-target="#myModal" data-toggle="modal" class="open_modal" href="#myModal">Summary Care Record</a></li>
+        </ul>
+
+      </div>
+    </div>
+  </div>
+  <div class="nhsuk-grid-column-one-quarter nhsuk-grid-column-tablet-landscape-one-third nhsuk-grid-column-tablet-one-half nhsuk-card-group__item">
+    <div class="nhsuk-care-card nhsuk-care-card--non-urgent overview-card">
+      <div class="nhsuk-care-card__heading-container overview-card__heading-container">
+        <h3 class="nhsuk-care-card__heading overview-card__heading"><span role="text"><span class="nhsuk-u-visually-hidden">Patient documents:
+            </span>Available documents</span>
+        </h3>
+        <span class="nhsuk-care-card__arrow" aria-hidden="true"></span>
+      </div>
+      <div class="nhsuk-care-card__content overview-card__content">
+
+        <p>
+          There are no entries available
+        </p>
+      </div>
+    </div>
+  </div>
+
+
+  <div id="myModal" class="modal">
+
+    <!-- Modal content -->
+
+    <div class="modal-content">
+      <div class="nhsuk-width-container-fluid">
+        <div class="nhsuk-grid-row">
+
+          <div class="nhsuk-grid-column-full-width">
+            <span class="close">&times;</span>
+            <h3>Has this patient given permission to view their Summary Care Record?</h3>
+          </div>
+        </div>
+
+        <div class="nhsuk-grid-row">
+          <div class="nhsuk-grid-column-one-third">
+            <a class="nhsuk-button nhsuk-button--blue" type="submit" style="width:100%;" href="patient-clinical-flag-added">
+              Yes
+            </a>
+            <p>
+              View record
+            </p>
+          </div>
+          <div class="nhsuk-grid-column-one-third">
+            <button class="nhsuk-button nhsuk-button--reverse close-btn" type="submit" style="width:100%;">
+              No
+            </button>
+            <p>
+              Access refused
+            </p>
+          </div>
+          <div class="nhsuk-grid-column-one-third">
+            <button class="nhsuk-button nhsuk-button--red emergency-btn" type="submit" style="width:100%;">
+              Emergency access
+            </button>
+            <p>
+              The usual legal, ethical, and professional obligations apply when accessing a patient's clinical record
+            </p>
+          </div>
+        </div>
+        <div class="nhsuk-grid-row">
+          <div class="nhsuk-grid-column-one-third">
+            <div class="nhsuk-form-group" id="explanation-form-group">
+              <label class="nhsuk-label" for="explanation">
+                Provide more information
+              </label>
+              <span class="nhsuk-hint" id="explanation-hint">
+                Add any extra information you wish to add about the access
+              </span>
+              <textarea class="nhsuk-textarea" id="explanation" name="explanation" rows="3" aria-describedby="explanation-hint"></textarea>
+            </div>
+          </div>
+          <div class="nhsuk-grid-column-two-thirds">
+            <p>
+              <a href="#">I need to access the record for other reasons</a>
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div id="myModalEmergency" class="modal">
+
+    <!-- Modal content -->
+
+    <div class="modal-content">
+      <div class="nhsuk-width-container-fluid">
+        <div class="nhsuk-grid-row">
+          <div class="nhsuk-grid-column-full-width">
+            <span class="close">&times;</span>
+            <h3>Accessing in an emergency</h3>
+          </div>
+        </div>
+        <div class="nhsuk-grid-row">
+          <div class="nhsuk-form-group" id="explanation-form-group">
+            <label class="nhsuk-label" for="more-detail">
+              Explanation
+            </label>
+            <span class="nhsuk-hint" id="more-detail-hint">
+              Please provide an explanation for accessing the patient's record
+            </span>
+            <span class="nhsuk-error-message hidden" id="ptv-char-length-error">
+              <span class="nhsuk-u-visually-hidden">Error:</span> Explanation must be between 4 and 50 characters
+            </span>
+            <span class="nhsuk-error-message hidden" id="ptv-char-forbidden-error">
+              <span class="nhsuk-u-visually-hidden">Error:</span> Explanation must only include characters: A-Z, a-z, 0-9, space, -, '
+            </span>
+            <textarea class="nhsuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
+          </div>
+        </div>
+        <div class="nhsuk-grid-row">
+          <div class="nhsuk-grid-column-full-width">
+            <div class="nhsuk-grid-column-one-half">
+              <a class="nhsuk-button nhsuk-button--blue" id="submit-ptv" type="submit" style="width:100%;" href="patient-clinical-flag-added">
+                Continue
+              </a>
+            </div>
+            <div class="nhsuk-grid-column-one-half">
+              <button class="nhsuk-button nhsuk-button--reverse close-btn" type="submit" style="width:100%;">
+                Cancel
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="nhsuk-grid-row">
+          <div class="nhsuk-grid-column-two-thirds">
+            <div class="nhsuk-warning-callout">
+              <h3 class="nhsuk-warning-callout__label">Privacy information</h3>
+              <p>Any inappropriate breach of patient confidentiality will be a matter for disciplinary and potentially legal and/or professional proceedings. If in doubt speak to your manager or privacy officer.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+
+</div>
+
+{% endblock %}
