@@ -796,30 +796,14 @@ var patientPostcode = sessionStorage.getItem("patientPostcode");
 var patientAge = sessionStorage.getItem("patientAge");
 var patientAddressWithPostcode = patientAddress;
 
-var cpisAltName;
-
-if(window.location.href.indexOf("cpis") > -1) {
-  cpisAltName = localStorage.altName;
-} else {
-  cpisAltName = "";
-}
-
 
 
 var parsedDob = moment(patientDob, "DD-MMM-YYYY").format("DD-MM-YYYY");
 var patientAge = moment(new Date()).diff(moment(parsedDob, "DD-MM-YYYY"), 'years', false);
 
-if (cpisAltName=="Amelia Miller") {
-  $('.patient-banner-name, .card-content-name').text(cpisAltName);
-  $('.patient-banner-dob, .card-content-detail-dob').text("16-Dec-2003");
-  $('.patient-banner-nhs-no, .card-content-detail-nhs-no').text("123 456 7890");
-  $('.patient-banner-address').text("1 Town Street, Leeds, West Yorkshire, LS8 2CD");
-  $('.patient-banner-gender, .card-content-detail-gender').text("Female");
-  $('.patient-banner-age').text("16 years old");
-  $('.card-content-detail-pob').text("Leeds");
-  $('.card-content-detail-address').html("1 Town Street, Leeds, West Yorkshire, LS8 2CD");
-  $('.name-dob-floater').html(cpisAltName + " | 16-Dec-2003");
-} else if (!patientName) {
+
+
+if (!patientName) {
   $('.patient-banner-name, .card-content-name').text("William Shakespeare");
   $('.patient-banner-dob, .card-content-detail-dob').text("30-Jan-1970");
   $('.patient-banner-nhs-no, .card-content-detail-nhs-no').text("123 456 7890");
@@ -829,7 +813,7 @@ if (cpisAltName=="Amelia Miller") {
   $('.card-content-detail-pob').text("Stratford-upon-Avon");
   $('.card-content-detail-address').html("1 Town Street, Stratford-upon-Avon, Warwickshire, AB1 2CD");
   $('.name-dob-floater').html("William Shakespeare | 30-Jan-1970");
-} else if (patientName=="William Tell") {
+} else if (patientName="William Tell") {
   $('.patient-banner-name, .card-content-name').text(patientName);
   $('.patient-banner-dob, .card-content-detail-dob').text("30-Jan-1970");
   $('.patient-banner-nhs-no, .card-content-detail-nhs-no').text("123 456 7890");

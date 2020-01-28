@@ -1,0 +1,127 @@
+{% extends 'layouts/layout-application.html' %}
+
+{% block pageTitle %}
+Patient details
+{% endblock %}
+
+{% block beforeContent %}
+
+<div class="nhsuk-full-width-container">
+  <div class='scra-bordered-tabs-container'>
+    <div class="nhsuk-width-container-fluid">
+      <ul class="scra-bordered-tabs">
+        <li class="scra-bordered-tabs-item">
+          <a class="scra-bordered-tabs-link" href="./patient-overview-no-alert">Overview</a>
+        </li>
+        <li class="scra-bordered-tabs-item">
+          <a class="scra-bordered-tabs-link" href="./patient-details-no-alert">Patient</a>
+        </li>
+        <li class="scra-bordered-tabs-item scra-bordered-tabs-item-active">
+          <a class="scra-bordered-tabs-link" href="./clinical-details-no-alert">Clinical</a>
+        </li>
+        <li class="scra-bordered-tabs-item">
+          <a class="scra-bordered-tabs-link" href="#">Documents</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+
+      <div class="nhsuk-grid-column-one-quarter">
+        <nav class="nhsuk-contents-list" role="navigation" aria-label="Pages in this guide">
+          <h2 class="nhsuk-u-visually-hidden">Contents</h2>
+          <ul class="nhsuk-contents-list__list">
+            <li class="nhsuk-contents-list__item">
+              <a class="nhsuk-contents-list__link" href="./clinical-details-no-alert">Allergies & Sensitivities</a>
+            </li>
+            <li class="nhsuk-contents-list__item">
+              <a class="nhsuk-contents-list__link" href="./clinical-details-no-alert">Acute medications</a>
+            </li>
+            <li class="nhsuk-contents-list__item">
+              <a class="nhsuk-contents-list__link" href="./clinical-details-no-alert#fgm">Female genital mutilation</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+  <div class="nhsuk-grid-column-three-quarters">
+    <h1 class="nhsuk-heading-xl">Add FGM indicator</h1>
+    <div class="section">
+      <div class="nhsuk-back-link">
+        <a class="nhsuk-back-link__link" href="./clinical-details-no-alert">
+          <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+          </svg>
+            Back to clinical information
+          </a>
+      </div>
+      <a name="active-plans"></a>
+      <form action="./add-fgm-indicator-success">
+        <div class="scra-card">
+          <h2 class="nhsuk-heading-m">Confirm FGM indicator and identification date</h2>
+          <div class="scra-card-content nhsuk-u-reading-width">
+            <p>A family history of FGM has been identified for this child and as part of my safeguarding actions:</p>
+            <ul>
+              <li>An indicator will be added to her record to share the information</li>
+              <li>The family has been informed and a record of this action included in her records (the consent of the family is not required to add the indicator).</li>
+              <li>This may be completed by an administrator/other professional with delegated responsibility on behalf of the identifying clinician.</li>
+            </ul>
+            <p>For further guidance please speak to your local safeguarding lead or view <a href="https://www.gov.uk/government/publications/safeguarding-women-and-girls-at-risk-of-fgm">safeguarding women and girls at risk of FGM</a> on the GOV.UK website</p>
+
+            <div class="nhsuk-form-group">
+                <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
+                  <legend class="nhsuk-fieldset__legend nhsuk-label--m nhsuk-u-margin-bottom-0">
+                    <h3 class="nhsuk-fieldset__heading-m nhsuk-u-margin-bottom-3">
+                      When was this child identified to be at risk of FGM?
+                    </h3>
+                  </legend>
+                  <span class="nhsuk-hint" id="example-hint">
+                    For example, 15 3 1984
+                  </span>
+
+                  <div class="nhsuk-date-input" id="example">
+                    <div class="nhsuk-date-input__item">
+                      <div class="nhsuk-form-group">
+                        <label class="nhsuk-label nhsuk-date-input__label" for="example-day">
+                          Day
+                        </label>
+                        <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="example-day" name="example-day" type="number" pattern="[0-9]*">
+                      </div>
+                    </div>
+                    <div class="nhsuk-date-input__item">
+                      <div class="nhsuk-form-group">
+                        <label class="nhsuk-label nhsuk-date-input__label" for="example-month">
+                          Month
+                        </label>
+                        <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="example-month" name="example-month" type="number" pattern="[0-9]*">
+                      </div>
+                    </div>
+                    <div class="nhsuk-date-input__item">
+                      <div class="nhsuk-form-group">
+                        <label class="nhsuk-label nhsuk-date-input__label" for="example-year">
+                          Year
+                        </label>
+                        <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="example-year" name="example-year" type="number" pattern="[0-9]*">
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+              <button class="nhsuk-button nhsuk-button--blue  nhsuk-u-margin-top-3" type="submit">
+                Confirm and FGM indicator
+              </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+</div>
+{% endblock %}
