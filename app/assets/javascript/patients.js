@@ -798,7 +798,7 @@ var patientAddressWithPostcode = patientAddress;
 
 var cpisAltName;
 
-if(window.location.href.indexOf("cpis") > -1) {
+if(window.location.href.indexOf("cpis") > -1 || window.location.href.indexOf("fgm") > -1) {
   cpisAltName = localStorage.altName;
 } else {
   cpisAltName = "";

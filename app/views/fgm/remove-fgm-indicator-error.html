@@ -35,6 +35,18 @@ Patient details
 
   <div class="nhsuk-width-container">
     <div class="section">
+      <div class="nhsuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1">
+        <h2 class="nhsuk-error-summary__title" id="error-summary-title">
+          There is a problem
+        </h2>
+        <div class="nhsuk-error-summary__body">
+          <ul class="nhsuk-list nhsuk-error-summary__list">
+            <li>
+              <a href="#error1">You must provide detail about why the indicator is being removed.</a>
+            </li>
+          </ul>
+        </div>
+      </div>
       <div class="nhsuk-back-link">
         <a class="nhsuk-back-link__link" href="./clinical-details-simple">
           <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
@@ -45,7 +57,7 @@ Patient details
       </div>
       <h1 class="nhsuk-heading-xl">Remove FGM indicator</h1>
       <a name="active-plans"></a>
-      <form action="./remove-fgm-indicator-error">
+      <form action="./remove-fgm-indicator-success">
         <div class="scra-card">
           <h2 class="nhsuk-heading-l">Confirm removal of FGM indicator</h2>
           <div class="scra-card-content nhsuk-u-reading-width">
@@ -62,24 +74,28 @@ Patient details
 
                   <div class="nhsuk-radios">
                     <div class="nhsuk-radios__item">
-                      <input class="nhsuk-radios__input" id="example-1" name="example" type="radio" value="yes">
+                      <input class="nhsuk-radios__input" id="example-1" name="example" type="radio" value="error">
                       <label class="nhsuk-label nhsuk-radios__label" for="example-1">
                         Added in error
                       </label>
                     </div>
                     <div class="nhsuk-radios__item">
-                      <input class="nhsuk-radios__input" id="example-2" name="example" type="radio" value="no">
+                      <input class="nhsuk-radios__input" id="example-2" name="example" type="radio" value="not-required" checked>
                       <label class="nhsuk-label nhsuk-radios__label" for="example-2">
                         No longer required
                       </label>
                     </div>
                   </div>
                 </fieldset>
-                <div class="nhsuk-form-group">
-                  <label class="nhsuk-label" for="example">
+                <a name="error1"></a>
+                <div class="nhsuk-form-group--error">
+                  <label class="nhsuk-label" for="more-detail">
                     Please provide detail about why you are removing the indicator.
                   </label>
-                  <textarea class="nhsuk-textarea" id="example" name="example" rows="5" aria-describedby="example-hint"></textarea>
+                  <span class="nhsuk-error-message">
+                    <span class="nhsuk-u-visually-hidden">Error:</span> You must provide detail about why the indicator is being removed.
+                  </span>
+                  <textarea class="nhsuk-textarea" id="more-detail" name="more-detail" rows="5"></textarea>
                 </div>
               </div>
               <button class="nhsuk-button nhsuk-u-margin-top-3" type="submit">
