@@ -686,16 +686,16 @@ var formattedResultsList = insertBeforeLastOccurrence(formattedResults, "address
 if (returnedPatientsList.length == 0) {
   $('.search-results-container').hide();
   $('.number-of-results').html("<h3 class='nhsuk-heading-xs'>Sorry. We couldn't find any patients with " + formattedResultsList + "</h3>");
-  $('.number-of-results').append("<p>You can <a id='refine-search-link' href='advanced-details-search'>refine your search</a> to find a match, or <a href='nhs-number-search'>perform a new search</a>.</p>");
+  $('.number-of-results').append("<p>You can <a id='refine-search-link' href='advanced-details-search'>refine your search</a> to find a match, <a href='nhs-number-search'>perform a new search</a> or <a href='#'>create a birth notification</a> without mother's NHS details.</p>");
 
 } else if (returnedPatientsList.length == 1) {
   $('.number-of-results').html("<h3 class='nhsuk-heading-xs'>We found <b>1</b> result for patients with " + formattedResultsList + "</h3>");
-  $('.number-of-results').append("<p>If this isn't the patient you're looking for you can <a id='refine-search-link' href='advanced-details-search'>refine your search</a> or <a href='nhs-number-search'>perform a new search</a>.</p>");
+  $('.number-of-results').append("<p>If this isn't the patient you're looking for you can <a id='refine-search-link' href='advanced-details-search'>refine your search</a>, <a href='nhs-number-search'>perform a new search</a> or <a href='#'>create a birth notification</a> without mother's NHS details.</p>");
   $('.results-count').html("Showing 1 of 1 results");
 
 } else if (returnedPatientsList.length > 5) {
   $('.number-of-results').html("<h3 class='nhsuk-heading-xs'>We found " + returnedPatientsList.length + " results for patients with " + formattedResultsList + "</h3>");
-  $('.number-of-results').append("<p>If you can't find the patient you're looking for you can <a id='refine-search-link' href='advanced-details-search'>refine your search</a> or <a href='nhs-number-search'>perform a new search</a>.</p>");
+  $('.number-of-results').append("<p>If you can't find the patient you're looking for you can <a id='refine-search-link' href='advanced-details-search'>refine your search</a>, <a href='nhs-number-search'>perform a new search</a> or <a href='#'>create a birth notification</a> without mother's NHS details.</p>");
   var numShown = 5;
   var numMore = 5; // Increment
 
