@@ -7,7 +7,7 @@ $(function() {
               <div class='nhsuk-u-reading-width'> \
                 <p>Use this feature to submit a birth notification for this patient. You will be asked to provide:</p> \
                 <ul class='nhsuk-list nhsuk-list--bullet'> \
-                  <li>detials about the organisation where the birth occurred</li> \
+                  <li>details about where the birth occurred</li> \
                   <li>details about the person notifying the birth</li> \
                   <li>details about the baby and the birth</li> \
                   <li>the baby's usual address and contact information</li> \
