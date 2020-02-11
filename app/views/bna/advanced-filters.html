@@ -1,0 +1,326 @@
+{% extends 'layouts/layout-application-no-personal-details.html' %}
+
+{% block pageTitle %}
+Birth Notification
+{% endblock %}
+
+{% block beforeContent %}
+
+<section class="nhsuk-hero">
+
+  <div class="nhsuk-width-container">
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-two-thirds">
+        <div class="nhsuk-hero__wrapper">
+          <h1 class="nhsuk-u-margin-bottom-3 nhsuk-heading-l">Filter birth notifications</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+  <div class="nhsuk-width-container">
+    <ol class="nhsuk-breadcrumb__list">
+      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="./confirm-role">Home</a></li>
+      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="./view-list">Birth Notifications</a></li>
+    </ol>
+    <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href="./view-list">Back to Birth Notifications</a></p>
+  </div>
+</nav>
+
+
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-width-container">
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-three-quarters">
+
+      <h2 class="nhsuk-heading-m">Enter as many details as you know</h2>
+
+      <form id="advanced-details-search" action="./view-list">
+
+        <!--- Status Radio Buttons --->
+        <div id="nhsuk-form-group-status" class="nhsuk-form-group">
+          <fieldset class="nhsuk-fieldset" aria-describedby="gender-radio">
+            <legend class="nhsuk-fieldset__legend nhsuk-label__strong">
+              Birth notification status
+            </legend>
+            <div class="nhsuk-radios nhsuk-radios--inline" id="status-radio">
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="status-completed" name="status-radio" type="radio" value="Completed">
+                <label class="nhsuk-label nhsuk-radios__label" for="status-completed">
+                  Completed
+                </label>
+              </div>
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="status-failed" name="status-radio" type="radio" value="Failed">
+                <label class="nhsuk-label nhsuk-radios__label" for="status-failed">
+                  Failed
+                </label>
+              </div>
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="status-incomplete" name="status-radio" type="radio" value="Incomplete">
+                <label class="nhsuk-label nhsuk-radios__label" for="status-incomplete">
+                  Incomplete
+                </label>
+              </div>
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="status-all" name="status-radio" type="radio" value="View all">
+                <label class="nhsuk-label nhsuk-radios__label" for="status-all">
+                  View all
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        <!--- text input --->
+        <div class="nhsuk-form-group" id="nhsuk-form-group-organisation-code">
+          <label class="nhsuk-label nhsuk-label__strong" for="organisation-code">
+            Organisation code
+          </label>
+          <input class="nhsuk-input nhsuk-input--width-5" id="organisation-code" name="organisation-code" type="text">
+          <a class="nhsuk-u-margin-left-3" href="#">Don’t know organisation code?</a>
+        </div>
+
+        <!--- Baby from date text input --->
+        <div id="nhsuk-form-group-dob-advanced" class="nhsuk-form-group">
+          <div class="nhsuk-form-group">
+            <fieldset class="nhsuk-fieldset" aria-describedby="dob-from" role="group">
+              <legend class="nhsuk-fieldset__legend nhsuk-label__strong">
+                Baby’s date of birth from
+              </legend>
+              <div class="nhsuk-date-input" id="dob-from">
+                <div class="nhsuk-date-input__item">
+                  <div class="nhsuk-form-group">
+                    <label class="nhsuk-label nhsuk-date-input__label" for="dob-day-from">
+                      Day
+                    </label>
+                    <input class="nhsuk-input nhsuk-date-input__input nhsuk-dob-input__input nhsuk-input--width-2" id="dob-day-from" name="dob-day-from" type="number" pattern="[0-9]*">
+                  </div>
+                </div>
+                <div class="nhsuk-date-input__item">
+                  <div class="nhsuk-form-group">
+                    <label class="nhsuk-label nhsuk-date-input__label" for="dob-month-from">
+                      Month
+                    </label>
+                    <input class="nhsuk-input nhsuk-date-input__input nhsuk-dob-input__input nhsuk-input--width-2" id="dob-month-from" name="dob-month-from" type="number" pattern="[0-9]*">
+                  </div>
+                </div>
+                <div class="nhsuk-date-input__item">
+                  <div class="nhsuk-form-group">
+                    <label class="nhsuk-label nhsuk-date-input__label" for="dob-year-from">
+                      Year
+                    </label>
+                    <input class="nhsuk-input nhsuk-date-input__input nhsuk-dob-input__input nhsuk-input--width-4" id="dob-year-from" name="dob-year-from" type="number" pattern="[0-9]*">
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+        </div>
+
+
+        <!--- Baby to date text input --->
+        <div id="nhsuk-form-group-dob-advanced" class="nhsuk-form-group">
+          <div class="nhsuk-form-group">
+            <fieldset class="nhsuk-fieldset" aria-describedby="dob-from" role="group">
+              <legend class="nhsuk-fieldset__legend nhsuk-label__strong">
+                Baby’s date of birth to
+              </legend>
+              <div class="nhsuk-date-input" id="dob-from">
+                <div class="nhsuk-date-input__item">
+                  <div class="nhsuk-form-group">
+                    <label class="nhsuk-label nhsuk-date-input__label" for="dob-day-from">
+                      Day
+                    </label>
+                    <input class="nhsuk-input nhsuk-date-input__input nhsuk-dob-input__input nhsuk-input--width-2" id="dob-day-from" name="dob-day-from" type="number" pattern="[0-9]*">
+                  </div>
+                </div>
+                <div class="nhsuk-date-input__item">
+                  <div class="nhsuk-form-group">
+                    <label class="nhsuk-label nhsuk-date-input__label" for="dob-month-from">
+                      Month
+                    </label>
+                    <input class="nhsuk-input nhsuk-date-input__input nhsuk-dob-input__input nhsuk-input--width-2" id="dob-month-from" name="dob-month-from" type="number" pattern="[0-9]*">
+                  </div>
+                </div>
+                <div class="nhsuk-date-input__item">
+                  <div class="nhsuk-form-group">
+                    <label class="nhsuk-label nhsuk-date-input__label" for="dob-year-from">
+                      Year
+                    </label>
+                    <input class="nhsuk-input nhsuk-date-input__input nhsuk-dob-input__input nhsuk-input--width-4" id="dob-year-from" name="dob-year-from" type="number" pattern="[0-9]*">
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+        </div>
+
+
+
+        <!--- Notified from date text input --->
+        <div id="nhsuk-form-group-dob-advanced" class="nhsuk-form-group">
+          <div class="nhsuk-form-group">
+            <fieldset class="nhsuk-fieldset" aria-describedby="dob-from" role="group">
+              <legend class="nhsuk-fieldset__legend nhsuk-label__strong">
+                Notified/saved date from
+              </legend>
+              <span class="nhsuk-hint">
+                Date must be from 14-01-2020 onwards
+              </span>
+              <div class="nhsuk-date-input" id="dob-from">
+                <div class="nhsuk-date-input__item">
+                  <div class="nhsuk-form-group">
+                    <label class="nhsuk-label nhsuk-date-input__label" for="dob-day-from">
+                      Day
+                    </label>
+                    <input class="nhsuk-input nhsuk-date-input__input nhsuk-dob-input__input nhsuk-input--width-2" id="dob-day-from" name="dob-day-from" type="number" pattern="[0-9]*">
+                  </div>
+                </div>
+                <div class="nhsuk-date-input__item">
+                  <div class="nhsuk-form-group">
+                    <label class="nhsuk-label nhsuk-date-input__label" for="dob-month-from">
+                      Month
+                    </label>
+                    <input class="nhsuk-input nhsuk-date-input__input nhsuk-dob-input__input nhsuk-input--width-2" id="dob-month-from" name="dob-month-from" type="number" pattern="[0-9]*">
+                  </div>
+                </div>
+                <div class="nhsuk-date-input__item">
+                  <div class="nhsuk-form-group">
+                    <label class="nhsuk-label nhsuk-date-input__label" for="dob-year-from">
+                      Year
+                    </label>
+                    <input class="nhsuk-input nhsuk-date-input__input nhsuk-dob-input__input nhsuk-input--width-4" id="dob-year-from" name="dob-year-from" type="number" pattern="[0-9]*">
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+        </div>
+
+
+        <!--- Notified to date text input --->
+        <div id="nhsuk-form-group-dob-advanced" class="nhsuk-form-group">
+          <div class="nhsuk-form-group">
+            <fieldset class="nhsuk-fieldset" aria-describedby="dob-from" role="group">
+              <legend class="nhsuk-fieldset__legend nhsuk-label__strong">
+                Notified/saved date to
+              </legend>
+              <div class="nhsuk-date-input" id="dob-from">
+                <div class="nhsuk-date-input__item">
+                  <div class="nhsuk-form-group">
+                    <label class="nhsuk-label nhsuk-date-input__label" for="dob-day-from">
+                      Day
+                    </label>
+                    <input class="nhsuk-input nhsuk-date-input__input nhsuk-dob-input__input nhsuk-input--width-2" id="dob-day-from" name="dob-day-from" type="number" pattern="[0-9]*">
+                  </div>
+                </div>
+                <div class="nhsuk-date-input__item">
+                  <div class="nhsuk-form-group">
+                    <label class="nhsuk-label nhsuk-date-input__label" for="dob-month-from">
+                      Month
+                    </label>
+                    <input class="nhsuk-input nhsuk-date-input__input nhsuk-dob-input__input nhsuk-input--width-2" id="dob-month-from" name="dob-month-from" type="number" pattern="[0-9]*">
+                  </div>
+                </div>
+                <div class="nhsuk-date-input__item">
+                  <div class="nhsuk-form-group">
+                    <label class="nhsuk-label nhsuk-date-input__label" for="dob-year-from">
+                      Year
+                    </label>
+                    <input class="nhsuk-input nhsuk-date-input__input nhsuk-dob-input__input nhsuk-input--width-4" id="dob-year-from" name="dob-year-from" type="number" pattern="[0-9]*">
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+        </div>
+
+        <!--- Notified to date text input --->
+        <div id="nhsuk-form-group-dob-advanced" class="nhsuk-form-group">
+          <div class="nhsuk-form-group">
+            <fieldset class="nhsuk-fieldset" aria-describedby="dob-from" role="group">
+              <legend class="nhsuk-fieldset__legend nhsuk-label__strong">
+                Mother's date of birth
+              </legend>
+              <div class="nhsuk-date-input" id="dob-from">
+                <div class="nhsuk-date-input__item">
+                  <div class="nhsuk-form-group">
+                    <label class="nhsuk-label nhsuk-date-input__label" for="dob-day-from">
+                      Day
+                    </label>
+                    <input class="nhsuk-input nhsuk-date-input__input nhsuk-dob-input__input nhsuk-input--width-2" id="dob-day-from" name="dob-day-from" type="number" pattern="[0-9]*">
+                  </div>
+                </div>
+                <div class="nhsuk-date-input__item">
+                  <div class="nhsuk-form-group">
+                    <label class="nhsuk-label nhsuk-date-input__label" for="dob-month-from">
+                      Month
+                    </label>
+                    <input class="nhsuk-input nhsuk-date-input__input nhsuk-dob-input__input nhsuk-input--width-2" id="dob-month-from" name="dob-month-from" type="number" pattern="[0-9]*">
+                  </div>
+                </div>
+                <div class="nhsuk-date-input__item">
+                  <div class="nhsuk-form-group">
+                    <label class="nhsuk-label nhsuk-date-input__label" for="dob-year-from">
+                      Year
+                    </label>
+                    <input class="nhsuk-input nhsuk-date-input__input nhsuk-dob-input__input nhsuk-input--width-4" id="dob-year-from" name="dob-year-from" type="number" pattern="[0-9]*">
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+        </div>
+
+
+
+        <!--- text input --->
+        <div class="nhsuk-form-group" id="nhsuk-form-group-organisation-code">
+          <label class="nhsuk-label nhsuk-label__strong" for="organisation-code">
+            Baby’s NHS Number
+          </label>
+          <input class="nhsuk-input nhsuk-input--width-10" id="organisation-code" name="organisation-code" type="text">
+        </div>
+
+
+
+        <!--- text input --->
+        <div class="nhsuk-form-group" id="nhsuk-form-group-organisation-code">
+          <label class="nhsuk-label nhsuk-label__strong" for="organisation-code">
+            Mother’s NHS Number
+          </label>
+          <input class="nhsuk-input nhsuk-input--width-10" id="organisation-code" name="organisation-code" type="text">
+        </div>
+
+
+
+
+
+        <div class="nhsuk-form-group">
+          <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-full">
+              <button class="nhsuk-button" type="submit">
+                Filter birth notifications
+              </button>
+            </div>
+          </div>
+        </div>
+      </form>
+
+
+    </div>
+  </div>
+</div>
+
+
+{% block pageScripts %}
+<script src="/js/bna.js"></script>
+{% endblock %}
+{% endblock %}
