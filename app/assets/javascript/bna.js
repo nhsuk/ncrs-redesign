@@ -13,7 +13,7 @@ $(function() {
                   <li>the baby's usual address and contact information</li> \
                   <li>a separate discharge address if this is necessary</li> \
                 </ul> \
-                <p>There are 6 steps to complete</p> \
+                <p>There are 5 steps to complete</p> \
                 <div class='nhsuk-action-link'> \
                   <a class='nhsuk-action-link__link' href='step-1'> \
                     <svg class='nhsuk-icon nhsuk-icon__arrow-right-circle' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' aria-hidden='true'> \
