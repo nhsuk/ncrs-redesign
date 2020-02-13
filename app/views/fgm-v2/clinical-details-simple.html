@@ -1,0 +1,128 @@
+{% extends 'layouts/layout-application.html' %}
+
+{% block pageTitle %}
+  Dashboard
+{% endblock %}
+
+{% block beforeContent %}
+
+
+<div class="nhsuk-full-width-container">
+  <div class='scra-bordered-tabs-container'>
+    <div class="nhsuk-width-container-fluid">
+      <ul class="scra-bordered-tabs">
+        <li class="scra-bordered-tabs-item">
+          <a class="scra-bordered-tabs-link" href="./patient-overview-simple">Overview</a>
+        </li>
+        <li class="scra-bordered-tabs-item">
+          <a class="scra-bordered-tabs-link" href="./patient-details-simple">Patient</a>
+        </li>
+        <li class="scra-bordered-tabs-item scra-bordered-tabs-item-active">
+          <a class="scra-bordered-tabs-link" href="./clinical-details-simple">Clinical</a>
+        </li>
+        <li class="scra-bordered-tabs-item">
+          <a class="scra-bordered-tabs-link" href="#">Documents</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-one-quarter">
+      <nav class="nhsuk-contents-list" role="navigation" aria-label="Pages in this guide">
+        <h2 class="nhsuk-u-visually-hidden">Contents</h2>
+        <ul class="nhsuk-contents-list__list">
+          <li class="nhsuk-contents-list__item">
+            <a class="nhsuk-contents-list__link" href="#">Allergies & Sensitivities</a>
+          </li>
+          <li class="nhsuk-contents-list__item">
+            <a class="nhsuk-contents-list__link" href="#">Acute medications</a>
+          </li>
+          <li class="nhsuk-contents-list__item">
+            <a class="nhsuk-contents-list__link" href="./fgm-sub-with-indicator">Female genital mutilation</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="nhsuk-grid-column-three-quarters">
+      <h1 class="nhsuk-heading-xl">Clinical details</h1>
+      <h2 class="nhsuk-heading-l">Summary Care Record</h2>
+      <div class="scra-card">
+        <div class="scra-card-header">
+          <h3 class="nhsuk-heading-m">Allergies & sensitivities</h3>
+        </div>
+        <div class="scra-card-content">
+          <div class="nhsuk-table-responsive">
+            <table class="nhsuk-table">
+              <caption class="nhsuk-table__caption">Allergies, sensitivites and supporting information</caption>
+              <thead class="nhsuk-table__head">
+                <tr class="nhsuk-table__row">
+                  <th class="nhsuk-table__header" scope="col">Date</th>
+                  <th class="nhsuk-table__header" scope="col">Description</th>
+                  <th class="nhsuk-table__header" scope="col">Certainty</th>
+                  <th class="nhsuk-table__header" scope="col">Severity</th>
+                  <th class="nhsuk-table__header" scope="col">Supporting information</th>
+                </tr>
+              </thead>
+              <tbody class="nhsuk-table__body">
+                <tr class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell">08-Jan-1995</td>
+                  <td class="nhsuk-table__cell ">House dust mite allergy</td>
+                  <td class="nhsuk-table__cell "></td>
+                  <td class="nhsuk-table__cell "></td>
+                  <td class="nhsuk-table__cell ">Allergic rhinitis</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="scra-card">
+        <div class="scra-card-header">
+          <h3 class="nhsuk-heading-m">Acute medications (issued in the last 12 months)</h3>
+        </div>
+        <div class="scra-card-content">
+          <div class="nhsuk-table-responsive">
+            <table class="nhsuk-table">
+              <caption class="nhsuk-table__caption">Acute medications issued in the last 12 months</caption>
+              <thead class="nhsuk-table__head">
+                <tr class="nhsuk-table__row">
+                  <th class="nhsuk-table__header" scope="col">Type</th>
+                  <th class="nhsuk-table__header" scope="col">Date</th>
+                  <th class="nhsuk-table__header" scope="col">Medication item</th>
+                  <th class="nhsuk-table__header" scope="col">Dosage instructions</th>
+                  <th class="nhsuk-table__header" scope="col">Quantity</th>
+                </tr>
+              </thead>
+              <tbody class="nhsuk-table__body">
+                <tr class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell">Acute Medication</td>
+                  <td class="nhsuk-table__cell ">26-May-2018</td>
+                  <td class="nhsuk-table__cell ">Diclofenac 75mg tablets</td>
+                  <td class="nhsuk-table__cell ">take three daily</td>
+                  <td class="nhsuk-table__cell ">28 tablets</td>
+                </tr>
+                <tr class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell">Acute Medication</td>
+                  <td class="nhsuk-table__cell ">01-Oct-2018</td>
+                  <td class="nhsuk-table__cell ">Ranitidine 150mg tablets</td>
+                  <td class="nhsuk-table__cell ">take once daily at bedtime</td>
+                  <td class="nhsuk-table__cell ">28 tablets</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}
