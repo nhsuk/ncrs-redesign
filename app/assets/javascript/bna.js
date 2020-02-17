@@ -19,7 +19,7 @@ $(function() {
 /* Adding BNA functionality and journey to Patient tab */
 
 $(function() {
-  var bnaHeader = "<h1 class='nhsuk-heading-l'>Birth Notification</h1>";
+  var bnaHeader = "<h1 class='nhsuk-heading-l' id='bna-section'>Birth Notification</h1>";
   var bnaCard = "<div class='scra-card'> \
         <div class='scra-card-content'> \
           <div class='nhsuk-grid-row'> \
@@ -51,6 +51,7 @@ $(function() {
   if ($('.patient-banner-gender').text() == "Female") {
     $(".patient-details-content").append(bnaHeader);
     $(".patient-details-content").append(bnaCard);
+    $("#patient-card-list").append("<li class='overview-card__list-item'><a href='patient-details#bna-section'>Birth notification</a></li>");
   }
 });
 

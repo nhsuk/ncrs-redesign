@@ -82,3 +82,14 @@ a.nhsuk-button--pds-edit:visited {
 .cancel-link {
   cursor: pointer;
 }
+
+/* BNA Styles */
+
+.bna-list-buttons-container * {
+  margin-right: 12px;
+  display: block;
+  @media (min-width: 769px) {
+    margin-right: 24px;
+    display: inline;
+  }
+}

@@ -1,0 +1,210 @@
+{% extends 'layouts/layout-landing-page.html' %}
+
+{% block pageTitle %}
+Select a role
+{% endblock %}
+
+{% block beforeContent %}
+
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+  <div class="nhsuk-width-container">
+    <ol class="nhsuk-breadcrumb__list">
+      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="javascript:history.back()">Select role</a></li>
+      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="#">Confirm role</a></li>
+    </ol>
+    <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href="javascript:history.back()">Back to Level three</a></p>
+  </div>
+</nav>
+
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-width-container">
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1>
+        <span role="text">Role confirmed
+          <span class="nhsuk-caption-l nhsuk-caption--bottom">
+          </span>
+      </h1>
+
+      <h2>The following role is now active</h2>
+
+    </div>
+  </div>
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+      <div class="section">
+        <form action="../search-v3/nhs-number-search">
+
+          <dl class="nhsuk-summary-list">
+
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Role
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                Midwife Access Role
+              </dd>
+
+              <dd class="nhsuk-summary-list__actions">
+
+                <a href="javascript:history.back()">
+                  Change<span class="nhsuk-u-visually-hidden"> name</span>
+                </a>
+
+              </dd>
+
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Organisation
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                Leeds Teaching Hospitals NHS Trust (RR8)
+              </dd>
+
+              <dd class="nhsuk-summary-list__actions">
+
+                <a href="javascript:history.back()">
+                  Change<span class="nhsuk-u-visually-hidden"> date of birth</span>
+                </a>
+
+              </dd>
+
+            </div>
+
+          </dl>
+
+          <details class="nhsuk-details">
+            <summary class="nhsuk-details__summary">
+              <span class="nhsuk-details__summary-text">
+                View permissions for this role
+              </span>
+            </summary>
+            <div class="nhsuk-details__text">
+              <div class="nhsuk-do-dont-list" style="margin-top: 48px;">
+                <h3 class="nhsuk-do-dont-list__label">Features you can access</h3>
+                <ul class="nhsuk-list nhsuk-list--tick">
+                  <li>
+                    <svg class="nhsuk-icon nhsuk-icon__tick" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                      <path stroke-width="4" stroke-linecap="round" d="M18.4 7.8l-8.5 8.4L5.6 12"></path>
+                    </svg>
+                    View demographics
+                  </li>
+                  <li>
+                    <svg class="nhsuk-icon nhsuk-icon__tick" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                      <path stroke-width="4" stroke-linecap="round" d="M18.4 7.8l-8.5 8.4L5.6 12"></path>
+                    </svg>
+                    View Summary Care Record
+                  </li>
+                  <li>
+                    <svg class="nhsuk-icon nhsuk-icon__tick" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                      <path stroke-width="4" stroke-linecap="round" d="M18.4 7.8l-8.5 8.4L5.6 12"></path>
+                    </svg>
+                    Allocate NHS Number
+                  </li>
+                  <li>
+                    <svg class="nhsuk-icon nhsuk-icon__tick" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                      <path stroke-width="4" stroke-linecap="round" d="M18.4 7.8l-8.5 8.4L5.6 12"></path>
+                    </svg>
+                    Create birth notifications
+                  </li>
+                  <li>
+                    <svg class="nhsuk-icon nhsuk-icon__tick" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                      <path stroke-width="4" stroke-linecap="round" d="M18.4 7.8l-8.5 8.4L5.6 12"></path>
+                    </svg>
+                    View and print birth notifications
+                  </li>
+                </ul>
+              </div>
+
+              <div class="nhsuk-do-dont-list">
+                <h3 class="nhsuk-do-dont-list__label">Features you can not access</h3>
+                <ul class="nhsuk-list nhsuk-list--cross">
+                  <li>
+                    <svg class="nhsuk-icon nhsuk-icon__cross" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M17 18.5c-.4 0-.8-.1-1.1-.4l-10-10c-.6-.6-.6-1.6 0-2.1.6-.6 1.5-.6 2.1 0l10 10c.6.6.6 1.5 0 2.1-.3.3-.6.4-1 .4z"></path>
+                      <path d="M7 18.5c-.4 0-.8-.1-1.1-.4-.6-.6-.6-1.5 0-2.1l10-10c.6-.6 1.5-.6 2.1 0 .6.6.6 1.5 0 2.1l-10 10c-.3.3-.6.4-1 .4z"></path>
+                    </svg>
+                    View/Update Female Genital Mutilation information
+                  </li>
+                  <li>
+                    <svg class="nhsuk-icon nhsuk-icon__cross" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M17 18.5c-.4 0-.8-.1-1.1-.4l-10-10c-.6-.6-.6-1.6 0-2.1.6-.6 1.5-.6 2.1 0l10 10c.6.6.6 1.5 0 2.1-.3.3-.6.4-1 .4z"></path>
+                      <path d="M7 18.5c-.4 0-.8-.1-1.1-.4-.6-.6-.6-1.5 0-2.1l10-10c.6-.6 1.5-.6 2.1 0 .6.6.6 1.5 0 2.1l-10 10c-.3.3-.6.4-1 .4z"></path>
+                    </svg>
+                    View chargeable status
+                  </li>
+                  <li>
+                    <svg class="nhsuk-icon nhsuk-icon__cross" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M17 18.5c-.4 0-.8-.1-1.1-.4l-10-10c-.6-.6-.6-1.6 0-2.1.6-.6 1.5-.6 2.1 0l10 10c.6.6.6 1.5 0 2.1-.3.3-.6.4-1 .4z"></path>
+                      <path d="M7 18.5c-.4 0-.8-.1-1.1-.4-.6-.6-.6-1.5 0-2.1l10-10c.6-.6 1.5-.6 2.1 0 .6.6.6 1.5 0 2.1l-10 10c-.3.3-.6.4-1 .4z"></path>
+                    </svg>
+                    Update chargeable status
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </details>
+
+          <div class="nhsuk-grid-row nhsuk-promo-group">
+
+            <div class="nhsuk-grid-column-one-half nhsuk-promo-group__item">
+              <div class="scra-card">
+                <div class="scra-card-header">
+                  <div class="nhsuk-action-link">
+                    <a class="nhsuk-action-link__link" href="nhs-number-search">
+                      <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M0 0h24v24H0z" fill="none"></path>
+                        <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
+                      </svg>
+                      <span class="nhsuk-action-link__text">Find a patient</span>
+                    </a>
+                  </div>
+                </div>
+                <div class="scra-card-content">
+                  <p>
+                    Search using the patient's NHS Number or other details and create a birth notification if required.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="nhsuk-grid-column-one-half nhsuk-promo-group__item">
+              <div class="scra-card">
+                <div class="scra-card-header">
+                  <div class="nhsuk-action-link">
+                    <a class="nhsuk-action-link__link" href="./view-list">
+                      <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M0 0h24v24H0z" fill="none"></path>
+                        <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
+                      </svg>
+                      <span class="nhsuk-action-link__text">View recent birth notifications</span>
+                    </a>
+                  </div>
+                </div>
+                <div class="scra-card-content">
+                  <p>
+                    View, filter, and export incomplete and submitted birth notifications. Print certificates and labels for completed notifications.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>
+{% block pageScripts %}
+<script src="/js/bna.js"></script>
+{% endblock %}
+{% endblock %}
