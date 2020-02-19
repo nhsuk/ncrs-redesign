@@ -30,6 +30,12 @@ a.nhsuk-button--reverse:visited {
   color: inherit;
 }
 
+.nhsuk-button--reverse:focus {
+  background: #212b32;
+  box-shadow: none;
+  color: #fff;
+}
+
 .nrl-button {
   font-size: 1rem;
   margin-bottom: 0;
