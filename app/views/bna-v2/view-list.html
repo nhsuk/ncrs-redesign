@@ -355,10 +355,8 @@ Recent Birth Notifications
     </div>
 
 
-      <a id="view-selected-link" href="./birth-notification" class="disable-able nhsuk-button nhsuk-button--secondary nhsuk-button--disabled">
-
     <div class="bna-list-buttons-container">
-      <a class="disable-able nhsuk-button nhsuk-button--secondary nhsuk-button--disabled" href="birth-notification-multiple">
+      <a id="view-selected-link" class="disable-able nhsuk-button nhsuk-button--secondary nhsuk-button--disabled" href="./birth-notification">
         View selected
       </a>
 
@@ -380,7 +378,7 @@ Recent Birth Notifications
 {% block pageScripts %}
 <script src="/js/bna.js"></script>
 <script>
-  // Script for the view slected button
+  // Script for the view selected button
 
   $(".nhsuk-checkboxes__input").change(function() {
       if ($("input:checkbox:checked").length > 0)
