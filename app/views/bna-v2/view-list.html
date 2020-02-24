@@ -1,0 +1,405 @@
+{% extends 'layouts/layout-application-no-personal-details.html' %}
+
+{% block pageTitle %}
+Recent Birth Notifications
+{% endblock %}
+
+{% block beforeContent %}
+
+<section class="nhsuk-hero">
+
+  <div class="nhsuk-width-container-fluid">
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-two-thirds">
+        <div class="nhsuk-hero__wrapper">
+          <h1 class="nhsuk-u-margin-bottom-3 nhsuk-heading-l">Recent Birth Notifications</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+  <div class="nhsuk-width-container-fluid">
+    <ol class="nhsuk-breadcrumb__list">
+      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="./confirm-role">Home</a></li>
+    </ol>
+    <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href="./confirm-role">Back to Home</a></p>
+  </div>
+</nav>
+
+
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+    <p class="nhsuk-u-reading-width">
+      Showing all birth notifications (10 completed, 1 incomplete, 1 failed) for Organisation A00 from 09-Feb-2020 to 11-Feb-2020.
+      <a href="./advanced-filters">Change settings</a>
+    </p>
+
+    <div class="nhsuk-form-group">
+      <label class="nhsuk-label" for="search">
+        Search for name, date, status or NHS number <span class="nhsuk-u-visually-hidden"> and the table automatically updates the filtered results</span>
+      </label>
+      <input class="nhsuk-input  nhsuk-input--width-20" id="search" name="search" type="text">
+    </div>
+
+
+  </div>
+</div>
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+
+    <h2 class="nhsuk-u-visually-hidden">Birth notification results</h2>
+
+    <div class="nhsuk-table-responsive nhsuk-u-margin-top-0">
+      <table id="filtering-example-1" class="nhsuk-table" data-filtering="true">
+        <caption class="nhsuk-table__caption">Recent birth notifications</caption>
+        <thead class="nhsuk-table__head">
+          <tr class="nhsuk-table__row">
+            <th class="nhsuk-table__header" scope="col">Select</th>
+            <th class="nhsuk-table__header" scope="col">Status</th>
+            <th class="nhsuk-table__header" scope="col">Saved/Notified Date</th>
+            <th class="nhsuk-table__header" scope="col">Mother’s Name</th>
+            <th class="nhsuk-table__header" scope="col">Mother’s NHS Number</th>
+            <th class="nhsuk-table__header" scope="col">Mother’s Date of Birth</th>
+            <th class="nhsuk-table__header" scope="col">Baby’s First Name</th>
+            <th class="nhsuk-table__header" scope="col">Baby’s NHS Number</th>
+            <th class="nhsuk-table__header" scope="col">Baby’s Gender</th>
+            <th class="nhsuk-table__header" scope="col">Date and Time of Birth</th>
+          </tr>
+        </thead>
+        <tbody class="nhsuk-table__body">
+          <tr class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">
+              <div class="nhsuk-form-group nhsuk-u-margin-bottom-0">
+                <div class="nhsuk-checkboxes">
+                  <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="select-1" name="select" type="checkbox" value="row-1">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="select-1">
+                      <span class="nhsuk-u-visually-hidden">Select row 1</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td class="nhsuk-table__cell ">Completed</td>
+            <td class="nhsuk-table__cell">11-Feb-2020</td>
+            <td class="nhsuk-table__cell "><a href="./birth-notification">Daphne Smith</a></td>
+            <td class="nhsuk-table__cell">969 703 5463</td>
+            <td class="nhsuk-table__cell ">17-Nov-1991</td>
+            <td class="nhsuk-table__cell">Tyrone</td>
+            <td class="nhsuk-table__cell ">599 011 1223</td>
+            <td class="nhsuk-table__cell">Male</td>
+            <td class="nhsuk-table__cell ">11-Feb-2020 18:47</td>
+          </tr>
+          <tr class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">
+              <div class="nhsuk-form-group nhsuk-u-margin-bottom-0">
+                <div class="nhsuk-checkboxes">
+                  <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="select-2" name="select" type="checkbox" value="row-2">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="select-2">
+                      <span class="nhsuk-u-visually-hidden">Select row 2</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td class="nhsuk-table__cell ">Incomplete</td>
+            <td class="nhsuk-table__cell">11-Feb-2020</td>
+            <td class="nhsuk-table__cell "><a href="./birth-notification">Shirley Bryant</a></td>
+            <td class="nhsuk-table__cell">603 729 2248</td>
+            <td class="nhsuk-table__cell ">09-Apr-1986</td>
+            <td class="nhsuk-table__cell">Keith</td>
+            <td class="nhsuk-table__cell ">569 288 4909</td>
+            <td class="nhsuk-table__cell">Male</td>
+            <td class="nhsuk-table__cell ">11-Feb-2020 02:13</td>
+          </tr>
+          <tr class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">
+              <div class="nhsuk-form-group nhsuk-u-margin-bottom-0">
+                <div class="nhsuk-checkboxes">
+                  <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="select-3" name="select" type="checkbox" value="row-3">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="select-3">
+                      <span class="nhsuk-u-visually-hidden">Select row 3</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td class="nhsuk-table__cell ">Completed</td>
+            <td class="nhsuk-table__cell">11-Feb-2020</td>
+            <td class="nhsuk-table__cell "><a href="./birth-notification">Julia Bell</a></td>
+            <td class="nhsuk-table__cell">091 015 5240</td>
+            <td class="nhsuk-table__cell ">12-Sep-1995</td>
+            <td class="nhsuk-table__cell">Alexa</td>
+            <td class="nhsuk-table__cell ">390 488 1981</td>
+            <td class="nhsuk-table__cell">Female</td>
+            <td class="nhsuk-table__cell ">10-Feb-2020 14:14</td>
+          </tr>
+          <tr class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">
+              <div class="nhsuk-form-group nhsuk-u-margin-bottom-0">
+                <div class="nhsuk-checkboxes">
+                  <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="select-4" name="select" type="checkbox" value="row-4">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="select-4">
+                      <span class="nhsuk-u-visually-hidden">Select row 4</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td class="nhsuk-table__cell ">Completed</td>
+            <td class="nhsuk-table__cell">10-Feb-2020</td>
+            <td class="nhsuk-table__cell "><a href="./birth-notification">Maria Butler</a></td>
+            <td class="nhsuk-table__cell">405 329 0708</td>
+            <td class="nhsuk-table__cell ">01-Feb-1996</td>
+            <td class="nhsuk-table__cell">Betty</td>
+            <td class="nhsuk-table__cell ">945 372 8489</td>
+            <td class="nhsuk-table__cell">Female</td>
+            <td class="nhsuk-table__cell ">10-Feb-2020 11:37</td>
+          </tr>
+          <tr class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">
+              <div class="nhsuk-form-group nhsuk-u-margin-bottom-0">
+                <div class="nhsuk-checkboxes">
+                  <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="select-5" name="select" type="checkbox" value="row-5">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="select-5">
+                      <span class="nhsuk-u-visually-hidden">Select row 5</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td class="nhsuk-table__cell ">Completed</td>
+            <td class="nhsuk-table__cell">10-Feb-2020</td>
+            <td class="nhsuk-table__cell "><a href="./birth-notification">Amy Diaz</a></td>
+            <td class="nhsuk-table__cell">167 725 1654</td>
+            <td class="nhsuk-table__cell ">13-Apr-1986</td>
+            <td class="nhsuk-table__cell">Tony</td>
+            <td class="nhsuk-table__cell ">829 679 6511</td>
+            <td class="nhsuk-table__cell">Male</td>
+            <td class="nhsuk-table__cell ">09-Feb-2020 08:57</td>
+          </tr>
+          <tr class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">
+              <div class="nhsuk-form-group nhsuk-u-margin-bottom-0">
+                <div class="nhsuk-checkboxes">
+                  <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="select-6" name="select" type="checkbox" value="row-6">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="select-6">
+                      <span class="nhsuk-u-visually-hidden">Select row 5</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td class="nhsuk-table__cell ">Completed</td>
+            <td class="nhsuk-table__cell">10-Feb-2020</td>
+            <td class="nhsuk-table__cell "><a href="./birth-notification">Sarah Swann</a></td>
+            <td class="nhsuk-table__cell">789 324 6134</td>
+            <td class="nhsuk-table__cell ">13-Sep-1981</td>
+            <td class="nhsuk-table__cell">Steven</td>
+            <td class="nhsuk-table__cell ">890 245 9028</td>
+            <td class="nhsuk-table__cell">Male</td>
+            <td class="nhsuk-table__cell ">09-Feb-2020 03:23</td>
+          </tr>
+          <tr class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">
+              <div class="nhsuk-form-group nhsuk-u-margin-bottom-0">
+                <div class="nhsuk-checkboxes">
+                  <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="select-1" name="select" type="checkbox" value="row-1">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="select-1">
+                      <span class="nhsuk-u-visually-hidden">Select row 1</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td class="nhsuk-table__cell ">Completed</td>
+            <td class="nhsuk-table__cell">10-Feb-2020</td>
+            <td class="nhsuk-table__cell "><a href="./birth-notification">Daphne Smith</a></td>
+            <td class="nhsuk-table__cell">969 703 5463</td>
+            <td class="nhsuk-table__cell ">17-Nov-1991</td>
+            <td class="nhsuk-table__cell">Tyrone</td>
+            <td class="nhsuk-table__cell ">599 011 1223</td>
+            <td class="nhsuk-table__cell">Male</td>
+            <td class="nhsuk-table__cell ">11-Feb-2020 18:47</td>
+          </tr>
+          <tr class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">
+              <div class="nhsuk-form-group nhsuk-u-margin-bottom-0">
+                <div class="nhsuk-checkboxes">
+                  <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="select-2" name="select" type="checkbox" value="row-2">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="select-2">
+                      <span class="nhsuk-u-visually-hidden">Select row 2</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td class="nhsuk-table__cell ">Failed</td>
+            <td class="nhsuk-table__cell">10-Feb-2020</td>
+            <td class="nhsuk-table__cell "><a href="./birth-notification">Shirley Bryant</a></td>
+            <td class="nhsuk-table__cell">603 729 2248</td>
+            <td class="nhsuk-table__cell ">09-Apr-1986</td>
+            <td class="nhsuk-table__cell">Keith</td>
+            <td class="nhsuk-table__cell ">569 288 4909</td>
+            <td class="nhsuk-table__cell">Male</td>
+            <td class="nhsuk-table__cell ">11-Feb-2020 02:13</td>
+          </tr>
+          <tr class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">
+              <div class="nhsuk-form-group nhsuk-u-margin-bottom-0">
+                <div class="nhsuk-checkboxes">
+                  <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="select-3" name="select" type="checkbox" value="row-3">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="select-3">
+                      <span class="nhsuk-u-visually-hidden">Select row 3</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td class="nhsuk-table__cell ">Completed</td>
+            <td class="nhsuk-table__cell">09-Feb-2020</td>
+            <td class="nhsuk-table__cell "><a href="./birth-notification">Julia Bell</a></td>
+            <td class="nhsuk-table__cell">091 015 5240</td>
+            <td class="nhsuk-table__cell ">12-Sep-1995</td>
+            <td class="nhsuk-table__cell">Alexa</td>
+            <td class="nhsuk-table__cell ">390 488 1981</td>
+            <td class="nhsuk-table__cell">Female</td>
+            <td class="nhsuk-table__cell ">10-Feb-2020 14:14</td>
+          </tr>
+          <tr class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">
+              <div class="nhsuk-form-group nhsuk-u-margin-bottom-0">
+                <div class="nhsuk-checkboxes">
+                  <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="select-4" name="select" type="checkbox" value="row-4">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="select-4">
+                      <span class="nhsuk-u-visually-hidden">Select row 4</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td class="nhsuk-table__cell ">Completed</td>
+            <td class="nhsuk-table__cell">09-Feb-2020</td>
+            <td class="nhsuk-table__cell "><a href="./birth-notification">Maria Butler</a></td>
+            <td class="nhsuk-table__cell">405 329 0708</td>
+            <td class="nhsuk-table__cell ">01-Feb-1996</td>
+            <td class="nhsuk-table__cell">Betty</td>
+            <td class="nhsuk-table__cell ">945 372 8489</td>
+            <td class="nhsuk-table__cell">Female</td>
+            <td class="nhsuk-table__cell ">10-Feb-2020 11:37</td>
+          </tr>
+          <tr class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">
+              <div class="nhsuk-form-group nhsuk-u-margin-bottom-0">
+                <div class="nhsuk-checkboxes">
+                  <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="select-5" name="select" type="checkbox" value="row-5">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="select-5">
+                      <span class="nhsuk-u-visually-hidden">Select row 5</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td class="nhsuk-table__cell ">Completed</td>
+            <td class="nhsuk-table__cell">09-Feb-2020</td>
+            <td class="nhsuk-table__cell "><a href="./birth-notification">Amy Diaz</a></td>
+            <td class="nhsuk-table__cell">167 725 1654</td>
+            <td class="nhsuk-table__cell ">13-Apr-1986</td>
+            <td class="nhsuk-table__cell">Tony</td>
+            <td class="nhsuk-table__cell ">829 679 6511</td>
+            <td class="nhsuk-table__cell">Male</td>
+            <td class="nhsuk-table__cell ">09-Feb-2020 08:57</td>
+          </tr>
+          <tr class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">
+              <div class="nhsuk-form-group nhsuk-u-margin-bottom-0">
+                <div class="nhsuk-checkboxes">
+                  <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="select-6" name="select" type="checkbox" value="row-6">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="select-6">
+                      <span class="nhsuk-u-visually-hidden">Select row 5</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td class="nhsuk-table__cell ">Completed</td>
+            <td class="nhsuk-table__cell">09-Feb-2020</td>
+            <td class="nhsuk-table__cell "><a href="./birth-notification">Sarah Swann</a></td>
+            <td class="nhsuk-table__cell">789 324 6134</td>
+            <td class="nhsuk-table__cell ">13-Sep-1981</td>
+            <td class="nhsuk-table__cell">Steven</td>
+            <td class="nhsuk-table__cell ">890 245 9028</td>
+            <td class="nhsuk-table__cell">Male</td>
+            <td class="nhsuk-table__cell ">09-Feb-2020 03:23</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+<<<<<<< HEAD
+      <a id="view-selected-link" href="./birth-notification" class="disable-able nhsuk-button nhsuk-button--secondary nhsuk-button--disabled">
+=======
+    <div class="bna-list-buttons-container">
+      <a class="disable-able nhsuk-button nhsuk-button--secondary nhsuk-button--disabled" href="birth-notification-multiple">
+>>>>>>> c8b90c1ea35ca71033c6f576c0ff7078ec279e58
+        View selected
+      </a>
+
+      <a class="disable-able nhsuk-button nhsuk-button--secondary nhsuk-button--disabled" type="submit">
+        Print selected
+      </a>
+
+      <a class="disable-able nhsuk-button nhsuk-button--secondary nhsuk-button--disabled" type="submit">
+        Export selected
+      </a>
+
+      <a class="nhsuk-button nhsuk-button--blue" type="submit">
+        Export all
+      </a>
+    </div>
+
+  </div>
+</div>
+{% block pageScripts %}
+<script src="/js/bna.js"></script>
+<script>
+  $(".nhsuk-checkboxes__input").change(function() {
+      if ($("input:checkbox:checked").length > 0)
+      {
+        $(".disable-able").removeClass("nhsuk-button--disabled").removeClass("nhsuk-button--secondary").addClass("nhsuk-button--blue");
+        $("#view-selected-link").attr("href", "./birth-notification");
+
+        if ($("input:checkbox:checked").length > 1)
+        {
+          $("#view-selected-link").attr("href", "./birth-notification-multiple-1-of-3");
+        }
+
+      }
+      else
+      {
+        $(".disable-able ").addClass("nhsuk-button--disabled").addClass("nhsuk-button--secondary").removeClass("nhsuk-button--blue");
+      }
+
+
+  });
+</script>
+{% endblock %}
+{% endblock %}
