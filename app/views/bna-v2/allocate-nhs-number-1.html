@@ -1,0 +1,198 @@
+{% extends 'layouts/layout.html' %}
+
+{% block pageTitle %}
+Allocate an NHS Number
+{% endblock %}
+
+{% block beforeContent %}
+
+<section class="nhsuk-hero">
+
+  <div class="nhsuk-width-container">
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-two-thirds">
+        <div class="nhsuk-hero__wrapper">
+          <h1 class="nhsuk-u-margin-bottom-3 nhsuk-heading-l">Allocate an NHS Number</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+  <div class="nhsuk-width-container">
+    <ol class="nhsuk-breadcrumb__list">
+      <li class="nhsuk-breadcrumb__item">
+        <a class="nhsuk-breadcrumb__link" id="find-patient" href="nhs-number-search">Find a patient</a>
+      </li>
+      <li class="nhsuk-breadcrumb__item">
+        <a class="nhsuk-breadcrumb__link" href="search-results">Search results</a>
+      </li>
+      <li class="nhsuk-breadcrumb__item">
+        <a class="nhsuk-breadcrumb__link" href="#">Alllocate an NHS Number</a>
+      </li>
+    </ol>
+    <p class="nhsuk-breadcrumb__back">
+      <a class="nhsuk-breadcrumb__backlink" href="nhs-number-search">Find a patient</a>
+    </p>
+  </div>
+</nav>
+
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-width-container">
+
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+      <div class="nhsuk-u-reading-width">
+        <h2 class="nhsuk-heading-l">
+          <span role="text">Enter the patient's details</span>
+          <span class="nhsuk-caption-l nhsuk-caption--bottom">Step 1 of 2</span>
+        </h2>
+
+        <p class="nhsuk-body">
+          Please enter the details of the mother you would like to allocate an NHS Number to.
+        </p>
+        <form id="allocate-step-1-form" action="allocate-nhs-number-2">
+
+          <div class="nhsuk-form-group">
+
+            <fieldset class="nhsuk-fieldset">
+              <legend class="nhsuk-fieldset__legend nhsuk-label__strong">
+                Gender
+              </legend>
+
+              <div class="nhsuk-radios nhsuk-radios--inline">
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="allocate-gender-female" name="allocate-gender" type="radio" value="Female">
+                  <label class="nhsuk-label nhsuk-radios__label" for="allocate-gender-female">
+                    Female
+                  </label>
+                </div>
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="allocate-gender-male" name="allocate-gender" type="radio" value="Male">
+                  <label class="nhsuk-label nhsuk-radios__label" for="allocate-gender-male">
+                    Male
+                  </label>
+                </div>
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="allocate-gender-not-specified" name="allocate-gender" type="radio" value="Not specified">
+                  <label class="nhsuk-label nhsuk-radios__label" for="allocate-gender-not-specified">
+                    Not specified
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+
+          </div>
+
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label nhsuk-label__strong" for="allocate-first-name">
+              First name
+            </label>
+            <input class="nhsuk-input nhsuk-input--width-20" id="allocate-first-name" name="allocate-first-name" type="text">
+          </div>
+
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label nhsuk-label__strong" for="allocate-other-names">
+              Other names (optional)
+            </label>
+            <input class="nhsuk-input nhsuk-input--width-20" id="allocate-other-names" name="allocate-other-names" type="text">
+          </div>
+
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label nhsuk-label__strong" for="allocate-last-name">
+              Last name
+            </label>
+            <input class="nhsuk-input nhsuk-input--width-20" id="allocate-last-name" name="allocate-last-name" type="text">
+          </div>
+
+          <div class="nhsuk-form-group">
+            <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
+              <legend class="nhsuk-fieldset__legend nhsuk-label__strong">
+                Date of birth
+              </legend>
+              <span class="nhsuk-hint" id="example-hint">
+                For example, 15 3 1984
+              </span>
+
+              <div class="nhsuk-date-input" id="allocate-dob">
+                <div class="nhsuk-date-input__item">
+                  <div class="nhsuk-form-group">
+                    <label class="nhsuk-label nhsuk-date-input__label" for="allocate-dob-day">
+                      Day
+                    </label>
+                    <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="allocate-dob-day" name="allocate-day-of-birth" type="number" pattern="[0-9]*">
+                  </div>
+                </div>
+                <div class="nhsuk-date-input__item">
+                  <div class="nhsuk-form-group">
+                    <label class="nhsuk-label nhsuk-date-input__label" for="allocate-dob-month">
+                      Month
+                    </label>
+                    <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="allocate-dob-month" name="allocate-month-of-birth" type="number" pattern="[0-9]*">
+                  </div>
+                </div>
+                <div class="nhsuk-date-input__item">
+                  <div class="nhsuk-form-group">
+                    <label class="nhsuk-label nhsuk-date-input__label" for="allocate-dob-year">
+                      Year
+                    </label>
+                    <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="allocate-dob-year" name="allocate-year-of-birth" type="number" pattern="[0-9]*">
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+
+          </div>
+
+          <div class="nhsuk-form-group">
+
+            <fieldset class="nhsuk-fieldset">
+              <legend class="nhsuk-fieldset__legend nhsuk-label__strong">
+                Is this patient registered to a GP Practice?
+              </legend>
+
+              <div class="nhsuk-radios nhsuk-radios--inline">
+
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="allocate-gp-no" name="allocate-gp-practice" type="radio" value="No">
+                  <label class="nhsuk-label nhsuk-radios__label" for="allocate-gp-no">
+                    No
+                  </label>
+                </div>
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="allocate-gp-yes" name="allocate-gp-practice" type="radio" value="Yes">
+                  <label class="nhsuk-label nhsuk-radios__label" for="allocate-gp-yes">
+                    Yes
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+
+          </div>
+
+
+          <div class="btn-group">
+            <button class="nhsuk-button" type="submit">
+              Save and continue
+            </button>
+
+            <p class="cancel-btn-link"><a href="#">Cancel</a></p>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+{% block pageScripts %}
+<script src="/js/bna.js"></script>
+{% endblock %}
+{% endblock %}

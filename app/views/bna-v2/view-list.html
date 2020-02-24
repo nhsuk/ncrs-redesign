@@ -45,6 +45,7 @@ Recent Birth Notifications
         Search for name, date, status or NHS number <span class="nhsuk-u-visually-hidden"> and the table automatically updates the filtered results</span>
       </label>
       <input class="nhsuk-input  nhsuk-input--width-20" id="search" name="search" type="text">
+      <p id="clear-bna-filter"><a href="#">Clear</a></p>
     </div>
 
 
@@ -115,10 +116,10 @@ Recent Birth Notifications
             <td class="nhsuk-table__cell "><a href="./birth-notification">Shirley Bryant</a></td>
             <td class="nhsuk-table__cell">603 729 2248</td>
             <td class="nhsuk-table__cell ">09-Apr-1986</td>
-            <td class="nhsuk-table__cell">Keith</td>
-            <td class="nhsuk-table__cell ">569 288 4909</td>
-            <td class="nhsuk-table__cell">Male</td>
-            <td class="nhsuk-table__cell ">11-Feb-2020 02:13</td>
+            <td class="nhsuk-table__cell"><i class="td-unavailable">Baby's name not available</i></td>
+            <td class="nhsuk-table__cell "><i class="td-unavailable">Baby's NHS Number not available</i></td>
+            <td class="nhsuk-table__cell"><i class="td-unavailable">Baby's gender not available</i></td>
+            <td class="nhsuk-table__cell "><i class="td-unavailable">Date and time of birth not available</i></td>
           </tr>
           <tr class="nhsuk-table__row">
             <td class="nhsuk-table__cell">
@@ -254,7 +255,7 @@ Recent Birth Notifications
             <td class="nhsuk-table__cell">603 729 2248</td>
             <td class="nhsuk-table__cell ">09-Apr-1986</td>
             <td class="nhsuk-table__cell">Keith</td>
-            <td class="nhsuk-table__cell ">569 288 4909</td>
+            <td class="nhsuk-table__cell "><i class="td-unavailable">Baby's NHS Number not available</i></td>
             <td class="nhsuk-table__cell">Male</td>
             <td class="nhsuk-table__cell ">11-Feb-2020 02:13</td>
           </tr>
@@ -354,8 +355,6 @@ Recent Birth Notifications
       </table>
     </div>
 
-
-      <a id="view-selected-link" href="./birth-notification" class="disable-able nhsuk-button nhsuk-button--secondary nhsuk-button--disabled">
 
     <div class="bna-list-buttons-container">
       <a class="disable-able nhsuk-button nhsuk-button--secondary nhsuk-button--disabled" href="birth-notification-multiple">

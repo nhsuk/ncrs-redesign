@@ -21,6 +21,20 @@
   }
   .nhsuk-promo__link-wrapper {
     box-shadow: -4px 0 0 0 $color_nhsuk-black;
+    border: none;
+  }
+  .nhsuk-promo__link-wrapper:hover {
+    .nhsuk-promo__heading {
+      color: $color_nhsuk-blue;
+    }
+  }
+  .nhsuk-promo__link-wrapper:focus {
+    border: 4px solid #005eb8;
+    box-shadow: none;
+    .nhsuk-promo__heading {
+      background-color: inherit;
+      box-shadow: none;
+    }
   }
   .nhsuk-promo__content {
     background-color: $color_nhsuk-warm-yellow;
