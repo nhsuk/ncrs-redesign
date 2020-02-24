@@ -1,9 +1,40 @@
 /* Amend the NHS.UK nav bar to sit within our site header */
-.nhsuk-header__menu {
-  margin: 8px 0;
-}
+
 .nhsuk-header__menu-toggle {
   margin-right: 0;
+}
+
+.nhsuk-header--transactional {
+    padding: 0;
+}
+
+.scra-fluid-header-container {
+  padding:0;
+  .nhsuk-header__logo,
+  .nhsuk-header__transactional-service-name {
+    padding-top: 16px;
+  }
+  @media (max-width: 40.0525em) {
+    .nhsuk-header__logo {
+      padding-left: 16px;
+    }
+    .nhsuk-header__transactional-service-name {
+      display: none;
+    }
+    .nhsuk-header__menu-toggle {
+      right: 0;
+    }
+  }
+  @media (min-width: 61.875em) {
+    .nhsuk-header__logo,
+    .nhsuk-header__transactional-service-name  {
+      padding-top: 20px;
+    }
+  }
+}
+
+.scra-fluid-header-container::after {
+  clear: none;
 }
 
 @media (min-width: 61.875em) {

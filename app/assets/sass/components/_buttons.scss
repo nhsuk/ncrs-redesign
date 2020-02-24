@@ -1,3 +1,12 @@
+/* Link as nhs.uk button workaround */
+
+.nhsuk-button:focus {
+  background-color: #00401e;
+  color: #ffffff;
+}
+
+/* custom button colours */
+
 .nhsuk-button--blue {
   background-color: $color_nhsuk-blue;
   box-shadow: 0 4px 0 #003087;
@@ -19,6 +28,12 @@
 
 a.nhsuk-button--reverse:visited {
   color: inherit;
+}
+
+.nhsuk-button--reverse:focus {
+  background: #212b32;
+  box-shadow: none;
+  color: #fff;
 }
 
 .nrl-button {
@@ -81,4 +96,15 @@ a.nhsuk-button--pds-edit:visited {
 
 .cancel-link {
   cursor: pointer;
+}
+
+/* BNA Styles */
+
+.bna-list-buttons-container * {
+  margin-right: 12px;
+  display: block;
+  @media (min-width: 769px) {
+    margin-right: 24px;
+    display: inline;
+  }
 }
