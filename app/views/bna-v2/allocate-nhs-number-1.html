@@ -56,8 +56,7 @@
           <p class="nhsuk-body">
             Please enter details about the mother you would like to allocate an NHS Number to.
           </p>
-          <form id="allocate-step-1-form" action="allocate-nhs-number-2
-          ">
+          <form id="allocate-step-1-form" action="allocate-nhs-number-2">
 
             <div class="nhsuk-form-group">
 
@@ -68,20 +67,20 @@
 
                 <div class="nhsuk-radios nhsuk-radios--inline">
                   <div class="nhsuk-radios__item">
-                    <input class="nhsuk-radios__input" id="baby-gender-female" name="baby-gender" type="radio" value="Female">
-                    <label class="nhsuk-label nhsuk-radios__label" for="baby-gender-female">
+                    <input class="nhsuk-radios__input" id="allocate-gender-female" name="allocate-gender" type="radio" value="Female">
+                    <label class="nhsuk-label nhsuk-radios__label" for="allocate-gender-female">
                       Female
                     </label>
                   </div>
                   <div class="nhsuk-radios__item">
-                    <input class="nhsuk-radios__input" id="baby-gender-male" name="baby-gender" type="radio" value="Male">
-                    <label class="nhsuk-label nhsuk-radios__label" for="baby-gender-male">
+                    <input class="nhsuk-radios__input" id="allocate-gender-male" name="allocate-gender" type="radio" value="Male">
+                    <label class="nhsuk-label nhsuk-radios__label" for="allocate-gender-male">
                       Male
                     </label>
                   </div>
                   <div class="nhsuk-radios__item">
-                    <input class="nhsuk-radios__input" id="baby-gender-not-specified" name="baby-gender" type="radio" value="Not specified">
-                    <label class="nhsuk-label nhsuk-radios__label" for="baby-gender-not-specified">
+                    <input class="nhsuk-radios__input" id="allocate-gender-not-specified" name="allocate-gender" type="radio" value="Not specified">
+                    <label class="nhsuk-label nhsuk-radios__label" for="allocate-gender-not-specified">
                       Not specified
                     </label>
                   </div>
@@ -91,34 +90,24 @@
             </div>
 
             <div class="nhsuk-form-group">
-              <label class="nhsuk-label nhsuk-label__strong" for="baby-first-name">
+              <label class="nhsuk-label nhsuk-label__strong" for="allocate-first-name">
                 First name
               </label>
-              <input class="nhsuk-input nhsuk-input--width-20" id="baby-first-name" name="baby-first-name" type="text">
+              <input class="nhsuk-input nhsuk-input--width-20" id="allocate-first-name" name="allocate-first-name" type="text">
             </div>
 
             <div class="nhsuk-form-group">
-              <label class="nhsuk-label nhsuk-label__strong" for="baby-other-names">
+              <label class="nhsuk-label nhsuk-label__strong" for="allocate-other-names">
                 Other names (optional)
               </label>
-              <input class="nhsuk-input nhsuk-input--width-20" id="baby-other-names" name="baby-other-names" type="text">
+              <input class="nhsuk-input nhsuk-input--width-20" id="allocate-other-names" name="allocate-other-names" type="text">
             </div>
 
             <div class="nhsuk-form-group">
-              <label class="nhsuk-label nhsuk-label__strong" for="baby-last-name">
+              <label class="nhsuk-label nhsuk-label__strong" for="allocate-last-name">
                 Last name
               </label>
-              <input class="nhsuk-input nhsuk-input--width-20" id="baby-last-name" name="baby-last-name" type="text">
-            </div>
-
-            <div class="nhsuk-form-group">
-              <label class="nhsuk-label nhsuk-label__strong" for="bna-country-of-birth">
-                Ethnic category
-              </label>
-              <select class="nhsuk-select" id="baby-ethnicity" name="baby-ethnic-category">
-                <option value="0" selected disabled>Please select an option</option>
-              </select>
-
+              <input class="nhsuk-input nhsuk-input--width-20" id="allocate-last-name" name="allocate-last-name" type="text">
             </div>
 
             <div class="nhsuk-form-group">
@@ -130,29 +119,29 @@
                   For example, 15 3 1984
                 </span>
 
-                <div class="nhsuk-date-input" id="baby-dob">
+                <div class="nhsuk-date-input" id="allocate-dob">
                   <div class="nhsuk-date-input__item">
                     <div class="nhsuk-form-group">
-                      <label class="nhsuk-label nhsuk-date-input__label" for="baby-dob-day">
+                      <label class="nhsuk-label nhsuk-date-input__label" for="allocate-dob-day">
                         Day
                       </label>
-                      <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="baby-dob-day" name="baby-day-of-birth" type="number" pattern="[0-9]*">
+                      <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="allocate-dob-day" name="allocate-day-of-birth" type="number" pattern="[0-9]*">
                     </div>
                   </div>
                   <div class="nhsuk-date-input__item">
                     <div class="nhsuk-form-group">
-                      <label class="nhsuk-label nhsuk-date-input__label" for="baby-dob-month">
+                      <label class="nhsuk-label nhsuk-date-input__label" for="allocate-dob-month">
                         Month
                       </label>
-                      <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="baby-dob-month" name="baby-month-of-birth" type="number" pattern="[0-9]*">
+                      <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="allocate-dob-month" name="allocate-month-of-birth" type="number" pattern="[0-9]*">
                     </div>
                   </div>
                   <div class="nhsuk-date-input__item">
                     <div class="nhsuk-form-group">
-                      <label class="nhsuk-label nhsuk-date-input__label" for="baby-dob-year">
+                      <label class="nhsuk-label nhsuk-date-input__label" for="allocate-dob-year">
                         Year
                       </label>
-                      <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="baby-dob-year" name="baby-year-of-birth" type="number" pattern="[0-9]*">
+                      <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="allocate-dob-year" name="allocate-year-of-birth" type="number" pattern="[0-9]*">
                     </div>
                   </div>
                 </div>
@@ -161,130 +150,38 @@
             </div>
 
             <div class="nhsuk-form-group">
-              <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
-                <legend class="nhsuk-fieldset__legend nhsuk-label__strong">
-                  Time of birth
-                </legend>
-                <span class="nhsuk-hint" id="example-hint">
-                  Use a 24 hour format, for example, 17 46
-                </span>
-
-                <div class="nhsuk-date-input" id="baby-tob">
-                  <div class="nhsuk-date-input__item">
-                    <div class="nhsuk-form-group">
-                      <label class="nhsuk-label nhsuk-date-input__label" for="baby-hour-of birth">
-                        Hour
-                      </label>
-                      <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="baby-hour-of-birth" name="baby-hour-of-birth" type="number" pattern="[0-9]*">
-                    </div>
-                  </div>
-                  <div class="nhsuk-date-input__item">
-                    <div class="nhsuk-form-group">
-                      <label class="nhsuk-label nhsuk-date-input__label" for="baby-minute-of-birth">
-                        Minute
-                      </label>
-                      <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="baby-minute-of-birth" name="baby-minute-of-birth" type="number" pattern="[0-9]*">
-                    </div>
-                  </div>
-                </div>
-              </fieldset>
-
-            </div>
-
-            <div class="nhsuk-form-group">
-              <label class="nhsuk-label nhsuk-label__strong" for="baby-birth-weight">
-                Birth weight
+              <label class="nhsuk-label nhsuk-label__strong" for="allocate-tel">
+                Telephone number (optional)
               </label>
-              <input class="nhsuk-input nhsuk-input--width-4" id="baby-birth-weight" name="baby-birth-weight" type="text"><span class="input-unit nhsuk-u-font-size-19">grams</span>
+              <input class="nhsuk-input nhsuk-input--width-10" id="allocate-tel" name="allocate-telephone-number" type="text">
             </div>
 
             <div class="nhsuk-form-group">
-              <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
+
+              <fieldset class="nhsuk-fieldset">
                 <legend class="nhsuk-fieldset__legend nhsuk-label__strong">
-                  Birth order
+                  Is this patient registered to a GP Practice?
                 </legend>
 
-                <div class="nhsuk-date-input" id="birth-order">
-                  <div class="nhsuk-date-input__item">
-                    <div class="nhsuk-form-group">
-                      <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="baby-hour-of-birth" name="baby-hour-of-birth" type="number" pattern="[0-9]*" aria-label="This birth number">
-                    </div>
+                <div class="nhsuk-radios nhsuk-radios--inline">
+
+                  <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="allocate-gp-no" name="allocate-gp-practice" type="radio" value="No">
+                    <label class="nhsuk-label nhsuk-radios__label" for="allocate-gp-no">
+                      No
+                    </label>
                   </div>
-                  <span class="birth-order-text nhsuk-u-font-size-19">of</span>
-                  <div class="nhsuk-date-input__item">
-                    <div class="nhsuk-form-group">
-                      <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="baby-minute-of-birth" name="baby-minute-of-birth" type="number" pattern="[0-9]*" aria-label="Total number of births">
-                    </div>
-                  </div>
-                </div>
-              </fieldset>
-            </div>
-
-            <div class="nhsuk-form-group">
-              <label class="nhsuk-label nhsuk-label__strong" for="baby-birth-weight">
-                Gestation
-              </label>
-              <input class="nhsuk-input nhsuk-input--width-2" id="baby-birth-weight" name="baby-birth-weight" type="text"><span class="input-unit nhsuk-u-font-size-19">weeks</span>
-            </div>
-
-            <div class="nhsuk-form-group">
-              <label class="nhsuk-label nhsuk-label__strong" for="congenital-abnormality">
-                Suspected congenital abnormality
-              </label>
-              <select class="nhsuk-select" id="congenital-abnormality" name="suspected-congenital-abnormality">
-                <option value="0" selected disabled>Please select an option</option>
-              </select>
-
-            </div>
-
-            <div class="nhsuk-form-group">
-              <label class="nhsuk-label nhsuk-label__strong" for="congenital-abnormality">
-                Live or still born indicator
-              </label>
-              <select class="nhsuk-select" id="congenital-abnormality" name="suspected-congenital-abnormality">
-                <option value="0" selected disabled>Please select an option</option>
-              </select>
-
-            </div>
-
-            <div class="nhsuk-form-group" style="display:none;">
-              <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
-                <legend class="nhsuk-fieldset__legend nhsuk-label__strong">
-                  Date of death
-                </legend>
-                <span class="nhsuk-hint" id="example-hint">
-                  For example, 15 3 1984
-                </span>
-
-                <div class="nhsuk-date-input" id="baby-dod">
-                  <div class="nhsuk-date-input__item">
-                    <div class="nhsuk-form-group">
-                      <label class="nhsuk-label nhsuk-date-input__label" for="baby-dod-day">
-                        Day
-                      </label>
-                      <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="baby-dod-day" name="baby-day-of-death" type="number" pattern="[0-9]*">
-                    </div>
-                  </div>
-                  <div class="nhsuk-date-input__item">
-                    <div class="nhsuk-form-group">
-                      <label class="nhsuk-label nhsuk-date-input__label" for="baby-dod-month">
-                        Month
-                      </label>
-                      <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="baby-dod-month" name="baby-month-of-death" type="number" pattern="[0-9]*">
-                    </div>
-                  </div>
-                  <div class="nhsuk-date-input__item">
-                    <div class="nhsuk-form-group">
-                      <label class="nhsuk-label nhsuk-date-input__label" for="baby-dod-year">
-                        Year
-                      </label>
-                      <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="baby-dod-year" name="baby-year-of-death" type="number" pattern="[0-9]*">
-                    </div>
+                  <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="allocate-gp-yes" name="allocate-gp-practice" type="radio" value="Yes">
+                    <label class="nhsuk-label nhsuk-radios__label" for="allocate-gp-yes">
+                      Yes
+                    </label>
                   </div>
                 </div>
               </fieldset>
 
             </div>
+
 
             <div class="btn-group">
               <button class="nhsuk-button" type="submit">
