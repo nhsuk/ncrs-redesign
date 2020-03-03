@@ -34,17 +34,14 @@ Recent Birth Notifications
 
 {% block content %}
 <div class="nhsuk-grid-row">
-  <div class="nhsuk-grid-column-one-half">
-    <h2 class="nhsuk-u-reading-width nhsuk-heading-xs">
+  <div class="nhsuk-grid-column-two-thirds">
+    <h2 class="nhsuk-u-reading-width nhsuk-heading-s">
       <span class="nhsuk-u-visually-hidden">The Birth Notifications table is</span>
       Showing all birth notifications (10 completed, 1 incomplete, 1 failed) for Organisation A00 from 09-Feb-2020 to 11-Feb-2020
     </h2>
-    <p>
-      <a href="advanced-filters">View additional filters</a>
-    </p>
   </div>
 
-  <div class="nhsuk-grid-column-one-half">
+  <div class="nhsuk-grid-column-one-third">
     <div class="nhsuk-form-group">
       <label class="nhsuk-label nhsuk-label__strong" for="search">
         Filter by name, date, status or NHS number <span class="nhsuk-u-visually-hidden"> and the table automatically updates the filtered results</span>
@@ -52,11 +49,34 @@ Recent Birth Notifications
       <input class="nhsuk-input  nhsuk-input--width-20" id="search" name="search" type="text">
       <p id="clear-bna-filter"><a href="#">Clear</a></p>
     </div>
+    <p>
+      <a href="advanced-filters">View additional filters</a>
+    </p>
   </div>
 </div>
 
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-full">
+
+    <div class="bna-list-buttons-container">
+
+      <a class="disable-able nhsuk-button nhsuk-button--secondary nhsuk-button--disabled" href="./birth-notification-multiple-1-of-3">
+        View selected
+      </a>
+
+      <a class="disable-able nhsuk-button nhsuk-button--secondary nhsuk-button--disabled" type="submit">
+        Print selected
+      </a>
+
+      <a class="disable-able nhsuk-button nhsuk-button--secondary nhsuk-button--disabled" type="submit">
+        Export selected
+      </a>
+
+      <a class="nhsuk-button nhsuk-button--blue" type="submit">
+        Export all
+      </a>
+
+  </div>
 
     <h2 class="nhsuk-u-visually-hidden">Birth notification results</h2>
 
@@ -360,15 +380,16 @@ Recent Birth Notifications
 
 
     <div class="bna-list-buttons-container">
+
       <a class="disable-able nhsuk-button nhsuk-button--secondary nhsuk-button--disabled" href="./birth-notification-multiple-1-of-3">
         View selected
       </a>
 
-      <a class="disable-able nhsuk-button nhsuk-button--secondary nhsuk-button--disabled nhsuk-u-margin-right-3" type="submit">
+      <a class="disable-able nhsuk-button nhsuk-button--secondary nhsuk-button--disabled" type="submit">
         Print selected
       </a>
 
-      <a class="disable-able nhsuk-button nhsuk-button--secondary nhsuk-button--disabled nhsuk-u-margin-right-3" type="submit">
+      <a class="disable-able nhsuk-button nhsuk-button--secondary nhsuk-button--disabled" type="submit">
         Export selected
       </a>
 
