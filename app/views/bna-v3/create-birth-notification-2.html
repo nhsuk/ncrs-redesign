@@ -1,0 +1,175 @@
+{% extends 'layouts/layout.html' %}
+
+{% block pageTitle %}
+Allocate an NHS Number
+{% endblock %}
+
+{% block beforeContent %}
+
+<section class="nhsuk-hero">
+
+  <div class="nhsuk-width-container">
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-two-thirds">
+        <div class="nhsuk-hero__wrapper">
+          <h1 class="nhsuk-u-margin-bottom-3 nhsuk-heading-l">Create a birth notification for an unregistered mother</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+  <div class="nhsuk-width-container">
+    <ol class="nhsuk-breadcrumb__list">
+      <li class="nhsuk-breadcrumb__item">
+        <a class="nhsuk-breadcrumb__link" id="find-patient" href="nhs-number-search">Find a patient</a>
+      </li>
+      <li class="nhsuk-breadcrumb__item">
+        <a class="nhsuk-breadcrumb__link" href="search-results">Search results</a>
+      </li>
+      <li class="nhsuk-breadcrumb__item">
+        <a class="nhsuk-breadcrumb__link" href="#">Create a birth notification</a>
+      </li>
+    </ol>
+    <p class="nhsuk-breadcrumb__back">
+      <a class="nhsuk-breadcrumb__backlink" href="nhs-number-search">Find a patient</a>
+    </p>
+  </div>
+</nav>
+
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-width-container">
+
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+      <div class="nhsuk-u-reading-width">
+
+        <h2 class="nhsuk-heading-l">
+          <span role="text">Enter organisation details</span>
+          <span class="nhsuk-caption-l nhsuk-caption--bottom">Step 2 of 6</span>
+        </h2>
+
+        <p class="nhsuk-body">
+          Please enter details about the organisation where the birth took place.
+        </p>
+        <form id="create-step-2-form" action="create-birth-notification-3">
+
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label nhsuk-label__strong" for="delivery-place-dropdown">
+              Delivery place type
+            </label>
+            <select class="nhsuk-select" id="delivery-place-dropdown" name="delivery-place">
+              <option value="0">NHS hospital - delivery facilities associated with midwife ward</option>
+              <option value="1">Domestic address</option>
+              <option value="2">NHS hospital - delivery facilities associated with consultant ward</option>
+              <option value="3">NHS hospital - delivery associated with GMP ward</option>
+              <option value="4">NHS hospital - delivery associated with any combination of two of Maternity/Consultant/GMP ward</option>
+              <option value="5">Private hospital</option>
+              <option value="6">Other hospital or institution</option>
+              <option value="7">NHS hospital - ward or unit without delivery facilities</option>
+              <option value="8">None of the above</option>
+              <option value="9">Not known</option>
+              <option value="9" selected disabled>Please select a delivery place type</option>
+
+            </select>
+          </div>
+
+          <div class="nhsuk-form-group" style="display:none">
+            <label class="nhsuk-label nhsuk-label__strong" for="delivery-place-code">
+              Delivery place code
+            </label>
+            <input class="nhsuk-input nhsuk-input--width-20" id="delivery-place-code" name="delivery-place-code" type="text">
+          </div>
+
+          <div class="nhsuk-form-group" style="display:none">
+            <label class="nhsuk-label nhsuk-label__strong" for="delivery-place-name">
+              Delivery place name
+            </label>
+            <input class="nhsuk-input nhsuk-input--width-20" id="delivery-place-name" name="delivery-place-name" type="text">
+          </div>
+
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label nhsuk-label__strong" for="bna-town-of-birth">
+              Town of birth
+            </label>
+            <input class="nhsuk-input nhsuk-input--width-20" id="bna-town-of-birth" name="town-of-birth" type="text">
+          </div>
+
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label nhsuk-label__strong" for="county-of-birth">
+              County of birth
+            </label>
+            <input class="nhsuk-input nhsuk-input--width-20" id="bna-county-of-birth" name="county-of-birth" type="text">
+          </div>
+
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label nhsuk-label__strong" for="bna-country-of-birth">
+              Country of birth
+            </label>
+            <select class="nhsuk-select" id="bna-country-of-birth" name="country-of-birth">
+              <option value="0" selected disabled>Please select a country of birth</option>
+            </select>
+
+          </div>
+
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label nhsuk-label__strong" for="partner-chu">
+              Partner Child Health Unit
+            </label>
+            <input class="nhsuk-input nhsuk-input--width-20" id="partner-chu" name="partner-child-health-unit" type="text">
+          </div>
+
+          <details class="nhsuk-details">
+            <summary class="nhsuk-details__summary">
+              <span class="nhsuk-details__summary-text">
+                Search for a Partner Child Health unit
+              </span>
+            </summary>
+            <div class="nhsuk-details__text">
+
+            </div>
+          </details>
+
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label nhsuk-label__strong" for="responsible-chu">
+              Responsible Child Health Unit (optional)
+            </label>
+            <input class="nhsuk-input nhsuk-input--width-20" id="responsible-chu" name="responsible-child-health-unit" type="text">
+          </div>
+
+          <details class="nhsuk-details">
+            <summary class="nhsuk-details__summary">
+              <span class="nhsuk-details__summary-text">
+                Search for a Responsible Child Health unit
+              </span>
+            </summary>
+            <div class="nhsuk-details__text">
+
+            </div>
+          </details>
+
+          <div class="btn-group">
+            <button class="nhsuk-button" type="submit">
+              Save and continue
+            </button>
+
+            <p class="cancel-btn-link"><a href="#">Cancel</a></p>
+          </div>
+
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% block pageScripts %}
+<script src="/js/bna.js"></script>
+{% endblock %}
+{% endblock %}
