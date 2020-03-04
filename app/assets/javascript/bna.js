@@ -68,8 +68,15 @@ $("#delivery-place-dropdown").change(function() {
   }
 });
 
-$('.number-of-results p').remove();
-$('.number-of-results').append("<p class='nhsuk-body'>By selecting the mother's name below, you will be taken to her record and able to create a birth notification for the baby.</p><p class='nhsuk-body'>If this isn't the patient you are looking for, you can <a href='allocate-nhs-number-1'>allocate a new NHS Number</a> or <a href='create-birth-notification-1'>create a birth notification without the mother's details</a></p>")
+if (returnedPatientsList.length == 0) {
+  $('.number-of-results p').remove();
+  $('.number-of-results').append("<p class='nhsuk-body'>You can <a href='advanced-details-search'>refine your search</a> to find a match or <a href='nhs-number-search'>perform a new search</a>.</p><p class='nhsuk-body'>Alternatively, you can <a href='allocate-nhs-number-1'>allocate a new NHS Number</a> or <a href='create-birth-notification-1'>create a birth notification without the mother's details</a>.</p>")
+} else {
+
+  $('.number-of-results p').remove();
+  $('.number-of-results').append("<p class='nhsuk-body'>By selecting the mother's name below, you will be taken to her record and able to create a birth notification for the baby.</p><p class='nhsuk-body'>If this isn't the patient you are looking for, you can <a href='allocate-nhs-number-1'>allocate a new NHS Number</a> or <a href='create-birth-notification-1'>create a birth notification without the mother's details</a></p>")
+
+}
 
 $('#allocate-patient-link').click(function() {
   sessionStorage.setItem("patientName", "Nancy Miller");
