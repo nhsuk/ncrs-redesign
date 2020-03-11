@@ -1,7 +1,7 @@
 {% extends 'layouts/layout-application.html' %}
 
 {% block pageTitle %}
-Enter organisation details
+Enter the baby's address details
 {% endblock %}
 
 {% block beforeContent %}
@@ -51,108 +51,160 @@ Enter organisation details
         </h2>
 
         <p class="nhsuk-body">
-          Please enter the baby's usual address details, and the baby's discharge address details if this differs from their usual address.
+          The baby's usual address details have been copied from the mother's record.
+        </p>
+        <p class="nhsuk-body">
+          You can change these details if necessary.
         </p>
         <form id="bna-step-4-form" action="step-5">
 
+          <dl class="nhsuk-summary-list existing-address-container">
 
-          <div class="nhsuk-form-group">
-            <label class="nhsuk-label nhsuk-label__strong" for="baby-house-name">
-              House name
-            </label>
-            <span class="nhsuk-hint" id="house-name-hint">
-              You must enter at least one of house name and house number and street
-            </span>
-            <input class="nhsuk-input nhsuk-input--width-20" id="baby-house-name" name="baby-house-name" type="text">
-          </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Address
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                31599 Dunning Street<br />Leeds<br />West Yorkshire<br />LS12 4HR
+              </dd>
 
-          <div class="nhsuk-form-group">
-            <label class="nhsuk-label nhsuk-label__strong" for="baby-house-street">
-              House number and street
-            </label>
-            <span class="nhsuk-hint" id="house-street-hint">
-              You must enter at least one of house name and house number and street
-            </span>
-            <input class="nhsuk-input nhsuk-input--width-20" id="baby-house-street" name="baby-house-number-and-street" type="text">
-          </div>
+              <dd class="nhsuk-summary-list__actions">
 
-          <div class="nhsuk-form-group">
-            <label class="nhsuk-label nhsuk-label__strong" for="baby-address-locality">
-              Locality (optional)
-            </label>
-            <input class="nhsuk-input nhsuk-input--width-20" id="baby-address-locality" name="baby-address-locality" type="text">
-          </div>
+                <a class="change-address-link" href="#">
+                  Change<span class="nhsuk-u-visually-hidden"> name</span>
+                </a>
 
-          <div class="nhsuk-form-group">
-            <label class="nhsuk-label nhsuk-label__strong" for="baby-address-town">
-              Post town
-            </label>
-            <input class="nhsuk-input nhsuk-input--width-20" id="baby-address-town" name="baby-address-town" type="text">
-          </div>
-
-          <div class="nhsuk-form-group">
-            <label class="nhsuk-label nhsuk-label__strong" for="baby-address-county">
-              County
-            </label>
-            <select class="nhsuk-select" id="baby-address-county" name="baby-address-county">
-              <option value="0" selected disabled>Please select an option</option>
-            </select>
-          </div>
-
-          <div class="nhsuk-form-group">
-            <label class="nhsuk-label nhsuk-label__strong" for="baby-address-postcode">
-              Postcode
-            </label>
-            <input class="nhsuk-input nhsuk-input--width-10" id="baby-address-postcode" name="baby-address-postcode" type="text">
-          </div>
-
-          <details class="nhsuk-details">
-            <summary class="nhsuk-details__summary">
-              <span class="nhsuk-details__summary-text">
-                Search for a postcode
-              </span>
-            </summary>
-            <div class="nhsuk-details__text">
+              </dd>
 
             </div>
-          </details>
 
-          <div class="nhsuk-form-group">
-            <label class="nhsuk-label nhsuk-label__strong" for="baby-home-telephone">
-              Home telephone
-            </label>
-            <input class="nhsuk-input nhsuk-input--width-10" id="baby-home-telephone" name="baby-home-telephone" type="text">
-          </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Home telephone
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                <i>None recorded</i>
+              </dd>
 
-          <div class="nhsuk-form-group">
-            <label class="nhsuk-label nhsuk-label__strong" for="baby-mobile-telephone">
-              Mobile telephone
-            </label>
-            <input class="nhsuk-input nhsuk-input--width-10" id="baby-home-telephone" name="baby-mobile-telephone" type="text">
-          </div>
+              <dd class="nhsuk-summary-list__actions">
 
-          <div class="nhsuk-form-group">
+                <a class="change-address-link" href="#">
+                  Change<span class="nhsuk-u-visually-hidden"> name</span>
+                </a>
 
-            <fieldset class="nhsuk-fieldset">
-              <legend class="nhsuk-fieldset__legend nhsuk-label__strong">
-                Is the baby's discharge address the same as their usual address?
-              </legend>
+              </dd>
 
-              <div class="nhsuk-radios nhsuk-radios--inline">
-                <div class="nhsuk-radios__item">
-                  <input class="nhsuk-radios__input" id="discharge-address-yes" name="discharge-address-same-as-usual-address" type="radio" value="Yes">
-                  <label class="nhsuk-label nhsuk-radios__label" for="discharge-address-yes">
-                    Yes
-                  </label>
-                </div>
-                <div class="nhsuk-radios__item">
-                  <input class="nhsuk-radios__input" id="discharge-address-no" name="discharge-address-same-as-usual-address" type="radio" value="Male">
-                  <label class="nhsuk-label nhsuk-radios__label" for="discharge-address-no">
-                    No
-                  </label>
-                </div>
+            </div>
+
+          </dl>
+
+
+
+          <div class="change-address-container" style="display:none;">
+
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-label__strong" for="baby-house-name">
+                House name
+              </label>
+              <span class="nhsuk-hint" id="house-name-hint">
+                You must enter at least one of house name and house number and street
+              </span>
+              <input class="nhsuk-input nhsuk-input--width-20" id="baby-house-name" name="baby-house-name" type="text">
+            </div>
+
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-label__strong" for="baby-house-street">
+                House number and street
+              </label>
+              <span class="nhsuk-hint" id="house-street-hint">
+                You must enter at least one of house name and house number and street
+              </span>
+              <input class="nhsuk-input nhsuk-input--width-20" id="baby-house-street" name="baby-house-number-and-street" type="text">
+            </div>
+
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-label__strong" for="baby-address-locality">
+                Locality (optional)
+              </label>
+              <span class="nhsuk-hint">
+                Enter the village or suburb
+              </span>
+              <input class="nhsuk-input nhsuk-input--width-20" id="baby-address-locality" name="baby-address-locality" type="text">
+            </div>
+
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-label__strong" for="baby-address-town">
+                Town
+              </label>
+              <input class="nhsuk-input nhsuk-input--width-20" id="baby-address-town" name="baby-address-town" type="text">
+            </div>
+
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-label__strong" for="baby-address-county">
+                County
+              </label>
+              <span class="nhsuk-hint">
+                Start typing to search for a county
+              </span>
+              <input class="nhsuk-input nhsuk-input--width-20" id="baby-address-county" name="baby-address-county">
+            </div>
+
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-label__strong" for="baby-address-postcode">
+                Postcode
+              </label>
+              <input class="nhsuk-input nhsuk-input--width-10" id="baby-address-postcode" name="baby-address-postcode" type="text">
+            </div>
+
+            <details class="nhsuk-details">
+              <summary class="nhsuk-details__summary">
+                <span class="nhsuk-details__summary-text">
+                  Find an address or postcode
+                </span>
+              </summary>
+              <div class="nhsuk-details__text">
+
               </div>
-            </fieldset>
+            </details>
+
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-label__strong" for="baby-home-telephone">
+                Home telephone
+              </label>
+              <input class="nhsuk-input nhsuk-input--width-10" id="baby-home-telephone" name="baby-home-telephone" type="text">
+            </div>
+
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-label__strong" for="baby-mobile-telephone">
+                Mobile telephone
+              </label>
+              <input class="nhsuk-input nhsuk-input--width-10" id="baby-home-telephone" name="baby-mobile-telephone" type="text">
+            </div>
+
+            <div class="nhsuk-form-group">
+
+              <fieldset class="nhsuk-fieldset">
+                <legend class="nhsuk-fieldset__legend nhsuk-label__strong">
+                  Is the baby's discharge address the same as their usual address?
+                </legend>
+
+                <div class="nhsuk-radios nhsuk-radios--inline">
+                  <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="discharge-address-yes" name="discharge-address-same-as-usual-address" type="radio" value="Yes">
+                    <label class="nhsuk-label nhsuk-radios__label" for="discharge-address-yes">
+                      Yes
+                    </label>
+                  </div>
+                  <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="discharge-address-no" name="discharge-address-same-as-usual-address" type="radio" value="Male">
+                    <label class="nhsuk-label nhsuk-radios__label" for="discharge-address-no">
+                      No
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+
+            </div>
 
           </div>
 

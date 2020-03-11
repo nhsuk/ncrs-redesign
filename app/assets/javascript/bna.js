@@ -27,8 +27,8 @@ $(function() {
               <div class='nhsuk-u-reading-width'> \
                 <p>Use this feature to submit a birth notification for this patient. You will be asked to provide:</p> \
                 <ul class='nhsuk-list nhsuk-list--bullet'> \
+                <li>details about the person notifying the birth</li> \
                   <li>details about where the birth occurred</li> \
-                  <li>details about the person notifying the birth</li> \
                   <li>details about the baby and the birth</li> \
                   <li>the baby's usual address and contact information</li> \
                   <li>a separate discharge address if this is necessary</li> \
@@ -47,7 +47,7 @@ $(function() {
             </div> \
           </div> \
         </div> \
-      </div>"
+      </div>";
   if ($('.patient-banner-gender').text() == "Female") {
     $(".patient-details-content").append(bnaHeader);
     $(".patient-details-content").append(bnaCard);
@@ -68,13 +68,26 @@ $("#delivery-place-dropdown").change(function() {
   }
 });
 
+$('input:radio[name="number-of-births"]').change(function() {
+  if ($(this).val() == 'births-multiple') {
+    $('.birth-order-container').show();
+  } else {
+    $('.birth-order-container').hide();
+  }
+});
+
+$('.change-address-link').click(function(){
+  $(".change-address-container").show();
+  $('.existing-address-container').hide();
+})
+
 if (returnedPatientsList.length == 0) {
   $('.number-of-results p').remove();
-  $('.number-of-results').append("<p class='nhsuk-body'>You can <a href='advanced-details-search'>refine your search</a> to find a match or <a href='nhs-number-search'>perform a new search</a>.</p><p class='nhsuk-body'>Alternatively, you can <a href='allocate-nhs-number-1'>allocate a new NHS Number</a> or <a href='create-birth-notification-1'>create a birth notification without the mother's details</a>.</p>")
+  $('.number-of-results').append("<p class='nhsuk-body'>You can <a href='advanced-details-search'>refine your search</a> to find a match or <a href='nhs-number-search'>perform a new search</a>.</p><p class='nhsuk-body'>Alternatively, you can <a href='allocate-nhs-number-1'>allocate a new NHS Number</a> or <a href='create-birth-notification-1'>create a birth notification without mother's NHS details</a>.</p>")
 } else {
 
   $('.number-of-results p').remove();
-  $('.number-of-results').append("<p class='nhsuk-body'>By selecting the mother's name below, you will be taken to her record and able to create a birth notification for the baby.</p><p class='nhsuk-body'>If this isn't the patient you are looking for, you can <a href='allocate-nhs-number-1'>allocate a new NHS Number</a> or <a href='create-birth-notification-1'>create a birth notification without the mother's details</a></p>")
+  $('.number-of-results').append("<p class='nhsuk-body'>By selecting the mother's name below, you will be taken to her record and able to create a birth notification for the baby.</p><p class='nhsuk-body'>If this isn't the patient you are looking for, you can <a href='allocate-nhs-number-1'>allocate a new NHS Number</a> or <a href='create-birth-notification-1'>create a birth notification without mother's NHS details</a></p>")
 
 }
 

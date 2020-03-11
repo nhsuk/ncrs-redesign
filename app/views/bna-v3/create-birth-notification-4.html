@@ -1,7 +1,7 @@
 {% extends 'layouts/layout.html' %}
 
 {% block pageTitle %}
-Allocate an NHS Number
+Enter the baby's birth details
 {% endblock %}
 
 {% block beforeContent %}
@@ -50,7 +50,7 @@ Allocate an NHS Number
     <div class="nhsuk-grid-column-full">
       <div class="nhsuk-u-reading-width">
         <h2 class="nhsuk-heading-l">
-          <span role="text">Enter the baby's details</span>
+          <span role="text">Enter the baby's birth details</span>
           <span class="nhsuk-caption-l nhsuk-caption--bottom">Step 4 of 6</span>
         </h2>
 
@@ -66,7 +66,7 @@ Allocate an NHS Number
                 Gender
               </legend>
 
-              <div class="nhsuk-radios nhsuk-radios--inline">
+              <div class="nhsuk-radios">
                 <div class="nhsuk-radios__item">
                   <input class="nhsuk-radios__input" id="baby-gender-female" name="baby-gender" type="radio" value="Female">
                   <label class="nhsuk-label nhsuk-radios__label" for="baby-gender-female">
@@ -82,7 +82,7 @@ Allocate an NHS Number
                 <div class="nhsuk-radios__item">
                   <input class="nhsuk-radios__input" id="baby-gender-not-specified" name="baby-gender" type="radio" value="Not specified">
                   <label class="nhsuk-label nhsuk-radios__label" for="baby-gender-not-specified">
-                    Not specified
+                    Not known
                   </label>
                 </div>
               </div>
@@ -199,6 +199,29 @@ Allocate an NHS Number
           </div>
 
           <div class="nhsuk-form-group">
+            <fieldset class="nhsuk-fieldset">
+              <legend class="nhsuk-fieldset__legend nhsuk-label__strong">
+                Number of births
+              </legend>
+
+              <div class="nhsuk-radios">
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="births-single" name="number-of-births" type="radio" value="births-single">
+                  <label class="nhsuk-label nhsuk-radios__label" for="births-single">
+                    Single
+                  </label>
+                </div>
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="births-multiple" name="number-of-births" type="radio" value="births-multiple">
+                  <label class="nhsuk-label nhsuk-radios__label" for="births-multiple">
+                    Multiple
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+          <div class="nhsuk-form-group birth-order-container" style="display:none">
             <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
               <legend class="nhsuk-fieldset__legend nhsuk-label__strong">
                 Birth order
@@ -224,6 +247,9 @@ Allocate an NHS Number
             <label class="nhsuk-label nhsuk-label__strong" for="baby-birth-weight">
               Gestation
             </label>
+            <span class="nhsuk-hint">
+              Enter the number of completed weeks
+            </span>
             <input class="nhsuk-input nhsuk-input--width-2" id="baby-birth-weight" name="baby-birth-weight" type="text"><span class="input-unit nhsuk-u-font-size-19">weeks</span>
           </div>
 

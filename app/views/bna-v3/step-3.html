@@ -62,7 +62,7 @@ Enter the baby's birth details
                 Gender
               </legend>
 
-              <div class="nhsuk-radios nhsuk-radios--inline">
+              <div class="nhsuk-radios">
                 <div class="nhsuk-radios__item">
                   <input class="nhsuk-radios__input" id="baby-gender-female" name="baby-gender" type="radio" value="Female">
                   <label class="nhsuk-label nhsuk-radios__label" for="baby-gender-female">
@@ -78,7 +78,7 @@ Enter the baby's birth details
                 <div class="nhsuk-radios__item">
                   <input class="nhsuk-radios__input" id="baby-gender-not-specified" name="baby-gender" type="radio" value="Not specified">
                   <label class="nhsuk-label nhsuk-radios__label" for="baby-gender-not-specified">
-                    Not specified
+                    Not known
                   </label>
                 </div>
               </div>
@@ -195,6 +195,29 @@ Enter the baby's birth details
           </div>
 
           <div class="nhsuk-form-group">
+            <fieldset class="nhsuk-fieldset">
+              <legend class="nhsuk-fieldset__legend nhsuk-label__strong">
+                Number of births
+              </legend>
+
+              <div class="nhsuk-radios">
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="births-single" name="number-of-births" type="radio" value="births-single">
+                  <label class="nhsuk-label nhsuk-radios__label" for="births-single">
+                    Single
+                  </label>
+                </div>
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="births-multiple" name="number-of-births" type="radio" value="births-multiple">
+                  <label class="nhsuk-label nhsuk-radios__label" for="births-multiple">
+                    Multiple
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+          <div class="nhsuk-form-group birth-order-container" style="display:none">
             <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
               <legend class="nhsuk-fieldset__legend nhsuk-label__strong">
                 Birth order
@@ -220,6 +243,9 @@ Enter the baby's birth details
             <label class="nhsuk-label nhsuk-label__strong" for="baby-birth-weight">
               Gestation
             </label>
+            <span class="nhsuk-hint">
+              Enter the number of completed weeks
+            </span>
             <input class="nhsuk-input nhsuk-input--width-2" id="baby-birth-weight" name="baby-birth-weight" type="text"><span class="input-unit nhsuk-u-font-size-19">weeks</span>
           </div>
 

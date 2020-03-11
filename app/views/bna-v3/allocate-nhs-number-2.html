@@ -1,7 +1,7 @@
 {% extends 'layouts/layout.html' %}
 
 {% block pageTitle %}
-  Allocate an NHS Number
+  Enter the patient's usual address details
 {% endblock %}
 
 {% block beforeContent %}
@@ -60,59 +60,63 @@
 
 
             <div class="nhsuk-form-group">
-              <label class="nhsuk-label nhsuk-label__strong" for="allocate-house-name">
+              <label class="nhsuk-label nhsuk-label__strong" for="baby-house-name">
                 House name
               </label>
               <span class="nhsuk-hint" id="house-name-hint">
                 You must enter at least one of house name and house number and street
               </span>
-              <input class="nhsuk-input nhsuk-input--width-20" id="allocate-house-name" name="allocate-house-name" type="text">
+              <input class="nhsuk-input nhsuk-input--width-20" id="baby-house-name" name="baby-house-name" type="text">
             </div>
 
             <div class="nhsuk-form-group">
-              <label class="nhsuk-label nhsuk-label__strong" for="allocate-house-street">
+              <label class="nhsuk-label nhsuk-label__strong" for="baby-house-street">
                 House number and street
               </label>
               <span class="nhsuk-hint" id="house-street-hint">
                 You must enter at least one of house name and house number and street
               </span>
-              <input class="nhsuk-input nhsuk-input--width-20" id="allocate-house-street" name="allocate-house-number-and-street" type="text">
+              <input class="nhsuk-input nhsuk-input--width-20" id="baby-house-street" name="baby-house-number-and-street" type="text">
             </div>
 
             <div class="nhsuk-form-group">
-              <label class="nhsuk-label nhsuk-label__strong" for="allocate-address-locality">
+              <label class="nhsuk-label nhsuk-label__strong" for="baby-address-locality">
                 Locality (optional)
               </label>
-              <input class="nhsuk-input nhsuk-input--width-20" id="allocate-address-locality" name="allocate-address-locality" type="text">
+              <span class="nhsuk-hint">
+                Enter the village or suburb
+              </span>
+              <input class="nhsuk-input nhsuk-input--width-20" id="baby-address-locality" name="baby-address-locality" type="text">
             </div>
 
             <div class="nhsuk-form-group">
-              <label class="nhsuk-label nhsuk-label__strong" for="allocate-address-town">
-                Post town
+              <label class="nhsuk-label nhsuk-label__strong" for="baby-address-town">
+                Town
               </label>
-              <input class="nhsuk-input nhsuk-input--width-20" id="allocate-address-town" name="allocate-address-town" type="text">
+              <input class="nhsuk-input nhsuk-input--width-20" id="baby-address-town" name="baby-address-town" type="text">
             </div>
 
             <div class="nhsuk-form-group">
-              <label class="nhsuk-label nhsuk-label__strong" for="allocate-address-county">
+              <label class="nhsuk-label nhsuk-label__strong" for="baby-address-county">
                 County
               </label>
-              <select class="nhsuk-select" id="allocate-address-county" name="allocate-address-county">
-                <option value="0" selected disabled>Please select an option</option>
-              </select>
+              <span class="nhsuk-hint">
+                Start typing to search for a county
+              </span>
+              <input class="nhsuk-input nhsuk-input--width-20" id="baby-address-county" name="baby-address-county">
             </div>
 
             <div class="nhsuk-form-group">
-              <label class="nhsuk-label nhsuk-label__strong" for="allocate-address-postcode">
+              <label class="nhsuk-label nhsuk-label__strong" for="baby-address-postcode">
                 Postcode
               </label>
-              <input class="nhsuk-input nhsuk-input--width-10" id="allocate-address-postcode" name="allocate-address-postcode" type="text">
+              <input class="nhsuk-input nhsuk-input--width-10" id="baby-address-postcode" name="baby-address-postcode" type="text">
             </div>
 
             <details class="nhsuk-details">
               <summary class="nhsuk-details__summary">
                 <span class="nhsuk-details__summary-text">
-                  Search for a postcode
+                  Find an address or postcode
                 </span>
               </summary>
               <div class="nhsuk-details__text">
@@ -122,7 +126,7 @@
 
             <div class="btn-group">
               <button class="nhsuk-button" type="submit">
-                Save and continue
+                Next
               </button>
 
               <p class="cancel-btn-link"><a href="#">Cancel</a></p>

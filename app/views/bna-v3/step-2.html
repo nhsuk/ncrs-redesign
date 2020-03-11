@@ -1,7 +1,7 @@
 {% extends 'layouts/layout-application.html' %}
 
 {% block pageTitle %}
-Enter organisation details
+Enter delivery place details
 {% endblock %}
 
 {% block beforeContent %}
@@ -46,12 +46,12 @@ Enter organisation details
             Return to step 1</a>
         </div>
         <h2 class="nhsuk-heading-l">
-          <span role="text">Enter organisation details</span>
+          <span role="text">Enter delivery place details</span>
           <span class="nhsuk-caption-l nhsuk-caption--bottom">Step 2 of 5</span>
         </h2>
 
         <p class="nhsuk-body">
-          Please enter details about the organisation where the birth took place.
+          Please enter details about where the birth took place.
         </p>
         <form id="bna-step-2-form" action="step-3">
 
@@ -76,78 +76,90 @@ Enter organisation details
           </div>
 
           <div class="nhsuk-form-group" style="display:none">
-            <label class="nhsuk-label nhsuk-label__strong" for="delivery-place-code">
-              Delivery place code
-            </label>
-            <input class="nhsuk-input nhsuk-input--width-20" id="delivery-place-code" name="delivery-place-code" type="text">
-          </div>
-
-          <div class="nhsuk-form-group" style="display:none">
             <label class="nhsuk-label nhsuk-label__strong" for="delivery-place-name">
-              Delivery place name
+              Delivery place
             </label>
+            <span class="nhsuk-hint nhsuk-hint-margin-bottom-2">
+              Enter a place name or a description of the delivery place.
+            </span>
+            <span class="nhsuk-hint">
+              Alternatively, you can search for an organisation using the exact ODS code, partial organisation name, or postcode
+            </span>
             <input class="nhsuk-input nhsuk-input--width-20" id="delivery-place-name" name="delivery-place-name" type="text">
           </div>
 
+          <h3 class="nhsuk-heading-s nhsuk-u-margin-bottom-2">Place of birth</h3>
+          <span class="nhsuk-hint">
+            Enter at least one of Town, County or Country.
+          </span>
+
           <div class="nhsuk-form-group">
             <label class="nhsuk-label nhsuk-label__strong" for="bna-town-of-birth">
-              Town of birth
+              Town
             </label>
             <input class="nhsuk-input nhsuk-input--width-20" id="bna-town-of-birth" name="town-of-birth" type="text">
           </div>
 
           <div class="nhsuk-form-group">
             <label class="nhsuk-label nhsuk-label__strong" for="county-of-birth">
-              County of birth
+              County
             </label>
+            <span class="nhsuk-hint">
+              Start typing to search for and select a county
+            </span>
             <input class="nhsuk-input nhsuk-input--width-20" id="bna-county-of-birth" name="county-of-birth" type="text">
           </div>
 
           <div class="nhsuk-form-group">
-            <label class="nhsuk-label nhsuk-label__strong" for="bna-country-of-birth">
-              Country of birth
-            </label>
-            <select class="nhsuk-select" id="bna-country-of-birth" name="country-of-birth">
-              <option value="0" selected disabled>Please select a country of birth</option>
-            </select>
+
+            <fieldset class="nhsuk-fieldset">
+              <legend class="nhsuk-fieldset__legend nhsuk-label__strong">
+                Country
+              </legend>
+
+              <div class="nhsuk-radios">
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="pob-england" name="pob" type="radio" value="England">
+                  <label class="nhsuk-label nhsuk-radios__label" for="pob-england">
+                    England
+                  </label>
+                </div>
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="pob-iom" name="pob" type="radio" value="Isle of Man">
+                  <label class="nhsuk-label nhsuk-radios__label" for="pob-iom">
+                    Isle of Man
+                  </label>
+                </div>
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="pob-wales" name="pob" type="radio" value="Wales">
+                  <label class="nhsuk-label nhsuk-radios__label" for="pob-wales">
+                    Wales
+                  </label>
+                </div>
+              </div>
+            </fieldset>
 
           </div>
 
           <div class="nhsuk-form-group">
             <label class="nhsuk-label nhsuk-label__strong" for="partner-chu">
-              Partner Child Health Unit
+              Associated Child Health Unit (CHU)
             </label>
+            <span class="nhsuk-hint">
+              Enter the Child Health Unit associated with the delivery place
+            </span>
             <input class="nhsuk-input nhsuk-input--width-20" id="partner-chu" name="partner-child-health-unit" type="text">
           </div>
-
-          <details class="nhsuk-details">
-            <summary class="nhsuk-details__summary">
-              <span class="nhsuk-details__summary-text">
-                Search for a Partner Child Health unit
-              </span>
-            </summary>
-            <div class="nhsuk-details__text">
-
-            </div>
-          </details>
 
           <div class="nhsuk-form-group">
             <label class="nhsuk-label nhsuk-label__strong" for="responsible-chu">
               Responsible Child Health Unit (optional)
             </label>
+            <span class="nhsuk-hint">
+              Enter if the baby's usual address is outside the catchment area of the associated CHU
+            </span>
             <input class="nhsuk-input nhsuk-input--width-20" id="responsible-chu" name="responsible-child-health-unit" type="text">
           </div>
-
-          <details class="nhsuk-details">
-            <summary class="nhsuk-details__summary">
-              <span class="nhsuk-details__summary-text">
-                Search for a Responsible Child Health unit
-              </span>
-            </summary>
-            <div class="nhsuk-details__text">
-
-            </div>
-          </details>
 
           <div class="btn-group">
             <button class="nhsuk-button" type="submit">

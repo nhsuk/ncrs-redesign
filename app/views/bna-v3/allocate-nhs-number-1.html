@@ -1,7 +1,7 @@
 {% extends 'layouts/layout.html' %}
 
 {% block pageTitle %}
-  Allocate an NHS Number
+  Enter the patient's details
 {% endblock %}
 
 {% block beforeContent %}
@@ -70,7 +70,7 @@
                   Gender
                 </legend>
 
-                <div class="nhsuk-radios nhsuk-radios--inline">
+                <div class="nhsuk-radios">
                   <div class="nhsuk-radios__item">
                     <input class="nhsuk-radios__input" id="allocate-gender-female" name="allocate-gender" type="radio" value="Female">
                     <label class="nhsuk-label nhsuk-radios__label" for="allocate-gender-female">
@@ -190,7 +190,7 @@
 
             <div class="btn-group">
               <button class="nhsuk-button" type="submit">
-                Save and continue
+                Next
               </button>
 
               <p class="cancel-btn-link"><a href="#">Cancel</a></p>
