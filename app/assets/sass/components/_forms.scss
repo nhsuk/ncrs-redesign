@@ -4,6 +4,17 @@
   font-weight: 600;
 }
 
+.nhsuk-label__small {
+  font-size: 14px;
+  @media screen and (min-width: 768px) {
+    font-size: 16px;
+  }
+}
+
+.nhsuk-input--width-15 {
+  max-width: 32ex;
+}
+
 .nhsuk-form-group:last-child {
   margin-bottom: 24px;
 }
@@ -67,7 +78,6 @@
 .nhsuk-input--autocomplete {
   margin-bottom: 16px;
 }
-
 @media screen and (min-width: 768px) {
   .nhsuk-input--autocomplete {
     width: 80%;
@@ -83,17 +93,14 @@
   margin-bottom: 24px;
   display: none;
 }
-
 /* PDS Edit */
-
 .pds-edit-form-group {
-  select, input {
+  input,
+  select {
     margin-bottom: 8px;
   }
 }
-
 /* BNA */
-
 .input-unit {
   position: relative;
   display: inline-block;
@@ -102,6 +109,37 @@
 
 .birth-order-text {
   margin-right: 24px;
+}
+
+.bna-controls {
+  display: flex;
+  @media screen and (max-width: 768px) {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .bna-button-group {
+    a {
+      margin-bottom: 24px;
+    }
+    @media screen and (min-width: 768px) {
+      align-self: flex-end;
+      a {
+        margin-bottom: 24px;
+      }
+    }
+  }
+}
+
+.bna-filter-group {
+  div {
+    display: inline-block;
+  }
+  float: left;
+  clear: both;
+  @media screen and (min-width: 768px) {
+    float: right;
+  }
 }
 
 #clear-bna-filter {
