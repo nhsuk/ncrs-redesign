@@ -1,5 +1,5 @@
 .responsive-table {
-  $mobile: 769px;
+  $mobile: 641px;
   width: 100%;
 
   thead {
@@ -39,6 +39,7 @@
       font-weight: 700;
       text-align: left;
       padding-right: 1em;
+      padding-left: 1em;
       display: block;
       @media (min-width: $mobile) {
         display: none;
@@ -95,7 +96,7 @@
 }
 /* Customisations */
 table {
-  @media (max-width: 769px) {
+  @media (max-width: 641px) {
     border-spacing: 0 16px;
   }
 }
@@ -220,7 +221,7 @@ th {
   line-height: 1.71429;
   margin-top: 0;
   margin-bottom: 16px;
-  @media (min-width: 40.0625em) {
+  @media (min-width: 641px) {
     font-size: 16px;
     font-size: 1rem;
     line-height: 1.5;
@@ -228,6 +229,9 @@ th {
 }
 
 .bna-table {
+
+  margin-bottom: 32px;
+
   tbody {
     tr {
       background-color: white;
@@ -252,7 +256,7 @@ th {
     }
   }
 
-  button[aria-expanded="true"] svg {}
+
 
   .detailsTable {
     margin-bottom: 0;
@@ -323,25 +327,7 @@ th {
     }
   }
 
-  .expanderButton[aria-expanded="false"] {
-    background: url("data:image/svg+xml,%3Csvg class='nhsuk-icon nhsuk-icon__plus' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' aria-hidden='true'%3E%3Ccircle cx='12' cy='12' r='10' fill='%23005eb8'%3E%3C/circle%3E%3Cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M12 8v8M8 12h8'%3E%3C/path%3E%3C/svg%3E%0A") left -2px center no-repeat;
-    background-size: 32px 32px;
-    color: #005eb8;
-    cursor: pointer;
-    display: inline-block;
-    padding: 20px 8px 8px 0px;
-    position: relative;
-  }
 
-  .expanderButton[aria-expanded="true"] {
-    background: url("data:image/svg+xml,%3Csvg class='nhsuk-icon nhsuk-icon__minus' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' aria-hidden='true'%3E%3Ccircle cx='12' cy='12' r='10' fill='%23ffffff'%3E%3C/circle%3E%3Cpath fill='none' stroke='%23005eb8' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M8 12h8'%3E%3C/path%3E%3C/svg%3E%0A") left -2px center no-repeat;
-    background-size: 32px 32px;
-    color: #ffffff;
-    cursor: pointer;
-    display: inline-block;
-    padding: 20px 8px 8px 0px;
-    position: relative;
-  }
 
   .expandedRow {
     background-color: #005eb8;

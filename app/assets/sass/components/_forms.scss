@@ -120,9 +120,9 @@
 
   .bna-button-group {
     a {
-      margin-bottom: 24px;
+      margin-bottom: 0;
     }
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: 769px) {
       align-self: flex-end;
       a {
         margin-bottom: 24px;
@@ -137,7 +137,7 @@
   }
   float: left;
   clear: both;
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 769px) {
     float: right;
   }
 }
