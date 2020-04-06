@@ -563,21 +563,17 @@ Recent Birth Notifications
   // Script for the view selected button
 
   $(".nhsuk-checkboxes__input").change(function() {
-      if ($("input:checkbox:checked").length > 0)
-      {
-        $(".disable-able").removeClass("nhsuk-button--disabled").removeClass("nhsuk-button--secondary").addClass("nhsuk-button--blue");
-        $("#view-selected-link").attr("href", "./birth-notification");
+    if ($("input:checkbox:checked").length > 0) {
+      $(".disable-able").removeClass("nhsuk-button--disabled").removeClass("nhsuk-button--secondary").addClass("nhsuk-button--blue");
+      $("#view-selected-link").attr("href", "./birth-notification");
 
-        if ($("input:checkbox:checked").length > 1)
-        {
-          $("#view-selected-link").attr("href", "./birth-notification-multiple-1-of-3");
-        }
+      if ($("input:checkbox:checked").length > 1) {
+        $("#view-selected-link").attr("href", "./birth-notification-multiple-1-of-3");
+      }
 
-      }
-      else
-      {
-        $(".disable-able ").addClass("nhsuk-button--disabled").addClass("nhsuk-button--secondary").removeClass("nhsuk-button--blue");
-      }
+    } else {
+      $(".disable-able ").addClass("nhsuk-button--disabled").addClass("nhsuk-button--secondary").removeClass("nhsuk-button--blue");
+    }
 
 
   });
