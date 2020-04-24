@@ -1,0 +1,118 @@
+{% extends 'layouts/layout-application.html' %}
+
+{% block pageTitle %}
+Duplicate record found
+{% endblock %}
+
+{% block beforeContent %}
+
+
+<div class="nhsuk-full-width-container">
+  <div class='scra-bordered-tabs-container'>
+    <div class="nhsuk-width-container-fluid">
+      <ul class="scra-bordered-tabs">
+        <li class="scra-bordered-tabs-item">
+          <a class="scra-bordered-tabs-link" href="patient-overview">Overview</a>
+        </li>
+        <li class="scra-bordered-tabs-item">
+          <a class="scra-bordered-tabs-link" href="#">Patient</a>
+        </li>
+        <li class="scra-bordered-tabs-item">
+          <a class="scra-bordered-tabs-link" href="patient-clinical">Clinical</a>
+        </li>
+        <li class="scra-bordered-tabs-item">
+          <a class="scra-bordered-tabs-link" href="#">Documents</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}
+
+{% block content %}
+
+<div class="nhsuk-width-container">
+  <div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+
+  <h3 class="nhsuk-heading-l">Dupliate record found</h3>
+
+    <div class="duplicate-record-error-message">
+      <p>
+      An NHS number has NOT been returned as an exact match has been found
+      </p>
+    </div>
+  </div>
+  
+</div>
+  <div class="nhsuk-u-padding-top-6"></div>
+  
+<p>The notification you tried to submit matches the following record exactly:</p>
+</div>
+
+
+<div class="nhsuk-table-responsive">
+<div class="nhsuk-width-container">
+  <div class="nhsuk-grid-row">
+<div class="nhsuk-grid-column-two-thirds">
+
+
+  <table class="nhsuk-table">
+    <caption class="nhsuk-table__caption">Skin symptoms and possible causes</caption>
+    <thead class="nhsuk-table__head">
+      <tr class="nhsuk-table__row">
+        <th class="nhsuk-table__header" scope="col">Name</th>
+        <td class="nhsuk-table__cell">Daphne HATHAWAY</td>
+      </tr>
+    </thead>
+    <tr class="nhsuk-table__row">
+        <th class="nhsuk-table__header" scope="col">Date of birth</th>
+        <td class="nhsuk-table__cell">01-Feb-2020</td>
+      </tr>
+    <tr class="nhsuk-table__row">
+        <th class="nhsuk-table__header" scope="col">Gender</th>
+        <td class="nhsuk-table__cell">Female</td>
+      </tr>
+    <tr class="nhsuk-table__row">
+        <th class="nhsuk-table__header" scope="col">NHS Number</th>
+        <td class="nhsuk-table__cell">0123456789</td>
+      </tr>
+    <tr class="nhsuk-table__row">
+        <th class="nhsuk-table__header" scope="col">Birth order</th>
+        <td class="nhsuk-table__cell">1</td>
+      </tr>
+    <tr class="nhsuk-table__row">
+        <th class="nhsuk-table__header" scope="col">Birth weight</th>
+        <td class="nhsuk-table__cell">4000 grams</td>
+      </tr>
+    <tr class="nhsuk-table__row">
+        <th class="nhsuk-table__header" scope="col">Mother</th>
+        <td class="nhsuk-table__cell">Anne HATHAWAY<br />01-Oct-1989<br />0123456789</td>
+      </tr>
+  </table>
+
+<div class="nhsuk-u-padding-top-6"></div>
+<h3 class="nhsuk-heading-l">What to do next</h3>
+
+<p>If you think this is incorrect or you have any doubt, please print off this birth notification and forward to the appropriate Child Health Unit.</p>
+
+<p><a href="#">Print this birth notification</a></p>
+<p><a href="#">View the list of birth notifications</a></p>
+<p><a href="#">Find a new patient</a></p>
+</div>
+
+
+
+
+
+
+
+
+
+
+{% block pageScripts %}
+<script src="/js/bna.js"></script>
+{% endblock %}
+{% endblock %}
