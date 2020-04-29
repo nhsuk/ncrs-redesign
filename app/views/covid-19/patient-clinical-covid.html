@@ -1,0 +1,477 @@
+{% extends 'layouts/layout-application.html' %}
+
+{% block pageTitle %}
+  Dashboard
+{% endblock %}
+
+{% block beforeContent %}
+
+
+<div class="nhsuk-full-width-container">
+  <div class='scra-bordered-tabs-container'>
+    <div class="nhsuk-width-container-fluid">
+      <ul class="scra-bordered-tabs">
+        <li class="scra-bordered-tabs-item">
+          <a class="scra-bordered-tabs-link" href="patient-overview">Overview</a>
+        </li>
+        <li class="scra-bordered-tabs-item">
+          <a class="scra-bordered-tabs-link" href="patient-details">Patient</a>
+        </li>
+        <li class="scra-bordered-tabs-item scra-bordered-tabs-item-active">
+          <a class="scra-bordered-tabs-link" href="patient-clinical">Clinical</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-one-quarter">
+      <div class="govuk-accordion" data-module="accordion" id="accordion-default">
+
+      <div class="govuk-accordion__section govuk-accordion__section--expanded">
+      <div class="govuk-accordion__section-header scra-accordion__header">
+        <h2 class="govuk-accordion__section-heading scra-accordion__heading">
+          <span class="govuk-accordion__section-button scra-accordion__section-button" id="accordion-default-heading-1">
+            Summary Care Record
+          </span>
+        </h2>
+      </div>
+      <div id="accordion-default-content-1" class="govuk-accordion__section-content scra-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+        <ul>
+          <li>
+            <a class="scra-accordion__link" href="#allergies">Allergies & Sensitivities</a>
+          </li>
+          <li>
+            <a class="scra-accordion__link" href="#acute">Acute Medications</a>
+          </li>
+          <li>
+            <a class="scra-accordion__link" href="#repeat">Current Repeat Medications</a>
+          </li>
+          <li>
+            <a class="scra-accordion__link" href="#discontinued">Discontinued repeat medications</a>
+          </li>
+          <li>
+            <a class="scra-accordion__link" href="#diagnoses">Diagnoses</a>
+          </li>
+          <li>
+            <a class="scra-accordion__link" href="#problems">Problems and issues</a>
+          </li>
+          <li>
+            <a class="scra-accordion__link" href="#observations">Clinical observations</a>
+          </li>
+          <li>
+            <a class="scra-accordion__link" href="#investigations">Investigations</a>
+          </li>
+          <li>
+            <a class="scra-accordion__link" href="#care-events">Care events</a>
+          </li>
+          <li>
+            <a class="scra-accordion__link" href="#preferences">Personal preferences</a>
+          </li>
+        </ul>
+      </div>
+      </div>
+
+    </div>
+  
+
+</div>
+
+    <div class="nhsuk-grid-column-three-quarters">
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-one-half">
+        <h1 class="nhsuk-heading-l">Summary Care Record</h1>
+        <div class="nhsuk-warning-callout">
+        <h3 class="nhsuk-warning-callout__label">Covid-19</h3>
+        <p>Information has been added to the following sections:</p>
+        <ul class="nhsuk-list">
+        <li><a href="#diagnoses">Diagnoses</a></li>
+        <li><a href="#observations">Observations</a></li>
+        <li><a href="#investigations">Investigations</a></li>
+        <li><a href="#care-events">Care events</a></li>
+        </ul>
+        </div>
+    </div>
+      </div>
+
+
+          <div class="scra-card" id="allergies">
+              <div class="scra-card-header">
+                <h2 class="nhsuk-heading-m">Allergies & sensitivities</h2>
+              </div>
+              <div class="scra-card-content">
+                <div class="nhsuk-table-responsive">
+                  <table class="nhsuk-table">
+                    <caption class="nhsuk-table__caption">Allergies, sensitivites and supporting information</caption>
+                    <thead class="nhsuk-table__head">
+                      <tr class="nhsuk-table__row">
+                        <th class="nhsuk-table__header" scope="col">Date</th>
+                        <th class="nhsuk-table__header" scope="col">Description</th>
+                        <th class="nhsuk-table__header" scope="col">Certainty</th>
+                        <th class="nhsuk-table__header" scope="col">Severity</th>
+                        <th class="nhsuk-table__header" scope="col">Supporting information</th>
+                      </tr>
+                    </thead>
+                    <tbody class="nhsuk-table__body">
+                      <tr class="nhsuk-table__row">
+                        <td class="nhsuk-table__cell">08-Jan-1995</td>
+                        <td class="nhsuk-table__cell ">House dust mite allergy</td>
+                        <td class="nhsuk-table__cell "></td>
+                        <td class="nhsuk-table__cell "></td>
+                        <td class="nhsuk-table__cell ">Allergic rhinitis</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <div class="scra-card" id="acute">
+              <div class="scra-card-header">
+                <h2 class="nhsuk-heading-m">Acute medications (issued in the last 12 months)</h2>
+              </div>
+              <div class="scra-card-content">
+                <div class="nhsuk-table-responsive">
+                  <table class="nhsuk-table">
+                    <caption class="nhsuk-table__caption">Acute medications issued in the last 12 months</caption>
+                    <thead class="nhsuk-table__head">
+                      <tr class="nhsuk-table__row">
+                        <th class="nhsuk-table__header" scope="col">Type</th>
+                        <th class="nhsuk-table__header" scope="col">Date</th>
+                        <th class="nhsuk-table__header" scope="col">Medication item</th>
+                        <th class="nhsuk-table__header" scope="col">Dosage instructions</th>
+                        <th class="nhsuk-table__header" scope="col">Quantity</th>
+                      </tr>
+                    </thead>
+                    <tbody class="nhsuk-table__body">
+                      <tr class="nhsuk-table__row">
+                        <td class="nhsuk-table__cell">Acute Medication</td>
+                        <td class="nhsuk-table__cell ">26-May-2018</td>
+                        <td class="nhsuk-table__cell ">Diclofenac 75mg tablets</td>
+                        <td class="nhsuk-table__cell ">take three daily</td>
+                        <td class="nhsuk-table__cell ">28 tablets</td>
+                      </tr>
+                      <tr class="nhsuk-table__row">
+                        <td class="nhsuk-table__cell">Acute Medication</td>
+                        <td class="nhsuk-table__cell ">01-Oct-2018</td>
+                        <td class="nhsuk-table__cell ">Ranitidine 150mg tablets</td>
+                        <td class="nhsuk-table__cell ">take once daily at bedtime</td>
+                        <td class="nhsuk-table__cell ">28 tablets</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+             <div class="scra-card" id="repeat">
+              <div class="scra-card-header">
+                <h2 class="nhsuk-heading-m">Current repeat medications</h2>
+              </div>
+              <div class="scra-card-content">
+                <div class="nhsuk-table-responsive">
+                  <table class="nhsuk-table">
+                    <caption class="nhsuk-table__caption">Allergies, sensitivites and supporting information</caption>
+                    <thead class="nhsuk-table__head">
+                      <tr class="nhsuk-table__row">
+                        <th class="nhsuk-table__header" scope="col">Type</th>
+                        <th class="nhsuk-table__header" scope="col">Date</th>
+                        <th class="nhsuk-table__header" scope="col">Medication item</th>
+                        <th class="nhsuk-table__header" scope="col">Dosage instructions</th>
+                        <th class="nhsuk-table__header" scope="col">Quantity</th>
+                      </tr>
+                    </thead>
+                    <tbody class="nhsuk-table__body">
+                      <tr class="nhsuk-table__row">
+                        <td class="nhsuk-table__cell">Repeat medication</td>
+                        <td class="nhsuk-table__cell ">Last issued:<br>20-Mar-2020</td>
+                        <td class="nhsuk-table__cell ">Citalopram 20mg tablets</td>
+                        <td class="nhsuk-table__cell ">One to be taken each day</td>
+                        <td class="nhsuk-table__cell ">28 tablet</td>
+                      </tr>
+                      <tr class="nhsuk-table__row">
+                        <td class="nhsuk-table__cell"></td>
+                        <td class="nhsuk-table__cell "></td>
+                        <td class="nhsuk-table__cell ">Reason for medication:<br>Mixed anxiety and depressive disorder</td>
+                        <td class="nhsuk-table__cell "></td>
+                        <td class="nhsuk-table__cell "></td>
+                      </tr>
+                      <tr class="nhsuk-table__row">
+                        <td class="nhsuk-table__cell">Repeat medication</td>
+                        <td class="nhsuk-table__cell ">Last issued:<br>20-Mar-2020</td>
+                        <td class="nhsuk-table__cell ">Colecalciferol 200unit /<br>Calcium carbonate 1.25g chewable tablets</td>
+                        <td class="nhsuk-table__cell ">One to be taken each day</td>
+                        <td class="nhsuk-table__cell ">112 tablet</td>
+                      </tr>
+                      
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+               <div class="scra-card" id="discontinued">
+              <div class="scra-card-header">
+                <h2 class="nhsuk-heading-m">Discontinued repeat medications (issued in the last 12 months)</h2>
+              </div>
+              <div class="scra-card-content">
+                <div class="nhsuk-table-responsive">
+                  <table class="nhsuk-table">
+                    <caption class="nhsuk-table__caption">Allergies, sensitivites and supporting information</caption>
+                    <thead class="nhsuk-table__head">
+                      <tr class="nhsuk-table__row">
+                        
+                        
+                      </tr>
+                    </thead>
+                    <tbody class="nhsuk-table__body">
+                      <tr class="nhsuk-table__row">
+                        <td class="nhsuk-table__cell">The discontinued Repeat Medications are not included in this summary.The patient may have had repeat medications discontinued that are not shown here.</td>
+                       
+                       
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+                 <div class="scra-card" id="diagnoses">
+              <div class="scra-card-header">
+                <h2 class="nhsuk-heading-m">Diagnoses</h2>
+              </div>
+              <div class="scra-card-content">
+                <div class="nhsuk-table-responsive">
+                  <table class="nhsuk-table">
+                    <caption class="nhsuk-table__caption">Allergies, sensitivites and supporting information</caption>
+                    <thead class="nhsuk-table__head">
+                      <tr class="nhsuk-table__row">
+                        <th class="nhsuk-table__header" scope="col">Date</th>
+                        <th class="nhsuk-table__header" scope="col">Description</th>
+                        <th class="nhsuk-table__header" scope="col">Additional information</th>
+                        
+                      </tr>
+                    </thead>
+                    <tbody class="nhsuk-table__body">
+                      <tr class="row-highlight" class="nhsuk-table__row">
+                        <td class="nhsuk-table__cell">09-Mar-2020</td>
+                        <td class="nhsuk-table__cell" >COVID-19 confirmed by laboratory test</td>
+                        <td class="nhsuk-table__cell"></td>
+                    
+                      </tr>
+                      <tr class="nhsuk-table__row">
+                        <td class="nhsuk-table__cell">05-Jan-2014</td>
+                        <td class="nhsuk-table__cell ">Glaucoma</td>
+                        <td class="nhsuk-table__cell "></td>
+                      </tr>
+                      <tr class="nhsuk-table__row">
+                        <td class="nhsuk-table__cell">06-Jan-2012</td>
+                        <td class="nhsuk-table__cell ">Mixed anxiety and depressive disorder</td>
+                        <td class="nhsuk-table__cell "></td>
+                      </tr>
+                      <tr class="nhsuk-table__row">
+                        <td class="nhsuk-table__cell">19-Jan-2009</td>
+                        <td class="nhsuk-table__cell ">Eczema</td>
+                        <td class="nhsuk-table__cell "></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+               <div class="scra-card" id="problems">
+              <div class="scra-card-header">
+                <h2 class="nhsuk-heading-m">Problems and issues</h2>
+              </div>
+              <div class="scra-card-content">
+                <div class="nhsuk-table-responsive">
+                  <table class="nhsuk-table">
+                    <caption class="nhsuk-table__caption">Allergies, sensitivites and supporting information</caption>
+                    <thead class="nhsuk-table__head">
+                      <tr class="nhsuk-table__row">
+                        <th class="nhsuk-table__header" scope="col">Date</th>
+                        <th class="nhsuk-table__header" scope="col">Description</th>
+                        <th class="nhsuk-table__header" scope="col">Additional information</th>
+       
+                      </tr>
+                    </thead>
+                    <tbody class="nhsuk-table__body">
+                      <tr class="nhsuk-table__row">
+                        <td class="nhsuk-table__cell">09-Jan-2018</td>
+                        <td class="nhsuk-table__cell ">Patient's next of kin</td>
+                        <td class="nhsuk-table__cell "></td>
+                      </tr>
+                      <tr class="nhsuk-table__row">
+                        <td class="nhsuk-table__cell"></td>
+                        <td class="nhsuk-table__cell ">Daughter’s tel. number is xxxxx xxxxxx</td>
+                        <td class="nhsuk-table__cell "></td>
+                      </tr>
+                      <tr class="nhsuk-table__row">
+                        <td class="nhsuk-table__cell">05-Jan-2014</td>
+                        <td class="nhsuk-table__cell ">Glaucoma</td>
+                        <td class="nhsuk-table__cell "></td>
+                      </tr>
+                      <tr class="nhsuk-table__row">
+                        <td class="nhsuk-table__cell">19-Jan-2009</td>
+                        <td class="nhsuk-table__cell ">Eczema</td>
+                        <td class="nhsuk-table__cell "></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+              
+               <div class="scra-card" id="observations">
+              <div class="scra-card-header">
+                <h2 class="nhsuk-heading-m">Clinical observations and findings</h2>
+              </div>
+              <div class="scra-card-content">
+                <div class="nhsuk-table-responsive">
+                  <table class="nhsuk-table">
+                    <caption class="nhsuk-table__caption">Allergies, sensitivites and supporting information</caption>
+                    <thead class="nhsuk-table__head">
+                      <tr class="nhsuk-table__row">
+                        <th class="nhsuk-table__header" scope="col">Date</th>
+                        <th class="nhsuk-table__header" scope="col">Description</th>
+                        <th class="nhsuk-table__header" scope="col">Value</th>
+                      </tr>
+                    </thead>
+                    <tbody class="nhsuk-table__body">
+                      <tr class="nhsuk-table__row">
+                        <td class="nhsuk-table__cell">08-Jan-2013</td>
+                        <td class="nhsuk-table__cell ">GSF status green</td>
+                        <td class="nhsuk-table__cell "></td>
+                      </tr>
+                      <tr class="row-highlight" class="nhsuk-table__row">
+                        <td class="nhsuk-table__cell">10-Mar-2020</td>
+                        <td class="nhsuk-table__cell ">2019-nCoV (novel coronavirus) detected</td>
+                        <td class="nhsuk-table__cell "></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+             <div class="scra-card" id="investigations">
+              <div class="scra-card-header">
+                <h2 class="nhsuk-heading-m">Investigations</h2>
+              </div>
+              <div class="scra-card-content">
+                <div class="nhsuk-table-responsive">
+                  <table class="nhsuk-table">
+                    <caption class="nhsuk-table__caption">Allergies, sensitivites and supporting information</caption>
+                    <thead class="nhsuk-table__head">
+                      <tr class="nhsuk-table__row">
+                        <th class="nhsuk-table__header" scope="col">Date</th>
+                        <th class="nhsuk-table__header" scope="col">Description</th>
+                        <th class="nhsuk-table__header" scope="col">Value</th>
+                      </tr>
+                    </thead>
+                    <tbody class="nhsuk-table__body">
+                      <tr class="row-highlight" class="nhsuk-table__row">
+                        <td class="nhsuk-table__cell">09-Mar-2020</td>
+                        <td class="nhsuk-table__cell ">Taking of swab for SARS-CoV-2 (severe acute respiratory syndrome coronavirus 2)</td>
+                        <td class="nhsuk-table__cell "></td>
+                      </tr>
+                      <tr class="row-highlight" class="nhsuk-table__row">
+                        <td class="nhsuk-table__cell">09-Mar-2020</td>
+                        <td class="nhsuk-table__cell ">Detection of 2019-nCoV (novel coronavirus) using polymerase chain reaction technique</td>
+                        <td class="nhsuk-table__cell "></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+             <div class="scra-card" id="care-events">
+              <div class="scra-card-header">
+                <h2 class="nhsuk-heading-m">Care events</h2>
+              </div>
+              <div class="scra-card-content">
+                <div class="nhsuk-table-responsive">
+                  <table class="nhsuk-table">
+                    <caption class="nhsuk-table__caption">Allergies, sensitivites and supporting information</caption>
+                    <thead class="nhsuk-table__head">
+                      <tr class="nhsuk-table__row">
+                        <th class="nhsuk-table__header" scope="col">Date</th>
+                        <th class="nhsuk-table__header" scope="col">Description</th>
+                        <th class="nhsuk-table__header" scope="col">Additional information</th>
+                      </tr>
+                    </thead>
+                    <tbody class="nhsuk-table__body">
+                      <tr class="nhsuk-table__row">
+                        <td class="nhsuk-table__cell">08-Jan-2013</td>
+                        <td class="nhsuk-table__cell ">Seen by continence nurse</td>
+                        <td class="nhsuk-table__cell "></td>
+                      </tr>
+                      <tr class="row-highlight" class="nhsuk-table__row">
+                        <td class="nhsuk-table__cell">05-Mar-2020</td>
+                        <td class="nhsuk-table__cell ">Telephone consultation for suspected 2019-nCoV (novel coronavirus)</td>
+                        <td class="nhsuk-table__cell "></td>
+                      </tr>
+                      <tr class="row-highlight" class="nhsuk-table__row">
+                        <td class="nhsuk-table__cell">06-Mar-2020</td>
+                        <td class="nhsuk-table__cell ">Self-isolation to prevent exposure of community to contagion</td>
+                        <td class="nhsuk-table__cell "></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+
+
+
+              <div class="scra-card"id="preferences">
+              <div class="scra-card-header">
+                <h2 class="nhsuk-heading-m">Personal Preferences</h2>
+              </div>
+              <div class="scra-card-content">
+                <div class="nhsuk-table-responsive">
+                  <table class="nhsuk-table">
+                    <caption class="nhsuk-table__caption">Diagnoses</caption>
+                    <thead class="nhsuk-table__head">
+                      <tr class="nhsuk-table__row">
+                        <th class="nhsuk-table__header" scope="col">Date</th>
+                        <th class="nhsuk-table__header" scope="col">Description</th>
+                        <th class="nhsuk-table__header" scope="col">Value</th>
+                      </tr>
+                    </thead>
+                    <tbody class="nhsuk-table__body">
+                      <tr class="nhsuk-table__row">
+                        <td class="nhsuk-table__cell">30-Jan-2019</td>
+                        <td class="nhsuk-table__cell "><strong>Not for resuscitation</strong></td>
+                        <td class="nhsuk-table__cell "></td>
+
+                      </tr>
+                      <tr class="nhsuk-table__row">
+                        <td class="nhsuk-table__cell">05-Jan-2010</td>
+                        <td class="nhsuk-table__cell "><strong>Glaucoma</strong></td>
+                        <td class="nhsuk-table__cell "></td>
+
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          
+      
+
+
+  </div>
+</div>
+  
+{% endblock %}
