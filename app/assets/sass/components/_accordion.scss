@@ -67,3 +67,11 @@
     font-size: 16px;
   }
 }
+
+/* REFACTOR WORK */
+
+@media screen and (max-width: 768px) {
+  .accordion-desktop {
+    display: none;
+  }
+}

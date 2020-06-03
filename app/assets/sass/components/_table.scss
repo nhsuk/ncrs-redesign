@@ -229,7 +229,6 @@ th {
 }
 
 .bna-table {
-
   margin-bottom: 32px;
 
   tbody {
@@ -255,8 +254,6 @@ th {
       vertical-align: top;
     }
   }
-
-
 
   .detailsTable {
     margin-bottom: 0;
@@ -327,35 +324,64 @@ th {
     }
   }
 
-
-
   .expandedRow {
     background-color: #005eb8;
     color: #fff;
+
     a {
       color: #fff;
     }
+
     a:focus {
       color: #231f20;
+
       svg {
         fill: #231f20;
       }
     }
+
     svg {
       fill: #fff;
+
       circle {
         stroke: none;
         fill: none;
       }
     }
+
     label::after {
       color: #231f20;
     }
-
   }
-
 }
 
 .td-unavailable {
   color: $color_nhsuk-grey-1;
+}
+/* REFACTOR WORK */
+.scr-table * {
+  font-size: 1rem;
+}
+
+.scr-table {
+  @media screen and (min-width: 376px) {
+    td:first-child {
+      min-width: 126px;
+    }
+  }
+}
+
+.tr_master {
+  td {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+}
+
+.bold-field {
+  font-weight: bold;
+}
+
+.td_support {
+  padding-top: 8px;
 }

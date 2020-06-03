@@ -819,6 +819,7 @@ if (cpisAltName=="Amelia Miller") {
   $('.card-content-detail-pob').text("Leeds");
   $('.card-content-detail-address').html("1 Town Street, Leeds, West Yorkshire, LS8 2CD");
   $('.name-dob-floater').html(cpisAltName + " | 16-Dec-2003");
+  $('.mobile-nav-patient-details').html(cpisAltName + " <br/> 16-Dec-2003");
 } else if (!patientName) {
   $('.patient-banner-name, .card-content-name').text("William Shakespeare");
   $('.patient-banner-dob, .card-content-detail-dob').text("30-Jan-1970");
@@ -829,6 +830,7 @@ if (cpisAltName=="Amelia Miller") {
   $('.card-content-detail-pob').text("Stratford-upon-Avon");
   $('.card-content-detail-address').html("1 Town Street, Stratford-upon-Avon, Warwickshire, AB1 2CD");
   $('.name-dob-floater').html("William Shakespeare | 30-Jan-1970");
+  $('.mobile-nav-patient-details').html("William Shakespeare <br/> Date of birth: 30-Jan-1970");
 } else if (patientName=="William Tell") {
   $('.patient-banner-name, .card-content-name').text(patientName);
   $('.patient-banner-dob, .card-content-detail-dob').text("30-Jan-1970");
@@ -839,6 +841,8 @@ if (cpisAltName=="Amelia Miller") {
   $('.card-content-detail-pob').text("Stratford-upon-Avon");
   $('.card-content-detail-address').html("1 Town Street, Stratford-upon-Avon, Warwickshire, AB1 2CD");
   $('.name-dob-floater').html("William Shakespeare | 30-Jan-1970");
+  $('.mobile-nav-patient-details').html("William Shakespeare <br/> Date of birth: 30-Jan-1970");
+
 } else {
   $('.patient-banner-name, .card-content-name').text(patientName);
   $('.patient-banner-dob, .card-content-detail-dob').text(patientDob);
@@ -849,22 +853,24 @@ if (cpisAltName=="Amelia Miller") {
   $('.card-content-detail-pob').text(sessionStorage.getItem("patientPob"));
   $('.card-content-detail-address').html(patientAddressWithPostcode.replace(/\,/g, '<br/>'));
   $('.name-dob-floater').html(patientName + " | " + patientDob);
+  $('.mobile-nav-patient-details').html(patientName + " <br/> " + patientDob);
+
 }
 
 
 $(".add-tel-number-btn").click(function() {
   $(".tel-number-section").append("<div class='nhsuk-grid-row'><div class='nhsuk-grid-column-full'><div class='nhsuk-form-group'><label class='nhsuk-label' for='select-1'>Telephone number type</label><select class='nhsuk-select' id='number-type' name='select phone number type'><option value='1' selected>Main home</option><option value='2'>Mobile</option><option value='3'>Work</option></select><br /><br /><label class='nhsuk-label' for='tel-number'>Telephone number</label><input class='nhsuk-input nhsuk-input--width-10' id='tel-number' name='telephone number' input type='text' inputmode='numeric'></div></div></div><hr />");
   $(".add-tel-number-btn").text("Add another telephone number");
-})
+});
 
 $("#add-preferred-name-btn").click(function() {
   $(".preferred-name-section").show();
   $("#add-preferred-name-btn").hide();
   $("#cancel-preferred-name-btn").show();
-})
+});
 
 $("#cancel-preferred-name-btn").click(function() {
   $(".preferred-name-section").hide();
   $("#add-preferred-name-btn").show();
   $("#cancel-preferred-name-btn").hide();
-})
+});
