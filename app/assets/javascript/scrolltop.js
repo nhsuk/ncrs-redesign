@@ -50,6 +50,30 @@ jQuery(document).ready(function($) {
 
   // Mobile navigation
 
+  var IDs = [];
+  var headers = [];
+  //Push each section ID (to use as a link) and each section title so we can populate select box in mobile nav
+  $("section").each(function() {
+    IDs.push("#" + this.id);
+  });
+  $("section").each(function() {
+    headers.push(this.title);
+  });
+  //Merge two arrays into one object
+  var result = headers.reduce(function(result, field, index) {
+    result[IDs[index]] = field;
+    return result;
+  }, {});
+  //Assign each object key and value to the select box
+  $.each(result, function(key, value) {
+    $('#mobile-nav-select')
+      .append($('<option>', {
+          value: key
+        })
+        .text(value));
+  });
+
+
   var s = $("#mobile-nav");
   var pos = s.position();
   $(window).scroll(function() {
@@ -72,7 +96,7 @@ jQuery(document).ready(function($) {
     var cutoff = $(window).scrollTop() + 200;
 
     if (window.location.href.indexOf("refactoring") > -1) {
-      $('.scra-card').each(function() {
+      $('section').each(function() {
         if ($(this).offset().top + $(this).height() > cutoff) {
           $('#mobile-nav-select').val("#" + $(this).attr('id'));
           return false; // stops the iteration after the first one on screen

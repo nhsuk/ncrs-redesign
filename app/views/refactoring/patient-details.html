@@ -30,9 +30,12 @@
 {% endblock %}
 
 {% block content %}
+
+{% include "includes/mobile-nav.html" %}
+
   <div class="nhsuk-grid-row">
 
-    {% include "includes/functional-patient-details.html" %}
+    {% include "includes/patient-details-refactor.html" %}
 
   </div>
 {% endblock %}
