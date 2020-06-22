@@ -1,0 +1,193 @@
+.free-nhs-banner {
+  padding-top: 15px;
+  padding-bottom: 8px;
+  background-color: 	#007f3b;
+
+  margin-top: 10px;
+  @media screen and (min-width: 1024px){}
+
+
+  h2 {
+    margin-bottom: 4px;
+  }
+
+  p {
+    margin-bottom: 8px;
+    color: #ffffff;
+  }
+  ul {
+    margin-bottom: 8px;
+  }
+  #bannertick {
+    border-radius:50%;
+    fill:none;
+    position: absolute;
+    left: 40px;
+    top: 2px
+  }
+
+}
+
+.blue-header {
+  padding-top:15px;
+  padding-bottom:15px;
+  background-color: 	#005eb8;
+
+  h3 {
+    color: hsl(0, 0%, 100%);
+    padding-left: 20px;
+    padding-bottom:0;
+
+  }
+  p {
+    color: #ffffff;
+    padding-left: 20px;
+    padding-bottom:0 }
+}
+
+
+
+
+
+
+
+
+
+
+#gethistoric:hover {
+  cursor: pointer;
+  }
+
+  .nhsuk-button-search {
+    position: inline;
+    left: 900px;
+    bottom: 65px;
+  }
+
+
+  .nhsuk-action-link__ {
+    padding:0;
+    margin:0
+
+  }
+
+
+.paid-nhs-banner
+{
+  padding-top: 15px;
+  padding-bottom: 8px;
+  background-color: 	#d5281b
+  ;
+
+  margin-top: 10px;
+  @media screen and (min-width: 1024px) {
+    margin-bottom: 10px;
+  }
+  h2 {
+    margin-bottom: 4px;
+  }
+
+  p {
+    margin-bottom: 8px;
+    color: #ffffff;
+  }
+  ul {
+    margin-bottom: 8px;
+  }
+  #bannertick {
+    border-radius:50%;
+    fill:none;
+  }
+
+}
+
+
+#exclamation {
+background-color: white;
+color: #d5281b;
+border-radius: 50%;
+background-position: center;
+font-weight: bold;
+font-size: 22px;
+padding: 5px 15px 5px 15px;
+margin-left:20px;
+}
+
+#historicsearch {
+  margin:0
+}
+
+#searchforhistory
+{
+  margin:0
+}
+
+#bluebanner2
+{
+  margin-bottom:0;
+  position: relative;
+  p{
+    padding:0px;
+  }
+
+}
+
+#gr
+{
+margin-top: 20px;
+}
+
+
+.user-banner {
+
+  background-color: 	#808080;
+
+  @media screen and (min-width: 1024px) {
+    margin-bottom: 32px;
+  }
+  p{
+    position: relative;
+    top: 10px;
+
+    margin-top: 10px;
+    color: #ffffff;
+  }
+  .sticky {
+  position: sticky;
+    top: 0;
+    width: 100%}
+
+  .sticky + .content {
+    padding-top: 60px;
+  }
+}
+
+#nopad {
+  padding:0px;
+}
+
+#nopadding {
+  padding:0px;
+}
+
+.chargeable-status-tag {
+  background-color:   #cce6ff;
+  padding: 10px;
+  color:   #004280;
+  font-weight:bolder;
+  display: inline;
+  position: absolute;
+
+
+}
+
+.nav-container-sticky {
+  transform: scale();
+}
+
+.error-message {
+  border: 2px solid red;
+  color: red;
+  width: 200px;
+  display: none;
+}
