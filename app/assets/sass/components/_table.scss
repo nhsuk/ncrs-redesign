@@ -229,7 +229,6 @@ th {
 }
 
 .bna-table {
-
   margin-bottom: 32px;
 
   tbody {
@@ -255,8 +254,6 @@ th {
       vertical-align: top;
     }
   }
-
-
 
   .detailsTable {
     margin-bottom: 0;
@@ -327,35 +324,98 @@ th {
     }
   }
 
-
-
   .expandedRow {
     background-color: #005eb8;
     color: #fff;
+
     a {
       color: #fff;
     }
+
     a:focus {
       color: #231f20;
+
       svg {
         fill: #231f20;
       }
     }
+
     svg {
       fill: #fff;
+
       circle {
         stroke: none;
         fill: none;
       }
     }
+
     label::after {
       color: #231f20;
     }
-
   }
-
 }
 
 .td-unavailable {
   color: $color_nhsuk-grey-1;
+}
+/* REFACTOR WORK */
+.scr-table * {
+  font-size: 1rem;
+
+  thead, tr:hover {
+    background-color: $color_nhsuk-white;
+  }
+
+  .tr_odd:hover {
+    background-color: #f0f4f5;
+  }
+
+  .tr_even:hover {
+    background-color: $color_nhsuk-white;
+  }
+
+}
+
+.scr-table {
+  th:first-child {
+    padding-left: 8px;
+  }
+  td:first-child {
+    padding-left: 8px;
+  }
+  @media screen and (min-width: 376px) {
+    td:first-child {
+      min-width: 130px;
+    }
+  }
+}
+
+.tr_master {
+  td {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+}
+
+.tr_odd {
+  background-color: #f0f4f5;
+}
+
+.bold-field {
+  font-weight: bold;
+}
+
+.td_support {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  .supporting-info {
+    display: block;
+  }
+}
+
+.supporting-info {
+  border-left: 4px solid $color_nhsuk-blue;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 8px;
 }

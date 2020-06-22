@@ -1,0 +1,74 @@
+#mobile-nav {
+  background-color: $color_nhsuk-blue;
+  left: 0;
+  right: 0;
+  margin-bottom: 28px;
+  padding: 16px 0;
+}
+
+@media screen and (min-width: 769px) {
+  .mobile-nav-wrapper {
+    display: none;
+  }
+}
+
+#mobile-nav, .mobile-nav-wrapper {
+  min-height: 80px;
+  margin-bottom: 28px;
+  @media screen and (max-width: 641px) {
+    min-height: 128px;
+  }
+}
+
+.nav-stick {
+  position: fixed;
+  top: 0px;
+}
+
+.mobile-nav-container {
+  display: flex;
+  @media screen and (max-width: 641px) {
+    flex-wrap: wrap;
+  }
+}
+
+.mobile-nav-section {
+  margin: auto;
+}
+@media screen and (max-width: 641px) {
+  #mobile-nav-section-1 {
+    order: 2;
+  }
+
+  #mobile-nav-section-2 {
+    order: 1;
+  }
+}
+
+.mobile-nav-select {
+  label {
+    display: inline-block;
+    color: $color_nhsuk-white;
+  }
+
+  select {
+    position: relative;
+    display: inline-block;
+  }
+  margin-bottom: 0!important;
+}
+
+.mobile-nav-patient-details {
+  color: $color_nhsuk-white;
+  margin-bottom: 0;
+}
+@media screen and (min-width: 641px) {
+  .mobile-nav-patient-details:last-child {
+    text-align: right;
+  }
+}
+@media screen and (max-width: 641px) {
+  .mobile-nav-patient-details:last-child {
+    margin-bottom: 8px;
+  }
+}
