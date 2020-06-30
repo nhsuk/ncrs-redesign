@@ -384,7 +384,7 @@ th {
     padding-left: 8px;
   }
   @media screen and (min-width: 376px) {
-    td:first-child {
+    td:nth-child(2) {
       min-width: 130px;
     }
   }
