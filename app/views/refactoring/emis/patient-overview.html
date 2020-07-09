@@ -1,7 +1,7 @@
 {% extends 'layouts/layout-application.html' %}
 
 {% block pageTitle %}
-Dashboard
+  Dashboard
 {% endblock %}
 
 {% block beforeContent %}
@@ -11,14 +11,14 @@ Dashboard
   <div class='scra-bordered-tabs-container'>
     <div class="nhsuk-width-container-fluid">
       <ul class="scra-bordered-tabs">
-        <li class="scra-bordered-tabs-item">
-          <a class="scra-bordered-tabs-link" href="patient-overview">Overview</a>
+        <li class="scra-bordered-tabs-item scra-bordered-tabs-item-active">
+          <a class="scra-bordered-tabs-link" href="#">Overview</a>
         </li>
         <li class="scra-bordered-tabs-item">
           <a class="scra-bordered-tabs-link" href="patient-details">Patient</a>
         </li>
-        <li class="scra-bordered-tabs-item scra-bordered-tabs-item-active">
-          <a class="scra-bordered-tabs-link" href="patient-clinical">Clinical</a>
+        <li class="scra-bordered-tabs-item">
+          <a class="scra-bordered-tabs-link" href="patient-clinical-emis">Clinical</a>
         </li>
         <li class="scra-bordered-tabs-item">
           <a class="scra-bordered-tabs-link" href="#">Documents</a>
@@ -32,14 +32,9 @@ Dashboard
 {% endblock %}
 
 {% block content %}
+  <div class="nhsuk-grid-row">
 
-{% include "includes/mobile-nav.html" %}
+    {% include "includes/functional-overview.html" %}
 
-<div class="nhsuk-grid-row">
-
-  {% include "includes/clinical-details-long-scr.html" %}
-
-</div>
-
-
+  </div>
 {% endblock %}
