@@ -4,6 +4,7 @@ jQuery(document).ready(function($) {
   var topofDiv = $(".nhsuk-header").offset().top; //gets offset of header
   var height = $(".patient-banner").outerHeight() + $(".nhsuk-header").outerHeight(); //gets height of header
 
+
   //Check to see if the window is top if not then display button
 
 
@@ -26,18 +27,44 @@ jQuery(document).ready(function($) {
       $('.scrollToTop').css("bottom", "62px");
     }
 
-    // only run this if statement if not in refactoring proto as this doesn't need the name-dob floater
-    if ($(window).scrollTop() > (topofDiv + height) && (window.location.href.indexOf("refactoring") === -1)) {
-      $(".name-dob-floater").fadeIn();
-      $('.adjustments-floater').fadeIn();
+    // only run this if statement if not in refactoring proto on mobile as this doesn't need the name-dob floater
+    if (window.location.href.indexOf("refactoring") > -1) {
+      if ($(window).width() > 768) {
+        if ($(window).scrollTop() > (topofDiv + height)) {
+          $(".name-dob-floater").fadeIn();
+          $('.adjustments-floater').fadeIn();
+        } else {
+          $(".name-dob-floater").fadeOut();
+          $('.adjustments-floater').fadeOut();
 
+        }
+      }
     } else {
-      $(".name-dob-floater").fadeOut();
-      $('.adjustments-floater').fadeOut();
-
+      if ($(window).scrollTop() > (topofDiv + height)) {
+        $(".name-dob-floater").fadeIn();
+        $('.adjustments-floater').fadeIn();
+      } else {
+        $(".name-dob-floater").fadeOut();
+        $('.adjustments-floater').fadeOut();
+      }
     }
 
+
   });
+
+  var a = $(".accordion-inner");
+  var apos = a.position();
+  if (apos) {
+    $(window).scroll(function() {
+      var windowpos = $(window).scrollTop();
+      if ((windowpos + 20) >= apos.top) {
+        a.addClass("inner-wrapper-sticky");
+      } else {
+        a.removeClass("inner-wrapper-sticky");
+      }
+    });
+  }
+
 
 
   //Click event to scroll to top
@@ -71,6 +98,10 @@ jQuery(document).ready(function($) {
           value: key
         })
         .text(value));
+  });
+  $.each(result, function(key, value) {
+    $('.navigation-ul')
+      .append($('<li><a class="scra-accordion__link" href=' + key + '>' + value + '</a></li>'));
   });
 
 
