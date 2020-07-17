@@ -378,6 +378,7 @@ th {
 
   td:first-child {
     padding-left: 8px;
+    min-width: 130px;
   }
   @media screen and (min-width: 376px) {
     td:nth-child(2) {
