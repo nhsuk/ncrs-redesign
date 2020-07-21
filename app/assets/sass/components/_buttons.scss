@@ -5,6 +5,10 @@
   color: #ffffff;
 }
 
+.nhsuk-button:focus:visited {
+    color: #ffffff;
+}
+
 /* custom button colours */
 
 .nhsuk-button--blue {
@@ -145,10 +149,18 @@ a.nhsuk-button--pds-edit:visited {
   position: relative;;
 }
 
+.expanderButton1[aria-expanded="false"]:after {
+  content: "View more"
+}
+
 .expanderButton1[aria-expanded="true"] {
-  color: #ffffff;
+  color: #005eb8;
   cursor: pointer;
   display: inline-block;
   padding: 0px;
   position: relative;
+}
+
+.expanderButton1[aria-expanded="true"]:after {
+  content: "View less"
 }
