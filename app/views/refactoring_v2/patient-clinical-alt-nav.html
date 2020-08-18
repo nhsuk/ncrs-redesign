@@ -33,32 +33,44 @@ Dashboard
 
 {% block content %}
 
-{% include "includes/mobile-nav.html" %}
-
 <div class="nhsuk-grid-row">
+  <div class="nhsuk-full-width-container" id="mobile-nav">
+    <div class="full-width-container">
+      <div class="nhsuk-grid-row mobile-nav-container">
 
-  <div class="nhsuk-grid-column-one-quarter">
-    <div class="govuk-accordion accordion-desktop" data-module="accordion" id="refactor-nav">
-      <div class="accordion-inner">
-        <div class="govuk-accordion__section govuk-accordion__section--expanded">
-          <div class="govuk-accordion__section-header scra-accordion__header">
-            <h2 class="govuk-accordion__section-heading scra-accordion__heading">
-              <span class="govuk-accordion__section-button scra-accordion__section-button" id="accordion-default-heading-1">
-                Summary Care Record
-              </span>
-            </h2>
+        <div class="nhsuk-grid-column-one-third nhsuk-u-one-third-tablet mobile-nav-section" id="mobile-nav-section-1">
+          <div class="sidebar-prompt-container">
+            <div class="nhsuk-header__menu">
+              <button class="nhsuk-header__menu-toggle" id="toggle-menu" aria-controls="header-navigation" aria-label="Open menu">View SCR Contents</button>
+            </div>
           </div>
-          <div id="accordion-default-content-1" class="govuk-accordion__section-content scra-accordion__section-content" aria-labelledby="accordion-default-heading-1">
-            <ul class="navigation-ul">
+        </div>
 
-            </ul>
+        <div class="nhsuk-grid-column-one-third nhsuk-u-one-third-tablet mobile-nav-section" id="mobile-nav-section-2">
+          <div class="menu-currently-viewing">
+            <span class="currently-viewing-label">
+              Currently viewing:
+            </span>
+            <span class="currently-viewing-section">
+
+            </span>
           </div>
+        </div>
+
+        <div class="nhsuk-grid-column-one-third nhsuk-u-one-third-tablet mobile-nav-section" id="mobile-nav-section-3">
+          <p class="mobile-nav-patient-details nhsuk-u-font-size-16">
+            <!---Patient details injected here in patients.js--->
+          </p>
         </div>
       </div>
     </div>
   </div>
+</div>
 
-  <div class="nhsuk-grid-column-three-quarters">
+
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-grid-column-full">
     <h1 class="nhsuk-heading-l">Summary Care Record</h1>
     <section id="allergies" title="Allergies & sensitivities">
 
@@ -791,5 +803,9 @@ Dashboard
 
 </div>
 
-
+{% block pageScripts %}
+<script>
+  $(".name-dob-floater").hide();
+</script>
+{% endblock %}
 {% endblock %}

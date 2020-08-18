@@ -49,6 +49,10 @@ jQuery(document).ready(function($) {
       }
     }
 
+    if (window.location.href.indexOf("refactoring_v2") > -1) {
+          $(".name-dob-floater").hide();
+      }
+
 
   });
 
@@ -125,6 +129,10 @@ jQuery(document).ready(function($) {
     }, 'slow');
   });
 
+
+  $('.currently-viewing-section').text($("section").first().attr('title'));
+
+
   $(document).scroll(function() {
     var cutoff = $(window).scrollTop() + 200;
 
@@ -132,6 +140,7 @@ jQuery(document).ready(function($) {
       $('section').each(function() {
         if ($(this).offset().top + $(this).height() > cutoff) {
           $('#mobile-nav-select').val("#" + $(this).attr('id'));
+          $('.currently-viewing-section').text($(this).attr('title'));
           return false; // stops the iteration after the first one on screen
         }
       });
