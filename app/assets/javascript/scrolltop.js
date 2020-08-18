@@ -59,8 +59,10 @@ jQuery(document).ready(function($) {
       var windowpos = $(window).scrollTop();
       if ((windowpos + 20) >= apos.top) {
         a.addClass("inner-wrapper-sticky");
+        a.addClass("accordion-scroll");
       } else {
         a.removeClass("inner-wrapper-sticky");
+        a.removeClass("accordion-scroll");
       }
     });
   }
