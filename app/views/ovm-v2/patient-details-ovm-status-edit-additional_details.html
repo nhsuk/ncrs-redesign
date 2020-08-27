@@ -59,7 +59,7 @@ Patient details
             </label>
             <input class="nhsuk-input nhsuk-input--width-20" id="pds-edit-middle-name" name="pdf-edit-middle-name" type="text" value="Antigua and Barbuda">
 
-            <label class="nhsuk-label" for="pds-edit-middle-name" >
+            <label class="nhsuk-label" for="pds-edit-middle-name">
               Passport expiry date
             </label>
 
@@ -111,62 +111,114 @@ Patient details
             <label class="nhsuk-label" for="select-prefix">
               Home Office Evidence and Enquiry contacted
             </label>
-            <input class="nhsuk-input nhsuk-input--width-20" id="pds-edit-middle-name" name="pdf-edit-middle-name" type="text" value="">
+            <div class="nhsuk-u-padding-bottom-3"></div>
+            <div class="nhsuk-form-group">
 
-            <label class="nhsuk-label" for="pds-edit-first-name">
-              Contacted reference
-            </label>
-            <input class="nhsuk-input nhsuk-input--width-20" id="pds-edit-middle-name" name="pdf-edit-middle-name" type="text" value="">
-
-            <label class="nhsuk-label" for="pds-edit-middle-name">
-              Date contacted
-            </label>
+              <fieldset class="nhsuk-fieldset">
 
 
-            <div class="nhsuk-date-input" id="effective-date-name">
-              <div class="nhsuk-date-input__item">
-                <div class="nhsuk-form-group">
-                  <label class="nhsuk-label nhsuk-date-input__label" for="effective-date-name-day">
-                    Day
-                  </label>
-                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="effective-date-name-day" name="effective-date-name-day" type="number" pattern="[0-9]*" value="">
+                <div class="nhsuk-radios nhsuk-radios--inline">
+
+                  <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="yes" name="example-inline" type="radio" value="yes">
+                    <label class="nhsuk-label nhsuk-radios__label" for="example-inline-1">
+                      Yes
+                    </label>
+                  </div>
+
+                  <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="no" name="example-inline" type="radio" value="no">
+                    <label class="nhsuk-label nhsuk-radios__label" for="example-inline-2">
+                      No
+                    </label>
+                  </div>
+
                 </div>
-              </div>
-              <div class="nhsuk-date-input__item">
-                <div class="nhsuk-form-group">
-                  <label class="nhsuk-label nhsuk-date-input__label" for="effective-date-name-month">
-                    Month
-                  </label>
-                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="effective-date-name-month" name="effective-date-name-month" type="number" pattern="[0-9]*" value="">
-                </div>
-              </div>
-              <div class="nhsuk-date-input__item">
-                <div class="nhsuk-form-group">
-                  <label class="nhsuk-label nhsuk-date-input__label" for="effective-date-name-year">
-                    Year
-                  </label>
-                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="effective-date-name-year" name="effective-date-name-year" type="number" pattern="[0-9]*" value="">
-                </div>
-              </div>
+              </fieldset>
+
+
+
             </div>
-            </div>
-            </fieldset>
 
+            <div class="reveal-details" id="reveal-details" style="display:none;">
+
+              <label class="nhsuk-label" for="pds-edit-first-name">
+                Contacted reference
+              </label>
+              <input class="nhsuk-input nhsuk-input--width-20" id="pds-edit-middle-name" name="pdf-edit-middle-name" type="text" value="">
+
+              <label class="nhsuk-label" for="pds-edit-middle-name">
+                Date contacted
+              </label>
+
+
+             <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
+              <div class="nhsuk-date-input" id="effective-date-name">
+                <div class="nhsuk-date-input__item">
+                  <div class="nhsuk-form-group">
+                    <label class="nhsuk-label nhsuk-date-input__label" for="effective-date-name-day">
+                      Day
+                    </label>
+                    <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="effective-date-name-day" name="effective-date-name-day" type="number" pattern="[0-9]*" value="">
+                  </div>
+                </div>
+                <div class="nhsuk-date-input__item">
+                  <div class="nhsuk-form-group">
+                    <label class="nhsuk-label nhsuk-date-input__label" for="effective-date-name-month">
+                      Month
+                    </label>
+                    <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="effective-date-name-month" name="effective-date-name-month" type="number" pattern="[0-9]*" value="">
+                  </div>
+                </div>
+                <div class="nhsuk-date-input__item">
+                  <div class="nhsuk-form-group">
+                    <label class="nhsuk-label nhsuk-date-input__label" for="effective-date-name-year">
+                      Year
+                    </label>
+                    <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="effective-date-name-year" name="effective-date-name-year" type="number" pattern="[0-9]*" value="">
+                  </div>
+                </div>
+              </div>
+              </fieldset>
+            </div>
 
 
           </div>
+          </div>
+
+
+
         </div>
-
-
       </div>
+
+
     </div>
 
 
 
-    <a class="nhsuk-button" href="confirm-changes-additional">Save changes</a>
 
-  </div>
+  <a class="nhsuk-button" href="confirm-changes-additional">Save changes</a>
+
+</div>
 
 </div>
 </div>
+{% endblock %}
+
+{%block pageScripts%}
+
+<script>
+  document.getElementById("yes").onclick = function() {
+    if (document.getElementById("reveal-details").style.display == 'none') {
+      document.getElementById("reveal-details").style.display =
+        'block'; // set to table-row instead of an empty string
+    } else {
+      document.getElementById("reveal-details").style.display = 'none';
+    }
+  }
+</script>
+
+
+</head>
+
 {% endblock %}
