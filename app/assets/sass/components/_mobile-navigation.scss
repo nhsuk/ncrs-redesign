@@ -6,14 +6,14 @@
   padding: 16px 0;
   z-index: 1;
 }
-
 @media screen and (min-width: 769px) {
   .mobile-nav-wrapper {
     display: none;
   }
 }
 
-#mobile-nav, .mobile-nav-wrapper {
+#mobile-nav,
+.mobile-nav-wrapper {
   min-height: 80px;
   margin-bottom: 28px;
   @media screen and (max-width: 641px) {
@@ -23,7 +23,7 @@
 
 .nav-stick {
   position: fixed;
-  top: 0px;
+  top: 0;
 }
 
 .mobile-nav-container {
@@ -71,5 +71,41 @@
 @media screen and (max-width: 641px) {
   .mobile-nav-patient-details:last-child {
     margin-bottom: 8px;
+  }
+}
+/* Refactoring alternative desktop nav */
+#sticky-desktop-nav {
+  background-color: $color_nhsuk-blue;
+  left: 0;
+  right: 0;
+  margin-bottom: 28px;
+  padding: 16px 0;
+  z-index: 1;
+}
+
+.sidebar-prompt-container {
+  display: inline-block;
+  padding: 10px;
+  .nhsuk-header__menu-toggle {
+    display: block;
+  }
+}
+
+.sidebar-prompt {
+  color: $color_nhsuk-white;
+}
+
+.sidebar-prompt-icon {
+  vertical-align: middle;
+}
+
+.sidebar-prompt-text {
+  margin-bottom: 8px;
+}
+
+.menu-currently-viewing {
+  color: $color_nhsuk-white;
+  span {
+    display: block;
   }
 }
