@@ -50,9 +50,13 @@ Patient details
       <div class="nhsuk-u-reading-width">
         <div class="nhsuk-warning-callout">
           <h3 class="nhsuk-warning-callout__label">Changing a patient's key details</h3>
-          <p>Changing a patient’s key details is a serious undertaking. It must be carried out with the utmost care and consideration for potential risks</p>
+          <p>Please be aware that any changes to a patient’s key details should be undertaken after careful consideration and confirmation with the patient.</p>
+          <p>
+            Changes will update the patient's record held on the Spine, and potentially being used in other healthcare settings
+          </p>
         </div>
 
+        <section class="confirm-contact-info-changes">
 
         <h3 class="nhsuk-heading-m">Telephone number</h3>
 
@@ -66,6 +70,9 @@ Patient details
               <p class="nhsuk-body-italics">
                 None recorded
               </p>
+            </dd>
+            <dd class="nhsuk-summary-list__actions">
+              <span class="nhsuk-u-visually-hidden">There are no actions for this row</span>
             </dd>
 
           </div>
@@ -85,14 +92,25 @@ Patient details
                 Effective from 21-Nov-2019
               </p>
             </dd>
+            <dd class="nhsuk-summary-list__actions">
+
+              <a class="remove-update-btn remove-contact-update-btn" href="edit-contact-info">
+                Remove<span class="nhsuk-u-visually-hidden"> update</span>
+              </a>
+
+            </dd>
 
           </div>
 
         </dl>
 
       </div>
+    </section>
+
 
       <a class="nhsuk-button" id="confirm-tel-number-btn" href="patient-details-number-changed">Confirm changes</a>
+
+
 
     </div>
 

@@ -82,35 +82,6 @@
   display: inline-block;
 }
 
-.pds-edit-link {
-  margin-left: 8px;
-
-  a {
-    text-decoration: none;
-  }
-}
-
-.pds-edit-card-header > * {
-  margin-bottom: 4px;
-}
-
-.pds-edit-support-text {
-  color: $color_nhsuk-grey-1;
-}
-@media screen and (min-width:768px) {
-  .pds-edit-card-header > * {
-    margin-bottom: 8px;
-  }
-}
-
-.preferred-name-section {
-  display: none;
-}
-
-#cancel-preferred-name-btn {
-  display: none;
-}
-
 
 .ndop-card-header > * {
   display: inline-block;
@@ -186,6 +157,52 @@
   }
 }
 /* PDS Edit */
+
+.pds-edit-link {
+  margin-left: 8px;
+
+  a {
+    text-decoration: none;
+  }
+}
+
+.pds-edit-card-header > * {
+  margin-bottom: 4px;
+}
+
+.pds-edit-support-text {
+  color: $color_nhsuk-grey-1;
+}
+@media screen and (min-width:768px) {
+  .pds-edit-card-header > * {
+    margin-bottom: 8px;
+  }
+}
+
+.tel-number-section {
+  display: none;
+}
+
+.preferred-name-section {
+  display: none;
+}
+
+#cancel-preferred-name-btn {
+  display: none;
+}
+
+.bachelor-name-support-text{
+  display: none;
+}
+
+.bachelor-name-section-hidden {
+  display: none;
+}
+
+#add-bachelor-name-btn {
+  display: none;
+}
+
 .pds-edit-card__heading {
   width: 50%;
   display: inline-block;
@@ -193,6 +210,13 @@
 
 .pds-edit-remove-btn {
   bottom: 0;
+}
+
+.remove-update-btn {
+  color: $nhsuk-error-color;
+}
+.remove-update-btn:visited {
+  color: $nhsuk-error-color;
 }
 
 /* Reasonable Adjustments */

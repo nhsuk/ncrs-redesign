@@ -28,6 +28,8 @@ jQuery(document).ready(function($) {
     }
 
     // only run this if statement if not in refactoring proto on mobile as this doesn't need the name-dob floater
+
+
     if (window.location.href.indexOf("refactoring") > -1) {
       if ($(window).width() > 768) {
         if ($(window).scrollTop() > (topofDiv + height)) {
@@ -40,18 +42,19 @@ jQuery(document).ready(function($) {
         }
       }
     } else {
-      if ($(window).scrollTop() > (topofDiv + height)) {
-        $(".name-dob-floater").fadeIn();
-        $('.adjustments-floater').fadeIn();
-      } else {
-        $(".name-dob-floater").fadeOut();
-        $('.adjustments-floater').fadeOut();
+
+      // removing the name dob floater on mobile as the refactoring testing disproved it's necessity //
+
+      if ($(window).width() > 768) {
+        if ($(window).scrollTop() > (topofDiv + height)) {
+          $(".name-dob-floater").fadeIn();
+          $('.adjustments-floater').fadeIn();
+        } else {
+          $(".name-dob-floater").fadeOut();
+          $('.adjustments-floater').fadeOut();
+        }
       }
     }
-
-    if (window.location.href.indexOf("refactoring_v2") > -1) {
-          $(".name-dob-floater").hide();
-      }
 
 
   });

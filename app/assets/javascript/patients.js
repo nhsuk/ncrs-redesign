@@ -82,7 +82,7 @@ function parseDate(s) {
 for (var i in patientsList) {
   if (patientsList[i][0] == patientNhsSearch) {
     var patientDetails = patientsList[i];
-    var patientName = patientDetails[1] + " " + patientDetails[2];
+    var patientName = patientDetails[1] + " " + patientDetails[2].toUpperCase();
     var patientAddress = patientDetails[3] + ", " + patientDetails[4] + ", " + patientDetails[5];
     var patientDob = patientDetails[7];
     var parsedDob = parseDate(patientDetails[7]);
@@ -782,7 +782,7 @@ $(".patient-search-result").click(function() {
 });
 
 $("#confirm-name-changes-btn").click(function() {
-  var patientName = "William Tell"
+  var patientName = "William TELL"
   sessionStorage.setItem("patientName", patientName);
 });
 
@@ -809,7 +809,7 @@ if(window.location.href.indexOf("cpis") > -1 || window.location.href.indexOf("fg
 var parsedDob = moment(patientDob, "DD-MMM-YYYY").format("DD-MM-YYYY");
 var patientAge = moment(new Date()).diff(moment(parsedDob, "DD-MM-YYYY"), 'years', false);
 
-if (cpisAltName=="Amelia Miller") {
+if (cpisAltName=="Amelia MILLER") {
   $('.patient-banner-name, .card-content-name').text(cpisAltName);
   $('.patient-banner-dob, .card-content-detail-dob').text("16-Dec-2003");
   $('.patient-banner-nhs-no, .card-content-detail-nhs-no').text("123 456 7890");
@@ -821,7 +821,7 @@ if (cpisAltName=="Amelia Miller") {
   $('.name-dob-floater').html(cpisAltName + " | 16-Dec-2003");
   $('.mobile-nav-patient-details').html(cpisAltName + " <br/> 16-Dec-2003");
 } else if (!patientName) {
-  $('.patient-banner-name, .card-content-name').text("William Shakespeare");
+  $('.patient-banner-name, .card-content-name').text("William SHAKESPEARE");
   $('.patient-banner-dob, .card-content-detail-dob').text("30-Jan-1970");
   $('.patient-banner-nhs-no, .card-content-detail-nhs-no').text("123 456 7890");
   $('.patient-banner-address').text("1 Town Street, Stratford-upon-Avon, Warwickshire, AB1 2CD");
@@ -829,9 +829,9 @@ if (cpisAltName=="Amelia Miller") {
   $('.patient-banner-age').text("49 years old");
   $('.card-content-detail-pob').text("Stratford-upon-Avon");
   $('.card-content-detail-address').html("1 Town Street, Stratford-upon-Avon, Warwickshire, AB1 2CD");
-  $('.name-dob-floater').html("William Shakespeare | 30-Jan-1970");
-  $('.mobile-nav-patient-details').html("William Shakespeare <br/> Date of birth: 30-Jan-1970");
-} else if (patientName=="William Tell") {
+  $('.name-dob-floater').html("William SHAKESPEARE | 30-Jan-1970");
+  $('.mobile-nav-patient-details').html("William SHAKESPEARE <br/> Date of birth: 30-Jan-1970");
+} else if (patientName=="William TELL") {
   $('.patient-banner-name, .card-content-name').text(patientName);
   $('.patient-banner-dob, .card-content-detail-dob').text("30-Jan-1970");
   $('.patient-banner-nhs-no, .card-content-detail-nhs-no').text("123 456 7890");
@@ -840,8 +840,8 @@ if (cpisAltName=="Amelia Miller") {
   $('.patient-banner-age').text("49 years old");
   $('.card-content-detail-pob').text("Stratford-upon-Avon");
   $('.card-content-detail-address').html("1 Town Street, Stratford-upon-Avon, Warwickshire, AB1 2CD");
-  $('.name-dob-floater').html("William Shakespeare | 30-Jan-1970");
-  $('.mobile-nav-patient-details').html("William Shakespeare <br/> Date of birth: 30-Jan-1970");
+  $('.name-dob-floater').html("William SHAKESPEARE | 30-Jan-1970");
+  $('.mobile-nav-patient-details').html("William SHAKESPEARE <br/> Date of birth: 30-Jan-1970");
 
 } else {
   $('.patient-banner-name, .card-content-name').text(patientName);
@@ -859,8 +859,13 @@ if (cpisAltName=="Amelia Miller") {
 
 
 $(".add-tel-number-btn").click(function() {
-  $(".tel-number-section").append("<div class='nhsuk-grid-row'><div class='nhsuk-grid-column-full'><div class='nhsuk-form-group'><label class='nhsuk-label' for='select-1'>Telephone number type</label><select class='nhsuk-select' id='number-type' name='select phone number type'><option value='1' selected>Main home</option><option value='2'>Mobile</option><option value='3'>Work</option></select><br /><br /><label class='nhsuk-label' for='tel-number'>Telephone number</label><input class='nhsuk-input nhsuk-input--width-10' id='tel-number' name='telephone number' input type='text' inputmode='numeric'></div></div></div><hr />");
-  $(".add-tel-number-btn").text("Add another telephone number");
+  $(".tel-number-section").show();
+  $(".add-tel-number-btn").hide();
+});
+
+$("#cancel-adding-tel-number").click(function() {
+  $(".tel-number-section").hide();
+  $(".add-tel-number-btn").show();
 });
 
 $("#add-preferred-name-btn").click(function() {
@@ -873,4 +878,26 @@ $("#cancel-preferred-name-btn").click(function() {
   $(".preferred-name-section").hide();
   $("#add-preferred-name-btn").show();
   $("#cancel-preferred-name-btn").hide();
+});
+
+$("#remove-bachelor-name-btn").click(function() {
+  $(".bachelor-name-section").hide();
+  $("#add-bachelor-name-btn").show();
+  $(".bachelor-name-support-text").show();
+  $("#remove-bachelor-name-btn").hide();
+});
+
+$("#add-bachelor-name-btn").click(function() {
+  $(".bachelor-name-section-hidden").show();
+  $("#add-bachelor-name-btn").hide();
+});
+
+$("#cancel-adding-bachelor-name").click(function() {
+  $(".bachelor-name-section-hidden").hide();
+  $("#add-bachelor-name-btn").show();
+});
+
+
+$(".remove-name-update-btn").click(function() {
+  $(this).parentsUntil(".review-updated-section").hide();
 });

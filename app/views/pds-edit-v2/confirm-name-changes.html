@@ -46,12 +46,16 @@ Patient details
 
       <h2 class="nhsuk-heading-l">Review and confirm your changes</h2>
 
-        <div class="nhsuk-u-reading-width">
-          <div class="nhsuk-warning-callout">
-            <h3 class="nhsuk-warning-callout__label">Changing a patient's key details</h3>
-            <p>Changing a patient’s key details is a serious undertaking. It must be carried out with the utmost care and consideration for potential risks</p>
-          </div>
+      <div class="nhsuk-u-reading-width">
+        <div class="nhsuk-warning-callout">
+          <h3 class="nhsuk-warning-callout__label">Changing a patient's key details</h3>
+          <p>Please be aware that any changes to a patient’s key details should be undertaken after careful consideration and confirmation with the patient.</p>
+          <p>
+            Changes will update the patient's record held on the Spine, and potentially being used in other healthcare settings
+          </p>
+        </div>
 
+        <section class="review-updated-section">
 
           <h3 class="nhsuk-heading-m">Usual name</h3>
 
@@ -69,6 +73,9 @@ Patient details
                   Effective from 29-Feb-2002
                 </p>
               </dd>
+              <dd class="nhsuk-summary-list__actions">
+                <span class="nhsuk-u-visually-hidden">There are no actions for this row</span>
+              </dd>
 
             </div>
 
@@ -81,15 +88,27 @@ Patient details
                   Dr William Tell
                 </p>
                 <p class="nhsuk-body-italics">
-                  Effective from 21-Nov-2019
+                  Effective from 28-Sep-2020
                 </p>
+              </dd>
+              <dd class="nhsuk-summary-list__actions">
+
+                <a class="remove-update-btn remove-name-update-btn" href="#">
+                  Remove<span class="nhsuk-u-visually-hidden"> update</span>
+                </a>
+
               </dd>
 
             </div>
 
           </dl>
 
-          <h3 class="nhsuk-heading-m">Preferred name</h3>
+        </section>
+
+        <section class="review-updated-section">
+
+
+          <h3 class="nhsuk-heading-m">Bachelor name</h3>
 
           <dl class="nhsuk-summary-list">
 
@@ -102,6 +121,9 @@ Patient details
                   None recorded
                 </p>
               </dd>
+              <dd class="nhsuk-summary-list__actions">
+                <span class="nhsuk-u-visually-hidden">There are no actions for this row</span>
+              </dd>
 
             </div>
 
@@ -111,20 +133,30 @@ Patient details
               </dt>
               <dd class="nhsuk-summary-list__value">
                 <p>
-                  Dr Bill Tell
+                  Mr William Shakespeare
                 </p>
                 <p class="nhsuk-body-italics">
-                  Effective from 21-Nov-2019
+                  Effective to 28-Sep-2020
                 </p>
+              </dd>
+              <dd class="nhsuk-summary-list__actions">
+
+                <a class="remove-update-btn remove-name-update-btn" href="#">
+                  Remove<span class="nhsuk-u-visually-hidden"> update</span>
+                </a>
+
               </dd>
 
             </div>
 
           </dl>
 
-        </div>
+        </section>
 
-        <a class="nhsuk-button" id="confirm-name-changes-btn" href="patient-details-name-changed">Confirm changes</a>
+
+      </div>
+
+      <a class="nhsuk-button" id="confirm-name-changes-btn" href="patient-details-name-changed">Confirm changes</a>
 
     </div>
 
