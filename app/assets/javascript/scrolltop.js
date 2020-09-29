@@ -139,7 +139,6 @@ jQuery(document).ready(function($) {
   $(document).scroll(function() {
     var cutoff = $(window).scrollTop() + 200;
 
-    if (window.location.href.indexOf("refactoring") > -1) {
       $('section').each(function() {
         if ($(this).offset().top + $(this).height() > cutoff) {
           $('#mobile-nav-select').val("#" + $(this).attr('id'));
@@ -147,7 +146,6 @@ jQuery(document).ready(function($) {
           return false; // stops the iteration after the first one on screen
         }
       });
-    }
   });
 
 });

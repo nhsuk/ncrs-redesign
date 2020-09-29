@@ -30,11 +30,36 @@ Patient details
 {% endblock %}
 
 {% block content %}
-<div class="nhsuk-width-container">
 
-  <div class="nhsuk-grid-row">
+{% include "includes/mobile-nav.html" %}
 
-    <div class="nhsuk-grid-column-three-quarters">
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-grid-column-one-quarter">
+    <div class="govuk-accordion accordion-desktop" data-module="accordion" id="refactor-nav">
+      <div class="accordion-inner">
+        <div class="govuk-accordion__section govuk-accordion__section--expanded">
+          <div class="govuk-accordion__section-header scra-accordion__header">
+            <h2 class="govuk-accordion__section-heading scra-accordion__heading">
+              <span class="govuk-accordion__section-button scra-accordion__section-button" id="accordion-default-heading-1">
+                Edit key details
+              </span>
+            </h2>
+          </div>
+          <div id="accordion-default-content-1" class="govuk-accordion__section-content scra-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+            <ul class="navigation-ul">
+
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="nhsuk-grid-column-three-quarters">
+
+    <section id="key-details" title="Key details">
+
       <h1 class="nhsuk-heading-l">Edit key details</h1>
 
       <div class="scra-card pds-edit-card">
@@ -60,7 +85,7 @@ Patient details
                   </label>
                 </div>
                 <div class="nhsuk-radios__item">
-                  <input class="nhsuk-radios__input" id="gender-male-advanced" name="gender-advanced" type="radio" value="Male">
+                  <input class="nhsuk-radios__input" id="gender-male-advanced" name="gender-advanced" type="radio" value="Male" checked="checked">
                   <label class="nhsuk-label nhsuk-radios__label" for="gender-male-advanced">
                     Male
                   </label>
@@ -72,21 +97,6 @@ Patient details
                   </label>
                 </div>
               </div>
-            </fieldset>
-
-          </div>
-
-          <div class="nhsuk-form-group">
-
-            <fieldset class="nhsuk-fieldset">
-
-              <div class="nhsuk-form-group">
-                <label class="nhsuk-label nhsuk-label__strong" for="edit-details-nhs-no">
-                  NHS Number
-                </label>
-                <span id="edit-details-nhs-no" class="nhs-number-string">123 456 7890</span>
-              </div>
-
             </fieldset>
 
           </div>
@@ -224,11 +234,14 @@ Patient details
 
         </div>
       </div>
+    </section>
 
-      <a class="nhsuk-button" href="confirm-name-changes">Save key details changes</a>
+    <section id="save-changes" title="Save changes">
+      <a class="nhsuk-button" href="confirm-key-details-changes">Save key details changes</a>
+    </section>
 
-    </div>
 
   </div>
+
 </div>
 {% endblock %}

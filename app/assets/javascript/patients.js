@@ -778,13 +778,19 @@ $(".patient-search-result").click(function() {
   sessionStorage.setItem("patientPostcode", patientPostcode);
   sessionStorage.setItem("patientPob", patientPob);
 
-  window.location.href = "patient-overview"
+  window.location.href = "patient-overview";
 });
 
 $("#confirm-name-changes-btn").click(function() {
-  var patientName = "William TELL"
+  var patientName = "William TELL";
   sessionStorage.setItem("patientName", patientName);
 });
+
+$("#confirm-address-changes-btn").click(function() {
+  var patientAddress = "1 Henley Street, Stratford-upon-Avon, Warwickshire, CV37 6QW";
+  sessionStorage.setItem("patientAddress", patientAddress);
+});
+
 
 /* Retrieve patient details to session storage when document is ready*/
 var patientName = sessionStorage.getItem("patientName");
@@ -824,24 +830,34 @@ if (cpisAltName=="Amelia MILLER") {
   $('.patient-banner-name, .card-content-name').text("William SHAKESPEARE");
   $('.patient-banner-dob, .card-content-detail-dob').text("30-Jan-1970");
   $('.patient-banner-nhs-no, .card-content-detail-nhs-no').text("123 456 7890");
-  $('.patient-banner-address').text("1 Town Street, Stratford-upon-Avon, Warwickshire, AB1 2CD");
+  if (!patientAddress) {
+    $('.patient-banner-address').text("1 Town Street, Stratford-upon-Avon, Warwickshire, AB1 2CD");
+    $('.card-content-detail-address').html("1 Town Street, Stratford-upon-Avon, Warwickshire, AB1 2CD");
+  } else {
+    $('.patient-banner-address').text(patientAddress);
+    $('.card-content-detail-address').html(patientAddress);
+  }
   $('.patient-banner-gender, .card-content-detail-gender').text("Male");
   $('.patient-banner-age').text("49 years old");
   $('.card-content-detail-pob').text("Stratford-upon-Avon");
-  $('.card-content-detail-address').html("1 Town Street, Stratford-upon-Avon, Warwickshire, AB1 2CD");
   $('.name-dob-floater').html("William SHAKESPEARE | 30-Jan-1970");
   $('.mobile-nav-patient-details').html("William SHAKESPEARE <br/> Date of birth: 30-Jan-1970");
 } else if (patientName=="William TELL") {
   $('.patient-banner-name, .card-content-name').text(patientName);
   $('.patient-banner-dob, .card-content-detail-dob').text("30-Jan-1970");
   $('.patient-banner-nhs-no, .card-content-detail-nhs-no').text("123 456 7890");
-  $('.patient-banner-address').text("1 Town Street, Stratford-upon-Avon, Warwickshire, AB1 2CD");
+  if (!patientAddress) {
+    $('.patient-banner-address').text("1 Town Street, Stratford-upon-Avon, Warwickshire, AB1 2CD");
+    $('.card-content-detail-address').html("1 Town Street, Stratford-upon-Avon, Warwickshire, AB1 2CD");
+  } else {
+    $('.patient-banner-address').text(patientAddress);
+    $('.card-content-detail-address').html(patientAddress);
+  }
   $('.patient-banner-gender, .card-content-detail-gender').text("Male");
   $('.patient-banner-age').text("49 years old");
   $('.card-content-detail-pob').text("Stratford-upon-Avon");
-  $('.card-content-detail-address').html("1 Town Street, Stratford-upon-Avon, Warwickshire, AB1 2CD");
-  $('.name-dob-floater').html("William SHAKESPEARE | 30-Jan-1970");
-  $('.mobile-nav-patient-details').html("William SHAKESPEARE <br/> Date of birth: 30-Jan-1970");
+  $('.name-dob-floater').html("William TELL | 30-Jan-1970");
+  $('.mobile-nav-patient-details').html("William TELL <br/> Date of birth: 30-Jan-1970");
 
 } else {
   $('.patient-banner-name, .card-content-name').text(patientName);
@@ -856,6 +872,8 @@ if (cpisAltName=="Amelia MILLER") {
   $('.mobile-nav-patient-details').html(patientName + " <br/> " + patientDob);
 
 }
+
+
 
 
 $(".add-tel-number-btn").click(function() {

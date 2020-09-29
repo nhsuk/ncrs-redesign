@@ -30,10 +30,13 @@ Patient details
 {% endblock %}
 
 {% block content %}
+
+{% include "includes/mobile-nav.html" %}
+
 <div class="nhsuk-grid-row">
 
   <div class="nhsuk-grid-column-one-quarter">
-    <div class="govuk-accordion" data-module="accordion" id="accordion-default">
+    <div class="govuk-accordion accordion-desktop" data-module="accordion" id="scra-accordion">
 
       <div class="govuk-accordion__section govuk-accordion__section--expanded">
         <div class="govuk-accordion__section-header scra-accordion__header">
@@ -49,6 +52,7 @@ Patient details
             <li><a class="scra-accordion__link" href="patient-details#patient-key-details">Key details</a></li>
             <li><a class="scra-accordion__link" href="patient-details#patient-details-address">Address</a></li>
             <li><a class="scra-accordion__link" href="patient-details#patient-details-contact-info">Contact information</a></li>
+            <li><a class="scra-accordion__link" href="patient-details#scr-consent-preference">Summary Care Record consent preference</a></li>
           </ul>
         </div>
       </div>
@@ -92,9 +96,9 @@ Patient details
     </div>
   </div>
 
-  <div class="nhsuk-grid-column-three-quarters">
-    <div class="section">
-      <h2 class="nhsuk-heading-l">Key demographics</h2>
+  <div class="nhsuk-grid-column-three-quarters patient-details-content">
+    <h2 class="nhsuk-heading-l">Key demographics</h2>
+    <section id="names" title="Names">
       <div class="scra-card">
         <div class="scra-card-header">
           <h3 class="nhsuk-heading-m" id="patient-details-names">Names</h3>
@@ -125,7 +129,7 @@ Patient details
             <div class="nhsuk-grid-column-one-quarter">
               <div class="card-content-section">
                 <span class="card-content-label">Bachelor name:</span>
-                <span class="card-content-detail">William Shakespeare</span>
+                <span class="card-content-detail">William SHAKESPEARE</span>
               </div>
             </div>
             <div class="nhsuk-grid-column-one-quarter">
@@ -134,14 +138,15 @@ Patient details
                 <span class="card-content-detail">None recorded</span>
               </div>
             </div>
-
           </div>
         </div>
       </div>
+    </section>
+    <section id="key-details" title="Key details">
       <div class="scra-card">
         <div class="scra-card-header">
           <h3 class="nhsuk-heading-m" id="patient-key-details">Key details</h3>
-          <p id="pds-edit-names" class="pds-edit-link"><a href="#">Edit</a></p>
+          <p id="pds-edit-names" class="pds-edit-link"><a href="edit-key-details">Edit</a></p>
         </div>
         <div class="scra-card-content">
           <div class="nhsuk-grid-row">
@@ -172,10 +177,12 @@ Patient details
           </div>
         </div>
       </div>
+    </section>
+    <section id="address" title="Address">
       <div class="scra-card">
         <div class="scra-card-header">
           <h3 class="nhsuk-heading-m" id="patient-details-address">Address</h3>
-          <p id="pds-edit-names" class="pds-edit-link"><a href="#">Edit</a></p>
+          <p id="pds-edit-names" class="pds-edit-link"><a href="edit-address">Edit</a></p>
         </div>
         <div class="scra-card-content">
           <div class="nhsuk-grid-row">
@@ -194,6 +201,8 @@ Patient details
           </div>
         </div>
       </div>
+    </section>
+    <section id="contact-information" title="Contact information">
       <div class="scra-card">
         <div class="scra-card-header">
           <h3 class="nhsuk-heading-m" id="patient-details-contact-info">Contact information</h3>
@@ -242,95 +251,102 @@ Patient details
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class="scra-card">
-      <div class="scra-card-header">
-        <h3 class="nhsuk-heading-m" id="scr-consent-preference">Summary Care Record consent preference</h3>
-        <p id="pds-edit-names" class="pds-edit-link"><a href="#">Edit</a></p>
-      </div>
-      <div class="scra-card-content">
-        <div class="nhsuk-grid-row">
-          <div class="nhsuk-grid-column-one-half">
-            <div class="card-content-section">
-              <span class="card-content-label">SCR consent preference:</span>
-              <span class="card-content-detail">Permission to view required</span>
+    <section id="scr-consent-preference" title="SCR consent preference">
+      <div class="scra-card">
+        <div class="scra-card-header">
+          <h3 class="nhsuk-heading-m" id="scr-consent-preference">Summary Care Record consent preference</h3>
+          <p id="pds-edit-names" class="pds-edit-link"><a href="#">Edit</a></p>
+        </div>
+        <div class="scra-card-content">
+          <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-one-half">
+              <div class="card-content-section">
+                <span class="card-content-label">SCR consent preference:</span>
+                <span class="card-content-detail">Permission to view required</span>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class="section">
+
+    <div class="section" id="contacts-nok-section">
       <h2 class="nhsuk-heading-l">Contacts & next of kin</h2>
-      <div class="scra-card">
-        <div class="scra-card-header">
-          <h3 class="nhsuk-heading-m" id="patient-details-contacts">Contacts</h3>
-          <p id="pds-edit-names" class="pds-edit-link"><a href="#">Edit</a></p>
-        </div>
-        <div class="scra-card-content">
-          <div class="nhsuk-grid-row">
-            <div class="nhsuk-grid-column-one-quarter">
-              <div class="card-content-section">
-                <span class="card-content-label">Name:</span>
-                <span class="card-content-detail">Anne Hathaway</span>
+      <section id="contacts" title="Contacts">
+        <div class="scra-card">
+          <div class="scra-card-header">
+            <h3 class="nhsuk-heading-m" id="patient-details-contacts">Contacts</h3>
+            <p id="pds-edit-names" class="pds-edit-link"><a href="#">Edit</a></p>
+          </div>
+          <div class="scra-card-content">
+            <div class="nhsuk-grid-row">
+              <div class="nhsuk-grid-column-one-quarter">
+                <div class="card-content-section">
+                  <span class="card-content-label">Name:</span>
+                  <span class="card-content-detail">Anne Hathaway</span>
+                </div>
               </div>
-            </div>
-            <div class="nhsuk-grid-column-one-quarter">
-              <div class="card-content-section">
-                <span class="card-content-label">Relationship:</span>
-                <span class="card-content-detail">Wife</span>
+              <div class="nhsuk-grid-column-one-quarter">
+                <div class="card-content-section">
+                  <span class="card-content-label">Relationship:</span>
+                  <span class="card-content-detail">Wife</span>
+                </div>
               </div>
-            </div>
-            <div class="nhsuk-grid-column-one-quarter">
-              <div class="card-content-section">
-                <span class="card-content-label">Address:</span>
-                <span class="card-content-detail card-content-detail-address">1 Town Street</span>
+              <div class="nhsuk-grid-column-one-quarter">
+                <div class="card-content-section">
+                  <span class="card-content-label">Address:</span>
+                  <span class="card-content-detail card-content-detail-address">1 Town Street</span>
+                </div>
               </div>
-            </div>
-            <div class="nhsuk-grid-column-one-quarter">
-              <div class="card-content-section">
-                <span class="card-content-label">Telephone:</span>
-                <span class="card-content-detail card-content-detail">01234 567 890</span>
+              <div class="nhsuk-grid-column-one-quarter">
+                <div class="card-content-section">
+                  <span class="card-content-label">Telephone:</span>
+                  <span class="card-content-detail card-content-detail">01234 567 890</span>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="scra-card">
-        <div class="scra-card-header">
-          <h3 class="nhsuk-heading-m" id="patient-details-contacts">Next of kin</h3>
-          <p id="pds-edit-names" class="pds-edit-link"><a href="#">Edit</a></p>
-        </div>
-        <div class="scra-card-content">
-          <div class="nhsuk-grid-row">
-            <div class="nhsuk-grid-column-one-quarter">
-              <div class="card-content-section">
-                <span class="card-content-label">Name:</span>
-                <span class="card-content-detail">Anne Hathaway</span>
+      </section>
+      <section id="next-of-kin" title="Next of kin">
+        <div class="scra-card">
+          <div class="scra-card-header">
+            <h3 class="nhsuk-heading-m" id="patient-details-contacts">Next of kin</h3>
+            <p id="pds-edit-names" class="pds-edit-link"><a href="#">Edit</a></p>
+          </div>
+          <div class="scra-card-content">
+            <div class="nhsuk-grid-row">
+              <div class="nhsuk-grid-column-one-quarter">
+                <div class="card-content-section">
+                  <span class="card-content-label">Name:</span>
+                  <span class="card-content-detail">Anne Hathaway</span>
+                </div>
               </div>
-            </div>
-            <div class="nhsuk-grid-column-one-quarter">
-              <div class="card-content-section">
-                <span class="card-content-label">Relationship:</span>
-                <span class="card-content-detail">Wife</span>
+              <div class="nhsuk-grid-column-one-quarter">
+                <div class="card-content-section">
+                  <span class="card-content-label">Relationship:</span>
+                  <span class="card-content-detail">Wife</span>
+                </div>
               </div>
-            </div>
-            <div class="nhsuk-grid-column-one-quarter">
-              <div class="card-content-section">
-                <span class="card-content-label">Address:</span>
-                <span class="card-content-detail card-content-detail-address">1 Town Street</span>
+              <div class="nhsuk-grid-column-one-quarter">
+                <div class="card-content-section">
+                  <span class="card-content-label">Address:</span>
+                  <span class="card-content-detail card-content-detail-address">1 Town Street</span>
+                </div>
               </div>
-            </div>
-            <div class="nhsuk-grid-column-one-quarter">
-              <div class="card-content-section">
-                <span class="card-content-label">Telephone:</span>
-                <span class="card-content-detail card-content-detail">01234 567 890</span>
+              <div class="nhsuk-grid-column-one-quarter">
+                <div class="card-content-section">
+                  <span class="card-content-label">Telephone:</span>
+                  <span class="card-content-detail card-content-detail">01234 567 890</span>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      </section>
     </div>
   </div>
 
