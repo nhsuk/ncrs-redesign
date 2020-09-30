@@ -310,6 +310,7 @@ Patient details
   });
 
   $(".lookup-search-results").find("a").click(function() {
+    $('#edit-usual-address-form > .nhsuk-input').val("");
     $(".lookup-search-results").hide();
     $("#pds-edit-number").val("1 Henley Street");
     $("#pds-edit-post-town").val("Stratford-upon-Avon");
