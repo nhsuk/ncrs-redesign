@@ -1964,10 +1964,7 @@ a.ui-button:active {
 	-webkit-box-shadow: 0 0 5px #666666;
 	box-shadow: 0 0 5px #666666;
 }
-
-
 /* -------- CUSTOM STYLES --------- */
-
 .ui-autocomplete-category {
 	background-color: $color_nhsuk-grey_1;
 	color: white;
@@ -1975,4 +1972,12 @@ a.ui-button:active {
 	padding-left: 8px;
 	font-weight: 400;
 	font-size: 16px;
+}
+/* PDS EDIT - ALGOLIA STYLES */
+button.ap-input-icon.ap-icon-pin {
+	display: none;
+}
+
+button.ap-input-icon.ap-icon-clear {
+	display: none;
 }

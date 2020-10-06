@@ -1,0 +1,247 @@
+{% extends 'layouts/layout-application.html' %}
+
+{% block pageTitle %}
+Patient details
+{% endblock %}
+
+{% block beforeContent %}
+
+<div class="nhsuk-full-width-container">
+  <div class='scra-bordered-tabs-container'>
+    <div class="nhsuk-width-container-fluid">
+      <ul class="scra-bordered-tabs">
+        <li class="scra-bordered-tabs-item">
+          <a class="scra-bordered-tabs-link" href="patient-overview">Overview</a>
+        </li>
+        <li class="scra-bordered-tabs-item scra-bordered-tabs-item-active">
+          <a class="scra-bordered-tabs-link" href="#">Patient</a>
+        </li>
+        <li class="scra-bordered-tabs-item">
+          <a class="scra-bordered-tabs-link" href="patient-clinical">Clinical</a>
+        </li>
+        <li class="scra-bordered-tabs-item">
+          <a class="scra-bordered-tabs-link" href="#">Documents</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+
+{% block content %}
+
+{% include "includes/mobile-nav.html" %}
+
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-grid-column-one-quarter">
+    <div class="govuk-accordion accordion-desktop" data-module="accordion" id="refactor-nav">
+      <div class="accordion-inner">
+        <div class="govuk-accordion__section govuk-accordion__section--expanded">
+          <div class="govuk-accordion__section-header scra-accordion__header">
+            <h2 class="govuk-accordion__section-heading scra-accordion__heading">
+              <span class="govuk-accordion__section-button scra-accordion__section-button" id="accordion-default-heading-1">
+                Edit key details
+              </span>
+            </h2>
+          </div>
+          <div id="accordion-default-content-1" class="govuk-accordion__section-content scra-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+            <ul class="navigation-ul">
+
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="nhsuk-grid-column-three-quarters">
+
+    <section id="key-details" title="Key details">
+
+      <h1 class="nhsuk-heading-l">Edit key details</h1>
+
+      <div class="scra-card pds-edit-card">
+        <div class="scra-card-header pds-edit-card-header">
+          <h2 class="nhsuk-heading-m" id="edit-key-details">Key details</h2>
+        </div>
+        <div class="scra-card-content">
+
+          <div class="nhsuk-form-group">
+
+            <fieldset class="nhsuk-fieldset" aria-describedby="gender-radio">
+              <legend class="nhsuk-fieldset__legend nhsuk-label__strong">
+                Gender
+              </legend>
+              <span id="advanced-gender-error-error" class="nhsuk-error-message" style="display: none">
+                You must select a gender
+              </span>
+              <div class="nhsuk-radios nhsuk-radios--inline" id="gender-radio">
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="gender-female-advanced" name="gender-advanced" type="radio" value="Female">
+                  <label class="nhsuk-label nhsuk-radios__label" for="gender-female-advanced">
+                    Female
+                  </label>
+                </div>
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="gender-male-advanced" name="gender-advanced" type="radio" value="Male" checked="checked">
+                  <label class="nhsuk-label nhsuk-radios__label" for="gender-male-advanced">
+                    Male
+                  </label>
+                </div>
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="gender-not-known-advanced" name="gender-advanced" type="radio" value="Not known">
+                  <label class="nhsuk-label nhsuk-radios__label" for="gender-not-known-advanced">
+                    Not known
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+
+          </div>
+
+          <div class="nhsuk-form-group">
+
+            <fieldset class="nhsuk-fieldset" aria-describedby="dob" role="group">
+              <legend class="nhsuk-fieldset__legend nhsuk-label__strong">
+                Date of birth
+              </legend>
+              <span id="dob-error-error" class="nhsuk-error-message" style="display: none">
+                You must enter a date of birth
+              </span>
+              <div class="nhsuk-date-input" id="dob">
+                <div class="nhsuk-date-input__item">
+                  <div class="nhsuk-form-group">
+                    <label class="nhsuk-label nhsuk-date-input__label" for="dob-day">
+                      Day
+                    </label>
+                    <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="dob-day" name="dob-day" type="number" pattern="[0-9]*" value="30">
+                  </div>
+                </div>
+                <div class="nhsuk-date-input__item">
+                  <div class="nhsuk-form-group">
+                    <label class="nhsuk-label nhsuk-date-input__label" for="dob-month">
+                      Month
+                    </label>
+                    <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="dob-month" name="dob-month" type="number" pattern="[0-9]*" value="1">
+                  </div>
+                </div>
+                <div class="nhsuk-date-input__item">
+                  <div class="nhsuk-form-group">
+                    <label class="nhsuk-label nhsuk-date-input__label" for="dob-year">
+                      Year
+                    </label>
+                    <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="dob-year" name="dob-year" type="number" pattern="[0-9]*" value="1970">
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+
+          </div>
+
+          <div class="nhsuk-form-group">
+
+            <fieldset class="nhsuk-fieldset">
+
+              <legend class="nhsuk-fieldset__legend nhsuk-label__strong">
+                Time of birth
+              </legend>
+              <span class="nhsuk-hint" id="dob-errors-hint">
+                Please use a 24 hour clock time format. For example, 23 59
+              </span>
+              <span id="dob-from-error-error" class="nhsuk-error-message" style="display: none">
+                You must enter a date
+              </span>
+              <div class="nhsuk-date-input" id="dob-time">
+                <div class="nhsuk-date-input__item">
+                  <div class="nhsuk-form-group">
+                    <label class="nhsuk-label nhsuk-date-input__label" for="dob-time-hour">
+                      Hour
+                    </label>
+                    <input class="nhsuk-input nhsuk-date-input__input nhsuk-dob-input__input nhsuk-input--width-2" id="dob-time-hour" name="dob-day-from" type="number" pattern="[0-9]*">
+                  </div>
+                </div>
+                <div class="nhsuk-date-input__item">
+                  <div class="nhsuk-form-group">
+                    <label class="nhsuk-label nhsuk-date-input__label" for="dob-time-min">
+                      Minute
+                    </label>
+                    <input class="nhsuk-input nhsuk-date-input__input nhsuk-dob-input__input nhsuk-input--width-2" id="dob-time-min" name="dob-month-from" type="number" pattern="[0-9]*">
+                  </div>
+                </div>
+              </div>
+
+            </fieldset>
+
+          </div>
+
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label nhsuk-label__strong" for="input-width-20">
+              Town of birth
+            </label>
+            <input class="nhsuk-input nhsuk-input--width-20" id="input-width-20" name="test-width-20" type="text">
+          </div>
+
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label nhsuk-label__strong" for="input-width-20">
+              County/Province
+            </label>
+            <input class="nhsuk-input nhsuk-input--width-20" id="input-width-20" name="test-width-20" type="text">
+          </div>
+
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label nhsuk-label__strong" for="select-1">
+              Country of birth
+            </label>
+            <select class="nhsuk-select" id="select-1" name="select-1">
+              <option value="1" selected>Select from list</option>
+            </select>
+          </div>
+
+          <div class="nhsuk-form-group">
+
+            <fieldset class="nhsuk-fieldset" aria-describedby="example-hint">
+              <legend class="nhsuk-fieldset__legend nhsuk-label__strong">
+                Interpreter required?
+              </legend>
+
+              <div class="nhsuk-checkboxes">
+
+                <div class="nhsuk-checkboxes__item">
+                  <input class="nhsuk-checkboxes__input" id="example-1" name="example" type="checkbox" value="interpreter-required">
+                  <label class="nhsuk-label nhsuk-checkboxes__label" for="example-1">
+                    Interpreter required
+                  </label>
+                </div>
+
+              </div>
+            </fieldset>
+
+          </div>
+
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label nhsuk-label__strong" for="select-2">
+              Language <strong>(Mandatory when interpreter required)</strong>
+            </label>
+            <select class="nhsuk-select" id="select-2" name="select-2">
+              <option value="1" selected>Select from list</option>
+            </select>
+          </div>
+
+
+
+
+        </div>
+      </div>
+    </section>
+
+    <section id="save-changes" title="Save changes">
+      <a class="nhsuk-button" href="confirm-key-details-changes">Save key details changes</a>
+    </section>
+
+
+  </div>
+
+</div>
+{% endblock %}
