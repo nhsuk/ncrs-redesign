@@ -587,13 +587,142 @@ Patient details
                 <dt class="nhsuk-summary-list__key ">
                   Address
                 </dt>
-                <dd class="nhsuk-summary-list__value card-content-detail-address">
+                <dd class="nhsuk-summary-list__value">
+                  <div id="usual-address-value" class="card-content-detail-address">
 
+                  </div>
+                  <div id="usual-address-group" style="display:none;">
+                    <div class="nhsuk-form-group pds-edit-form-group">
+                      <form id="edit-usual-address-form">
+                        <label class="nhsuk-label nhsuk-label__strong" for="pds-edit-house-name">
+                          Building and street
+                        </label>
+                        <input class="nhsuk-input nhsuk-input--width-20" id="pds-edit-house-name" name="pdf-edit-house-name" type="text" value="1 Town Street"><br />
+                        <input class="nhsuk-input nhsuk-input--width-20" id="pds-edit-number" name="pdf-edit-number" type="text">
+
+                        <label class="nhsuk-label nhsuk-label__strong" for="pds-edit-locality">
+                          Locality
+                        </label>
+                        <input class="nhsuk-input nhsuk-input--width-15" id="pds-edit-locality" name="pdf-edit-locality" type="text">
+
+                        <label class="nhsuk-label nhsuk-label__strong" for="pds-edit-post-town">
+                          Post town
+                        </label>
+                        <input class="nhsuk-input nhsuk-input--width-15" id="pds-edit-post-town" name="pdf-edit-post-town" type="text" value="Straford-upon-Avon">
+
+                        <label class="nhsuk-label nhsuk-label__strong" for="pds-edit-county">
+                          County
+                        </label>
+                        <input class="nhsuk-input nhsuk-input--width-15" id="pds-edit-county" name="pdf-edit-county" type="text" value="Warwickshire">
+
+                        <label class="nhsuk-label nhsuk-label__strong" for="pds-edit-postcode">
+                          Postcode
+                        </label>
+                        <input class="nhsuk-input nhsuk-input--width-10" id="pds-edit-postcode" name="pdf-edit-postcode" type="text" value="AB1 2CD">
+
+                        <div class="nhsuk-action-link" style="margin-top:32px; width: 120%;">
+                          <a class="nhsuk-action-link__link find-postcode__action-link" id="pds-find-postcode__action-link" href="#pds-find-postcode__action-link">
+                            <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+                              <path d="M0 0h24v24H0z" fill="none"></path>
+                              <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
+                            </svg>
+                            <span class="nhsuk-action-link__text">Find an address or postcode</span>
+                          </a>
+                        </div>
+
+                        <div id="lookup-div" class="lookup-search-results" style="display:none; width: 120%;">
+                          <div class="nhsuk-u-reading-width" style="border:4px solid #e8edee; padding:16px;margin-bottom: 48px;">
+                            <label class="nhsuk-label nhsuk-label__strong" for="address-lookup">
+                              Enter part of an address or postcode
+                            </label>
+                            <input type="search" id="address-lookup" class="form-control nhsuk-input nhsuk-input--width-15" />
+                            <p><a id="cancel-address-lookup" href="#address">Close</a></p>
+                            <!--<p><a href="#usual-address" id="cancel-adding-usual-address" >Clear</a></p>-->
+                          </div>
+                        </div>
+
+                        <fieldset class="nhsuk-fieldset" role="group">
+                          <legend class="nhsuk-fieldset__legend nhsuk-label__strong">
+                            Effective from
+                          </legend>
+
+                          <div class="nhsuk-date-input" id="effective-from-date-name">
+                            <div class="nhsuk-date-input__item">
+                              <div class="nhsuk-form-group">
+                                <label class="nhsuk-label nhsuk-date-input__label" for="effective-from-date-name-day">
+                                  Day
+                                </label>
+                                <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="effective-from-date-name-day" name="effective-from-date-name-day" type="number" pattern="[0-9]*">
+                              </div>
+                            </div>
+                            <div class="nhsuk-date-input__item">
+                              <div class="nhsuk-form-group">
+                                <label class="nhsuk-label nhsuk-date-input__label" for="effective-from-date-name-month">
+                                  Month
+                                </label>
+                                <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="effective-from-date-name-month" name="effective-from-date-name-month" type="number" pattern="[0-9]*">
+                              </div>
+                            </div>
+                            <div class="nhsuk-date-input__item">
+                              <div class="nhsuk-form-group">
+                                <label class="nhsuk-label nhsuk-date-input__label" for="effective-from-date-name-year">
+                                  Year
+                                </label>
+                                <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="effective-from-date-name-year" name="effective-from-date-name-year" type="number" pattern="[0-9]*">
+                              </div>
+                            </div>
+                          </div>
+                        </fieldset>
+
+                        <fieldset class="nhsuk-fieldset" role="group">
+                          <legend class="nhsuk-fieldset__legend nhsuk-label__strong">
+                            Effective to
+                          </legend>
+
+                          <div class="nhsuk-date-input" id="effective-date-name">
+                            <div class="nhsuk-date-input__item">
+                              <div class="nhsuk-form-group">
+                                <label class="nhsuk-label nhsuk-date-input__label" for="effective-date-name-day">
+                                  Day
+                                </label>
+                                <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="effective-date-name-day" name="effective-date-name-day" type="number" pattern="[0-9]*">
+                              </div>
+                            </div>
+                            <div class="nhsuk-date-input__item">
+                              <div class="nhsuk-form-group">
+                                <label class="nhsuk-label nhsuk-date-input__label" for="effective-date-name-month">
+                                  Month
+                                </label>
+                                <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="effective-date-name-month" name="effective-date-name-month" type="number" pattern="[0-9]*">
+                              </div>
+                            </div>
+                            <div class="nhsuk-date-input__item">
+                              <div class="nhsuk-form-group">
+                                <label class="nhsuk-label nhsuk-date-input__label" for="effective-date-name-year">
+                                  Year
+                                </label>
+                                <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="effective-date-name-year" name="effective-date-name-year" type="number" pattern="[0-9]*">
+                              </div>
+                            </div>
+                          </div>
+                        </fieldset>
+                      </form>
+                    </div>
+                    <p>
+                      <p>
+                        <a href="#usual-address" id="cancel-adding-usual-address" style="display:none;">Cancel</a>
+                      </p>
+                      <div class="btn-group" style="margin-top: 24px;">
+                        <button class="nhsuk-button" id="save-usual-address-btn" style="display:inline-block;">Save<span class="nhsuk-u-visually-hidden"> preferred name</span> changes</button>
+                        <a href="#" class="cancel-btn-link" id="cancel-usual-address">Cancel</a>
+                      </div>
+                    </p>
+                  </div>
                 </dd>
 
                 <dd class="nhsuk-summary-list__actions">
 
-                  <a href="#">
+                  <a href="#address" id="change-usual-address">
                     Change<span class="nhsuk-u-visually-hidden"> address</span>
                   </a>
 
@@ -960,7 +1089,67 @@ Patient details
 </div>
 
 {% block pageScripts %}
+<script src="https://cdn.jsdelivr.net/npm/places.js@1.19.0"></script>
 <script>
+  (function() {
+    $('.ap-icon-pin').hide();
+    $('.ap-icon-clear').hide();
+    var placesAutocomplete = places({
+      appId: 'plHXAD50RORF',
+      apiKey: 'b08e58629c0e190b4b532116794d6e9b',
+      container: document.querySelector('#address-lookup'),
+      templates: {
+        value: function(suggestion) {
+          return suggestion.name;
+        }
+      }
+    }).configure({
+      type: 'address'
+    });
+    placesAutocomplete.on('change', function resultSelected(e) {
+      document.querySelector('#pds-edit-house-name').value = e.suggestion.name || '';
+      document.querySelector('#pds-edit-post-town').value = e.suggestion.city || '';
+      document.querySelector('#pds-edit-postcode').value = e.suggestion.postcode || '';
+      document.querySelector('#pds-edit-county').value = e.suggestion.county || '';
+      document.querySelector('#address-lookup').value = '';
+    });
+  })();
+
+  $('.ap-suggestion').click(function() {
+    $('.ap-dropdown-menu').hide();
+    $('#address-lookup').val("");
+  });
+
+  $(".find-postcode__action-link").click(function() {
+    $(".lookup-search-results").show();
+  });
+
+  $(".lookup-search-results").find("a").click(function() {
+    $('#edit-usual-address-form > .nhsuk-input').val("");
+    $(".lookup-search-results").hide();
+    $("#pds-edit-number").val("1 Henley Street");
+    $("#pds-edit-post-town").val("Stratford-upon-Avon");
+    $("#pds-edit-county").val("Warwickshire");
+    $("#pds-edit-country").val("United Kingdom");
+    $("#pds-edit-postcode").val("CV37 6QW");
+  });
+
+  $("#cancel-address-lookup").click(function() {
+    $(".lookup-search-results").hide();
+  });
+
+</script>
+<script>
+  $(document).ready(function() {
+
+    var address = $('.card-content-detail-address').first().text();
+    var address = address.replace(/,/g, '<br>');
+
+    $('.card-content-detail-address').html(address)
+
+    console.log(address)
+
+  });
   $("#change-usual-name").click(function() {
     $("#usual-name-group").show();
     $("#usual-name-value").hide();
@@ -992,17 +1181,19 @@ Patient details
     $("#preferred-name-value").show();
   });
 
+  $("#change-usual-address").click(function() {
+    $("#usual-address-group").show();
+    $("#usual-address-value").hide();
+  });
 
+  $("#save-usual-address-btn").click(function() {
+    $("#usual-address-group").hide();
+    $("#usual-address-value").show();
+  });
 
-  $(document).ready(function() {
-
-    var address = $('.card-content-detail-address').first().text();
-    var address = address.replace(/,/g, '<br>');
-
-    $('.card-content-detail-address').html(address)
-
-    console.log(address)
-
+  $("#cancel-usual-address").click(function() {
+    $("#usual-address-group").hide();
+    $("#usual-address-value").show();
   });
 </script>
 {% endblock %}
