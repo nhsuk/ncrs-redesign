@@ -67,7 +67,7 @@ Patient details
               </dt>
               <dd class="nhsuk-summary-list__value">
                 <p>
-                  Mr William Shakespeare
+                  Mr William SHAKESPEARE
                 </p>
                 <p class="nhsuk-body-italics">
                   Effective from 29-Feb-2002
@@ -85,16 +85,64 @@ Patient details
               </dt>
               <dd class="nhsuk-summary-list__value">
                 <p>
-                  Dr William Tell
+                  Dr William TELL
                 </p>
                 <p class="nhsuk-body-italics">
-                  Effective from 28-Sep-2020
+                  Effective from 08-Oct-2020
                 </p>
               </dd>
               <dd class="nhsuk-summary-list__actions">
 
-                <a class="remove-update-btn remove-name-update-btn" href="#">
-                  Remove<span class="nhsuk-u-visually-hidden"> update</span>
+                <a class="change-update-btn" href="edit-names">
+                  Change<span class="nhsuk-u-visually-hidden"> update</span>
+                </a>
+
+              </dd>
+
+            </div>
+
+          </dl>
+
+        </section>
+
+        <section class="review-updated-section">
+
+
+          <h3 class="nhsuk-heading-m">Preferred name</h3>
+
+          <dl class="nhsuk-summary-list">
+
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Was previously
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                <p class="nhsuk-body-italics">
+                  Mr Bill SHAKESPEARE
+                </p>
+              </dd>
+              <dd class="nhsuk-summary-list__actions">
+                <span class="nhsuk-u-visually-hidden">There are no actions for this row</span>
+              </dd>
+
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Updated to
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                <p>
+                  None recorded
+                </p>
+                <p class="nhsuk-body-italics">
+                  Effective from 08-Oct-2020
+                </p>
+              </dd>
+              <dd class="nhsuk-summary-list__actions">
+
+                <a class="change-update-btn" href="edit-names">
+                  Change<span class="nhsuk-u-visually-hidden"> update</span>
                 </a>
 
               </dd>
@@ -133,16 +181,16 @@ Patient details
               </dt>
               <dd class="nhsuk-summary-list__value">
                 <p>
-                  Mr William Shakespeare
+                  Mr William SHAKESPEARE
                 </p>
                 <p class="nhsuk-body-italics">
-                  Effective to 28-Sep-2020
+                  Effective to 08-Oct-2020
                 </p>
               </dd>
               <dd class="nhsuk-summary-list__actions">
 
-                <a class="remove-update-btn remove-name-update-btn" href="#">
-                  Remove<span class="nhsuk-u-visually-hidden"> update</span>
+                <a class="change-update-btn" href="edit-names">
+                  Change<span class="nhsuk-u-visually-hidden"> update</span>
                 </a>
 
               </dd>
@@ -156,7 +204,7 @@ Patient details
 
       </div>
 
-      <a class="nhsuk-button" id="confirm-name-changes-btn" href="edit-success">Confirm changes</a>
+      <a class="nhsuk-button" id="confirm-name-changes-btn" href="patient-details">Confirm changes</a>
 
     </div>
 
@@ -164,4 +212,16 @@ Patient details
   </div>
 
 </div>
+
+{% block pageScripts %}
+<script>
+  $("#confirm-name-changes-btn").click(function(){
+    var patientPreferredName = "None recorded";
+    sessionStorage.setItem("patientPreferredName", patientPreferredName);
+    var patientBachelorName = "Mr William SHAKESPEARE<br />Effective since: Oct-08-2020";
+    sessionStorage.setItem("patientBachelorName", patientBachelorName);
+  });
+</script>
+{% endblock %}
+
 {% endblock %}

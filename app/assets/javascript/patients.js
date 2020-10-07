@@ -782,7 +782,7 @@ $(".patient-search-result").click(function() {
 });
 
 $("#confirm-name-changes-btn").click(function() {
-  var patientName = "William TELL";
+  var patientName = "Mr William TELL";
   sessionStorage.setItem("patientName", patientName);
 });
 
@@ -827,7 +827,7 @@ if (cpisAltName=="Amelia MILLER") {
   $('.name-dob-floater').html(cpisAltName + " | 16-Dec-2003");
   $('.mobile-nav-patient-details').html(cpisAltName + " <br/> 16-Dec-2003");
 } else if (!patientName) {
-  $('.patient-banner-name, .card-content-name').text("William SHAKESPEARE");
+  $('.patient-banner-name, .card-content-name').text("Mr William SHAKESPEARE");
   $('.patient-banner-dob, .card-content-detail-dob').text("30-Jan-1970");
   $('.patient-banner-nhs-no, .card-content-detail-nhs-no').text("123 456 7890");
   if (!patientAddress) {
@@ -840,9 +840,9 @@ if (cpisAltName=="Amelia MILLER") {
   $('.patient-banner-gender, .card-content-detail-gender').text("Male");
   $('.patient-banner-age').text("49 years old");
   $('.card-content-detail-pob').text("Stratford-upon-Avon");
-  $('.name-dob-floater').html("William SHAKESPEARE | 30-Jan-1970");
-  $('.mobile-nav-patient-details').html("William SHAKESPEARE <br/> Date of birth: 30-Jan-1970");
-} else if (patientName=="William TELL") {
+  $('.name-dob-floater').html("Mr William SHAKESPEARE | 30-Jan-1970");
+  $('.mobile-nav-patient-details').html("Mr William SHAKESPEARE <br/> Date of birth: 30-Jan-1970");
+} else if (patientName=="Mr William TELL") {
   $('.patient-banner-name, .card-content-name').text(patientName);
   $('.patient-banner-dob, .card-content-detail-dob').text("30-Jan-1970");
   $('.patient-banner-nhs-no, .card-content-detail-nhs-no').text("123 456 7890");
@@ -856,8 +856,8 @@ if (cpisAltName=="Amelia MILLER") {
   $('.patient-banner-gender, .card-content-detail-gender').text("Male");
   $('.patient-banner-age').text("49 years old");
   $('.card-content-detail-pob').text("Stratford-upon-Avon");
-  $('.name-dob-floater').html("William TELL | 30-Jan-1970");
-  $('.mobile-nav-patient-details').html("William TELL <br/> Date of birth: 30-Jan-1970");
+  $('.name-dob-floater').html("Mr William TELL | 30-Jan-1970");
+  $('.mobile-nav-patient-details').html("Mr William TELL <br/> Date of birth: 30-Jan-1970");
 
 } else {
   $('.patient-banner-name, .card-content-name').text(patientName);
