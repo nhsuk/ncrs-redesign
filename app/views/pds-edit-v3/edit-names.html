@@ -83,17 +83,17 @@ Patient details
                       Prefix (optional)
                     </label>
                     <select class="nhsuk-select" id="usual-name-prefix" name="usual-name-prefix">
-                      <option value="1" selected>Mr</option>
-                      <option value="2">Mrs</option>
-                      <option value="3">Ms</option>
-                      <option value="4">Miss</option>
-                      <option value="5">Dr</option>
-                      <option value="6">Rev</option>
-                      <option value="7">Sir</option>
-                      <option value="8">Lady</option>
-                      <option value="9">Lord</option>
-                      <option value="10">Dame</option>
-                      <option value="11">Other</option>
+                      <option value="Mr" selected>Mr</option>
+                      <option value="Mrs">Mrs</option>
+                      <option value="Ms">Ms</option>
+                      <option value="Miss">Miss</option>
+                      <option value="Dr">Dr</option>
+                      <option value="Rev">Rev</option>
+                      <option value="Sir">Sir</option>
+                      <option value="Lady">Lady</option>
+                      <option value="Lord">Lord</option>
+                      <option value="Dame">Dame</option>
+                      <option value="Other">Other</option>
                     </select>
 
                     <label class="nhsuk-label nhsuk-label__strong" for="usual-first-name">
@@ -149,6 +149,7 @@ Patient details
                       </div>
                     </fieldset>
                     <div class="btn-group" style="margin-top: 24px;">
+                      <button class="nhsuk-button nhsuk-button--blue nhsuk-button--small" id="apply-usual-name-btn" style="display:inline-block;">Apply<span class="nhsuk-u-visually-hidden"> preferred name</span></button>
                       <a href="#" id="cancel-usual-name">Cancel</a>
                     </div>
                   </div>
@@ -176,17 +177,18 @@ Patient details
                       Prefix (optional)
                     </label>
                     <select class="nhsuk-select" id="pds-name-prefix" name="select-prefix">
-                      <option value="1" selected>Mr</option>
-                      <option value="2">Mrs</option>
-                      <option value="3">Ms</option>
-                      <option value="4">Miss</option>
-                      <option value="5">Dr</option>
-                      <option value="6">Rev</option>
-                      <option value="7">Sir</option>
-                      <option value="8">Lady</option>
-                      <option value="9">Lord</option>
-                      <option value="10">Dame</option>
-                      <option value="11">Other</option>
+                      <option value="None" selected disabled>Please select</option>
+                      <option value="Mr">Mr</option>
+                      <option value="Mrs">Mrs</option>
+                      <option value="Ms">Ms</option>
+                      <option value="Miss">Miss</option>
+                      <option value="Dr">Dr</option>
+                      <option value="Rev">Rev</option>
+                      <option value="Sir">Sir</option>
+                      <option value="Lady">Lady</option>
+                      <option value="Lord">Lord</option>
+                      <option value="Dame">Dame</option>
+                      <option value="Other">Other</option>
                     </select>
 
                     <label class="nhsuk-label nhsuk-label__strong" for="pds-edit-first-name">
@@ -458,9 +460,16 @@ Patient details
     $("#usual-name-value").hide();
   });
 
-  $("#save-usual-name-btn").click(function() {
+  $("#apply-usual-name-btn").click(function() {
     $("#usual-name-group").hide();
     $("#usual-name-value").show();
+    var title = $("#usual-name-prefix").val();
+    var firstName = $("#usual-first-name").val();
+    firstName = firstName.toLowerCase().replace(/\b[a-z]/g, function(letter) {
+      return letter.toUpperCase();
+    });
+    var usualLastName = $("#usual-last-name").val();
+    $("#usual-name-value").html(title + " " + firstName + " " + usualLastName + "<br />" + "Effective since: 08-Oct-2020");
   });
 
   $("#cancel-usual-name").click(function() {
