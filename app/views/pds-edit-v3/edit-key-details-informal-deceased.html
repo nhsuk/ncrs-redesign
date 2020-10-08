@@ -59,9 +59,9 @@ Patient details
   <div class="nhsuk-grid-column-three-quarters">
     <div class="nhsuk-u-reading-width">
 
-      <section id="key-details" title="Key details">
 
-        <h1 class="nhsuk-heading-l">Edit key details</h1>
+      <h1 class="nhsuk-heading-l">Edit key details</h1>
+      <section id="key-details" title="Key details">
 
         <div class="scra-card pds-edit-card">
           <div class="scra-card-header pds-edit-card-header">
@@ -172,15 +172,67 @@ Patient details
 
           </div>
         </div>
+
       </section>
 
-      <section id="save-changes" title="Save changes">
-        <a class="nhsuk-button" href="confirm-key-details-changes">Save key details changes</a>
-      </section>
+      <section id="informal-death-notification" title="Informal death notification">
 
+
+        <div class="scra-card pds-edit-card">
+          <div class="scra-card-header pds-edit-card-header">
+            <h2 class="nhsuk-heading-m" id="edit-key-details">Informal death notification</h2>
+          </div>
+          <div class="scra-card-content">
+
+            <div class="nhsuk-warning-callout">
+              <h3 class="nhsuk-warning-callout__label">Recording an informal death notification</h3>
+              <p>Once an informal death notification has been recorded, you can only edit the date of death - you cannot remove it in this application</p>
+            </div>
+
+            <dl class="nhsuk-summary-list">
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  Date of death
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  07-Oct-2020
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+                  <a href="#key-details" id="change-dob">
+                    Edit<span class="nhsuk-u-visually-hidden"> date of death</span>
+                  </a>
+                </dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key ">
+                  Time of death
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  23:12
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
+                  <a href="#key-details" id="change-gender">
+                    Edit<span class="nhsuk-u-visually-hidden"> time of death</span>
+                  </a>
+                </dd>
+              </div>
+
+            </dl>
+
+          </div>
+      </section>
     </div>
 
+
+    <section id="save-changes" title="Save changes">
+      <a class="nhsuk-button" href="confirm-key-details-changes">Save key details changes</a>
+    </section>
+
   </div>
+
+</div>
 
 </div>
 {% endblock %}

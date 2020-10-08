@@ -177,8 +177,8 @@ Patient details
                       Prefix (optional)
                     </label>
                     <select class="nhsuk-select" id="pds-name-prefix" name="select-prefix">
-                      <option value="None" selected disabled>Please select</option>
-                      <option value="Mr">Mr</option>
+                      <option value="None"disabled>Please select</option>
+                      <option value="Mr" selected>Mr</option>
                       <option value="Mrs">Mrs</option>
                       <option value="Ms">Ms</option>
                       <option value="Miss">Miss</option>
@@ -191,25 +191,25 @@ Patient details
                       <option value="Other">Other</option>
                     </select>
 
-                    <label class="nhsuk-label nhsuk-label__strong" for="pds-edit-first-name">
+                    <label class="nhsuk-label nhsuk-label__strong" for="preferred-first-name">
                       First name
                     </label>
-                    <input class="nhsuk-input nhsuk-input--width-20" id="pds-edit-first-name" name="pdf-edit-first-name" type="text" value="Bill">
+                    <input class="nhsuk-input nhsuk-input--width-20" id="preferred-first-name" name="preferred-first-name" type="text" value="Bill">
 
                     <label class="nhsuk-label nhsuk-label__strong" for="pds-edit-middle-name">
                       Middle name(s) (optional)
                     </label>
-                    <input class="nhsuk-input nhsuk-input--width-20" id="pds-edit-middle-name" name="pdf-edit-middle-name" type="text">
+                    <input class="nhsuk-input nhsuk-input--width-20" id="preferred-middle-name" name="preferred-middle-name" type="text">
 
-                    <label class="nhsuk-label nhsuk-label__strong" for="pds-edit-last-name">
+                    <label class="nhsuk-label nhsuk-label__strong" for="preferred-last-name">
                       Last name
                     </label>
-                    <input class="nhsuk-input nhsuk-input--width-20" id="pds-edit-last-name" name="pdf-edit-last-name" type="text" value="Shakespeare">
+                    <input class="nhsuk-input nhsuk-input--width-20" id="preferred-last-name" name="preferred-last-name" type="text" value="Shakespeare">
 
-                    <label class="nhsuk-label nhsuk-label__strong" for="pds-edit-suffix">
+                    <label class="nhsuk-label nhsuk-label__strong" for="preferred-suffix">
                       Suffix (optional)
                     </label>
-                    <input class="nhsuk-input nhsuk-input--width-10" id="pds-edit-suffix" name="pdf-edit-suffix" type="text">
+                    <input class="nhsuk-input nhsuk-input--width-10" id="preferred-suffix" name="preferred-suffix" type="text">
 
                     <fieldset class="nhsuk-fieldset" role="group">
                       <legend class="nhsuk-fieldset__legend nhsuk-label__strong">
@@ -219,26 +219,26 @@ Patient details
                       <div class="nhsuk-date-input" id="effective-date-name">
                         <div class="nhsuk-date-input__item">
                           <div class="nhsuk-form-group">
-                            <label class="nhsuk-label nhsuk-date-input__label" for="effective-date-name-day">
+                            <label class="nhsuk-label nhsuk-date-input__label" for="preferred-effective-date-name-day">
                               Day
                             </label>
-                            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="effective-date-name-day" name="effective-date-name-day" type="number" pattern="[0-9]*" value="17">
+                            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="preferred-effective-date-name-day" name="preferred-effective-date-name-day" type="number" pattern="[0-9]*" value="17">
                           </div>
                         </div>
                         <div class="nhsuk-date-input__item">
                           <div class="nhsuk-form-group">
-                            <label class="nhsuk-label nhsuk-date-input__label" for="effective-date-name-month">
+                            <label class="nhsuk-label nhsuk-date-input__label" for="preferred-effective-date-name-month">
                               Month
                             </label>
-                            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="effective-date-name-month" name="effective-date-name-month" type="number" pattern="[0-9]*" value="07">
+                            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="preferred-effective-date-name-month" name="preferred-effective-date-name-month" type="number" pattern="[0-9]*" value="07">
                           </div>
                         </div>
                         <div class="nhsuk-date-input__item">
                           <div class="nhsuk-form-group">
-                            <label class="nhsuk-label nhsuk-date-input__label" for="effective-date-name-year">
+                            <label class="nhsuk-label nhsuk-date-input__label" for="preferred-effective-date-name-year">
                               Year
                             </label>
-                            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="effective-date-name-year" name="effective-date-name-year" type="number" pattern="[0-9]*" value="2008">
+                            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="preferred-effective-date-name-year" name="preferred-effective-date-name-year" type="number" pattern="[0-9]*" value="2008">
                           </div>
                         </div>
                       </div>
@@ -469,7 +469,7 @@ Patient details
       return letter.toUpperCase();
     });
     var usualLastName = $("#usual-last-name").val();
-    $("#usual-name-value").html(title + " " + firstName + " " + usualLastName + "<br />" + "Effective since: 08-Oct-2020");
+    $("#usual-name-value").html(title + " " + firstName + " " + usualLastName + "<br />" + "<i>Effective since: 08-Oct-2020</i>");
   });
 
   $("#cancel-usual-name").click(function() {
@@ -487,6 +487,13 @@ Patient details
     $("#preferred-name-group").hide();
     $("#preferred-name-value").show();
     $("#change-preferred-name").show();
+    var title = $("#preferred-name-prefix").val();
+    var firstName = $("#preferred-first-name").val();
+    firstName = firstName.toLowerCase().replace(/\b[a-z]/g, function(letter) {
+      return letter.toUpperCase();
+    });
+    var preferredLastName = $("#preferred-last-name").val();
+    $("#preferred-name-value").html(title + " " + firstName + " " + usualLastName + "<br />" + "<i>Effective since: 08-Oct-2020</i>");
   });
 
   $("#cancel-preferred-name").click(function() {
@@ -520,7 +527,7 @@ Patient details
     });
 
     $("#change-bachelor-name").text("Edit");
-    $("#bachelor-name-value").text(title + " " + firstName + " " + bachelorLastName);
+    $("#bachelor-name-value").html(title + " " + firstName + " " + bachelorLastName + "<br /><i>Effective to: Oct-08-2020</i>");
     $("#bachelor-name-group").hide();
     $("#bachelor-name-value").show();
   });

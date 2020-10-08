@@ -219,13 +219,13 @@ $("#advanced-details-search").submit(function(e) {
   var patientLastNameAdvanced = patientLastNameCapitalise;
   sessionStorage.setItem("patientLastNameAdvanced", patientLastNameAdvanced);
 
-if ($('input[name=widen-search]:checked').length > 0 ) {
-  var widenSearch = true;
-} else {
-  var widenSearch = false;
-}
+  if ($('input[name=widen-search]:checked').length > 0) {
+    var widenSearch = true;
+  } else {
+    var widenSearch = false;
+  }
 
-sessionStorage.setItem("widenSearch", widenSearch);
+  sessionStorage.setItem("widenSearch", widenSearch);
 
 
 
@@ -354,27 +354,29 @@ sessionStorage.setItem("widenSearch", widenSearch);
       $('#first-name-advanced').addClass('nhsuk-input--error');
       $('#nhsuk-form-group-first-name-advanced').addClass('nhsuk-form-group--error');
       $('#error-summary-advanced-first-name').show();
-    } /*else {
-      $('#advanced-first-name-error-error').hide();
-      $('#first-name-advanced').removeClass('nhsuk-input--error');
-      $('#nhsuk-form-group-first-name-advanced').removeClass('nhsuk-form-group--error');
-      $('#error-summary-advanced-first-name').hide();
-    }*/
+    }
+    /*else {
+         $('#advanced-first-name-error-error').hide();
+         $('#first-name-advanced').removeClass('nhsuk-input--error');
+         $('#nhsuk-form-group-first-name-advanced').removeClass('nhsuk-form-group--error');
+         $('#error-summary-advanced-first-name').hide();
+       }*/
 
     if (!$('input[name=address-postcode]').val()) {
       $('#advanced-postcode-error-error').show();
       $('#address-postcode').addClass('nhsuk-input--error');
       $('#nhsuk-form-group-postcode-advanced').addClass('nhsuk-form-group--error');
       $('#error-summary-advanced-postcode').show();
-    } /*else {
-      $('#advanced-postcode-error-error').hide();
-      $('#address-postcode').removeClass('nhsuk-input--error');
-      $('#nhsuk-form-group-postcode-advanced').removeClass('nhsuk-form-group--error');
-      $('#error-summary-advanced-postcode').hide();
-    }*/
+    }
+    /*else {
+         $('#advanced-postcode-error-error').hide();
+         $('#address-postcode').removeClass('nhsuk-input--error');
+         $('#nhsuk-form-group-postcode-advanced').removeClass('nhsuk-form-group--error');
+         $('#error-summary-advanced-postcode').hide();
+       }*/
   }
 
-  if (!$('input[name=gender-advanced]').is(':checked') || !$('#last-name-advanced').val() || !$('#dob-day-from').val() || !$('#dob-month-from').val() || !$('#dob-year-from').val() || !$('#dob-day-to').val() || !$('#dob-month-to').val() || !$('#dob-year-to').val() || ((!$('input[name=first-name]').val() && !$('input[name=address-postcode]').val()) && $('input[name=widen-search]:checked').length > 0) ) {
+  if (!$('input[name=gender-advanced]').is(':checked') || !$('#last-name-advanced').val() || !$('#dob-day-from').val() || !$('#dob-month-from').val() || !$('#dob-year-from').val() || !$('#dob-day-to').val() || !$('#dob-month-to').val() || !$('#dob-year-to').val() || ((!$('input[name=first-name]').val() && !$('input[name=address-postcode]').val()) && $('input[name=widen-search]:checked').length > 0)) {
     $('#nhsuk-advanced-error-summary').show();
     e.preventDefault();
   } else {
@@ -782,7 +784,7 @@ $(".patient-search-result").click(function() {
 });
 
 $("#confirm-name-changes-btn").click(function() {
-  var patientName = "Mr William TELL";
+  var patientName = "Dr William TELL";
   sessionStorage.setItem("patientName", patientName);
 });
 
@@ -804,7 +806,7 @@ var patientAddressWithPostcode = patientAddress;
 
 var cpisAltName;
 
-if(window.location.href.indexOf("cpis") > -1 || window.location.href.indexOf("fgm") > -1) {
+if (window.location.href.indexOf("cpis") > -1 || window.location.href.indexOf("fgm") > -1) {
   cpisAltName = localStorage.altName;
 } else {
   cpisAltName = "";
@@ -815,7 +817,7 @@ if(window.location.href.indexOf("cpis") > -1 || window.location.href.indexOf("fg
 var parsedDob = moment(patientDob, "DD-MMM-YYYY").format("DD-MM-YYYY");
 var patientAge = moment(new Date()).diff(moment(parsedDob, "DD-MM-YYYY"), 'years', false);
 
-if (cpisAltName=="Amelia MILLER") {
+if (cpisAltName == "Amelia MILLER") {
   $('.patient-banner-name, .card-content-name').text(cpisAltName);
   $('.patient-banner-dob, .card-content-detail-dob').text("16-Dec-2003");
   $('.patient-banner-nhs-no, .card-content-detail-nhs-no').text("123 456 7890");
@@ -842,7 +844,7 @@ if (cpisAltName=="Amelia MILLER") {
   $('.card-content-detail-pob').text("Stratford-upon-Avon");
   $('.name-dob-floater').html("Mr William SHAKESPEARE | 30-Jan-1970");
   $('.mobile-nav-patient-details').html("Mr William SHAKESPEARE <br/> Date of birth: 30-Jan-1970");
-} else if (patientName=="Mr William TELL") {
+} else if (patientName == "Dr William TELL") {
   $('.patient-banner-name, .card-content-name').text(patientName);
   $('.patient-banner-dob, .card-content-detail-dob').text("30-Jan-1970");
   $('.patient-banner-nhs-no, .card-content-detail-nhs-no').text("123 456 7890");
@@ -856,8 +858,8 @@ if (cpisAltName=="Amelia MILLER") {
   $('.patient-banner-gender, .card-content-detail-gender').text("Male");
   $('.patient-banner-age').text("49 years old");
   $('.card-content-detail-pob').text("Stratford-upon-Avon");
-  $('.name-dob-floater').html("Mr William TELL | 30-Jan-1970");
-  $('.mobile-nav-patient-details').html("Mr William TELL <br/> Date of birth: 30-Jan-1970");
+  $('.name-dob-floater').html("Dr William TELL | 30-Jan-1970");
+  $('.mobile-nav-patient-details').html("Dr William TELL <br/> Date of birth: 30-Jan-1970");
 
 } else {
   $('.patient-banner-name, .card-content-name').text(patientName);
@@ -918,4 +920,12 @@ $("#cancel-adding-bachelor-name").click(function() {
 
 $(".remove-name-update-btn").click(function() {
   $(this).parentsUntil(".review-updated-section").hide();
+});
+
+/* DECEASED PATIENT STYLES */
+$(document).ready(function() {
+  if (window.location.toString().includes("deceased")) {
+    $(".patient-banner").addClass("patient-banner-deceased");
+    $(".patient-banner-name").append(" (DECEASED)");
+  }
 });
