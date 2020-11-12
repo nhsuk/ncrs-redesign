@@ -1,0 +1,701 @@
+{% extends 'layouts/layout-application.html' %}
+
+
+{% block pageTitle %}
+Chargeability status
+{% endblock %}
+
+{% block beforeContent %}
+
+
+
+<div class="nhsuk-full-width-container">
+  <div class='scra-bordered-tabs-container'>
+    <div class="nhsuk-width-container-fluid">
+      <ul class="scra-bordered-tabs">
+        <li class="scra-bordered-tabs-item">
+          <a class="scra-bordered-tabs-link" href="#">Overview</a>
+        </li>
+        <li class="scra-bordered-tabs-item scra-bordered-tabs-item-active">
+          <a class="scra-bordered-tabs-link" href="./patient-details-no-alert">Patient</a>
+        </li>
+        <li class="scra-bordered-tabs-item">
+          <a class="scra-bordered-tabs-link" href="./clinical-details-no-alert">Clinical</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="free-nhs-banner">
+  <div class="nhsuk-width-container-fluid">
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-full">
+        <ul class="nhsuk-list nhsuk-list--tick">
+          <p style="padding-left:60px;">Green: Access to free NHS services subject to Ordinarily Resident status - check evidence
+            <svg id="bannertick" class="nhsuk-icon nhsuk-icon__tick" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" style="background:white;" aria-hidden="true">
+              <path stroke-width="4" stroke-linecap="round" d="M18.4 7.8l-8.5 8.4L5.6 12"></path>
+            </svg>
+          </p>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <div class="user-banner" style="position:sticky;top:0px; z-index:100; " id="myheader">
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-one-quarter">
+      <ul class="nhsuk-list nhsuk-list--tick">
+        <p style="padding-left:60px;"><strong>User:</strong> John Bann</p>
+      </ul>
+    </div>
+    <div class="nhsuk-grid-column-one-quarter">
+      <ul class="nhsuk-list nhsuk-list--tick">
+        <p><strong>Organisation:</strong> NELPCT out of hours</p>
+      </ul>
+    </div>
+    <div class="nhsuk-grid-column-one-quarter">
+      <ul style="padding-left:60px;" class="nhsuk-list nhsuk-list--tick">
+        <p><strong>Date updated:</strong> 08-Jun-2016</p>
+      </ul>
+    </div>
+    <div class="nhsuk-grid-column-one-quarter">
+      <ul style="padding-left:60px;" class="nhsuk-list nhsuk-list--tick">
+        <a style="color:white;position:relative; top:20px" href="patient-details-ovm">View history</a>
+
+      </ul>
+    </div>
+  </div>
+</div> -->
+
+
+{% endblock %}
+
+{% block content %}
+
+
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-grid-column-one-quarter">
+    <div class="govuk-accordion" data-module="accordion" id="accordion-default" style="z-index:1;">
+
+      <div class="govuk-accordion__section ">
+        <div class="govuk-accordion__section-header scra-accordion__header">
+          <h2 class="govuk-accordion__section-heading scra-accordion__heading">
+            <span class="govuk-accordion__section-button scra-accordion__section-button" id="accordion-default-heading-1">
+              Key demographics
+            </span>
+          </h2>
+        </div>
+        <div id="accordion-default-content-1" class="govuk-accordion__section-content scra-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+          <ul>
+            <li><a class="scra-accordion__link" href="#patient-details-names">Names</a></li>
+            <li><a class="scra-accordion__link" href="#patient-key-details">Key details</a></li>
+            <li><a class="scra-accordion__link" href="#patient-details-address">Address</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="govuk-accordion__section ">
+        <div class="govuk-accordion__section-header scra-accordion__header">
+          <h2 class="govuk-accordion__section-heading scra-accordion__heading">
+            <span class="govuk-accordion__section-button scra-accordion__section-button" id="accordion-default-heading-2">
+              Contacts & next of kin
+            </span>
+          </h2>
+        </div>
+        <div id="accordion-default-content-2" class="govuk-accordion__section-content scra-accordion__section-content" aria-labelledby="accordion-default-heading-2">
+          <ul>
+            <li><a class="scra-accordion__link" href="#">Contacts & next of kin</a></li>
+            <li><a class="scra-accordion__link" href="#">Power of attorney</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="govuk-accordion__section ">
+        <div class="govuk-accordion__section-header scra-accordion__header">
+          <h2 class="govuk-accordion__section-heading scra-accordion__heading">
+            <span class="govuk-accordion__section-button scra-accordion__section-button" id="accordion-default-heading-3">
+              GP & Care providers
+            </span>
+          </h2>
+        </div>
+        <div id="accordion-default-content-3" class="govuk-accordion__section-content scra-accordion__section-content" aria-labelledby="accordion-default-heading-3">
+          <ul>
+            <li><a class="scra-accordion__link" href="#">GP Details</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="govuk-accordion__section govuk-accordion__section--expanded">
+        <div class="govuk-accordion__section-header scra-accordion__header">
+          <h2 class="govuk-accordion__section-heading scra-accordion__heading">
+            <span class="govuk-accordion__section-button scra-accordion__section-button" id="accordion-default-heading-4">
+              Chargeable status
+            </span>
+          </h2>
+        </div>
+        <div id="accordion-default-content-4" class="govuk-accordion__section-content scra-accordion__section-content" aria-labelledby="accordion-default-heading-4">
+          <ul>
+            <li><a class="scra-accordion__link" href="patient-details-ovm">Home office status</a></li>
+            <li><a class="scra-accordion__link" href="patient-details-ovm-status">Overseas visitor manager status</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="govuk-accordion__section ">
+        <div class="govuk-accordion__section-header scra-accordion__header">
+          <h2 class="govuk-accordion__section-heading scra-accordion__heading">
+            <span class="govuk-accordion__section-button scra-accordion__section-button" id="accordion-default-heading-5">
+              Reasonable Adjustments
+            </span>
+          </h2>
+        </div>
+        <div id="accordion-default-content-5" class="govuk-accordion__section-content scra-accordion__section-content" aria-labelledby="accordion-default-heading-5">
+          <ul>
+            <li><a class="scra-accordion__link" href="#ra-section">Add a Reasonable Adjustment</a></li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+
+  <div class="nhsuk-grid-column-three-quarters">
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-full">
+
+        <div class="nhsuk-grid-row">
+          <div class="nhsuk-grid-column-one-half">
+            <h2 id="ovms">Overseas visitor manager status</h2>
+          </div>
+          <div class="nhsuk-grid-column-one-quarter">
+            <p style="position:left" class="chargeable-status-tag">
+              Cat C: Charge exempt (EHIC/PRC/S2)
+            </p>
+          </div>
+          <a href="patient-details-ovm-status-edit-chargeability-status" style="position:relative; left:400px; top:10px;">Edit</a>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-full">
+        <div >
+          <h3 id="bluebanner2">Patient data<span><a style="font-size:15px;padding-left:15px" href="patient-details-ovm-status-edit-patient_data">Edit</a></span></h3>
+
+        </div>
+        <div class="nhsuk-u-padding-bottom-2"></div>
+        <div class="scra-card">
+          <dl class="nhsuk-summary-list">
+
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Date patient seen
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                02-Aug-2020
+              </dd>
+
+
+
+
+
+
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Country of Nationality
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                Jersey
+              </dd>
+
+
+
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key" id="entry">
+                Purpose of entry
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                <i>Work</i>
+              </dd>
+
+
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Other purpose of entry
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                <i>None</i>
+              </dd>
+
+
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Date of entry
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                01-Aug-2020
+              </dd>
+
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Address line 1
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                45 Southway
+              </dd>
+
+
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Address line 2
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                Manor Park
+              </dd>
+
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Address line 3
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+
+              </dd>
+
+
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Address line 4
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+
+              </dd>
+
+
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Home country
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                Antigua and Barbuda
+              </dd>
+
+
+            </div>
+
+          </dl>
+        </div>
+
+        <div class="nhsuk-grid-row">
+          <div class="nhsuk-grid-column-full">
+            <div>
+              <h3 id="bluebanner2">Additional details<span><a style="font-size:15px;padding-left:15px" href="patient-details-ovm-status-edit-additional_details">Edit</a></span></h3>
+            </div>
+            <div class="nhsuk-u-padding-bottom-2"></div>
+          </div>
+        </div>
+
+        <div class="nhsuk-grid-row">
+          <div class="nhsuk-grid-column-full">
+            <div class="scra-card">
+              <div class="nhsuk-grid-column-one-half">
+
+                <h3>Passport</h3>
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Passport Number
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    123456
+                  </dd>
+
+                </div>
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Country of Issue
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    Antigua and Barbuda
+                  </dd>
+
+                </div>
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Passport expiry date
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    02-Aug-2020
+                  </dd>
+
+                </div>
+              </div>
+
+              <h3>Home Office Contact</h3>
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  Home Office Evidence and Enquiry contacted
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  Yes
+                </dd>
+
+              </div>
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  Contacted reference
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  516851635168
+                </dd>
+
+              </div>
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  Date contacted
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  02-Aug-2020
+                </dd>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="nhsuk-grid-row">
+          <div class="nhsuk-grid-column-full">
+            <div>
+              <h3 id="bluebanner2">Entitlement evidence<span><a style="font-size:15px;padding-left:15px" href="patient-details-ovm-status-edit-additional_details">Edit</a></span></h3>
+            </div>
+            <div class="nhsuk-u-padding-bottom-2"></div>
+          </div>
+        </div>
+
+        <div class="nhsuk-grid-row">
+          <div class="nhsuk-grid-column-full">
+            <div class="scra-card">
+              <div class="nhsuk-grid-row">
+                <div class="nhsuk-grid-column-one-half">
+
+                  <h3>EHIC</h3>
+                  <h3>Provisional Replacement Certificate</h3>
+                  <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                      2. PRC Country of issue
+                    </dt>
+                    <dd class="nhsuk-summary-list__value">
+                      Jersey
+                    </dd>
+
+                  </div>
+                  <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                      6. PRC Personal Id No
+                    </dt>
+                    <dd class="nhsuk-summary-list__value">
+                      123456
+                    </dd>
+
+                  </div>
+                  <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                      7. PRC Institution Id
+                    </dt>
+                    <dd class="nhsuk-summary-list__value">
+                      123456
+                    </dd>
+
+                  </div>
+                  <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                      8. PRC EHIC card number
+                    </dt>
+                    <dd class="nhsuk-summary-list__value">
+                      123456
+                    </dd>
+
+                  </div>
+                  <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                      9. PRC EHIC expiry date
+                    </dt>
+                    <dd class="nhsuk-summary-list__value">
+                      02-Aug-2020
+                    </dd>
+
+                  </div>
+                  <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                      a. PRC valid from date
+                    </dt>
+                    <dd class="nhsuk-summary-list__value">
+                      02-Aug-2020
+                    </dd>
+
+                  </div>
+                  <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                      b. PRC valid to date
+                    </dt>
+                    <dd class="nhsuk-summary-list__value">
+                      02-Aug-2020
+                    </dd>
+
+                  </div>
+                </div>
+
+
+              <div class="nhsuk-grid-column-one-half">
+
+                <h3>S1 Registration for Health Care cover</h3>
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    S1 Status
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    No S1 confirmed by patient
+                  </dd>
+                </div>
+
+                <div class="nhsuk-u-padding-bottom-5"> </div>
+
+                <h3>S2 Entitlement to Scheduled Treatment</h3>
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    S2 country of issue
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    Andorra
+                  </dd>
+                </div>
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    S2 valid from
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    02-Aug-2020
+                  </dd>
+                </div>
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    S2 valid to
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    02-Aug-2026
+                  </dd>
+                </div>
+              </div>
+              </div>
+
+
+
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- <div class="nhsuk-grid-row">
+                  <div class="nhsuk-grid-column-full">
+                    <div class="blue-header">
+                      <h3 id="bluebanner2">Entitlement evidence<span><a style="color:white;font-size:15px;padding-left:15px" href="patient-details-ovm-status-edit-entitlement_evidence">Edit</a></span></h3>
+                    </div>
+                    <div class="nhsuk-u-padding-bottom-2"></div>
+                  </div>
+                </div>
+
+                <div class="nhsuk-grid-row">
+                  <div class="nhsuk-grid-column-full">
+                    <div class="scra-card">
+                      <div class="scra-card-content">
+                        <div class="nhsuk-grid-column-one-half">
+
+                          <h3>EHIC</h3>
+                          <div class="nhsuk-summary-list__row">
+                          </div>
+                          <h3>Provisional Replacement Certificate</h3>
+                          <dt class="nhsuk-summary-list__key">
+                            2. PRC Country of issue
+                          </dt>
+                          <dd class="nhsuk-summary-list__value">
+                            Jersey
+                          </dd>
+
+
+                          <div class="nhsuk-summary-list__row">
+                            <dt class="nhsuk-summary-list__key">
+                              6. PRC Personal Id No
+                            </dt>
+                            <dd class="nhsuk-summary-list__value">
+                              123456
+                            </dd>
+
+                          </div>
+                          <div class="nhsuk-summary-list__row">
+                            <dt class="nhsuk-summary-list__key">
+                              7. PRC Institution Id
+                            </dt>
+                            <dd class="nhsuk-summary-list__value">
+                              123456
+                            </dd>
+
+                          </div>
+                          <div class="nhsuk-summary-list__row">
+                            <dt class="nhsuk-summary-list__key">
+                              8. PRC EHIC card number
+                            </dt>
+                            <dd class="nhsuk-summary-list__value">
+                              123456
+                            </dd>
+
+                          </div>
+                          <div class="nhsuk-summary-list__row">
+                            <dt class="nhsuk-summary-list__key">
+                              9. PRC EHIC expiry date
+                            </dt>
+                            <dd class="nhsuk-summary-list__value">
+                              02-Aug-2020
+                            </dd>
+
+                          </div>
+                          <div class="nhsuk-summary-list__row">
+                            <dt class="nhsuk-summary-list__key">
+                              a. PRC valid from date
+                            </dt>
+                            <dd class="nhsuk-summary-list__value">
+                              02-Aug-2020
+                            </dd>
+
+                          </div>
+                          <div class="nhsuk-summary-list__row">
+                            <dt class="nhsuk-summary-list__key">
+                              a. PRC valid to date
+                            </dt>
+                            <dd class="nhsuk-summary-list__value">
+                              02-Aug-2020
+                            </dd>
+
+                          </div>
+                        </div>
+
+
+                        <div class="nhsuk-grid-column-one-half">
+
+                          <h3>S1 Registration for Health Care cover</h3>
+                          <div class="nhsuk-summary-list__row">
+                            <dt class="nhsuk-summary-list__key">
+                              S1 Status
+                            </dt>
+                            <dd class="nhsuk-summary-list__value">
+                              No S1 confirmed by patient
+                            </dd>
+                          </div>
+
+                          <div class="nhsuk-u-padding-bottom-5"> </div>
+
+                          <h3>S2 Entitlement to Scheduled Treatment</h3>
+                          <div class="nhsuk-summary-list__row">
+                            <dt class="nhsuk-summary-list__key">
+                              S2 country of issue
+                            </dt>
+                            <dd class="nhsuk-summary-list__value">
+                              Andorra
+                            </dd>
+                          </div>
+                          <div class="nhsuk-summary-list__row">
+                            <dt class="nhsuk-summary-list__key">
+                              S2 valid from
+                            </dt>
+                            <dd class="nhsuk-summary-list__value">
+                              02-Aug-2020
+                            </dd>
+                          </div>
+                          <div class="nhsuk-summary-list__row">
+                            <dt class="nhsuk-summary-list__key">
+                              S2 valid to
+                            </dt>
+                            <dd class="nhsuk-summary-list__value">
+                              02-Aug-2026
+                            </dd>
+                          </div>
+
+
+                          <div class="nhsuk-u-padding-bottom-5">
+
+                          </div> -->
+
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
+
+{%block pageScripts%}
+
+<html>
+
+
+<head>
+  <script>
+    var observer = new IntersectionObserver(function(entries) {
+      // no intersection with screen
+      if (entries[0].intersectionRatio === 0)
+        document.querySelector("myheader").classList.add("nav-container-sticky");
+      // fully intersects with screen
+      else if (entries[0].intersectionRatio === 1)
+        document.querySelector("myheader").classList.remove("nav-container-sticky");
+    }, {
+      threshold: [0, 1]
+    });
+
+    observer.observe(document.querySelector("#nav-container-top"));
+
+
+
+    document.getElementById("gethistoric").onclick = function() {
+      if (document.getElementById("hidethis").style.display == 'none') {
+        document.getElementById("hidethis").style.display =
+          'block'; // set to table-row instead of an empty string
+      } else {
+        document.getElementById("hidethis").style.display = 'none';
+      }
+    }
+  </script>
+
+
+</head>
+
+<<head>
+
+  </head>
+
+
+
+
+  {% endblock %}

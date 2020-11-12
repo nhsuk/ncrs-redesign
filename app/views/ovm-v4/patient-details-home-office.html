@@ -1,0 +1,483 @@
+{% extends 'layouts/layout-application.html' %}
+
+{% block pageTitle %}
+Dashboard
+{% endblock %}
+
+{% block beforeContent %}
+
+<div class="nhsuk-full-width-container">
+  <div class='scra-bordered-tabs-container'>
+    <div class="nhsuk-width-container-fluid">
+      <ul class="scra-bordered-tabs">
+        <li class="scra-bordered-tabs-item">
+          <a class="scra-bordered-tabs-link" href="patient-overview-ovm">Overview</a>
+        </li>
+        <li class="scra-bordered-tabs-item scra-bordered-tabs-item-active">
+          <a class="scra-bordered-tabs-link" href="patient-details-ovm">Patient</a>
+        </li>
+        <li class="scra-bordered-tabs-item">
+          <a class="scra-bordered-tabs-link" href="./clinical-details-no-alert">Clinical</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="free-nhs-banner">
+  <div class="nhsuk-width-container-fluid">
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-full">
+        <ul class="nhsuk-list nhsuk-list--tick">
+          <p style="padding-left:60px;">Green: Access to free NHS services subject to Ordinarily Resident status - check evidence
+            <svg id="bannertick" class="nhsuk-icon nhsuk-icon__tick" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" style="background:white;" aria-hidden="true">
+              <path stroke-width="4" stroke-linecap="round" d="M18.4 7.8l-8.5 8.4L5.6 12"></path>
+            </svg>
+          </p>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-width-container">
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <div class="nhsuk-back-link">
+        <a class="nhsuk-back-link__link" href="patient-demographics#chargeable-status">
+          <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+          </svg>
+          Return to Patient tab</a>
+      </div>
+
+      <h1>Home office status</h1>
+
+      <h2>Current status</h2>
+      <div class="nhsuk-u-reading-width">
+        <p>This information is the current relevant status for the patient, though there may be other historic statuses held by the Home Office.</p>
+      </div>
+      <div class="scra-card" id="acute" style="padding-bottom:5px;">
+        <div class="nhsuk-table-responsive">
+          <table class="nhsuk-table" id="home-office-status-table">
+            <caption class="nhsuk-table__caption">Allergies, sensitivites and supporting information</caption>
+            <thead class="nhsuk-table__head">
+              <tr class="nhsuk-table__row">
+                <th class="nhsuk-table__header ho-start-date" scope="col">Start date</th>
+                <th class="nhsuk-table__header ho-end-date" scope="col">End date</th>
+                <th class="nhsuk-table__header" scope="col">Home Office reference</th>
+                <th class="nhsuk-table__header" scope="col">BRP number</th>
+                <th class="nhsuk-table__header" scope="col">Visa type</th>
+                <th class="nhsuk-table__header" scope="col">Immigration status</th>
+                <th class="nhsuk-table__header" scope="col">Healthcare status</th>
+
+              </tr>
+            </thead>
+            <tbody class="nhsuk-table__body">
+              <tr class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">01-Jun-2020</td>
+                <td class="nhsuk-table__cell ">No expiry</td>
+                <td class="nhsuk-table__cell ">AM-ypGP-085c-cd7d-9e66-2</td>
+                <td class="nhsuk-table__cell ">Not provided</td>
+                <td class="nhsuk-table__cell ">EU settlement scheme</td>
+                <td class="nhsuk-table__cell ">Indefinite leave to remain</td>
+                <td class="nhsuk-table__cell ">Access to free NHS services</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <h2>Historical status</h2>
+      <div class="scra-card">
+        <div class="scra-card-header">
+        </div>
+        <div class="scra-card-content" id="searchhistoric">
+          <div id="historical-status-search-container">
+
+            <div class="nhsuk-action-link">
+              <a class="nhsuk-action-link__link">
+                <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M0 0h24v24H0z" fill="none"></path>
+                  <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
+                </svg>
+                <span id="gethistoric" onClick="toggle();"><span class="nhsuk-action-link__text"><span>Get historical status</span>
+              </a>
+
+            </div>
+            <div class="nhsuk-form-group" id="hidethis" style="display:none;">
+              <div class="nhsuk-u-reading-width">
+                <div class="nhsuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" style="display:none;" id="error-summary">
+                  <h2 class="nhsuk-error-summary__title" id="error-summary-title">
+                    There is a problem
+                  </h2>
+                  <div class="nhsuk-error-summary__body">
+                    <ul class="nhsuk-list nhsuk-error-summary__list">
+                      <li>
+                        <a href="#dob-start-error">All date fields must be filled in </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="nhsuk-grid-row">
+                <div class="nhsuk-grid-column-one-half">
+                  <fieldset id="gr" class="nhsuk-fieldset" aria-describedby="dob-day-error-hint dob-day-error-error" role="group">
+
+                    <div id="start-dob">
+
+                      <legend class="nhsuk-fieldset__legend nhsuk-label__strong">
+                        Start Date
+                      </legend>
+                      <span class="nhsuk-hint" id="example-hint">
+                        For example, 15 3 2016
+                      </span>
+                      <span class="nhsuk-error-message" id="dob-start-error" style="display:none;">
+                        <span class="nhsuk-u-visually-hidden">Error:</span> Start date must be complete
+                      </span>
+                      <div class="nhsuk-date-input">
+
+                        <div class="nhsuk-date-input__item">
+                          <div class="nhsuk-form-group">
+                            <label class="nhsuk-label nhsuk-date-input__label" for="startday">
+                              Day
+                            </label>
+                            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2 " id="startday" name="example-day" type="number" pattern="[0-9]*">
+                          </div>
+                        </div>
+                        <div class="nhsuk-date-input__item">
+                          <div class="nhsuk-form-group">
+                            <label class="nhsuk-label nhsuk-date-input__label" for="startmonth">
+                              Month
+                            </label>
+                            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="startmonth" name="example-month" type="number" pattern="[0-9]*">
+                          </div>
+                        </div>
+                        <div class="nhsuk-date-input__item">
+                          <div class="nhsuk-form-group">
+                            <label class="nhsuk-label nhsuk-date-input__label" for="startyear">
+                              Year
+                            </label>
+                            <input <span class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="startyear" name="example-year" type="number" pattern="[0-9]*">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </fieldset>
+                </div>
+
+                <div class="nhsuk-grid-column-one-half">
+                  <fieldset id="gr" class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
+                    <legend class="nhsuk-fieldset__legend nhsuk-label__strong">
+                      End Date
+                    </legend>
+                    <span class="nhsuk-hint" id="example-hint">
+                      For example, 15 3 2017
+                    </span>
+                    <span class="nhsuk-error-message" id="dob-end-error" style="display:none;">
+                      <span class="nhsuk-u-visually-hidden">Error:</span> End date must be complete
+                    </span>
+                    <div class="nhsuk-date-input" id="end-dob">
+                      <div class="nhsuk-date-input__item">
+                        <div class="nhsuk-form-group">
+                          <label class="nhsuk-label nhsuk-date-input__label" for="endday">
+                            Day
+                          </label>
+                          <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="endday" name="example-day" type="number" pattern="[0-9]*">
+                        </div>
+                      </div>
+                      <div class="nhsuk-date-input__item">
+                        <div class="nhsuk-form-group">
+                          <label class="nhsuk-label nhsuk-date-input__label" for="endmonth">
+                            Month
+                          </label>
+                          <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="endmonth" name="example-month" type="number" pattern="[0-9]*">
+                        </div>
+                      </div>
+                      <div class="nhsuk-date-input__item">
+                        <div class="nhsuk-form-group">
+                          <label class="nhsuk-label nhsuk-date-input__label" for="endyear">
+                            Year
+                          </label>
+                          <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="endyear" name="example-year" type="number" pattern="[0-9]*">
+                        </div>
+                      </div>
+                    </div>
+                  </fieldset>
+                </div>
+              </div>
+              <div class="nhsuk-grid-row">
+                <div class="nhsuk-grid-column-full">
+                  <button class="nhsuk-button" id="search-ho-history" type="submit" href="#result">
+                    Search
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="ho-historical-table" style="display:none;">
+            <div class="nhsuk-u-reading-width">
+              <h3>Search Results</h3>
+              <p class="nhsuk-u-font-weight-bold">
+                Showing results for historical status occuring on and between 15-Jan-2015 to 01-June-2020:
+              </p>
+            </div>
+
+            <table class="nhsuk-table">
+              <caption class="nhsuk-table__caption">Historical Home Office status</caption>
+              <thead class="nhsuk-table__head">
+                <tr class="nhsuk-table__row">
+                  <th class="nhsuk-table__header ho-start-date" scope="col">Start date</th>
+                  <th class="nhsuk-table__header ho-end-date" scope="col">End date</th>
+                  <th class="nhsuk-table__header" scope="col">Home Office reference</th>
+                  <th class="nhsuk-table__header" scope="col">BRP number</th>
+                  <th class="nhsuk-table__header" scope="col">Visa type</th>
+                  <th class="nhsuk-table__header" scope="col">Immigration status</th>
+                  <th class="nhsuk-table__header" scope="col">Healthcare status</th>
+
+                </tr>
+              </thead>
+              <tbody class="nhsuk-table__body">
+
+                <tr class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell">19-Jan-2019</td>
+                  <td class="nhsuk-table__cell ">None</td>
+                  <td class="nhsuk-table__cell ">AM-ypGP-085c-cd7d-9e66-2</td>
+                  <td class="nhsuk-table__cell ">Not provided</td>
+                  <td class="nhsuk-table__cell ">EU settlement scheme</td>
+                  <td class="nhsuk-table__cell ">Leave to remain</td>
+                  <td class="nhsuk-table__cell ">Access to free NHS services</td>
+
+                </tr>
+
+                <tr class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell">15-Jan-2015</td>
+                  <td class="nhsuk-table__cell ">18-Jan-2019</td>
+                  <td class="nhsuk-table__cell "></td>
+                  <td class="nhsuk-table__cell " colspan="2">No results found between these dates</td>
+                  <td class="nhsuk-table__cell "></td>
+                  <td class="nhsuk-table__cell "></td>
+                  <td class="nhsuk-table__cell "></td>
+
+                </tr>
+
+
+
+              </tbody>
+            </table>
+
+            <div class="nhsuk-action-link" id="ho-history-search-new-link">
+              <a class="nhsuk-action-link__link">
+                <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M0 0h24v24H0z" fill="none"></path>
+                  <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
+                </svg>
+                <span id="gethistoric" onClick="toggle();"><span class="nhsuk-action-link__text"><span>Search new date range</span>
+              </a>
+            </div>
+
+            <div class="nhsuk-form-group" id="ho-historical-search-new" style="display:none;">
+              <div class="nhsuk-u-reading-width">
+                <div class="nhsuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" style="display:none;" id="error-summary">
+                  <h2 class="nhsuk-error-summary__title" id="error-summary-title">
+                    There is a problem
+                  </h2>
+                  <div class="nhsuk-error-summary__body">
+                    <ul class="nhsuk-list nhsuk-error-summary__list">
+                      <li>
+                        <a href="#dob-start-error">All date fields must be filled in </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="nhsuk-grid-row">
+                <div class="nhsuk-grid-column-one-half">
+                  <fieldset id="gr" class="nhsuk-fieldset" aria-describedby="dob-day-error-hint dob-day-error-error" role="group">
+
+                    <div id="start-dob">
+
+                      <legend class="nhsuk-fieldset__legend nhsuk-label__strong">
+                        Start Date
+                      </legend>
+                      <span class="nhsuk-hint" id="example-hint">
+                        For example, 15 3 2016
+                      </span>
+                      <span class="nhsuk-error-message" id="dob-start-error" style="display:none;">
+                        <span class="nhsuk-u-visually-hidden">Error:</span> Start date must be complete
+                      </span>
+                      <div class="nhsuk-date-input">
+
+                        <div class="nhsuk-date-input__item">
+                          <div class="nhsuk-form-group">
+                            <label class="nhsuk-label nhsuk-date-input__label" for="startday">
+                              Day
+                            </label>
+                            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2 " id="startday" name="example-day" type="number" pattern="[0-9]*">
+                          </div>
+                        </div>
+                        <div class="nhsuk-date-input__item">
+                          <div class="nhsuk-form-group">
+                            <label class="nhsuk-label nhsuk-date-input__label" for="startmonth">
+                              Month
+                            </label>
+                            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="startmonth" name="example-month" type="number" pattern="[0-9]*">
+                          </div>
+                        </div>
+                        <div class="nhsuk-date-input__item">
+                          <div class="nhsuk-form-group">
+                            <label class="nhsuk-label nhsuk-date-input__label" for="startyear">
+                              Year
+                            </label>
+                            <input <span class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="startyear" name="example-year" type="number" pattern="[0-9]*">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </fieldset>
+                </div>
+
+                <div class="nhsuk-grid-column-one-half">
+                  <fieldset id="gr" class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
+                    <legend class="nhsuk-fieldset__legend nhsuk-label__strong">
+                      End Date
+                    </legend>
+                    <span class="nhsuk-hint" id="example-hint">
+                      For example, 15 3 2017
+                    </span>
+                    <span class="nhsuk-error-message" id="dob-end-error" style="display:none;">
+                      <span class="nhsuk-u-visually-hidden">Error:</span> End date must be complete
+                    </span>
+                    <div class="nhsuk-date-input" id="end-dob">
+                      <div class="nhsuk-date-input__item">
+                        <div class="nhsuk-form-group">
+                          <label class="nhsuk-label nhsuk-date-input__label" for="endday">
+                            Day
+                          </label>
+                          <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="endday" name="example-day" type="number" pattern="[0-9]*">
+                        </div>
+                      </div>
+                      <div class="nhsuk-date-input__item">
+                        <div class="nhsuk-form-group">
+                          <label class="nhsuk-label nhsuk-date-input__label" for="endmonth">
+                            Month
+                          </label>
+                          <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="endmonth" name="example-month" type="number" pattern="[0-9]*">
+                        </div>
+                      </div>
+                      <div class="nhsuk-date-input__item">
+                        <div class="nhsuk-form-group">
+                          <label class="nhsuk-label nhsuk-date-input__label" for="endyear">
+                            Year
+                          </label>
+                          <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="endyear" name="example-year" type="number" pattern="[0-9]*">
+                        </div>
+                      </div>
+                    </div>
+                  </fieldset>
+                </div>
+              </div>
+              <div class="nhsuk-grid-row">
+                <div class="nhsuk-grid-column-full">
+                  <button class="nhsuk-button" id="search-ho-history" type="submit" href="#result">
+                    Search
+                  </button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+
+{% endblock %}
+
+{%block pageScripts%}
+
+<html>
+
+
+<head>
+  <script>
+    document.getElementById("gethistoric").onclick = function() {
+      if (document.getElementById("hidethis").style.display == 'none') {
+        document.getElementById("hidethis").style.display =
+          'block'; // set to table-row instead of an empty string
+      } else {
+        document.getElementById("hidethis").style.display = 'none';
+      }
+    }
+  </script>
+</head>
+
+
+<html>
+
+</html>
+
+<head>
+  <script>
+    $("#search-ho-history").click(function(e) {
+
+      if (!$('#startday').val() || !$('#startmonth').val() || !$('#startyear').val()) {
+        $('#start-dob').addClass('nhsuk-form-group--error');
+        $('#dob-start-error').show();
+        $('#error-summary').show();
+        e.preventDefault();
+        if (!$('#startday').val()) {
+          $('#startday').addClass('nhsuk-input--error');
+        }
+        if (!$('#startmonth').val()) {
+          $('#startmonth').addClass('nhsuk-input--error');
+        }
+        if (!$('#startyear').val()) {
+          $('#startyear').addClass('nhsuk-input--error');
+        }
+      }
+
+      if (!$('#endday').val() || !$('#endmonth').val() || !$('#endyear').val()) {
+        $('#end-dob').addClass('nhsuk-form-group--error');
+        $('#dob-end-error').show();
+        $('#error-summary').show();
+        e.preventDefault();
+        if (!$('#endday').val()) {
+          $('#endday').addClass('nhsuk-input--error');
+        }
+        if (!$('#endmonth').val()) {
+          $('#endmonth').addClass('nhsuk-input--error');
+        }
+        if (!$('#endyear').val()) {
+          $('#endyear').addClass('nhsuk-input--error');
+        }
+      } else {
+        $("#ho-historical-table").show();
+        $("#historical-status-search-container").hide();
+      }
+
+
+    });
+
+    $("#ho-history-search-new-link").click(function(e) {
+      $("#ho-historical-search-new").show();
+    })
+  </script>
+</head>
+
+<body>
+  {% endblock %}

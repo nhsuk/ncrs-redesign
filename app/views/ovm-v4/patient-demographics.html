@@ -1,0 +1,371 @@
+{% extends 'layouts/layout-application.html' %}
+
+{% block pageTitle %}
+Patient details
+{% endblock %}
+
+{% block beforeContent %}
+
+<div class="nhsuk-full-width-container">
+  <div class='scra-bordered-tabs-container'>
+    <div class="nhsuk-width-container-fluid">
+      <ul class="scra-bordered-tabs">
+        <li class="scra-bordered-tabs-item">
+          <a class="scra-bordered-tabs-link" href="patient-overview-ovm">Overview</a>
+        </li>
+        <li class="scra-bordered-tabs-item scra-bordered-tabs-item-active">
+          <a class="scra-bordered-tabs-link" href="#">Patient</a>
+        </li>
+        <li class="scra-bordered-tabs-item">
+          <a class="scra-bordered-tabs-link" href="patient-clinical">Clinical</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+
+{% block content %}
+
+{% include "includes/mobile-nav.html" %}
+
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-grid-column-one-quarter">
+    <div class="govuk-accordion accordion-desktop" data-module="accordion" id="refactor-nav">
+      <div class="accordion-inner">
+        <div class="govuk-accordion__section govuk-accordion__section--expanded">
+          <div class="govuk-accordion__section-header scra-accordion__header">
+            <h2 class="govuk-accordion__section-heading scra-accordion__heading">
+              <span class="govuk-accordion__section-button scra-accordion__section-button" id="accordion-default-heading-1">
+                Key demographics
+              </span>
+            </h2>
+          </div>
+          <div id="accordion-default-content-1" class="govuk-accordion__section-content scra-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+            <ul>
+              <li><a class="scra-accordion__link" href="#patient-details-names">Names</a></li>
+              <li><a class="scra-accordion__link" href="#patient-key-details">Key details</a></li>
+              <li><a class="scra-accordion__link" href="#patient-details-address">Address</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="govuk-accordion__section ">
+          <div class="govuk-accordion__section-header scra-accordion__header">
+            <h2 class="govuk-accordion__section-heading scra-accordion__heading">
+              <span class="govuk-accordion__section-button scra-accordion__section-button" id="accordion-default-heading-2">
+                Contacts & next of kin
+              </span>
+            </h2>
+          </div>
+          <div id="accordion-default-content-2" class="govuk-accordion__section-content scra-accordion__section-content" aria-labelledby="accordion-default-heading-2">
+            <ul>
+              <li><a class="scra-accordion__link" href="#">Contacts</a></li>
+              <li><a class="scra-accordion__link" href="#">Next of kin</a></li>
+              <li><a class="scra-accordion__link" href="#">Power of attorney</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="govuk-accordion__section ">
+          <div class="govuk-accordion__section-header scra-accordion__header">
+            <h2 class="govuk-accordion__section-heading scra-accordion__heading">
+              <span class="govuk-accordion__section-button scra-accordion__section-button" id="accordion-default-heading-3">
+                GP & Care providers
+              </span>
+            </h2>
+          </div>
+          <div id="accordion-default-content-3" class="govuk-accordion__section-content scra-accordion__section-content" aria-labelledby="accordion-default-heading-3">
+            <ul>
+              <li><a class="scra-accordion__link" href="#">GP Details</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="govuk-accordion__section ">
+          <div class="govuk-accordion__section-header scra-accordion__header">
+            <h2 class="govuk-accordion__section-heading scra-accordion__heading">
+              <span class="govuk-accordion__section-button scra-accordion__section-button" id="accordion-default-heading-4">
+                Chargeable status
+              </span>
+            </h2>
+          </div>
+          <div id="accordion-default-content-4" class="govuk-accordion__section-content scra-accordion__section-content" aria-labelledby="accordion-default-heading-4">
+            <ul>
+              <li><a class="scra-accordion__link" href="#chargeable-status">Chargeable status</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="govuk-accordion__section ">
+          <div class="govuk-accordion__section-header scra-accordion__header">
+            <h2 class="govuk-accordion__section-heading scra-accordion__heading">
+              <span class="govuk-accordion__section-button scra-accordion__section-button" id="accordion-default-heading-5">
+                Reasonable Adjustments
+              </span>
+            </h2>
+          </div>
+          <div id="accordion-default-content-5" class="govuk-accordion__section-content scra-accordion__section-content" aria-labelledby="accordion-default-heading-5">
+            <ul>
+              <li><a class="scra-accordion__link" href="#ra-section">Add a Reasonable Adjustment</a></li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="nhsuk-grid-column-three-quarters">
+    <div class="section">
+      <h2 class="nhsuk-heading-l">Key demographics</h2>
+      <div class="scra-card">
+        <div class="scra-card-header">
+          <h3 class="nhsuk-heading-m" id="patient-details-names">Names</h3>
+        </div>
+        <div class="scra-card-content">
+          <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-one-quarter">
+              <div class="card-content-section">
+                <span class="card-content-label">Usual Name:</span>
+                <span class="card-content-name">William Shakespeare</span>
+              </div>
+            </div>
+          </div>
+          <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-one-quarter nhsuk-u-one-quarter-tablet">
+              <div class="card-content-section">
+                <span class="card-content-label">Preferred Name:</span>
+                <span class="card-content-detail">None recorded</span>
+              </div>
+            </div>
+            <div class="nhsuk-grid-column-one-quarter nhsuk-u-one-quarter-tablet">
+              <div class="card-content-section">
+                <span class="card-content-label">Other names:</span>
+                <span class="card-content-detail">None recorded</span>
+              </div>
+            </div>
+            <div class="nhsuk-grid-column-one-quarter nhsuk-u-one-quarter-tablet">
+              <div class="card-content-section">
+                <span class="card-content-label">Previous names:</span>
+                <span class="card-content-detail">None recorded</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="scra-card">
+        <div class="scra-card-header">
+          <h3 class="nhsuk-heading-m" id="patient-key-details">Key details</h3>
+        </div>
+        <div class="scra-card-content">
+          <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-one-quarter nhsuk-u-one-quarter-tablet">
+              <div class="card-content-section">
+                <span class="card-content-label">Gender:</span>
+                <span class="card-content-detail card-content-detail-gender">Male</span>
+              </div>
+            </div>
+            <div class="nhsuk-grid-column-one-quarter nhsuk-u-one-quarter-tablet">
+              <div class="card-content-section">
+                <span class="card-content-label">NHS Number:</span>
+                <span class="card-content-detail card-content-detail-nhs-no">123 456 7890</span>
+              </div>
+            </div>
+            <div class="nhsuk-grid-column-one-quarter nhsuk-u-one-quarter-tablet">
+              <div class="card-content-section">
+                <span class="card-content-label">Date of birth:</span>
+                <span class="card-content-detail card-content-detail-dob">01-Dec-1970</span>
+              </div>
+            </div>
+            <div class="nhsuk-grid-column-one-quarter nhsuk-u-one-quarter-tablet">
+              <div class="card-content-section">
+                <span class="card-content-label">Place of birth:</span>
+                <span class="card-content-detail card-content-detail-pob">Stratford-upon-Avon</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="scra-card">
+        <div class="scra-card-header">
+          <h3 class="nhsuk-heading-m" id="patient-details-address">Address</h3>
+        </div>
+        <div class="scra-card-content">
+          <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-one-half nhsuk-u-one-half-tablet">
+              <div class="card-content-section">
+                <span class="card-content-label">Address:</span>
+                <span class="card-content-detail card-content-detail-address">1 Town Street</span>
+              </div>
+            </div>
+            <div class="nhsuk-grid-column-one-half nhsuk-u-one-half-tablet">
+              <div class="card-content-section">
+                <span class="card-content-label">Temporary address:</span>
+                <span class="card-content-detail">None recorded</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="nhsuk-heading-l">Contacts & next of kin</h2>
+      <div class="scra-card">
+        <div class="scra-card-header">
+          <h3 class="nhsuk-heading-m" id="patient-details-contacts">Contacts</h3>
+        </div>
+        <div class="scra-card-content">
+          <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-one-quarter nhsuk-u-one-quarter-tablet">
+              <div class="card-content-section">
+                <span class="card-content-label">Name:</span>
+                <span class="card-content-detail">Anne Hathaway</span>
+              </div>
+            </div>
+            <div class="nhsuk-grid-column-one-quarter nhsuk-u-one-quarter-tablet">
+              <div class="card-content-section">
+                <span class="card-content-label">Relationship:</span>
+                <span class="card-content-detail">Wife</span>
+              </div>
+            </div>
+            <div class="nhsuk-grid-column-one-quarter nhsuk-u-one-quarter-tablet">
+              <div class="card-content-section">
+                <span class="card-content-label">Address:</span>
+                <span class="card-content-detail card-content-detail-address">1 Town Street</span>
+              </div>
+            </div>
+            <div class="nhsuk-grid-column-one-quarter nhsuk-u-one-quarter-tablet">
+              <div class="card-content-section">
+                <span class="card-content-label">Telephone:</span>
+                <span class="card-content-detail card-content-detail">01234 567 890</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="scra-card">
+        <div class="scra-card-header">
+          <h3 class="nhsuk-heading-m" id="patient-details-contacts">Next of kin</h3>
+        </div>
+        <div class="scra-card-content">
+          <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-one-quarter nhsuk-u-one-quarter-tablet">
+              <div class="card-content-section">
+                <span class="card-content-label">Name:</span>
+                <span class="card-content-detail">Anne Hathaway</span>
+              </div>
+            </div>
+            <div class="nhsuk-grid-column-one-quarter nhsuk-u-one-quarter-tablet">
+              <div class="card-content-section">
+                <span class="card-content-label">Relationship:</span>
+                <span class="card-content-detail">Wife</span>
+              </div>
+            </div>
+            <div class="nhsuk-grid-column-one-quarter nhsuk-u-one-quarter-tablet">
+              <div class="card-content-section">
+                <span class="card-content-label">Address:</span>
+                <span class="card-content-detail card-content-detail-address">1 Town Street</span>
+              </div>
+            </div>
+            <div class="nhsuk-grid-column-one-quarter nhsuk-u-one-quarter-tablet">
+              <div class="card-content-section">
+                <span class="card-content-label">Telephone:</span>
+                <span class="card-content-detail card-content-detail">01234 567 890</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" id="chargeable-status">
+      <h2 class="nhsuk-heading-l">Chargeable status</h2>
+      <div class="scra-card">
+        <div class="scra-card-header">
+        </div>
+        <div class="scra-card-content">
+          <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-full">
+              <div class="nhsuk-u-reading-width">
+                <h3 class="nhsuk-heading-m">Home Office status</h3>
+                <p class="nhsuk-body">
+                  View the current relevant status held by the Home Office for the patient.
+                </p>
+                <div class="nhsuk-action-link">
+                  <a class="nhsuk-action-link__link" href="patient-details-home-office">
+                    <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M0 0h24v24H0z" fill="none"></path>
+                      <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
+                    </svg>
+                    <span class="nhsuk-action-link__text">View Home Office status</span>
+                  </a>
+                </div>
+                <h3 class="nhsuk-heading-m">Overseas visitor management status</h3>
+                <p class="nhsuk-body">
+                  View the overseas visitor management status for the patient.
+                </p>
+                <div class="nhsuk-action-link">
+                  <a class="nhsuk-action-link__link" href="patient-details-ovm">
+                    <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M0 0h24v24H0z" fill="none"></path>
+                      <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
+                    </svg>
+                    <span class="nhsuk-action-link__text">View Overseas visitor management status</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="nhsuk-heading-l" id="ra-section">Reasonable Adjustments</h2>
+      <div class="scra-card">
+        <div class="scra-card-header">
+          <h3 class="nhsuk-heading-m">This patient does not show a requirement for Reasonable Adjustments</h3>
+        </div>
+        <div class="scra-card-content">
+          <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-full">
+              <div class="nhsuk-u-reading-width">
+                <form action="ra-start-page">
+                  <p>The NHS has a legal duty to make it easy for disabled and non-disabled individuals to use health and care services, as stated by the <a href="https://www.gov.uk/guidance/equality-act-2010-guidance" target="_blank">Equality
+                      Act (2010) (opens in a new tab)</a>.</p>
+                  <p>
+                    A Reasonable Adjustments record ensures patients with physical and mental impairments have equal access to healthcare services.
+                  </p>
+                  <details class="nhsuk-details">
+                    <summary class="nhsuk-details__summary">
+                      <span class="nhsuk-details__summary-text">
+                        Read more about Reasonable Adjustments
+                      </span>
+                    </summary>
+                    <div class="nhsuk-details__text">
+                      <p>A Reasonable Adjustments record can show potential adjustments for a patient. These may include (but aren't limited to):</p>
+                      <ul>
+                        <li>communication needs (supported by the <a href="https://www.england.nhs.uk/ourwork/accessibleinfo/" target="_blank">Accessibility Standard (opens in a new tab)</a>)</li>
+                        <li>adjustments to the environment</li>
+                        <li>impairments, to help undersyand the necessary adjustments</li>
+                      </ul>
+                    </div>
+                  </details>
+                  <p>
+                    If you believe this patient requires a Reasonable Adjustments record, you can create one.
+                  </p>
+                  <button class="nhsuk-button" type="submit">
+                    Create a Reasonable Adjustments record
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+{% endblock %}

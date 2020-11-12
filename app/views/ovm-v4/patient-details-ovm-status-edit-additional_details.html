@@ -1,0 +1,221 @@
+{% extends 'layouts/layout-application.html' %}
+
+{% block pageTitle %}
+Patient details
+{% endblock %}
+
+{% block beforeContent %}
+
+<div class="nhsuk-full-width-container">
+  <div class='scra-bordered-tabs-container'>
+    <div class="nhsuk-width-container-fluid">
+      <ul class="scra-bordered-tabs">
+        <li class="scra-bordered-tabs-item">
+          <a class="scra-bordered-tabs-link" href="patient-overview">Overview</a>
+        </li>
+        <li class="scra-bordered-tabs-item scra-bordered-tabs-item-active">
+          <a class="scra-bordered-tabs-link" href="#">Patient</a>
+        </li>
+        <li class="scra-bordered-tabs-item">
+          <a class="scra-bordered-tabs-link" href="patient-clinical">Clinical</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-width-container">
+
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-three-quarters">
+      <h1 class="nhsuk-heading-l">Edit additional details</h1>
+
+      <div class="scra-card pds-edit-card">
+        <div class="scra-card-header pds-edit-card-header">
+          <h2 class="nhsuk-heading-m" id="patient-details-usual-name">Passport</h2>
+        </div>
+        <div class="scra-card-content">
+          <p class="nhsuk-body-s pds-edit-support-text">
+
+          </p>
+
+          <div class="nhsuk-form-group pds-edit-form-group">
+
+
+            <label class="nhsuk-label" for="pds-edit-first-name">
+              Passport number
+            </label>
+            <input class="nhsuk-input nhsuk-input--width-20" id="pds-edit-first-name" name="pdf-edit-first-name" type="text" value="123456">
+
+            <label class="nhsuk-label" for="pds-edit-middle-name">
+              Country of issue
+            </label>
+            <input class="nhsuk-input nhsuk-input--width-20" id="pds-edit-middle-name" name="pdf-edit-middle-name" type="text" value="Antigua and Barbuda">
+
+            <label class="nhsuk-label" for="pds-edit-middle-name">
+              Passport expiry date
+            </label>
+
+
+            <div class="nhsuk-date-input" id="effective-date-name">
+              <div class="nhsuk-date-input__item">
+                <div class="nhsuk-form-group">
+                  <label class="nhsuk-label nhsuk-date-input__label" for="effective-date-name-day">
+                    Day
+                  </label>
+                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="effective-date-name-day" name="effective-date-name-day" type="number" pattern="[0-9]*" value="02">
+                </div>
+              </div>
+              <div class="nhsuk-date-input__item">
+                <div class="nhsuk-form-group">
+                  <label class="nhsuk-label nhsuk-date-input__label" for="effective-date-name-month">
+                    Month
+                  </label>
+                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="effective-date-name-month" name="effective-date-name-month" type="number" pattern="[0-9]*" value="08">
+                </div>
+              </div>
+              <div class="nhsuk-date-input__item">
+                <div class="nhsuk-form-group">
+                  <label class="nhsuk-label nhsuk-date-input__label" for="effective-date-name-year">
+                    Year
+                  </label>
+                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="effective-date-name-year" name="effective-date-name-year" type="number" pattern="[0-9]*" value="2020">
+                </div>
+              </div>
+            </div>
+            </fieldset>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="scra-card pds-edit-card">
+        <div class="scra-card-header pds-edit-card-header">
+          <h2 class="nhsuk-heading-m" id="patient-details-preferred-name">Home Office contact</h2>
+        </div>
+        <div class="scra-card-content">
+          <div class="nhsuk-u-reading-width">
+            <p class="nhsuk-body-s pds-edit-support-text">
+
+            </p>
+          </div>
+
+          <div class="nhsuk-form-group pds-edit-form-group">
+            <label class="nhsuk-label" for="select-prefix">
+              Home Office Evidence and Enquiry contacted
+            </label>
+            <div class="nhsuk-u-padding-bottom-3"></div>
+            <div class="nhsuk-form-group">
+
+              <fieldset class="nhsuk-fieldset">
+
+
+                <div class="nhsuk-radios nhsuk-radios--inline">
+
+                  <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="yes" name="example-inline" type="radio" value="yes">
+                    <label class="nhsuk-label nhsuk-radios__label" for="example-inline-1">
+                      Yes
+                    </label>
+                  </div>
+
+                  <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="no" name="example-inline" type="radio" value="no">
+                    <label class="nhsuk-label nhsuk-radios__label" for="example-inline-2">
+                      No
+                    </label>
+                  </div>
+
+                </div>
+              </fieldset>
+
+
+
+            </div>
+
+            <div class="reveal-details" id="reveal-details" style="display:none;">
+
+              <label class="nhsuk-label" for="pds-edit-first-name">
+                Contacted reference
+              </label>
+              <input class="nhsuk-input nhsuk-input--width-20" id="pds-edit-middle-name" name="pdf-edit-middle-name" type="text" value="">
+
+              <label class="nhsuk-label" for="pds-edit-middle-name">
+                Date contacted
+              </label>
+
+
+             <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
+              <div class="nhsuk-date-input" id="effective-date-name">
+                <div class="nhsuk-date-input__item">
+                  <div class="nhsuk-form-group">
+                    <label class="nhsuk-label nhsuk-date-input__label" for="effective-date-name-day">
+                      Day
+                    </label>
+                    <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="effective-date-name-day" name="effective-date-name-day" type="number" pattern="[0-9]*" value="">
+                  </div>
+                </div>
+                <div class="nhsuk-date-input__item">
+                  <div class="nhsuk-form-group">
+                    <label class="nhsuk-label nhsuk-date-input__label" for="effective-date-name-month">
+                      Month
+                    </label>
+                    <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="effective-date-name-month" name="effective-date-name-month" type="number" pattern="[0-9]*" value="">
+                  </div>
+                </div>
+                <div class="nhsuk-date-input__item">
+                  <div class="nhsuk-form-group">
+                    <label class="nhsuk-label nhsuk-date-input__label" for="effective-date-name-year">
+                      Year
+                    </label>
+                    <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="effective-date-name-year" name="effective-date-name-year" type="number" pattern="[0-9]*" value="">
+                  </div>
+                </div>
+              </div>
+              </fieldset>
+            </div>
+
+
+          </div>
+          </div>
+
+
+
+        </div>
+      </div>
+
+
+    </div>
+
+
+
+
+  <a class="nhsuk-button" href="confirm-changes-additional">Save changes</a>
+
+</div>
+
+</div>
+</div>
+{% endblock %}
+
+{%block pageScripts%}
+
+<script>
+  document.getElementById("yes").onclick = function() {
+    if (document.getElementById("reveal-details").style.display == 'none') {
+      document.getElementById("reveal-details").style.display =
+        'block'; // set to table-row instead of an empty string
+    } else {
+      document.getElementById("reveal-details").style.display = 'none';
+    }
+  }
+</script>
+
+
+</head>
+
+{% endblock %}

@@ -423,3 +423,27 @@ th {
   padding-bottom: 4px;
   padding-left: 8px;
 }
+
+/* ------ OVM ------ */
+
+#home-office-status-table {
+  td {
+    font-size: 14px;
+  };
+  th {
+    font-size: 14px;
+  };
+}
+
+#ho-historical-table {
+  td {
+    font-size: 14px;
+  };
+  th {
+    font-size: 14px;
+  };
+}
+
+.ho-start-date, .ho-end-date {
+  min-width: 110px;
+}
