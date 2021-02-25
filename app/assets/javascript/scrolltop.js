@@ -108,10 +108,10 @@ jQuery(document).ready(function($) {
         })
         .text(value));
   });
-  $.each(result, function(key, value) {
+  /*$.each(result, function(key, value) {
     $('.navigation-ul')
       .append($('<li><a class="scra-accordion__link" href=' + key + '>' + value + '</a></li>'));
-  });
+  });*/
 
 
   var s = $("#mobile-nav");

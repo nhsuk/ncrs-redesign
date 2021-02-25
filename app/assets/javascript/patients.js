@@ -840,7 +840,7 @@ if (cpisAltName == "Amelia MILLER") {
     $('.card-content-detail-address').html(patientAddress);
   }
   $('.patient-banner-gender, .card-content-detail-gender').text("Male");
-  $('.patient-banner-age').text("49 years old");
+  $('.patient-banner-age').text("51 years old");
   $('.card-content-detail-pob').text("Stratford-upon-Avon");
   $('.name-dob-floater').html("Mr William SHAKESPEARE | 30-Jan-1970");
   $('.mobile-nav-patient-details').html("Mr William SHAKESPEARE <br/> Date of birth: 30-Jan-1970");
@@ -856,7 +856,7 @@ if (cpisAltName == "Amelia MILLER") {
     $('.card-content-detail-address').html(patientAddress);
   }
   $('.patient-banner-gender, .card-content-detail-gender').text("Male");
-  $('.patient-banner-age').text("49 years old");
+  $('.patient-banner-age').text("51 years old");
   $('.card-content-detail-pob').text("Stratford-upon-Avon");
   $('.name-dob-floater').html("Dr William TELL | 30-Jan-1970");
   $('.mobile-nav-patient-details').html("Dr William TELL <br/> Date of birth: 30-Jan-1970");

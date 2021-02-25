@@ -1,0 +1,465 @@
+{% extends 'layouts/layout-application.html' %}
+
+{% block pageTitle %}
+Patient details
+{% endblock %}
+
+{% block beforeContent %}
+
+<div class="nhsuk-full-width-container">
+  <div class='scra-bordered-tabs-container'>
+    <div class="nhsuk-width-container-fluid">
+      <ul class="scra-bordered-tabs">
+        <li class="scra-bordered-tabs-item">
+          <a class="scra-bordered-tabs-link" href="patient-overview">Overview</a>
+        </li>
+        <li class="scra-bordered-tabs-item scra-bordered-tabs-item-active">
+          <a class="scra-bordered-tabs-link" href="#">Patient</a>
+        </li>
+        <li class="scra-bordered-tabs-item">
+          <a class="scra-bordered-tabs-link" href="patient-clinical">Clinical</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+
+{% block content %}
+
+{% include "includes/mobile-nav.html" %}
+
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-grid-column-one-quarter">
+    <div class="govuk-accordion accordion-desktop" data-module="accordion" id="refactor-nav">
+      <div class="accordion-inner">
+        <div class="govuk-accordion__section govuk-accordion__section--expanded">
+          <div class="govuk-accordion__section-header scra-accordion__header">
+            <h2 class="govuk-accordion__section-heading scra-accordion__heading">
+              <span class="govuk-accordion__section-button scra-accordion__section-button" id="accordion-default-heading-1">
+                Patient
+              </span>
+            </h2>
+          </div>
+          <div id="accordion-default-content-1" class="govuk-accordion__section-content scra-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+            <h3 class="nhsuk-heading-xs nhsuk-u-padding-left-4 nhsuk-u-margin-bottom-2">Key demographic information</h3>
+            <ul id="key-demographics-links" class="navigation-ul nhsuk-u-padding-left-4 nhsuk-u-margin-bottom-2">
+              <li><a class="scra-accordion__link" href="#patient-details-names">Names</a></li>
+              <li><a class="scra-accordion__link" href="#patient-key-details">Key details</a></li>
+              <li><a class="scra-accordion__link" href="#patient-details-address">Addresses</a></li>
+            </ul>
+            <h3 class="nhsuk-heading-xs nhsuk-u-padding-left-4 nhsuk-u-margin-bottom-2">Contacts and next of kin</h3>
+            <ul id="contacts-links" class="navigation-ul nhsuk-u-padding-left-4 nhsuk-u-margin-bottom-2">
+              <li><a class="scra-accordion__link" href="#contacts-and-nok">Contacts and next of kin</a></li>
+            </ul>
+            <h3 class="nhsuk-heading-xs nhsuk-u-padding-left-4 nhsuk-u-margin-bottom-2">COVID-19 Vaccinations</h3>
+            <ul id="contacts-links" class="navigation-ul nhsuk-u-padding-left-4 nhsuk-u-margin-bottom-2">
+              <li><a class="scra-accordion__link" href="#covid-vaccinations">View COVID-19 Vaccination information</a></li>
+            </ul>
+            <h3 class="nhsuk-heading-xs nhsuk-u-padding-left-4 nhsuk-u-margin-bottom-2">Reasonable Adjustments</h3>
+            <ul id="contacts-links" class="navigation-ul nhsuk-u-padding-left-4 nhsuk-u-margin-bottom-2">
+              <li><a class="scra-accordion__link" href="#reasonable-adjustments">View Reasonable Adjustments information</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="nhsuk-grid-column-three-quarters patient-details-content">
+    <section id="key-demographics" title="Key demographic information">
+
+      <h2 class="nhsuk-heading-l">Key demographic information</h2>
+
+      <div class="scra-card">
+        <div class="scra-card-header">
+          <h3 class="nhsuk-heading-m" id="patient-details-names">Names</h3>
+        </div>
+        <div class="scra-card-content">
+          <dl class="nhsuk-summary-list">
+
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Usual name
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                <div id="usual-name-value">
+                  <div class="card-content-name">
+                    Mr William Shakespeare
+                  </div>
+                  <i>Effective since: 30-Jan-1970</i>
+                </div>
+              </dd>
+
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Preferred name
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                <div id="preferred-name-value">
+                  Mr Bill SHAKESPEARE<br />
+                  Effective from 17-Jul-2008
+                </div>
+              </dd>
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Other name
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                <i>None recorded</i>
+              </dd>
+
+            </div>
+
+          </dl>
+        </div>
+      </div>
+
+      <div class="scra-card">
+        <div class="scra-card-header">
+          <h3 class="nhsuk-heading-m" id="patient-key-details">Key details</h3>
+        </div>
+        <div class="scra-card-content">
+          <dl class="nhsuk-summary-list">
+
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Gender
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                Male
+              </dd>
+
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                NHS Number
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                123 456 7890
+              </dd>
+
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Date of birth
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                30-Jan-1970
+              </dd>
+
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Time of birth
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                <p>None recorded</p>
+              </dd>
+
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Place of birth
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                Stratford-upon-Avon
+              </dd>
+
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                County
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                <i>None recorded</i>
+              </dd>
+
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Country of birth
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                United Kingdom
+              </dd>
+
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Interpreter required
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                No
+              </dd>
+
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Language
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                English
+              </dd>
+
+            </div>
+
+          </dl>
+
+        </div>
+      </div>
+
+      <div class="scra-card">
+        <div class="scra-card-header">
+          <h3 class="nhsuk-heading-m" id="patient-details-address">Addresses</h3>
+        </div>
+        <div class="scra-card-content">
+          <dl class="nhsuk-summary-list">
+
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key ">
+                Address
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                <div id="usual-address-value" class="card-content-address">
+                  1 Town Street <br />
+                  Stratford-upon-Avon <br />
+                  Warwickshire <br />
+                  AB1 2CD
+                </div>
+              </dd>
+
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Correspondence address
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                <i>None recorded</i>
+              </dd>
+
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Temporary address
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                <i>None recorded</i>
+              </dd>
+
+            </div>
+
+          </dl>
+        </div>
+      </div>
+
+    </section>
+
+    <section id="contacts-and-next-of-kin" title="Contacts and next of kin">
+
+      <h2 class="nhsuk-heading-l">Contacts and next of kin</h2>
+
+      <div class="scra-card">
+        <div class="scra-card-header">
+          <h3 class="nhsuk-heading-m" id="patient-details-contacts">Contacts</h3>
+        </div>
+        <div class="scra-card-content">
+          <dl class="nhsuk-summary-list">
+
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key ">
+                Name
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                Anne Hathaway
+              </dd>
+
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key ">
+                Relationship
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                Wife
+              </dd>
+
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key ">
+                Address
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                1 Town Street<br />
+                Stratford-upon-Avon<br />
+                Warwickshire<br />
+                AB1 2CD
+              </dd>
+
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key ">
+                Telephone
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                01234 567890
+              </dd>
+
+            </div>
+
+          </dl>
+        </div>
+      </div>
+
+      <div class="scra-card">
+        <div class="scra-card-header">
+          <h3 class="nhsuk-heading-m" id="patient-details-contacts">Next of kin</h3>
+        </div>
+        <div class="scra-card-content">
+          <dl class="nhsuk-summary-list">
+
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key ">
+                Name
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                Anne Hathaway
+              </dd>
+
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key ">
+                Relationship
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                Wife
+              </dd>
+
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key ">
+                Address
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                1 Town Street<br />
+                Stratford-upon-Avon<br />
+                Warwickshire<br />
+                AB1 2CD
+              </dd>
+
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key ">
+                Telephone
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                01234 567890
+              </dd>
+
+            </div>
+
+          </dl>
+        </div>
+      </div>
+
+      <section id="covid-vaccinations" title="COVID-19 Vaccinations">
+
+        <h2 class="nhsuk-heading-l">COVID-19 Vaccinations</h2>
+
+        <div class="scra-card">
+          <div class="scra-card-header">
+            <h3 class="nhsuk-heading-m" id="patient-details-contacts">View COVID-19 Vaccination information</h3>
+          </div>
+          <div class="scra-card-content">
+            <div class="nhsuk-u-reading-width">
+              <p>
+                This is the information recorded by the organisation(s) administering COVID-19 vaccination(s) and may differ from the information provided to the patient, held on the patient's GP record, and/or Summary Care Record (SCR).
+              </p>
+              <p>
+                It is possible that a patient may have had COVID-19 vaccination events that are not yet recorded here.
+              </p>
+              <div class="nhsuk-action-link">
+                <a class="nhsuk-action-link__link" href="covid-19-vaccination-information">
+                  <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
+                  </svg>
+                  <span class="nhsuk-action-link__text">View COVID-19 Vaccination information</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <section id="reasonable-adjustments" title="Reasonable Adjustments">
+        <h2 class="nhsuk-heading-l" id="ra-section">Reasonable Adjustments</h2>
+        <div class="scra-card">
+          <div class="scra-card-header">
+            <h3 class="nhsuk-heading-m">This patient does not show a requirement for Reasonable Adjustments</h3>
+          </div>
+          <div class="scra-card-content">
+            <div class="nhsuk-grid-row">
+              <div class="nhsuk-grid-column-full">
+                <div class="nhsuk-u-reading-width">
+                  <form action="#ra-section">
+                    <p>The NHS has a legal duty to make it easy for disabled and non-disabled individuals to use health and care services, as stated by the <a href="https://www.gov.uk/guidance/equality-act-2010-guidance" target="_blank">Equality Act (2010) (opens in a new tab)</a>.</p>
+                    <p>
+                      A Reasonable Adjustments record ensures patients with physical and mental impairments have equal access to healthcare services.
+                    </p>
+                    <details class="nhsuk-details">
+                      <summary class="nhsuk-details__summary">
+                        <span class="nhsuk-details__summary-text">
+                          Read more about Reasonable Adjustments
+                        </span>
+                      </summary>
+                      <div class="nhsuk-details__text">
+                        <p>A Reasonable Adjustments record can show potential adjustments for a patient. These may include (but aren't limited to):</p>
+                        <ul>
+                          <li>communication needs (supported by the <a href="https://www.england.nhs.uk/ourwork/accessibleinfo/" target="_blank">Accessibility Standard (opens in a new tab)</a>)</li>
+                          <li>adjustments to the environment</li>
+                          <li>impairments, to help undersyand the necessary adjustments</li>
+                        </ul>
+                      </div>
+                    </details>
+                    <p>
+                      If you believe this patient requires a Reasonable Adjustments record, you can create one.
+                    </p>
+                    <button class="nhsuk-button" type="submit">
+                      Create a Reasonable Adjustments record
+                    </button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+  </div>
+
+
+</div>
+{% endblock %}
