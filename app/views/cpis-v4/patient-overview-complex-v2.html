@@ -37,12 +37,12 @@ Dashboard
     <div class="nhsuk-promo nhsuk-promo--alert nhsuk-promo--small">
       <a data-target="#myModal" data-toggle="modal" class="nhsuk-promo__link-wrapper open_modal" href="#myModal">
         <div class="nhsuk-promo__content">
-          <h3 class="nhsuk-promo__heading"><i class="fas fa-arrow-circle-right fa-lg" aria-hidden="true"></i>Child protection alert present</h3>
+          <h3 class="nhsuk-promo__heading"><i class="fas fa-arrow-circle-right fa-lg" aria-hidden="true"></i>View child protection information</h3>
         </div>
       </a>
     </div>
   </div>
-  <!--div class="nhsuk-grid-column-one-quarter nhsuk-grid-column-tablet-landscape-one-third nhsuk-promo-group__item nhsuk-promo-group__alerts-item nhsuk-u-margin-bottom-3">
+  <div class="nhsuk-grid-column-one-quarter nhsuk-grid-column-tablet-landscape-one-third nhsuk-promo-group__item nhsuk-promo-group__alerts-item nhsuk-u-margin-bottom-3">
     <div class="nhsuk-promo nhsuk-promo--alert nhsuk-promo--small">
       <a class="nhsuk-promo__link-wrapper" href="#">
         <div class="nhsuk-promo__content">
@@ -55,11 +55,11 @@ Dashboard
     <div class="nhsuk-promo nhsuk-promo--alert nhsuk-promo--small">
       <a class="nhsuk-promo__link-wrapper" href="#">
         <div class="nhsuk-promo__content">
-          <h3 class="nhsuk-promo__heading"><i class="fas fa-arrow-circle-right fa-lg" aria-hidden="true"></i>Reasonable adjustment present</h3>
+          <h3 class="nhsuk-promo__heading"><i class="fas fa-arrow-circle-right fa-lg" aria-hidden="true"></i>View reasonable adjustments</h3>
         </div>
       </a>
     </div>
-  </div-->
+  </div>
 </div>
 
 
@@ -134,8 +134,8 @@ Dashboard
 
           <div class="nhsuk-grid-column-full-width">
             <span class="close">&times;</span>
-            <h3>What is your reason for seeing this patient today? </h3>
-            <p>Before you view Vivien’s child protection information, it is useful for us to understand why you are accessing their records.</p>
+            <h3>Why has the patient visited you today?</h3>
+            <p>Before you view {patient's name}'s child protection information, it is useful for us to understand the reason for their visit.</p>
           </div>
         </div>
 
@@ -144,13 +144,18 @@ Dashboard
             <a class="nhsuk-button nhsuk-button--blue" type="submit" style="width:100%;" href="child-care-alert-complex">
               Planned or routine appointment
             </a>
-            <p>This includes any pre-arranged health appointments in a community setting, GP surgery or hospital. </p>
+            <p>
+              This includes any pre-arranged health appointment either with a GP or at a hospital.
+            </p>
           </div>
           <div class="nhsuk-grid-column-one-half">
-            <a class="nhsuk-button nhsuk-button--red" type="submit" style="width:100%;" href="child-care-alert-complex">
+            <button class="nhsuk-button nhsuk-button--red" type="submit" style="width:100%;" href="child-care-alert-complex">
               An emergency or unscheduled visit
-            </a>
-            <p>This includes a patient needing urgent or emergency care in a community setting, GP surgery or hospital. </p>
+            </button>
+            <p>
+              This includes supporting patients who need urgent care at a GP surgery or hospital.
+
+            </p>
           </div>
 
         </div>
