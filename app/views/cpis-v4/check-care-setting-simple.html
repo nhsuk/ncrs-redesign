@@ -1,0 +1,82 @@
+{% extends 'layouts/layout-application.html' %}
+
+{% block pageTitle %}
+Patient details
+{% endblock %}
+
+{% block beforeContent %}
+
+<div class="nhsuk-full-width-container">
+  <div class='scra-bordered-tabs-container'>
+    <div class="nhsuk-width-container-fluid">
+      <ul class="scra-bordered-tabs">
+        <li class="scra-bordered-tabs-item">
+          <a class="scra-bordered-tabs-link" href="./patient-overview-simple">Overview</a>
+        </li>
+        <li class="scra-bordered-tabs-item scra-bordered-tabs-item-active">
+          <a class="scra-bordered-tabs-link" href="./patient-details-simple">Patient</a>
+        </li>
+        <li class="scra-bordered-tabs-item">
+          <a class="scra-bordered-tabs-link" href="#">Clinical</a>
+        </li>
+        <li class="scra-bordered-tabs-item">
+          <a class="scra-bordered-tabs-link" href="#">Documents</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-width-container">
+
+    <div class="section">
+      <div class="nhsuk-back-link">
+        <a class="nhsuk-back-link__link" href="./patient-details-simple">
+          <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+          </svg>
+            Back to patient information
+          </a>
+      </div>
+      <h1 class="app-page-heading">View child protection</h1>
+      <p>Before you view {patient's name}'s child protection information, it is useful for us to understand the reason for their visit.</p>
+      <h2 class="nhsuk-heading-l nhsuk-u-padding-bottom-3">Why has the patient visited you today?</h2>
+
+      <div class="nhsuk-form-group">
+        <fieldset class="nhsuk-fieldset">
+          <div class="nhsuk-radios">
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="example-hints-1" name="example-hints" type="radio" value="gateway" aria-describedby="example-hints-1-item-hint">
+              <label class="nhsuk-label nhsuk-radios__label" for="example-hints-1">Planned or routine appointment</label>
+              <div class="nhsuk-hint nhsuk-radios__hint" id="example-hints-1-item-hint">This includes any pre-arranged health appointments either with a GP or at a hospital.</div>
+            </div>
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="example-hints-2" name="example-hints" type="radio" value="verify" aria-describedby="example-hints-2-item-hint">
+              <label class="nhsuk-label nhsuk-radios__label" for="example-hints-2">An emergency or unscheduled visit</label>
+              <div class="nhsuk-hint nhsuk-radios__hint" id="example-hints-2-item-hint">This includes supporting patients who need urgent care at a GP surgery or hospital.</div>
+            </div>
+
+    </div>
+  </fieldset>
+
+</div>
+
+<form action="../cpis-v4/child-care-alert-simple">
+  <button class="nhsuk-button" type="submit">
+  View child protection information
+  </button>
+</form>
+
+    </div>
+  </div>
+
+
+</div>
+{% endblock %}
