@@ -2,7 +2,7 @@
 
 module.exports = {
   // Service name
-  serviceName: 'SCRa redesign',
+  serviceName: 'NCRS redesign',
 
   // Port to run nodemon on locally
   port: 2000,

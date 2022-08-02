@@ -1,0 +1,202 @@
+{% extends 'layouts/layout-application-ncrs.html' %}
+
+{% block pageTitle %}
+Dashboard
+{% endblock %}
+
+{% block beforeContent %}
+
+<div class="nhsuk-full-width-container">
+  <div class='scra-bordered-tabs-container'>
+    <div class="nhsuk-width-container-fluid">
+      <ul class="scra-bordered-tabs">
+        <li class="scra-bordered-tabs-item scra-bordered-tabs-item-active">
+          <a class="scra-bordered-tabs-link" href="#">Overview</a>
+        </li>
+        <li class="scra-bordered-tabs-item">
+          <a class="scra-bordered-tabs-link" href="./patient-details-simple">Patient</a>
+        </li>
+        <li class="scra-bordered-tabs-item">
+          <a class="scra-bordered-tabs-link" href="#">Clinical</a>
+        </li>
+        <li class="scra-bordered-tabs-item">
+          <a class="scra-bordered-tabs-link" href="#">Documents</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}
+
+{% block content %}
+
+<div class="nhsuk-grid-row nhsuk-promo-group">
+  <div class="nhsuk-grid-column-one-quarter nhsuk-grid-column-tablet-landscape-one-third nhsuk-promo-group__item nhsuk-promo-group__alerts-item nhsuk-u-margin-bottom-3">
+    <div class="nhsuk-promo nhsuk-promo--alert nhsuk-promo--small">
+      <a class="nhsuk-promo__link-wrapper" href="./check-care-setting-simple">
+        <div class="nhsuk-promo__content">
+          <h3 class="nhsuk-promo__heading"><i class="fas fa-arrow-circle-right fa-lg" aria-hidden="true"></i>Child protection alert present</h3>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="nhsuk-grid-row nhsuk-card-group">
+
+
+  <div class="nhsuk-grid-column-one-quarter nhsuk-grid-column-tablet-landscape-one-third nhsuk-grid-column-tablet-one-half nhsuk-card-group__item">
+    <div class="nhsuk-care-card nhsuk-care-card--non-urgent overview-card">
+      <div class="nhsuk-care-card__heading-container overview-card__heading-container">
+        <h3 class="nhsuk-care-card__heading overview-card__heading"><span role="text"><span class="nhsuk-u-visually-hidden">Patient details:
+            </span>Patient</span>
+        </h3>
+        <span class="nhsuk-care-card__arrow" aria-hidden="true"></span>
+      </div>
+      <div class="nhsuk-care-card__content overview-card__content">
+
+        <ul class="overview-card__list">
+          <li class="overview-card__list-item"><a href="./patient-details-simple">Demographics</a></li>
+          <li class="overview-card__list-item"><a href="./patient-details-simple">Contacts & next of kin</a></li>
+          <li class="overview-card__list-item"><a href="./patient-details-simple">Power of attorney</a></li>
+          <li class="overview-card__list-item"><a href="./patient-details-simple">Chargeability status</a></li>
+          <li class="overview-card__list-item"><a href="./patient-details-simple#child-protection">Child protection</a></li>
+
+        </ul>
+
+      </div>
+    </div>
+  </div>
+  <div class="nhsuk-grid-column-one-quarter nhsuk-grid-column-tablet-landscape-one-third nhsuk-grid-column-tablet-one-half nhsuk-card-group__item">
+    <div class="nhsuk-care-card nhsuk-care-card--non-urgent overview-card">
+      <div class="nhsuk-care-card__heading-container overview-card__heading-container">
+        <h3 class="nhsuk-care-card__heading overview-card__heading"><span role="text"><span class="nhsuk-u-visually-hidden">Clinical details:
+            </span>Clinical</span>
+        </h3>
+        <span class="nhsuk-care-card__arrow" aria-hidden="true"></span>
+      </div>
+      <div class="nhsuk-care-card__content overview-card__content">
+
+        <ul class="overview-card__list">
+          <li class="overview-card__list-item"><a data-target="#myModal" data-toggle="modal" class="open_modal" href="#myModal">Summary Care Record</a></li>
+        </ul>
+
+      </div>
+    </div>
+  </div>
+  <div class="nhsuk-grid-column-one-quarter nhsuk-grid-column-tablet-landscape-one-third nhsuk-grid-column-tablet-one-half nhsuk-card-group__item">
+    <div class="nhsuk-care-card nhsuk-care-card--non-urgent overview-card">
+      <div class="nhsuk-care-card__heading-container overview-card__heading-container">
+        <h3 class="nhsuk-care-card__heading overview-card__heading"><span role="text"><span class="nhsuk-u-visually-hidden">Patient documents:
+            </span>Available documents</span>
+        </h3>
+        <span class="nhsuk-care-card__arrow" aria-hidden="true"></span>
+      </div>
+      <div class="nhsuk-care-card__content overview-card__content">
+
+        <p>
+          There are no entries available
+        </p>
+      </div>
+    </div>
+  </div>
+
+
+  <div id="myModal" class="modal">
+
+    <!-- Modal content -->
+
+    <div class="modal-content">
+      <div class="nhsuk-width-container-fluid">
+        <div class="nhsuk-grid-row">
+
+          <div class="nhsuk-grid-column-full-width">
+            <span class="close">&times;</span>
+            <h3>What is your reason for seeing this patient today? </h3>
+            <p>Before you view [patient name]'s' child protection information, it is useful for us to understand why you are accessing their records.</p>
+          </div>
+        </div>
+
+        <details class="nhsuk-details">
+         <summary class="nhsuk-details__summary">
+           <span class="nhsuk-details__summary-text">
+           Why are we asking this?
+           </span>
+         </summary>
+         <div class="nhsuk-details__text">
+           <p>We’re asking this so we can keep a record of any unscheduled visits the patient makes to healthcare services. This information is then shared with the local authority for safeguarding purposes.</p>
+
+         </div>
+       </details>
+
+        <div class="nhsuk-grid-row">
+          <div class="nhsuk-grid-column-one-half">
+            <a class="nhsuk-button nhsuk-button--blue" type="submit" style="width:100%;" href="child-care-alert-complex">
+              Planned or routine appointment
+            </a>
+            <p>Including pre-arranged health appointments in a community setting, GP surgery or hospital. </p>
+          </div>
+          <div class="nhsuk-grid-column-one-half">
+            <a class="nhsuk-button nhsuk-button--red" type="submit" style="width:100%;" href="child-care-alert-complex">
+              An emergency or unscheduled visit
+            </a>
+            <p>Such as a patient needing urgent or emergency care in a community setting, GP surgery or hospital. </p>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div id="myModalEmergency" class="modal">
+
+    <!-- Modal content -->
+
+    <div class="modal-content">
+      <div class="nhsuk-width-container-fluid">
+        <div class="nhsuk-grid-row">
+
+          <div class="nhsuk-grid-column-full-width">
+            <span class="close">&times;</span>
+            <h3>What is your reason for seeing this patient today? </h3>
+            <p>Before you view Vivien’s child protection information, it is useful for us to understand why you are accessing their records.</p>
+          </div>
+        </div>
+
+        <div class="nhsuk-grid-row">
+          <div class="nhsuk-grid-column-one-half">
+            <a class="nhsuk-button nhsuk-button--blue" type="submit" style="width:100%;" href="child-care-alert-complex">
+              Planned or routine appointment
+            </a>
+            <p>This includes any pre-arranged health appointments in a community setting, GP surgery or hospital. </p>
+          </div>
+          <div class="nhsuk-grid-column-one-half">
+            <a class="nhsuk-button nhsuk-button--red" type="submit" style="width:100%;" href="child-care-alert-complex">
+              An emergency or unscheduled visit
+            </a>
+            <p>This includes a patient needing urgent or emergency care in a community setting, GP surgery or hospital. </p>
+          </div>
+
+          <details class="nhsuk-details">
+           <summary class="nhsuk-details__summary">
+             <span class="nhsuk-details__summary-text">
+             Why are we asking this?
+             </span>
+           </summary>
+           <div class="nhsuk-details__text">
+             <p>We’re asking this so we can keep a record of any unscheduled visits the patient makes to healthcare services. This information is then shared with the local authority for safeguarding purposes.</p>
+
+           </div>
+         </details>
+
+
+        </div>
+
+      </div>
+    </div>
+    </div>
+
+{% endblock %}
