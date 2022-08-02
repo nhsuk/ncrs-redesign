@@ -1,0 +1,332 @@
+{% extends 'layouts/layout-application.html' %}
+
+{% block pageTitle %}
+Patient details
+{% endblock %}
+
+{% block beforeContent %}
+
+<div class="nhsuk-full-width-container">
+  <div class='scra-bordered-tabs-container'>
+    <div class="nhsuk-width-container-fluid">
+      <ul class="scra-bordered-tabs">
+        <li class="scra-bordered-tabs-item">
+          <a class="scra-bordered-tabs-link" href="patient-overview-multiple-flags-added">Overview</a>
+        </li>
+        <li class="scra-bordered-tabs-item scra-bordered-tabs-item-active">
+          <a class="scra-bordered-tabs-link" href="./patient-details-multiple-flags">Patient</a>
+        </li>
+        <li class="scra-bordered-tabs-item">
+          <a class="scra-bordered-tabs-link" href="#">Clinical</a>
+        </li>
+        <li class="scra-bordered-tabs-item">
+          <a class="scra-bordered-tabs-link" href="#">Documents</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-grid-column-one-quarter">
+    <div class="govuk-accordion" data-module="accordion" id="accordion-default">
+
+      <div class="govuk-accordion__section govuk-accordion__section--expanded">
+        <div class="govuk-accordion__section-header scra-accordion__header">
+          <h2 class="govuk-accordion__section-heading scra-accordion__heading">
+            <span class="govuk-accordion__section-button scra-accordion__section-button" id="accordion-default-heading-1">
+              Key demographics
+            </span>
+          </h2>
+        </div>
+        <div id="accordion-default-content-1" class="govuk-accordion__section-content scra-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+          <ul>
+            <li><a class="scra-accordion__link" href="./patient-details-multiple-flags#patient-details-names">Names</a></li>
+            <li><a class="scra-accordion__link" href="./patient-details-multiple-flags#patient-key-details">Key details</a></li>
+            <li><a class="scra-accordion__link" href="./patient-details-multiple-flags#patient-details-address">Address</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="govuk-accordion__section ">
+        <div class="govuk-accordion__section-header scra-accordion__header">
+          <h2 class="govuk-accordion__section-heading scra-accordion__heading">
+            <span class="govuk-accordion__section-button scra-accordion__section-button" id="accordion-default-heading-2">
+              Contacts & next of kin
+            </span>
+          </h2>
+        </div>
+        <div id="accordion-default-content-2" class="govuk-accordion__section-content scra-accordion__section-content" aria-labelledby="accordion-default-heading-2">
+          <ul>
+            <li><a class="scra-accordion__link" href="./patient-details-multiple-flags#">Contacts & next of kin</a></li>
+            <li><a class="scra-accordion__link" href="./patient-details-multiple-flags#">Power of attorney</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="govuk-accordion__section ">
+        <div class="govuk-accordion__section-header scra-accordion__header">
+          <h2 class="govuk-accordion__section-heading scra-accordion__heading">
+            <span class="govuk-accordion__section-button scra-accordion__section-button" id="accordion-default-heading-3">
+              GP & Care providers
+            </span>
+          </h2>
+        </div>
+        <div id="accordion-default-content-3" class="govuk-accordion__section-content scra-accordion__section-content" aria-labelledby="accordion-default-heading-3">
+          <ul>
+            <li><a class="scra-accordion__link" href="./patient-details-multiple-flags#">GP Details</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="govuk-accordion__section ">
+        <div class="govuk-accordion__section-header scra-accordion__header">
+          <h2 class="govuk-accordion__section-heading scra-accordion__heading">
+            <span class="govuk-accordion__section-button scra-accordion__section-button" id="accordion-default-heading-4">
+              Chargeability status
+            </span>
+          </h2>
+        </div>
+        <div id="accordion-default-content-4" class="govuk-accordion__section-content scra-accordion__section-content" aria-labelledby="accordion-default-heading-4">
+          <ul>
+            <li><a class="scra-accordion__link" href="./patient-details-multiple-flags#">Chargeability status</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="govuk-accordion__section ">
+        <div class="govuk-accordion__section-header scra-accordion__header scra-accordion__header--yellow">
+          <h2 class="govuk-accordion__section-heading scra-accordion__heading">
+            <span class="govuk-accordion__section-button scra-accordion__section-button" id="accordion-default-heading-5">
+              Child care alert
+            </span>
+          </h2>
+        </div>
+        <div id="accordion-default-content-5" class="govuk-accordion__section-content scra-accordion__section-content" aria-labelledby="accordion-default-heading-5">
+          <ul>
+            <li><a class="scra-accordion__link" href="#">View child care alert</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="govuk-accordion__section ">
+        <div class="govuk-accordion__section-header scra-accordion__header scra-accordion__header--yellow">
+          <h2 class="govuk-accordion__section-heading scra-accordion__heading">
+            <span class="govuk-accordion__section-button scra-accordion__section-button" id="accordion-default-heading-5">
+              Reasonable Adjustments
+            </span>
+          </h2>
+        </div>
+        <div id="accordion-default-content-5" class="govuk-accordion__section-content scra-accordion__section-content" aria-labelledby="accordion-default-heading-5">
+          <ul>
+            <li><a class="scra-accordion__link" href="./patient-details-multiple-flags#ra-section">Reasonable Adjustments</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="nhsuk-grid-column-three-quarters">
+
+
+    <div class="section">
+      <h2 class="nhsuk-heading-l">Child care alert</h2>
+      <div class="nhsuk-back-link nhsuk-u-padding-bottom-3">
+        <a class="nhsuk-back-link__link" href="./patient-details-multiple-flags">
+          <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+          </svg>
+            Back to patient information
+          </a>
+      </div>
+      <div class="scra-card">
+        <div class="scra-card-header">
+          <h3 class="nhsuk-heading-m nhsuk-u-padding-bottom-3">Current child protection information</h3>
+        </div>
+        <h4 class="nhsuk-heading-s">Looked after child</h4>
+        <div class="scra-card-content">
+          <dl class="nhsuk-summary-list">
+
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Start date
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                09-Sep-2019
+              </dd>
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                End date
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                07-Jan-2030
+              </dd>
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Responsible local authority
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                Leeds City Council (212)
+              </dd>
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Emergency duty number
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                0113 333 3333
+              </dd>
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Office hours number
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                0113 456 7890
+              </dd>
+            </div>
+
+          </dl>
+        </div>
+      </div>
+
+      <div class="scra-card">
+        <div class="scra-card-header">
+          <h3 class="nhsuk-heading-m nhsuk-u-padding-bottom-3">Historical child protection information</h3>
+        </div>
+        <h4 class="nhsuk-heading-s">Child Protection Plan</h4>
+        <div class="scra-card-content">
+          <dl class="nhsuk-summary-list">
+
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Start date
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                12-May-2016
+              </dd>
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                End date
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                09-Sep-2019
+              </dd>
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Responsible local authority
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                City Of Bradford Metropolitan District Council (209)
+              </dd>
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Emergency duty number
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                01274 654 321
+              </dd>
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">
+                Office hours number
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                01274 332 211
+              </dd>
+            </div>
+
+          </dl>
+        </div>
+      </div>
+
+      <div class="scra-card">
+        <div class="scra-card-header">
+          <h3 class="nhsuk-heading-m nhsuk-u-padding-bottom-3">Previous views</h3>
+        </div>
+        <p>
+          Details of who has accessed this information and their organisation (up to the last 25 people). The child protection information might have been different when they viewed it, as it can change over time.
+        </p>
+        <div class="nhsuk-table-responsive">
+          <table class="nhsuk-table">
+            <caption class="nhsuk-table__caption">Details of who has looked the child's protection information and when.</caption>
+            <thead class="nhsuk-table__head">
+              <tr class="nhsuk-table__row">
+                <th class="nhsuk-table__header" scope="col">Date and time</th>
+                <th class="nhsuk-table__header" scope="col">Viewer</th>
+                <th class="nhsuk-table__header" scope="col">Role</th>
+                <th class="nhsuk-table__header" scope="col">Organisation</th>
+              </tr>
+            </thead>
+            <tbody class="nhsuk-table__body">
+              <tr class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">13-May-2018  9:32</td>
+                <td class="nhsuk-table__cell">Mr Flemming</td>
+                <td class="nhsuk-table__cell">Consultant</td>
+                <td class="nhsuk-table__cell">Leeds Partnership NHS Foundation Trust</td>
+              </tr>
+              <tr class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">29-Apr-2018  10:45</td>
+                <td class="nhsuk-table__cell">Dr Foster</td>
+                <td class="nhsuk-table__cell">Designated Doctor</td>
+                <td class="nhsuk-table__cell">Ashfield Medical Centre</td>
+              </tr>
+              <tr class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">28-Apr-2018  14:55</td>
+                <td class="nhsuk-table__cell">Mr Raines</td>
+                <td class="nhsuk-table__cell">Children’s safeguarding lead nurse  </td>
+                <td class="nhsuk-table__cell">Ashfield Medical Centre</td>
+              </tr>
+              <tr class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">11-Mar-2018  16:12</td>
+                <td class="nhsuk-table__cell">Mr Norman</td>
+                <td class="nhsuk-table__cell">Children’s safeguarding lead nurse  </td>
+                <td class="nhsuk-table__cell">York Hospitals NHS Foundation Trust</td>
+              </tr>
+              <tr class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">11-Mar-2018  11:09</td>
+                <td class="nhsuk-table__cell">Mr Norman</td>
+                <td class="nhsuk-table__cell">Children’s safeguarding lead nurse  </td>
+                <td class="nhsuk-table__cell">York Hospitals NHS Foundation Trust</td>
+              </tr>
+              <tr class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">05-Mar-2018  08:02</td>
+                <td class="nhsuk-table__cell">Dr Kirk</td>
+                <td class="nhsuk-table__cell">Named Doctor</td>
+                <td class="nhsuk-table__cell">Old School Medical Centre</td>
+              </tr>
+              <tr class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">21-Nov-2017  10:47</td>
+                <td class="nhsuk-table__cell">Mrs Lynskey</td>
+                <td class="nhsuk-table__cell">Designated Nurse</td>
+                <td class="nhsuk-table__cell">Old School Medical Centre</td>
+              </tr>
+              <tr class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">19-Nov-2017  21:29</td>
+                <td class="nhsuk-table__cell">Mr Clark</td>
+                <td class="nhsuk-table__cell">Designated Nurse</td>
+                <td class="nhsuk-table__cell">Old School Medical Centre</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+</div>
+{% endblock %}
