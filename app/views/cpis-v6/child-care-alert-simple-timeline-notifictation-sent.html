@@ -51,16 +51,20 @@ Patient details
         <p>This child has <a href="#active-plans">1 active plan</a>.</p>
       </div>
 
+      <div class="nhsuk-inset-text">
+        <span class="nhsuk-u-visually-hidden">Information: </span>
+        <p><a href="#notifications">Notification</a> has been sent to the patient's local authority.</p>
+      </div>
       
-      <div class="scra-card">
-      <form action="../cpis-v6/child-care-alert-simple-timeline-notifictation-sent">
+      <!--<div class="scra-card">
+      <form action="../cpis-v6/child-care-alert-simple">
       <h2>Do you want to notify this patient's local authority?</h2>
       <p>By notifying this patient's local authority you will create a record of their access to healthcare services.</p>
       <button class="nhsuk-button nhsuk-button--secondary" type="submit">
         Notify
         </button>
       </form>
-      </div>
+      </div>-->
 
       <a name="active-plans"></a>
       <h2 class="nhsuk-heading-l nhsuk-u-padding-bottom-3">Active child protection information</h2>
@@ -146,6 +150,17 @@ This list shows who has viewed this page at unscheduled health settings (e.g. at
   {% endif %}
   {% endfor %}
 
+  <div class="nhs-screening-whole-timeline__item">
+    <div class="nhs-screening-whole-timeline__header nhsuk-u-margin-bottom-2">
+      <h2 class="nhs-screening-whole-timeline__title">Page viewed</h2>
+      <p class="nhs-screening-whole-timeline__by">Notify sent <span class="nhsuk-tag nhsuk-tag--yellow">Unplanned</span></p>
+      <p class="nhs-screening-whole-timeline__date"><time datetime="2017-11-20T14:27">21-Oct-2020, 00:00:00 am</time></p>
+      <p class="nhs-screening-whole-timeline__date">Viewer: Dr Brian Flemming</p>
+      <p class="nhs-screening-whole-timeline__date">Role: Consultant</p>
+      <p class="nhs-screening-whole-timeline__date">Organisation: Leeds Partnership NHS Foundation Trust</p>
+    </div>
+    
+  </div>
 
     <div class="nhs-screening-whole-timeline__item">
       <div class="nhs-screening-whole-timeline__header nhsuk-u-margin-bottom-2">
