@@ -1,3 +1,5 @@
+const moment = require('moment');
+
 module.exports = function (env) {
   /**
    * Instantiate object used to store the methods registered as a
@@ -7,6 +9,19 @@ module.exports = function (env) {
    */
   var filters = {}
 
+  var dateFormat = "D-MMM-YYYY, h:mm a"
+
+  filters.returnDate = function(param) {
+    var today = moment().format(dateFormat);
+    console.log(today)
+    return today;
+  }
+
+  filters.returnDate = function(number, type) {
+    var d = moment().add(number, type).format(dateFormat)
+    return d;
+  }
+  
   /* ------------------------------------------------------------------
     add your methods to the filters obj below this comment block:
     @example:

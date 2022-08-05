@@ -830,7 +830,7 @@ if (cpisAltName == "Amelia MILLER") {
   $('.mobile-nav-patient-details').html(cpisAltName + " <br/> 16-Dec-2003");
 } else if (!patientName) {
   $('.patient-banner-name, .card-content-name').text("Mr William SHAKESPEARE");
-  $('.patient-banner-dob, .card-content-detail-dob').text("30-Jan-1970");
+  $('.patient-banner-dob, .card-content-detail-dob').text("30-Jan-2018");
   $('.patient-banner-nhs-no, .card-content-detail-nhs-no').text("123 456 7890");
   if (!patientAddress) {
     $('.patient-banner-address').text("1 Town Street, Stratford-upon-Avon, Warwickshire, AB1 2CD");
@@ -840,13 +840,13 @@ if (cpisAltName == "Amelia MILLER") {
     $('.card-content-detail-address').html(patientAddress);
   }
   $('.patient-banner-gender, .card-content-detail-gender').text("Male");
-  $('.patient-banner-age').text("51 years old");
+  $('.patient-banner-age').text("4 years old");
   $('.card-content-detail-pob').text("Stratford-upon-Avon");
-  $('.name-dob-floater').html("Mr William SHAKESPEARE | 30-Jan-1970");
-  $('.mobile-nav-patient-details').html("Mr William SHAKESPEARE <br/> Date of birth: 30-Jan-1970");
+  $('.name-dob-floater').html("Mr William SHAKESPEARE | 30-Jan-2018");
+  $('.mobile-nav-patient-details').html("Mr William SHAKESPEARE <br/> Date of birth: 30-Jan-2018");
 } else if (patientName == "Dr William TELL") {
   $('.patient-banner-name, .card-content-name').text(patientName);
-  $('.patient-banner-dob, .card-content-detail-dob').text("30-Jan-1970");
+  $('.patient-banner-dob, .card-content-detail-dob').text("30-Jan-2018");
   $('.patient-banner-nhs-no, .card-content-detail-nhs-no').text("123 456 7890");
   if (!patientAddress) {
     $('.patient-banner-address').text("1 Town Street, Stratford-upon-Avon, Warwickshire, AB1 2CD");
@@ -856,10 +856,10 @@ if (cpisAltName == "Amelia MILLER") {
     $('.card-content-detail-address').html(patientAddress);
   }
   $('.patient-banner-gender, .card-content-detail-gender').text("Male");
-  $('.patient-banner-age').text("51 years old");
+  $('.patient-banner-age').text("4 years old");
   $('.card-content-detail-pob').text("Stratford-upon-Avon");
-  $('.name-dob-floater').html("Dr William TELL | 30-Jan-1970");
-  $('.mobile-nav-patient-details').html("Dr William TELL <br/> Date of birth: 30-Jan-1970");
+  $('.name-dob-floater').html("Dr William TELL | 30-Jan-2018");
+  $('.mobile-nav-patient-details').html("Dr William TELL <br/> Date of birth: 30-Jan-2018");
 
 } else {
   $('.patient-banner-name, .card-content-name').text(patientName);
