@@ -1,0 +1,265 @@
+{% extends 'layouts/layout.html' %}
+
+{% block pageTitle %}
+Find a patient
+{% endblock %}
+
+{% block beforeContent %}
+
+<section class="nhsuk-hero">
+
+  <div class="nhsuk-width-container">
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-two-thirds">
+        <div class="nhsuk-hero__wrapper">
+          <h1 class="nhsuk-u-margin-bottom-3 nhsuk-heading-l">Find a patient</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<div class="nhsuk-full-width-container">
+  <div class='scra-bordered-tabs-container'>
+    <div class="nhsuk-width-container">
+      <ul class="scra-bordered-tabs">
+        <li class="scra-bordered-tabs-item">
+          <a class="scra-bordered-tabs-link" id="nhs-number-link" href="nhs-number-search">By NHS Number</a>
+        </li>
+        <li class="scra-bordered-tabs-item">
+          <a class="scra-bordered-tabs-link" id="basic-details-link" href="basic-details-search">By Basic Details</a>
+        </li>
+        <li class="scra-bordered-tabs-item">
+          <a class="scra-bordered-tabs-link" id="advanced-details-link" href="advanced-details-search">By Advanced Details</a>
+        </li>
+        <li class="scra-bordered-tabs-item scra-bordered-tabs-item-active">
+          <a class="scra-bordered-tabs-link" id="postcode-link" href="postcode-search">By Postcode</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-grid-column-full">
+
+    <h2 class="nhsuk-heading-m">Enter as many details as you know</h2>
+
+    <form id="" action="search-results">
+
+      
+
+      
+      <!--- POotcode text input --->
+      <form action="postcode-search-results" method="send">
+      <div id="nhsuk-form-group-last-name-advanced" class="nhsuk-form-group">
+        <label class="nhsuk-label nhsuk-label__strong" for="postcode-search">
+          Postcode
+        </label>
+        <input class="nhsuk-input nhsuk-input--width-10" id="address-postcode" name="address-postcode" type="text">
+      </div>
+
+      <p class="nhsuk-u-margin-bottom-6"><a href="find-postcode">Find postcode with address details</a></p>
+        
+      <!--<div class="nhsuk-form-group">
+        <details class="nhsuk-details">
+          <summary class="nhsuk-details__summary">
+            <span class="nhsuk-details__summary-text">
+              Find postcode with address details
+            </span>
+          </summary>
+          
+          <div class="nhsuk-details__text">
+          <div class="nhsuk-hint" id="example-hint">
+          Please enter as much information as you know.<br>
+          
+        </div>
+
+         <div class="nhsuk-form-group">
+              <label class="nhsuk-label" for="address-name-number">
+                House name or number
+              </label>
+              <input class="nhsuk-input nhsuk-input--width-20" id="address-name-number" name="address-name-number" type="text">
+            </div>
+
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label" for="address-street">
+                Street
+              </label>
+              <input class="nhsuk-input nhsuk-input--width-20" id="address-street" name="address-street" type="text">
+            </div>
+
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label" for="address-town-city">
+                Town or city
+              </label>
+              <input class="nhsuk-input nhsuk-input--width-10" id="address-town-city" name="address-town-city" type="text">
+            </div>
+
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label" for="address-county">
+                County
+              </label>
+              <input class="nhsuk-input nhsuk-input--width-10" id="address-county" name="address-county" type="text">
+            </div>
+            <br>
+      {{ button({
+        "text": "Look up postcode",
+        "classes": "nhsuk-button nhsuk-button--ers"
+      }) }}
+    </form>
+  </div>
+</details>-->
+      
+
+      <!--- Date of birth text input --->
+        <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-one-third">
+          {{ dateInput({
+            "id": "example",
+            "namePrefix": "example",
+            "fieldset": {
+              "legend": {
+                "text": "Effective date from :",
+                "classes": "nhsuk-label",
+                "isPageHeading": false
+              }
+            },
+            "hint": {
+              "text": "(optional) "
+            },
+            "items": [
+              {
+                "name": "day",
+                "classes": "nhsuk-input--width-2"
+              },
+              {
+                "name": "month",
+                "classes": "nhsuk-input--width-2"
+              },
+              {
+                "name": "year",
+                "classes": "nhsuk-input--width-4"
+              }
+            ]
+          }) }}
+        </div>    
+        <div class="nhsuk-grid-column-one-third">
+          {{ dateInput({
+            "id": "example",
+            "namePrefix": "example",
+            "fieldset": {
+              "legend": {
+                "text": "Effective date to:",
+                "classes": "nhsuk-label",
+                "isPageHeading": false
+              }
+            },
+            "hint": {
+              "text": "(optional)"
+            },
+            "items": [
+              {
+                "name": "day",
+                "classes": "nhsuk-input--width-2"
+              },
+              {
+                "name": "month",
+                "classes": "nhsuk-input--width-2"
+              },
+              {
+                "name": "year",
+                "classes": "nhsuk-input--width-4"
+              }
+            ]
+          }) }}
+        </div>      
+      </div>
+
+
+     <div class="nhsuk-form-group" id="nhsuk-form-group-postcode-advanced">
+      <label class="nhsuk-label nhsuk-label" for="address-postcode">
+        First name (optional)
+      </label>
+      
+      <input class="nhsuk-input nhsuk-input--width-10" id="address-postcode" name="address-postcode" type="text">
+    </div>
+
+    <div class="nhsuk-form-group" id="nhsuk-form-group-postcode-advanced">
+      <label class="nhsuk-label nhsuk-label" for="address-postcode">
+        Surname (optional)
+      </label>
+      <input class="nhsuk-input nhsuk-input--width-10" id="address-postcode" name="address-postcode" type="text">
+    </div>
+
+        <div class="nhsuk-from-group">
+          <fieldset class="nhsuk-fieldset" aria-describedby="dob-to" role="group">
+            
+            <legend class="nhsuk-fieldset__legend nhsuk-label">
+              Date of birth (optional)
+            </legend>
+            <div class="nhsuk-date-input" id="dob-to">
+              <div class="nhsuk-date-input__item">
+                <div class="nhsuk-form-group">
+                  <label class="nhsuk-label nhsuk-date-input__label" for="dob-day-to">
+                    Day
+                  </label>
+                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-dob-input__input nhsuk-input--width-2" id="dob-day-to" name="dob-day-to" type="number" pattern="[0-9]*">
+                </div>
+              </div>
+              <div class="nhsuk-date-input__item">
+                <div class="nhsuk-form-group">
+                  <label class="nhsuk-label nhsuk-date-input__label" for="dob-month-to">
+                    Month
+                  </label>
+                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-dob-input__input nhsuk-input--width-2" id="dob-month-to" name="dob-month-to" type="number" pattern="[0-9]*">
+                </div>
+              </div>
+              <div class="nhsuk-date-input__item">
+                <div class="nhsuk-form-group">
+                  <label class="nhsuk-label nhsuk-date-input__label" for="dob-year-to">
+                    Year
+                  </label>
+                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-dob-input__input nhsuk-input--width-4" id="dob-year-to" name="dob-year-to" type="number" pattern="[0-9]*">
+                </div>
+              </div>
+            </div>
+         
+        </fieldset>
+      </div>
+    </div>
+  </div>
+
+      <div class="nhsuk-form-group">
+        <div class="nhsuk-grid-row">
+          <div class="nhsuk-grid-column-full">
+            <button class="nhsuk-button" type="submit">
+              Find patient
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+
+    <div class="section">
+      <div class="nhsuk-warning-callout">
+        <h3 class="nhsuk-warning-callout__label">Privacy information</h3>
+        <p>
+          Use of the NHS Summary Care Record application is subject to confidentiality regulations. Some actions will raise a privacy alert.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+{% block pageScripts %}
+<script src="/js/search-features.js"></script>
+{% endblock %}
+
+{% endblock %}
