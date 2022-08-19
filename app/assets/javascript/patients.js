@@ -52,6 +52,7 @@ $("#nhs-number-search-button").submit(function(e) {
     return true;
   }
 
+
 });
 
 var patientNhsSearch = sessionStorage.getItem("patientNhsSearch");
@@ -401,6 +402,61 @@ var patientStreet = sessionStorage.getItem("patientStreet");
 var patientTownCity = sessionStorage.getItem("patientTownCity");
 var patientCounty = sessionStorage.getItem("patientCounty");
 
+/* Postcode only search */
+
+$("#postcode-search-results").submit(function(e) {
+  sessionStorage.clear();
+
+  if ($("#postcode-only-input").length > 0) {
+    var patientPostcodeOnly = $('#postcode-only-input').val();
+    var patientPostcodeAdvancedUpper = patientPostcodeOnly.toUpperCase();
+    var patientPostcodeAdvancedFormatted = patientPostcodeAdvancedUpper.replace(/\s/g, '');
+    var patientPostcodeOnly = patientPostcodeAdvancedFormatted;
+  } else {
+    var patientPostcodeOnly = "";
+  }
+  sessionStorage.setItem("patientPostcodeOnly", patientPostcodeOnly);
+
+  if (!$('input[name=postcode-only]').val().length > 0) {
+    $('#postcode-error').show();
+    $('#postcode-only-input').addClass('nhsuk-input--error');
+    $('#nhsuk-form-group-postcode-only').addClass('nhsuk-form-group--error');
+    $('.nhsuk-error-summary__list').append('<li><a href="#nhsuk-form-group-last-name">You must enter a postcode for the patient, like A1 2BC</a></li>');
+  }
+
+  if (!$('input[name=postcode-only]').val().length > 0) {
+    $('#postcode-only-error-summary').show();
+    e.preventDefault();
+  } else {
+    return true;
+    console.log("logging");
+  }
+
+  var patientPostcodeOnly = sessionStorage.getItem("patientPostcodeOnly");
+
+  /* Find searched details in patientsList*/
+
+  for (var i in patientsList) {
+    if (patientsList[i][5] == patientPostcodeOnly) {
+      var patientDetails = patientsList[i];
+      var patientName = patientDetails[1] + " " + patientDetails[2].toUpperCase();
+      var patientAddress = patientDetails[3] + ", " + patientDetails[4] + ", " + patientDetails[5];
+      var patientDob = patientDetails[7];
+      var parsedDob = parseDate(patientDetails[7]);
+      var currentDate = new Date();
+      var diff = currentDate - parsedDob;
+      var age = Math.floor(diff / 31536000000);
+      sessionStorage.setItem("patientAge", age);
+      var gender = patientDetails[6];
+
+
+    } else {
+
+    }
+  }
+
+});
+
 /* Copy input details between forms */
 
 $("#advanced-details-link").click(function() {
@@ -585,6 +641,14 @@ for (var i in patientsList) {
 
   }
 
+  /* postcode only search */
+  var patientPostcodeOnly = sessionStorage.getItem("patientPostcodeOnly");
+  if ((patientPostcodeOnly == patientsList[i][5])) {
+    var returnedPatients = (patientsList[i]);
+    returnedPatientsList.push(returnedPatients);
+    sessionStorage.setItem("returnedPatients", returnedPatients);
+  }
+
 }
 
 for (var i in returnedPatientsList) {
@@ -672,6 +736,12 @@ if (patientPostcodeAdvanced) {
   var postcode = "";
 }
 
+if (patientPostcodeOnly) {
+  var postcode = "postcode " + patientPostcodeOnly;
+} else {
+  var postcode = "";
+}
+
 var resultsList = nhsNo + gender + firstNameFormatted + lastNameFormatted + dob + address + houseNum;
 var formattedResults = resultsList.replace(/,\s*$/, "");
 
@@ -682,8 +752,6 @@ function insertBeforeLastOccurrence(strToSearch, strToFind, strToInsert) {
 }
 
 var formattedResultsList = insertBeforeLastOccurrence(formattedResults, "address", "and ");
-
-
 
 if (returnedPatientsList.length == 0) {
   $('.search-results-container').hide();
