@@ -164,3 +164,89 @@ a.nhsuk-button--pds-edit:visited {
 .expanderButton1[aria-expanded="true"]:after {
   content: "View less"
 }
+
+.nhsuk-button--ers{
+  @extend .nhsuk-button;
+  padding-bottom: nhsuk-spacing(2);
+    padding-left: nhsuk-spacing(3);
+    padding-right: nhsuk-spacing(3);
+    padding-top: nhsuk-spacing(2);
+    //margin-bottom: 0; // style police strikes again nhsuk-u-margin-bottom-0 sorts this out
+  @include nhsuk-font($size: 19, $weight: normal, $line-height: 1);
+}
+
+.nhsuk-button--ers_secondary {
+  @extend .nhsuk-button--ers;
+  background-color: #425563;
+  box-shadow: 0 4px 0 #232e35; }
+  .nhsuk-button--ers_secondary:hover, .nhsuk-button--ers_secondary:focus {
+    background-color: #384854; }
+  .nhsuk-button--ers_secondary.nhsuk-button--ers_disabled {
+    background-color: #425563; }
+
+        
+.nhsuk-button--ers_reverse{
+@extend .nhsuk-button--ers;
+background-color: $color_nhsuk-white;
+border:1px solid  #425563;
+color: #425563;
+box-shadow: 0 4px 0 #425563;
+
+}
+.nhsuk-button--ers_reverse:link{
+  color: green;
+}
+
+.nhsuk-button--ers_reverse:hover, .nhsuk-button--ers_reverse:focus {
+  @extend .nhsuk-button--ers_reverse;
+  color:#425563;
+  background-color: $color_nhsuk-grey-5;
+cursor: pointer;}
+.nhsuk-button--ers_reverse.nhsuk-button--ers_disabled {
+  background-color: #425563;
+cursor: pointer;}
+
+.nhsuk-button--small{
+  @extend .nhsuk-button;
+  @extend .nhsuk-button;
+  padding-bottom: nhsuk-spacing(2);
+    padding-left: nhsuk-spacing(3);
+    padding-right: nhsuk-spacing(3);
+    padding-top: nhsuk-spacing(2);
+  @include nhsuk-font($size: 19, $weight: normal, $line-height: 1);
+}
+.nhsuk-button--ers_secondary {
+  @extend .nhsuk-button--ers;
+  background-color: #425563;
+  box-shadow: 0 4px 0 #232e35; }
+  .nhsuk-button--ers_secondary:hover, .nhsuk-button--ers_secondary:focus {
+    background-color: #384854; }
+  .nhsuk-button--ers_secondary.nhsuk-button--ers_disabled {
+    background-color: #425563; }
+
+.nhsuk-button--ers_reverse{
+@extend .nhsuk-button--ers;
+background-color: $color_nhsuk-white;
+border:1px solid  #425563;
+color: #425563;
+box-shadow: 0 4px 0 #425563;
+
+}
+.nhsuk-button--ers_reverse:link{
+  color: green;
+}
+
+.nhsuk-button--ers_reverse:hover, .nhsuk-button--ers_reverse:focus {
+  @extend .nhsuk-button--ers_reverse;
+  color:#425563;
+  background-color: $color_nhsuk-grey-5;
+cursor: pointer;}
+.nhsuk-button--ers_reverse.nhsuk-button--ers_disabled {
+  background-color: #425563;
+cursor: pointer;}
+
+.nhsuk-upload-button-container {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
