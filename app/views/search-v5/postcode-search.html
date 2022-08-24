@@ -83,9 +83,8 @@ Find a patient
         <input class="nhsuk-input nhsuk-input--width-10" id="postcode-only-input" name="postcode-only" type="text">
       </div>
 
-      <p class="nhsuk-u-margin-bottom-6"><a href="find-postcode">Find postcode with address details</a></p>
 
-      <!--<div class="nhsuk-form-group">
+      <div class="nhsuk-form-group">
         <details class="nhsuk-details">
           <summary class="nhsuk-details__summary">
             <span class="nhsuk-details__summary-text">
@@ -94,46 +93,27 @@ Find a patient
           </summary>
 
           <div class="nhsuk-details__text">
-          <div class="nhsuk-hint" id="example-hint">
-          Please enter as much information as you know.<br>
-
-        </div>
-
-         <div class="nhsuk-form-group">
+ 
               <label class="nhsuk-label" for="address-name-number">
-                House name or number
+                Enter part of an address or a postcode
               </label>
+              <div class="nhsuk-hint" id="example-hint">
+                  Start typing to search and select an address. <br> Enter as many details as you know.              </div>
               <input class="nhsuk-input nhsuk-input--width-20" id="address-name-number" name="address-name-number" type="text">
-            </div>
+           
+              <a id="address-lookup-search-input--clear" class="typeahead-search__clear" role="button" aria-label="Clear Typeahead Input" tabindex="0">Clear</a>
+              <div class="typeahead-search-container">
+              </div> 
+              <div>   
+                
+         
+      
 
-            <div class="nhsuk-form-group">
-              <label class="nhsuk-label" for="address-street">
-                Street
-              </label>
-              <input class="nhsuk-input nhsuk-input--width-20" id="address-street" name="address-street" type="text">
-            </div>
-
-            <div class="nhsuk-form-group">
-              <label class="nhsuk-label" for="address-town-city">
-                Town or city
-              </label>
-              <input class="nhsuk-input nhsuk-input--width-10" id="address-town-city" name="address-town-city" type="text">
-            </div>
-
-            <div class="nhsuk-form-group">
-              <label class="nhsuk-label" for="address-county">
-                County
-              </label>
-              <input class="nhsuk-input nhsuk-input--width-10" id="address-county" name="address-county" type="text">
-            </div>
-            <br>
-      {{ button({
-        "text": "Look up postcode",
-        "classes": "nhsuk-button nhsuk-button--ers"
-      }) }}
+           
+         
     </form>
   </div>
-</details>-->
+</details>
 
 
       <!--- Date of birth text input --->
