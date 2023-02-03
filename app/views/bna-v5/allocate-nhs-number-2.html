@@ -1,0 +1,146 @@
+{% extends 'layouts/layout.html' %}
+
+{% block pageTitle %}
+  Enter the patient's usual address details
+{% endblock %}
+
+{% block beforeContent %}
+
+  <section class="nhsuk-hero">
+
+    <div class="nhsuk-width-container">
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-two-thirds">
+          <div class="nhsuk-hero__wrapper">
+            <h1 class="nhsuk-u-margin-bottom-3 nhsuk-heading-l">Allocate an NHS Number</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+    <div class="nhsuk-width-container">
+      <ol class="nhsuk-breadcrumb__list">
+        <li class="nhsuk-breadcrumb__item">
+          <a class="nhsuk-breadcrumb__link" id="find-patient" href="nhs-number-search">Find a patient</a>
+        </li>
+        <li class="nhsuk-breadcrumb__item">
+          <a class="nhsuk-breadcrumb__link" href="search-results">Search results</a>
+        </li>
+        <li class="nhsuk-breadcrumb__item">
+          <a class="nhsuk-breadcrumb__link" href="#">Alllocate an NHS Number</a>
+        </li>
+      </ol>
+      <p class="nhsuk-breadcrumb__back">
+        <a class="nhsuk-breadcrumb__backlink" href="nhs-number-search">Find a patient</a>
+      </p>
+    </div>
+  </nav>
+
+  {% endblock %}
+
+  {% block content %}
+  <div class="nhsuk-width-container">
+
+
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-full">
+        <div class="nhsuk-u-reading-width">
+          <h2 class="nhsuk-heading-l">
+            <span role="text">Enter the patient's usual address details</span>
+            <span class="nhsuk-caption-l nhsuk-caption--bottom">Step 2 of 3</span>
+          </h2>
+
+          <p class="nhsuk-body">
+            Please enter the details of the mother you would like to allocate an NHS Number to.
+          </p>
+          <form id="allocate-step-3-form" action="allocate-nhs-number-3">
+
+
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-label__strong" for="baby-house-name">
+                House name
+              </label>
+              <span class="nhsuk-hint" id="house-name-hint">
+                You must enter at least one of house name and house number and street
+              </span>
+              <input class="nhsuk-input nhsuk-input--width-20" id="baby-house-name" name="baby-house-name" type="text">
+            </div>
+
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-label__strong" for="baby-house-street">
+                House number and street
+              </label>
+              <span class="nhsuk-hint" id="house-street-hint">
+                You must enter at least one of house name and house number and street
+              </span>
+              <input class="nhsuk-input nhsuk-input--width-20" id="baby-house-street" name="baby-house-number-and-street" type="text">
+            </div>
+
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-label__strong" for="baby-address-locality">
+                Locality (optional)
+              </label>
+              <span class="nhsuk-hint">
+                Enter the village or suburb
+              </span>
+              <input class="nhsuk-input nhsuk-input--width-20" id="baby-address-locality" name="baby-address-locality" type="text">
+            </div>
+
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-label__strong" for="baby-address-town">
+                Town
+              </label>
+              <input class="nhsuk-input nhsuk-input--width-20" id="baby-address-town" name="baby-address-town" type="text">
+            </div>
+
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-label__strong" for="baby-address-county">
+                County
+              </label>
+              <span class="nhsuk-hint">
+                Start typing to search for a county
+              </span>
+              <input class="nhsuk-input nhsuk-input--width-20" id="baby-address-county" name="baby-address-county">
+            </div>
+
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label nhsuk-label__strong" for="baby-address-postcode">
+                Postcode
+              </label>
+              <input class="nhsuk-input nhsuk-input--width-10" id="baby-address-postcode" name="baby-address-postcode" type="text">
+            </div>
+
+            <details class="nhsuk-details">
+              <summary class="nhsuk-details__summary">
+                <span class="nhsuk-details__summary-text">
+                  Find an address or postcode
+                </span>
+              </summary>
+              <div class="nhsuk-details__text">
+
+              </div>
+            </details>
+
+            <div class="btn-group">
+              <button class="nhsuk-button" type="submit">
+                Next
+              </button>
+
+              <p class="cancel-btn-link"><a href="#">Cancel</a></p>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  {% block pageScripts %}
+  <script src="/js/bna.js"></script>
+  {% endblock %}
+  {% endblock %}
