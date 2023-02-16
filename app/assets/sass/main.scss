@@ -10,10 +10,9 @@
 
 
 // Import GOV.UK front end library
-
+$govuk-font-family: inherit;
 @import 'node_modules/govuk-frontend/components/tabs/tabs';
 @import 'node_modules/govuk-frontend/components/accordion/accordion';
-
 
 // Patterns that are not in the NHS.UK frontend library
 @import 'patterns/check-your-answers';
