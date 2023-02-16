@@ -97,66 +97,6 @@ a.nhsuk-button--pds-edit:visited {
   }
 }
 
-/* BNA Styles */
-
-.bna-list-buttons-container {
-  margin-bottom: 24px;
-  a {
-    margin-right: 12px;
-    display: block;
-    @media (min-width: 769px) {
-      margin-right: 24px;
-      display: inline;
-    }
-  }
-}
-
-.expanderButton[aria-expanded="false"] {
-  background: url("data:image/svg+xml,%3Csvg class='nhsuk-icon nhsuk-icon__plus' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' aria-hidden='true'%3E%3Ccircle cx='12' cy='12' r='10' fill='%23005eb8'%3E%3C/circle%3E%3Cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M12 8v8M8 12h8'%3E%3C/path%3E%3C/svg%3E%0A") left -2px center no-repeat;
-  background-size: 32px 32px;
-  color: #005eb8;
-  cursor: pointer;
-  display: inline-block;
-  padding: 20px 8px 8px 0px;
-  position: relative;
-  margin-left: 25%;
-}
-
-.expanderButton[aria-expanded="true"] {
-  background: url("data:image/svg+xml,%3Csvg class='nhsuk-icon nhsuk-icon__minus' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' aria-hidden='true'%3E%3Ccircle cx='12' cy='12' r='10' fill='%23ffffff'%3E%3C/circle%3E%3Cpath fill='none' stroke='%23005eb8' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M8 12h8'%3E%3C/path%3E%3C/svg%3E%0A") left -2px center no-repeat;
-  background-size: 32px 32px;
-  color: #ffffff;
-  cursor: pointer;
-  display: inline-block;
-  padding: 20px 8px 8px 0px;
-  position: relative;
-  margin-left: 25%;
-}
-
-.expanderButton1[aria-expanded="false"] {
-  color: #005eb8;
-  cursor: pointer;
-  display: inline-block;
-  padding: 0px 8px 0px 0px;
-  position: relative;;
-}
-
-.expanderButton1[aria-expanded="false"]:after {
-  content: "View more"
-}
-
-.expanderButton1[aria-expanded="true"] {
-  color: #005eb8;
-  cursor: pointer;
-  display: inline-block;
-  padding: 0px;
-  position: relative;
-}
-
-.expanderButton1[aria-expanded="true"]:after {
-  content: "View less"
-}
-
 .nhsuk-button--ers{
   @extend .nhsuk-button;
   padding-bottom: nhsuk-spacing(2);
