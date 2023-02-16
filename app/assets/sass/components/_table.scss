@@ -150,65 +150,6 @@
   background: $color_nhsuk-white;
 }
 
-.nrl-results {
-  tr {
-    background-color: white;
-
-    td {
-      vertical-align: top!important;
-
-      .no-owner-info {
-        font-style: italic;
-        color: $color_nhsuk-grey-1;
-      }
-    }
-  }
-}
-@media (max-width: 768px) {
-  #nrl-table {
-    border-spacing: 0 32px;
-    margin-top: 0;
-  }
-
-  .nrl-results {
-    tr {
-      td:last-child {
-        border-bottom: 4px solid $color_nhsuk-grey-4;
-      }
-    }
-  }
-
-  .nrl-contact-link {
-    margin-bottom: 0;
-  }
-
-  .nrl-action-link {
-    margin-bottom: 0;
-  }
-
-  .multiple-doc-td {
-    display: block!important;
-
-    .nrl-contact-link {
-      margin-top: 16px;
-    }
-  }
-}
-
-.multiple-doc-td {
-  .nrl-action-link {
-    margin-bottom: 16px;
-  }
-}
-
-.nrl-trust-details {
-  list-style-type: none;
-  margin-bottom: 0;
-}
-
-.nrl-action-link {
-  margin-bottom: 0;
-}
 /* BNA */
 .bna-table td,
 th {

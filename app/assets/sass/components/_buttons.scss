@@ -39,14 +39,6 @@ a.nhsuk-button--reverse:visited {
   box-shadow: none;
   color: #fff;
 }
-.nrl-button {
-  font-size: 1rem;
-  margin-bottom: 0;
-  padding: 8px 12px;
-  @media (min-width: 769px) {
-    display: block;
-  }
-}
 
 .btn-group {
   .nhsuk-button:first-of-type {
