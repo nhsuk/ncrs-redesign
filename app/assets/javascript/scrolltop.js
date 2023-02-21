@@ -34,10 +34,8 @@ jQuery(document).ready(function($) {
       if ($(window).width() > 768) {
         if ($(window).scrollTop() > (topofDiv + height)) {
           $(".name-dob-floater").fadeIn();
-          $('.adjustments-floater').fadeIn();
         } else {
           $(".name-dob-floater").fadeOut();
-          $('.adjustments-floater').fadeOut();
 
         }
       }
@@ -48,10 +46,8 @@ jQuery(document).ready(function($) {
       if ($(window).width() > 768) {
         if ($(window).scrollTop() > (topofDiv + height)) {
           $(".name-dob-floater").fadeIn();
-          $('.adjustments-floater').fadeIn();
         } else {
           $(".name-dob-floater").fadeOut();
-          $('.adjustments-floater').fadeOut();
         }
       }
     }

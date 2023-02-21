@@ -24,38 +24,6 @@
   text-decoration: underline;
   box-shadow: 0 4px 0 #003087;
 }
-/* Reasonable Adjustments Floater */
-.adjustments-floater {
-  display: none;
-  position: fixed;
-  top: 80px;
-  height: auto;
-  background: $color_nhsuk-blue;
-  color: white!important;
-  font-weight: 600;
-  text-decoration: none;
-  box-sizing: border-box;
-  padding: 12px 16px;
-  border: 2px solid transparent;
-  float: right;
-  text-align: center;
-  line-height: 12px;
-  right: 20px;
-  z-index: 1000;
-
-  a {
-    color: white!important;
-    text-decoration: none;
-  }
-}
-
-.adjustments-floater a:focus,
-.adjustments-floater a:hover,
-.adjustments-floater:focus,
-.adjustments-floater:hover {
-  background-color: #003087;
-  box-shadow: none;
-}
 /* RA FOOTER */
 .ra-footer-container {
   background-color: $color_nhsuk-white;
