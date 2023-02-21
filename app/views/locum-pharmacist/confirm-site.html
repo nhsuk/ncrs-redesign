@@ -51,7 +51,10 @@ Select your site
           <span id="site-error-error" class="nhsuk-error-message" style="display: none">
             You must choose a site
           </span>
-          <input class="nhsuk-input" id="sites" name="locum-site" type="text">
+          <input class="nhsuk-input" id="sites" name="locum-site" type="text" list="site-list">
+          <datalist id="site-list">
+            {% include "includes/locum-pharmacist-sites.html" %}
+          </datalist>
         </div>
 
         <button class="nhsuk-button" type="submit">
