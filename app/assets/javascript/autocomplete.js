@@ -1,26 +1,4 @@
-$("#confirm-locum-site").submit(function(e) {
-
-  if (!$('input[name=locum-site]').val().length > 0) {
-    $('#site-error-error').show();
-    $('#locum-site').addClass('nhsuk-input--error');
-    $('#nhsuk-form-group-site').addClass('nhsuk-form-group--error');
-    $('.nhsuk-error-summary__list').html('<li><a href="#nhsuk-form-group-site">You must choose a locum site</a></li>');
-  }
-
-  if (!$('input[name=locum-site]').val().length > 0) {
-    $('#site-error-summary').show();
-    e.preventDefault();
-  } else {
-    return true;
-  }
-
-});
-
-
-
 /* ---------- REASONABLE ADJUSTMENTS ---------- */
-
-
 
 $(function() {
   $.widget("custom.catcomplete", $.ui.autocomplete, {
