@@ -89,7 +89,7 @@ Find a patient
           <span id="advanced-gender-error-error" class="nhsuk-error-message" style="display: none">
             You must select a gender
           </span>
-          <div class="nhsuk-radios nhsuk-radios--inline" id="gender-radio">
+          <div class="nhsuk-radios nhsuk-radios--inline nhsuk-radios--force-inline nhsuk-radios--conditional" id="gender-radio">
             <div class="nhsuk-radios__item">
               <input class="nhsuk-radios__input" id="gender-female-advanced" name="gender-advanced" type="radio" value="Female">
               <label class="nhsuk-label nhsuk-radios__label" for="gender-female-advanced">
@@ -103,17 +103,19 @@ Find a patient
               </label>
             </div>
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="gender-not-known-advanced" name="gender-advanced" type="radio" value="Not known">
+              <input class="nhsuk-radios__input" id="gender-not-known-advanced" name="gender-advanced" type="radio" value="Not known"
+                aria-controls="conditional-gender-all" aria-expanded="false">
               <label class="nhsuk-label nhsuk-radios__label" for="gender-not-known-advanced">
                 Search all
               </label>
             </div>
+            <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-gender-all">
+              <span class="nhsuk-u-visually-hidden">Information about searching for all genders: </span>
+              <p>You have chosen to search for all genders. Please note that selecting this option will increase your search time
+              </p>
+            </div>
           </div>
         </fieldset>
-        <div class="nhsuk-inset-text gender-search-inset-text">
-          <span class="nhsuk-u-visually-hidden">Information about searching for all genders: </span>
-          <p>You have chosen to search for all genders. Please note that selecting this option will increase your search time</p>
-        </div>
       </div>
       <!--- First name text input --->
       <div class="nhsuk-form-group" id="nhsuk-form-group-first-name-advanced">
@@ -298,10 +300,7 @@ Find a patient
 
   </div>
 </div>
-
+{% endblock %}
 {% block pageScripts %}
 <script src="/js/bna.js"></script>
-<script src="/js/search-features.js"></script>
-{% endblock %}
-
 {% endblock %}
