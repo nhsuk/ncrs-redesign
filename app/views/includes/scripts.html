@@ -4623,7 +4623,7 @@
   function accordionFunction() {
     var elementPosition = $('.accordion-container').offset();
 
-    if ($(window).width() > 769) {
+    if (elementPosition && $(window).width() > 769) {
 
       $(window).scroll(function () {
         if ($(window).scrollTop() > elementPosition.top) {

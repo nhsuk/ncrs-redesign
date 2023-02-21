@@ -116,14 +116,16 @@ jQuery(document).ready(function($) {
 
   var s = $("#mobile-nav");
   var pos = s.position();
-  $(window).scroll(function() {
-    var windowpos = $(window).scrollTop();
-    if (windowpos >= pos.top) {
-      s.addClass("nav-stick");
-    } else {
-      s.removeClass("nav-stick");
-    }
-  });
+  if (pos) {
+    $(window).scroll(function () {
+      var windowpos = $(window).scrollTop();
+      if (windowpos >= pos.top) {
+        s.addClass("nav-stick");
+      } else {
+        s.removeClass("nav-stick");
+      }
+    });
+  }
 
   $('#mobile-nav-select').change(function() {
     var targetPosition = $($(this).val()).offset().top - 100;
