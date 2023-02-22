@@ -86,7 +86,7 @@ Recording consent
                   </div>
                 </div>
                 <div class="nhsuk-radios__item">
-                  <input class="nhsuk-radios__input" id="consent-best-interest" name="consent" type="radio" value="best-interest">
+                  <input class="nhsuk-radios__input" id="consent-best-interest" name="consent" type="radio" value="best-interest" aria-controls="best-interest" aria-expanded="false">
                   <label class="nhsuk-label nhsuk-radios__label" for="consent-best-interest">
                     As a best interest decision, made on behalf of the patient (Mental Capacity Act 2005)
                   </label>
@@ -103,7 +103,7 @@ Recording consent
                   </div>
                 </div>
                 <div class="nhsuk-radios__item">
-                  <input class="nhsuk-radios__input" id="consent-poa" name="consent" type="radio" value="power-of-attorney">
+                  <input class="nhsuk-radios__input" id="consent-poa" name="consent" type="radio" value="power-of-attorney" aria-controls="power-of-attorney" aria-expanded="false">
                   <label class="nhsuk-label nhsuk-radios__label" for="consent-poa">
                     Via a lasting Power of Attorney for Health and Welfare, or court-appointed deputy or equivalent
                   </label>
@@ -117,7 +117,7 @@ Recording consent
                   </div>
                 </div>
                 <div class="nhsuk-radios__item">
-                  <input class="nhsuk-radios__input" id="consent-other" name="consent" type="radio" value="other-consent">
+                  <input class="nhsuk-radios__input" id="consent-other" name="consent" type="radio" value="other-consent" aria-controls="other-consent" aria-expanded="false">
                   <label class="nhsuk-label nhsuk-radios__label" for="consent-other">
                     Other legitimate patient representative - parental responsibility
                   </label>
@@ -153,9 +153,6 @@ Recording consent
   </div>
 </div>
 
-
-
-{% block pageScripts %}
-<script src="/js/conditional-reveals.js"></script>
 {% endblock %}
+{% block pageScripts %}
 {% endblock %}
