@@ -5,41 +5,6 @@
 {% endblock %}
 
 {% block beforeContent %}
-  <script>sessionStorage.clear()</script>
-  {% if data['nhs-number'] %}
-    <script>
-      sessionStorage.setItem("patientNhsSearch", "{{ data['nhs-number'] }}");
-    </script>
-  {% endif %}
-  {% if data['basic-details-search'] %}
-  <script>
-    sessionStorage.setItem("patientGenderSearch", "{{ data['basic-details-search']['patientGenderSearch'] }}");
-    sessionStorage.setItem("patientFirstNameSearch", "");
-    sessionStorage.setItem("patientLastNameSearch", "{{ data['basic-details-search']['patientLastNameSearch'] }}");
-    sessionStorage.setItem("patientDobDaySearch", "{{ data['basic-details-search']['patientDobDaySearch'] }}");
-    sessionStorage.setItem("patientDobMonthSearch", "{{ data['basic-details-search']['patientDobMonthSearch'] }}");
-    sessionStorage.setItem("patientDobYearSearch", "{{ data['basic-details-search']['patientDobYearSearch'] }}");
-    sessionStorage.setItem("date", "");
-    sessionStorage.setItem("formattedDob", "{{ data['basic-details-search']['formattedDob'] }}");
-    sessionStorage.setItem("patientPostcodeSearch", "");
-    sessionStorage.setItem("patientPostcodeSearchFormatted", "");
-  </script>
-  {% endif %}
-  {% if data['advanced-details-search'] %}
-  <script>
-    sessionStorage.setItem("patientGenderAdvanced", "{{ data['advanced-details-search']['patientGenderAdvanced'] }}");
-    sessionStorage.setItem("patientFirstNameAdvanced",  "{{ data['advanced-details-search']['patientFirstNameAdvanced'] }}");
-    sessionStorage.setItem("patientLastNameAdvanced",  "{{ data['advanced-details-search']['patientLastNameAdvanced'] }}");
-    sessionStorage.setItem("widenSearch", "{{ data['advanced-details-search']['widenSearch'] }}");
-    sessionStorage.setItem("patientPostcodeAdvanced", "{{ data['advanced-details-search']['patientPostcodeAdvancedFormatted'] }}");
-    sessionStorage.setItem("dobFrom", "{{ data['advanced-details-search']['dobFrom'] }}");
-    sessionStorage.setItem("dobTo", "{{ data['advanced-details-search']['dobTo'] }}");
-  </script>
-  {% endif %}{% if data['postcode-search'] %}
-  <script>
-    sessionStorage.setItem("patientPostcodeOnly", "{{ data['postcode-search']['patientPostcodeOnly'] }}");
-  </script>
-  {% endif %}
   <section class="nhsuk-hero">
 
     <div class="nhsuk-width-container">
@@ -99,7 +64,23 @@
               <th scope="col" class="nhs-no-results-th">NHS Number</th>
             </tr>
           </thead>
-          <tbody class="patient-results"></tbody>
+          <tbody class="patient-results">
+            {% for patient in patientsList %}
+              {% if data['nhs-number'] === patient[0] %}
+                {% include "includes/search-result-row.html" %}
+              {% endif %}
+              {% if data['basic-details-search'] %}
+                {% if (
+                (data['basic-details-search']['patientGenderSearch'] == patient[6] or
+                data['basic-details-search']['patientGenderSearch'] == "Not known") and
+                data['basic-details-search']['patientLastNameSearch'] == patient[2] and
+                data['basic-details-search']['formattedDob'] == patient[7]
+                ) %}
+                  {% include "includes/search-result-row.html" %}
+                {% endif %}
+              {% endif %}
+            {% endfor %}
+          </tbody>
         </table>
         <div class="table-foot">
           <span class="load-more"></span>

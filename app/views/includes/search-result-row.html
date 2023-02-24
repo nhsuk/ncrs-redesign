@@ -1,0 +1,37 @@
+<tr role="row" class="patient-search-result">
+    <td role="gridcell">
+        <span class="table-heading" aria-hidden="true">Name</span>
+        <span>
+            <a href="patient-overview" class="name-results-td">
+                {{ patient[1] }}
+                {{ patient[2].toUpperCase() }}
+            </a>
+        </span>
+    </td>
+    <td role="gridcell">
+        <span class="table-heading" aria-hidden="true">Gender</span>
+        <span class="gender-results-td">{{ patient[6] }}</span>
+    </td>
+    <td role="gridcell">
+        <span class="table-heading" aria-hidden="true">Date of birth</span>
+        <span class="dob-results-td">{{ patient[7] }}</span>
+    </td>
+    <td role="gridcell">
+        <span class="table-heading" aria-hidden="true">Address</span>
+        <span class="address-results-td">
+            {{ patient[3] }},&nbsp;
+            <span class='patient-pob-td'>{{ patient[4] }}</span>,&nbsp;
+            <span class='postcode-results-td'>
+                {{ patient[5] }}
+            </span>
+        </span>
+    </td>
+    <td role="gridcell">
+        <span class="table-heading" aria-hidden="true">NHS Number</span>
+        <span class="nhs-no-results-td">
+            {{- patient[0].substr(0, 3) }}
+            {{ patient[0].substr(2, 3) }}
+            {{ patient[0].substr(5, 4) -}}
+        </span>
+    </td>
+</tr>
