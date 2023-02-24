@@ -32,6 +32,7 @@ var patientsList = [
 /* Capture search details */
 
 /* NHS Number */
+
 var patientNhsSearch = sessionStorage.getItem("patientNhsSearch");
 
 /* Convert date format */
@@ -124,33 +125,6 @@ $("#patient-details-search").submit(function(e) {
   sessionStorage.setItem("formattedDob", formattedDob);
   sessionStorage.setItem("patientPostcodeSearch", patientPostcodeSearch);
   sessionStorage.setItem("patientPostcodeSearchFormatted", patientPostcodeSearchFormatted);
-
-  if (!$('input[name=gender]').is(':checked')) {
-    $('#gender-error-error').show();
-    $('#nhsuk-form-group-gender').addClass('nhsuk-form-group--error');
-    $('#error-summary-gender').show();
-  }
-
-  if (!$('input[name=last-name]').val()) {
-    $('#last-name-error-error').show();
-    $('#last-name').addClass('nhsuk-input--error');
-    $('#nhsuk-form-group-last-name').addClass('nhsuk-form-group--error');
-    $('#error-summary-last-name').show();
-  }
-  if (!$('input[name=dob-day]').val() || !$('input[name=dob-month]').val() || !$('input[name=dob-year]').val()) {
-    $('#dob-error-error').show();
-    $('.nhsuk-date-input__input').addClass('nhsuk-input--error');
-    $('#nhsuk-form-group-dob').addClass('nhsuk-form-group--error');
-    $('#error-summary-dob').show();
-  }
-
-  if (!$('input[name=gender]').is(':checked') || !$('#last-name').val() || !$('#dob-day').val() || !$('#dob-month').val() || !$('#dob-year').val()) {
-    $('#nhsuk-patient-details-error-summary').show();
-    e.preventDefault();
-  } else {
-    return true;
-  }
-
 });
 
 var patientGenderSearch = sessionStorage.getItem("patientGenderSearch");
@@ -573,6 +547,7 @@ for (var i in patientsList) {
   /* Patient Details search */
   if ((patientFirstNameSearch == "") && (patientPostcodeSearchFormatted == "")) {
     if ((patientGenderSearch == patientsList[i][6] || patientGenderSearch == "Not known") && (patientLastNameSearch == patientsList[i][2]) && (patientFormattedDob == patientsList[i][7])) {
+
       var returnedPatients = (patientsList[i]);
       returnedPatientsList.push(returnedPatients);
       sessionStorage.setItem("returnedPatients", returnedPatients);

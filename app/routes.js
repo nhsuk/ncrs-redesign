@@ -104,8 +104,6 @@ router.post("/search-v5/nhs-number-search", function (req, res) {
 
   req.session.data.errors = {};
 
-  console.log({ nhsNumber });
-
   // If there is no submitted option
   if (!nhsNumber) {
     req.session.data.errors["nhs-number"] = true;
@@ -113,6 +111,49 @@ router.post("/search-v5/nhs-number-search", function (req, res) {
   }
 
   res.redirect(`/search-v5/search-results?nhs-number=${nhsNumber}`);
+});
+
+router.get("/search-v5/basic-details-search", function (req, res, next) {
+  // Reset any errors and copy it into the current template data
+  if (req.session.data.errors) {
+    res.locals.errors = req.session.data.errors;
+  } else {
+    // Reset form input, if no errors...
+    delete req.session.data["gender"];
+    delete req.session.data["last-name"];
+    delete req.session.data["dob-day"];
+    delete req.session.data["dob-month"];
+    delete req.session.data["dob-year"];
+  }
+  req.session.data.errors = {};
+
+  next();
+});
+
+router.post("/search-v5/basic-details-search", function (req, res) {
+  const gender = req.body["gender"];
+  const lastName = req.body["last-name"];
+  const dobDay = req.body["dob-day"];
+  const dobMonth = req.body["dob-month"];
+  const dobYear = req.body["dob-year"];
+
+  req.session.data.errors = {};
+
+  if (!gender) {
+    req.session.data.errors["gender"] = true;
+  }
+  if (!lastName) {
+    req.session.data.errors["last-name"] = true;
+  }
+  if (!dobDay || !dobMonth || !dobYear) {
+    req.session.data.errors["dob"] = true;
+  }
+
+  if (Object.keys(req.session.data.errors).length) {
+    return res.redirect("/search-v5/basic-details-search");
+  }
+
+  res.redirect(`/search-v5/search-results`);
 });
 
 
