@@ -1,25 +1,24 @@
 // External dependencies
-const express = require('express');
+const express = require("express");
 const router = express.Router();
 
 // Add your routes here - above the module.exports line
 
 // Passing data example
-router.get('/examples/passing-data', function (req, res) {
-  res.render('examples/passing-data/index')
+router.get("/examples/passing-data", function (req, res) {
+  res.render("examples/passing-data/index");
 });
 
 // Branching example
-router.post('/examples/branching/answer', function (req, res) {
+router.post("/examples/branching/answer", function (req, res) {
   let nhsNumber = req.body.nhsNumber;
 
-  if (nhsNumber === 'Yes') {
-    res.redirect('/examples/branching/answer-yes')
+  if (nhsNumber === "Yes") {
+    res.redirect("/examples/branching/answer-yes");
   } else {
-    res.redirect('/examples/branching/answer-no')
+    res.redirect("/examples/branching/answer-no");
   }
 });
-
 
 /**
  * Locum pharmacist
@@ -69,21 +68,21 @@ router.post("/ra-flag_v5/ra-step-1", function (req, res) {
     req.session.data.errors["all"] = true;
     return res.redirect("/ra-flag_v5/ra-step-1");
   }
-  
-  if (consent === 'best-interest') {
+
+  if (consent === "best-interest") {
     if (!bestInterestDetail) {
       req.session.data.errors["best-interest-consent-input"] = true;
       return res.redirect("/ra-flag_v5/ra-step-1");
     }
   }
-  
+
   if (consent === "other-consent") {
     if (!otherConsentDetail) {
       req.session.data.errors["other-consent-input"] = true;
       return res.redirect("/ra-flag_v5/ra-step-1");
     }
   }
-  
+
   res.redirect("/ra-flag_v5/ra-step-2");
 });
 
@@ -130,6 +129,12 @@ router.get("/search-v5/basic-details-search", function (req, res, next) {
   next();
 });
 
+function formatString(str) {
+  return str
+    .replace(/(\B)[^ ]*/g, (match) => match.toLowerCase())
+    .replace(/^[^ ]/g, (match) => match.toUpperCase());
+}
+
 router.post("/search-v5/basic-details-search", function (req, res) {
   const gender = req.body["gender"];
   const lastName = req.body["last-name"];
@@ -153,8 +158,29 @@ router.post("/search-v5/basic-details-search", function (req, res) {
     return res.redirect("/search-v5/basic-details-search");
   }
 
+  // Format the data provided ready for processing
+  req.session.data["basic-details-search"] = {};
+  req.session.data["basic-details-search"]["patientGenderSearch"] = "Female";
+  req.session.data["basic-details-search"]["patientLastNameSearch"] =
+    formatString(lastName);
+  req.session.data["basic-details-search"]["patientDobDaySearch"] = dobDay;
+  req.session.data["basic-details-search"]["patientDobMonthSearch"] = dobMonth;
+  req.session.data["basic-details-search"]["patientDobYearSearch"] = dobYear;
+
+  var date = new Date(Date.UTC(dobYear, dobMonth - 1, dobDay));
+  var dateOptions = {
+    year: "numeric",
+    month: "short",
+    day: "2-digit",
+  };
+  var formattedDob = date
+    .toLocaleDateString("en-GB", dateOptions)
+    .replace(/\s/g, "-");
+  formattedDob;
+  console.log({ date })
+  req.session.data["basic-details-search"]["formattedDob"] = formattedDob;
+
   res.redirect(`/search-v5/search-results`);
 });
-
 
 module.exports = router;

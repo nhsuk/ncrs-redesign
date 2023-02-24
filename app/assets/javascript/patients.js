@@ -79,54 +79,6 @@ for (var i in patientsList) {
 
 /* Patient Details */
 
-$("#patient-details-search").submit(function(e) {
-  sessionStorage.clear();
-
-  function formatString(str) {
-    return str
-      .replace(/(\B)[^ ]*/g, match => (match.toLowerCase()))
-      .replace(/^[^ ]/g, match => (match.toUpperCase()));
-  }
-  var patientGenderSearch = $('input[name=gender]:checked', '#patient-details-search').val();
-  if ($('#first-name').length > 0) {
-    var patientFirstNameCapitalise = formatString($('#first-name').val());
-    var patientFirstNameSearch = patientFirstNameCapitalise;
-  } else {
-    var patientFirstNameSearch = "";
-  }
-  var patientLastNameCapitalise = formatString($('#last-name').val());
-  var patientLastNameSearch = patientLastNameCapitalise;
-  var patientDobDaySearch = $('#dob-day').val();
-  var patientDobMonthSearch = ($('#dob-month').val() - 1);
-  var patientDobYearSearch = $('#dob-year').val();
-
-  var date = new Date(Date.UTC(patientDobYearSearch, patientDobMonthSearch, patientDobDaySearch));
-  var dateOptions = {
-    year: 'numeric',
-    month: 'short',
-    day: '2-digit'
-  };
-  var formattedDob = date.toLocaleDateString('en-GB', dateOptions).replace(/\s/g, '-');
-  if ($('#postcode-input').length > 0) {
-    var patientPostcodeSearch = $('#postcode-input').val();
-    var patientPostcodeSearchUpper = patientPostcodeSearch.toUpperCase();
-    var patientPostcodeSearchFormatted = patientPostcodeSearchUpper.replace(/\s/g, '');
-  } else {
-    var patientPostcodeSearchFormatted = "";
-  }
-
-  sessionStorage.setItem("patientGenderSearch", patientGenderSearch);
-  sessionStorage.setItem("patientFirstNameSearch", patientFirstNameSearch);
-  sessionStorage.setItem("patientLastNameSearch", patientLastNameSearch);
-  sessionStorage.setItem("patientDobDaySearch", patientDobDaySearch);
-  sessionStorage.setItem("patientDobMonthSearch", patientDobMonthSearch);
-  sessionStorage.setItem("patientDobYearSearch", patientDobYearSearch);
-  sessionStorage.setItem("date", date);
-  sessionStorage.setItem("formattedDob", formattedDob);
-  sessionStorage.setItem("patientPostcodeSearch", patientPostcodeSearch);
-  sessionStorage.setItem("patientPostcodeSearchFormatted", patientPostcodeSearchFormatted);
-});
-
 var patientGenderSearch = sessionStorage.getItem("patientGenderSearch");
 var patientFirstNameSearch = sessionStorage.getItem("patientFirstNameSearch");
 var patientLastNameSearch = sessionStorage.getItem("patientLastNameSearch");
