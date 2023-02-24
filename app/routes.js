@@ -87,4 +87,33 @@ router.post("/ra-flag_v5/ra-step-1", function (req, res) {
   res.redirect("/ra-flag_v5/ra-step-2");
 });
 
+/**
+ * Search
+ * */
+router.get("/search-v5/nhs-number-search", function (req, res, next) {
+  // Reset any errors and copy it into the current template data
+  if (req.session.data.errors) {
+    res.locals.errors = req.session.data.errors;
+  }
+  req.session.data.errors = {};
+  next();
+});
+
+router.post("/search-v5/nhs-number-search", function (req, res) {
+  const nhsNumber = req.body["nhs-number"];
+
+  req.session.data.errors = {};
+
+  console.log({ nhsNumber });
+
+  // If there is no submitted option
+  if (!nhsNumber) {
+    req.session.data.errors["nhs-number"] = true;
+    return res.redirect("/search-v5/nhs-number-search");
+  }
+
+  res.redirect(`/search-v5/search-results?nhs-number=${nhsNumber}`);
+});
+
+
 module.exports = router;

@@ -32,29 +32,6 @@ var patientsList = [
 /* Capture search details */
 
 /* NHS Number */
-
-$("#nhs-number-search-button").submit(function(e) {
-  sessionStorage.clear();
-  var patientNhsSearch = $("#nhs-number-input").val();
-  sessionStorage.setItem("patientNhsSearch", patientNhsSearch);
-
-  if (!$('input[name=nhs-number]').val().length > 0) {
-    $('#nhs-no-error-error').show();
-    $('#nhs-number').addClass('nhsuk-input--error');
-    $('#nhsuk-form-group-nhs-number').addClass('nhsuk-form-group--error');
-    $('.nhsuk-error-summary__list').append('<li><a href="#nhsuk-form-group-last-name">You must enter an NHS number for the patient, like 123 456 7890</a></li>');
-  }
-
-  if (!$('input[name=nhs-number]').val().length > 0) {
-    $('#nhsuk-nhs-no-error-summary').show();
-    e.preventDefault();
-  } else {
-    return true;
-  }
-
-
-});
-
 var patientNhsSearch = sessionStorage.getItem("patientNhsSearch");
 
 /* Convert date format */

@@ -47,11 +47,10 @@ Find a patient
 <div class="nhsuk-grid-row">
 
   <div class="nhsuk-grid-column-three-quarters">
-    <form id="nhs-number-search-button" action="search-results">
+    <form id="nhs-number-search-button" method="POST">
 
-      <!--- Error summary --->
-
-      <div class="nhsuk-error-summary" id="nhsuk-nhs-no-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" style="display:none">
+      {% if errors | length %}
+      <div class="nhsuk-error-summary" id="nhsuk-nhs-no-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1">
         <h2 class="nhsuk-error-summary__title" id="error-summary-title">
           There is a problem
         </h2>
@@ -60,21 +59,24 @@ Find a patient
             You must correct the following errors
           </p>
           <ul class="nhsuk-list nhsuk-error-summary__list">
-
+            <li><a href="#nhs-number-input">You must enter an NHS number for the patient, like 123 456 7890</a></li>
           </ul>
         </div>
       </div>
+      {% endif %}
 
-      <div id="nhsuk-form-group-nhs-number" class="nhsuk-form-group">
+      <div id="nhsuk-form-group-nhs-number" class="nhsuk-form-group{% if errors | length %} nhsuk-form-group--error{% endif %}">
         <label class="nhsuk-label nhsuk-label__strong" for="nhs-number-input">
           NHS Number
         </label>
 
-        <span id="nhs-no-error-error" class="nhsuk-error-message" style="display: none">
+        {% if errors | length %}
+        <span id="nhs-no-error-error" class="nhsuk-error-message">
           You must enter an NHS Number
         </span>
+        {% endif %}
 
-        <input class="nhsuk-input nhsuk-input--width-10" id="nhs-number-input" name="nhs-number" type="text" aria-describedby="nhs-number-input">
+        <input class="nhsuk-input nhsuk-input--width-10{% if errors | length %} nhsuk-input--error{% endif %}" id="nhs-number-input" name="nhs-number" type="text" aria-describedby="nhs-number-input">
       </div>
       <button class="nhsuk-button" type="submit">
         Find patient

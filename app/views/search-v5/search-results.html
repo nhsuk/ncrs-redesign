@@ -5,7 +5,11 @@
 {% endblock %}
 
 {% block beforeContent %}
-
+  {% if data['nhs-number'] %}
+    <script>
+      sessionStorage.setItem("patientNhsSearch", "{{ data['nhs-number'] }}");
+    </script>
+  {% endif %}
   <section class="nhsuk-hero">
 
     <div class="nhsuk-width-container">
