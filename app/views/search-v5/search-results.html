@@ -5,6 +5,7 @@
 {% endblock %}
 
 {% block beforeContent %}
+  <script>sessionStorage.clear()</script>
   {% if data['nhs-number'] %}
     <script>
       sessionStorage.setItem("patientNhsSearch", "{{ data['nhs-number'] }}");
@@ -33,6 +34,10 @@
     sessionStorage.setItem("patientPostcodeAdvanced", "{{ data['advanced-details-search']['patientPostcodeAdvancedFormatted'] }}");
     sessionStorage.setItem("dobFrom", "{{ data['advanced-details-search']['dobFrom'] }}");
     sessionStorage.setItem("dobTo", "{{ data['advanced-details-search']['dobTo'] }}");
+  </script>
+  {% endif %}{% if data['postcode-search'] %}
+  <script>
+    sessionStorage.setItem("patientPostcodeOnly", "{{ data['postcode-search']['patientPostcodeOnly'] }}");
   </script>
   {% endif %}
   <section class="nhsuk-hero">

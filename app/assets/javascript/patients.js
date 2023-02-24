@@ -1,6 +1,3 @@
-/* jshint shadow:true*/ /*jshint funcscope:true*/
-/* Define dummy patients */
-
 var patientsList = [
   [
     "9550972968",
@@ -269,46 +266,6 @@ var patientsList = [
 
 var patientNhsSearch = sessionStorage.getItem("patientNhsSearch");
 
-/* Convert date format */
-
-function parseDate(s) {
-  var months = {
-    jan: 0,
-    feb: 1,
-    mar: 2,
-    apr: 3,
-    may: 4,
-    jun: 5,
-    jul: 6,
-    aug: 7,
-    sep: 8,
-    oct: 9,
-    nov: 10,
-    dec: 11,
-  };
-  var p = s.split("-");
-  return new Date(p[2], months[p[1].toLowerCase()], p[0]);
-}
-
-/* Find searched details in patientsList*/
-
-for (var i in patientsList) {
-  if (patientsList[i][0] == patientNhsSearch) {
-    var patientDetails = patientsList[i];
-    var patientName = patientDetails[1] + " " + patientDetails[2].toUpperCase();
-    var patientAddress =
-      patientDetails[3] + ", " + patientDetails[4] + ", " + patientDetails[5];
-    var patientDob = patientDetails[7];
-    var parsedDob = parseDate(patientDetails[7]);
-    var currentDate = new Date();
-    var diff = currentDate - parsedDob;
-    var age = Math.floor(diff / 31536000000);
-    sessionStorage.setItem("patientAge", age);
-    var gender = patientDetails[6];
-  } else {
-  }
-}
-
 /* Patient Details */
 
 var patientGenderSearch = sessionStorage.getItem("patientGenderSearch");
@@ -343,69 +300,10 @@ var patientPostcodeAdvanced = sessionStorage.getItem("patientPostcodeAdvanced");
 var dobFrom = sessionStorage.getItem("dobFrom");
 var dobTo = sessionStorage.getItem("dobTo");
 
-/* Postcode only search */
-
-$("#postcode-search-results").submit(function (e) {
-  sessionStorage.clear();
-
-  if ($("#postcode-only-input").length > 0) {
-    var patientPostcodeOnly = $("#postcode-only-input").val();
-    var patientPostcodeAdvancedUpper = patientPostcodeOnly.toUpperCase();
-    var patientPostcodeAdvancedFormatted = patientPostcodeAdvancedUpper.replace(
-      /\s/g,
-      ""
-    );
-    var patientPostcodeOnly = patientPostcodeAdvancedFormatted;
-  } else {
-    var patientPostcodeOnly = "";
-  }
-  sessionStorage.setItem("patientPostcodeOnly", patientPostcodeOnly);
-
-  var patientPostcodeOnly = sessionStorage.getItem("patientPostcodeOnly");
-
-  /* Find searched details in patientsList*/
-
-  for (var i in patientsList) {
-    if (patientsList[i][5] == patientPostcodeOnly) {
-      var patientDetails = patientsList[i];
-      var patientName =
-        patientDetails[1] + " " + patientDetails[2].toUpperCase();
-      var patientAddress =
-        patientDetails[3] + ", " + patientDetails[4] + ", " + patientDetails[5];
-      var patientDob = patientDetails[7];
-      var parsedDob = parseDate(patientDetails[7]);
-      var currentDate = new Date();
-      var diff = currentDate - parsedDob;
-      var age = Math.floor(diff / 31536000000);
-      sessionStorage.setItem("patientAge", age);
-      var gender = patientDetails[6];
-    } else {
-    }
-  }
-});
-
 $("#refine-search-link").click(function () {
   sessionStorage.setItem("patientGenderAdvanced", patientGenderAdvanced);
   sessionStorage.setItem("patientLastNameAdvanced", patientLastNameAdvanced);
   sessionStorage.setItem("patientHouseNum", patientHouseNum);
-});
-
-/* Clear session storage when performing new search */
-
-$("#nhs-number-link").click(function () {
-  sessionStorage.clear();
-});
-
-$("#find-patient").click(function () {
-  sessionStorage.clear();
-});
-
-$(".index-page-link").click(function () {
-  sessionStorage.clear();
-});
-
-$("#index-page-link").click(function () {
-  sessionStorage.clear();
 });
 
 /* Find patient in patientList */

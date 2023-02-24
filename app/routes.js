@@ -266,5 +266,33 @@ router.post("/search-v5/advanced-details-search", function (req, res) {
 
   res.redirect(`/search-v5/search-results`);
 });
+router.get("/search-v5/postcode-search", function (req, res, next) {
+  // Reset any errors and copy it into the current template data
+  if (req.session.data.errors) {
+    res.locals.errors = req.session.data.errors;
+  }
+  req.session.data.errors = {};
+
+  next();
+});
+
+router.post("/search-v5/postcode-search", function (req, res) {
+  const postcode = req.body["postcode-only"];
+  req.session.data.errors = {};
+
+  if (!postcode) {
+    req.session.data.errors["postcode-only"] = true;
+  }
+
+  if (Object.keys(req.session.data.errors).length) {
+    return res.redirect("/search-v5/postcode-search");
+  }
+
+  // Format the data provided ready for processing
+  req.session.data["postcode-search"] = {};
+  req.session.data["postcode-search"]["patientPostcodeOnly"] = postcode;
+
+  res.redirect(`/search-v5/search-results`);
+});
 
 module.exports = router;

@@ -52,33 +52,13 @@ Find a patient
 
       <!--- Postcode text input --->
 
-      <form id="postcode-search-results" action="search-results">
-
-        <!--- Error summary --->
-
-        <div class="nhsuk-error-summary" id="postcode-only-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" style="display:none">
-          <h2 class="nhsuk-error-summary__title" id="error-summary-title">
-            There is a problem
-          </h2>
-          <div class="nhsuk-error-summary__body">
-            <p>
-              You must correct the following errors
-            </p>
-            <ul class="nhsuk-list nhsuk-error-summary__list">
-
-            </ul>
-          </div>
-        </div>
+      <form id="postcode-search-results" method="POST">
 
       <div id="nhsuk-form-group-postcode-only" class="nhsuk-form-group">
 
         <label class="nhsuk-label nhsuk-label__strong" for="postcode-search">
           Postcode
         </label>
-
-        <span id="postcode-error" class="nhsuk-error-message" style="display: none">
-          You must enter a Postcode
-        </span>
 
         <input class="nhsuk-input nhsuk-input--width-10" id="postcode-only-input" name="postcode-only" type="text">
       </div>
