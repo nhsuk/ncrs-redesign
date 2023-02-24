@@ -384,48 +384,6 @@ $("#postcode-search-results").submit(function (e) {
   }
 });
 
-/* Copy input details between forms */
-
-$("#advanced-details-link").click(function () {
-  var patientGenderSearch = $(
-    "input[name=gender]:checked",
-    "#patient-details-search"
-  ).val();
-  if (patientGenderSearch) {
-    sessionStorage.setItem("patientGenderSearch", patientGenderSearch);
-  } else {
-    sessionStorage.setItem("patientGenderSearch", "");
-  }
-  var patientLastNameSearch = $("#last-name").val();
-  var patientDobDay = $("#dob-day").val();
-  var patientDobMonth = $("#dob-month").val();
-  var patientDobYear = $("#dob-year").val();
-  if (patientLastNameSearch) {
-    var patientLastNameAdvanced = $("#last-name").val();
-    sessionStorage.setItem("patientLastNameAdvanced", patientLastNameAdvanced);
-  } else {
-    sessionStorage.setItem("patientLastNameAdvanced", "");
-  }
-  if (patientDobDay) {
-    var dobDayFrom = $("#dob-day").val();
-    sessionStorage.setItem("dobDayFrom", dobDayFrom);
-  } else {
-    sessionStorage.setItem("dobDayFrom", "");
-  }
-  if (patientDobMonth) {
-    var dobMonthFrom = $("#dob-month").val();
-    sessionStorage.setItem("dobMonthFrom", dobMonthFrom);
-  } else {
-    sessionStorage.setItem("dobMonthFrom", "");
-  }
-  if (patientDobYear) {
-    var dobYearFrom = $("#dob-year").val();
-    sessionStorage.setItem("dobYearFrom", dobYearFrom);
-  } else {
-    sessionStorage.setItem("dobYearFrom", "");
-  }
-});
-
 $("#refine-search-link").click(function () {
   sessionStorage.setItem("patientGenderAdvanced", patientGenderAdvanced);
   sessionStorage.setItem("patientLastNameAdvanced", patientLastNameAdvanced);
