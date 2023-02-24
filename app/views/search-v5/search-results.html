@@ -5,7 +5,6 @@
 {% endblock %}
 
 {% block beforeContent %}
-  <script>sessionStorage.clear();</script>
   {% if data['nhs-number'] %}
     <script>
       sessionStorage.setItem("patientNhsSearch", "{{ data['nhs-number'] }}");
@@ -23,6 +22,17 @@
     sessionStorage.setItem("formattedDob", "{{ data['basic-details-search']['formattedDob'] }}");
     sessionStorage.setItem("patientPostcodeSearch", "");
     sessionStorage.setItem("patientPostcodeSearchFormatted", "");
+  </script>
+  {% endif %}
+  {% if data['advanced-details-search'] %}
+  <script>
+    sessionStorage.setItem("patientGenderAdvanced", "{{ data['advanced-details-search']['patientGenderAdvanced'] }}");
+    sessionStorage.setItem("patientFirstNameAdvanced",  "{{ data['advanced-details-search']['patientFirstNameAdvanced'] }}");
+    sessionStorage.setItem("patientLastNameAdvanced",  "{{ data['advanced-details-search']['patientLastNameAdvanced'] }}");
+    sessionStorage.setItem("widenSearch", "{{ data['advanced-details-search']['widenSearch'] }}");
+    sessionStorage.setItem("patientPostcodeAdvanced", "{{ data['advanced-details-search']['patientPostcodeAdvancedFormatted'] }}");
+    sessionStorage.setItem("dobFrom", "{{ data['advanced-details-search']['dobFrom'] }}");
+    sessionStorage.setItem("dobTo", "{{ data['advanced-details-search']['dobTo'] }}");
   </script>
   {% endif %}
   <section class="nhsuk-hero">

@@ -1,5 +1,6 @@
 // External dependencies
 const express = require("express");
+const moment = require("moment");
 const router = express.Router();
 
 // Add your routes here - above the module.exports line
@@ -179,6 +180,89 @@ router.post("/search-v5/basic-details-search", function (req, res) {
   formattedDob;
   console.log({ date })
   req.session.data["basic-details-search"]["formattedDob"] = formattedDob;
+
+  res.redirect(`/search-v5/search-results`);
+});
+
+
+router.get("/search-v5/advanced-details-search", function (req, res, next) {
+  // Reset any errors and copy it into the current template data
+  if (req.session.data.errors) {
+    res.locals.errors = req.session.data.errors;
+  }
+  req.session.data.errors = {};
+  next();
+});
+
+router.post("/search-v5/advanced-details-search", function (req, res) {
+  const gender = req.body["gender"];
+  const firstName = req.body["first-name"];
+  const lastName = req.body["last-name"];
+  const dobDayFrom = req.body["dob-day-from"];
+  const dobMonthFrom = req.body["dob-month-from"];
+  const dobYearFrom = req.body["dob-year-from"];
+  const dobDayTo = req.body["dob-day-to"];
+  const dobMonthTo = req.body["dob-month-to"];
+  const dobYearTo = req.body["dob-year-to"];
+  const addressPostcode = req.body["address-postcode"];
+  const widenSearch = req.body["widen-search"];
+
+  req.session.data.errors = {};
+
+  if (!gender) {
+    req.session.data.errors["gender"] = true;
+  }
+
+  if (!firstName) {
+    req.session.data.errors["first-name"] = true;
+  }
+
+  if (!lastName) {
+    req.session.data.errors["last-name"] = true;
+  }
+
+  if (!dobDayTo || !dobMonthTo || !dobYearTo) {
+    req.session.data.errors["dob-to"] = true;
+  }
+
+  if (!dobDayFrom || !dobMonthFrom || !dobYearFrom) {
+    req.session.data.errors["dob-from"] = true;
+  }
+
+  if (!addressPostcode) {
+    req.session.data.errors["address-postcode"] = true;
+  }
+
+  if (Object.keys(req.session.data.errors).length) {
+    return res.redirect("/search-v5/advanced-details-search");
+  }
+
+
+  req.session.data["advanced-details-search"] = {};
+  req.session.data["advanced-details-search"]["patientGenderAdvanced"] = gender;
+  req.session.data["advanced-details-search"]["patientFirstNameAdvanced"] = formatString(firstName);
+  req.session.data["advanced-details-search"]["patientLastNameAdvanced"] =
+    formatString(lastName);
+  req.session.data["advanced-details-search"]["widenSearch"] = widenSearch;
+
+  const patientPostcodeAdvancedUpper = addressPostcode.toUpperCase();
+  const patientPostcodeAdvancedFormatted = patientPostcodeAdvancedUpper.replace(
+    /\s/g,
+    ""
+  );
+  req.session.data["advanced-details-search"][
+    "patientPostcodeAdvancedFormatted"
+  ] = patientPostcodeAdvancedFormatted;
+
+
+  const fullDobFrom =
+    dobDayFrom + "/" + dobMonthFrom + "/" + dobYearFrom;
+  const dobFrom = moment(fullDobFrom, "DD-MM-YYYY").format("MM/DD/YYYY");
+  req.session.data["advanced-details-search"]["dobFrom"] = dobFrom;
+
+  const fullDobTo = dobDayTo + "/" + dobMonthTo + "/" + dobYearTo;
+  const dobTo = moment(fullDobTo, "DD-MM-YYYY").format("MM/DD/YYYY");
+  req.session.data["advanced-details-search"]["dobTo"] = dobTo;
 
   res.redirect(`/search-v5/search-results`);
 });

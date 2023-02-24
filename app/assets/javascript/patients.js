@@ -2,32 +2,266 @@
 /* Define dummy patients */
 
 var patientsList = [
-  ['9550972968', 'Elisha', 'Sapsed', '55 Troy Place', 'Sutton', 'X563TG', 'Female', '06-Sep-1968'],
-  ['5974163354', 'Jordanna', 'Collop', '285 Chinook Trail', 'Bradford', 'E83JZ', 'Female', '27-Feb-2006'],
-  ['4126104984', 'Justina', 'Collop', '285 Chinook Trail', 'Bradford', 'E83JZ', 'Female', '27-Feb-2006'],
-  ['9015678065', 'Ranna', 'Enochsson', '6 Steensland Circle', 'Burnside', 'EB717QM', 'Female', '10-Mar-1967'],
-  ['9397085291', 'Quincy', 'Cramphorn', '519 Raven Way', 'West End', 'DN36 7TU', 'Male', '22-Sep-1963'],
-  ['9762318315', 'Angelle', 'Peeke-Vout', '4473 Fair Oaks Alley', 'Preston', 'F348ZS', 'Female', '16-Dec-1998'],
-  ['9453238023', 'Giacobo', 'Erni', '05584 Luster Point', 'Sheffield', 'S52NF', 'Male', '01-Sep-2004'],
-  ['9397084291', 'Raquel', 'Twinbrow', '9451 Burning Wood Lane', 'Whitwell', 'N94AL', 'Female', '04-Apr-2008'],
-  ['0768832756', 'Georgia', 'Lamba', '4560 Portage Trail', 'Linton', 'PM151DJ', 'Female', '20-Apr-1994'],
-  ['5655050595', 'Jacynth', 'Petett', '71016 Kings Plaza', 'Belfast', 'M061CP', 'Female', '07-Oct-1956'],
-  ['7472972134', 'Gamaliel', 'Potkins', '14 Utah Drive', 'Whitchurch', 'UE60LF', 'Male', '02-Oct-1944'],
-  ['2063825688', 'Lizzie', 'Arnecke', '1 Bayside Circle', 'Linton', 'AY05XG', 'Female', '02-Jun-2013'],
-  ['1316950344', 'Dorella', 'Smith', '80 Holmberg Lane', 'Upton', 'BS130LQ', 'Female', '26-Apr-1998'],
-  ['8344690382', 'Hali', 'Smith', '2169 Ludington Terrace', 'Upton', 'BR54HN', 'Female', '26-Apr-1998'],
-  ['5275198353', 'Neddy', 'Smith', '38301 Vidon Trail', 'Langley', 'FY81UB', 'Female', '26-Apr-1998'],
-  ['2977560009', 'Leland', 'Smith', '31599 Dunning Street', 'London', 'MK183EW', 'Female', '26-Apr-1998'],
-  ['0344362957', 'Tome', 'Smith', '693 Spenser Pass', 'Hatton', 'RG193PQ', 'Female', '26-Apr-1998'],
-  ['8825402473', 'Avie', 'Smith', '9768 Gerald Terrace', 'London', 'BD226DF', 'Female', '26-Apr-1998'],
-  ['0135644305', 'Osbert', 'Smith', '55 Stang Trail', 'Normanton', 'SK87DJ', 'Female', '26-Apr-1998'],
-  ['5217192623', 'Timoteo', 'Smith', '13416 Bashford Drive', 'Marston', 'BA25AB', 'Female', '26-Apr-1998'],
-  ['6705809256', 'Katharine', 'Smith', '9621 Kedzie Center', 'London', 'PA308HU', 'Female', '26-Apr-1998'],
-  ['7479065205', 'Carroll', 'Smith', '94894 Hagan Avenue', 'London', 'OX110PG', 'Female', '26-Apr-1998'],
-  ['5298187064', 'Katie', 'Smith', '25 Guild Street', 'London', 'EC1V7QZ', 'Female', '21-Mar-1953'],
-  ['9887780707', 'Louise', 'Smith', '65 Main Road', 'London', 'RH54JJ', 'Female', '02-Aug-1989'],
-  ['2441861271', 'Lauren', 'Smith', '57 Crown Street', 'London', 'W1D4LD', 'Female', '20-Oct-1987'],
-  ['1991798466', 'Joe', 'Pearson', '98 Manor Close', 'Bristol', 'BS1 3ZR', 'Male', '20-Oct-1987']
+  [
+    "9550972968",
+    "Elisha",
+    "Sapsed",
+    "55 Troy Place",
+    "Sutton",
+    "X563TG",
+    "Female",
+    "06-Sep-1968",
+  ],
+  [
+    "5974163354",
+    "Jordanna",
+    "Collop",
+    "285 Chinook Trail",
+    "Bradford",
+    "E83JZ",
+    "Female",
+    "27-Feb-2006",
+  ],
+  [
+    "4126104984",
+    "Justina",
+    "Collop",
+    "285 Chinook Trail",
+    "Bradford",
+    "E83JZ",
+    "Female",
+    "27-Feb-2006",
+  ],
+  [
+    "9015678065",
+    "Ranna",
+    "Enochsson",
+    "6 Steensland Circle",
+    "Burnside",
+    "EB717QM",
+    "Female",
+    "10-Mar-1967",
+  ],
+  [
+    "9397085291",
+    "Quincy",
+    "Cramphorn",
+    "519 Raven Way",
+    "West End",
+    "DN36 7TU",
+    "Male",
+    "22-Sep-1963",
+  ],
+  [
+    "9762318315",
+    "Angelle",
+    "Peeke-Vout",
+    "4473 Fair Oaks Alley",
+    "Preston",
+    "F348ZS",
+    "Female",
+    "16-Dec-1998",
+  ],
+  [
+    "9453238023",
+    "Giacobo",
+    "Erni",
+    "05584 Luster Point",
+    "Sheffield",
+    "S52NF",
+    "Male",
+    "01-Sep-2004",
+  ],
+  [
+    "9397084291",
+    "Raquel",
+    "Twinbrow",
+    "9451 Burning Wood Lane",
+    "Whitwell",
+    "N94AL",
+    "Female",
+    "04-Apr-2008",
+  ],
+  [
+    "0768832756",
+    "Georgia",
+    "Lamba",
+    "4560 Portage Trail",
+    "Linton",
+    "PM151DJ",
+    "Female",
+    "20-Apr-1994",
+  ],
+  [
+    "5655050595",
+    "Jacynth",
+    "Petett",
+    "71016 Kings Plaza",
+    "Belfast",
+    "M061CP",
+    "Female",
+    "07-Oct-1956",
+  ],
+  [
+    "7472972134",
+    "Gamaliel",
+    "Potkins",
+    "14 Utah Drive",
+    "Whitchurch",
+    "UE60LF",
+    "Male",
+    "02-Oct-1944",
+  ],
+  [
+    "2063825688",
+    "Lizzie",
+    "Arnecke",
+    "1 Bayside Circle",
+    "Linton",
+    "AY05XG",
+    "Female",
+    "02-Jun-2013",
+  ],
+  [
+    "1316950344",
+    "Dorella",
+    "Smith",
+    "80 Holmberg Lane",
+    "Upton",
+    "BS130LQ",
+    "Female",
+    "26-Apr-1998",
+  ],
+  [
+    "8344690382",
+    "Hali",
+    "Smith",
+    "2169 Ludington Terrace",
+    "Upton",
+    "BR54HN",
+    "Female",
+    "26-Apr-1998",
+  ],
+  [
+    "5275198353",
+    "Neddy",
+    "Smith",
+    "38301 Vidon Trail",
+    "Langley",
+    "FY81UB",
+    "Female",
+    "26-Apr-1998",
+  ],
+  [
+    "2977560009",
+    "Leland",
+    "Smith",
+    "31599 Dunning Street",
+    "London",
+    "MK183EW",
+    "Female",
+    "26-Apr-1998",
+  ],
+  [
+    "0344362957",
+    "Tome",
+    "Smith",
+    "693 Spenser Pass",
+    "Hatton",
+    "RG193PQ",
+    "Female",
+    "26-Apr-1998",
+  ],
+  [
+    "8825402473",
+    "Avie",
+    "Smith",
+    "9768 Gerald Terrace",
+    "London",
+    "BD226DF",
+    "Female",
+    "26-Apr-1998",
+  ],
+  [
+    "0135644305",
+    "Osbert",
+    "Smith",
+    "55 Stang Trail",
+    "Normanton",
+    "SK87DJ",
+    "Female",
+    "26-Apr-1998",
+  ],
+  [
+    "5217192623",
+    "Timoteo",
+    "Smith",
+    "13416 Bashford Drive",
+    "Marston",
+    "BA25AB",
+    "Female",
+    "26-Apr-1998",
+  ],
+  [
+    "6705809256",
+    "Katharine",
+    "Smith",
+    "9621 Kedzie Center",
+    "London",
+    "PA308HU",
+    "Female",
+    "26-Apr-1998",
+  ],
+  [
+    "7479065205",
+    "Carroll",
+    "Smith",
+    "94894 Hagan Avenue",
+    "London",
+    "OX110PG",
+    "Female",
+    "26-Apr-1998",
+  ],
+  [
+    "5298187064",
+    "Katie",
+    "Smith",
+    "25 Guild Street",
+    "London",
+    "EC1V7QZ",
+    "Female",
+    "21-Mar-1953",
+  ],
+  [
+    "9887780707",
+    "Louise",
+    "Smith",
+    "65 Main Road",
+    "London",
+    "RH54JJ",
+    "Female",
+    "02-Aug-1989",
+  ],
+  [
+    "2441861271",
+    "Lauren",
+    "Smith",
+    "57 Crown Street",
+    "London",
+    "W1D4LD",
+    "Female",
+    "20-Oct-1987",
+  ],
+  [
+    "1991798466",
+    "Joe",
+    "Pearson",
+    "98 Manor Close",
+    "Bristol",
+    "BS1 3ZR",
+    "Male",
+    "20-Oct-1987",
+  ],
 ];
 /* Capture search details */
 
@@ -50,9 +284,9 @@ function parseDate(s) {
     sep: 8,
     oct: 9,
     nov: 10,
-    dec: 11
+    dec: 11,
   };
-  var p = s.split('-');
+  var p = s.split("-");
   return new Date(p[2], months[p[1].toLowerCase()], p[0]);
 }
 
@@ -62,7 +296,8 @@ for (var i in patientsList) {
   if (patientsList[i][0] == patientNhsSearch) {
     var patientDetails = patientsList[i];
     var patientName = patientDetails[1] + " " + patientDetails[2].toUpperCase();
-    var patientAddress = patientDetails[3] + ", " + patientDetails[4] + ", " + patientDetails[5];
+    var patientAddress =
+      patientDetails[3] + ", " + patientDetails[4] + ", " + patientDetails[5];
     var patientDob = patientDetails[7];
     var parsedDob = parseDate(patientDetails[7]);
     var currentDate = new Date();
@@ -70,10 +305,7 @@ for (var i in patientsList) {
     var age = Math.floor(diff / 31536000000);
     sessionStorage.setItem("patientAge", age);
     var gender = patientDetails[6];
-
-
   } else {
-
   }
 }
 
@@ -95,245 +327,39 @@ var patientFormattedDobTo = sessionStorage.getItem("formattedDobTo");
 var patientFormattedDodFrom = sessionStorage.getItem("formattedDodFrom");
 var patientFormattedDodTo = sessionStorage.getItem("formattedDodTo");
 var patientPostcodeSearch = sessionStorage.getItem("patientPostcodeSearch");
-var patientPostcodeSearchFormatted = sessionStorage.getItem("patientPostcodeSearchFormatted");
+var patientPostcodeSearchFormatted = sessionStorage.getItem(
+  "patientPostcodeSearchFormatted"
+);
 
 /*Advanced Search */
 
-$("#advanced-details-search").submit(function(e) {
-  sessionStorage.clear();
-
-  function formatString(str) {
-    return str
-      .replace(/(\B)[^ ]*/g, match => (match.toLowerCase()))
-      .replace(/^[^ ]/g, match => (match.toUpperCase()));
-  }
-  var patientGenderAdvanced = $('input[name=gender-advanced]:checked', '#advanced-details-search').val();
-  sessionStorage.setItem("patientGenderAdvanced", patientGenderAdvanced);
-
-  if ($('#first-name-advanced').length > 0) {
-    var patientFirstNameCapitalise = formatString($('#first-name-advanced').val());
-    var patientFirstNameAdvanced = patientFirstNameCapitalise;
-  } else {
-    var patientFirstNameAdvanced = "";
-  }
-
-  sessionStorage.setItem("patientFirstNameAdvanced", patientFirstNameAdvanced);
-
-  var patientLastNameCapitalise = formatString($('#last-name-advanced').val());
-  var patientLastNameAdvanced = patientLastNameCapitalise;
-  sessionStorage.setItem("patientLastNameAdvanced", patientLastNameAdvanced);
-
-  if ($('input[name=widen-search]:checked').length > 0) {
-    var widenSearch = true;
-  } else {
-    var widenSearch = false;
-  }
-
-  sessionStorage.setItem("widenSearch", widenSearch);
-
-
-
-  if ($('#postcode-advanced').length > 0) {
-    var patientPostcodeAdvanced = $('#postcode-advanced').val();
-    var patientPostcodeAdvancedUpper = patientPostcodeAdvanced.toUpperCase();
-    var patientPostcodeAdvancedFormatted = patientPostcodeAdvancedUpper.replace(/\s/g, '');
-  } else {
-    var patientPostcodeAdvancedFormatted = "";
-  }
-  sessionStorage.setItem("patientPostcodeAdvanced", patientPostcodeAdvancedFormatted);
-
-  var patientDobDayFrom = $('#dob-day-from').val();
-  sessionStorage.setItem("dobDayFrom", patientDobDayFrom);
-  var patientDobMonthFrom = ($('#dob-month-from').val());
-  sessionStorage.setItem("dobMonthFrom", patientDobMonthFrom);
-  var patientDobYearFrom = $('#dob-year-from').val();
-  sessionStorage.setItem("dobYearFrom", patientDobYearFrom);
-  var fullDobFrom = patientDobDayFrom + "/" + patientDobMonthFrom + "/" + patientDobYearFrom;
-  var dobFrom = moment(fullDobFrom, "DD-MM-YYYY").format("MM/DD/YYYY");
-  sessionStorage.setItem("dobFrom", dobFrom);
-
-  var patientDobDayTo = $('#dob-day-to').val();
-  sessionStorage.setItem("dobDayTo", patientDobDayTo);
-  var patientDobMonthTo = ($('#dob-month-to').val());
-  sessionStorage.setItem("dobMonthTo", patientDobMonthTo);
-  var patientDobYearTo = $('#dob-year-to').val();
-  sessionStorage.setItem("dobYearTo", patientDobYearTo);
-  var fullDobTo = patientDobDayTo + "/" + patientDobMonthTo + "/" + patientDobYearTo;
-  var dobTo = moment(fullDobTo, "DD-MM-YYYY").format("MM/DD/YYYY");
-  sessionStorage.setItem("dobTo", dobTo);
-
-  /*
-  var patientDeathDayFrom = $('#dod-day-from').val();
-  var patientDeathMonthFrom = ($('#dod-month-from').val() - 1);
-  var patientDeathYearFrom = $('#dod-year-from').val();
-  var fullDeathFrom = patientDeathDayFrom + "/" + patientDeathMonthFrom + "/" + patientDeathYearFrom;
-  var deathFromDate = moment(fullDeathFrom, "DD-MM-YYYY").format("MM/DD/YYYY");
-  sessionStorage.setItem("deathFromDate", deathFromDate);
-  var patientDeathDayTo = $('#dod-day-to').val();
-  var patientDeathMonthTo = ($('#dod-month-to').val() - 1);
-  var patientDeathYearTo = $('#dod-year-to').val()
-  var fullDeathTo = patientDeathDayTo + "/" + patientDeathMonthTo + "/" + patientDeathYearTo;
-  var deathToDate = moment(fullDeathTo, "DD-MM-YYYY").format("MM/DD/YYYY");
-  sessionStorage.setItem("deathToDate", deathToDate);
-  var patientGpAdvanced = $('#gp-input').val();
-  sessionStorage.setItem("patientGpAdvanced", patientGpAdvanced);
-  */
-  if ($("#address-name-number").length > 0) {
-    var patientHouseNum = $("#address-name-number").val();
-  } else {
-    var patientHouseNum = "";
-  }
-  sessionStorage.setItem("patientHouseNum", patientHouseNum);
-
-  if ($("#address-street").length > 0) {
-    var patientStreet = $("#address-street").val().toLowerCase();
-  } else {
-    var patientStreet = "";
-  }
-  sessionStorage.setItem("patientStreet", patientStreet);
-
-  if ($("#address-town-city").length > 0) {
-    var patientTownCity = $("#address-town-city").val().toLowerCase();
-  } else {
-    var patientTownCity = "";
-  }
-  sessionStorage.setItem("patientTownCity", patientTownCity);
-
-  if ($("#address-county").length > 0) {
-    var patientCounty = $("#address-county").val().toLowerCase();
-  } else {
-    var patientCounty = "";
-  }
-  sessionStorage.setItem("patientCounty", patientCounty);
-
-  if ($("#address-postcode").length > 0) {
-    var patientPostcodeAdvanced = $('#address-postcode').val();
-    var patientPostcodeAdvancedUpper = patientPostcodeAdvanced.toUpperCase();
-    var patientPostcodeAdvancedFormatted = patientPostcodeAdvancedUpper.replace(/\s/g, '');
-  } else {
-    var patientPostcodeAdvancedFormatted = "";
-  }
-  sessionStorage.setItem("patientPostcodeAdvanced", patientPostcodeAdvancedFormatted);
-
-
-  if (!$('input[name=gender-advanced]').is(':checked')) {
-    $('#advanced-gender-error-error').show();
-    $('#nhsuk-form-group-gender-advanced').addClass('nhsuk-form-group--error');
-    $('#error-summary-advanced-gender').show();
-  } else {
-    $('#advanced-gender-error-error').hide();
-    $('#nhsuk-form-group-gender-advanced').removeClass('nhsuk-form-group--error');
-    $('#error-summary-advanced-gender').hide();
-  }
-
-  if (!$('input[name=last-name]').val()) {
-    $('#advanced-last-name-error-error').show();
-    $('#last-name-advanced').addClass('nhsuk-input--error');
-    $('#nhsuk-form-group-last-name-advanced').addClass('nhsuk-form-group--error');
-    $('#error-summary-advanced-last-name').show();
-  } else {
-    $('#advanced-last-name-error-error').hide();
-    $('#last-name-advanced').removeClass('nhsuk-input--error');
-    $('#nhsuk-form-group-last-name-advanced').removeClass('nhsuk-form-group--error');
-    $('#error-summary-advanced-last-name').hide();
-  }
-
-  if (!$('input[name=dob-day-from]').val() || !$('input[name=dob-month-from]').val() || !$('input[name=dob-year-from]').val() || !$('input[name=dob-day-to]').val() || !$('input[name=dob-month-to]').val() || !$('input[name=dob-year-to]').val()) {
-    $('#dob-from-error-error').show();
-    $('#dob-to-error-error').show();
-    $('.nhsuk-dob-input__input').addClass('nhsuk-input--error');
-    $('#nhsuk-form-group-dob-advanced').addClass('nhsuk-form-group--error');
-    $('#error-summary-advanced-dob').show();
-  } else {
-    $('#dob-from-error-error').hide();
-    $('#dob-to-error-error').hide();
-    $('.nhsuk-dob-input__input').removeClass('nhsuk-input--error');
-    $('#nhsuk-form-group-dob-advanced').removeClass('nhsuk-form-group--error');
-    $('#error-summary-advanced-dob').hide();
-  }
-  if ((!$('input[name=first-name]').val() && !$('input[name=address-postcode]').val()) && $('input[name=widen-search]:checked').length > 0) {
-
-    if (!$('input[name=first-name]').val()) {
-      $('#advanced-first-name-error-error').show();
-      $('#first-name-advanced').addClass('nhsuk-input--error');
-      $('#nhsuk-form-group-first-name-advanced').addClass('nhsuk-form-group--error');
-      $('#error-summary-advanced-first-name').show();
-    }
-    /*else {
-         $('#advanced-first-name-error-error').hide();
-         $('#first-name-advanced').removeClass('nhsuk-input--error');
-         $('#nhsuk-form-group-first-name-advanced').removeClass('nhsuk-form-group--error');
-         $('#error-summary-advanced-first-name').hide();
-       }*/
-
-    if (!$('input[name=address-postcode]').val()) {
-      $('#advanced-postcode-error-error').show();
-      $('#address-postcode').addClass('nhsuk-input--error');
-      $('#nhsuk-form-group-postcode-advanced').addClass('nhsuk-form-group--error');
-      $('#error-summary-advanced-postcode').show();
-    }
-    /*else {
-         $('#advanced-postcode-error-error').hide();
-         $('#address-postcode').removeClass('nhsuk-input--error');
-         $('#nhsuk-form-group-postcode-advanced').removeClass('nhsuk-form-group--error');
-         $('#error-summary-advanced-postcode').hide();
-       }*/
-  }
-
-  if (!$('input[name=gender-advanced]').is(':checked') || !$('#last-name-advanced').val() || !$('#dob-day-from').val() || !$('#dob-month-from').val() || !$('#dob-year-from').val() || !$('#dob-day-to').val() || !$('#dob-month-to').val() || !$('#dob-year-to').val() || ((!$('input[name=first-name]').val() && !$('input[name=address-postcode]').val()) && $('input[name=widen-search]:checked').length > 0)) {
-    $('#nhsuk-advanced-error-summary').show();
-    e.preventDefault();
-  } else {
-    return true;
-  }
-
-});
-
 var patientGenderAdvanced = sessionStorage.getItem("patientGenderAdvanced");
-var patientFirstNameAdvanced = sessionStorage.getItem("patientFirstNameAdvanced");
+var patientFirstNameAdvanced = sessionStorage.getItem(
+  "patientFirstNameAdvanced"
+);
 var patientLastNameAdvanced = sessionStorage.getItem("patientLastNameAdvanced");
 var widenSearch = sessionStorage.getItem("widenSearch");
 var patientPostcodeAdvanced = sessionStorage.getItem("patientPostcodeAdvanced");
 var dobFrom = sessionStorage.getItem("dobFrom");
 var dobTo = sessionStorage.getItem("dobTo");
-var deathFromDate = sessionStorage.getItem("deathFromDate");
-var deathToDate = sessionStorage.getItem("deathToDate");
-var patientGpAdvanced = sessionStorage.getItem("patientGpAdvanced");
-var parsedDob = sessionStorage.getItem("parsedDob");
-var patientHouseNum = sessionStorage.getItem("patientHouseNum");
-var patientStreet = sessionStorage.getItem("patientStreet");
-var patientTownCity = sessionStorage.getItem("patientTownCity");
-var patientCounty = sessionStorage.getItem("patientCounty");
 
 /* Postcode only search */
 
-$("#postcode-search-results").submit(function(e) {
+$("#postcode-search-results").submit(function (e) {
   sessionStorage.clear();
 
   if ($("#postcode-only-input").length > 0) {
-    var patientPostcodeOnly = $('#postcode-only-input').val();
+    var patientPostcodeOnly = $("#postcode-only-input").val();
     var patientPostcodeAdvancedUpper = patientPostcodeOnly.toUpperCase();
-    var patientPostcodeAdvancedFormatted = patientPostcodeAdvancedUpper.replace(/\s/g, '');
+    var patientPostcodeAdvancedFormatted = patientPostcodeAdvancedUpper.replace(
+      /\s/g,
+      ""
+    );
     var patientPostcodeOnly = patientPostcodeAdvancedFormatted;
   } else {
     var patientPostcodeOnly = "";
   }
   sessionStorage.setItem("patientPostcodeOnly", patientPostcodeOnly);
-
-  if (!$('input[name=postcode-only]').val().length > 0) {
-    $('#postcode-error').show();
-    $('#postcode-only-input').addClass('nhsuk-input--error');
-    $('#nhsuk-form-group-postcode-only').addClass('nhsuk-form-group--error');
-    $('.nhsuk-error-summary__list').append('<li><a href="#nhsuk-form-group-last-name">You must enter a postcode for the patient, like A1 2BC</a></li>');
-  }
-
-  if (!$('input[name=postcode-only]').val().length > 0) {
-    $('#postcode-only-error-summary').show();
-    e.preventDefault();
-  } else {
-    return true;
-    console.log("logging");
-  }
 
   var patientPostcodeOnly = sessionStorage.getItem("patientPostcodeOnly");
 
@@ -342,8 +368,10 @@ $("#postcode-search-results").submit(function(e) {
   for (var i in patientsList) {
     if (patientsList[i][5] == patientPostcodeOnly) {
       var patientDetails = patientsList[i];
-      var patientName = patientDetails[1] + " " + patientDetails[2].toUpperCase();
-      var patientAddress = patientDetails[3] + ", " + patientDetails[4] + ", " + patientDetails[5];
+      var patientName =
+        patientDetails[1] + " " + patientDetails[2].toUpperCase();
+      var patientAddress =
+        patientDetails[3] + ", " + patientDetails[4] + ", " + patientDetails[5];
       var patientDob = patientDetails[7];
       var parsedDob = parseDate(patientDetails[7]);
       var currentDate = new Date();
@@ -351,19 +379,18 @@ $("#postcode-search-results").submit(function(e) {
       var age = Math.floor(diff / 31536000000);
       sessionStorage.setItem("patientAge", age);
       var gender = patientDetails[6];
-
-
     } else {
-
     }
   }
-
 });
 
 /* Copy input details between forms */
 
-$("#advanced-details-link").click(function() {
-  var patientGenderSearch = $('input[name=gender]:checked', '#patient-details-search').val();
+$("#advanced-details-link").click(function () {
+  var patientGenderSearch = $(
+    "input[name=gender]:checked",
+    "#patient-details-search"
+  ).val();
   if (patientGenderSearch) {
     sessionStorage.setItem("patientGenderSearch", patientGenderSearch);
   } else {
@@ -374,116 +401,54 @@ $("#advanced-details-link").click(function() {
   var patientDobMonth = $("#dob-month").val();
   var patientDobYear = $("#dob-year").val();
   if (patientLastNameSearch) {
-    var patientLastNameAdvanced = $('#last-name').val();
+    var patientLastNameAdvanced = $("#last-name").val();
     sessionStorage.setItem("patientLastNameAdvanced", patientLastNameAdvanced);
   } else {
     sessionStorage.setItem("patientLastNameAdvanced", "");
   }
   if (patientDobDay) {
-    var dobDayFrom = $('#dob-day').val();
+    var dobDayFrom = $("#dob-day").val();
     sessionStorage.setItem("dobDayFrom", dobDayFrom);
   } else {
     sessionStorage.setItem("dobDayFrom", "");
   }
   if (patientDobMonth) {
-    var dobMonthFrom = $('#dob-month').val();
+    var dobMonthFrom = $("#dob-month").val();
     sessionStorage.setItem("dobMonthFrom", dobMonthFrom);
   } else {
     sessionStorage.setItem("dobMonthFrom", "");
   }
   if (patientDobYear) {
-    var dobYearFrom = $('#dob-year').val();
+    var dobYearFrom = $("#dob-year").val();
     sessionStorage.setItem("dobYearFrom", dobYearFrom);
   } else {
     sessionStorage.setItem("dobYearFrom", "");
   }
-
 });
 
-$("#refine-search-link").click(function() {
+$("#refine-search-link").click(function () {
   sessionStorage.setItem("patientGenderAdvanced", patientGenderAdvanced);
   sessionStorage.setItem("patientLastNameAdvanced", patientLastNameAdvanced);
   sessionStorage.setItem("patientHouseNum", patientHouseNum);
 });
 
-if (patientGenderSearch) {
-  $("input[name=gender-advanced][value='" + sessionStorage.getItem('patientGenderSearch') + "']").attr('checked', true);
-} else if (patientGenderAdvanced) {
-  $("input[name=gender-advanced][value='" + sessionStorage.getItem('patientGenderAdvanced') + "']").attr('checked', true);
-}
-
-if (patientFirstNameSearch) {
-  $("#first-name-advanced").val(sessionStorage.getItem('patientFirstNameSearch'));
-} else if (patientLastNameAdvanced) {
-  $("#first-name-advanced").val(sessionStorage.getItem('patientFirstNameAdvanced'));
-}
-
-if (patientLastNameAdvanced) {
-  $("#last-name-advanced").val(sessionStorage.getItem('patientLastNameAdvanced'));
-} else {
-  $("#last-name-advanced").val("");
-}
-
-
-if (sessionStorage.getItem('dobDayFrom')) {
-  $("#dob-day-from").val(sessionStorage.getItem('dobDayFrom'));
-}
-if (sessionStorage.getItem('dobMonthFrom')) {
-  $("#dob-month-from").val(sessionStorage.getItem('dobMonthFrom'));
-}
-if (sessionStorage.getItem('dobYearFrom')) {
-  $("#dob-year-from").val(sessionStorage.getItem('dobYearFrom'));
-}
-
-if (sessionStorage.getItem('dobDayTo')) {
-  $("#dob-day-to").val(sessionStorage.getItem('dobDayTo'));
-}
-if (sessionStorage.getItem('dobMonthTo')) {
-  $("#dob-month-to").val(sessionStorage.getItem('dobMonthTo'));
-}
-if (sessionStorage.getItem('dobYearTo')) {
-  $("#dob-year-to").val(sessionStorage.getItem('dobYearTo'));
-}
-
-if (patientHouseNum) {
-  $("#address-name-number").val(sessionStorage.getItem('patientHouseNum'));
-}
-
-if (patientStreet) {
-  $("#address-street").val(sessionStorage.getItem('patientStreet'));
-}
-
-if (patientTownCity) {
-  $("#address-town-city").val(sessionStorage.getItem('patientTownCity'));
-}
-
-if (patientCounty) {
-  $("#address-county").val(sessionStorage.getItem('patientCounty'));
-}
-
-if (patientPostcodeAdvanced) {
-  $("#address-postcode").val(sessionStorage.getItem('patientPostcodeAdvanced'));
-
-}
-
 /* Clear session storage when performing new search */
 
-$("#nhs-number-link").click(function() {
+$("#nhs-number-link").click(function () {
   sessionStorage.clear();
 });
 
-$("#find-patient").click(function() {
+$("#find-patient").click(function () {
   sessionStorage.clear();
 });
 
-$(".index-page-link").click(function() {
+$(".index-page-link").click(function () {
   sessionStorage.clear();
 });
 
-$("#index-page-link").click(function() {
+$("#index-page-link").click(function () {
   sessionStorage.clear();
 });
-
 
 /* Find patient in patientList */
 
@@ -491,75 +456,130 @@ var returnedPatientsList = [];
 
 for (var i in patientsList) {
   /* NHS Number search */
-  if ((patientNhsSearch == patientsList[i][0])) {
-    var returnedPatients = (patientsList[i]);
+  if (patientNhsSearch == patientsList[i][0]) {
+    var returnedPatients = patientsList[i];
     returnedPatientsList.push(returnedPatients);
     sessionStorage.setItem("returnedPatients", returnedPatients);
   }
   /* Patient Details search */
-  if ((patientFirstNameSearch == "") && (patientPostcodeSearchFormatted == "")) {
-    if ((patientGenderSearch == patientsList[i][6] || patientGenderSearch == "Not known") && (patientLastNameSearch == patientsList[i][2]) && (patientFormattedDob == patientsList[i][7])) {
-
-      var returnedPatients = (patientsList[i]);
+  if (patientFirstNameSearch == "" && patientPostcodeSearchFormatted == "") {
+    if (
+      (patientGenderSearch == patientsList[i][6] ||
+        patientGenderSearch == "Not known") &&
+      patientLastNameSearch == patientsList[i][2] &&
+      patientFormattedDob == patientsList[i][7]
+    ) {
+      var returnedPatients = patientsList[i];
       returnedPatientsList.push(returnedPatients);
       sessionStorage.setItem("returnedPatients", returnedPatients);
     } else {
-
     }
   } else if (patientPostcodeSearchFormatted == "") {
-    if ((patientGenderSearch == patientsList[i][6] || patientGenderSearch == "Not known") && (patientLastNameSearch == patientsList[i][2]) && (patientFormattedDob == patientsList[i][7]) && (patientFirstNameSearch == patientsList[i][1])) {
-      var returnedPatients = (patientsList[i]);
+    if (
+      (patientGenderSearch == patientsList[i][6] ||
+        patientGenderSearch == "Not known") &&
+      patientLastNameSearch == patientsList[i][2] &&
+      patientFormattedDob == patientsList[i][7] &&
+      patientFirstNameSearch == patientsList[i][1]
+    ) {
+      var returnedPatients = patientsList[i];
       returnedPatientsList.push(returnedPatients);
       sessionStorage.setItem("returnedPatients", returnedPatients);
     } else {
-
     }
-
   } else if (patientFirstNameSearch == "") {
-    if ((patientGenderSearch == patientsList[i][6] || patientGenderSearch == "Not known") && (patientLastNameSearch == patientsList[i][2]) && (patientFormattedDob == patientsList[i][7]) && (patientPostcodeSearchFormatted == patientsList[i][5])) {
-      var returnedPatients = (patientsList[i]);
+    if (
+      (patientGenderSearch == patientsList[i][6] ||
+        patientGenderSearch == "Not known") &&
+      patientLastNameSearch == patientsList[i][2] &&
+      patientFormattedDob == patientsList[i][7] &&
+      patientPostcodeSearchFormatted == patientsList[i][5]
+    ) {
+      var returnedPatients = patientsList[i];
       returnedPatientsList.push(returnedPatients);
       sessionStorage.setItem("returnedPatients", returnedPatients);
     } else {
-
     }
-  } else if ((patientGenderSearch == patientsList[i][6] || patientGenderSearch == "Not known") && (patientLastNameSearch == patientsList[i][2]) && (patientFormattedDob == patientsList[i][7]) && (patientPostcodeSearchFormatted == patientsList[i][5]) && (patientFirstNameSearch == patientsList[i][1])) {
-    var returnedPatients = (patientsList[i]);
+  } else if (
+    (patientGenderSearch == patientsList[i][6] ||
+      patientGenderSearch == "Not known") &&
+    patientLastNameSearch == patientsList[i][2] &&
+    patientFormattedDob == patientsList[i][7] &&
+    patientPostcodeSearchFormatted == patientsList[i][5] &&
+    patientFirstNameSearch == patientsList[i][1]
+  ) {
+    var returnedPatients = patientsList[i];
     returnedPatientsList.push(returnedPatients);
     sessionStorage.setItem("returnedPatients", returnedPatients);
   } else {
-
   }
 
   /* Advanced Search details */
 
   var dateString = patientsList[i][7];
 
-  var wholeDate = moment(dateString, 'DD-MMM-YYYY').format("MM/DD/YYYY");
+  var wholeDate = moment(dateString, "DD-MMM-YYYY").format("MM/DD/YYYY");
 
-  if ((patientGenderAdvanced == patientsList[i][6] || patientGenderAdvanced == "Not known") && ((patientFirstNameAdvanced == "") || (patientFirstNameAdvanced !== "" && patientFirstNameAdvanced == patientsList[i][1]) || (patientsList[i][1].includes(patientFirstNameAdvanced) && widenSearch == "true")) && (patientLastNameAdvanced == patientsList[i][2]) && ((moment(wholeDate).isBetween(dobFrom, dobTo, null, '[]'))) && ((patientHouseNum == "") || (patientHouseNum !== "" && patientsList[i][3].includes(patientHouseNum))) && ((patientStreet == "") || (patientStreet !== "" && patientsList[i][3].toLowerCase().includes(patientStreet))) && ((patientTownCity == "") || (patientTownCity !== "" && patientsList[i][4].toLowerCase().includes(patientTownCity))) && ((patientPostcodeAdvanced == "") || (patientPostcodeAdvanced !== "" && patientPostcodeAdvanced == patientsList[i][5]))) {
-    var returnedPatients = (patientsList[i]);
+  if (
+    (patientGenderAdvanced == patientsList[i][6] ||
+      patientGenderAdvanced == "Not known") &&
+    (patientFirstNameAdvanced == "" ||
+      (patientFirstNameAdvanced !== "" &&
+        patientFirstNameAdvanced == patientsList[i][1]) ||
+      (patientsList[i][1].includes(patientFirstNameAdvanced) &&
+        widenSearch == "true")) &&
+    patientLastNameAdvanced == patientsList[i][2] &&
+    moment(wholeDate).isBetween(dobFrom, dobTo, null, "[]") &&
+    (patientPostcodeAdvanced == "" ||
+      (patientPostcodeAdvanced !== "" &&
+        patientPostcodeAdvanced == patientsList[i][5]))
+  ) {
+    var returnedPatients = patientsList[i];
     returnedPatientsList.push(returnedPatients);
     sessionStorage.setItem("returnedPatients", returnedPatients);
   } else {
-
   }
 
   /* postcode only search */
   var patientPostcodeOnly = sessionStorage.getItem("patientPostcodeOnly");
-  if ((patientPostcodeOnly == patientsList[i][5])) {
-    var returnedPatients = (patientsList[i]);
+  if (patientPostcodeOnly == patientsList[i][5]) {
+    var returnedPatients = patientsList[i];
     returnedPatientsList.push(returnedPatients);
     sessionStorage.setItem("returnedPatients", returnedPatients);
   }
-
 }
 
 for (var i in returnedPatientsList) {
-
-
   var patientNhsNo = returnedPatientsList[i][0];
-  $('.patient-results').append('<tr role="row" class="patient-search-result"><td role="gridcell"><span class="table-heading" aria-hidden="true">Name</span><span><a href="patient-overview" class="name-results-td">' + returnedPatientsList[i][1] + " " + returnedPatientsList[i][2].toUpperCase() + '</span></a></td><td role="gridcell"><span class="table-heading" aria-hidden="true">Gender</span><span class="gender-results-td">' + returnedPatientsList[i][6] + '</span></td><td role="gridcell"><span class="table-heading" aria-hidden="true">Date of birth</span><span class="dob-results-td">' + returnedPatientsList[i][7] + '</span></td><td role="gridcell"><span class="table-heading" aria-hidden="true">Address</span><span class="address-results-td">' + returnedPatientsList[i][3] + "," + "&nbsp;" + "<span class='patient-pob-td'>" + returnedPatientsList[i][4] + "</span>" + "," + "&nbsp;" + "<span class='postcode-results-td'>" + returnedPatientsList[i][5].replace(/^(.*)(\d)/, '$1 $2') + "</span></span>" + '</td> + <td role="gridcell"><span class="table-heading" aria-hidden="true">NHS Number</span><span class="nhs-no-results-td">' + returnedPatientsList[i][0].substr(0, 3) + " " + returnedPatientsList[i][0].substr(2, 3) + " " + returnedPatientsList[i][0].substr(5, 4) + '</span></td></tr>');
+  $(".patient-results").append(
+    '<tr role="row" class="patient-search-result"><td role="gridcell"><span class="table-heading" aria-hidden="true">Name</span><span><a href="patient-overview" class="name-results-td">' +
+      returnedPatientsList[i][1] +
+      " " +
+      returnedPatientsList[i][2].toUpperCase() +
+      '</span></a></td><td role="gridcell"><span class="table-heading" aria-hidden="true">Gender</span><span class="gender-results-td">' +
+      returnedPatientsList[i][6] +
+      '</span></td><td role="gridcell"><span class="table-heading" aria-hidden="true">Date of birth</span><span class="dob-results-td">' +
+      returnedPatientsList[i][7] +
+      '</span></td><td role="gridcell"><span class="table-heading" aria-hidden="true">Address</span><span class="address-results-td">' +
+      returnedPatientsList[i][3] +
+      "," +
+      "&nbsp;" +
+      "<span class='patient-pob-td'>" +
+      returnedPatientsList[i][4] +
+      "</span>" +
+      "," +
+      "&nbsp;" +
+      "<span class='postcode-results-td'>" +
+      returnedPatientsList[i][5].replace(/^(.*)(\d)/, "$1 $2") +
+      "</span></span>" +
+      '</td> + <td role="gridcell"><span class="table-heading" aria-hidden="true">NHS Number</span><span class="nhs-no-results-td">' +
+      returnedPatientsList[i][0].substr(0, 3) +
+      " " +
+      returnedPatientsList[i][0].substr(2, 3) +
+      " " +
+      returnedPatientsList[i][0].substr(5, 4) +
+      "</span></td></tr>"
+  );
 }
 
 /* Populate search results page */
@@ -583,15 +603,18 @@ if (patientGenderSearch) {
 }
 
 if (patientFirstNameAdvanced) {
-  var firstNameFormatted = "first name " + capitalizeFirstLetter(patientFirstNameAdvanced) + ", ";
+  var firstNameFormatted =
+    "first name " + capitalizeFirstLetter(patientFirstNameAdvanced) + ", ";
 } else {
   var firstNameFormatted = "";
 }
 
 if (patientLastNameSearch) {
-  var lastNameFormatted = "last name " + capitalizeFirstLetter(patientLastNameSearch) + ", ";
+  var lastNameFormatted =
+    "last name " + capitalizeFirstLetter(patientLastNameSearch) + ", ";
 } else if (patientLastNameAdvanced) {
-  var lastNameFormatted = "last name " + capitalizeFirstLetter(patientLastNameAdvanced) + ", ";
+  var lastNameFormatted =
+    "last name " + capitalizeFirstLetter(patientLastNameAdvanced) + ", ";
 } else {
   var lastNameFormatted = "";
 }
@@ -599,40 +622,26 @@ if (patientLastNameSearch) {
 if (patientFormattedDob !== null) {
   var dob = "date of birth " + patientFormattedDob + ", ";
 } else if (patientDobFrom !== null && patientDobTo !== null) {
-  var dob = "date of birth between " + moment(patientDobFrom, "MMDDYYYY").format("DD-MMM-YYYY") + " and " + moment(patientDobTo, "MMDDYYYY").format("DD-MMM-YYYY") + ", ";
+  var dob =
+    "date of birth between " +
+    moment(patientDobFrom, "MMDDYYYY").format("DD-MMM-YYYY") +
+    " and " +
+    moment(patientDobTo, "MMDDYYYY").format("DD-MMM-YYYY") +
+    ", ";
 } else {
   var dob = "";
 }
 
-if (patientHouseNum || patientStreet || patientTownCity || patientCounty || patientPostcodeAdvanced) {
+if (patientPostcodeAdvanced) {
   var address = "address ";
 } else {
   var address = "";
 }
 
-if (patientHouseNum) {
-  var houseNum = patientHouseNum + " ";
-} else {
-  var houseNum = "";
-}
-
-if (patientStreet) {
-  var street = patientStreet + ", ";
-} else {
-  var street = "";
-}
-
-if (patientTownCity) {
-  var townCity = patientTownCity + ", ";
-} else {
-  var townCity = "";
-}
-
-if (patientCounty) {
-  var county = patientCounty + ", ";
-} else {
-  var county = "";
-}
+var houseNum = "";
+var street = "";
+var townCity = "";
+var county = "";
 
 if (patientPostcodeAdvanced) {
   var postcode = patientPostcodeAdvanced;
@@ -646,7 +655,14 @@ if (patientPostcodeOnly) {
   var postcode = "";
 }
 
-var resultsList = nhsNo + gender + firstNameFormatted + lastNameFormatted + dob + address + houseNum;
+var resultsList =
+  nhsNo +
+  gender +
+  firstNameFormatted +
+  lastNameFormatted +
+  dob +
+  address +
+  houseNum;
 var formattedResults = resultsList.replace(/,\s*$/, "");
 
 function insertBeforeLastOccurrence(strToSearch, strToFind, strToInsert) {
@@ -655,69 +671,123 @@ function insertBeforeLastOccurrence(strToSearch, strToFind, strToInsert) {
   return strToSearch.substring(0, n) + strToInsert + strToSearch.substring(n);
 }
 
-var formattedResultsList = insertBeforeLastOccurrence(formattedResults, "address", "and ");
+var formattedResultsList = insertBeforeLastOccurrence(
+  formattedResults,
+  "address",
+  "and "
+);
 
 if (returnedPatientsList.length == 0) {
-  $('.search-results-container').hide();
-  $('.number-of-results').html("<h3 class='nhsuk-heading-xs'>Sorry. We couldn't find any patients with " + formattedResultsList + "</h3>");
-  $('.number-of-results').append("<p>If this isn't the patient you're looking for, you can <a id='refine-search-link' href='advanced-details-search'>refine your search</a> to find a match or <a href='nhs-number-search'>perform a new search</a>.</p>");
-
+  $(".search-results-container").hide();
+  $(".number-of-results").html(
+    "<h3 class='nhsuk-heading-xs'>Sorry. We couldn't find any patients with " +
+      formattedResultsList +
+      "</h3>"
+  );
+  $(".number-of-results").append(
+    "<p>If this isn't the patient you're looking for, you can <a id='refine-search-link' href='advanced-details-search'>refine your search</a> to find a match or <a href='nhs-number-search'>perform a new search</a>.</p>"
+  );
 } else if (returnedPatientsList.length == 1) {
-  $('.number-of-results').html("<h3 class='nhsuk-heading-xs'>We found <b>1</b> result for patients with " + formattedResultsList + "</h3>");
-  $('.number-of-results').append("<p>If this isn't the patient you're looking for, you can <a id='refine-search-link' href='advanced-details-search'>refine your search</a> to find a match or <a href='nhs-number-search'>perform a new search</a>.</p>");
-  $('.results-count').html("Showing 1 of 1 results");
-
+  $(".number-of-results").html(
+    "<h3 class='nhsuk-heading-xs'>We found <b>1</b> result for patients with " +
+      formattedResultsList +
+      "</h3>"
+  );
+  $(".number-of-results").append(
+    "<p>If this isn't the patient you're looking for, you can <a id='refine-search-link' href='advanced-details-search'>refine your search</a> to find a match or <a href='nhs-number-search'>perform a new search</a>.</p>"
+  );
+  $(".results-count").html("Showing 1 of 1 results");
 } else if (returnedPatientsList.length > 5) {
-  $('.number-of-results').html("<h3 class='nhsuk-heading-xs'>We found " + returnedPatientsList.length + " results for patients with " + formattedResultsList + "</h3>");
-  $('.number-of-results').append("<p>If this isn't the patient you're looking for, you can <a id='refine-search-link' href='advanced-details-search'>refine your search</a> to find a match or <a href='nhs-number-search'>perform a new search</a>.</p>");
+  $(".number-of-results").html(
+    "<h3 class='nhsuk-heading-xs'>We found " +
+      returnedPatientsList.length +
+      " results for patients with " +
+      formattedResultsList +
+      "</h3>"
+  );
+  $(".number-of-results").append(
+    "<p>If this isn't the patient you're looking for, you can <a id='refine-search-link' href='advanced-details-search'>refine your search</a> to find a match or <a href='nhs-number-search'>perform a new search</a>.</p>"
+  );
   var numShown = 5;
   var numMore = 5; // Increment
 
-  var $table = $('table').find('tbody'); // tbody containing all the rows
-  var numRows = $table.find('tr').length; // Total # rows
+  var $table = $("table").find("tbody"); // tbody containing all the rows
+  var numRows = $table.find("tr").length; // Total # rows
 
-  $(function() {
+  $(function () {
     // Hide rows and add clickable div
-    $table.find('tr:gt(' + (numShown - 1) + ')').hide().end();
+    $table
+      .find("tr:gt(" + (numShown - 1) + ")")
+      .hide()
+      .end();
     if (numShown >= 5) {
-      $(".load-more").html('<a class="nhsuk-button" id="more"><tr><td colspan="' +
-        $table.find('tr:first td').length + '"><div>Show <span>' +
-        numMore + '</span> More</div</a></td></tr>');
+      $(".load-more").html(
+        '<a class="nhsuk-button" id="more"><tr><td colspan="' +
+          $table.find("tr:first td").length +
+          '"><div>Show <span>' +
+          numMore +
+          "</span> More</div</a></td></tr>"
+      );
     } else {
-
     }
 
-    $('#more').click(function() {
-      $("html, body").animate({
-        scrollTop: $(document).height()
-      }, 1000);
+    $("#more").click(function () {
+      $("html, body").animate(
+        {
+          scrollTop: $(document).height(),
+        },
+        1000
+      );
       numShown = numShown + numMore;
       // no more "show more" if done
       if (numShown >= numRows) {
-        $('#more').remove();
+        $("#more").remove();
       }
       // change rows remaining if less than increment
       if (numRows - numShown < numMore) {
-        $('#more span').html(numRows - numShown);
-
+        $("#more span").html(numRows - numShown);
       }
-      $table.find('tr:lt(' + numShown + ')').show();
+      $table.find("tr:lt(" + numShown + ")").show();
       if (numShown <= numRows) {
-        $('.results-count').html("Showing " + numShown + " of " + numRows + " results");
+        $(".results-count").html(
+          "Showing " + numShown + " of " + numRows + " results"
+        );
       } else {
-        $('.results-count').html("Showing " + (numShown - (numShown - numRows)) + " of " + numRows + " results");
+        $(".results-count").html(
+          "Showing " +
+            (numShown - (numShown - numRows)) +
+            " of " +
+            numRows +
+            " results"
+        );
       }
     });
 
-    $('.results-count').html("Showing " + numShown + " of " + numRows + " results");
+    $(".results-count").html(
+      "Showing " + numShown + " of " + numRows + " results"
+    );
   });
 } else {
-  $('.number-of-results').html("<h3 class='nhsuk-heading-xs'>We found " + returnedPatientsList.length + " results for patients with " + formattedResultsList + "</h3>");
-  $('.number-of-results').append("<p>If you can't find the patient you're looking for you can <a id='refine-search-link' href='advanced-details-search'>refine your search</a> or <a href='nhs-number-search'>perform a new search</a>.</p>");
-  $('.results-count').html("Showing " + returnedPatientsList.length + " of " + returnedPatientsList.length + " results");
+  $(".number-of-results").html(
+    "<h3 class='nhsuk-heading-xs'>We found " +
+      returnedPatientsList.length +
+      " results for patients with " +
+      formattedResultsList +
+      "</h3>"
+  );
+  $(".number-of-results").append(
+    "<p>If you can't find the patient you're looking for you can <a id='refine-search-link' href='advanced-details-search'>refine your search</a> or <a href='nhs-number-search'>perform a new search</a>.</p>"
+  );
+  $(".results-count").html(
+    "Showing " +
+      returnedPatientsList.length +
+      " of " +
+      returnedPatientsList.length +
+      " results"
+  );
 }
 /* Save patient details to session storage when clicking a search result*/
-$(".nhsuk-promo").click(function() {
+$(".nhsuk-promo").click(function () {
   var patientName = $(this).find(".search-results-name").text();
   var patientAddress = $(this).find(".search-results-address").text();
   var patientNhsNo = $(this).find(".search-results-nhs-no").text();
@@ -731,10 +801,9 @@ $(".nhsuk-promo").click(function() {
   sessionStorage.setItem("patientDob", patientDob);
   sessionStorage.setItem("patientGender", patientGender);
   sessionStorage.setItem("patientPostcode", patientPostcode);
-
 });
 
-$(".patient-search-result").click(function() {
+$(".patient-search-result").click(function () {
   var patientName = $(this).find(".name-results-td").text();
   var patientAddress = $(this).find(".address-results-td").text();
   var patientNhsNo = $(this).find(".nhs-no-results-td").text();
@@ -742,7 +811,6 @@ $(".patient-search-result").click(function() {
   var patientGender = $(this).find(".gender-results-td").text();
   var patientPostcode = $(this).find(".postcode-results-td").text();
   var patientPob = $(this).find(".patient-pob-td").text();
-
 
   sessionStorage.setItem("patientName", patientName);
   sessionStorage.setItem("patientAddress", patientAddress);
@@ -755,16 +823,16 @@ $(".patient-search-result").click(function() {
   window.location.href = "patient-overview";
 });
 
-$("#confirm-name-changes-btn").click(function() {
+$("#confirm-name-changes-btn").click(function () {
   var patientName = "Dr William TELL";
   sessionStorage.setItem("patientName", patientName);
 });
 
-$("#confirm-address-changes-btn").click(function() {
-  var patientAddress = "1 Henley Street, Stratford-upon-Avon, Warwickshire, CV37 6QW";
+$("#confirm-address-changes-btn").click(function () {
+  var patientAddress =
+    "1 Henley Street, Stratford-upon-Avon, Warwickshire, CV37 6QW";
   sessionStorage.setItem("patientAddress", patientAddress);
 });
-
 
 /* Retrieve patient details to session storage when document is ready*/
 var patientName = sessionStorage.getItem("patientName");
@@ -778,124 +846,141 @@ var patientAddressWithPostcode = patientAddress;
 
 var cpisAltName;
 
-if (window.location.href.indexOf("cpis") > -1 || window.location.href.indexOf("fgm") > -1) {
+if (
+  window.location.href.indexOf("cpis") > -1 ||
+  window.location.href.indexOf("fgm") > -1
+) {
   cpisAltName = localStorage.altName;
 } else {
   cpisAltName = "";
 }
 
-
-
 var parsedDob = moment(patientDob, "DD-MMM-YYYY").format("DD-MM-YYYY");
-var patientAge = moment(new Date()).diff(moment(parsedDob, "DD-MM-YYYY"), 'years', false);
+var patientAge = moment(new Date()).diff(
+  moment(parsedDob, "DD-MM-YYYY"),
+  "years",
+  false
+);
 
 if (cpisAltName == "Amelia MILLER") {
-  $('.patient-banner-name, .card-content-name').text(cpisAltName);
-  $('.patient-banner-dob, .card-content-detail-dob').text("16-Dec-2003");
-  $('.patient-banner-nhs-no, .card-content-detail-nhs-no').text("123 456 7890");
-  $('.patient-banner-address').text("1 Town Street, Leeds, West Yorkshire, LS8 2CD");
-  $('.patient-banner-gender, .card-content-detail-gender').text("Female");
-  $('.patient-banner-age').text("16 years old");
-  $('.card-content-detail-pob').text("Leeds");
-  $('.card-content-detail-address').html("1 Town Street, Leeds, West Yorkshire, LS8 2CD");
-  $('.name-dob-floater').html(cpisAltName + " | 16-Dec-2003");
-  $('.mobile-nav-patient-details').html(cpisAltName + " <br/> 16-Dec-2003");
+  $(".patient-banner-name, .card-content-name").text(cpisAltName);
+  $(".patient-banner-dob, .card-content-detail-dob").text("16-Dec-2003");
+  $(".patient-banner-nhs-no, .card-content-detail-nhs-no").text("123 456 7890");
+  $(".patient-banner-address").text(
+    "1 Town Street, Leeds, West Yorkshire, LS8 2CD"
+  );
+  $(".patient-banner-gender, .card-content-detail-gender").text("Female");
+  $(".patient-banner-age").text("16 years old");
+  $(".card-content-detail-pob").text("Leeds");
+  $(".card-content-detail-address").html(
+    "1 Town Street, Leeds, West Yorkshire, LS8 2CD"
+  );
+  $(".name-dob-floater").html(cpisAltName + " | 16-Dec-2003");
+  $(".mobile-nav-patient-details").html(cpisAltName + " <br/> 16-Dec-2003");
 } else if (!patientName) {
-  $('.patient-banner-name, .card-content-name').text("Mr William SHAKESPEARE");
-  $('.patient-banner-dob, .card-content-detail-dob').text("30-Jan-2018");
-  $('.patient-banner-nhs-no, .card-content-detail-nhs-no').text("123 456 7890");
+  $(".patient-banner-name, .card-content-name").text("Mr William SHAKESPEARE");
+  $(".patient-banner-dob, .card-content-detail-dob").text("30-Jan-2018");
+  $(".patient-banner-nhs-no, .card-content-detail-nhs-no").text("123 456 7890");
   if (!patientAddress) {
-    $('.patient-banner-address').text("1 Town Street, Stratford-upon-Avon, Warwickshire, AB1 2CD");
-    $('.card-content-detail-address').html("1 Town Street, Stratford-upon-Avon, Warwickshire, AB1 2CD");
+    $(".patient-banner-address").text(
+      "1 Town Street, Stratford-upon-Avon, Warwickshire, AB1 2CD"
+    );
+    $(".card-content-detail-address").html(
+      "1 Town Street, Stratford-upon-Avon, Warwickshire, AB1 2CD"
+    );
   } else {
-    $('.patient-banner-address').text(patientAddress);
-    $('.card-content-detail-address').html(patientAddress);
+    $(".patient-banner-address").text(patientAddress);
+    $(".card-content-detail-address").html(patientAddress);
   }
-  $('.patient-banner-gender, .card-content-detail-gender').text("Male");
-  $('.patient-banner-age').text("4 years old");
-  $('.card-content-detail-pob').text("Stratford-upon-Avon");
-  $('.name-dob-floater').html("Mr William SHAKESPEARE | 30-Jan-2018");
-  $('.mobile-nav-patient-details').html("Mr William SHAKESPEARE <br/> Date of birth: 30-Jan-2018");
+  $(".patient-banner-gender, .card-content-detail-gender").text("Male");
+  $(".patient-banner-age").text("4 years old");
+  $(".card-content-detail-pob").text("Stratford-upon-Avon");
+  $(".name-dob-floater").html("Mr William SHAKESPEARE | 30-Jan-2018");
+  $(".mobile-nav-patient-details").html(
+    "Mr William SHAKESPEARE <br/> Date of birth: 30-Jan-2018"
+  );
 } else if (patientName == "Dr William TELL") {
-  $('.patient-banner-name, .card-content-name').text(patientName);
-  $('.patient-banner-dob, .card-content-detail-dob').text("30-Jan-2018");
-  $('.patient-banner-nhs-no, .card-content-detail-nhs-no').text("123 456 7890");
+  $(".patient-banner-name, .card-content-name").text(patientName);
+  $(".patient-banner-dob, .card-content-detail-dob").text("30-Jan-2018");
+  $(".patient-banner-nhs-no, .card-content-detail-nhs-no").text("123 456 7890");
   if (!patientAddress) {
-    $('.patient-banner-address').text("1 Town Street, Stratford-upon-Avon, Warwickshire, AB1 2CD");
-    $('.card-content-detail-address').html("1 Town Street, Stratford-upon-Avon, Warwickshire, AB1 2CD");
+    $(".patient-banner-address").text(
+      "1 Town Street, Stratford-upon-Avon, Warwickshire, AB1 2CD"
+    );
+    $(".card-content-detail-address").html(
+      "1 Town Street, Stratford-upon-Avon, Warwickshire, AB1 2CD"
+    );
   } else {
-    $('.patient-banner-address').text(patientAddress);
-    $('.card-content-detail-address').html(patientAddress);
+    $(".patient-banner-address").text(patientAddress);
+    $(".card-content-detail-address").html(patientAddress);
   }
-  $('.patient-banner-gender, .card-content-detail-gender').text("Male");
-  $('.patient-banner-age').text("4 years old");
-  $('.card-content-detail-pob').text("Stratford-upon-Avon");
-  $('.name-dob-floater').html("Dr William TELL | 30-Jan-2018");
-  $('.mobile-nav-patient-details').html("Dr William TELL <br/> Date of birth: 30-Jan-2018");
-
+  $(".patient-banner-gender, .card-content-detail-gender").text("Male");
+  $(".patient-banner-age").text("4 years old");
+  $(".card-content-detail-pob").text("Stratford-upon-Avon");
+  $(".name-dob-floater").html("Dr William TELL | 30-Jan-2018");
+  $(".mobile-nav-patient-details").html(
+    "Dr William TELL <br/> Date of birth: 30-Jan-2018"
+  );
 } else {
-  $('.patient-banner-name, .card-content-name').text(patientName);
-  $('.patient-banner-dob, .card-content-detail-dob').text(patientDob);
-  $('.patient-banner-nhs-no, .card-content-detail-nhs-no').text(patientNhsNo);
-  $('.patient-banner-address').text(patientAddressWithPostcode);
-  $('.patient-banner-gender, .card-content-detail-gender').text(patientGender);
-  $('.patient-banner-age').text(patientAge + " years old");
-  $('.card-content-detail-pob').text(sessionStorage.getItem("patientPob"));
-  $('.card-content-detail-address').html(patientAddressWithPostcode.replace(/\,/g, '<br/>'));
-  $('.name-dob-floater').html(patientName + " | " + patientDob);
-  $('.mobile-nav-patient-details').html(patientName + " <br/> " + patientDob);
-
+  $(".patient-banner-name, .card-content-name").text(patientName);
+  $(".patient-banner-dob, .card-content-detail-dob").text(patientDob);
+  $(".patient-banner-nhs-no, .card-content-detail-nhs-no").text(patientNhsNo);
+  $(".patient-banner-address").text(patientAddressWithPostcode);
+  $(".patient-banner-gender, .card-content-detail-gender").text(patientGender);
+  $(".patient-banner-age").text(patientAge + " years old");
+  $(".card-content-detail-pob").text(sessionStorage.getItem("patientPob"));
+  $(".card-content-detail-address").html(
+    patientAddressWithPostcode.replace(/\,/g, "<br/>")
+  );
+  $(".name-dob-floater").html(patientName + " | " + patientDob);
+  $(".mobile-nav-patient-details").html(patientName + " <br/> " + patientDob);
 }
 
-
-
-
-$(".add-tel-number-btn").click(function() {
+$(".add-tel-number-btn").click(function () {
   $(".tel-number-section").show();
   $(".add-tel-number-btn").hide();
 });
 
-$("#cancel-adding-tel-number").click(function() {
+$("#cancel-adding-tel-number").click(function () {
   $(".tel-number-section").hide();
   $(".add-tel-number-btn").show();
 });
 
-$("#add-preferred-name-btn").click(function() {
+$("#add-preferred-name-btn").click(function () {
   $(".preferred-name-section").show();
   $("#add-preferred-name-btn").hide();
   $("#cancel-preferred-name-btn").show();
 });
 
-$("#cancel-preferred-name-btn").click(function() {
+$("#cancel-preferred-name-btn").click(function () {
   $(".preferred-name-section").hide();
   $("#add-preferred-name-btn").show();
   $("#cancel-preferred-name-btn").hide();
 });
 
-$("#remove-bachelor-name-btn").click(function() {
+$("#remove-bachelor-name-btn").click(function () {
   $(".bachelor-name-section").hide();
   $("#add-bachelor-name-btn").show();
   $(".bachelor-name-support-text").show();
   $("#remove-bachelor-name-btn").hide();
 });
 
-$("#add-bachelor-name-btn").click(function() {
+$("#add-bachelor-name-btn").click(function () {
   $(".bachelor-name-section-hidden").show();
   $("#add-bachelor-name-btn").hide();
 });
 
-$("#cancel-adding-bachelor-name").click(function() {
+$("#cancel-adding-bachelor-name").click(function () {
   $(".bachelor-name-section-hidden").hide();
   $("#add-bachelor-name-btn").show();
 });
 
-
-$(".remove-name-update-btn").click(function() {
+$(".remove-name-update-btn").click(function () {
   $(this).parentsUntil(".review-updated-section").hide();
 });
 
 /* DECEASED PATIENT STYLES */
-$(document).ready(function() {
+$(document).ready(function () {
   if (window.location.toString().includes("deceased")) {
     $(".patient-banner").addClass("patient-banner-deceased");
     $(".patient-banner-name").append(" (DECEASED)");
