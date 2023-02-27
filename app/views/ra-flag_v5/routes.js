@@ -1,13 +1,4 @@
 module.exports = (router) => {
-    router.get("/ra-flag_v5/ra-step-1", function (req, res, next) {
-        // Reset any errors and copy it into the current template data
-        if (req.session.data.errors) {
-            res.locals.errors = req.session.data.errors;
-        }
-        req.session.data.errors = {};
-        next();
-    });
-
     router.post("/ra-flag_v5/ra-step-1", function (req, res) {
         const consent = req.body["consent"];
         const bestInterestDetail = req.body["best-interest-consent-input"];

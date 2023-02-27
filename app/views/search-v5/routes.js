@@ -7,15 +7,6 @@ function formatName(str) {
 }
 
 module.exports = (router) => {
-  router.get("/search-v5/nhs-number-search", function (req, res, next) {
-    // Reset any errors and copy it into the current template data
-    if (req.session.data.errors) {
-      res.locals.errors = req.session.data.errors;
-    }
-    req.session.data.errors = {};
-    next();
-  });
-
   router.post("/search-v5/nhs-number-search", function (req, res) {
     const nhsNumber = req.body["nhs-number"];
 
@@ -28,23 +19,6 @@ module.exports = (router) => {
     }
 
     res.redirect(`/search-v5/search-results?nhs-number=${nhsNumber}`);
-  });
-
-  router.get("/search-v5/basic-details-search", function (req, res, next) {
-    // Reset any errors and copy it into the current template data
-    if (req.session.data.errors) {
-      res.locals.errors = req.session.data.errors;
-    } else {
-      // Reset form input, if no errors...
-      delete req.session.data["gender"];
-      delete req.session.data["last-name"];
-      delete req.session.data["dob-day"];
-      delete req.session.data["dob-month"];
-      delete req.session.data["dob-year"];
-    }
-    req.session.data.errors = {};
-
-    next();
   });
 
   router.post("/search-v5/basic-details-search", function (req, res) {
@@ -94,15 +68,6 @@ module.exports = (router) => {
     req.session.data["basic-details-search"]["formattedDob"] = formattedDob;
 
     res.redirect(`/search-v5/search-results`);
-  });
-
-  router.get("/search-v5/advanced-details-search", function (req, res, next) {
-    // Reset any errors and copy it into the current template data
-    if (req.session.data.errors) {
-      res.locals.errors = req.session.data.errors;
-    }
-    req.session.data.errors = {};
-    next();
   });
 
   router.post("/search-v5/advanced-details-search", function (req, res) {
@@ -173,15 +138,6 @@ module.exports = (router) => {
     req.session.data["advanced-details-search"]["dobTo"] = dobTo;
 
     res.redirect(`/search-v5/search-results`);
-  });
-  router.get("/search-v5/postcode-search", function (req, res, next) {
-    // Reset any errors and copy it into the current template data
-    if (req.session.data.errors) {
-      res.locals.errors = req.session.data.errors;
-    }
-    req.session.data.errors = {};
-
-    next();
   });
 
   router.post("/search-v5/postcode-search", function (req, res) {
