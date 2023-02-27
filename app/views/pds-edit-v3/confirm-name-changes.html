@@ -212,16 +212,6 @@ Patient details
   </div>
 
 </div>
-
-{% block pageScripts %}
-<script>
-  $("#confirm-name-changes-btn").click(function(){
-    var patientPreferredName = "None recorded";
-    sessionStorage.setItem("patientPreferredName", patientPreferredName);
-    var patientBachelorName = "Mr William SHAKESPEARE<br />Effective since: Oct-08-2020";
-    sessionStorage.setItem("patientBachelorName", patientBachelorName);
-  });
-</script>
 {% endblock %}
-
+{% block pageScripts %}
 {% endblock %}

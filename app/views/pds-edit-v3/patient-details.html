@@ -715,32 +715,6 @@ Patient details
 
 
 </div>
-
-{% block pageScripts %}
-<script>
-  $(document).ready(function() {
-
-    var patientPreferredName = sessionStorage.getItem("patientPreferredName");
-    var patientBachelorName = sessionStorage.getItem("patientBachelorName");
-
-    if (!patientPreferredName) {
-      $("#preferred-name-value").html("Mr Bill SHAKESPEARE<br /><i>Effective since: 19-Jul-2008</i>");
-    } else {
-      $("#preferred-name-value").html(patientPreferredName);
-    }
-
-    if (!patientBachelorName) {
-      $("#bachelor-name-value").html("None recorded");
-    } else {
-      $("#bachelor-name-value").html(patientBachelorName + "<br /><i>Effective since: Oct-08-2020</i>");
-    }
-
-    var patientAddress = $('.card-content-detail-address').text();
-    patientAddress = patientAddress.replace(/,/g, '<br>');
-    $('.card-content-detail-address').html(patientAddress);
-
-  });
-</script>
 {% endblock %}
-
+{% block pageScripts %}
 {% endblock %}
