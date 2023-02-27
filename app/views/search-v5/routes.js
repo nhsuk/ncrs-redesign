@@ -46,7 +46,7 @@ module.exports = (router) => {
 
     // Format the data provided ready for processing
     req.session.data["basic-details-search"] = {};
-    req.session.data["basic-details-search"]["patientGenderSearch"] = "Female";
+    req.session.data["basic-details-search"]["patientGenderSearch"] = gender;
     req.session.data["basic-details-search"]["patientLastNameSearch"] =
       formatName(lastName);
     req.session.data["basic-details-search"]["patientDobDaySearch"] = dobDay;
