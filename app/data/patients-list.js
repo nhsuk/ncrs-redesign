@@ -1,4 +1,24 @@
-module.exports = {
+const patients = {
+  // Default patient, if none specified
+  1234567890: {
+    firstName: "William",
+    lastName: "Shakespeare",
+    address: "1 Town Street",
+    county: "Warwickshire",
+    postcode: "AB1 2CD",
+    gender: "Male",
+    dob: "30-Jan-2018",
+  },
+  // Default alternative patient
+  "0987654321": {
+    firstName: "Amelia",
+    lastName: "Miller",
+    address: "1 Town Street",
+    county: "West Yorkshire",
+    postcode: "LS8 2CD",
+    gender: "Female",
+    dob: "16-Dec-2003",
+  },
   9550972968: {
     firstName: "Elisha",
     lastName: "Sapsed",
@@ -234,3 +254,45 @@ module.exports = {
     dob: "20-Oct-1987",
   },
 };
+
+function parseDate(formattedDate) {
+  const months = {
+    jan: 0,
+    feb: 1,
+    mar: 2,
+    apr: 3,
+    may: 4,
+    jun: 5,
+    jul: 6,
+    aug: 7,
+    sep: 8,
+    oct: 9,
+    nov: 10,
+    dec: 11,
+  };
+  const parts = formattedDate.split("-");
+  return new Date(parts[2], months[parts[1].toLowerCase()], parts[0]);
+}
+
+function formatPatientList(patients) {
+  // Figure out their age based on their date of birth.
+  for (const nhsNumber in patients) {
+    const patient = patients[nhsNumber];
+    const parsedDob = parseDate(patient.dob);
+    const currentDate = new Date();
+    const diff = currentDate - parsedDob;
+    const age = Math.floor(diff / 31536000000);
+
+    // Add the age to the data set.
+    patient.age = age;
+
+    // Add the nhsNumber key as a property for convinence.
+    patient.nhsNumber = nhsNumber;
+
+    // Uppercase lastName
+    patient.lastName = patient.lastName.toUpperCase();
+  }
+  return patients;
+}
+
+module.exports = formatPatientList(patients);

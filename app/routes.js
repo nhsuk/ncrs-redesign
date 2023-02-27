@@ -295,11 +295,4 @@ router.post("/search-v5/postcode-search", function (req, res) {
   res.redirect(`/search-v5/search-results`);
 });
 
-const patients = require('./data/patients-list.js');
-router.get("/search-v5/patient-overview", function (req, res, next) {
-  const nhsNumber = req.query['nhs-number'];
-  res.locals.patient = patients[nhsNumber];
-  next();
-});
-
 module.exports = router;

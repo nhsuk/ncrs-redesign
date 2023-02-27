@@ -16,7 +16,9 @@
 
         <div class="nhsuk-grid-column-one-third nhsuk-u-one-third-tablet mobile-nav-section" id="mobile-nav-section-2">
           <p class="mobile-nav-patient-details nhsuk-u-font-size-16">
-            <!---Patient details injected here in patients.js--->
+            {{ patient.firstName }}
+            {{ patient.lastName }}<br>
+            {{ patient.dob }}
           </p>
         </div>
 
