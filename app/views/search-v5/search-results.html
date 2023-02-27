@@ -65,16 +65,16 @@
             </tr>
           </thead>
           <tbody class="patient-results">
-            {% for patient in patientsList %}
-              {% if data['nhs-number'] === patient[0] %}
+            {% for patientNhsNumber, patient in patientsList %}
+              {% if data['nhs-number'] === patientNhsNumber %}
                 {% include "includes/search-result-row.html" %}
               {% endif %}
               {% if data['basic-details-search'] %}
                 {% if (
-                (data['basic-details-search']['patientGenderSearch'] == patient[6] or
+                (data['basic-details-search']['patientGenderSearch'] == patient.gender or
                 data['basic-details-search']['patientGenderSearch'] == "Not known") and
-                data['basic-details-search']['patientLastNameSearch'] == patient[2] and
-                data['basic-details-search']['formattedDob'] == patient[7]
+                data['basic-details-search']['patientLastNameSearch'] == patient.lastName and
+                data['basic-details-search']['formattedDob'] == patient.dob
                 ) %}
                   {% include "includes/search-result-row.html" %}
                 {% endif %}
