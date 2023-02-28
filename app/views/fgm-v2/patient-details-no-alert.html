@@ -66,7 +66,7 @@ Patient details
             <div class="nhsuk-grid-column-one-quarter">
               <div class="card-content-section">
                 <span class="card-content-label">Usual Name:</span>
-                <span class="card-content-name">William Shakespeare</span>
+                <span class="card-content-name">{{ patient.firstName }} {{ patient.lastName.toUpperCase() }}</span>
               </div>
             </div>
           </div>
@@ -101,19 +101,19 @@ Patient details
             <div class="nhsuk-grid-column-one-quarter nhsuk-u-one-quarter-tablet">
               <div class="card-content-section">
                 <span class="card-content-label">Gender:</span>
-                <span class="card-content-detail card-content-detail-gender">Male</span>
+                <span class="card-content-detail card-content-detail-gender">{{ patient.gender }}</span>
               </div>
             </div>
             <div class="nhsuk-grid-column-one-quarter nhsuk-u-one-quarter-tablet">
               <div class="card-content-section">
                 <span class="card-content-label">NHS Number:</span>
-                <span class="card-content-detail card-content-detail-nhs-no">123 456 7890</span>
+                <span class="card-content-detail card-content-detail-nhs-no">{{ patient.nhsNumber }}</span>
               </div>
             </div>
             <div class="nhsuk-grid-column-one-quarter nhsuk-u-one-quarter-tablet">
               <div class="card-content-section">
                 <span class="card-content-label">Date of birth:</span>
-                <span class="card-content-detail card-content-detail-dob">01-Dec-1970</span>
+                <span class="card-content-detail card-content-detail-dob">{{ patient.dob }}</span>
               </div>
             </div>
             <div class="nhsuk-grid-column-one-quarter nhsuk-u-one-quarter-tablet">
@@ -134,7 +134,7 @@ Patient details
             <div class="nhsuk-grid-column-one-half nhsuk-u-one-half-tablet">
               <div class="card-content-section">
                 <span class="card-content-label">Address:</span>
-                <span class="card-content-detail card-content-detail-address">1 Town Street</span>
+                <span class="card-content-detail card-content-detail-address">{{ patient.address }}</span>
               </div>
             </div>
             <div class="nhsuk-grid-column-one-half nhsuk-u-one-half-tablet">
