@@ -12,17 +12,6 @@ $(".patient-search-result").click(function () {
   window.location.href = `patient-overview?nhs-number=${patientNhsNo.replace(/\s/g, '')}`;
 });
 
-$("#confirm-name-changes-btn").click(function () {
-  var patientName = "Dr William TELL";
-  // TODO
-});
-
-$("#confirm-address-changes-btn").click(function () {
-  var patientAddress =
-    "1 Henley Street, Stratford-upon-Avon, Warwickshire, CV37 6QW";
-  // TODO
-});
-
 $(".add-tel-number-btn").click(function () {
   $(".tel-number-section").show();
   $(".add-tel-number-btn").hide();
