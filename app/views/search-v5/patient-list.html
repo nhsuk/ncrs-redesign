@@ -60,7 +60,7 @@ SCRa redesign - Index
           {% if patientNhsNumber != "1234567890" and patientNhsNumber != "0987654321" %}
             <tr>
               <td role="gridrow">{{ patientNhsNumber }}</td>
-              <td role="gridrow">{{ patient.firstName }} {{ patient.lastName }}</td>
+              <td role="gridrow">{{ patient.firstName }} {{ patient.lastName.toUpperCase() }}</td>
               <td role="gridrow">{{ patient.address }}</td>
               <td role="gridrow">{{ patient.county }}</td>
               <td role="gridrow">{{ patient.postcode }}</td>

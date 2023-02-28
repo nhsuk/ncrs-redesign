@@ -288,9 +288,6 @@ function formatPatientList(patients) {
 
     // Add the nhsNumber key as a property for convinence.
     patient.nhsNumber = nhsNumber;
-
-    // Uppercase lastName
-    patient.lastName = patient.lastName.toUpperCase();
   }
   return patients;
 }

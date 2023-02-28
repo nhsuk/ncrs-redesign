@@ -1,4 +1,5 @@
 const moment = require("moment");
+const patientList = require("../../data/patients-list.js");
 
 function formatName(str) {
   return str
@@ -45,29 +46,22 @@ module.exports = (router) => {
     }
 
     // Format the data provided ready for processing
-    req.session.data["basic-details-search"] = {};
-    req.session.data["basic-details-search"]["patientGenderSearch"] = gender;
-    req.session.data["basic-details-search"]["patientLastNameSearch"] =
-      formatName(lastName);
-    req.session.data["basic-details-search"]["patientDobDaySearch"] = dobDay;
-    req.session.data["basic-details-search"]["patientDobMonthSearch"] =
-      dobMonth;
-    req.session.data["basic-details-search"]["patientDobYearSearch"] = dobYear;
-
-    var date = new Date(Date.UTC(dobYear, dobMonth - 1, dobDay));
-    var dateOptions = {
+    const date = new Date(Date.UTC(dobYear, dobMonth - 1, dobDay));
+    const dateOptions = {
       year: "numeric",
       month: "short",
       day: "2-digit",
     };
-    var formattedDob = date
+    const formattedDob = date
       .toLocaleDateString("en-GB", dateOptions)
       .replace(/\s/g, "-");
-    formattedDob;
-    console.log({ date });
-    req.session.data["basic-details-search"]["formattedDob"] = formattedDob;
 
-    res.redirect(`/search-v5/search-results`);
+    const params = new URLSearchParams({
+      gender,
+      lastName: formatName(lastName),
+      dob: formattedDob,
+    });
+    res.redirect(`/search-v5/search-results?${params}`);
   });
 
   router.post("/search-v5/advanced-details-search", function (req, res) {
@@ -113,38 +107,31 @@ module.exports = (router) => {
       return res.redirect("/search-v5/advanced-details-search");
     }
 
-    req.session.data["advanced-details-search"] = {};
-    req.session.data["advanced-details-search"]["patientGenderAdvanced"] =
-      gender;
-    req.session.data["advanced-details-search"]["patientFirstNameAdvanced"] =
-      formatName(firstName);
-    req.session.data["advanced-details-search"]["patientLastNameAdvanced"] =
-      formatName(lastName);
-    req.session.data["advanced-details-search"]["widenSearch"] = widenSearch;
-
-    const patientPostcodeAdvancedUpper = addressPostcode.toUpperCase();
-    const patientPostcodeAdvancedFormatted =
-      patientPostcodeAdvancedUpper.replace(/\s/g, "");
-    req.session.data["advanced-details-search"][
-      "patientPostcodeAdvancedFormatted"
-    ] = patientPostcodeAdvancedFormatted;
+    const formattedPostcode = addressPostcode.toUpperCase().replace(/\s/g, "");
 
     const fullDobFrom = dobDayFrom + "/" + dobMonthFrom + "/" + dobYearFrom;
     const dobFrom = moment(fullDobFrom, "DD-MM-YYYY").format("MM/DD/YYYY");
-    req.session.data["advanced-details-search"]["dobFrom"] = dobFrom;
 
     const fullDobTo = dobDayTo + "/" + dobMonthTo + "/" + dobYearTo;
     const dobTo = moment(fullDobTo, "DD-MM-YYYY").format("MM/DD/YYYY");
-    req.session.data["advanced-details-search"]["dobTo"] = dobTo;
 
-    res.redirect(`/search-v5/search-results`);
+    const params = new URLSearchParams({
+      gender,
+      firstName: formatName(firstName),
+      lastName: formatName(lastName),
+      postcode: formattedPostcode,
+      dobFrom,
+      dobTo,
+      widenSearch,
+    });
+    res.redirect(`/search-v5/search-results?${params}`);
   });
 
   router.post("/search-v5/postcode-search", function (req, res) {
-    const postcode = req.body["postcode-only"];
+    const addressPostcode = req.body["postcode-only"];
     req.session.data.errors = {};
 
-    if (!postcode) {
+    if (!addressPostcode) {
       req.session.data.errors["postcode-only"] = true;
     }
 
@@ -153,9 +140,61 @@ module.exports = (router) => {
     }
 
     // Format the data provided ready for processing
-    req.session.data["postcode-search"] = {};
-    req.session.data["postcode-search"]["patientPostcodeOnly"] = postcode;
+    const formattedPostcode = addressPostcode.toUpperCase().replace(/\s/g, "");
+    const params = new URLSearchParams({
+      postcode: formattedPostcode,
+    });
+    res.redirect(`/search-v5/search-results?${params}`);
+  });
 
-    res.redirect(`/search-v5/search-results`);
+  router.get("/search-v5/search-results", function (req, res, next) {
+    const nhsNumber = req.query["nhs-number"];
+    const { gender, firstName, lastName, dob, dobTo, dobFrom, postcode } =
+      req.query;
+
+    const isBasicSearch = gender && lastName && dob;
+    const isAdvancedSearch =
+      gender && firstName && lastName && dobTo && dobFrom && postcode;
+    const isPostcodeSearch = postcode && !isAdvancedSearch && !isBasicSearch;
+    const isNhsNumberSearch = nhsNumber && !isAdvancedSearch && !isBasicSearch;
+
+    const returnedPatientsList = {};
+    for (const [patientNhsNumber, patient] of Object.entries(patientList)) {
+      // Basic Details Search
+      if (
+        isBasicSearch &&
+        gender === patient.gender &&
+        lastName === patient.lastName &&
+        dob === patient.dob
+      ) {
+        returnedPatientsList[patientNhsNumber] = patient;
+        continue;
+      }
+      // Advanced Details Search
+      if (
+        isAdvancedSearch &&
+        (gender === patient.gender || gender === "Not known") &&
+        firstName === patient.firstName &&
+        lastName === patient.lastName &&
+        moment(new Date(dobFrom)).isBefore(new Date(patient.dob)) &&
+        moment(new Date(dobTo)).isAfter(new Date(patient.dob)) &&
+        postcode === patient.postcode
+      ) {
+        returnedPatientsList[patientNhsNumber] = patient;
+        continue;
+      }
+      // Postcode Details Search
+      if (isPostcodeSearch && postcode === patient.postcode) {
+        returnedPatientsList[patientNhsNumber] = patient;
+        continue;
+      }
+      // NHS Number search
+      if (isNhsNumberSearch && patientNhsNumber == nhsNumber) {
+        returnedPatientsList[patientNhsNumber] = patient;
+      }
+    }
+
+    res.locals.returnedPatientsList = returnedPatientsList;
+    next();
   });
 };

@@ -3,7 +3,7 @@
     <div class="nhsuk-grid-row">
       <div class="nhsuk-grid-column-full">
         <div class="banner-name">
-          <span class="patient-banner-name">{{ patient.firstName }} {{ patient.lastName }}</span>
+          <span class="patient-banner-name">{{ patient.firstName }} {{ patient.lastName.toUpperCase() }}</span>
           <span class="patient-banner-age">{{ patient.age }} years old</span>,
           <span class="patient-banner-gender">{{ patient.gender }}</span>
         </div>
