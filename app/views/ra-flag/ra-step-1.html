@@ -14,17 +14,14 @@ Recording consent
         <li class="scra-bordered-tabs-item">
           <a class="scra-bordered-tabs-link" href="patient-overview">Overview</a>
         </li>
-        <li class="scra-bordered-tabs-item">
-          <a class="scra-bordered-tabs-link" href="patient-details">Patient</a>
+        <li class="scra-bordered-tabs-item scra-bordered-tabs-item-active">
+          <a class="scra-bordered-tabs-link" href="#">Patient</a>
         </li>
         <li class="scra-bordered-tabs-item">
           <a class="scra-bordered-tabs-link" href="patient-clinical">Clinical</a>
         </li>
         <li class="scra-bordered-tabs-item">
           <a class="scra-bordered-tabs-link" href="#">Documents</a>
-        </li>
-        <li class="scra-bordered-tabs-item scra-bordered-tabs-item-active">
-          <a class="scra-bordered-tabs-link" href="#">Alerts</a>
         </li>
       </ul>
     </div>
@@ -43,7 +40,7 @@ Recording consent
       <div class="nhsuk-u-reading-width">
         <h2 class="nhsuk-heading-l">
           <span role="text">Recording consent</span>
-          <span class="nhsuk-caption-l nhsuk-caption--bottom">Step 1 of 5</span>
+          <span class="nhsuk-caption-l nhsuk-caption--bottom">Step 1 of 4</span>
         </h2>
         <p class="nhsuk-body">
           Obtaining and managing consent for creating and updating the record follows existing national guidance and local processes for recording consent and making best interest decisions.
@@ -51,61 +48,115 @@ Recording consent
         <p class="nhsuk-body">
           Clinicians should create the record in the best interest of patients who are not able to provide consent, if adjustments in care would benefit the patient.
         </p>
-        <form action="ra-step-2">
-          <div class="nhsuk-form-group">
+        {% if errors | length %}
+        <div class="nhsuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1">
+          <h2 class="nhsuk-error-summary__title" id="error-summary-title">
+            There is a problem
+          </h2>
+          <div class="nhsuk-error-summary__body">
+            <p>
+              Some mandatory fields are incomplete. You must complete all mandatory fields.
+            </p>
+            <ul class="nhsuk-list nhsuk-error-summary__list">
+              {% if errors['all'] %}
+              <li><a href="#consent-patient">You must select an option</a></li>
+              {% endif %}
+              {% if errors['best-interest-consent-input'] %}
+              <li><a href="#bi-consent">You must enter more details about a best interest consent decision</a></li>
+              {% endif %}
+              {% if errors['other-consent-input'] %}
+              <li><a href="#other-consent-input">You must enter more details about a consent decision obtained by other
+                  methods</a></li>
+              {% endif %}
+            </ul>
+          </div>
+        </div>
+        {% endif %}
+        <form id="ra-step-1-form" action="ra-step-1" method="POST">
+          <div class="nhsuk-form-group{% if errors['all'] %} nhsuk-form-group--error{% endif %}">
 
             <fieldset class="nhsuk-fieldset" aria-describedby="example-hint">
               <legend class="nhsuk-fieldset__legend nhsuk-label__strong">
                 How has consent been obtained for creating this Reasonable Adjustment?
               </legend>
-
+              {% if errors['all'] %}
+              <span class="nhsuk-error-message" id="all-error">
+                <span class="nhsuk-u-visually-hidden">Error:</span> You must select an option
+              </span>
+              {% endif %}
               <div class="nhsuk-radios nhsuk-radios--conditional">
                 <div class="nhsuk-radios__item">
-                  <input class="nhsuk-radios__input" id="consent-patient" name="consent" type="radio" value="patient">
+                  <input class="nhsuk-radios__input" id="consent-patient" name="consent" type="radio" value="patient" aria-controls="patient" aria-expanded="false"
+                  {% if data['consent'] === 'patient' %} checked="true"{% endif %}
+                  >
                   <label class="nhsuk-label nhsuk-radios__label" for="consent-patient">
                     From the patient
                   </label>
                 </div>
+                <div class="nhsuk-radios__conditional{% if not data['consent'] or data['consent'] !== 'patient' %} nhsuk-radios__conditional--hidden{% endif %}" id="patient">
+                  <div class="nhsuk-form-group">
+                    <label class="nhsuk-label" for="patient-consent">
+                      Please provide more detail about this consent <strong>(optional)</strong>
+                    </label>
+                    <input class="nhsuk-input" id="patient-consent" name="patient-consent-input" type="text" spellcheck="false">
+                  </div>
+                </div>
                 <div class="nhsuk-radios__item">
-                  <input class="nhsuk-radios__input" id="consent-best-interest" name="consent" type="radio" value="best-interest" aria-controls="best-interest" aria-expanded="false">
+                  <input class="nhsuk-radios__input" id="consent-best-interest" name="consent" type="radio" value="best-interest" aria-controls="best-interest" aria-expanded="false"
+                  {% if data['consent'] === 'best-interest' %} checked="true"{% endif %}
+                  >
                   <label class="nhsuk-label nhsuk-radios__label" for="consent-best-interest">
                     As a best interest decision, made on behalf of the patient (Mental Capacity Act 2005)
                   </label>
                 </div>
-                <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="best-interest">
-                  <div class="nhsuk-form-group">
+                <div class="nhsuk-radios__conditional{% if not data['consent'] or data['consent'] !== 'best-interest' %} nhsuk-radios__conditional--hidden{% endif %}" id="best-interest">
+                  <div class="nhsuk-form-group nhsuk-form-goup__best-interest{% if errors['best-interest-consent-input'] %} nhsuk-form-group--error{% endif %}">
+                    {% if errors['best-interest-consent-input'] %}
+                    <span class="nhsuk-error-message" id="best-interest-consent-error">
+                      <span class="nhsuk-u-visually-hidden">Error:</span> Enter more detail about how this consent was obtained
+                    </span>
+                    {% endif %}
                     <label class="nhsuk-label" for="bi-consent">
                       Please provide more detail about this consent
                     </label>
-                    <input class="nhsuk-input" id="bi-consent" name="best-interest-consent-input" type="text" spellcheck="false">
+                    <input class="nhsuk-input{% if errors['best-interest-consent-input'] %} nhsuk-input--error{% endif %}" id="bi-consent" name="best-interest-consent-input" type="text" spellcheck="false" value="{{- data['best-interest-consent-input'] -}}">
                   </div>
                 </div>
                 <div class="nhsuk-radios__item">
-                  <input class="nhsuk-radios__input" id="consent-poa" name="consent" type="radio" value="power-of-attorney" aria-controls="power-of-attorney" aria-expanded="false">
+                  <input class="nhsuk-radios__input" id="consent-poa" name="consent" type="radio" value="power-of-attorney" aria-controls="power-of-attorney" aria-expanded="false"
+                  {% if data['consent'] === 'power-of-attorney' %} checked="true"{% endif %}
+                  >
                   <label class="nhsuk-label nhsuk-radios__label" for="consent-poa">
                     Via a lasting Power of Attorney for Health and Welfare, or court-appointed deputy or equivalent
                   </label>
                 </div>
-                <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="power-of-attorney">
+                <div class="nhsuk-radios__conditional{% if not data['consent'] or data['consent'] !== 'power-of-attorney' %} nhsuk-radios__conditional--hidden{% endif %}" id="power-of-attorney">
                   <div class="nhsuk-form-group">
                     <label class="nhsuk-label" for="poa-consent">
-                      Please provide more detail about this consent
+                      Please provide more detail about this consent <strong>(optional)</strong>
                     </label>
-                    <input class="nhsuk-input" id="poa-consent" name="poa-consent-input" type="text" spellcheck="false">
+                    <input class="nhsuk-input" id="poa-consent" name="poa-consent-input" type="text" spellcheck="false" value="{{- data['poa-consent-input'] -}}">
                   </div>
                 </div>
                 <div class="nhsuk-radios__item">
-                  <input class="nhsuk-radios__input" id="consent-other" name="consent" type="radio" value="other-consent" aria-controls="other-consent" aria-expanded="false">
+                  <input class="nhsuk-radios__input" id="consent-other" name="consent" type="radio" value="other-consent" aria-controls="other-consent" aria-expanded="false"
+                  {% if data['consent'] === 'other-consent' %} checked="true"{% endif %}
+                  >
                   <label class="nhsuk-label nhsuk-radios__label" for="consent-other">
-                    Other
+                    Other legitimate patient representative - parental responsibility
                   </label>
                 </div>
-                <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="other-consent">
-                  <div class="nhsuk-form-group">
+                <div class="nhsuk-radios__conditional{% if not data['consent'] or data['consent'] !== 'other-consent' %} nhsuk-radios__conditional--hidden{% endif %}" id="other-consent">
+                  <div class="nhsuk-form-group{% if errors['other-consent-input'] %} nhsuk-form-group--error{% endif %}">
+                    {% if errors['other-consent-input'] %}
+                    <span class="nhsuk-error-message" id="other-consent-error">
+                      <span class="nhsuk-u-visually-hidden">Error:</span> Enter more detail about how this consent was obtained
+                    </span>
+                    {% endif %}
                     <label class="nhsuk-label" for="other-consent-input">
                       Please provide more detail about this consent
                     </label>
-                    <input class="nhsuk-input" id="other-consent-input" name="other-consent-input" type="text" spellcheck="false">
+                    <input class="nhsuk-input{% if errors['other-consent-input'] %} nhsuk-input--error{% endif %}" id="other-consent-input" name="other-consent-input" type="text" spellcheck="false" value="{{- data['other-consent-input'] -}}">
                   </div>
                 </div>
               </div>
@@ -114,12 +165,8 @@ Recording consent
           </div>
 
           <div class="btn-group">
-            <button class="nhsuk-button nhsuk-button--blue" type="submit">
+            <button class="nhsuk-button" type="submit">
               Next
-            </button>
-
-            <button class="nhsuk-button nhsuk-button--reverse" type="submit">
-              Review & save
             </button>
 
             <p class="cancel-btn-link"><a href="manage-alerts">Cancel</a></p>
@@ -131,6 +178,7 @@ Recording consent
     </div>
   </div>
 </div>
+
 
 
 {% endblock %}
