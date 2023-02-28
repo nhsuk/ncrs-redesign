@@ -65,7 +65,7 @@
             </tr>
           </thead>
           <tbody class="patient-results">
-            {% for patientNhsNumber, patient in patientsList %}
+            {% for patientNhsNumber, patient in patientList %}
               {% if data['nhs-number'] === patientNhsNumber %}
                 {% include "includes/search-result-row.html" %}
               {% endif %}
