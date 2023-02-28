@@ -25,11 +25,9 @@ Select your site
         </span>
       </h1>
 
-      <form id="confirm-locum-site" action="confirm-role">
-
-        <!--- Error summary --->
-
-        <div class="nhsuk-error-summary" id="site-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" style="display:none">
+      <form id="confirm-locum-site" action="confirm-site" method="POST">
+        {% if errors | length %}
+        <div class="nhsuk-error-summary" id="site-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1">
           <h2 class="nhsuk-error-summary__title" id="error-summary-title">
             There is a problem
           </h2>
@@ -38,20 +36,26 @@ Select your site
               You must correct the following errors
             </p>
             <ul class="nhsuk-list nhsuk-error-summary__list">
-
+              <li><a href="#sites">You must choose a locum site</a></li>
             </ul>
           </div>
         </div>
+        {% endif %}
 
-        <div id="nhsuk-form-group-site" class="ui-widget nhsuk-form-group">
+        <div id="nhsuk-form-group-site" class="nhsuk-form-group{% if errors | length %} nhsuk-form-group--error{% endif %}">
           <label class="nhsuk-label nhsuk-label__strong" for="sites">Dispensing site </label>
           <span class="nhsuk-hint" id="input-with-hint-text-hint">
             <p>You can search for the site you are working from using exact ODS code, partial pharmacy name or partial postcode</p>
           </span>
-          <span id="site-error-error" class="nhsuk-error-message" style="display: none">
+          {% if errors | length %}
+          <span id="site-error-error" class="nhsuk-error-message">
             You must choose a site
           </span>
-          <input class="nhsuk-input" id="sites" name="locum-site" type="text">
+          {% endif %}
+          <input class="nhsuk-input{% if errors | length %} nhsuk-input--error{% endif %}" id="sites" name="locum-site" type="text" list="site-list">
+          <datalist id="site-list">
+            {% include "includes/locum-pharmacist-sites.html" %}
+          </datalist>
         </div>
 
         <button class="nhsuk-button" type="submit">
@@ -72,7 +76,6 @@ Select your site
 {% block scripts %}
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-<script src="/js/autocomplete.js"></script>
 
 {% block pageScripts %}{% endblock %}
 {% endblock %}

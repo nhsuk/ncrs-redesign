@@ -3,8 +3,9 @@
     <div class="nhsuk-grid-row">
       <div class="nhsuk-grid-column-full">
         <div class="banner-name">
-          <span class="patient-banner-name"></span>
-          <span class="patient-banner-age"> years old</span><span class="age-gender-separator">, </span><span class="patient-banner-gender"></span>
+          <span class="patient-banner-name">{{ patient.firstName }} {{ patient.lastName.toUpperCase() }}</span>
+          <span class="patient-banner-age">{{ patient.age }} years old</span>,
+          <span class="patient-banner-gender">{{ patient.gender }}</span>
         </div>
       </div>
     </div>
@@ -14,13 +15,13 @@
           <li class="banner-list-item">
             <div class="banner-item">
               <span class="patient-banner-item-label">Date of birth:</span>
-              <span class="patient-banner-item-detail patient-banner-dob">30-Dec-2018</span>
+              <span class="patient-banner-item-detail patient-banner-dob">{{ patient.dob }}</span>
             </div>
           </li>
           <li class="banner-list-item">
             <div class="banner-item">
               <span class="patient-banner-item-label">NHS Number:</span>
-              <span class="patient-banner-item-detail patient-banner-nhs-no"></span>
+              <span class="patient-banner-item-detail patient-banner-nhs-no">{{ patient.nhsNumber }}</span>
               <!---<button class="nhsuk-button nhsuk-button--reverse copy-to-clipboard-btn" type="submit">
                 Copy
               </button>--->
@@ -29,7 +30,11 @@
           <li class="banner-list-item">
             <div class="banner-item">
               <span class="patient-banner-item-label">Address:</span>
-              <span class="patient-banner-item-detail patient-banner-address"></span>
+              <span class="patient-banner-item-detail patient-banner-address">
+                {{ patient.address }},&nbsp;
+                {{ patient.county }},&nbsp;
+                {{ patient.postcode }}
+              </span>
             </div>
           </li>
         </ul>

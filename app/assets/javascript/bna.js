@@ -1,21 +1,3 @@
-/* Add list birth notifications to BNA Header pages */
-
-$(function() {
-
-  var bnaHeaderNav = "<li class='nhsuk-header__navigation-item'> \
-                        <a class='nhsuk-header__navigation-link' href='view-list'> \
-                          List Birth Notifications \
-                          <svg class='nhsuk-icon nhsuk-icon__chevron-right' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' aria-hidden='true'> \
-                            <path d='M15.5 12a1 1 0 0 1-.29.71l-5 5a1 1 0 0 1-1.42-1.42l4.3-4.29-4.3-4.29a1 1 0 0 1 1.42-1.42l5 5a1 1 0 0 1 .29.71z'></path> \
-                          </svg> \
-                        </a> \
-                      </li>"
-
-
-  $(".nhsuk-header__navigation-list").append(bnaHeaderNav);
-
-});
-
 /* Adding BNA functionality and journey to Patient tab */
 
 $(function() {
@@ -90,19 +72,3 @@ if (returnedPatientsList.length == 0) {
   $('.number-of-results').append("<p class='nhsuk-body'>By selecting the mother's name below, you will be taken to her record and able to create a birth notification for the baby.</p><p class='nhsuk-body'>If this isn't the patient you are looking for, you can <a href='allocate-nhs-number-1'>allocate a new NHS Number</a> or <a href='create-birth-notification-1'>create a birth notification without mother's NHS details</a></p>")
 
 }
-
-$('#allocate-patient-link').click(function() {
-  sessionStorage.setItem("patientName", "Nancy Miller");
-  sessionStorage.setItem("patientAddress", "1 Town Street, Leeds, LS8 2CD");
-  sessionStorage.setItem("patientNhsNo", "123 456 7890");
-  sessionStorage.setItem("patientDob", "01-Feb-1989");
-  sessionStorage.setItem("patientGender", "Female");
-})
-
-$('#create-patient-link').click(function() {
-  sessionStorage.setItem("patientName", "Nancy Miller");
-  sessionStorage.setItem("patientAddress", "1 Town Street, Leeds, LS8 2CD");
-  sessionStorage.setItem("patientNhsNo", "123 456 7890");
-  sessionStorage.setItem("patientDob", "01-Feb-1989");
-  sessionStorage.setItem("patientGender", "Female");
-})

@@ -71,10 +71,10 @@ Add patient impairments
                 Select relevant options.
               </span>
 
-              <div class="nhsuk-checkboxes">
+              <div class="nhsuk-checkboxes nhs-checkboxes--conditional">
 
                 <div class="nhsuk-checkboxes__item">
-                  <input class="nhsuk-checkboxes__input" id="autism-checkbox" name="impairment" type="checkbox" value="autism">
+                  <input class="nhsuk-checkboxes__input" id="autism-checkbox" name="impairment" type="checkbox" value="autism" aria-controls="autism" aria-expanded="false">
                   <label class="nhsuk-label nhsuk-checkboxes__label" for="autism-checkbox">
                     Autism
                   </label>
@@ -89,7 +89,7 @@ Add patient impairments
                 </div>
 
                 <div class="nhsuk-checkboxes__item">
-                  <input class="nhsuk-checkboxes__input" id="dementia-checkbox" name="impairment" type="checkbox" value="dementia">
+                  <input class="nhsuk-checkboxes__input" id="dementia-checkbox" name="impairment" type="checkbox" value="dementia" aria-controls="dementia" aria-expanded="false">
                   <label class="nhsuk-label nhsuk-checkboxes__label" for="dementia-checkbox">
                     Dementia
                   </label>
@@ -104,7 +104,7 @@ Add patient impairments
                 </div>
 
                 <div class="nhsuk-checkboxes__item">
-                  <input class="nhsuk-checkboxes__input" id="learning-disability-checkbox" name="impairment" type="checkbox" value="learning-disability">
+                  <input class="nhsuk-checkboxes__input" id="learning-disability-checkbox" name="impairment" type="checkbox" value="learning-disability" aria-controls="learning-disability" aria-expanded="false">
                   <label class="nhsuk-label nhsuk-checkboxes__label" for="learning-disability-checkbox">
                     Learning disability(s)
                   </label>
@@ -119,7 +119,7 @@ Add patient impairments
                 </div>
 
                 <div class="nhsuk-checkboxes__item">
-                  <input class="nhsuk-checkboxes__input" id="ltc-checkbox" name="impairment" type="checkbox" value="ltc">
+                  <input class="nhsuk-checkboxes__input" id="ltc-checkbox" name="impairment" type="checkbox" value="ltc" aria-controls="ltc" aria-expanded="false">
                   <label class="nhsuk-label nhsuk-checkboxes__label" for="ltc-checkbox">
                     Long-term condition(s)
                   </label>
@@ -134,7 +134,7 @@ Add patient impairments
                 </div>
 
                 <div class="nhsuk-checkboxes__item">
-                  <input class="nhsuk-checkboxes__input" id="mhc-checkbox" name="impairment" type="checkbox" value="mhc">
+                  <input class="nhsuk-checkboxes__input" id="mhc-checkbox" name="impairment" type="checkbox" value="mhc" aria-controls="mhc" aria-expanded="false">
                   <label class="nhsuk-label nhsuk-checkboxes__label" for="mhc-checkbox">
                     Mental health condition(s)
                   </label>
@@ -149,7 +149,7 @@ Add patient impairments
                 </div>
 
                 <div class="nhsuk-checkboxes__item">
-                  <input class="nhsuk-checkboxes__input" id="physical-disability-checkbox" name="impairment" type="checkbox" value="physical-disability">
+                  <input class="nhsuk-checkboxes__input" id="physical-disability-checkbox" name="impairment" type="checkbox" value="physical-disability" aria-controls="physical-disability" aria-expanded="false">
                   <label class="nhsuk-label nhsuk-checkboxes__label" for="physical-disability-checkbox">
                     Physical disability(s)
                   </label>
@@ -164,7 +164,7 @@ Add patient impairments
                 </div>
 
                 <div class="nhsuk-checkboxes__item">
-                  <input class="nhsuk-checkboxes__input" id="sensory-disability-checkbox" name="impairment" type="checkbox" value="sensory-disability">
+                  <input class="nhsuk-checkboxes__input" id="physical-disability-checkbox" name="impairment" type="checkbox" value="sensory-disability" aria-controls="sensory-disability" aria-expanded="false">
                   <label class="nhsuk-label nhsuk-checkboxes__label" for="sensory-disability-checkbox">
                     Sensory disability(s)
                   </label>
@@ -179,7 +179,7 @@ Add patient impairments
                 </div>
 
                 <div class="nhsuk-checkboxes__item">
-                  <input class="nhsuk-checkboxes__input" id="other-checkbox" name="impairment" type="checkbox" value="other">
+                  <input class="nhsuk-checkboxes__input" id="other-checkbox" name="impairment" type="checkbox" value="other" aria-controls="other" aria-expanded="false">
                   <label class="nhsuk-label nhsuk-checkboxes__label" for="other-checkbox">
                     Other condition(s) and/or disability(s)
                   </label>
@@ -223,7 +223,6 @@ Add patient impairments
     </div>
   </div>
 </div>
-{% block pageScripts %}
-<script src="/js/conditional-reveals.js"></script>
 {% endblock %}
+{% block pageScripts %}
 {% endblock %}

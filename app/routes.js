@@ -1,22 +1,24 @@
 // External dependencies
-const express = require('express');
+const express = require("express");
 const router = express.Router();
 
-// Add your routes here - above the module.exports line
+require("./views/locum-pharmacist/routes.js")(router);
+require("./views/ra-flag_v5/routes.js")(router);
+require("./views/search-v5/routes.js")(router);
 
 // Passing data example
-router.get('/examples/passing-data', function (req, res) {
-  res.render('examples/passing-data/index')
+router.get("/examples/passing-data", function (req, res) {
+  res.render("examples/passing-data/index");
 });
 
 // Branching example
-router.post('/examples/branching/answer', function (req, res) {
+router.post("/examples/branching/answer", function (req, res) {
   let nhsNumber = req.body.nhsNumber;
 
-  if (nhsNumber === 'Yes') {
-    res.redirect('/examples/branching/answer-yes')
+  if (nhsNumber === "Yes") {
+    res.redirect("/examples/branching/answer-yes");
   } else {
-    res.redirect('/examples/branching/answer-no')
+    res.redirect("/examples/branching/answer-no");
   }
 });
 

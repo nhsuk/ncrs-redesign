@@ -5,12 +5,6 @@ SCRa redesign - Child Protection - Infomation Sharing
 {% endblock %}
 
 {% block beforeContent %}
-
-<script>
-  localStorage.altName = "Amelia Miller";
-</script>
-
-
 <section class="nhsuk-hero">
 
   <div class="nhsuk-width-container nhsuk-hero--border">
@@ -45,6 +39,7 @@ SCRa redesign - Child Protection - Infomation Sharing
     </div>
 
     <form action="../fgm-v2/patient-overview-no-alert">
+      <input name="nhs-number" value="0987654321" hidden/>
       <button class="nhsuk-button index-page-link" type="submit">
         Begin prototype
       </button>

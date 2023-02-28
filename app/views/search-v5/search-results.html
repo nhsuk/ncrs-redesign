@@ -5,7 +5,6 @@
 {% endblock %}
 
 {% block beforeContent %}
-
   <section class="nhsuk-hero">
 
     <div class="nhsuk-width-container">
@@ -44,14 +43,19 @@
     <div class="nhsuk-grid-column-three-quarters">
 
       <h2 class="nhsuk-heading-l">Search results</h2>
-      <p>
-        <span class="number-of-results"></span>
-      </p>
+      {% if returnedPatientsList | length %}
+        <h3 class='nhsuk-heading-xs'>We found {{ returnedPatientsList | length }} result{% if returnedPatientsList | length > 1 %}s{% endif %}.</h3>
+      {% else %}
+        <h3 class='nhsuk-heading-xs'>Sorry. We couldn't find any patients.</h3>
+      {% endif %}
+      <p>If you can't find the patient you're looking for you can 
+        <a id='refine-search-link' href='javascript:window.history.back()'>refine your search</a> or <a href='nhs-number-search'>perform a new search</a>.</p>
 
     </div>
 
     <div class="nhsuk-grid-column-full">
 
+      {% if returnedPatientsList | length %}
       <div class="search-results-container">
 
         <table id="search-results-table" class="responsive-table" role="grid">
@@ -65,14 +69,21 @@
               <th scope="col" class="nhs-no-results-th">NHS Number</th>
             </tr>
           </thead>
-          <tbody class="patient-results"></tbody>
+          <tbody class="patient-results">
+            {% for patientNhsNumber, patient in returnedPatientsList %}
+              {% include "includes/search-result-row.html" %}
+            {% endfor %}
+          </tbody>
         </table>
         <div class="table-foot">
           <span class="load-more"></span>
-          <span class="results-count"></span>
+          <span class="results-count">
+            Showing {{ returnedPatientsList | length }} of {{ returnedPatientsList | length }}
+          </span>
         </div>
 
       </div>
+      {% endif %}
 
     </div>
 
