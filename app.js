@@ -241,6 +241,8 @@ app.use(function (err, req, res, next) {
 })
 
 // Run the application
-app.listen(port);
+app.listen(port, () => {
+  console.log(`Starting application at http://localhost:${port}`)
+});
 
 module.exports = app;
