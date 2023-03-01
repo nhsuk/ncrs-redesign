@@ -131,7 +131,6 @@ Find a patient
                 Search all
               </label>
             </div>
-            {{ data['gender'] | dump(2) }}
             <div class="nhsuk-radios__conditional{% if not data['gender'] or (data['gender'] and data['gender'] != 'Not known') %} nhsuk-radios__conditional--hidden{% endif %}" id="gender-not-known-advanced-conditional">
               <span class="nhsuk-u-visually-hidden">Information about searching for all genders: </span>
               <p>You have chosen to search for all genders. Please note that selecting this option will increase your search time
