@@ -1,4 +1,6 @@
 const moment = require("moment");
+moment.locale("en-gb");
+
 const patientList = require("../../data/patients-list.js");
 
 function formatName(str) {
@@ -46,15 +48,8 @@ module.exports = (router) => {
     }
 
     // Format the data provided ready for processing
-    const date = new Date(Date.UTC(dobYear, dobMonth - 1, dobDay));
-    const dateOptions = {
-      year: "numeric",
-      month: "short",
-      day: "2-digit",
-    };
-    const formattedDob = date
-      .toLocaleDateString("en-GB", dateOptions)
-      .replace(/\s/g, "-");
+    const date = new Date(dobYear, dobMonth - 1, dobDay);
+    const formattedDob = moment(date).format("DD-MMM-YYYY");
 
     const params = new URLSearchParams({
       gender,
