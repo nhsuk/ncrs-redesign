@@ -108,7 +108,7 @@ Find a patient
             You must select a gender
           </span>
           {% endif %}
-          <div class="nhsuk-radios nhsuk-radios--inline" id="gender-radio">
+          <div class="nhsuk-radios nhsuk-radios--inline nhsuk-radios--conditional nhsuk-radios--force-inline" id="gender-radio">
             <div class="nhsuk-radios__item">
               <input class="nhsuk-radios__input" id="gender-female-advanced" name="gender" type="radio" value="Female"
               {% if data['gender'] === "Female" %} checked="true"{% endif %}>
@@ -125,17 +125,20 @@ Find a patient
             </div>
             <div class="nhsuk-radios__item">
               <input class="nhsuk-radios__input" id="gender-not-known-advanced" name="gender" type="radio" value="Not known"
-              {% if data['gender'] === "Not known" %} checked="true"{% endif %}>
+              {% if data['gender'] === "Not known" %} checked="true"{% endif %}
+              aria-controls="gender-not-known-advanced-conditional" aria-expanded="false">
               <label class="nhsuk-label nhsuk-radios__label" for="gender-not-known-advanced">
                 Search all
               </label>
             </div>
+            {{ data['gender'] | dump(2) }}
+            <div class="nhsuk-radios__conditional{% if not data['gender'] or (data['gender'] and data['gender'] != 'Not known') %} nhsuk-radios__conditional--hidden{% endif %}" id="gender-not-known-advanced-conditional">
+              <span class="nhsuk-u-visually-hidden">Information about searching for all genders: </span>
+              <p>You have chosen to search for all genders. Please note that selecting this option will increase your search time
+              </p>
+            </div>
           </div>
         </fieldset>
-        <div class="nhsuk-inset-text gender-search-inset-text">
-          <span class="nhsuk-u-visually-hidden">Information about searching for all genders: </span>
-          <p>You have chosen to search for all genders. Please note that selecting this option will increase your search time</p>
-        </div>
       </div>
       <!--- First name text input --->
       <div class="nhsuk-form-group{% if errors['first-name'] %} nhsuk-form-group--error{% endif %}" id="nhsuk-form-group-first-name-advanced">
