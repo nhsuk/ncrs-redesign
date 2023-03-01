@@ -8,7 +8,7 @@ function formatName(str) {
 }
 
 module.exports = (router) => {
-  router.post("/search-v5/nhs-number-search", function (req, res) {
+  router.post("/search/nhs-number-search", function (req, res) {
     const nhsNumber = req.body["nhs-number"];
 
     req.session.data.errors = {};
@@ -16,13 +16,13 @@ module.exports = (router) => {
     // If there is no submitted option
     if (!nhsNumber) {
       req.session.data.errors["nhs-number"] = true;
-      return res.redirect("/search-v5/nhs-number-search");
+      return res.redirect("/search/nhs-number-search");
     }
 
-    res.redirect(`/search-v5/search-results?nhs-number=${nhsNumber}`);
+    res.redirect(`/search/search-results?nhs-number=${nhsNumber}`);
   });
 
-  router.post("/search-v5/basic-details-search", function (req, res) {
+  router.post("/search/basic-details-search", function (req, res) {
     const gender = req.body["gender"];
     const lastName = req.body["last-name"];
     const dobDay = req.body["dob-day"];
@@ -42,7 +42,7 @@ module.exports = (router) => {
     }
 
     if (Object.keys(req.session.data.errors).length) {
-      return res.redirect("/search-v5/basic-details-search");
+      return res.redirect("/search/basic-details-search");
     }
 
     // Format the data provided ready for processing
@@ -61,10 +61,10 @@ module.exports = (router) => {
       lastName: formatName(lastName),
       dob: formattedDob,
     });
-    res.redirect(`/search-v5/search-results?${params}`);
+    res.redirect(`/search/search-results?${params}`);
   });
 
-  router.post("/search-v5/advanced-details-search", function (req, res) {
+  router.post("/search/advanced-details-search", function (req, res) {
     const gender = req.body["gender"];
     const firstName = req.body["first-name"];
     const lastName = req.body["last-name"];
@@ -104,7 +104,7 @@ module.exports = (router) => {
     }
 
     if (Object.keys(req.session.data.errors).length) {
-      return res.redirect("/search-v5/advanced-details-search");
+      return res.redirect("/search/advanced-details-search");
     }
 
     const formattedPostcode = addressPostcode.toUpperCase().replace(/\s/g, "");
@@ -124,10 +124,10 @@ module.exports = (router) => {
       dobTo,
       widenSearch,
     });
-    res.redirect(`/search-v5/search-results?${params}`);
+    res.redirect(`/search/search-results?${params}`);
   });
 
-  router.post("/search-v5/postcode-search", function (req, res) {
+  router.post("/search/postcode-search", function (req, res) {
     const addressPostcode = req.body["postcode-only"];
     req.session.data.errors = {};
 
@@ -136,7 +136,7 @@ module.exports = (router) => {
     }
 
     if (Object.keys(req.session.data.errors).length) {
-      return res.redirect("/search-v5/postcode-search");
+      return res.redirect("/search/postcode-search");
     }
 
     // Format the data provided ready for processing
@@ -144,10 +144,10 @@ module.exports = (router) => {
     const params = new URLSearchParams({
       postcode: formattedPostcode,
     });
-    res.redirect(`/search-v5/search-results?${params}`);
+    res.redirect(`/search/search-results?${params}`);
   });
 
-  router.get("/search-v5/search-results", function (req, res, next) {
+  router.get("/search/search-results", function (req, res, next) {
     const nhsNumber = req.query["nhs-number"];
     const { gender, firstName, lastName, dob, dobTo, dobFrom, postcode } =
       req.query;
