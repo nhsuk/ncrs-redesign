@@ -8,8 +8,8 @@ $(".nhsuk-promo").click(function () {
 });
 
 $(".patient-search-result").click(function () {
-  var patientNhsNo = $(this).find(".nhs-no-results-td").text();
-  window.location.href = `patient-overview?nhs-number=${patientNhsNo.replace(/\s/g, '')}`;
+  const redirectUrl = $(this).data("href");
+  window.location.href = redirectUrl;
 });
 
 $(".add-tel-number-btn").click(function () {
