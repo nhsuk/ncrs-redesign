@@ -1,0 +1,72 @@
+{% extends 'layouts/layout-transactional.html' %}
+
+{% block pageTitle %}
+SCRa redesign - Index
+{% endblock %}
+
+{% block beforeContent %}
+
+<section class="nhsuk-hero">
+
+  <div class="nhsuk-width-container nhsuk-hero--border">
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-two-thirds">
+        <div class="nhsuk-hero__wrapper">
+          <h1 class="nhsuk-u-margin-bottom-3">SCRa redesign</h1>
+          <p class="nhsuk-body-l nhsuk-u-margin-bottom-0">OVM</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-grid-column-two-thirds">
+
+    <div class="section">
+      <h2 class='nhs-heading-l'>About this prototype</h2>
+
+      <h5 class="nhsuk-body">
+        Second version of the OVM prototype in SCRa. Shows the historical status fetching functionality and home office status.
+      </h5>
+
+      <h5 class="nhsuk-body">
+        Hypotheses
+      </h5>
+
+      <p class="nhsuk-body">
+        1. If we change the header colour then users readability will improve because the design is more in line with the rest of the prototype
+      <br /><span><a href="patient-details-ovm">No blue background banners</a></span></p>
+      <p class="nhsuk-body">
+        2. The user needs to know if part of the date range they have searched for returns no results.<span><br /><a href="patient-details-ovm-history-partial">Parital history results</a></span>
+      </p>
+      <p class="nhsuk-body">
+        3. The user needs to be able to see how a banner colour is determined.<span><br /><a href="patient-details-ovm-history-partial">Banner colour additional info</a></span>
+      </p>
+      <p class="nhsuk-body">
+        4. The historical status search journey is easier for the user if they are directed to a new page rather than a toggle.<span><br /><a href="patient-details">Search for history</a></span>
+      </p>
+
+
+    </div>
+
+    <a class="nhsuk-button" href="patient-overview-ovm">Begin prototype</a>
+
+  </div>
+
+  <div class="nhsuk-grid-column-one-third">
+    <div class="scra-card">
+      <h2 class="nhsuk-heading-m">Prototypes</h2>
+      <p>
+        <a href="patient-details-ovm-paid">Red banner status</a>
+      </p>
+    </div>
+  </div>
+
+</div>
+{% endblock %}
