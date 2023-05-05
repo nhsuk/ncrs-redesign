@@ -47,11 +47,23 @@ Reasonable Adjustments record {% endblock %} {% block beforeContent %}
           <span role="text">COVID-19 Vaccination information</span>
         </h1>
 
+        <div class="nhsuk-inset-text">
+          <span class="nhsuk-u-visually-hidden">Information: </span>
+          <p>
+            This is the information recorded by the organisation(s)
+            administering the COVID-19 vaccination(s) and may differ from the
+            information provided to the patient, held on the patient's GP
+            record, and/or Summary Care Record (SCR). It is possible that the
+            patient may have had COVID-19 vaccination events that are not yet
+            recorded here.
+          </p>
+        </div>
+
+        <!-- Table here -->
+
         <div class="scra-card">
           <div class="scra-card-header">
-            <h2 class="nhsuk-heading-l" id="first-dose">
-              First dose of COVID-19 vaccine
-            </h3>
+            <h2 class="nhsuk-heading-l" id="fourth-dose">Fourth dose</h2>
           </div>
           <div class="scra-card-content">
             <dl class="nhsuk-summary-list">
@@ -78,75 +90,182 @@ Reasonable Adjustments record {% endblock %} {% block beforeContent %}
                 <dt class="nhsuk-summary-list__key">Organisation</dt>
                 <dd class="nhsuk-summary-list__value">C54321</dd>
               </div>
-
-              <div class="nhsuk-summary-list__row">
-                <dt class="nhsuk-summary-list__key">
-                  Adverse reaction(s) recorded?
-                </dt>
-                <dd class="nhsuk-summary-list__value">
-                  <b>Yes.</b> 1 adverse reaction(s) were recorded within 15
-                  minutes of administering the vaccine.
-                </dd>
-              </div>
-
-              <div class="nhsuk-summary-list__row">
-                <dt class="nhsuk-summary-list__key">Reaction (1)</dt>
-                <dd class="nhsuk-summary-list__value">
-                  Allergic reaction caused by vaccine product (disorder)
-                </dd>
-              </div>
-
-              <div class="nhsuk-summary-list__row">
-                <dt class="nhsuk-summary-list__key">
-                  Reaction description (1)
-                </dt>
-                <dd class="nhsuk-summary-list__value">
-                  Erythema, papules, itching, blotches- all over the patient’s
-                  body
-                </dd>
-              </div>
-
-              <div class="nhsuk-summary-list__row">
-                <dt class="nhsuk-summary-list__key">Severity (1)</dt>
-                <dd class="nhsuk-summary-list__value">Severe</dd>
-              </div>
-
-              <div class="nhsuk-summary-list__row">
-                <dt class="nhsuk-summary-list__key">Causative agent (1)</dt>
-                <dd class="nhsuk-summary-list__value">
-                  Immunisation course to achieve immunity against SARS-CoV-2
-                  (severe acute respiratory syndrome coronavirus 2)
-                </dd>
-              </div>
-
-              <div class="nhsuk-summary-list__row">
-                <dt class="nhsuk-summary-list__key">Type (1)</dt>
-                <dd class="nhsuk-summary-list__value">Intolerance</dd>
-              </div>
-
-              <div class="nhsuk-summary-list__row">
-                <dt class="nhsuk-summary-list__key">Verification status (1)</dt>
-                <dd class="nhsuk-summary-list__value">Confirmed</dd>
-              </div>
-
-              <div class="nhsuk-summary-list__row">
-                <dt class="nhsuk-summary-list__key">Evidence (1)</dt>
-                <dd class="nhsuk-summary-list__value">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </dd>
-              </div>
-
-              <div class="nhsuk-summary-list__row">
-                <dt class="nhsuk-summary-list__key">Onset (1)</dt>
-                <dd class="nhsuk-summary-list__value">20200524</dd>
-              </div>
             </dl>
-
-            <details class="nhsuk-details">
+            <details class="nhsuk-details nhsuk-expander">
               <summary class="nhsuk-details__summary">
                 <span class="nhsuk-details__summary-text">
-                  More information
+                  Other details about this dose
+                </span>
+              </summary>
+              <div class="nhsuk-details__text">
+                <dl class="nhsuk-summary-list">
+                  <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">Site of vaccination</dt>
+                    <dd class="nhsuk-summary-list__value">Right arm</dd>
+                  </div>
+
+                  <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                      Route of vaccination name
+                    </dt>
+                    <dd class="nhsuk-summary-list__value">Intramuscular</dd>
+                  </div>
+
+                  <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">Dose</dt>
+                    <dd class="nhsuk-summary-list__value">
+                      1 pre-filled disposable injection
+                    </dd>
+                  </div>
+
+                  <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">Batch number</dt>
+                    <dd class="nhsuk-summary-list__value">098765</dd>
+                  </div>
+
+                  <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                      Expiry date of vaccine
+                    </dt>
+                    <dd class="nhsuk-summary-list__value">19-Jan-2021</dd>
+                  </div>
+
+                  <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">Care setting type</dt>
+                    <dd class="nhsuk-summary-list__value">Pharmacy</dd>
+                  </div>
+                </dl>
+              </div>
+            </details>
+
+            <div class="nhsuk-warning-callout">
+              <h3 class="nhsuk-warning-callout__label">
+                <span role="text">
+                  <span class="nhsuk-u-visually-hidden">Important: </span>
+                  Advese reactions recorded:
+                </span>
+              </h3>
+              <p>
+                Yes. 1 adverse reaction(s) were recorded within 15 minutes of
+                administering the vaccine.
+              </p>
+            </div>
+
+            <details class="nhsuk-details nhsuk-expander">
+              <summary class="nhsuk-details__summary">
+                <span class="nhsuk-details__summary-text">
+                  Adverse reaction details
+                </span>
+              </summary>
+              <div class="nhsuk-details__text">
+                <p>First adverse reaction</p>
+
+                <dl class="nhsuk-summary-list">
+                  <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                      Adverse reaction(s) recorded?
+                    </dt>
+                    <dd class="nhsuk-summary-list__value">
+                      Yes. 1 adverse reaction(s) were recorded within 15 minutes
+                      of administering the vaccine.
+                    </dd>
+                  </div>
+
+                  <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">Reaction (1)</dt>
+                    <dd class="nhsuk-summary-list__value">
+                      Allergic reaction caused by vaccine product (disorder)
+                    </dd>
+                  </div>
+
+                  <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                      Reaction description (1)
+                    </dt>
+                    <dd class="nhsuk-summary-list__value">
+                      Erythema, papules, itching, blotches- all over the
+                      patient’s body
+                    </dd>
+                  </div>
+
+                  <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">Severity (1)</dt>
+                    <dd class="nhsuk-summary-list__value">Severe</dd>
+                  </div>
+
+                  <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">Causative agent (1)</dt>
+                    <dd class="nhsuk-summary-list__value">
+                      Immunisation course to achieve immunity against SARS-CoV-2
+                      (severe acute respiratory syndrome coronavirus 2)
+                    </dd>
+                  </div>
+
+                  <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">Type (1)</dt>
+                    <dd class="nhsuk-summary-list__value">Intolerance</dd>
+                  </div>
+
+                  <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                      Verification status (1)
+                    </dt>
+                    <dd class="nhsuk-summary-list__value">Confirmed</dd>
+                  </div>
+
+                  <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">Evidence (1)</dt>
+                    <dd class="nhsuk-summary-list__value">
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua.
+                    </dd>
+                  </div>
+
+                  <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">Onset (1)</dt>
+                    <dd class="nhsuk-summary-list__value">20200524</dd>
+                  </div>
+                </dl>
+              </div>
+            </details>
+          </div>
+        </div>
+
+        <div class="scra-card">
+          <div class="scra-card-header">
+            <h2 class="nhsuk-heading-l" id="booster-dose">Booster dose</h2>
+          </div>
+          <div class="scra-card-content">
+            <dl class="nhsuk-summary-list">
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">Date and time</dt>
+                <dd class="nhsuk-summary-list__value">18-Dec-2020 14:25</dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">Vaccination product</dt>
+                <dd class="nhsuk-summary-list__value">
+                  COVID-19 mRNA Vaccine BNT162b2 30micrograms/0.3ml dose
+                  concentrate for suspension for injection multidose vials
+                  (Pfizer-BioNTech)
+                </dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">Manufacturer</dt>
+                <dd class="nhsuk-summary-list__value">Pfizer-BioNTech</dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">Organisation</dt>
+                <dd class="nhsuk-summary-list__value">C54321</dd>
+              </div>
+            </dl>
+            <details class="nhsuk-details nhsuk-expander">
+              <summary class="nhsuk-details__summary">
+                <span class="nhsuk-details__summary-text">
+                  Other details about this dose
                 </span>
               </summary>
               <div class="nhsuk-details__text">
@@ -194,39 +313,159 @@ Reasonable Adjustments record {% endblock %} {% block beforeContent %}
 
         <div class="scra-card">
           <div class="scra-card-header">
-            <h3 class="nhsuk-heading-m" id="first-dose">
-              Second dose of COVID-19 vaccine
-            </h3>
+            <h2 class="nhsuk-heading-l" id="second-dose">Second dose</h2>
           </div>
           <div class="scra-card-content">
             <dl class="nhsuk-summary-list">
               <div class="nhsuk-summary-list__row">
                 <dt class="nhsuk-summary-list__key">Date and time</dt>
-                <dd class="nhsuk-summary-list__value">Not recorded</dd>
+                <dd class="nhsuk-summary-list__value">18-Dec-2020 14:25</dd>
               </div>
 
               <div class="nhsuk-summary-list__row">
                 <dt class="nhsuk-summary-list__key">Vaccination product</dt>
-                <dd class="nhsuk-summary-list__value">Not recorded</dd>
+                <dd class="nhsuk-summary-list__value">
+                  COVID-19 mRNA Vaccine BNT162b2 30micrograms/0.3ml dose
+                  concentrate for suspension for injection multidose vials
+                  (Pfizer-BioNTech)
+                </dd>
               </div>
 
               <div class="nhsuk-summary-list__row">
                 <dt class="nhsuk-summary-list__key">Manufacturer</dt>
-                <dd class="nhsuk-summary-list__value">Not recorded</dd>
+                <dd class="nhsuk-summary-list__value">Pfizer-BioNTech</dd>
               </div>
 
               <div class="nhsuk-summary-list__row">
                 <dt class="nhsuk-summary-list__key">Organisation</dt>
-                <dd class="nhsuk-summary-list__value">Not recorded</dd>
+                <dd class="nhsuk-summary-list__value">C54321</dd>
+              </div>
+            </dl>
+            <details class="nhsuk-details nhsuk-expander">
+              <summary class="nhsuk-details__summary">
+                <span class="nhsuk-details__summary-text">
+                  Other details about this dose
+                </span>
+              </summary>
+              <div class="nhsuk-details__text">
+                <dl class="nhsuk-summary-list">
+                  <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">Site of vaccination</dt>
+                    <dd class="nhsuk-summary-list__value">Right arm</dd>
+                  </div>
+
+                  <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                      Route of vaccination name
+                    </dt>
+                    <dd class="nhsuk-summary-list__value">Intramuscular</dd>
+                  </div>
+
+                  <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">Dose</dt>
+                    <dd class="nhsuk-summary-list__value">
+                      1 pre-filled disposable injection
+                    </dd>
+                  </div>
+
+                  <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">Batch number</dt>
+                    <dd class="nhsuk-summary-list__value">098765</dd>
+                  </div>
+
+                  <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                      Expiry date of vaccine
+                    </dt>
+                    <dd class="nhsuk-summary-list__value">19-Jan-2021</dd>
+                  </div>
+
+                  <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">Care setting type</dt>
+                    <dd class="nhsuk-summary-list__value">Pharmacy</dd>
+                  </div>
+                </dl>
+              </div>
+            </details>
+          </div>
+        </div>
+
+        <div class="scra-card">
+          <div class="scra-card-header">
+            <h2 class="nhsuk-heading-l" id="first-dose">First dose</h2>
+          </div>
+          <div class="scra-card-content">
+            <dl class="nhsuk-summary-list">
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">Date and time</dt>
+                <dd class="nhsuk-summary-list__value">18-Dec-2020 14:25</dd>
               </div>
 
               <div class="nhsuk-summary-list__row">
-                <dt class="nhsuk-summary-list__key">
-                  Adverse reaction(s) recorded?
-                </dt>
-                <dd class="nhsuk-summary-list__value">Not recorded</dd>
+                <dt class="nhsuk-summary-list__key">Vaccination product</dt>
+                <dd class="nhsuk-summary-list__value">
+                  COVID-19 mRNA Vaccine BNT162b2 30micrograms/0.3ml dose
+                  concentrate for suspension for injection multidose vials
+                  (Pfizer-BioNTech)
+                </dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">Manufacturer</dt>
+                <dd class="nhsuk-summary-list__value">Pfizer-BioNTech</dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">Organisation</dt>
+                <dd class="nhsuk-summary-list__value">C54321</dd>
               </div>
             </dl>
+            <details class="nhsuk-details nhsuk-expander">
+              <summary class="nhsuk-details__summary">
+                <span class="nhsuk-details__summary-text">
+                  Other details about this dose
+                </span>
+              </summary>
+              <div class="nhsuk-details__text">
+                <dl class="nhsuk-summary-list">
+                  <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">Site of vaccination</dt>
+                    <dd class="nhsuk-summary-list__value">Right arm</dd>
+                  </div>
+
+                  <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                      Route of vaccination name
+                    </dt>
+                    <dd class="nhsuk-summary-list__value">Intramuscular</dd>
+                  </div>
+
+                  <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">Dose</dt>
+                    <dd class="nhsuk-summary-list__value">
+                      1 pre-filled disposable injection
+                    </dd>
+                  </div>
+
+                  <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">Batch number</dt>
+                    <dd class="nhsuk-summary-list__value">098765</dd>
+                  </div>
+
+                  <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                      Expiry date of vaccine
+                    </dt>
+                    <dd class="nhsuk-summary-list__value">19-Jan-2021</dd>
+                  </div>
+
+                  <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">Care setting type</dt>
+                    <dd class="nhsuk-summary-list__value">Pharmacy</dd>
+                  </div>
+                </dl>
+              </div>
+            </details>
           </div>
         </div>
       </div>
