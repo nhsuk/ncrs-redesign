@@ -68,11 +68,11 @@ Reasonable Adjustments record {% endblock %} {% block beforeContent %}
 4. highlight needed on "yes" adverse reaction-->
 
 <div class="nhsuk-table-responsive">
-  <table role="table" class="nhsuk-table-responsive">
+  <table role="table" class="nhsuk-table">
     <caption class="nhsuk-table__caption"></caption>
     <thead role="rowgroup" class="nhsuk-table__head">
       <tr role="row">
-        <th role="columnheader" class="" scope="col">
+        <th role="columnheader" class="nhsuk-u-font-size-19" scope="col">
           Dose
         </th>
         <th role="columnheader" class="" scope="col">
@@ -92,7 +92,7 @@ Reasonable Adjustments record {% endblock %} {% block beforeContent %}
     <tbody class="nhsuk-table__body">
       <tr role="row" class="nhsuk-table__row">
         <td role="cell" class="nhsuk-table__cell">
-          <span class="nhsuk-table-responsive__heading"> </span>Fourth
+          <span class="nhsuk-table-responsive__heading"> </span><st>Fourth</st>
         </td>
         <td role="cell" class="nhsuk-table__cell">
           <span class="nhsuk-table-responsive__heading"> </span>1 Jun 2022
@@ -104,7 +104,7 @@ Reasonable Adjustments record {% endblock %} {% block beforeContent %}
           <span class="nhsuk-table-responsive__heading"> </span>Yes
         </td> 
         <td role="cell" class="nhsuk-table__cell">
-          <span class="nhsuk-table-responsive__heading"></span> <a href="#">View details</a>
+          <span class="nhsuk-table-responsive__heading"></span> <a href="#fourth">View details</a>
         </td>
       </tr>
       <tr role="row" class="nhsuk-table__row">
@@ -121,7 +121,7 @@ Reasonable Adjustments record {% endblock %} {% block beforeContent %}
           <span class="nhsuk-table-responsive__heading"> </span>No
         </td> 
         <td role="cell" class="nhsuk-table__cell">
-          <span class="nhsuk-table-responsive__heading"></span> <a href="#">View details</a>
+          <span class="nhsuk-table-responsive__heading"></span> <a href="#booster">View details</a>
         </td>
       </tr>
       <tr role="row" class="nhsuk-table__row">
@@ -138,7 +138,7 @@ Reasonable Adjustments record {% endblock %} {% block beforeContent %}
           <span class="nhsuk-table-responsive__heading"> </span>No
         </td> 
         <td role="cell" class="nhsuk-table__cell">
-          <span class="nhsuk-table-responsive__heading"></span> <a href="#">View details</a>
+          <span class="nhsuk-table-responsive__heading"></span> <a href="#second">View details</a>
         </td>
       </tr>
       <tr role="row" class="nhsuk-table__row">
@@ -155,7 +155,7 @@ Reasonable Adjustments record {% endblock %} {% block beforeContent %}
           <span class="nhsuk-table-responsive__heading"> </span>No
         </td> 
         <td role="cell" class="nhsuk-table__cell">
-          <span class="nhsuk-table-responsive__heading"></span> <a href="#">View details</a>
+          <span class="nhsuk-table-responsive__heading"></span> <a href="#first">View details</a>
         </td>
       </tr>
    
@@ -166,7 +166,7 @@ Reasonable Adjustments record {% endblock %} {% block beforeContent %}
 </div>
 
 
-       
+       <a id="fourth"></a>
         <div class="scra-card">
           <div class="scra-card-header">
             <h2 class="nhsuk-heading-l" id="fourth-dose">Fourth dose</h2>
@@ -258,12 +258,12 @@ Reasonable Adjustments record {% endblock %} {% block beforeContent %}
             </div>
 
             <details class="nhsuk-details nhsuk-expander">
-              <summary class="nhsuk-details__summary">
+              <summary class="nhsuk-details__summary nhsuk-u-padding-left-0">
                 <span class="nhsuk-details__summary-text">
                   Adverse reaction details
                 </span>
               </summary>
-              <div class="nhsuk-details__text">
+              <div class="nhsuk-details__text nhsuk-u-padding-left-0">
                 <p>First adverse reaction</p>
 
                 <dl class="nhsuk-summary-list">
@@ -338,6 +338,7 @@ Reasonable Adjustments record {% endblock %} {% block beforeContent %}
           </div>
         </div>
 
+        <a id="booster"></a>
         <div class="scra-card">
           <div class="scra-card-header">
             <h2 class="nhsuk-heading-l" id="booster-dose">Booster dose</h2>
@@ -417,6 +418,7 @@ Reasonable Adjustments record {% endblock %} {% block beforeContent %}
           </div>
         </div>
 
+        <a id="second"></a>
         <div class="scra-card">
           <div class="scra-card-header">
             <h2 class="nhsuk-heading-l" id="second-dose">Second dose</h2>
@@ -496,6 +498,7 @@ Reasonable Adjustments record {% endblock %} {% block beforeContent %}
           </div>
         </div>
 
+        <a id="first"></a>
         <div class="scra-card">
           <div class="scra-card-header">
             <h2 class="nhsuk-heading-l" id="first-dose">First dose</h2>
