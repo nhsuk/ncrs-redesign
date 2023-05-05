@@ -1,0 +1,18 @@
+// Allow inline conditionals
+.nhsuk-radios--force-inline.nhsuk-radios--conditional .nhsuk-radios__conditional {
+    clear: both;
+    padding-top: 10px;
+}
+@media (min-width: 40.0625em) {
+    .nhsuk-radios--force-inline.nhsuk-radios--conditional:after {
+        clear: both;
+        content: '';
+        display: block;
+    }
+
+    .nhsuk-radios--force-inline.nhsuk-radios--conditional .nhsuk-radios__item {
+        clear: none;
+        float: left;
+        margin-right: 24px;
+    }
+}

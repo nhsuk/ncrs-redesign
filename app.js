@@ -16,6 +16,7 @@ dotenv.config()
 // Local dependencies
 const authentication = require('./middleware/authentication');
 const automaticRouting = require('./middleware/auto-routing');
+const errors = require("./middleware/errors");
 const config = require('./app/config');
 const locals = require('./app/locals');
 const routes = require('./app/routes');
@@ -161,8 +162,11 @@ if(onlyDocumentation == 'true') {
     res.redirect('/docs');
   });
 } else {
+  // Handle errors for error summary pattern
+  app.use(errors);
+  
   // Else use custom application routes
-  app.use('/', routes);
+  app.use("/", routes);
 }
 
 // Automatically route pages
@@ -237,6 +241,8 @@ app.use(function (err, req, res, next) {
 })
 
 // Run the application
-app.listen(port);
+app.listen(port, () => {
+  console.log(`Starting application at http://localhost:${port}`)
+});
 
 module.exports = app;

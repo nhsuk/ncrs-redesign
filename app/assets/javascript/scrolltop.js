@@ -34,10 +34,8 @@ jQuery(document).ready(function($) {
       if ($(window).width() > 768) {
         if ($(window).scrollTop() > (topofDiv + height)) {
           $(".name-dob-floater").fadeIn();
-          $('.adjustments-floater').fadeIn();
         } else {
           $(".name-dob-floater").fadeOut();
-          $('.adjustments-floater').fadeOut();
 
         }
       }
@@ -48,10 +46,8 @@ jQuery(document).ready(function($) {
       if ($(window).width() > 768) {
         if ($(window).scrollTop() > (topofDiv + height)) {
           $(".name-dob-floater").fadeIn();
-          $('.adjustments-floater').fadeIn();
         } else {
           $(".name-dob-floater").fadeOut();
-          $('.adjustments-floater').fadeOut();
         }
       }
     }
@@ -116,14 +112,16 @@ jQuery(document).ready(function($) {
 
   var s = $("#mobile-nav");
   var pos = s.position();
-  $(window).scroll(function() {
-    var windowpos = $(window).scrollTop();
-    if (windowpos >= pos.top) {
-      s.addClass("nav-stick");
-    } else {
-      s.removeClass("nav-stick");
-    }
-  });
+  if (pos) {
+    $(window).scroll(function () {
+      var windowpos = $(window).scrollTop();
+      if (windowpos >= pos.top) {
+        s.addClass("nav-stick");
+      } else {
+        s.removeClass("nav-stick");
+      }
+    });
+  }
 
   $('#mobile-nav-select').change(function() {
     var targetPosition = $($(this).val()).offset().top - 100;

@@ -25,20 +25,6 @@ $('#submit-ptv').click(function(e) {
   }
 });
 
-
-$("#select-ra-flag-btn").click(function(){
-  $("#raModal").show();
-})
-
-$("#add-ra-flag-btn").click(function(){
-  $("#raModal").hide();
-})
-
-$(".cancel-ra-btn-link").click(function(){
-  $("#raModal").hide();
-  $('input:checkbox').removeAttr('checked');
-})
-
 $('input[type="checkbox"]').on('change', function(e){
    if(e.target.checked){
      $('#raModal').fadeIn(400);

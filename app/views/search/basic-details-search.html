@@ -1,0 +1,197 @@
+{% extends 'layouts/layout.html' %}
+
+{% block pageTitle %}
+  Find a patient
+{% endblock %}
+
+{% block beforeContent %}
+
+  <section class="nhsuk-hero">
+
+    <div class="nhsuk-width-container">
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-two-thirds">
+          <div class="nhsuk-hero__wrapper">
+            <h1 class="nhsuk-u-margin-bottom-3 nhsuk-heading-l">Find a patient</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <div class="nhsuk-full-width-container">
+    <div class='scra-bordered-tabs-container'>
+      <div class="nhsuk-width-container">
+        <ul class="scra-bordered-tabs">
+          <li class="scra-bordered-tabs-item">
+            <a class="scra-bordered-tabs-link" id ="nhs-number-link" href="nhs-number-search">By NHS Number</a>
+          </li>
+          <li class="scra-bordered-tabs-item scra-bordered-tabs-item-active">
+            <a class="scra-bordered-tabs-link" id="basic-details-link" href="#">By Basic Details</a>
+          </li>
+          <li class="scra-bordered-tabs-item">
+            <a class="scra-bordered-tabs-link"  id="advanced-details-link" href="advanced-details-search">By Advanced Details</a>
+          </li>
+          <li class="scra-bordered-tabs-item">
+            <a class="scra-bordered-tabs-link" id="postcode-link" href="postcode-search">By Postcode</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-three-quarters"><!---Error Summary--->
+      {% if errors | length %}
+        <div class="nhsuk-error-summary" id="nhsuk-patient-details-error-summary" aria-labelledby="error-summary-title"
+          role="alert" tabindex="-1">
+          <h2 class="nhsuk-error-summary__title" id="error-summary-title">
+            There is a problem
+          </h2>
+          <div class="nhsuk-error-summary__body">
+            <p>
+              You must correct the following errors
+            </p>
+            <ul class="nhsuk-list nhsuk-error-summary__list">
+              {% if errors['gender'] %}
+              <li>
+                <a id="error-summary-gender" href="#gender-female">You must select a gender for
+                  the patient</a>
+              </li>
+              {% endif %}
+              {% if errors['last-name'] %}
+              <li>
+                <a id="error-summary-last-name" href="#last-name">You must enter a last
+                  name for the patient</a>
+              </li>
+              {% endif %}
+              {% if errors['dob'] %}
+              <li>
+                <a id="error-summary-dob" href="#dob-day">You must enter a date of birth for
+                  the patient in the format 31 3 1980</a>
+              </li>
+              {% endif %}
+            </ul>
+          </div>
+        </div>
+      {% endif %}
+      <form id="patient-details-search" method="POST">
+
+        <h2 class="nhsuk-heading-m">Enter all fields</h2>
+
+        <div id="nhsuk-form-group-gender" class="nhsuk-form-group{% if errors['gender'] %} nhsuk-form-group--error{% endif %}">
+
+          <fieldset class="nhsuk-fieldset" aria-describedby="gender-radio">
+            <legend class="nhsuk-fieldset__legend nhsuk-label__strong">
+              Gender
+            </legend>
+
+            {% if errors['gender'] %}
+            <span id="gender-error-error" class="nhsuk-error-message">
+              You must select a gender
+            </span>
+            {% endif %}
+
+            <div class="nhsuk-radios nhsuk-radios--inline nhsuk-gender--radios" id="gender-radio">
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="gender-female" name="gender" type="radio" value="Female"
+                {% if data['gender'] === "Female" %} checked="true"{% endif %}>
+                <label class="nhsuk-label nhsuk-radios__label" for="gender-female">
+                  Female
+                </label>
+              </div>
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="gender-male" name="gender" type="radio" value="Male"
+                {% if data['gender'] === "Male" %} checked="true"{% endif %}>
+                <label class="nhsuk-label nhsuk-radios__label" for="gender-male">
+                  Male
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        <!--- Last name text input --->
+        <div id="nhsuk-form-group-last-name" class="nhsuk-form-group{% if errors['last-name'] %} nhsuk-form-group--error{% endif %}">
+          <label class="nhsuk-label nhsuk-label__strong" for="last-name">
+            Last name
+          </label>
+          {% if errors['last-name'] %}
+          <span id="last-name-error-error" class="nhsuk-error-message">
+            You must enter a last name
+          </span>
+          {% endif %}
+          <input class="nhsuk-input nhsuk-input--width-20{% if errors['last-name'] %} nhsuk-input--error{% endif %}" id="last-name" name="last-name" type="text" value="{{ data['last-name'] }}">
+        </div>
+        <!--- Date of birth text input --->
+        <div id="nhsuk-form-group-dob" class="nhsuk-form-group{% if errors['dob'] %} nhsuk-form-group--error{% endif %}">
+
+          <fieldset class="nhsuk-fieldset" aria-describedby="dob" role="group">
+            <legend class="nhsuk-fieldset__legend nhsuk-label__strong">
+              Date of birth
+            </legend>
+            <span class="nhsuk-hint">
+              For example, 31 3 1980
+            </span>
+            {% if errors['dob'] %}
+            <span id="dob-error-error" class="nhsuk-error-message">
+              You must enter a date of birth
+            </span>
+            {% endif %}
+            <div class="nhsuk-date-input" id="dob">
+              <div class="nhsuk-date-input__item">
+                <div class="nhsuk-form-group">
+                  <label class="nhsuk-label nhsuk-date-input__label" for="dob-day">
+                    Day
+                  </label>
+                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2{% if errors['dob'] %} nhsuk-input--error{% endif %}" id="dob-day" name="dob-day" type="number" pattern="[0-9]*" value="{{ data['dob-day'] }}">
+                </div>
+              </div>
+              <div class="nhsuk-date-input__item">
+                <div class="nhsuk-form-group">
+                  <label class="nhsuk-label nhsuk-date-input__label" for="dob-month">
+                    Month
+                  </label>
+                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2{% if errors['dob'] %} nhsuk-input--error{% endif %}" id="dob-month" name="dob-month" type="number" pattern="[0-9]*" value="{{ data['dob-month'] }}">
+                </div>
+              </div>
+              <div class="nhsuk-date-input__item">
+                <div class="nhsuk-form-group">
+                  <label class="nhsuk-label nhsuk-date-input__label" for="dob-year">
+                    Year
+                  </label>
+                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4{% if errors['dob'] %} nhsuk-input--error{% endif %}" id="dob-year" name="dob-year" type="number" pattern="[0-9]*" value="{{ data['dob-year'] }}">
+                </div>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="nhsuk-form-group">
+          <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-full">
+              <button class="nhsuk-button" type="submit">
+                Find patient
+              </button>
+            </div>
+          </div>
+        </div>
+      </form>
+
+      <div class="section">
+        <div class="nhsuk-warning-callout">
+          <h3 class="nhsuk-warning-callout__label">Privacy information</h3>
+          <p>
+            Use of the NHS Summary Care Record application is subject to confidentiality regulations. Some actions will raise a privacy alert.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+{% endblock %}

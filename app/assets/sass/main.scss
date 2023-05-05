@@ -10,10 +10,9 @@
 
 
 // Import GOV.UK front end library
-
+$govuk-font-family: inherit;
 @import 'node_modules/govuk-frontend/components/tabs/tabs';
 @import 'node_modules/govuk-frontend/components/accordion/accordion';
-
 
 // Patterns that are not in the NHS.UK frontend library
 @import 'patterns/check-your-answers';
@@ -35,7 +34,6 @@
 @import 'components/hero';
 @import 'components/tabs';
 @import 'components/forms';
-@import 'components/role-selection';
 @import 'components/search-results';
 @import 'components/overview';
 @import 'components/accordion';
@@ -48,7 +46,6 @@
 @import 'components/promos';
 @import 'components/sections';
 @import 'components/modals';
-@import 'components/autocomplete';
 @import 'components/floating-elements';
 @import 'components/typography';
 @import 'components/small-checkboxes';
@@ -56,5 +53,6 @@
 @import 'components/error-summary';
 @import 'components/mobile-navigation';
 @import 'components/ovm';
+@import 'components/conditional-reveal';
 
 

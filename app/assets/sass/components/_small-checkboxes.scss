@@ -13,7 +13,7 @@ $nhsuk-checkbox-hover-color: $color_nhsuk-grey-3;
 
 .nhsuk-checkboxes--small {
 
-  $input-offset: ($nhsuk-touch-target-size - $nhsuk-small-checkboxes-size) / 2;
+  $input-offset: calc(($nhsuk-touch-target-size - $nhsuk-small-checkboxes-size) / 2);
   $label-offset: $nhsuk-touch-target-size - $input-offset;
 
   .nhsuk-checkboxes__item {
@@ -93,7 +93,7 @@ $nhsuk-checkbox-hover-color: $color_nhsuk-grey-3;
 
   // Align conditional reveals with small checkboxes
   .nhsuk-checkboxes__conditional {
-    $margin-left: ($nhsuk-small-checkboxes-size / 2) - ($conditional-border-width / 2);
+    $margin-left: calc($nhsuk-small-checkboxes-size / 2) - calc($conditional-border-width / 2);
     margin-left: $margin-left;
     padding-left: $label-offset - ($margin-left + $conditional-border-width);
     clear: both;

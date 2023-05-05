@@ -21,6 +21,9 @@ Dashboard
           <li class="scra-bordered-tabs-item">
             <a data-target="#myModal" data-toggle="modal" class="open_modal" href="#myModal">Clinical</a>
           </li>
+          <li class="scra-bordered-tabs-item">
+            <a class="scra-bordered-tabs-link" href="#">Documents</a>
+          </li>
         </ul>
       </div>
     </div>
@@ -32,6 +35,7 @@ Dashboard
 
 {% block content %}
 
+{#
 <div class="nhsuk-grid-row nhsuk-promo-group">
   <div class="nhsuk-grid-column-one-quarter nhsuk-grid-column-tablet-landscape-one-third nhsuk-promo-group__item nhsuk-promo-group__alerts-item">
     <div class="nhsuk-promo nhsuk-promo--alert nhsuk-promo--small">
@@ -44,7 +48,7 @@ Dashboard
 
   </div>
 </div>
-
+#}
 
 <div class="nhsuk-grid-row nhsuk-card-group">
 
@@ -62,7 +66,6 @@ Dashboard
         <ul class="overview-card__list">
           <li class="overview-card__list-item"><a href="patient-details">Demographics</a></li>
           <li class="overview-card__list-item"><a href="patient-details">Contacts & next of kin</a></li>
-          <li class="overview-card__list-item"><a href="patient-details">COVID-19 Vaccinations</a></li>
           <li class="overview-card__list-item"><a href="patient-details">Reasonable Adjustments</a></li>
         </ul>
 
@@ -81,8 +84,25 @@ Dashboard
 
         <ul class="overview-card__list">
           <li class="overview-card__list-item"><a data-target="#myModal" data-toggle="modal" class="open_modal" href="#myModal">Summary Care Record</a></li>
+          <li class="overview-card__list-item"><a href="patient-details">COVID-19 Vaccinations</a></li>
         </ul>
 
+      </div>
+    </div>
+  </div>
+  <div class="nhsuk-grid-column-one-quarter nhsuk-grid-column-tablet-landscape-one-third nhsuk-grid-column-tablet-one-half nhsuk-card-group__item">
+    <div class="nhsuk-care-card nhsuk-care-card--non-urgent overview-card">
+      <div class="nhsuk-care-card__heading-container overview-card__heading-container">
+        <h3 class="nhsuk-care-card__heading overview-card__heading"><span role="text"><span class="nhsuk-u-visually-hidden">Patient documents:
+            </span>Available documents</span>
+        </h3>
+        <span class="nhsuk-care-card__arrow" aria-hidden="true"></span>
+      </div>
+      <div class="nhsuk-care-card__content overview-card__content">
+
+        <p>
+          There are no entries available
+        </p>
       </div>
     </div>
   </div>

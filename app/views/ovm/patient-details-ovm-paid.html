@@ -19,9 +19,6 @@ Dashboard
         <li class="scra-bordered-tabs-item">
           <a class="scra-bordered-tabs-link" href="./clinical-details-no-alert">Clinical</a>
         </li>
-        <li class="scra-bordered-tabs-item">
-          <a class="scra-bordered-tabs-link" href="#">Documents</a>
-        </li>
       </ul>
     </div>
   </div>
@@ -33,8 +30,8 @@ Dashboard
       <div class="nhsuk-grid-column-full">
 
         <ul class="nhsuk-list nhsuk-list--tick">
-          <p style="display:inline;" id="exclamation"><span>!</p>
-          <p style="display:inline;">Likely chargeable for NHS services.</p>
+          <p style="display:inline;" id="exclamation" style="margin-left:0px;"><span>!</p>
+          <p style="display:inline;">Likely chargeable for NHS services.<span style="padding-left:20px;font-size:15px;"><a href="additional-info" style="color:white;">Additional info</a></span></p>
 
         </ul>
 
@@ -102,14 +99,14 @@ Dashboard
         <div class="govuk-accordion__section-header scra-accordion__header">
           <h2 class="govuk-accordion__section-heading scra-accordion__heading">
             <span class="govuk-accordion__section-button scra-accordion__section-button" id="accordion-default-heading-4">
-              Chargeability status
+              Chargeable status
             </span>
           </h2>
         </div>
         <div id="accordion-default-content-4" class="govuk-accordion__section-content scra-accordion__section-content" aria-labelledby="accordion-default-heading-4">
           <ul>
             <li><a class="scra-accordion__link" href="#">Home office status</a></li>
-            <li><a class="scra-accordion__link" href="#">Overseas visitor manager status</a></li>
+            <li><a class="scra-accordion__link" href="patient-details-ovm-status">Overseas visitor manager status</a></li>
           </ul>
         </div>
       </div>
@@ -138,39 +135,41 @@ Dashboard
   <div class="nhsuk-grid-column-three-quarters">
     <div class="nhsuk-grid-row">
       <div class="nhsuk-grid-column-full">
-        <div class="blue-header">
+        <div class="">
           <h3 id="bluebanner2">Current status</h3>
           <p>This information is the current relevant status for the patient, though there may be other historic statuses held by the Home Office.</p>
         </div>
-        <div class="nhsuk-table-responsive">
-          <table class="nhsuk-table">
-            <caption class="nhsuk-table__caption">Allergies, sensitivites and supporting information</caption>
-            <thead class="nhsuk-table__head">
-              <tr class="nhsuk-table__row">
-                <th class="nhsuk-table__header" scope="col">Immigration status from</th>
-                <th class="nhsuk-table__header" scope="col">Immigration status to</th>
-                <th class="nhsuk-table__header" scope="col">HO reference</th>
-                <th class="nhsuk-table__header" scope="col">BRP number</th>
-                <th class="nhsuk-table__header" scope="col">Visa product</th>
-                <th class="nhsuk-table__header" scope="col">Immigration status</th>
-                <th class="nhsuk-table__header" scope="col">Healthcare status</th>
-              </tr>
-            </thead>
-            <tbody class="nhsuk-table__body">
-              <tr class="nhsuk-table__row">
-                <td class="nhsuk-table__cell">26-Dec-2019</td>
-                <td class="nhsuk-table__cell ">No expiry</td>
-                <td class="nhsuk-table__cell ">A-1234-1234-1234-1234-9</td>
-                <td class="nhsuk-table__cell ">Not provided</td>
-                <td class="nhsuk-table__cell ">EU settlement scheme</td>
-                <td class="nhsuk-table__cell ">Indefinite leave to remain</td>
-                <td class="nhsuk-table__cell ">Access to free NHS services</td>
-              </tr>
-            </tbody>
-          </table>
+        <div class="scra-card" id="acute">
+          <div class="nhsuk-table-responsive">
+            <table class="nhsuk-table">
+              <caption class="nhsuk-table__caption">Allergies, sensitivites and supporting information</caption>
+              <thead class="nhsuk-table__head">
+                <tr class="nhsuk-table__row">
+                  <th class="nhsuk-table__header" scope="col">Immigration status from</th>
+                  <th class="nhsuk-table__header" scope="col">Immigration status to</th>
+                  <th class="nhsuk-table__header" scope="col">Home Office reference</th>
+                  <th class="nhsuk-table__header" scope="col">BRP number</th>
+                  <th class="nhsuk-table__header" scope="col">Visa product</th>
+                  <th class="nhsuk-table__header" scope="col">Immigration status</th>
+                  <th class="nhsuk-table__header" scope="col">Healthcare status</th>
+                </tr>
+              </thead>
+              <tbody class="nhsuk-table__body">
+                <tr class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell">26-Dec-2019</td>
+                  <td class="nhsuk-table__cell ">No expiry</td>
+                  <td class="nhsuk-table__cell ">A-1234-1234-1234-1234-9</td>
+                  <td class="nhsuk-table__cell ">Not provided</td>
+                  <td class="nhsuk-table__cell ">EU settlement scheme</td>
+                  <td class="nhsuk-table__cell ">Indefinite leave to remain</td>
+                  <td class="nhsuk-table__cell ">Access to free NHS services</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
 
-        <div class="blue-header">
+        <div class="">
           <h3 id="bluebanner2">Historical status</h3>
         </div>
         <div class="nhsuk-u-padding-bottom-3"></div>

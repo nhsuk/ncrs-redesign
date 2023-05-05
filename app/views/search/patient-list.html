@@ -1,0 +1,76 @@
+{% extends 'layouts/layout-transactional.html' %}
+
+{% block pageTitle %}
+SCRa redesign - Index
+{% endblock %}
+
+{% block beforeContent %}
+
+<section class="nhsuk-hero">
+
+  <div class="nhsuk-width-container nhsuk-hero--border">
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-two-thirds">
+        <div class="nhsuk-hero__wrapper">
+          <h1 class="nhsuk-u-margin-bottom-3">SCRa redesign</h1>
+          <p class="nhsuk-body-l nhsuk-u-margin-bottom-0">Patient list for search functionality</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+  <div class="nhsuk-width-container">
+    <ol class="nhsuk-breadcrumb__list">
+      <li class="nhsuk-breadcrumb__item">
+        <a class="nhsuk-breadcrumb__link" id="find-patient" href="start">Search modifications</a>
+      </li>
+      <li class="nhsuk-breadcrumb__item">
+        <a class="nhsuk-breadcrumb__link" href="#">Patient list</a>
+      </li>
+    </ol>
+    <p class="nhsuk-breadcrumb__back">
+      <a class="nhsuk-breadcrumb__backlink" href="start">Search modifications</a>
+    </p>
+  </div>
+</nav>
+
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-grid-column-two-thirds">
+
+    <div class="section">
+
+      <table class="responsive-table">
+        <tr>
+          <th>NHS Number</th>
+          <th>Full Name</th>
+          <th>Address</th>
+          <th>City</th>
+          <th>Postcode</th>
+          <th>Gender</th>
+          <th>Date of Birth</th>
+        </tr>
+        {% for patientNhsNumber, patient in patientList %}
+          {% if patientNhsNumber != "1234567890" and patientNhsNumber != "0987654321" %}
+            <tr>
+              <td role="gridrow">{{ patientNhsNumber }}</td>
+              <td role="gridrow">{{ patient.firstName }} {{ patient.lastName.toUpperCase() }}</td>
+              <td role="gridrow">{{ patient.address }}</td>
+              <td role="gridrow">{{ patient.county }}</td>
+              <td role="gridrow">{{ patient.postcode }}</td>
+              <td role="gridrow">{{ patient.gender }}</td>
+              <td role="gridrow">{{ patient.dob }}</td>
+            </tr>
+          {% endif %}
+        {% endfor %}
+      </table>
+    </div>
+
+  </div>
+  {% endblock %}

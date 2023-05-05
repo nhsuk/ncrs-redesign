@@ -1,26 +1,26 @@
 {% extends 'layouts/layout-application.html' %}
 
+
 {% block pageTitle %}
-Dashboard
+Chargeable status
 {% endblock %}
 
 {% block beforeContent %}
+
+
 
 <div class="nhsuk-full-width-container">
   <div class='scra-bordered-tabs-container'>
     <div class="nhsuk-width-container-fluid">
       <ul class="scra-bordered-tabs">
         <li class="scra-bordered-tabs-item">
-          <a class="scra-bordered-tabs-link" href="#">Overview</a>
+          <a class="scra-bordered-tabs-link" href="patient-overview-ovm">Overview</a>
         </li>
         <li class="scra-bordered-tabs-item scra-bordered-tabs-item-active">
           <a class="scra-bordered-tabs-link" href="./patient-details-no-alert">Patient</a>
         </li>
         <li class="scra-bordered-tabs-item">
           <a class="scra-bordered-tabs-link" href="./clinical-details-no-alert">Clinical</a>
-        </li>
-        <li class="scra-bordered-tabs-item">
-          <a class="scra-bordered-tabs-link" href="#">Documents</a>
         </li>
       </ul>
     </div>
@@ -32,14 +32,40 @@ Dashboard
     <div class="nhsuk-grid-row">
       <div class="nhsuk-grid-column-full">
         <ul class="nhsuk-list nhsuk-list--tick">
-          <p style="padding-left:60px;">Access to free NHS services.
+          <p style="padding-left:60px;">Green: Access to free NHS services subject to Ordinarily Resident status - check evidence
             <svg id="bannertick" class="nhsuk-icon nhsuk-icon__tick" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" style="background:white;" aria-hidden="true">
               <path stroke-width="4" stroke-linecap="round" d="M18.4 7.8l-8.5 8.4L5.6 12"></path>
             </svg>
           </p>
         </ul>
-
       </div>
+    </div>
+  </div>
+</div>
+
+<div class="user-banner" style="position:sticky;top:0px; z-index:100; " id="myheader">
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-one-quarter">
+      <ul class="nhsuk-list nhsuk-list--tick">
+        <p style="padding-left:60px;"><strong>User:</strong> John Bann</p>
+      </ul>
+    </div>
+    <div class="nhsuk-grid-column-one-quarter">
+      <ul class="nhsuk-list nhsuk-list--tick">
+        <p><strong>Organisation:</strong> NELPCT out of hours</p>
+      </ul>
+    </div>
+    <div class="nhsuk-grid-column-one-quarter">
+      <ul style="padding-left:60px;" class="nhsuk-list nhsuk-list--tick">
+        <p><strong>Date updated:</strong> 08-Jun-2016</p>
+      </ul>
+    </div>
+    <div class="nhsuk-grid-column-one-quarter">
+      <ul style="padding-left:60px;" class="nhsuk-list nhsuk-list--tick">
+        <a style="color:white;position:relative; top:20px" href="view-history">View history</a>
+
+      </ul>
     </div>
   </div>
 </div>
@@ -49,360 +75,406 @@ Dashboard
 
 {% block content %}
 
-<div class="nhsuk-grid-row">
+<div class="nhsuk-width-container">
 
-  <div class="nhsuk-grid-column-one-quarter">
-    <div class="govuk-accordion" data-module="accordion" id="accordion-default">
+  <div class="nhsuk-grid-row">
 
-      <div class="govuk-accordion__section govuk-accordion__section--expanded">
-        <div class="govuk-accordion__section-header scra-accordion__header">
-          <h2 class="govuk-accordion__section-heading scra-accordion__heading">
-            <span class="govuk-accordion__section-button scra-accordion__section-button" id="accordion-default-heading-1">
-              Key demographics
-            </span>
-          </h2>
-        </div>
-        <div id="accordion-default-content-1" class="govuk-accordion__section-content scra-accordion__section-content" aria-labelledby="accordion-default-heading-1">
-          <ul>
-            <li><a class="scra-accordion__link" href="#patient-details-names">Names</a></li>
-            <li><a class="scra-accordion__link" href="#patient-key-details">Key details</a></li>
-            <li><a class="scra-accordion__link" href="#patient-details-address">Address</a></li>
-          </ul>
-        </div>
+    <div class="nhsuk-grid-column-full">
+
+      <div class="nhsuk-back-link">
+        <a class="nhsuk-back-link__link" href="patient-demographics#chargeable-status">
+          <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+          </svg>
+          Return to Patient tab</a>
       </div>
-      <div class="govuk-accordion__section ">
-        <div class="govuk-accordion__section-header scra-accordion__header">
-          <h2 class="govuk-accordion__section-heading scra-accordion__heading">
-            <span class="govuk-accordion__section-button scra-accordion__section-button" id="accordion-default-heading-2">
-              Contacts & next of kin
+
+      <div class="nhsuk-u-reading-width">
+
+        <h2 id="ovms">Overseas visitor manager status</h2>
+
+        <nav class="nhsuk-contents-list" role="navigation" aria-label="Pages in this guide">
+          <h2 class="nhsuk-u-visually-hidden">Contents</h2>
+          <ol class="nhsuk-contents-list__list">
+            <li class="nhsuk-contents-list__item" aria-current="page">
+              <a class="nhsuk-contents-list__current" href="patient-details-home-office">Home office status</a>
+            </li>
+            <li class="nhsuk-contents-list__item">
+              <span class="nhsuk-contents-list__link">Overseas Visitor Manager status</span>
+            </li>
+          </ol>
+        </nav>
+
+        <section id="category">
+          <div class="chargeable-status-container">
+            <span class="chargeable-status-tag">
+              Cat C: Charge exempt (EHIC/PRC/S2)
             </span>
-          </h2>
-        </div>
-        <div id="accordion-default-content-2" class="govuk-accordion__section-content scra-accordion__section-content" aria-labelledby="accordion-default-heading-2">
-          <ul>
-            <li><a class="scra-accordion__link" href="#">Contacts & next of kin</a></li>
-            <li><a class="scra-accordion__link" href="#">Power of attorney</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="govuk-accordion__section ">
-        <div class="govuk-accordion__section-header scra-accordion__header">
-          <h2 class="govuk-accordion__section-heading scra-accordion__heading">
-            <span class="govuk-accordion__section-button scra-accordion__section-button" id="accordion-default-heading-3">
-              GP & Care providers
-            </span>
-          </h2>
-        </div>
-        <div id="accordion-default-content-3" class="govuk-accordion__section-content scra-accordion__section-content" aria-labelledby="accordion-default-heading-3">
-          <ul>
-            <li><a class="scra-accordion__link" href="#">GP Details</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="govuk-accordion__section ">
-        <div class="govuk-accordion__section-header scra-accordion__header">
-          <h2 class="govuk-accordion__section-heading scra-accordion__heading">
-            <span class="govuk-accordion__section-button scra-accordion__section-button" id="accordion-default-heading-4">
-              Chargeability status
-            </span>
-          </h2>
-        </div>
-        <div id="accordion-default-content-4" class="govuk-accordion__section-content scra-accordion__section-content" aria-labelledby="accordion-default-heading-4">
-          <ul>
-            <li><a class="scra-accordion__link" href="#">Home office status</a></li>
-            <li><a class="scra-accordion__link" href="patient-details-ovm-status">Overseas visitor manager status</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="govuk-accordion__section ">
-        <div class="govuk-accordion__section-header scra-accordion__header">
-          <h2 class="govuk-accordion__section-heading scra-accordion__heading">
-            <span class="govuk-accordion__section-button scra-accordion__section-button" id="accordion-default-heading-5">
-              Reasonable Adjustments
-            </span>
-          </h2>
-        </div>
-        <div id="accordion-default-content-5" class="govuk-accordion__section-content scra-accordion__section-content" aria-labelledby="accordion-default-heading-5">
-          <ul>
-            <li><a class="scra-accordion__link" href="#ra-section">Add a Reasonable Adjustment</a></li>
-          </ul>
-        </div>
+            <p class="pds-edit-link">
+              <a href="ovm-edit-chargeable-status">Edit</a>
+            </p>
+          </div>
+
+        </section>
+
+
+        <section id="patient-data">
+
+          <div class="scra-card">
+            <div class="scra-card-header">
+              <h3 class="nhsuk-heading-l" id="patient-details-names">Patient data</h3>
+              <p id="pds-edit-patient-data" class="pds-edit-link"><a href="patient-details-ovm-status-edit-patient_data">Edit</a></p>
+            </div>
+            <div class="scra-card-content">
+              <dl class="nhsuk-summary-list">
+
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Date patient seen
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    02-Aug-2020
+                  </dd>
+                </div>
+
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Country of Nationality
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    Jersey
+                  </dd>
+
+                </div>
+
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key" id="entry">
+                    Purpose of entry
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    Study
+                  </dd>
+
+
+                </div>
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Other purpose of entry
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    None
+                  </dd>
+
+
+                </div>
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Date of entry
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    01-Aug-2020
+                  </dd>
+
+                </div>
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Address line 1
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    45 Southway
+                  </dd>
+
+
+                </div>
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Address line 2
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    Manor Park
+                  </dd>
+
+                </div>
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Address line 3
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+
+                  </dd>
+
+
+                </div>
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Address line 4
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+
+                  </dd>
+
+
+                </div>
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Home country
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    Antigua and Barbuda
+                  </dd>
+
+                </div>
+
+              </dl>
+            </div>
+          </div>
+
+        </section>
+
+        <section id="additional-details">
+          <div class="scra-card">
+            <div class="scra-card-header">
+              <h3 class="nhsuk-heading-l" id="patient-details-names">Additional data</h3>
+              <p id="pds-edit-additional-data" class="pds-edit-link"><a href="patient-details-ovm-status-edit-additional_details">Edit</a></p>
+            </div>
+            <div class="scra-card-content">
+              <h4 class="nhsuk-heading-m">Passport</h4>
+              <dl class="nhsuk-summary-list">
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Passport Number
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    123456
+                  </dd>
+
+                </div>
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Country of Issue
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    Antigua and Barbuda
+                  </dd>
+
+                </div>
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Passport expiry date
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    02-Aug-2020
+                  </dd>
+
+                </div>
+              </dl>
+
+              <h4 class="nhsuk-heading-m">Home Office contact</h4>
+              <dl class="nhsuk-summary-list">
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Home Office Evidence and Enquiry contacted
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+
+                  </dd>
+
+                </div>
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Contacted reference
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+
+                  </dd>
+
+                </div>
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Date contacted
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+
+                  </dd>
+
+                </div>
+              </dl>
+
+            </div>
+          </div>
+        </section>
+
+        <section id="entitlement-evidence">
+          <div class="scra-card">
+            <div class="scra-card-header">
+              <h3 class="nhsuk-heading-l" id="patient-details-names">Entitlement evidence</h3>
+              <p id="pds-edit-entitlement-evidence" class="pds-edit-link"><a href="patient-details-ovm-status-edit-entitlement_evidence">Edit</a></p>
+            </div>
+            <div class="scra-card-content">
+              <h4 class="nhsuk-heading-l">EHIC</h4>
+              <h4 class="nhsuk-heading-m">Provisional Replacement Certificate</h4>
+              <dl class="nhsuk-summary-list">
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    2. PRC Country of issue
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    Jersey
+                  </dd>
+
+                </div>
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    6. PRC Personal Id No
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    123456
+                  </dd>
+
+                </div>
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    7. PRC Institution Id
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    123456
+                  </dd>
+
+                </div>
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    8. PRC EHIC card number
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    123456
+                  </dd>
+
+                </div>
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    9. PRC EHIC expiry date
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    02-Aug-2020
+                  </dd>
+
+                </div>
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    a. PRC valid from date
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    02-Aug-2020
+                  </dd>
+
+                </div>
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    b. PRC valid to date
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    02-Aug-2020
+                  </dd>
+
+                </div>
+              </dl>
+
+              <h4 class="nhsuk-heading-m">S1 Registration for Health Care cover</h4>
+              <dl class="nhsuk-summary-list">
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    S1 Status
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    No S1 confirmed by patient
+                  </dd>
+                </div>
+              </dl>
+
+              <h4 class="nhsuk-heading-m">S2 Entitlement to Scheduled Treatment</h4>
+              <dl class="nhsuk-summary-list">
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    S2 country of issue
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    Andorra
+                  </dd>
+                </div>
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    S2 valid from
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    02-Aug-2020
+                  </dd>
+                </div>
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    S2 valid to
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    02-Aug-2026
+                  </dd>
+                </div>
+              </dl>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <a class="nhsuk-button nhsuk-button--red" href="confirm-delete-ovm">Delete OVM record</a>
+        </section>
+
       </div>
 
     </div>
   </div>
+</div>
+
+
+{% endblock %}
+
+{%block pageScripts%}
+
+<html>
+
+
+<head>
+  <script>
+    var observer = new IntersectionObserver(function(entries) {
+      // no intersection with screen
+      if (entries[0].intersectionRatio === 0)
+        document.querySelector("myheader").classList.add("nav-container-sticky");
+      // fully intersects with screen
+      else if (entries[0].intersectionRatio === 1)
+        document.querySelector("myheader").classList.remove("nav-container-sticky");
+    }, {
+      threshold: [0, 1]
+    });
+
+    observer.observe(document.querySelector("#nav-container-top"));
 
 
 
-  <div class="nhsuk-grid-column-one-quarter">
-    <h2>Home office status</h2>
-  </div>
+    document.getElementById("gethistoric").onclick = function() {
+      if (document.getElementById("hidethis").style.display == 'none') {
+        document.getElementById("hidethis").style.display =
+          'block'; // set to table-row instead of an empty string
+      } else {
+        document.getElementById("hidethis").style.display = 'none';
+      }
+    }
+  </script>
 
-  <div class="nhsuk-grid-column-three-quarters">
-    <div class="nhsuk-grid-row">
-      <div class="nhsuk-grid-column-full">
-        <div class="blue-header">
-          <div class="nhsuk-u-padding-bottom-2"></div>
-          <h3 id="bluebanner2">Current status</h3>
-          <div class="nhsuk-u-padding-bottom-2"></div>
-          <p>This information is the current relevant status for the patient, though there may be other historic statuses held by the Home Office.</p>
-        </div>
-        <div class="nhsuk-u-padding-bottom-3"></div>
-        <div class="scra-card" id="acute" style="padding-bottom:5px;">
-          <div class="nhsuk-table-responsive">
-            <table class="nhsuk-table">
-              <caption class="nhsuk-table__caption">Allergies, sensitivites and supporting information</caption>
-              <thead class="nhsuk-table__head">
-                <tr class="nhsuk-table__row">
-                  <th class="nhsuk-table__header" scope="col">Immigration status from</th>
-                  <th class="nhsuk-table__header" scope="col">Immigration status to</th>
-                  <th class="nhsuk-table__header" scope="col">HO reference</th>
-                  <th class="nhsuk-table__header" scope="col">BRP number</th>
-                  <th class="nhsuk-table__header" scope="col">Visa product</th>
-                  <th class="nhsuk-table__header" scope="col">Immigration status</th>
-                  <th class="nhsuk-table__header" scope="col">Healthcare status</th>
-                </tr>
-              </thead>
-              <tbody class="nhsuk-table__body">
-                <tr class="nhsuk-table__row">
-                  <td class="nhsuk-table__cell">26-Dec-2019</td>
-                  <td class="nhsuk-table__cell ">No expiry</td>
-                  <td class="nhsuk-table__cell ">A-1234-1234-1234-1234-9</td>
-                  <td class="nhsuk-table__cell ">Not provided</td>
-                  <td class="nhsuk-table__cell ">EU settlement scheme</td>
-                  <td class="nhsuk-table__cell ">Indefinite leave to remain</td>
-                  <td class="nhsuk-table__cell ">Access to free NHS services</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-        <div class="blue-header" style="">
-          <h3 id="bluebanner2">Historical status</h3>
-        </div>
-        <div class="nhsuk-u-padding-bottom-3"></div>
-        <div class="scra-card" id="acute" style="margin:0px">
-          <div class="scra-card-header">
-          </div>
-          <div class="scra-card-content" id="searchhistoric">
-            <div class="nhsuk-grid-row" id="historicsearch">
-              <div class="nhsuk-grid-column-full">
-                <div class="nhsuk-action-link" id="searchforhistory">
-                  <a class="nhsuk-action-link__link">
-                    <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
-                      <path d="M0 0h24v24H0z" fill="none"></path>
-                      <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
-                    </svg>
-                    <span id="gethistoric" onClick="toggle();"><span class="nhsuk-action-link__text"><span>Get historical status</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <form action="patient-details-ovm-history#historycontent" id="search-history">
-              <div class="nhsuk-form-group" id="hidethis" style="display:none;">
 
-                <div class="nhsuk-grid-row">
-                  <div class="nhsuk-grid-column-two-thirds">
-                     <div class="nhsuk-u-padding-top-4"></div>
-                    <form>
-                      <div class="nhsuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" style="display:none;" id="error-summary">
-                        <h2 class="nhsuk-error-summary__title" id="error-summary-title">
-                          There is a problem
-                        </h2>
-                        <div class="nhsuk-error-summary__body">
-                          <ul class="nhsuk-list nhsuk-error-summary__list">
-                            <li>
-                              <a href="#dob-start-error">All date fields must be filled in </a>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
+</head>
 
-                      <div class="nhsuk-grid-row" id="gr">
-                        <div class="nhsuk-grid-column-one-half">
+<<head>
 
-                          <fieldset id="gr" class="nhsuk-fieldset" aria-describedby="dob-day-error-hint dob-day-error-error" role="group">
+  </head>
 
 
 
-                            <div id="start-dob">
 
-                              <legend class="nhsuk-fieldset__legend nhsuk-label--l">
-                                <h1 class="nhsuk-fieldset__heading">
-                                  Start Date
-                                </h1>
-                              </legend>
-                              <span class="nhsuk-hint" id="example-hint">
-                                For example, 15 3 1984
-                              </span>
-                              <span class="nhsuk-error-message" id="dob-start-error" style="display:none;">
-                                <span class="nhsuk-u-visually-hidden">Error:</span> Start date must be complete
-                              </span>
-                              <div class="nhsuk-date-input">
-
-                                <div class="nhsuk-date-input__item">
-                                  <div class="nhsuk-form-group">
-                                    <label class="nhsuk-label nhsuk-date-input__label" for="startday">
-                                      Day
-                                    </label>
-                                    <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2 " id="startday" name="example-day" type="number" pattern="[0-9]*">
-                                  </div>
-                                </div>
-                                <div class="nhsuk-date-input__item">
-                                  <div class="nhsuk-form-group">
-                                    <label class="nhsuk-label nhsuk-date-input__label" for="startmonth">
-                                      Month
-                                    </label>
-                                    <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="startmonth" name="example-month" type="number" pattern="[0-9]*">
-                                  </div>
-                                </div>
-                                <div class="nhsuk-date-input__item">
-                                  <div class="nhsuk-form-group">
-                                    <label class="nhsuk-label nhsuk-date-input__label" for="startyear">
-                                      Year
-                                    </label>
-                                    <input <span class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="startyear" name="example-year" type="number" pattern="[0-9]*">
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </fieldset>
-                        </div>
-
-
-
-                        <div class="nhsuk-grid-column-one-half">
-                          <fieldset id="gr" class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
-                            <legend class="nhsuk-fieldset__legend nhsuk-label--l">
-                              <h1 class="nhsuk-fieldset__heading">
-                                End Date
-                              </h1>
-                            </legend>
-                            <span class="nhsuk-hint" id="example-hint">
-                              For example, 15 3 1984
-                            </span>
-                            <span class="nhsuk-error-message" id="dob-end-error" style="display:none;">
-                              <span class="nhsuk-u-visually-hidden">Error:</span> End date must be complete
-                            </span>
-                            <div class="nhsuk-date-input" id="end-dob">
-                              <div class="nhsuk-date-input__item">
-                                <div class="nhsuk-form-group">
-                                  <label class="nhsuk-label nhsuk-date-input__label" for="endday">
-                                    Day
-                                  </label>
-                                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="endday" name="example-day" type="number" pattern="[0-9]*">
-                                </div>
-                              </div>
-                              <div class="nhsuk-date-input__item">
-                                <div class="nhsuk-form-group">
-                                  <label class="nhsuk-label nhsuk-date-input__label" for="endmonth">
-                                    Month
-                                  </label>
-                                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="endmonth" name="example-month" type="number" pattern="[0-9]*">
-                                </div>
-                              </div>
-                              <div class="nhsuk-date-input__item">
-                                <div class="nhsuk-form-group">
-                                  <label class="nhsuk-label nhsuk-date-input__label" for="endyear">
-                                    Year
-                                  </label>
-                                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="endyear" name="example-year" type="number" pattern="[0-9]*">
-                                </div>
-                              </div>
-                            </div>
-                          </fieldset>
-                        </div>
-                      </div>
-
-
-                      <div class="nhsuk-grid-row">
-                        <div class="nhsuk-grid-column-full">
-                          <button class="nhsuk-button" id="button" type="submit" style="margin:0px">
-                            Search
-                          </button>
-
-                        </div>
-                      </div>
-
-                  </div>
-            </form>
-          </div>
-        </div>
-
-
-
-        {% endblock %}
-
-        {%block pageScripts%}
-
-        <html>
-
-
-        <head>
-          <script>
-            document.getElementById("gethistoric").onclick = function() {
-              if (document.getElementById("hidethis").style.display == 'none') {
-                document.getElementById("hidethis").style.display =
-                  'block'; // set to table-row instead of an empty string
-              } else {
-                document.getElementById("hidethis").style.display = 'none';
-              }
-            }
-          </script>
-        </head>
-
-
-        <html>
-
-        </html>
-
-        <head>
-          <script>
-            $("#button").click(function(e) {
-
-              if (!$('#startday').val() || !$('#startmonth').val() || !$('#startyear').val()) {
-                $('#start-dob').addClass('nhsuk-form-group--error');
-                $('#dob-start-error').show();
-                $('#error-summary').show();
-                e.preventDefault();
-                if (!$('#startday').val()) {
-                  $('#startday').addClass('nhsuk-input--error');
-                }
-                if (!$('#startmonth').val()) {
-                  $('#startmonth').addClass('nhsuk-input--error');
-                }
-                if (!$('#startyear').val()) {
-                  $('#startyear').addClass('nhsuk-input--error');
-                }
-
-              } else {
-                return true;
-              }
-
-              if (!$('#endday').val() || !$('#endmonth').val() || !$('#endyear').val()) {
-                $('#end-dob').addClass('nhsuk-form-group--error');
-                $('#dob-end-error').show();
-                $('#error-summary').show();
-                e.preventDefault();
-                if (!$('#endday').val()) {
-                  $('#endday').addClass('nhsuk-input--error');
-                }
-                if (!$('#endmonth').val()) {
-                  $('#endmonth').addClass('nhsuk-input--error');
-                }
-                if (!$('#endyear').val()) {
-                  $('#endyear').addClass('nhsuk-input--error');
-                }
-
-              } else {
-                return true;
-              }
-
-
-
-            });
-          </script>
-        </head>
-
-        <body>
-          {% endblock %}
+  {% endblock %}
