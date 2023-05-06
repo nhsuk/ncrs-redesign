@@ -41,7 +41,6 @@
   <div class="nhsuk-grid-row">
 
     <div class="nhsuk-grid-column-three-quarters">
-      {{ data | dump(2) }}
       <h2 class="nhsuk-heading-l">Search results</h2>
       {% if returnedPatientsList | length %}
         <h3 class='nhsuk-heading-xs'>We found {{ returnedPatientsList | length }} result{% if returnedPatientsList | length > 1 %}s{% endif %}.</h3>
