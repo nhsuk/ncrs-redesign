@@ -24,6 +24,7 @@ $govuk-font-family: inherit;
 // Add your extra styles here...
 
 @import 'tools/scra-grid';
+@import 'components/dev-mode';
 
 @import 'components/global-components';
 @import 'components/full-width-container';

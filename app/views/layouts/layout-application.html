@@ -60,11 +60,18 @@ Dashboard
 {% endblock %}
 
 {% block bodyEnd %}
-{% block scripts %}
-<!-- Custom JavaScript files can be added to this file -->
-{% include "includes/scripts.html" %}
-{% block pageScripts %}
 
-{% endblock %}
-{% endblock %}
+  {% if data['devMode'] === 'true' %}
+    {% include "includes/devmode.html" %}
+  {% endif %}
+
+  {% block scripts %}
+    <!-- Custom JavaScript files can be added to this file -->
+    {% include "includes/scripts.html" %}
+
+    {% block pageScripts %}
+    {% endblock %}
+
+  {% endblock %}
+
 {% endblock %}
