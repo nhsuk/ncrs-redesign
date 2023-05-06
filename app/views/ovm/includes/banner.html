@@ -1,22 +1,39 @@
-{# green banner #}
-
 {% if chargeablestatus === 'chargeable' %}
 
+{# red banner #}
 <div class="paid-nhs-banner">
   <div class="nhsuk-width-container-fluid">
     <div class="nhsuk-grid-row">
       <div class="nhsuk-grid-column-full">
         <ul class="nhsuk-list nhsuk-list--tick">
           <p style="display:inline;" id="exclamation" style="margin-left:0px;"><span>!</p>
-          <p style="display:inline;">Likely chargeable for NHS services.<span style="padding-left:20px;font-size:15px;"><a href="additional-info" style="color:white;">Additional info</a></span></p>
+          <p style="display:inline;">Chargeable for NHS services. <a href="patient-details-home-office" style="color:white;">check evidence</a></p>
         </ul>
       </div>
     </div>
   </div>
 </div>
 
+{% elif chargeablestatus === 'maybe' %}
+
+{# orange banner #}
+<div class="paid-nhs-banner">
+  <div class="nhsuk-width-container-fluid">
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-full">
+        <ul class="nhsuk-list nhsuk-list--tick">
+          <p style="display:inline;" id="exclamation" style="margin-left:0px;"><span>!</p>
+          <p style="display:inline;">May be chargeable for NHS services. <a href="patient-details-home-office" style="color:white;">check evidence</a></p>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 {% else %}
 
+{# green banner #}
 <div class="free-nhs-banner">
   <div class="nhsuk-width-container-fluid">
     <div class="nhsuk-grid-row">
