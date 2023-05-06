@@ -8,6 +8,7 @@ const patients = {
     postcode: "AB1 2CD",
     gender: "Male",
     dob: "30-Jan-2018",
+    chargeablestatus: "free"
   },
   // Default alternative patient
   "0987654321": {
@@ -27,6 +28,7 @@ const patients = {
     postcode: "X563TG",
     gender: "Female",
     dob: "06-Sep-1968",
+    chargeablestatus: "maybe"
   },
   5974163354: {
     firstName: "Jordanna",
@@ -36,6 +38,7 @@ const patients = {
     postcode: "E83JZ",
     gender: "Female",
     dob: "27-Feb-2006",
+    chargeablestatus: "chargeable"
   },
   4126104984: {
     firstName: "Justina",
