@@ -66,6 +66,7 @@ const patients = {
     postcode: "DN36 7TU",
     gender: "Male",
     dob: "22-Sep-1963",
+    chargeablestatus: "free"
   },
   9762318315: {
     firstName: "Angelle",

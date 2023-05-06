@@ -1,9 +1,10 @@
-.free-nhs-banner {
+.nhsuk-banner {
   padding-top: 15px;
   padding-bottom: 8px;
-  background-color: #007f3b;
   margin-top: 10px;
-  @media screen and (min-width: 1024px) {}
+  @media screen and (min-width: 1024px) {
+    margin-bottom: 10px;
+  }
 
   h2 {
     margin-bottom: 4px;
@@ -18,13 +19,37 @@
     margin-bottom: 8px;
   }
 
-  #bannertick {
+  .bannertick {
     border-radius: 50%;
     fill: none;
     position: absolute;
     left: 40px;
     top: 2px;
   }
+}
+
+.nhsuk-banner--free {
+  background-color: $color_nhsuk-green;
+}
+
+.nhsuk-banner--maybe {
+  background-color: $color_nhsuk-orange;
+}
+
+.nhsuk-banner--chargeable {
+  background-color: $color_nhsuk-red;
+}
+
+.exclamation {
+  background-color: white;
+  color: #d5281b;
+  border-radius: 50%;
+  background-position: center;
+  font-weight: bold;
+  font-size: 22px;
+  padding: 5px 15px;
+  margin-left: 0;
+  margin-right: 20px;
 }
 
 .blue-header {
@@ -60,45 +85,7 @@
   margin: 0;
 }
 
-.paid-nhs-banner {
-  padding-top: 15px;
-  padding-bottom: 8px;
-  background-color: #d5281b;
-  margin-top: 10px;
-  @media screen and (min-width: 1024px) {
-    margin-bottom: 10px;
-  }
 
-  h2 {
-    margin-bottom: 4px;
-  }
-
-  p {
-    margin-bottom: 8px;
-    color: #ffffff;
-  }
-
-  ul {
-    margin-bottom: 8px;
-  }
-
-  #bannertick {
-    border-radius: 50%;
-    fill: none;
-  }
-}
-
-#exclamation {
-  background-color: white;
-  color: #d5281b;
-  border-radius: 50%;
-  background-position: center;
-  font-weight: bold;
-  font-size: 22px;
-  padding: 5px 15px;
-  margin-left: 0;
-  margin-right: 20px;
-}
 
 #historicsearch {
   margin: 0;

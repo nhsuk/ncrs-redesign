@@ -1,12 +1,12 @@
-{% if chargeablestatus === 'chargeable' %}
+{% if patient.chargeablestatus === 'chargeable' %}
 
 {# red banner #}
-<div class="paid-nhs-banner">
+<div class="nhsuk-banner nhsuk-banner--chargeable">
   <div class="nhsuk-width-container-fluid">
     <div class="nhsuk-grid-row">
       <div class="nhsuk-grid-column-full">
         <ul class="nhsuk-list nhsuk-list--tick">
-          <p style="display:inline;" id="exclamation" style="margin-left:0px;"><span>!</p>
+          <p style="display:inline;" class="exclamation" style="margin-left:0px;"><span>!</p>
           <p style="display:inline;">Chargeable for NHS services. <a href="patient-details-home-office" style="color:white;">check evidence</a></p>
         </ul>
       </div>
@@ -14,15 +14,15 @@
   </div>
 </div>
 
-{% elif chargeablestatus === 'maybe' %}
+{% elif patient.chargeablestatus === 'maybe' %}
 
 {# orange banner #}
-<div class="paid-nhs-banner">
+<div class="nhsuk-banner nhsuk-banner--maybe">
   <div class="nhsuk-width-container-fluid">
     <div class="nhsuk-grid-row">
       <div class="nhsuk-grid-column-full">
         <ul class="nhsuk-list nhsuk-list--tick">
-          <p style="display:inline;" id="exclamation" style="margin-left:0px;"><span>!</p>
+          <p style="display:inline;" class="exclamation" style="margin-left:0px;"><span>!</p>
           <p style="display:inline;">May be chargeable for NHS services. <a href="patient-details-home-office" style="color:white;">check evidence</a></p>
         </ul>
       </div>
@@ -34,13 +34,13 @@
 {% else %}
 
 {# green banner #}
-<div class="free-nhs-banner">
+<div class="nhsuk-banner nhsuk-banner--free">
   <div class="nhsuk-width-container-fluid">
     <div class="nhsuk-grid-row">
       <div class="nhsuk-grid-column-full">
         <ul class="nhsuk-list nhsuk-list--tick">
           <p style="padding-left:60px;">Green: Access to free NHS services subject to Ordinarily Resident status - <a href="patient-details-home-office" style="color:white;">check evidence</a>
-            <svg id="bannertick" class="nhsuk-icon nhsuk-icon__tick" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" style="background:white;" aria-hidden="true">
+            <svg class="bannertick nhsuk-icon nhsuk-icon__tick" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" style="background:white;" aria-hidden="true">
               <path stroke-width="4" stroke-linecap="round" d="M18.4 7.8l-8.5 8.4L5.6 12"></path>
             </svg>
           </p>
