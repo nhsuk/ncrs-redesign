@@ -13,15 +13,16 @@ Chargeable status
   <div class='scra-bordered-tabs-container'>
     <div class="nhsuk-width-container-fluid">
       <ul class="scra-bordered-tabs">
-        <li class="scra-bordered-tabs-item">
-          <a class="scra-bordered-tabs-link" href="patient-overview-ovm">Overview</a>
-        </li>
         <li class="scra-bordered-tabs-item scra-bordered-tabs-item-active">
-          <a class="scra-bordered-tabs-link" href="./patient-details-no-alert">Patient</a>
+          <a class="scra-bordered-tabs-link" href="patient-overview">Overview</a>
         </li>
         <li class="scra-bordered-tabs-item">
-          <a class="scra-bordered-tabs-link" href="./clinical-details-no-alert">Clinical</a>
+          <a class="scra-bordered-tabs-link" href="patient-demographics">Patient</a>
         </li>
+        <li class="scra-bordered-tabs-item">
+          <a data-target="#myModal" data-toggle="modal" class="open_modal" href="#myModal">Clinical</a>
+        </li>
+
       </ul>
     </div>
   </div>
@@ -383,7 +384,7 @@ Chargeable status
         <section>
           <a class="nhsuk-button nhsuk-button--red" href="confirm-delete-ovm">Delete OVM record</a>
         </section>
-
+{#
         <section id="ovm-last-edit" class="nhsuk-u-margin-top-8">
           <div class="scra-card">
             <div class="scra-card-header">
@@ -423,12 +424,12 @@ Chargeable status
 
             </div>
           </div>
-        </section>
+        </section> #}
 
         <section id="ovm-historical-edits" class="nhsuk-u-margin-top-8">
           <div class="scra-card nhsuk-u-margin-bottom-0 nhsuk-u-padding-bottom-0" style="border-bottom: 4px solid #005eb8;">
             <div class="scra-card-header">
-              <h3 class="nhsuk-heading-l" id="ovm-historical-edits-name">Other historical edits</h3>
+              <h3 class="nhsuk-heading-l" id="ovm-historical-edits-name">Previous updates</h3>
             </div>
             <div class="scra-card-content">
               <dl class="nhsuk-summary-list nhsuk-u-margin-bottom-0">
@@ -455,7 +456,7 @@ Chargeable status
                     Date updated
                   </dt>
                   <dd class="nhsuk-summary-list__value">
-                    02-Aug-2020 10:20
+                    09-Apr-2023 10:20
                   </dd>
 
                 </div>
@@ -547,7 +548,7 @@ Chargeable status
                     Date updated
                   </dt>
                   <dd class="nhsuk-summary-list__value">
-                    12-Sep-2020 12:45
+                    12-Sep-2022 12:45
                   </dd>
 
                 </div>
@@ -564,7 +565,7 @@ Chargeable status
                 <dl class="nhsuk-summary-list">
                   <div class="nhsuk-summary-list__row">
                     <dt class="nhsuk-summary-list__key">Date Patient Seen</dt>
-                    <dd class="nhsuk-summary-list__value">09-Apr-2023</dd>
+                    <dd class="nhsuk-summary-list__value">12-Sep-2022</dd>
                   </div>
 
                   <div class="nhsuk-summary-list__row">
@@ -656,7 +657,7 @@ Chargeable status
                 <dl class="nhsuk-summary-list">
                   <div class="nhsuk-summary-list__row">
                     <dt class="nhsuk-summary-list__key">Date Patient Seen</dt>
-                    <dd class="nhsuk-summary-list__value">09-Apr-2023</dd>
+                    <dd class="nhsuk-summary-list__value">23-Sep-2020</dd>
                   </div>
 
                   <div class="nhsuk-summary-list__row">
@@ -711,6 +712,64 @@ Chargeable status
 
     </div>
   </div>
+
+<div id="myModalEmergency" class="modal">
+
+  <!-- Modal content -->
+
+  <div class="modal-content">
+    <div class="nhsuk-width-container-fluid">
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-full-width">
+          <span class="close">&times;</span>
+          <h3>Accessing in an emergency</h3>
+        </div>
+      </div>
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-form-group" id="explanation-form-group">
+          <label class="nhsuk-label" for="more-detail">
+            Explanation
+          </label>
+          <span class="nhsuk-hint" id="more-detail-hint">
+                  Please provide an explanation for accessing the patient's record
+                </span>
+          <span class="nhsuk-error-message hidden" id="ptv-char-length-error">
+                  <span class="nhsuk-u-visually-hidden">Error:</span> Explanation must be between 4 and 50 characters
+                </span>
+          <span class="nhsuk-error-message hidden" id="ptv-char-forbidden-error">
+                  <span class="nhsuk-u-visually-hidden">Error:</span> Explanation must only include characters: A-Z, a-z, 0-9, space, -, '
+                </span>
+          <textarea class="nhsuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
+        </div>
+      </div>
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-full-width">
+          <div class="nhsuk-grid-column-one-half">
+            <a class="nhsuk-button nhsuk-button--blue" id="submit-ptv" type="submit" style="width:100%;" href="patient-clinical">
+              Continue
+            </a>
+          </div>
+          <div class="nhsuk-grid-column-one-half">
+            <button class="nhsuk-button nhsuk-button--reverse close-btn" type="submit" style="width:100%;">
+              Cancel
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-two-thirds">
+          <div class="nhsuk-warning-callout">
+            <h3 class="nhsuk-warning-callout__label">Privacy information</h3>
+            <p>Any inappropriate breach of patient confidentiality will be a matter for disciplinary and potentially legal and/or professional proceedings. If in doubt speak to your manager or privacy officer.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
 </div>
 
 
