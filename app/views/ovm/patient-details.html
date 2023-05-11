@@ -1,119 +1,173 @@
-{% extends 'layouts/layout-application.html' %}
-
-{% block pageTitle %}
-Dashboard
-{% endblock %}
-
-{% block beforeContent %}
+{% extends 'layouts/layout-application.html' %} {% block pageTitle %} Dashboard
+{% endblock %} {% block beforeContent %}{% include "./includes/banner.html" %}
 
 <div class="nhsuk-full-width-container">
-  <div class='scra-bordered-tabs-container'>
+  <div class="scra-bordered-tabs-container">
     <div class="nhsuk-width-container-fluid">
       <ul class="scra-bordered-tabs">
         <li class="scra-bordered-tabs-item">
           <a class="scra-bordered-tabs-link" href="#">Overview</a>
         </li>
         <li class="scra-bordered-tabs-item scra-bordered-tabs-item-active">
-          <a class="scra-bordered-tabs-link" href="./patient-details-no-alert">Patient</a>
+          <a class="scra-bordered-tabs-link" href="./patient-details-no-alert"
+            >Patient</a
+          >
         </li>
         <li class="scra-bordered-tabs-item">
-          <a class="scra-bordered-tabs-link" href="./clinical-details-no-alert">Clinical</a>
+          <a class="scra-bordered-tabs-link" href="./clinical-details-no-alert"
+            >Clinical</a
+          >
         </li>
       </ul>
     </div>
   </div>
 </div>
 
-{% include "./includes/banner.html" %}
-{{ data | dump(2) }}
-{% endblock %}
-
-{% block content %}
+<!-- {% include "./includes/banner.html" %} {{ data | dump(2) }}-->
+{% endblock %} {% block content %}
 
 <div class="nhsuk-grid-row">
-
   <div class="nhsuk-grid-column-one-quarter">
     <div class="govuk-accordion" data-module="accordion" id="accordion-default">
-
       <div class="govuk-accordion__section govuk-accordion__section--expanded">
         <div class="govuk-accordion__section-header scra-accordion__header">
           <h2 class="govuk-accordion__section-heading scra-accordion__heading">
-            <span class="govuk-accordion__section-button scra-accordion__section-button" id="accordion-default-heading-1">
+            <span
+              class="govuk-accordion__section-button scra-accordion__section-button"
+              id="accordion-default-heading-1"
+            >
               Key demographics
             </span>
           </h2>
         </div>
-        <div id="accordion-default-content-1" class="govuk-accordion__section-content scra-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+        <div
+          id="accordion-default-content-1"
+          class="govuk-accordion__section-content scra-accordion__section-content"
+          aria-labelledby="accordion-default-heading-1"
+        >
           <ul>
-            <li><a class="scra-accordion__link" href="#patient-details-names">Names</a></li>
-            <li><a class="scra-accordion__link" href="#patient-key-details">Key details</a></li>
-            <li><a class="scra-accordion__link" href="#patient-details-address">Address</a></li>
+            <li>
+              <a class="scra-accordion__link" href="#patient-details-names"
+                >Names</a
+              >
+            </li>
+            <li>
+              <a class="scra-accordion__link" href="#patient-key-details"
+                >Key details</a
+              >
+            </li>
+            <li>
+              <a class="scra-accordion__link" href="#patient-details-address"
+                >Address</a
+              >
+            </li>
           </ul>
         </div>
       </div>
-      <div class="govuk-accordion__section ">
+      <div class="govuk-accordion__section">
         <div class="govuk-accordion__section-header scra-accordion__header">
           <h2 class="govuk-accordion__section-heading scra-accordion__heading">
-            <span class="govuk-accordion__section-button scra-accordion__section-button" id="accordion-default-heading-2">
+            <span
+              class="govuk-accordion__section-button scra-accordion__section-button"
+              id="accordion-default-heading-2"
+            >
               Contacts & next of kin
             </span>
           </h2>
         </div>
-        <div id="accordion-default-content-2" class="govuk-accordion__section-content scra-accordion__section-content" aria-labelledby="accordion-default-heading-2">
+        <div
+          id="accordion-default-content-2"
+          class="govuk-accordion__section-content scra-accordion__section-content"
+          aria-labelledby="accordion-default-heading-2"
+        >
           <ul>
-            <li><a class="scra-accordion__link" href="#">Contacts & next of kin</a></li>
-            <li><a class="scra-accordion__link" href="#">Power of attorney</a></li>
+            <li>
+              <a class="scra-accordion__link" href="#"
+                >Contacts & next of kin</a
+              >
+            </li>
+            <li>
+              <a class="scra-accordion__link" href="#">Power of attorney</a>
+            </li>
           </ul>
         </div>
       </div>
-      <div class="govuk-accordion__section ">
+      <div class="govuk-accordion__section">
         <div class="govuk-accordion__section-header scra-accordion__header">
           <h2 class="govuk-accordion__section-heading scra-accordion__heading">
-            <span class="govuk-accordion__section-button scra-accordion__section-button" id="accordion-default-heading-3">
+            <span
+              class="govuk-accordion__section-button scra-accordion__section-button"
+              id="accordion-default-heading-3"
+            >
               GP & Care providers
             </span>
           </h2>
         </div>
-        <div id="accordion-default-content-3" class="govuk-accordion__section-content scra-accordion__section-content" aria-labelledby="accordion-default-heading-3">
+        <div
+          id="accordion-default-content-3"
+          class="govuk-accordion__section-content scra-accordion__section-content"
+          aria-labelledby="accordion-default-heading-3"
+        >
           <ul>
             <li><a class="scra-accordion__link" href="#">GP Details</a></li>
           </ul>
         </div>
       </div>
-      <div class="govuk-accordion__section ">
+      <div class="govuk-accordion__section">
         <div class="govuk-accordion__section-header scra-accordion__header">
           <h2 class="govuk-accordion__section-heading scra-accordion__heading">
-            <span class="govuk-accordion__section-button scra-accordion__section-button" id="accordion-default-heading-4">
+            <span
+              class="govuk-accordion__section-button scra-accordion__section-button"
+              id="accordion-default-heading-4"
+            >
               Chargeability status
             </span>
           </h2>
         </div>
-        <div id="accordion-default-content-4" class="govuk-accordion__section-content scra-accordion__section-content" aria-labelledby="accordion-default-heading-4">
+        <div
+          id="accordion-default-content-4"
+          class="govuk-accordion__section-content scra-accordion__section-content"
+          aria-labelledby="accordion-default-heading-4"
+        >
           <ul>
-            <li><a class="scra-accordion__link" href="#">Home office status</a></li>
-            <li><a class="scra-accordion__link" href="patient-details-ovm-status">Overseas visitor manager status</a></li>
+            <li>
+              <a class="scra-accordion__link" href="#">Home office status</a>
+            </li>
+            <li>
+              <a class="scra-accordion__link" href="patient-details-ovm-status"
+                >Overseas visitor manager status</a
+              >
+            </li>
           </ul>
         </div>
       </div>
-      <div class="govuk-accordion__section ">
+      <div class="govuk-accordion__section">
         <div class="govuk-accordion__section-header scra-accordion__header">
           <h2 class="govuk-accordion__section-heading scra-accordion__heading">
-            <span class="govuk-accordion__section-button scra-accordion__section-button" id="accordion-default-heading-5">
+            <span
+              class="govuk-accordion__section-button scra-accordion__section-button"
+              id="accordion-default-heading-5"
+            >
               Reasonable Adjustments
             </span>
           </h2>
         </div>
-        <div id="accordion-default-content-5" class="govuk-accordion__section-content scra-accordion__section-content" aria-labelledby="accordion-default-heading-5">
+        <div
+          id="accordion-default-content-5"
+          class="govuk-accordion__section-content scra-accordion__section-content"
+          aria-labelledby="accordion-default-heading-5"
+        >
           <ul>
-            <li><a class="scra-accordion__link" href="#ra-section">Add a Reasonable Adjustment</a></li>
+            <li>
+              <a class="scra-accordion__link" href="#ra-section"
+                >Add a Reasonable Adjustment</a
+              >
+            </li>
           </ul>
         </div>
       </div>
-
     </div>
   </div>
-
-
 
   <div class="nhsuk-grid-column-one-quarter">
     <h2>Home office status</h2>
@@ -126,33 +180,46 @@ Dashboard
           <div class="nhsuk-u-padding-bottom-2"></div>
           <h3 id="bluebanner2">Current status</h3>
           <div class="nhsuk-u-padding-bottom-2"></div>
-          <p>This information is the current relevant status for the patient, though there may be other historic statuses held by the Home Office.</p>
+          <p>
+            This information is the current relevant status for the patient,
+            though there may be other historic statuses held by the Home Office.
+          </p>
         </div>
         <div class="nhsuk-u-padding-bottom-3"></div>
-        <div class="scra-card" id="acute" style="padding-bottom:5px;">
+        <div class="scra-card" id="acute" style="padding-bottom: 5px">
           <div class="nhsuk-table-responsive">
             <table class="nhsuk-table">
-              <caption class="nhsuk-table__caption">Allergies, sensitivites and supporting information</caption>
+              <caption class="nhsuk-table__caption">
+                Allergies, sensitivites and supporting information
+              </caption>
               <thead class="nhsuk-table__head">
                 <tr class="nhsuk-table__row">
-                  <th class="nhsuk-table__header" scope="col">Immigration status from</th>
-                  <th class="nhsuk-table__header" scope="col">Immigration status to</th>
+                  <th class="nhsuk-table__header" scope="col">
+                    Immigration status from
+                  </th>
+                  <th class="nhsuk-table__header" scope="col">
+                    Immigration status to
+                  </th>
                   <th class="nhsuk-table__header" scope="col">HO reference</th>
                   <th class="nhsuk-table__header" scope="col">BRP number</th>
                   <th class="nhsuk-table__header" scope="col">Visa product</th>
-                  <th class="nhsuk-table__header" scope="col">Immigration status</th>
-                  <th class="nhsuk-table__header" scope="col">Healthcare status</th>
+                  <th class="nhsuk-table__header" scope="col">
+                    Immigration status
+                  </th>
+                  <th class="nhsuk-table__header" scope="col">
+                    Healthcare status
+                  </th>
                 </tr>
               </thead>
               <tbody class="nhsuk-table__body">
                 <tr class="nhsuk-table__row">
                   <td class="nhsuk-table__cell">26-Dec-2019</td>
-                  <td class="nhsuk-table__cell ">No expiry</td>
-                  <td class="nhsuk-table__cell ">AA-abcd-1234-5678-efgh-0</td>
-                  <td class="nhsuk-table__cell ">Not provided</td>
-                  <td class="nhsuk-table__cell ">EU settlement scheme</td>
-                  <td class="nhsuk-table__cell ">Indefinite leave to remain</td>
-                  <td class="nhsuk-table__cell ">Access to free NHS services</td>
+                  <td class="nhsuk-table__cell">No expiry</td>
+                  <td class="nhsuk-table__cell">AA-abcd-1234-5678-efgh-0</td>
+                  <td class="nhsuk-table__cell">Not provided</td>
+                  <td class="nhsuk-table__cell">EU settlement scheme</td>
+                  <td class="nhsuk-table__cell">Indefinite leave to remain</td>
+                  <td class="nhsuk-table__cell">Access to free NHS services</td>
                 </tr>
               </tbody>
             </table>
@@ -162,99 +229,108 @@ Dashboard
           <h3 id="bluebanner2">Historical status</h3>
         </div>
         <div class="nhsuk-u-padding-bottom-3"></div>
-        <div class="scra-card" id="acute" style="margin:0px">
-          <div class="scra-card-header">
-          </div>
+        <div class="scra-card" id="acute" style="margin: 0px">
+          <div class="scra-card-header"></div>
           <div class="scra-card-content" id="searchhistoric">
             <div class="nhsuk-grid-row" id="historicsearch">
               <div class="nhsuk-grid-column-full">
                 <div class="nhsuk-action-link">
                   <a class="nhsuk-action-link__link" href="date-search">
-                    <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+                    <svg
+                      class="nhsuk-icon nhsuk-icon__arrow-right-circle"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                    >
                       <path d="M0 0h24v24H0z" fill="none"></path>
-                      <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
+                      <path
+                        d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"
+                      ></path>
                     </svg>
-                    <div class="nhsuk-action-link__text" >Get historical status</div>
+                    <div class="nhsuk-action-link__text">
+                      Get historical status
+                    </div>
                   </a>
                 </div>
               </div>
             </div>
-            </div>
-            </div>
+          </div>
+        </div>
 
-
-        {% endblock %}
-
-        {%block pageScripts%}
+        {% endblock %} {%block pageScripts%}
 
         <html>
+          <head>
+            <script>
+              document.getElementById("gethistoric").onclick = function () {
+                if (
+                  document.getElementById("hidethis").style.display == "none"
+                ) {
+                  document.getElementById("hidethis").style.display = "block"; // set to table-row instead of an empty string
+                } else {
+                  document.getElementById("hidethis").style.display = "none";
+                }
+              };
+            </script>
+          </head>
 
+          <html></html>
 
-        <head>
-          <script>
-            document.getElementById("gethistoric").onclick = function() {
-              if (document.getElementById("hidethis").style.display == 'none') {
-                document.getElementById("hidethis").style.display =
-                  'block'; // set to table-row instead of an empty string
-              } else {
-                document.getElementById("hidethis").style.display = 'none';
-              }
-            }
-          </script>
-        </head>
+          <head>
+            <script>
+              $("#button").click(function (e) {
+                if (
+                  !$("#startday").val() ||
+                  !$("#startmonth").val() ||
+                  !$("#startyear").val()
+                ) {
+                  $("#start-dob").addClass("nhsuk-form-group--error");
+                  $("#dob-start-error").show();
+                  $("#error-summary").show();
+                  e.preventDefault();
+                  if (!$("#startday").val()) {
+                    $("#startday").addClass("nhsuk-input--error");
+                  }
+                  if (!$("#startmonth").val()) {
+                    $("#startmonth").addClass("nhsuk-input--error");
+                  }
+                  if (!$("#startyear").val()) {
+                    $("#startyear").addClass("nhsuk-input--error");
+                  }
+                } else {
+                  return true;
+                }
 
+                if (
+                  !$("#endday").val() ||
+                  !$("#endmonth").val() ||
+                  !$("#endyear").val()
+                ) {
+                  $("#end-dob").addClass("nhsuk-form-group--error");
+                  $("#dob-end-error").show();
+                  $("#error-summary").show();
+                  e.preventDefault();
+                  if (!$("#endday").val()) {
+                    $("#endday").addClass("nhsuk-input--error");
+                  }
+                  if (!$("#endmonth").val()) {
+                    $("#endmonth").addClass("nhsuk-input--error");
+                  }
+                  if (!$("#endyear").val()) {
+                    $("#endyear").addClass("nhsuk-input--error");
+                  }
+                } else {
+                  return true;
+                }
+              });
+            </script>
+          </head>
 
-        <html>
-
+          <body>
+            {% endblock %}
+          </body>
         </html>
-
-        <head>
-          <script>
-            $("#button").click(function(e) {
-
-              if (!$('#startday').val() || !$('#startmonth').val() || !$('#startyear').val()) {
-                $('#start-dob').addClass('nhsuk-form-group--error');
-                $('#dob-start-error').show();
-                $('#error-summary').show();
-                e.preventDefault();
-                if (!$('#startday').val()) {
-                  $('#startday').addClass('nhsuk-input--error');
-                }
-                if (!$('#startmonth').val()) {
-                  $('#startmonth').addClass('nhsuk-input--error');
-                }
-                if (!$('#startyear').val()) {
-                  $('#startyear').addClass('nhsuk-input--error');
-                }
-
-              } else {
-                return true;
-              }
-
-              if (!$('#endday').val() || !$('#endmonth').val() || !$('#endyear').val()) {
-                $('#end-dob').addClass('nhsuk-form-group--error');
-                $('#dob-end-error').show();
-                $('#error-summary').show();
-                e.preventDefault();
-                if (!$('#endday').val()) {
-                  $('#endday').addClass('nhsuk-input--error');
-                }
-                if (!$('#endmonth').val()) {
-                  $('#endmonth').addClass('nhsuk-input--error');
-                }
-                if (!$('#endyear').val()) {
-                  $('#endyear').addClass('nhsuk-input--error');
-                }
-
-              } else {
-                return true;
-              }
-
-
-
-            });
-          </script>
-        </head>
-
-        <body>
-          {% endblock %}
+      </div>
+    </div>
+  </div>
+</div>

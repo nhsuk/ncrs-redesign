@@ -1,48 +1,51 @@
-{% extends 'layouts/layout-application.html' %}
-
-{% block pageTitle %}
-Dashboard
-{% endblock %}
-
-{% block beforeContent %}
+{% extends 'layouts/layout-application.html' %} {% block pageTitle %} Dashboard
+{% endblock %} {% block beforeContent %} {% include "./includes/banner.html" %}
 
 <div class="nhsuk-full-width-container">
-  <div class='scra-bordered-tabs-container'>
+  <div class="scra-bordered-tabs-container">
     <div class="nhsuk-width-container-fluid">
       <ul class="scra-bordered-tabs">
         <li class="scra-bordered-tabs-item">
           <a class="scra-bordered-tabs-link" href="#">Overview</a>
         </li>
         <li class="scra-bordered-tabs-item scra-bordered-tabs-item-active">
-          <a class="scra-bordered-tabs-link" href="./patient-details-no-alert">Patient</a>
+          <a class="scra-bordered-tabs-link" href="./patient-details-no-alert"
+            >Patient</a
+          >
         </li>
         <li class="scra-bordered-tabs-item">
-          <a class="scra-bordered-tabs-link" href="./clinical-details-no-alert">Clinical</a>
+          <a class="scra-bordered-tabs-link" href="./clinical-details-no-alert"
+            >Clinical</a
+          >
         </li>
       </ul>
     </div>
   </div>
 </div>
 
-{% include "./includes/banner.html" %}
-
-{% endblock %}
-
-{% block content %}
+{% endblock %} {% block content %}
 
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-one-quarter">
-    <nav class="nhsuk-contents-list" role="navigation" aria-label="Pages in this guide">
+    <nav
+      class="nhsuk-contents-list"
+      role="navigation"
+      aria-label="Pages in this guide"
+    >
       <h2 class="nhsuk-u-visually-hidden">Contents</h2>
       <ul class="nhsuk-contents-list__list">
         <li class="nhsuk-contents-list__item" aria-current="page">
           <a class="nhsuk-contents-list__link" href="#">Key demographics</a>
         </li>
         <li class="nhsuk-contents-list__item">
-          <a class="nhsuk-contents-list__link" href="#">Contacts & next of kin</a>
+          <a class="nhsuk-contents-list__link" href="#"
+            >Contacts & next of kin</a
+          >
         </li>
         <li class="nhsuk-contents-list__item">
-          <a class="nhsuk-contents-list__link" href="#">GP and care providers</a>
+          <a class="nhsuk-contents-list__link" href="#"
+            >GP and care providers</a
+          >
         </li>
         <li class="nhsuk-contents-list__item">
           <a class="nhsuk-contents-list__link" href="#">Chargeability status</a>
@@ -50,7 +53,6 @@ Dashboard
       </ul>
     </nav>
   </div>
-
 
   <div class="nhsuk-grid-column-one-quarter">
     <h2>Home office status</h2>
@@ -63,31 +65,44 @@ Dashboard
           <div class="nhsuk-u-padding-bottom-2"></div>
           <h3 id="bluebanner2">Current status</h3>
           <div class="nhsuk-u-padding-bottom-2"></div>
-          <p>This information is the current relevant status for the patient, though there may be other historic statuses held by the Home Office.</p>
+          <p>
+            This information is the current relevant status for the patient,
+            though there may be other historic statuses held by the Home Office.
+          </p>
         </div>
         <div class="nhsuk-table-responsive">
           <table class="nhsuk-table">
-            <caption class="nhsuk-table__caption">Allergies, sensitivites and supporting information</caption>
+            <caption class="nhsuk-table__caption">
+              Allergies, sensitivites and supporting information
+            </caption>
             <thead class="nhsuk-table__head">
               <tr class="nhsuk-table__row">
-                <th class="nhsuk-table__header" scope="col">Immigration status from</th>
-                <th class="nhsuk-table__header" scope="col">Immigration status to</th>
+                <th class="nhsuk-table__header" scope="col">
+                  Immigration status from
+                </th>
+                <th class="nhsuk-table__header" scope="col">
+                  Immigration status to
+                </th>
                 <th class="nhsuk-table__header" scope="col">HO reference</th>
                 <th class="nhsuk-table__header" scope="col">BRP number</th>
                 <th class="nhsuk-table__header" scope="col">Visa product</th>
-                <th class="nhsuk-table__header" scope="col">Immigration status</th>
-                <th class="nhsuk-table__header" scope="col">Healthcare status</th>
+                <th class="nhsuk-table__header" scope="col">
+                  Immigration status
+                </th>
+                <th class="nhsuk-table__header" scope="col">
+                  Healthcare status
+                </th>
               </tr>
             </thead>
             <tbody class="nhsuk-table__body">
               <tr class="nhsuk-table__row">
                 <td class="nhsuk-table__cell">26-Dec-2019</td>
-                <td class="nhsuk-table__cell ">No expiry</td>
-                <td class="nhsuk-table__cell ">A-1234-1234-1234-1234-9</td>
-                <td class="nhsuk-table__cell ">Not provided</td>
-                <td class="nhsuk-table__cell ">EU settlement scheme</td>
-                <td class="nhsuk-table__cell ">Indefinite leave to remain</td>
-                <td class="nhsuk-table__cell ">Access to free NHS services</td>
+                <td class="nhsuk-table__cell">No expiry</td>
+                <td class="nhsuk-table__cell">A-1234-1234-1234-1234-9</td>
+                <td class="nhsuk-table__cell">Not provided</td>
+                <td class="nhsuk-table__cell">EU settlement scheme</td>
+                <td class="nhsuk-table__cell">Indefinite leave to remain</td>
+                <td class="nhsuk-table__cell">Access to free NHS services</td>
               </tr>
             </tbody>
           </table>
@@ -100,56 +115,62 @@ Dashboard
 
         <div class="nhsuk-table-responsive">
           <table class="nhsuk-table">
-            <caption class="nhsuk-table__caption">Allergies, sensitivites and supporting information</caption>
+            <caption class="nhsuk-table__caption">
+              Allergies, sensitivites and supporting information
+            </caption>
             <thead class="nhsuk-table__head">
               <tr class="nhsuk-table__row">
-                <th class="nhsuk-table__header" scope="col">Immigration status from</th>
-                <th class="nhsuk-table__header" scope="col">Immigration status to</th>
+                <th class="nhsuk-table__header" scope="col">
+                  Immigration status from
+                </th>
+                <th class="nhsuk-table__header" scope="col">
+                  Immigration status to
+                </th>
                 <th class="nhsuk-table__header" scope="col">HO reference</th>
                 <th class="nhsuk-table__header" scope="col">BRP number</th>
                 <th class="nhsuk-table__header" scope="col">Visa product</th>
-                <th class="nhsuk-table__header" scope="col">Immigration status</th>
-                <th class="nhsuk-table__header" scope="col">Healthcare status</th>
+                <th class="nhsuk-table__header" scope="col">
+                  Immigration status
+                </th>
+                <th class="nhsuk-table__header" scope="col">
+                  Healthcare status
+                </th>
               </tr>
             </thead>
             <tbody class="nhsuk-table__body">
               <tr class="nhsuk-table__row">
                 <td class="nhsuk-table__cell">26-Dec-2019</td>
-                <td class="nhsuk-table__cell ">No expiry</td>
-                <td class="nhsuk-table__cell ">A-1234-1234-1234-1234-9</td>
-                <td class="nhsuk-table__cell ">Not provided</td>
-                <td class="nhsuk-table__cell ">EU settlement scheme</td>
-                <td class="nhsuk-table__cell ">Indefinite leave to remain</td>
-                <td class="nhsuk-table__cell ">Access to free NHS services</td>
+                <td class="nhsuk-table__cell">No expiry</td>
+                <td class="nhsuk-table__cell">A-1234-1234-1234-1234-9</td>
+                <td class="nhsuk-table__cell">Not provided</td>
+                <td class="nhsuk-table__cell">EU settlement scheme</td>
+                <td class="nhsuk-table__cell">Indefinite leave to remain</td>
+                <td class="nhsuk-table__cell">Access to free NHS services</td>
               </tr>
             </tbody>
           </table>
         </div>
-
-
       </div>
     </div>
 
-
-
-    {% endblock %}
-
-    {%block pageScripts%}
+    {% endblock %} {%block pageScripts%}
 
     <html>
+      <head>
+        <script>
+          document.getElementById("gethistoric").onclick = function () {
+            if (document.getElementById("hidethis").style.display == "none") {
+              document.getElementById("hidethis").style.display = "block"; // set to table-row instead of an empty string
+            } else {
+              document.getElementById("hidethis").style.display = "none";
+            }
+          };
+        </script>
+      </head>
 
-    <head>
-      <script>
-        document.getElementById("gethistoric").onclick = function() {
-          if (document.getElementById("hidethis").style.display == 'none') {
-            document.getElementById("hidethis").style.display =
-              'block'; // set to table-row instead of an empty string
-          } else {
-            document.getElementById("hidethis").style.display = 'none';
-          }
-        }
-      </script>
-    </head>
-
-    <body>
-      {% endblock %}
+      <body>
+        {% endblock %}
+      </body>
+    </html>
+  </div>
+</div>

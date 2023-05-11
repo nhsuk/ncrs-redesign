@@ -1,64 +1,76 @@
-{% extends 'layouts/layout-application.html' %}
-
-
-{% block pageTitle %}
-Chargeable status
-{% endblock %}
-
-{% block beforeContent %}
-
-
+{% extends 'layouts/layout-application.html' %} {% block pageTitle %} Chargeable
+status {% endblock %} {% block beforeContent %} {% include
+"./includes/banner.html" %}
 
 <div class="nhsuk-full-width-container">
-  <div class='scra-bordered-tabs-container'>
+  <div class="scra-bordered-tabs-container">
     <div class="nhsuk-width-container-fluid">
       <ul class="scra-bordered-tabs">
         <li class="scra-bordered-tabs-item">
-          <a class="scra-bordered-tabs-link" href="patient-overview-ovm">Overview</a>
+          <a class="scra-bordered-tabs-link" href="patient-overview-ovm"
+            >Overview</a
+          >
         </li>
         <li class="scra-bordered-tabs-item scra-bordered-tabs-item-active">
-          <a class="scra-bordered-tabs-link" href="./patient-details-no-alert">Patient</a>
+          <a class="scra-bordered-tabs-link" href="./patient-details-no-alert"
+            >Patient</a
+          >
         </li>
         <li class="scra-bordered-tabs-item">
-          <a class="scra-bordered-tabs-link" href="./clinical-details-no-alert">Clinical</a>
+          <a class="scra-bordered-tabs-link" href="./clinical-details-no-alert"
+            >Clinical</a
+          >
         </li>
       </ul>
     </div>
   </div>
 </div>
 
-{% include "./includes/banner.html" %}
-
-{% endblock %}
-
-{% block content %}
+{% endblock %} {% block content %}
 
 <div class="nhsuk-width-container">
-
   <div class="nhsuk-grid-row">
-
     <div class="nhsuk-grid-column-full">
-
       <div class="nhsuk-back-link">
-        <a class="nhsuk-back-link__link" href="patient-demographics#chargeable-status">
-          <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+        <a
+          class="nhsuk-back-link__link"
+          href="patient-demographics#chargeable-status"
+        >
+          <svg
+            class="nhsuk-icon nhsuk-icon__chevron-left"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+            <path
+              d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"
+            ></path>
           </svg>
-          Return to Patient tab</a>
+          Return to Patient tab</a
+        >
       </div>
 
       <div class="nhsuk-u-reading-width">
-
         <h2 id="ovms">Overseas visitor manager status</h2>
 
-        <nav class="nhsuk-contents-list" role="navigation" aria-label="Pages in this guide">
+        <nav
+          class="nhsuk-contents-list"
+          role="navigation"
+          aria-label="Pages in this guide"
+        >
           <h2 class="nhsuk-u-visually-hidden">Contents</h2>
           <ol class="nhsuk-contents-list__list">
             <li class="nhsuk-contents-list__item" aria-current="page">
-              <a class="nhsuk-contents-list__current" href="patient-details-home-office">Home office status</a>
+              <a
+                class="nhsuk-contents-list__current"
+                href="patient-details-home-office"
+                >Home office status</a
+              >
             </li>
             <li class="nhsuk-contents-list__item">
-              <span class="nhsuk-contents-list__link">Overseas Visitor Manager status</span>
+              <span class="nhsuk-contents-list__link"
+                >Overseas Visitor Manager status</span
+              >
             </li>
           </ol>
         </nav>
@@ -72,158 +84,99 @@ Chargeable status
               <a href="ovm-edit-chargeable-status">Edit</a>
             </p>
           </div>
-
         </section>
 
-
         <section id="patient-data">
-
           <div class="scra-card">
             <div class="scra-card-header">
-              <h3 class="nhsuk-heading-l" id="patient-details-names">Patient data</h3>
-              <p id="pds-edit-patient-data" class="pds-edit-link"><a href="patient-details-ovm-status-edit-patient_data">Edit</a></p>
+              <h3 class="nhsuk-heading-l" id="patient-details-names">
+                Patient data
+              </h3>
+              <p id="pds-edit-patient-data" class="pds-edit-link">
+                <a href="patient-details-ovm-status-edit-patient_data">Edit</a>
+              </p>
             </div>
             <div class="scra-card-content">
               <dl class="nhsuk-summary-list">
-
                 <div class="nhsuk-summary-list__row">
-                  <dt class="nhsuk-summary-list__key">
-                    Date patient seen
-                  </dt>
-                  <dd class="nhsuk-summary-list__value">
-                    Not recorded
-                  </dd>
+                  <dt class="nhsuk-summary-list__key">Date patient seen</dt>
+                  <dd class="nhsuk-summary-list__value">Not recorded</dd>
                 </div>
 
                 <div class="nhsuk-summary-list__row">
                   <dt class="nhsuk-summary-list__key">
                     Country of Nationality
                   </dt>
-                  <dd class="nhsuk-summary-list__value">
-                    Not recorded
-                  </dd>
-
+                  <dd class="nhsuk-summary-list__value">Not recorded</dd>
                 </div>
 
                 <div class="nhsuk-summary-list__row">
                   <dt class="nhsuk-summary-list__key" id="entry">
                     Purpose of entry
                   </dt>
-                  <dd class="nhsuk-summary-list__value">
-                    Not recorded
-                  </dd>
-
-
+                  <dd class="nhsuk-summary-list__value">Not recorded</dd>
                 </div>
                 <div class="nhsuk-summary-list__row">
                   <dt class="nhsuk-summary-list__key">
                     Other purpose of entry
                   </dt>
-                  <dd class="nhsuk-summary-list__value">
-                    Not recorded
-                  </dd>
-
-
+                  <dd class="nhsuk-summary-list__value">Not recorded</dd>
                 </div>
                 <div class="nhsuk-summary-list__row">
-                  <dt class="nhsuk-summary-list__key">
-                    Date of entry
-                  </dt>
-                  <dd class="nhsuk-summary-list__value">
-                    Not recorded
-                  </dd>
-
+                  <dt class="nhsuk-summary-list__key">Date of entry</dt>
+                  <dd class="nhsuk-summary-list__value">Not recorded</dd>
                 </div>
                 <div class="nhsuk-summary-list__row">
-                  <dt class="nhsuk-summary-list__key">
-                    Address line 1
-                  </dt>
-                  <dd class="nhsuk-summary-list__value">
-                    Not recorded
-                  </dd>
-
-
+                  <dt class="nhsuk-summary-list__key">Address line 1</dt>
+                  <dd class="nhsuk-summary-list__value">Not recorded</dd>
                 </div>
                 <div class="nhsuk-summary-list__row">
-                  <dt class="nhsuk-summary-list__key">
-                    Address line 2
-                  </dt>
-                  <dd class="nhsuk-summary-list__value">
-                    Not recorded
-                  </dd>
-
+                  <dt class="nhsuk-summary-list__key">Address line 2</dt>
+                  <dd class="nhsuk-summary-list__value">Not recorded</dd>
                 </div>
                 <div class="nhsuk-summary-list__row">
-                  <dt class="nhsuk-summary-list__key">
-                    Address line 3
-                  </dt>
-                  <dd class="nhsuk-summary-list__value">
-                    Not recorded
-                  </dd>
-
-
+                  <dt class="nhsuk-summary-list__key">Address line 3</dt>
+                  <dd class="nhsuk-summary-list__value">Not recorded</dd>
                 </div>
                 <div class="nhsuk-summary-list__row">
-                  <dt class="nhsuk-summary-list__key">
-                    Address line 4
-                  </dt>
-                  <dd class="nhsuk-summary-list__value">
-                    Not recorded
-                  </dd>
-
-
+                  <dt class="nhsuk-summary-list__key">Address line 4</dt>
+                  <dd class="nhsuk-summary-list__value">Not recorded</dd>
                 </div>
                 <div class="nhsuk-summary-list__row">
-                  <dt class="nhsuk-summary-list__key">
-                    Home country
-                  </dt>
-                  <dd class="nhsuk-summary-list__value">
-                    Not recorded
-                  </dd>
-
+                  <dt class="nhsuk-summary-list__key">Home country</dt>
+                  <dd class="nhsuk-summary-list__value">Not recorded</dd>
                 </div>
-
               </dl>
             </div>
           </div>
-
         </section>
 
         <section id="additional-details">
           <div class="scra-card">
             <div class="scra-card-header">
-              <h3 class="nhsuk-heading-l" id="patient-details-names">Additional data</h3>
-              <p id="pds-edit-additional-data" class="pds-edit-link"><a href="patient-details-ovm-status-edit-additional_details">Edit</a></p>
+              <h3 class="nhsuk-heading-l" id="patient-details-names">
+                Additional data
+              </h3>
+              <p id="pds-edit-additional-data" class="pds-edit-link">
+                <a href="patient-details-ovm-status-edit-additional_details"
+                  >Edit</a
+                >
+              </p>
             </div>
             <div class="scra-card-content">
               <h4 class="nhsuk-heading-m">Passport</h4>
               <dl class="nhsuk-summary-list">
                 <div class="nhsuk-summary-list__row">
-                  <dt class="nhsuk-summary-list__key">
-                    Passport Number
-                  </dt>
-                  <dd class="nhsuk-summary-list__value">
-                    Not recorded
-                  </dd>
-
+                  <dt class="nhsuk-summary-list__key">Passport Number</dt>
+                  <dd class="nhsuk-summary-list__value">Not recorded</dd>
                 </div>
                 <div class="nhsuk-summary-list__row">
-                  <dt class="nhsuk-summary-list__key">
-                    Country of Issue
-                  </dt>
-                  <dd class="nhsuk-summary-list__value">
-                    Not recorded
-                  </dd>
-
+                  <dt class="nhsuk-summary-list__key">Country of Issue</dt>
+                  <dd class="nhsuk-summary-list__value">Not recorded</dd>
                 </div>
                 <div class="nhsuk-summary-list__row">
-                  <dt class="nhsuk-summary-list__key">
-                    Passport expiry date
-                  </dt>
-                  <dd class="nhsuk-summary-list__value">
-                    Not recorded
-                  </dd>
-
+                  <dt class="nhsuk-summary-list__key">Passport expiry date</dt>
+                  <dd class="nhsuk-summary-list__value">Not recorded</dd>
                 </div>
               </dl>
 
@@ -233,31 +186,17 @@ Chargeable status
                   <dt class="nhsuk-summary-list__key">
                     Home Office Evidence and Enquiry contacted
                   </dt>
-                  <dd class="nhsuk-summary-list__value">
-                    Not recorded
-                  </dd>
-
+                  <dd class="nhsuk-summary-list__value">Not recorded</dd>
                 </div>
                 <div class="nhsuk-summary-list__row">
-                  <dt class="nhsuk-summary-list__key">
-                    Contacted reference
-                  </dt>
-                  <dd class="nhsuk-summary-list__value">
-                    Not recorded
-                  </dd>
-
+                  <dt class="nhsuk-summary-list__key">Contacted reference</dt>
+                  <dd class="nhsuk-summary-list__value">Not recorded</dd>
                 </div>
                 <div class="nhsuk-summary-list__row">
-                  <dt class="nhsuk-summary-list__key">
-                    Date contacted
-                  </dt>
-                  <dd class="nhsuk-summary-list__value">
-                    Not recorded
-                  </dd>
-
+                  <dt class="nhsuk-summary-list__key">Date contacted</dt>
+                  <dd class="nhsuk-summary-list__value">Not recorded</dd>
                 </div>
               </dl>
-
             </div>
           </div>
         </section>
@@ -265,170 +204,131 @@ Chargeable status
         <section id="entitlement-evidence">
           <div class="scra-card">
             <div class="scra-card-header">
-              <h3 class="nhsuk-heading-l" id="patient-details-names">Entitlement evidence</h3>
-              <p id="pds-edit-entitlement-evidence" class="pds-edit-link"><a href="patient-details-ovm-status-edit-entitlement_evidence">Edit</a></p>
+              <h3 class="nhsuk-heading-l" id="patient-details-names">
+                Entitlement evidence
+              </h3>
+              <p id="pds-edit-entitlement-evidence" class="pds-edit-link">
+                <a href="patient-details-ovm-status-edit-entitlement_evidence"
+                  >Edit</a
+                >
+              </p>
             </div>
             <div class="scra-card-content">
               <h4 class="nhsuk-heading-l">EHIC</h4>
-              <h4 class="nhsuk-heading-m">Provisional Replacement Certificate</h4>
+              <h4 class="nhsuk-heading-m">
+                Provisional Replacement Certificate
+              </h4>
               <dl class="nhsuk-summary-list">
                 <div class="nhsuk-summary-list__row">
                   <dt class="nhsuk-summary-list__key">
                     2. PRC Country of issue
                   </dt>
-                  <dd class="nhsuk-summary-list__value">
-                    Not recorded
-                  </dd>
-
+                  <dd class="nhsuk-summary-list__value">Not recorded</dd>
                 </div>
                 <div class="nhsuk-summary-list__row">
-                  <dt class="nhsuk-summary-list__key">
-                    6. PRC Personal Id No
-                  </dt>
-                  <dd class="nhsuk-summary-list__value">
-                    Not recorded
-                  </dd>
-
+                  <dt class="nhsuk-summary-list__key">6. PRC Personal Id No</dt>
+                  <dd class="nhsuk-summary-list__value">Not recorded</dd>
                 </div>
                 <div class="nhsuk-summary-list__row">
-                  <dt class="nhsuk-summary-list__key">
-                    7. PRC Institution Id
-                  </dt>
-                  <dd class="nhsuk-summary-list__value">
-                    Not recorded
-                  </dd>
-
+                  <dt class="nhsuk-summary-list__key">7. PRC Institution Id</dt>
+                  <dd class="nhsuk-summary-list__value">Not recorded</dd>
                 </div>
                 <div class="nhsuk-summary-list__row">
                   <dt class="nhsuk-summary-list__key">
                     8. PRC EHIC card number
                   </dt>
-                  <dd class="nhsuk-summary-list__value">
-                    Not recorded
-                  </dd>
-
+                  <dd class="nhsuk-summary-list__value">Not recorded</dd>
                 </div>
                 <div class="nhsuk-summary-list__row">
                   <dt class="nhsuk-summary-list__key">
                     9. PRC EHIC expiry date
                   </dt>
-                  <dd class="nhsuk-summary-list__value">
-                    Not recorded
-                  </dd>
-
+                  <dd class="nhsuk-summary-list__value">Not recorded</dd>
                 </div>
                 <div class="nhsuk-summary-list__row">
                   <dt class="nhsuk-summary-list__key">
                     a. PRC valid from date
                   </dt>
-                  <dd class="nhsuk-summary-list__value">
-                    Not recorded
-                  </dd>
-
+                  <dd class="nhsuk-summary-list__value">Not recorded</dd>
                 </div>
                 <div class="nhsuk-summary-list__row">
-                  <dt class="nhsuk-summary-list__key">
-                    b. PRC valid to date
-                  </dt>
-                  <dd class="nhsuk-summary-list__value">
-                    Not recorded
-                  </dd>
-
+                  <dt class="nhsuk-summary-list__key">b. PRC valid to date</dt>
+                  <dd class="nhsuk-summary-list__value">Not recorded</dd>
                 </div>
               </dl>
 
-              <h4 class="nhsuk-heading-m">S1 Registration for Health Care cover</h4>
+              <h4 class="nhsuk-heading-m">
+                S1 Registration for Health Care cover
+              </h4>
               <dl class="nhsuk-summary-list">
                 <div class="nhsuk-summary-list__row">
-                  <dt class="nhsuk-summary-list__key">
-                    S1 Status
-                  </dt>
-                  <dd class="nhsuk-summary-list__value">
-                    Not recorded
-                  </dd>
+                  <dt class="nhsuk-summary-list__key">S1 Status</dt>
+                  <dd class="nhsuk-summary-list__value">Not recorded</dd>
                 </div>
               </dl>
 
-              <h4 class="nhsuk-heading-m">S2 Entitlement to Scheduled Treatment</h4>
+              <h4 class="nhsuk-heading-m">
+                S2 Entitlement to Scheduled Treatment
+              </h4>
               <dl class="nhsuk-summary-list">
                 <div class="nhsuk-summary-list__row">
-                  <dt class="nhsuk-summary-list__key">
-                    S2 country of issue
-                  </dt>
-                  <dd class="nhsuk-summary-list__value">
-                    Not recorded
-                  </dd>
+                  <dt class="nhsuk-summary-list__key">S2 country of issue</dt>
+                  <dd class="nhsuk-summary-list__value">Not recorded</dd>
                 </div>
                 <div class="nhsuk-summary-list__row">
-                  <dt class="nhsuk-summary-list__key">
-                    S2 valid from
-                  </dt>
-                  <dd class="nhsuk-summary-list__value">
-                    Not recorded
-                  </dd>
+                  <dt class="nhsuk-summary-list__key">S2 valid from</dt>
+                  <dd class="nhsuk-summary-list__value">Not recorded</dd>
                 </div>
                 <div class="nhsuk-summary-list__row">
-                  <dt class="nhsuk-summary-list__key">
-                    S2 valid to
-                  </dt>
-                  <dd class="nhsuk-summary-list__value">
-                    Not recorded
-                  </dd>
+                  <dt class="nhsuk-summary-list__key">S2 valid to</dt>
+                  <dd class="nhsuk-summary-list__value">Not recorded</dd>
                 </div>
               </dl>
             </div>
           </div>
         </section>
-
       </div>
-
     </div>
   </div>
 </div>
 
-
-{% endblock %}
-
-{%block pageScripts%}
+{% endblock %} {%block pageScripts%}
 
 <html>
+  <head>
+    <script>
+      var observer = new IntersectionObserver(
+        function (entries) {
+          // no intersection with screen
+          if (entries[0].intersectionRatio === 0)
+            document
+              .querySelector("myheader")
+              .classList.add("nav-container-sticky");
+          // fully intersects with screen
+          else if (entries[0].intersectionRatio === 1)
+            document
+              .querySelector("myheader")
+              .classList.remove("nav-container-sticky");
+        },
+        {
+          threshold: [0, 1],
+        }
+      );
 
+      observer.observe(document.querySelector("#nav-container-top"));
 
-<head>
-  <script>
-    var observer = new IntersectionObserver(function(entries) {
-      // no intersection with screen
-      if (entries[0].intersectionRatio === 0)
-        document.querySelector("myheader").classList.add("nav-container-sticky");
-      // fully intersects with screen
-      else if (entries[0].intersectionRatio === 1)
-        document.querySelector("myheader").classList.remove("nav-container-sticky");
-    }, {
-      threshold: [0, 1]
-    });
-
-    observer.observe(document.querySelector("#nav-container-top"));
-
-
-
-    document.getElementById("gethistoric").onclick = function() {
-      if (document.getElementById("hidethis").style.display == 'none') {
-        document.getElementById("hidethis").style.display =
-          'block'; // set to table-row instead of an empty string
-      } else {
-        document.getElementById("hidethis").style.display = 'none';
-      }
-    }
-  </script>
-
-
-</head>
-
-<<head>
-
+      document.getElementById("gethistoric").onclick = function () {
+        if (document.getElementById("hidethis").style.display == "none") {
+          document.getElementById("hidethis").style.display = "block"; // set to table-row instead of an empty string
+        } else {
+          document.getElementById("hidethis").style.display = "none";
+        }
+      };
+    </script>
   </head>
 
-
-
+  <<head
+  > </head>
 
   {% endblock %}
+</html>

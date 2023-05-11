@@ -4,7 +4,7 @@
 Dashboard
 {% endblock %}
 
-{% block beforeContent %}
+{% block beforeContent %} {% include "./includes/banner.html" %}
 
 <div class="nhsuk-full-width-container">
   <div class='scra-bordered-tabs-container'>
@@ -24,21 +24,7 @@ Dashboard
   </div>
 </div>
 
-<div class="paid-nhs-banner">
-  <div class="nhsuk-width-container-fluid">
-    <div class="nhsuk-grid-row">
-      <div class="nhsuk-grid-column-full">
 
-        <ul class="nhsuk-list nhsuk-list--tick">
-          <p style="display:inline;" id="exclamation" style="margin-left:0px;"><span>!</p>
-          <p style="display:inline;">Likely chargeable for NHS services.<span style="padding-left:20px;font-size:15px;"><a href="additional-info" style="color:white;">Additional info</a></span></p>
-
-        </ul>
-
-      </div>
-    </div>
-  </div>
-</div>
 
 
 {% endblock %}

@@ -6,7 +6,8 @@
 Chargeability status
 {% endblock %}
 
-{% block beforeContent %}
+{% block beforeContent %}{% include
+  "./includes/banner.html" %}
 
 
 
@@ -27,7 +28,7 @@ Chargeability status
     </div>
   </div>
 </div>
-
+<!----
 <div class="free-nhs-banner">
   <div id="nopad"class="nhsuk-width-container-fluid">
     <div class="nhsuk-grid-row">
@@ -44,6 +45,7 @@ Chargeability status
     </div>
   </div>
 </div>
+-->
 <div class="nhsuk-u-padding-bottom-2"></div>
 
 <div class="user-banner" id="myHeader">
