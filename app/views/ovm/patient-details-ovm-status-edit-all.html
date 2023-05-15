@@ -31,8 +31,18 @@ Patient details
 
   <div class="nhsuk-grid-row">
 
+    <h1>Overseas visitor manager record</h1>
+
     <div class="nhsuk-grid-column-full">
-      <h1 class="nhsuk-heading-l">Edit chargeable status</h1>
+      <div class="nhsuk-u-reading-width">
+        <p>This page contains the information in the patient's current OVM record. Edit the fields as required.</p>
+      </div>
+    </div>
+
+    <a id="chargeable-status"></a>
+
+    <div class="nhsuk-grid-column-three-quarters">
+      <h2 class="nhsuk-heading-l">Chargeable status information</h2>
 
       <div class="scra-card pds-edit-card">
         <div class="scra-card-content">
@@ -40,7 +50,7 @@ Patient details
             <fieldset class="nhsuk-fieldset">
 
 
-              <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
+              <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m nhsuk-u-margin-bottom-4">
                 <h2 class="nhsuk-fieldset__heading">Chargeable status</h2>
               </legend>
 
@@ -136,201 +146,202 @@ Patient details
 
         </div>
       </div>
+
       <a id="patientdata"></a>
-      <h2 class="nhsuk-heading-l">Edit patient data</h2>
+      <h2 class="nhsuk-heading-l">Patient data</h2>
 
       <div class="scra-card pds-edit-card">
-        <div class="scra-card-header pds-edit-card-header">
 
-            <div class="nhsuk-form-group">
+        <div class="scra-card-header pds-edit-card-header nhsuk-u-margin-bottom-4">
+          <h2 class="nhsuk-heading-m" id="patient-details-usual-name">Edit patient data</h2>
+        </div>
 
-              <fieldset class="nhsuk-fieldset" role="group">
-                <legend class="nhsuk-fieldset__legend nhsuk-label--s">
-                  Date patient seen
-                </legend>
+        <div class="nhsuk-form-group">
 
-                <div class="nhsuk-hint" id="dob-errors-hint">
-                  For example, 15 3 2016
+          <fieldset class="nhsuk-fieldset" role="group">
+            <legend class="nhsuk-fieldset__legend nhsuk-label--s">
+              Date patient seen
+            </legend>
+
+            <div class="nhsuk-hint" id="dob-errors-hint">
+              For example, 15 3 2016
+            </div>
+
+            <div class="nhsuk-date-input" id="effective-date-name">
+              <div class="nhsuk-date-input__item">
+                <div class="nhsuk-form-group">
+                  <label class="nhsuk-label nhsuk-date-input__label" for="effective-date-name-day">
+                    Day
+                  </label>
+                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
+                         id="effective-date-name-day" name="effective-date-name-day" pattern="[0-9]*" type="number"
+                         value="{{ patient['ovmDateSeen'][0] or '02' }}">
                 </div>
-
-                <div class="nhsuk-date-input" id="effective-date-name">
-                  <div class="nhsuk-date-input__item">
-                    <div class="nhsuk-form-group">
-                      <label class="nhsuk-label nhsuk-date-input__label" for="effective-date-name-day">
-                        Day
-                      </label>
-                      <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
-                             id="effective-date-name-day" name="effective-date-name-day" pattern="[0-9]*" type="number"
-                             value="{{ patient['ovmDateSeen'][0] or '02' }}">
-                    </div>
-                  </div>
-                  <div class="nhsuk-date-input__item">
-                    <div class="nhsuk-form-group">
-                      <label class="nhsuk-label nhsuk-date-input__label" for="effective-date-name-month">
-                        Month
-                      </label>
-                      <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
-                             id="effective-date-name-month" name="effective-date-name-month" pattern="[0-9]*"
-                             type="number" value="{{ patient['ovmDateSeen'][1] or '07' }}">
-                    </div>
-                  </div>
-                  <div class="nhsuk-date-input__item">
-                    <div class="nhsuk-form-group">
-                      <label class="nhsuk-label nhsuk-date-input__label" for="effective-date-name-year">
-                        Year
-                      </label>
-                      <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4"
-                             id="effective-date-name-year" name="effective-date-name-year" pattern="[0-9]*"
-                             type="number" value="{{ patient['ovmDateSeen'][2] or '2020' }}">
-                    </div>
-                  </div>
+              </div>
+              <div class="nhsuk-date-input__item">
+                <div class="nhsuk-form-group">
+                  <label class="nhsuk-label nhsuk-date-input__label" for="effective-date-name-month">
+                    Month
+                  </label>
+                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
+                         id="effective-date-name-month" name="effective-date-name-month" pattern="[0-9]*"
+                         type="number" value="{{ patient['ovmDateSeen'][1] or '07' }}">
                 </div>
-
-              </fieldset>
+              </div>
+              <div class="nhsuk-date-input__item">
+                <div class="nhsuk-form-group">
+                  <label class="nhsuk-label nhsuk-date-input__label" for="effective-date-name-year">
+                    Year
+                  </label>
+                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4"
+                         id="effective-date-name-year" name="effective-date-name-year" pattern="[0-9]*"
+                         type="number" value="{{ patient['ovmDateSeen'][2] or '2020' }}">
+                </div>
+              </div>
             </div>
 
+          </fieldset>
+        </div>
 
+
+        <div class="nhsuk-form-group">
+          <label class="nhsuk-label nhsuk-label__strong" for="select-1">
+            Purpose of entry
+          </label>
+          <select class="nhsuk-select" id="select-1" name="select-1">
+            <option selected value="1">Study</option>
+            <option value="2">Work</option>
+            <option value="3">Leisure</option>
+            <option value="4">Intend to settle</option>
+            <option value="5">Dependent</option>
+            <option value="6">Visiting family</option>
+            <option value="7">Other</option>
+          </select>
+        </div>
+
+        <div class="nhsuk-form-group" style="display:none;">
+          <label class="nhsuk-label nhsuk-label__strong" for="pds-edit-suffix">
+            Other purpose of entry
+          </label>
+          <input class="nhsuk-input nhsuk-input--width-10" id="pds-edit-suffix" name="pdf-edit-suffix" type="text">
+        </div>
+
+        <div class="nhsuk-form-group">
+          <label class="nhsuk-label nhsuk-label__strong" for="select-1">
+            Country of Nationality
+          </label>
+          <select class="nhsuk-select" id="country" name="country">
+            <option value="Afganistan">Afghanistan</option>
+            <option value="Albania">Albania</option>
+            <option value="Algeria">Algeria</option>
+            <option value="American Samoa">American Samoa</option>
+            <option value="Andorra">Andorra</option>
+            <option value="Angola">Angola</option>
+            <option value="Anguilla">Anguilla</option>
+            <option selected value="Antigua & Barbuda">Antigua & Barbuda</option>
+            <option value="Argentina">Argentina</option>
+            <option value="Armenia">Armenia</option>
+            <option value="Aruba">Aruba</option>
+            <option value="Australia">Australia</option>
+            <option value="Austria">Austria</option>
+            <option value="Azerbaijan">Azerbaijan</option>
+          </select>
+        </div>
+
+        <div class="nhsuk-form-group">
+
+          <label class="nhsuk-label nhsuk-label__strong" for="pds-edit-suffix">
+            Date of entry
+          </label>
+          <span class="nhsuk-hint" id="example-hint">
+            The date on which the patient entered the UK on this visit
+          </span>
+          <span class="nhsuk-hint" id="example-hint">
+            For example, 15 3 2016
+          </span>
+          <fieldset class="nhsuk-fieldset" role="group">
+
+
+            <div class="nhsuk-date-input" id="effective-date-name">
+              <div class="nhsuk-date-input__item">
+                <div class="nhsuk-form-group">
+                  <label class="nhsuk-label nhsuk-date-input__label" for="effective-date-name-day">
+                    Day
+                  </label>
+                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
+                         id="effective-date-name-day" name="effective-date-name-day" pattern="[0-9]*" type="number"
+                         value="01">
+                </div>
+              </div>
+              <div class="nhsuk-date-input__item">
+                <div class="nhsuk-form-group">
+                  <label class="nhsuk-label nhsuk-date-input__label" for="effective-date-name-month">
+                    Month
+                  </label>
+                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
+                         id="effective-date-name-month" name="effective-date-name-month" pattern="[0-9]*"
+                         type="number" value="08">
+                </div>
+              </div>
+              <div class="nhsuk-date-input__item">
+                <div class="nhsuk-form-group">
+                  <label class="nhsuk-label nhsuk-date-input__label" for="effective-date-name-year">
+                    Year
+                  </label>
+                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4"
+                         id="effective-date-name-year" name="effective-date-name-year" pattern="[0-9]*"
+                         type="number" value="2020">
+                </div>
+              </div>
             </div>
+          </fieldset>
+        </div>
 
-            <div class="nhsuk-form-group">
-              <label class="nhsuk-label nhsuk-label__strong" for="select-1">
-                Purpose of entry
-              </label>
-              <select class="nhsuk-select" id="select-1" name="select-1">
-                <option selected value="1">Study</option>
-                <option value="2">Work</option>
-                <option value="3">Leisure</option>
-                <option value="4">Intend to settle</option>
-                <option value="5">Dependent</option>
-                <option value="6">Visiting family</option>
-                <option value="7">Other</option>
-              </select>
-            </div>
 
-            <div class="nhsuk-form-group" style="display:none;">
-              <label class="nhsuk-label nhsuk-label__strong" for="pds-edit-suffix">
-                Other purpose of entry
-              </label>
-              <input class="nhsuk-input nhsuk-input--width-10" id="pds-edit-suffix" name="pdf-edit-suffix" type="text">
-            </div>
+          <fieldset class="nhsuk-fieldset">
 
-            <div class="nhsuk-form-group">
-              <label class="nhsuk-label nhsuk-label__strong" for="select-1">
-                Country of Nationality
-              </label>
-              <select class="nhsuk-select" id="country" name="country">
-                <option value="Afganistan">Afghanistan</option>
-                <option value="Albania">Albania</option>
-                <option value="Algeria">Algeria</option>
-                <option value="American Samoa">American Samoa</option>
-                <option value="Andorra">Andorra</option>
-                <option value="Angola">Angola</option>
-                <option value="Anguilla">Anguilla</option>
-                <option selected value="Antigua & Barbuda">Antigua & Barbuda</option>
-                <option value="Argentina">Argentina</option>
-                <option value="Armenia">Armenia</option>
-                <option value="Aruba">Aruba</option>
-                <option value="Australia">Australia</option>
-                <option value="Austria">Austria</option>
-                <option value="Azerbaijan">Azerbaijan</option>
-              </select>
-            </div>
-
-            <div class="nhsuk-form-group">
-
-              <label class="nhsuk-label nhsuk-label__strong" for="pds-edit-suffix">
-                Date of entry
-              </label>
-              <span class="nhsuk-hint" id="example-hint">
-                The date on which the patient entered the UK on this visit
+            <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m nhsuk-u-margin-bottom-4 nhsuk-u-margin-top-10">
+              <span class="nhsuk-fieldset__heading">
+                Home country address
               </span>
-              <span class="nhsuk-hint" id="example-hint">
-                For example, 15 3 2016
+              <span class="nhsuk-hint nhsuk-u-margin-bottom-0" id="example-hint">
+                Enter as much of the patient's home country address as you can.
               </span>
-              <fieldset class="nhsuk-fieldset" role="group">
+            </legend>
 
-
-                <div class="nhsuk-date-input" id="effective-date-name">
-                  <div class="nhsuk-date-input__item">
-                    <div class="nhsuk-form-group">
-                      <label class="nhsuk-label nhsuk-date-input__label" for="effective-date-name-day">
-                        Day
-                      </label>
-                      <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
-                             id="effective-date-name-day" name="effective-date-name-day" pattern="[0-9]*" type="number"
-                             value="01">
-                    </div>
-                  </div>
-                  <div class="nhsuk-date-input__item">
-                    <div class="nhsuk-form-group">
-                      <label class="nhsuk-label nhsuk-date-input__label" for="effective-date-name-month">
-                        Month
-                      </label>
-                      <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
-                             id="effective-date-name-month" name="effective-date-name-month" pattern="[0-9]*"
-                             type="number" value="08">
-                    </div>
-                  </div>
-                  <div class="nhsuk-date-input__item">
-                    <div class="nhsuk-form-group">
-                      <label class="nhsuk-label nhsuk-date-input__label" for="effective-date-name-year">
-                        Year
-                      </label>
-                      <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4"
-                             id="effective-date-name-year" name="effective-date-name-year" pattern="[0-9]*"
-                             type="number" value="2020">
-                    </div>
-                  </div>
-                </div>
-              </fieldset>
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label" for="pds-edit-middle-name">
+                Address line 1
+              </label>
+              <input class="nhsuk-input nhsuk-input--width-20" id="pds-edit-middle-name" name="pdf-edit-middle-name"
+                     type="text" value="45 Southway">
             </div>
 
             <div class="nhsuk-form-group">
-              <fieldset class="nhsuk-fieldset">
-                <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--s">
-                  <span class="nhsuk-fieldset__heading">
-                    Home country address
-                  </span>
-                  <span class="nhsuk-hint nhsuk-u-margin-bottom-0" id="example-hint">
-                    Enter as much of the patient's home country address as you can.
-                  </span>
-                </legend>
-                <div class="nhsuk-form-group">
-                  <label class="nhsuk-label" for="pds-edit-middle-name">
-                    Address line 1
-                  </label>
-                  <input class="nhsuk-input nhsuk-input--width-20" id="pds-edit-middle-name" name="pdf-edit-middle-name"
-                         type="text" value="45 Southway">
-                </div>
-
-                <div class="nhsuk-form-group">
-                  <label class="nhsuk-label" for="pds-edit-middle-name">
-                    Address line 2
-                  </label>
-                  <input class="nhsuk-input nhsuk-input--width-20" id="pds-edit-middle-name" name="pdf-edit-middle-name"
-                         type="text" value="Manor Park">
-                </div>
-
-                <div class="nhsuk-form-group">
-                  <label class="nhsuk-label" for="pds-edit-middle-name">
-                    Address line 3
-                  </label>
-                  <input class="nhsuk-input nhsuk-input--width-20" id="pds-edit-middle-name" name="pdf-edit-middle-name"
-                         type="text">
-                </div>
-
-                <div class="nhsuk-form-group">
-                  <label class="nhsuk-label" for="pds-edit-middle-name">
-                    Address line 4
-                  </label>
-                  <input class="nhsuk-input nhsuk-input--width-20" id="pds-edit-middle-name" name="pdf-edit-middle-name"
-                         type="text">
-                </div>
-              </fieldset>
-
+              <label class="nhsuk-label" for="pds-edit-middle-name">
+                Address line 2
+              </label>
+              <input class="nhsuk-input nhsuk-input--width-20" id="pds-edit-middle-name" name="pdf-edit-middle-name"
+                     type="text" value="Manor Park">
             </div>
 
-            <!--<div class="nhsuk-form-group">
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label" for="pds-edit-middle-name">
+                Address line 3
+              </label>
+              <input class="nhsuk-input nhsuk-input--width-20" id="pds-edit-middle-name" name="pdf-edit-middle-name"
+                     type="text">
+            </div>
+
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label" for="pds-edit-middle-name">
+                Address line 4
+              </label>
+              <input class="nhsuk-input nhsuk-input--width-20" id="pds-edit-middle-name" name="pdf-edit-middle-name"
+                     type="text">
+            </div>
+
+            <div class="nhsuk-form-group">
               <label class="nhsuk-label nhsuk-label__strong" for="select-1">
                 Home country
               </label>
@@ -351,31 +362,20 @@ Patient details
                 <option value="Austria">Austria</option>
                 <option value="Azerbaijan">Azerbaijan</option>
               </select>
-            </div>-->
+            </div>
 
           </fieldset>
 
         </div>
-        <!--
-                <div class="btn-group">
-                  <a class="nhsuk-button" href="confirm-changes-patient-data" onclick="onSubmit()">Save changes</a>
-                  <p class="cancel-btn-link"><a href="patient-details-ovm">Cancel</a></p>
-                </div> -->
 
 
-      </div>
-
-
-      <h1 class="nhsuk-heading-l">Edit additional data</h1>
+      <h1 class="nhsuk-heading-l">Additional data</h1>
 
       <div class="scra-card pds-edit-card">
-        <div class="scra-card-header pds-edit-card-header">
-          <h2 class="nhsuk-heading-m" id="patient-details-usual-name">Passport</h2>
+        <div class="scra-card-header pds-edit-card-header nhsuk-u-margin-bottom-4">
+          <h2 class="nhsuk-heading-m" id="patient-details-usual-name">Edit passport information</h2>
         </div>
-        <div class="scra-card-content">
-          <p class="nhsuk-body-s pds-edit-support-text">
-
-          </p>
+        <div class="scra-card-content nhsuk-u-padding-top-3">
 
           <div class="nhsuk-form-group pds-edit-form-group">
 
@@ -387,11 +387,12 @@ Patient details
                      type="text" value="123456">
             </div>
 
-            <label class="nhsuk-label" for="pds-edit-middle-name">
-              Country of issue
-            </label>
-            <input class="nhsuk-input nhsuk-input--width-20" id="pds-edit-middle-name" name="pdf-edit-middle-name"
-                   type="text" value="Antigua and Barbuda">
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label" for="pds-edit-middle-name">
+                Country of issue
+              </label>
+              <input class="nhsuk-input nhsuk-input--width-20" id="pds-edit-middle-name" name="pdf-edit-middle-name" type="text" value="Antigua and Barbuda">
+            </div>
 
             <label class="nhsuk-label" for="pds-edit-middle-name">
               Passport expiry date
@@ -432,7 +433,7 @@ Patient details
           </div>
         </div>
 
-          <h2 class="nhsuk-heading-m" id="patient-details-preferred-name">Home Office contact</h2>
+        <h2 class="nhsuk-heading-m" id="patient-details-preferred-name">Home Office contact</h2>
 
         <div class="scra-card-content">
 
@@ -577,7 +578,7 @@ Patient details
 
                 </div>
 
-                
+
               </fieldset>
 
 
@@ -636,44 +637,52 @@ Patient details
 
       -->
 
-      <h2 class="nhsuk-heading-l">Edit entitlement evidence</h2>
+      <h2 class="nhsuk-heading-l">Entitlement evidence</h2>
 
       <div class="scra-card pds-edit-card">
-        <div class="scra-card-header pds-edit-card-header">
-          <h2 class="nhsuk-heading-m" id="patient-details-usual-name">EHIC</h2>
+        <div class="scra-card-header pds-edit-card-header nhsuk-u-margin-bottom-4">
+          <h3 class="nhsuk-heading-m">Electronic Health Insurance Card</h3>
         </div>
-        <div class="scra-card-content">
-          <label class="nhsuk-label" for="pds-edit-last-name">
-            EHIC Country of issue
-          </label>
-          <input class="nhsuk-input nhsuk-input--width-20" id="pds-edit-last-name" name="pdf-edit-last-name" type="text"
-                 value="Jersey">
 
-        </div>
         <div class="scra-card-content">
-          <label class="nhsuk-label" for="pds-edit-last-name">
-            6. EHIC Personal Id No
-          </label>
-          <input class="nhsuk-input nhsuk-input--width-20" id="pds-edit-last-name" name="pdf-edit-last-name" type="text"
-                 value="123456">
-
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="pds-edit-last-name">
+              EHIC Country of issue
+            </label>
+            <input class="nhsuk-input nhsuk-input--width-20" id="pds-edit-last-name" name="pdf-edit-last-name" type="text" value="Jersey">
+          </div>
         </div>
+
         <div class="scra-card-content">
-          <label class="nhsuk-label" for="pds-edit-last-name">
-            7. EHIC Institution Id
-          </label>
-          <input class="nhsuk-input nhsuk-input--width-20" id="pds-edit-last-name" name="pdf-edit-last-name" type="text"
-                 value="123456">
-
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="pds-edit-last-name">
+              6. EHIC Personal Id No
+            </label>
+            <input class="nhsuk-input nhsuk-input--width-20" id="pds-edit-last-name" name="pdf-edit-last-name" type="text"
+                   value="123456">
+          </div>
         </div>
+
         <div class="scra-card-content">
-          <label class="nhsuk-label" for="pds-edit-last-name">
-            8. EHIC card number
-          </label>
-          <input class="nhsuk-input nhsuk-input--width-20" id="pds-edit-last-name" name="pdf-edit-last-name" type="text"
-                 value="123456">
-
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="pds-edit-last-name">
+              7. EHIC Institution Id
+            </label>
+            <input class="nhsuk-input nhsuk-input--width-20" id="pds-edit-last-name" name="pdf-edit-last-name" type="text"
+                   value="123456">
+          </div>
         </div>
+
+        <div class="scra-card-content">
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="pds-edit-last-name">
+              8. EHIC card number
+            </label>
+            <input class="nhsuk-input nhsuk-input--width-20" id="pds-edit-last-name" name="pdf-edit-last-name" type="text"
+                   value="123456">
+          </div>
+        </div>
+
         <div class="scra-card-content">
           <label class="nhsuk-label" for="pds-edit-last-name">
             9. EHIC expiry date
@@ -786,52 +795,57 @@ Patient details
           </fieldset>
         </div>
 
-        <div class="scra-card-header pds-edit-card-header">
+        <div class="scra-card-header pds-edit-card-header nhsuk-u-margin-bottom-4 nhsuk-u-margin-top-4">
           <h2 class="nhsuk-heading-m" id="patient-details-usual-name">S1 Registration for Health Care cover</h2>
         </div>
         <div class="scra-card-content">
-          <label class="nhsuk-label" for="pds-edit-last-name">
-            S1 status
-          </label>
-          <input class="nhsuk-input nhsuk-input--width-20" id="pds-edit-last-name" name="pdf-edit-last-name" type="text"
-                 value="No S1 confirmed by patient">
-
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="pds-edit-last-name">
+              S1 status
+            </label>
+            <input class="nhsuk-input nhsuk-input--width-20" id="pds-edit-last-name" name="pdf-edit-last-name" type="text"
+                   value="No S1 confirmed by patient">
+          </div>
         </div>
 
-        <div class="scra-card-header pds-edit-card-header">
+        <div class="scra-card-header pds-edit-card-header nhsuk-u-margin-bottom-4 nhsuk-u-margin-top-6">
           <h2 class="nhsuk-heading-m" id="patient-details-usual-name">Provisional Replacement Certificate</h2>
         </div>
         <div class="scra-card-content">
-          <label class="nhsuk-label" for="pds-edit-last-name">
-            2. PRC Country of issue
-          </label>
-          <input class="nhsuk-input nhsuk-input--width-20" id="pds-edit-last-name" name="pdf-edit-last-name" type="text"
-                 value="Jersey">
-
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="pds-edit-last-name">
+              2. PRC Country of issue
+            </label>
+            <input class="nhsuk-input nhsuk-input--width-20" id="pds-edit-last-name" name="pdf-edit-last-name" type="text"
+                   value="Jersey">
+          </div>
         </div>
         <div class="scra-card-content">
-          <label class="nhsuk-label" for="pds-edit-last-name">
-            6. PRC Personal Id No
-          </label>
-          <input class="nhsuk-input nhsuk-input--width-20" id="pds-edit-last-name" name="pdf-edit-last-name" type="text"
-                 value="123456">
-
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="pds-edit-last-name">
+              6. PRC Personal Id No
+            </label>
+            <input class="nhsuk-input nhsuk-input--width-20" id="pds-edit-last-name" name="pdf-edit-last-name" type="text"
+                   value="123456">
+          </div>
         </div>
         <div class="scra-card-content">
-          <label class="nhsuk-label" for="pds-edit-last-name">
-            7. PRC Institution Id
-          </label>
-          <input class="nhsuk-input nhsuk-input--width-20" id="pds-edit-last-name" name="pdf-edit-last-name" type="text"
-                 value="123456">
-
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="pds-edit-last-name">
+              7. PRC Institution Id
+            </label>
+            <input class="nhsuk-input nhsuk-input--width-20" id="pds-edit-last-name" name="pdf-edit-last-name" type="text"
+                   value="123456">
+          </div>
         </div>
         <div class="scra-card-content">
-          <label class="nhsuk-label" for="pds-edit-last-name">
-            8. PRC EHIC card number
-          </label>
-          <input class="nhsuk-input nhsuk-input--width-20" id="pds-edit-last-name" name="pdf-edit-last-name" type="text"
-                 value="123456">
-
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="pds-edit-last-name">
+              8. PRC EHIC card number
+            </label>
+            <input class="nhsuk-input nhsuk-input--width-20" id="pds-edit-last-name" name="pdf-edit-last-name" type="text"
+                   value="123456">
+          </div>
         </div>
         <div class="scra-card-content">
           <label class="nhsuk-label" for="pds-edit-last-name">
@@ -945,17 +959,19 @@ Patient details
           </fieldset>
         </div>
 
-        <div class="scra-card-header pds-edit-card-header">
+        <div class="scra-card-header pds-edit-card-header nhsuk-u-margin-bottom-4 nhsuk-u-margin-top-6">
           <h2 class="nhsuk-heading-m" id="patient-details-preferred-name">S2 Entitlement to Scheduled Treatment</h2>
         </div>
         <div class="scra-card-content">
-          <label class="nhsuk-label" for="pds-edit-last-name">
-            S2 country of issue
-          </label>
-          <input class="nhsuk-input nhsuk-input--width-20" id="pds-edit-last-name" name="pdf-edit-last-name" type="text"
-                 value="Andorra">
-
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="pds-edit-last-name">
+              S2 country of issue
+            </label>
+            <input class="nhsuk-input nhsuk-input--width-20" id="pds-edit-last-name" name="pdf-edit-last-name" type="text"
+                   value="Andorra">
+          </div>
         </div>
+
         <div class="scra-card-content">
           <label class="nhsuk-label" for="pds-edit-last-name">
             S2 Valid from
@@ -1041,8 +1057,5 @@ Patient details
   <a class="nhsuk-button" href="confirm-changes-entitlement">Save changes</a>
 
 </div>
-</div>
 
-</div>
-</div>
 {% endblock %}
