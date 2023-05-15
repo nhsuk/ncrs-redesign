@@ -83,14 +83,20 @@ status {% endblock %} {% block beforeContent %} {% include
               </h3>
             </div>
             <div class="scra-card-content">
-              <p>
-                There are no records for this patient. You don't have
-                permissions to create a record.
-              </p>
+              <p>There is no current OVM record for this patient.</p>
             </div>
           </div>
         </section>
 
+        <div class="nhsuk-warning-callout">
+          <h3 class="nhsuk-warning-callout__label">
+            <span role="text">
+              <span class="nhsuk-u-visually-hidden">Important: </span>
+              Permissions
+            </span>
+          </h3>
+          <p>You don't have permissions to create a record.</p>
+        </div>
         <!--
         <section id="category">
           <div class="chargeable-status-container">
