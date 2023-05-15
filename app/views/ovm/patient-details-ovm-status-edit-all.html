@@ -380,11 +380,12 @@ Patient details
 
           <div class="nhsuk-form-group pds-edit-form-group">
 
-
-            <label class="nhsuk-label" for="pds-edit-first-name">
-              Passport number
-            </label>
-            <input class="nhsuk-input nhsuk-input--width-20" id="pds-edit-first-name" name="pdf-edit-first-name" type="text" value="123456">
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label" for="pds-edit-first-name">
+                Passport number
+              </label>
+              <input class="nhsuk-input nhsuk-input--width-20" id="pds-edit-first-name" name="pdf-edit-first-name" type="text" value="123456">
+            </div>
 
             <label class="nhsuk-label" for="pds-edit-middle-name">
               Country of issue
@@ -440,79 +441,90 @@ Patient details
           </div>
 
           <div class="nhsuk-form-group pds-edit-form-group">
-            <label class="nhsuk-label" for="select-prefix">
-              Home Office Evidence and Enquiry contacted
-            </label>
+
+
             <div class="nhsuk-u-padding-bottom-3"></div>
             <div class="nhsuk-form-group">
 
               <fieldset class="nhsuk-fieldset">
 
+                <div class="nhsuk-radios nhsuk-radios--conditional">
 
-                <div class="nhsuk-radios nhsuk-radios--inline">
+                <legend class="nhsuk-fieldset__legend nhsuk-label__strong">
+                  Home Office Evidence and Enquiry contacted
+                </legend>
+
+                <div class="nhsuk-radios nhsuk-radios">
 
                   <div class="nhsuk-radios__item">
-                    <input class="nhsuk-radios__input" id="yes" name="example-inline" type="radio" value="yes">
-                    <label class="nhsuk-label nhsuk-radios__label" for="example-inline-1">
+                    <input class="nhsuk-radios__input" id="ovm-contacted" name="ovm-contacted" type="radio" value="yes" aria-controls="conditional-contacted-1" aria-expanded="false" {{ checked("ovm-contacted", "yes") }}>
+                    <label class="nhsuk-label nhsuk-radios__label" for="ovm-contacted">
                       Yes
                     </label>
                   </div>
 
+                  <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-contacted-1">
+
+                    <div class="nhsuk-form-group">
+                      <label class="nhsuk-label" for="ovm-contacted-ref">
+                        Contacted reference
+                      </label>
+                      <input class="nhsuk-input nhsuk-input--width-20" id="ovm-contacted-ref" name="ovm-contacted-ref" type="text" value="">
+                    </div>
+
+                    <div class="nhsuk-form-group">
+                    <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
+
+                      <legend class="nhsuk-label" for="pds-edit-middle-name">
+                        Date contacted
+                      </legend>
+
+                      <div class="nhsuk-date-input" id="effective-date-name">
+                        <div class="nhsuk-date-input__item">
+                          <div class="nhsuk-form-group">
+                            <label class="nhsuk-label nhsuk-date-input__label" for="effective-date-name-day">
+                              Day
+                            </label>
+                            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="effective-date-name-day" name="effective-date-name-day" type="number" pattern="[0-9]*" value="">
+                          </div>
+                        </div>
+                        <div class="nhsuk-date-input__item">
+                          <div class="nhsuk-form-group">
+                            <label class="nhsuk-label nhsuk-date-input__label" for="effective-date-name-month">
+                              Month
+                            </label>
+                            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="effective-date-name-month" name="effective-date-name-month" type="number" pattern="[0-9]*" value="">
+                          </div>
+                        </div>
+                        <div class="nhsuk-date-input__item">
+                          <div class="nhsuk-form-group">
+                            <label class="nhsuk-label nhsuk-date-input__label" for="effective-date-name-year">
+                              Year
+                            </label>
+                            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="effective-date-name-year" name="effective-date-name-year" type="number" pattern="[0-9]*" value="">
+                          </div>
+                        </div>
+                      </div>
+                    </fieldset>
+                    </div>
+                  </div>
+
+
                   <div class="nhsuk-radios__item">
-                    <input class="nhsuk-radios__input" id="no" name="example-inline" type="radio" value="no">
-                    <label class="nhsuk-label nhsuk-radios__label" for="example-inline-2">
+                    <input class="nhsuk-radios__input" id="ovm-contacted-no" name="ovm-contacted" type="radio" value="no">
+                    <label class="nhsuk-label nhsuk-radios__label" for="ovm-contacted-no">
                       No
                     </label>
                   </div>
 
                 </div>
+                </div>
               </fieldset>
-
 
 
             </div>
 
-            <div class="reveal-details" id="reveal-details" style="display:none;">
 
-              <label class="nhsuk-label" for="pds-edit-first-name">
-                Contacted reference
-              </label>
-              <input class="nhsuk-input nhsuk-input--width-20" id="pds-edit-middle-name" name="pdf-edit-middle-name" type="text" value="">
-
-              <label class="nhsuk-label" for="pds-edit-middle-name">
-                Date contacted
-              </label>
-
-
-             <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
-              <div class="nhsuk-date-input" id="effective-date-name">
-                <div class="nhsuk-date-input__item">
-                  <div class="nhsuk-form-group">
-                    <label class="nhsuk-label nhsuk-date-input__label" for="effective-date-name-day">
-                      Day
-                    </label>
-                    <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="effective-date-name-day" name="effective-date-name-day" type="number" pattern="[0-9]*" value="">
-                  </div>
-                </div>
-                <div class="nhsuk-date-input__item">
-                  <div class="nhsuk-form-group">
-                    <label class="nhsuk-label nhsuk-date-input__label" for="effective-date-name-month">
-                      Month
-                    </label>
-                    <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="effective-date-name-month" name="effective-date-name-month" type="number" pattern="[0-9]*" value="">
-                  </div>
-                </div>
-                <div class="nhsuk-date-input__item">
-                  <div class="nhsuk-form-group">
-                    <label class="nhsuk-label nhsuk-date-input__label" for="effective-date-name-year">
-                      Year
-                    </label>
-                    <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="effective-date-name-year" name="effective-date-name-year" type="number" pattern="[0-9]*" value="">
-                  </div>
-                </div>
-              </div>
-              </fieldset>
-            </div>
 
 
           </div>
