@@ -92,7 +92,7 @@ Chargeable status
                     Date patient seen
                   </dt>
                   <dd class="nhsuk-summary-list__value">
-                    {{ patient['ovmDateSeen'][0] or '02' }}-{{ month or 'Aug' }}-{{ patient['ovmDateSeen'][2] or '2020' }}
+                    {s
                   </dd>
                 </div>
 
@@ -101,9 +101,8 @@ Chargeable status
                     Country of Nationality
                   </dt>
                   <dd class="nhsuk-summary-list__value">
-                    Jersey
+                    {{ patient['ovmNationality'] or 'Jersey' }}
                   </dd>
-
                 </div>
 
                 <div class="nhsuk-summary-list__row">
@@ -111,30 +110,28 @@ Chargeable status
                     Purpose of entry
                   </dt>
                   <dd class="nhsuk-summary-list__value">
-                    Study
+                    {{ patient['ovmPurposeEntry'] or 'Study' }}
                   </dd>
-
-
                 </div>
+
                 <div class="nhsuk-summary-list__row">
                   <dt class="nhsuk-summary-list__key">
                     Other purpose of entry
                   </dt>
                   <dd class="nhsuk-summary-list__value">
-                    None
+                    {{ patient['ovmPurposeEntryOther'] or 'None' }}
                   </dd>
-
-
                 </div>
+
                 <div class="nhsuk-summary-list__row">
                   <dt class="nhsuk-summary-list__key">
                     Date of entry
                   </dt>
                   <dd class="nhsuk-summary-list__value">
-                    01-Aug-2020
+                    {{ patient['ovmDateEntry'] or 'None' }}01-Aug-2020
                   </dd>
-
                 </div>
+
                 <div class="nhsuk-summary-list__row">
                   <dt class="nhsuk-summary-list__key">
                     Address line 1

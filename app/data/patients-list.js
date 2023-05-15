@@ -40,7 +40,11 @@ const patients = {
     dob: "27-Feb-2006",
     chargeablestatus: "chargeable",
     chargeablestatuscat: "Cat C: Charge exempt (EHIC/PRC/S2)",
-    ovmDateSeen: ['02','07','2020']
+    ovmDateSeen: ['02','07','2020'],
+    ovmNationality: "Jersey",
+    ovmPurposeEntry: "Study",
+    ovmPurposeEntryOther: 'None',
+    ovmDateEntry: ['01','07','2020']
 
   },
   4126104984: {

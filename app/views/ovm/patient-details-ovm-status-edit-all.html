@@ -156,52 +156,50 @@ Patient details
           <h2 class="nhsuk-heading-m" id="patient-details-usual-name">Edit patient data</h2>
         </div>
 
-        <div class="nhsuk-form-group">
+        <fieldset class="nhsuk-fieldset" role="group">
+          <legend class="nhsuk-fieldset__legend nhsuk-label--s">
+            Date patient seen
+          </legend>
 
-          <fieldset class="nhsuk-fieldset" role="group">
-            <legend class="nhsuk-fieldset__legend nhsuk-label--s">
-              Date patient seen
-            </legend>
+          <div class="nhsuk-hint" id="dob-errors-hint">
+            For example, 15 3 2016
+          </div>
 
-            <div class="nhsuk-hint" id="dob-errors-hint">
-              For example, 15 3 2016
-            </div>
-
-            <div class="nhsuk-date-input" id="effective-date-name">
-              <div class="nhsuk-date-input__item">
-                <div class="nhsuk-form-group">
-                  <label class="nhsuk-label nhsuk-date-input__label" for="effective-date-name-day">
-                    Day
-                  </label>
-                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
-                         id="effective-date-name-day" name="effective-date-name-day" pattern="[0-9]*" type="number"
-                         value="{{ patient['ovmDateSeen'][0] or '02' }}">
-                </div>
-              </div>
-              <div class="nhsuk-date-input__item">
-                <div class="nhsuk-form-group">
-                  <label class="nhsuk-label nhsuk-date-input__label" for="effective-date-name-month">
-                    Month
-                  </label>
-                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
-                         id="effective-date-name-month" name="effective-date-name-month" pattern="[0-9]*"
-                         type="number" value="{{ patient['ovmDateSeen'][1] or '07' }}">
-                </div>
-              </div>
-              <div class="nhsuk-date-input__item">
-                <div class="nhsuk-form-group">
-                  <label class="nhsuk-label nhsuk-date-input__label" for="effective-date-name-year">
-                    Year
-                  </label>
-                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4"
-                         id="effective-date-name-year" name="effective-date-name-year" pattern="[0-9]*"
-                         type="number" value="{{ patient['ovmDateSeen'][2] or '2020' }}">
-                </div>
+          <div class="nhsuk-date-input" id="effective-date-name">
+            <div class="nhsuk-date-input__item">
+              <div class="nhsuk-form-group">
+                <label class="nhsuk-label nhsuk-date-input__label" for="effective-date-name-day">
+                  Day
+                </label>
+                <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
+                       id="effective-date-name-day" name="effective-date-name-day" pattern="[0-9]*" type="number"
+                       value="{{ patient['ovmDateSeen'][0] or '02' }}">
               </div>
             </div>
+            <div class="nhsuk-date-input__item">
+              <div class="nhsuk-form-group">
+                <label class="nhsuk-label nhsuk-date-input__label" for="effective-date-name-month">
+                  Month
+                </label>
+                <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
+                       id="effective-date-name-month" name="effective-date-name-month" pattern="[0-9]*"
+                       type="number" value="{{ patient['ovmDateSeen'][1] or '07' }}">
+              </div>
+            </div>
+            <div class="nhsuk-date-input__item">
+              <div class="nhsuk-form-group">
+                <label class="nhsuk-label nhsuk-date-input__label" for="effective-date-name-year">
+                  Year
+                </label>
+                <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4"
+                       id="effective-date-name-year" name="effective-date-name-year" pattern="[0-9]*"
+                       type="number" value="{{ patient['ovmDateSeen'][2] or '2020' }}">
+              </div>
+            </div>
+          </div>
 
-          </fieldset>
-        </div>
+        </fieldset>
+
 
 
         <div class="nhsuk-form-group">
@@ -248,54 +246,50 @@ Patient details
           </select>
         </div>
 
-        <div class="nhsuk-form-group">
 
-          <label class="nhsuk-label nhsuk-label__strong" for="pds-edit-suffix">
+        <fieldset class="nhsuk-fieldset" role="group">
+          <legend class="nhsuk-fieldset__legend nhsuk-label--s">
             Date of entry
-          </label>
-          <span class="nhsuk-hint" id="example-hint">
-            The date on which the patient entered the UK on this visit
-          </span>
-          <span class="nhsuk-hint" id="example-hint">
+          </legend>
+
+          <div class="nhsuk-hint" id="dob-errors-hint">
             For example, 15 3 2016
-          </span>
-          <fieldset class="nhsuk-fieldset" role="group">
+          </div>
 
-
-            <div class="nhsuk-date-input" id="effective-date-name">
-              <div class="nhsuk-date-input__item">
-                <div class="nhsuk-form-group">
-                  <label class="nhsuk-label nhsuk-date-input__label" for="effective-date-name-day">
-                    Day
-                  </label>
-                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
-                         id="effective-date-name-day" name="effective-date-name-day" pattern="[0-9]*" type="number"
-                         value="01">
-                </div>
-              </div>
-              <div class="nhsuk-date-input__item">
-                <div class="nhsuk-form-group">
-                  <label class="nhsuk-label nhsuk-date-input__label" for="effective-date-name-month">
-                    Month
-                  </label>
-                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
-                         id="effective-date-name-month" name="effective-date-name-month" pattern="[0-9]*"
-                         type="number" value="08">
-                </div>
-              </div>
-              <div class="nhsuk-date-input__item">
-                <div class="nhsuk-form-group">
-                  <label class="nhsuk-label nhsuk-date-input__label" for="effective-date-name-year">
-                    Year
-                  </label>
-                  <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4"
-                         id="effective-date-name-year" name="effective-date-name-year" pattern="[0-9]*"
-                         type="number" value="2020">
-                </div>
+          <div class="nhsuk-date-input" id="effective-date-name">
+            <div class="nhsuk-date-input__item">
+              <div class="nhsuk-form-group">
+                <label class="nhsuk-label nhsuk-date-input__label" for="effective-date-name-day">
+                  Day
+                </label>
+                <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
+                       id="effective-date-name-day" name="effective-date-name-day" pattern="[0-9]*" type="number"
+                       value="01">
               </div>
             </div>
-          </fieldset>
-        </div>
+            <div class="nhsuk-date-input__item">
+              <div class="nhsuk-form-group">
+                <label class="nhsuk-label nhsuk-date-input__label" for="effective-date-name-month">
+                  Month
+                </label>
+                <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
+                       id="effective-date-name-month" name="effective-date-name-month" pattern="[0-9]*"
+                       type="number" value="08">
+              </div>
+            </div>
+            <div class="nhsuk-date-input__item">
+              <div class="nhsuk-form-group">
+                <label class="nhsuk-label nhsuk-date-input__label" for="effective-date-name-year">
+                  Year
+                </label>
+                <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4"
+                       id="effective-date-name-year" name="effective-date-name-year" pattern="[0-9]*"
+                       type="number" value="2020">
+              </div>
+            </div>
+          </div>
+        </fieldset>
+
 
 
           <fieldset class="nhsuk-fieldset">
