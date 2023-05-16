@@ -629,40 +629,37 @@ Overseas visitor manager record
 
           <div class="scra-card-content">
             <div class="nhsuk-form-group">
-              <label class="nhsuk-label" for="pds-edit-last-name">
+              <label class="nhsuk-label" for="ovmEHICCountryIssue">
                 EHIC Country of issue
               </label>
-              <input class="nhsuk-input nhsuk-input--width-20" id="pds-edit-last-name" name="pdf-edit-last-name" type="text" value="Jersey">
+              <input class="nhsuk-input nhsuk-input--width-20" id="ovmEHICCountryIssue" name="ovmEHICCountryIssue" type="text" value="{{ patient['ovmEHICCountryIssue'] or 'Jersey' }}">
             </div>
           </div>
 
           <div class="scra-card-content">
             <div class="nhsuk-form-group">
-              <label class="nhsuk-label" for="pds-edit-last-name">
+              <label class="nhsuk-label" for="ovmEHICPersonalId">
                 6. EHIC Personal Id No
               </label>
-              <input class="nhsuk-input nhsuk-input--width-20" id="pds-edit-last-name" name="pdf-edit-last-name" type="text"
-                     value="123456">
+              <input class="nhsuk-input nhsuk-input--width-20" id="ovmEHICPersonalId" name="ovmEHICPersonalId" type="text" value="{{ patient['ovmEHICPersonalId'] or '123456' }}">
             </div>
           </div>
 
           <div class="scra-card-content">
             <div class="nhsuk-form-group">
-              <label class="nhsuk-label" for="pds-edit-last-name">
+              <label class="nhsuk-label" for="ovmEHICInstitutionId">
                 7. EHIC Institution Id
               </label>
-              <input class="nhsuk-input nhsuk-input--width-20" id="pds-edit-last-name" name="pdf-edit-last-name" type="text"
-                     value="123456">
+              <input class="nhsuk-input nhsuk-input--width-20" id="ovmEHICInstitutionId" name="ovmEHICInstitutionId" type="text" value="{{ patient['ovmEHICInstitutionId'] or '123456' }}">
             </div>
           </div>
 
           <div class="scra-card-content">
             <div class="nhsuk-form-group">
-              <label class="nhsuk-label" for="pds-edit-last-name">
+              <label class="nhsuk-label" for="ovmEHICCardNum">
                 8. EHIC card number
               </label>
-              <input class="nhsuk-input nhsuk-input--width-20" id="pds-edit-last-name" name="pdf-edit-last-name" type="text"
-                     value="123456">
+              <input class="nhsuk-input nhsuk-input--width-20" id="ovmEHICCardNum" name="ovmEHICCardNum" type="text" value="{{ patient['ovmEHICCardNum'] or '123456' }}">
             </div>
           </div>
 
@@ -671,7 +668,7 @@ Overseas visitor manager record
               9. EHIC expiry date
             </label>
             <fieldset class="nhsuk-fieldset" role="group">
-              <div class="nhsuk-date-input" id="effective-date-name">
+              <div class="nhsuk-date-input">
                 <div class="nhsuk-date-input__item">
                   <div class="nhsuk-form-group">
                     <label class="nhsuk-label nhsuk-date-input__label" for="effective-date-name-day">
