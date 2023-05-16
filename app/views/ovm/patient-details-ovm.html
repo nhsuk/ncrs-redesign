@@ -67,7 +67,7 @@ Chargeable status
         <section id="category">
           <div class="chargeable-status-container">
             <span class="chargeable-status-tag">
-              Cat C: Charge exempt (EHIC/PRC/S2)
+              {{ patient.chargeablestatuscat or 'Cat C: Charge exempt (EHIC/PRC/S2)' }}
             </span>
             <p class="pds-edit-link">
               <a href="ovm-edit-chargeable-status">Edit</a>
@@ -82,7 +82,7 @@ Chargeable status
           <div class="scra-card">
             <div class="scra-card-header">
               <h3 class="nhsuk-heading-l" id="patient-details-names">Patient data</h3>
-              <p id="pds-edit-patient-data" class="pds-edit-link"><a href="patient-details-ovm-status-edit-patient_data">Edit</a></p>
+              <p id="pds-edit-patient-data" class="pds-edit-link"><a href="patient-details-ovm-status-edit-all#patientdata">Edit</a></p>
             </div>
             <div class="scra-card-content">
               <dl class="nhsuk-summary-list">
@@ -92,7 +92,7 @@ Chargeable status
                     Date patient seen
                   </dt>
                   <dd class="nhsuk-summary-list__value">
-                    02-Aug-2020
+                    {s
                   </dd>
                 </div>
 
@@ -101,9 +101,8 @@ Chargeable status
                     Country of Nationality
                   </dt>
                   <dd class="nhsuk-summary-list__value">
-                    Jersey
+                    {{ patient['ovmNationality'] or 'Jersey' }}
                   </dd>
-
                 </div>
 
                 <div class="nhsuk-summary-list__row">
@@ -111,30 +110,28 @@ Chargeable status
                     Purpose of entry
                   </dt>
                   <dd class="nhsuk-summary-list__value">
-                    Study
+                    {{ patient['ovmPurposeEntry'] or 'Study' }}
                   </dd>
-
-
                 </div>
+
                 <div class="nhsuk-summary-list__row">
                   <dt class="nhsuk-summary-list__key">
                     Other purpose of entry
                   </dt>
                   <dd class="nhsuk-summary-list__value">
-                    None
+                    {{ patient['ovmPurposeEntryOther'] or 'None' }}
                   </dd>
-
-
                 </div>
+
                 <div class="nhsuk-summary-list__row">
                   <dt class="nhsuk-summary-list__key">
                     Date of entry
                   </dt>
                   <dd class="nhsuk-summary-list__value">
-                    01-Aug-2020
+                    {{ patient['ovmDateEntry'] or 'None' }}01-Aug-2020
                   </dd>
-
                 </div>
+
                 <div class="nhsuk-summary-list__row">
                   <dt class="nhsuk-summary-list__key">
                     Address line 1
