@@ -92,7 +92,7 @@ Chargeable status
                     Date patient seen
                   </dt>
                   <dd class="nhsuk-summary-list__value">
-                    {s
+                    {{ patient['ovmDateSeen'][0] or '02' }}-{{ month or 'Aug' }}-{{ patient['ovmDateSeen'][2] or '2020' }}
                   </dd>
                 </div>
 
@@ -128,7 +128,7 @@ Chargeable status
                     Date of entry
                   </dt>
                   <dd class="nhsuk-summary-list__value">
-                    {{ patient['ovmDateEntry'] or 'None' }}01-Aug-2020
+                    {{ patient['ovmDateEntry'] or '01-Aug-2020' }}
                   </dd>
                 </div>
 
@@ -137,7 +137,7 @@ Chargeable status
                     Address line 1
                   </dt>
                   <dd class="nhsuk-summary-list__value">
-                    45 Southway
+                    {{ patient['ovmAddress1'] or '45 Southway' }}
                   </dd>
 
 
@@ -147,7 +147,7 @@ Chargeable status
                     Address line 2
                   </dt>
                   <dd class="nhsuk-summary-list__value">
-                    Manor Park
+                    {{ patient['ovmAddress2'] or 'Manor Park' }}
                   </dd>
 
                 </div>
@@ -156,7 +156,7 @@ Chargeable status
                     Address line 3
                   </dt>
                   <dd class="nhsuk-summary-list__value">
-
+                    {{ patient['ovmAddress3'] or '' }}
                   </dd>
 
 
@@ -166,7 +166,7 @@ Chargeable status
                     Address line 4
                   </dt>
                   <dd class="nhsuk-summary-list__value">
-
+                    {{ patient['ovmAddress4'] or '' }}
                   </dd>
 
 
@@ -176,7 +176,7 @@ Chargeable status
                     Home country
                   </dt>
                   <dd class="nhsuk-summary-list__value">
-                    Antigua and Barbuda
+                    {{ patient['ovmHomeCountry'] or 'Antigua and Barbuda' }}
                   </dd>
 
                 </div>
@@ -201,7 +201,7 @@ Chargeable status
                     Passport Number
                   </dt>
                   <dd class="nhsuk-summary-list__value">
-                    123456
+                    {{ patient['ovmPassportNum'] or '485 777 3456' }}
                   </dd>
 
                 </div>
@@ -210,7 +210,7 @@ Chargeable status
                     Country of Issue
                   </dt>
                   <dd class="nhsuk-summary-list__value">
-                    Antigua and Barbuda
+                    {{ patient['ovmPassportCountry'] or 'Antigua and Barbuda' }}
                   </dd>
 
                 </div>
@@ -219,7 +219,7 @@ Chargeable status
                     Passport expiry date
                   </dt>
                   <dd class="nhsuk-summary-list__value">
-                    02-Aug-2020
+                    {{ patient['ovmPassportExp'][0] or '02' }}-{{ ovmPassportExpMonth or 'Aug' }}-{{ patient['ovmPassportExp'][2] or '2020' }}
                   </dd>
 
                 </div>
