@@ -1,36 +1,34 @@
 {% extends 'layouts/layout-application.html' %}
 
-
 {% block pageTitle %}
-Chargeable status
+Overseas visitor manager status
 {% endblock %}
 
-{% block beforeContent %} {% include "./includes/banner.html" %}
+{% block beforeContent %}
 
+  {% include "./includes/banner.html" %}
 
+  <div class="nhsuk-full-width-container">
+    <div class='scra-bordered-tabs-container'>
+      <div class="nhsuk-width-container-fluid">
+        <ul class="scra-bordered-tabs">
+          <li class="scra-bordered-tabs-item scra-bordered-tabs-item-active">
+            <a class="scra-bordered-tabs-link" href="patient-overview">Overview</a>
+          </li>
+          <li class="scra-bordered-tabs-item">
+            <a class="scra-bordered-tabs-link" href="patient-demographics">Patient</a>
+          </li>
+          <li class="scra-bordered-tabs-item">
+            <a data-target="#myModal" data-toggle="modal" class="open_modal" href="#myModal">Clinical</a>
+          </li>
 
-<div class="nhsuk-full-width-container">
-  <div class='scra-bordered-tabs-container'>
-    <div class="nhsuk-width-container-fluid">
-      <ul class="scra-bordered-tabs">
-        <li class="scra-bordered-tabs-item scra-bordered-tabs-item-active">
-          <a class="scra-bordered-tabs-link" href="patient-overview">Overview</a>
-        </li>
-        <li class="scra-bordered-tabs-item">
-          <a class="scra-bordered-tabs-link" href="patient-demographics">Patient</a>
-        </li>
-        <li class="scra-bordered-tabs-item">
-          <a data-target="#myModal" data-toggle="modal" class="open_modal" href="#myModal">Clinical</a>
-        </li>
-
-      </ul>
+        </ul>
+      </div>
     </div>
   </div>
-</div>
-
-
 
 {% endblock %}
+
 
 {% block content %}
 
@@ -50,7 +48,7 @@ Chargeable status
 
       <div class="nhsuk-u-reading-widthx">
 
-        <h2 id="ovms">Overseas visitor manager status</h2>
+        <h1 class="nhsuk-heading-l">Overseas visitor manager status</h1>
 
         <nav class="nhsuk-contents-list" role="navigation" aria-label="Pages in this guide">
           <h2 class="nhsuk-u-visually-hidden">Contents</h2>
@@ -67,10 +65,10 @@ Chargeable status
         <section id="category">
           <div class="chargeable-status-container">
             <span class="chargeable-status-tag">
-              {{ patient.chargeablestatuscat or 'Cat C: Charge exempt (EHIC/PRC/S2)' }}
+              {{ patient.ovmChargeablestatuscat or 'Cat C: Charge exempt (EHIC/PRC/S2)' }}
             </span>
             <p class="pds-edit-link">
-              <a href="ovm-edit-chargeable-status">Edit</a>
+              <a href="patient-details-ovm-status-edit-all#chargeablestatus">Edit</a>
             </p>
           </div>
 
@@ -81,7 +79,7 @@ Chargeable status
 
           <div class="scra-card">
             <div class="scra-card-header">
-              <h3 class="nhsuk-heading-l" id="patient-details-names">Patient data</h3>
+              <h2 class="nhsuk-heading-l">Patient data</h2>
               <p id="pds-edit-patient-data" class="pds-edit-link"><a href="patient-details-ovm-status-edit-all#patientdata">Edit</a></p>
             </div>
             <div class="scra-card-content">
@@ -139,9 +137,8 @@ Chargeable status
                   <dd class="nhsuk-summary-list__value">
                     {{ patient['ovmAddress1'] or '45 Southway' }}
                   </dd>
-
-
                 </div>
+
                 <div class="nhsuk-summary-list__row">
                   <dt class="nhsuk-summary-list__key">
                     Address line 2
@@ -149,8 +146,8 @@ Chargeable status
                   <dd class="nhsuk-summary-list__value">
                     {{ patient['ovmAddress2'] or 'Manor Park' }}
                   </dd>
-
                 </div>
+
                 <div class="nhsuk-summary-list__row">
                   <dt class="nhsuk-summary-list__key">
                     Address line 3
@@ -158,9 +155,8 @@ Chargeable status
                   <dd class="nhsuk-summary-list__value">
                     {{ patient['ovmAddress3'] or '' }}
                   </dd>
-
-
                 </div>
+
                 <div class="nhsuk-summary-list__row">
                   <dt class="nhsuk-summary-list__key">
                     Address line 4
@@ -168,9 +164,8 @@ Chargeable status
                   <dd class="nhsuk-summary-list__value">
                     {{ patient['ovmAddress4'] or '' }}
                   </dd>
-
-
                 </div>
+
                 <div class="nhsuk-summary-list__row">
                   <dt class="nhsuk-summary-list__key">
                     Home country
@@ -178,7 +173,6 @@ Chargeable status
                   <dd class="nhsuk-summary-list__value">
                     {{ patient['ovmHomeCountry'] or 'Antigua and Barbuda' }}
                   </dd>
-
                 </div>
 
               </dl>
@@ -190,12 +184,14 @@ Chargeable status
         <section id="additional-details">
           <div class="scra-card">
             <div class="scra-card-header">
-              <h3 class="nhsuk-heading-l" id="patient-details-names">Additional data</h3>
-              <p id="pds-edit-additional-data" class="pds-edit-link"><a href="patient-details-ovm-status-edit-additional_details">Edit</a></p>
+              <h2 class="nhsuk-heading-l">Additional data</h2>
+              <p id="pds-edit-additional-data" class="pds-edit-link"><a href="patient-details-ovm-status-edit-all#additionaldata">Edit</a></p>
             </div>
+
             <div class="scra-card-content">
-              <h4 class="nhsuk-heading-m">Passport</h4>
+              <h3 class="nhsuk-heading-m">Passport</h3>
               <dl class="nhsuk-summary-list">
+
                 <div class="nhsuk-summary-list__row">
                   <dt class="nhsuk-summary-list__key">
                     Passport Number
@@ -203,8 +199,8 @@ Chargeable status
                   <dd class="nhsuk-summary-list__value">
                     {{ patient['ovmPassportNum'] or '485 777 3456' }}
                   </dd>
-
                 </div>
+
                 <div class="nhsuk-summary-list__row">
                   <dt class="nhsuk-summary-list__key">
                     Country of Issue
@@ -212,8 +208,8 @@ Chargeable status
                   <dd class="nhsuk-summary-list__value">
                     {{ patient['ovmPassportCountry'] or 'Antigua and Barbuda' }}
                   </dd>
-
                 </div>
+
                 <div class="nhsuk-summary-list__row">
                   <dt class="nhsuk-summary-list__key">
                     Passport expiry date
@@ -221,41 +217,43 @@ Chargeable status
                   <dd class="nhsuk-summary-list__value">
                     {{ patient['ovmPassportExp'][0] or '02' }}-{{ ovmPassportExpMonth or 'Aug' }}-{{ patient['ovmPassportExp'][2] or '2020' }}
                   </dd>
-
                 </div>
+
               </dl>
 
-              <h4 class="nhsuk-heading-m">Home Office contact</h4>
+              <h3 class="nhsuk-heading-m">Home Office contact</h3>
+
               <dl class="nhsuk-summary-list">
                 <div class="nhsuk-summary-list__row">
                   <dt class="nhsuk-summary-list__key">
-                    Home Office Evidence and Enquiry contacted
+                    Home Office Evidence and Enquiry contacted?
                   </dt>
                   <dd class="nhsuk-summary-list__value">
-
+                    {{ patient['ovmHOContacted'] or 'No' }}
                   </dd>
-
                 </div>
-                <div class="nhsuk-summary-list__row">
-                  <dt class="nhsuk-summary-list__key">
-                    Contacted reference
-                  </dt>
-                  <dd class="nhsuk-summary-list__value">
 
-                  </dd>
+                {% if patient['ovmHOContacted'] === 'Yes' %}
+                  <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                      Contacted reference
+                    </dt>
+                    <dd class="nhsuk-summary-list__value">
+                      {{ patient['ovmHOContactedRef'] or 'FI7328329' }}
+                    </dd>
+                  </div>
 
-                </div>
-                <div class="nhsuk-summary-list__row">
-                  <dt class="nhsuk-summary-list__key">
-                    Date contacted
-                  </dt>
-                  <dd class="nhsuk-summary-list__value">
+                  <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                      Date contacted
+                    </dt>
+                    <dd class="nhsuk-summary-list__value">
+                      {{ patient['ovmHOContactedDate'][0] or '02' }}-{{ patient['ovmHOContactedDate'][1] or '07' }}-{{ patient['ovmHOContactedDate'][2] or '2020' }}
+                    </dd>
+                  </div>
+                {% endif %}
 
-                  </dd>
-
-                </div>
               </dl>
-
             </div>
           </div>
         </section>
@@ -263,166 +261,170 @@ Chargeable status
         <section id="entitlement-evidence">
           <div class="scra-card">
             <div class="scra-card-header">
-              <h3 class="nhsuk-heading-l" id="patient-details-names">Entitlement evidence</h3>
-              <p id="pds-edit-entitlement-evidence" class="pds-edit-link"><a href="patient-details-ovm-status-edit-entitlement_evidence">Edit</a></p>
+              <h2 class="nhsuk-heading-l" id="patient-details-names">Entitlement evidence</h2>
+              <p id="pds-edit-entitlement-evidence" class="pds-edit-link"><a href="patient-details-ovm-status-edit-all#entitlement">Edit</a></p>
             </div>
             <div class="scra-card-content">
-              <h4 class="nhsuk-heading-m">Electronic Health Insurance Card</h4>
+              <h3 class="nhsuk-heading-m">Electronic Health Insurance Card</h3>
               <dl class="nhsuk-summary-list">
                 <div class="nhsuk-summary-list__row">
                   <dt class="nhsuk-summary-list__key">
                     EHIC Country of issue
                   </dt>
                   <dd class="nhsuk-summary-list__value">
-                    Jersey
+                    {{ patient['ovmEHICCountryIssue'] or 'Jersey' }}
                   </dd>
-
                 </div>
+
                 <div class="nhsuk-summary-list__row">
                   <dt class="nhsuk-summary-list__key">
                     6. EHIC Personal Id No
                   </dt>
                   <dd class="nhsuk-summary-list__value">
-                    123456
+                    {{ patient['ovmEHICPersonalId'] or '123456' }}
                   </dd>
-
                 </div>
+
                 <div class="nhsuk-summary-list__row">
                   <dt class="nhsuk-summary-list__key">
                     7. EHIC Institution Id
                   </dt>
                   <dd class="nhsuk-summary-list__value">
-                    123456
+                    {{ patient['ovmEHICInstitutionId'] or '123456' }}
                   </dd>
-
                 </div>
+
                 <div class="nhsuk-summary-list__row">
                   <dt class="nhsuk-summary-list__key">
                     8. EHIC card number
                   </dt>
                   <dd class="nhsuk-summary-list__value">
-                    123456
+                    {{ patient['ovmEHICCardNum'] or '123456' }}
                   </dd>
-
                 </div>
+
                 <div class="nhsuk-summary-list__row">
                   <dt class="nhsuk-summary-list__key">
                     9. EHIC expiry date
                   </dt>
                   <dd class="nhsuk-summary-list__value">
-                    02-Aug-2020
+                    {{ patient['ovmEHICExpDate'][0] or '02' }}-{{ patient['ovmEHICExpDate'][1] or '07' }}-{{ patient['ovmEHICExpDate'][2] or '2020' }}
                   </dd>
-
                 </div>
                 
               </dl>
 
+              <h3 class="nhsuk-heading-m">Provisional Replacement Certificate</h3>
 
-              <h4 class="nhsuk-heading-m">Provisional Replacement Certificate</h4>
               <dl class="nhsuk-summary-list">
                 <div class="nhsuk-summary-list__row">
                   <dt class="nhsuk-summary-list__key">
                     2. PRC Country of issue
                   </dt>
                   <dd class="nhsuk-summary-list__value">
-                    Jersey
+                    {{ patient['ovmPRCCountryIssue'] or 'Jersey' }}
                   </dd>
-
                 </div>
+
                 <div class="nhsuk-summary-list__row">
                   <dt class="nhsuk-summary-list__key">
                     6. PRC Personal Id No
                   </dt>
                   <dd class="nhsuk-summary-list__value">
-                    123456
+                    {{ patient['ovmPRCPersonalId'] or '123456' }}
                   </dd>
-
                 </div>
+
                 <div class="nhsuk-summary-list__row">
                   <dt class="nhsuk-summary-list__key">
                     7. PRC Institution Id
                   </dt>
                   <dd class="nhsuk-summary-list__value">
-                    123456
+                    {{ patient['ovmPRCInstitutionId'] or '123456' }}
                   </dd>
-
                 </div>
+
                 <div class="nhsuk-summary-list__row">
                   <dt class="nhsuk-summary-list__key">
                     8. PRC EHIC card number
                   </dt>
                   <dd class="nhsuk-summary-list__value">
-                    123456
+                    {{ patient['ovmPRCCardNum'] or '123456' }}
                   </dd>
-
                 </div>
+
                 <div class="nhsuk-summary-list__row">
                   <dt class="nhsuk-summary-list__key">
                     9. PRC EHIC expiry date
                   </dt>
                   <dd class="nhsuk-summary-list__value">
-                    02-Aug-2020
+                    {{ patient['ovmPRCExpDate'][0] or '02' }}-{{ patient['ovmPRCExpDate'][1] or '07' }}-{{ patient['ovmPRCExpDate'][2] or '2020' }}
                   </dd>
-
                 </div>
+
                 <div class="nhsuk-summary-list__row">
                   <dt class="nhsuk-summary-list__key">
                     a. PRC valid from date
                   </dt>
                   <dd class="nhsuk-summary-list__value">
-                    02-Aug-2020
+                    {{ patient['ovmPRCValidFromDate'][0] or '02' }}-{{ patient['ovmPRCValidFromDate'][1] or '07' }}-{{ patient['ovmPRCValidFromDate'][2] or '2020' }}
                   </dd>
-
                 </div>
+
                 <div class="nhsuk-summary-list__row">
                   <dt class="nhsuk-summary-list__key">
                     b. PRC valid to date
                   </dt>
                   <dd class="nhsuk-summary-list__value">
-                    02-Aug-2020
+                    {{ patient['ovmPRCValidToDate'][0] or '02' }}-{{ patient['ovmPRCValidToDate'][1] or '07' }}-{{ patient['ovmPRCValidToDate'][2] or '2020' }}
                   </dd>
-
                 </div>
+
               </dl>
 
-              <h4 class="nhsuk-heading-m">S1 Registration for Health Care cover</h4>
+              <h3 class="nhsuk-heading-m">S1 Registration for Health Care cover</h3>
+
               <dl class="nhsuk-summary-list">
                 <div class="nhsuk-summary-list__row">
                   <dt class="nhsuk-summary-list__key">
                     S1 Status
                   </dt>
                   <dd class="nhsuk-summary-list__value">
-                    No S1 confirmed by patient
+                    {{ patient['ovmS1status'] or 'No S1 confirmed by patient' }}
                   </dd>
                 </div>
               </dl>
 
-              <h4 class="nhsuk-heading-m">S2 Entitlement to Scheduled Treatment</h4>
+              <h3 class="nhsuk-heading-m">S2 Entitlement to Scheduled Treatment</h3>
+
               <dl class="nhsuk-summary-list">
                 <div class="nhsuk-summary-list__row">
                   <dt class="nhsuk-summary-list__key">
                     S2 country of issue
                   </dt>
                   <dd class="nhsuk-summary-list__value">
-                    Andorra
+                    {{ patient['ovmS2CountryIssue'] or 'Andorra' }}
                   </dd>
                 </div>
+
                 <div class="nhsuk-summary-list__row">
                   <dt class="nhsuk-summary-list__key">
                     S2 valid from
                   </dt>
                   <dd class="nhsuk-summary-list__value">
-                    02-Aug-2020
+                    {{ patient['ovmS2ValidFromDate'][0] or '02' }}-{{ patient['ovmS2ValidFromDate'][1] or '07' }}-{{ patient['ovmS2ValidFromDate'][2] or '2020' }}
                   </dd>
                 </div>
+
                 <div class="nhsuk-summary-list__row">
                   <dt class="nhsuk-summary-list__key">
                     S2 valid to
                   </dt>
                   <dd class="nhsuk-summary-list__value">
-                    02-Aug-2026
+                    {{ patient['ovmS2ValidToDate'][0] or '02' }}-{{ patient['ovmS2ValidToDate'][1] or '07' }}-{{ patient['ovmS2ValidToDate'][2] or '2020' }}
                   </dd>
                 </div>
+
               </dl>
             </div>
           </div>
@@ -431,8 +433,9 @@ Chargeable status
         <section>
           <a class="nhsuk-button nhsuk-button--red" href="confirm-delete-ovm">Delete OVM record</a>
         </section>
-{#
-        <section id="ovm-last-edit" class="nhsuk-u-margin-top-8">
+
+
+        {# <section id="ovm-last-edit" class="nhsuk-u-margin-top-8">
           <div class="scra-card">
             <div class="scra-card-header">
               <h3 class="nhsuk-heading-l" id="ovm-last-edit-name">Last edited by</h3>
@@ -478,6 +481,7 @@ Chargeable status
             <div class="scra-card-header">
               <h3 class="nhsuk-heading-l" id="ovm-historical-edits-name">Previous updates</h3>
             </div>
+
             <div class="scra-card-content">
               <dl class="nhsuk-summary-list nhsuk-u-margin-bottom-0">
                 <div class="nhsuk-summary-list__row">
@@ -572,6 +576,7 @@ Chargeable status
           <div class="scra-card nhsuk-u-margin-bottom-0 nhsuk-u-padding-bottom-0" style="border-bottom: 4px solid #005eb8;"">
             <div class="scra-card-content">
               <dl class="nhsuk-summary-list nhsuk-u-margin-bottom-0">
+
                 <div class="nhsuk-summary-list__row">
                   <dt class="nhsuk-summary-list__key">
                     User
@@ -579,8 +584,8 @@ Chargeable status
                   <dd class="nhsuk-summary-list__value">
                     Rick Morales
                   </dd>
-
                 </div>
+
                 <div class="nhsuk-summary-list__row">
                   <dt class="nhsuk-summary-list__key">
                     Organisation
@@ -588,8 +593,8 @@ Chargeable status
                   <dd class="nhsuk-summary-list__value">
                     NELPCT out of hours
                   </dd>
-
                 </div>
+
                 <div class="nhsuk-summary-list__row">
                   <dt class="nhsuk-summary-list__key">
                     Date updated
@@ -597,8 +602,8 @@ Chargeable status
                   <dd class="nhsuk-summary-list__value">
                     12-Sep-2022 12:45
                   </dd>
-
                 </div>
+
               </dl>
             </div>
 
@@ -819,49 +824,4 @@ Chargeable status
 
 </div>
 
-
 {% endblock %}
-
-{%block pageScripts%}
-
-<html>
-
-
-<head>
-  <script>
-    var observer = new IntersectionObserver(function(entries) {
-      // no intersection with screen
-      if (entries[0].intersectionRatio === 0)
-        document.querySelector("myheader").classList.add("nav-container-sticky");
-      // fully intersects with screen
-      else if (entries[0].intersectionRatio === 1)
-        document.querySelector("myheader").classList.remove("nav-container-sticky");
-    }, {
-      threshold: [0, 1]
-    });
-
-    observer.observe(document.querySelector("#nav-container-top"));
-
-
-
-    document.getElementById("gethistoric").onclick = function() {
-      if (document.getElementById("hidethis").style.display == 'none') {
-        document.getElementById("hidethis").style.display =
-          'block'; // set to table-row instead of an empty string
-      } else {
-        document.getElementById("hidethis").style.display = 'none';
-      }
-    }
-  </script>
-
-
-</head>
-
-<<head>
-
-  </head>
-
-
-
-
-  {% endblock %}

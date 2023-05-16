@@ -1,4 +1,4 @@
-{% if patient.chargeablestatus === 'chargeable' %}
+{% if patient.ovmChargeablestatus === 'chargeable' %}
 
 {# red banner #}
 <div class="nhsuk-banner nhsuk-banner--chargeable">
@@ -19,7 +19,7 @@
   </div>
 </div>
 
-{% elif patient.chargeablestatus === 'maybe' %}
+{% elif patient.ovmChargeablestatus === 'maybe' %}
 
 {# orange banner #}
 <div class="nhsuk-banner nhsuk-banner--maybe">
