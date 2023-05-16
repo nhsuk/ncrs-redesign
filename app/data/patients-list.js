@@ -44,7 +44,7 @@ const patients = {
     ovmNationality: "Jersey",
     ovmPurposeEntry: "Study",
     ovmPurposeEntryOther: 'None',
-    ovmDateEntry: ['01','07','2020']
+    ovmDateEntry: ['01','07','2020'],
     ovmAddress1: '45 Southway',
     ovmAddress2: 'Manor Park',
     ovmAddress3: '',
@@ -52,8 +52,7 @@ const patients = {
     ovmHomeCountry: 'Antigua and Barbuda',
     ovmPassportNum: '485 777 3456',
     ovmPassportCountry: 'Antigua and Barbuda',
-    ovmPassportExp: ['02','07','2020'],
-
+    ovmPassportExp: ['02','07','2020']
   },
   4126104984: {
     firstName: "Justina",
