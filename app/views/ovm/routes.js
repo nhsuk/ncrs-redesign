@@ -75,4 +75,12 @@ module.exports = (router) => {
     res.locals.returnedPatientsList = returnedPatientsList;
     next();
   });
+
+  router.post("/ovm/patient-details-ovm-status-edit-all-post", function (req, res) {
+    const nhsNumber = req.body["nhs-number"];
+
+    res.redirect(`/ovm/confirm-changes-all-changes`);
+  });
+
+
 };
