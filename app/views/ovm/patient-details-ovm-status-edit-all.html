@@ -41,7 +41,7 @@ Overseas visitor manager record
 
     <div class="nhsuk-grid-column-three-quarters">
 
-      <form action="confirm-changes-entitlement" method="post">
+      <form action="patient-details-ovm-status-edit-all-post" method="post">
 
         <a id="chargeablestatus"></a>
 
@@ -65,78 +65,78 @@ Overseas visitor manager record
                   <div class="nhsuk-radios">
 
                     <div class="nhsuk-radios__item">
-                      <input class="nhsuk-radios__input" id="chargeablestatuscat-a" name="chargeablestatuscat" type="radio" value="Cat A: Charge exempt (EHIC/PRC/S2)" aria-describedby="chargeablestatuscat-a-hint" {% if patient.ovmChargeablestatuscat === "Cat A" %}checked{% endif %}>
-                      <label class="nhsuk-label nhsuk-radios__label" for="chargeablestatuscat-a">
+                      <input class="nhsuk-radios__input" id="ovmChargeablestatuscat-a" name="ovmChargeablestatuscat" type="radio" value="Cat A" aria-describedby="ovmChargeablestatuscat-a-hint" {% if patient.ovmChargeablestatuscat === "Cat A" %}checked{% endif %}>
+                      <label class="nhsuk-label nhsuk-radios__label" for="ovmChargeablestatuscat-a">
                         Cat A
                       </label>
-                      <span class="nhsuk-hint nhsuk-radios__hint" id="chargeablestatuscat-a-hint">
+                      <span class="nhsuk-hint nhsuk-radios__hint" id="ovmChargeablestatuscat-a-hint">
                         Ordinarily a resident in the UK (according to the domestic Charging Regulations)
                       </span>
                     </div>
 
                     <div class="nhsuk-radios__item">
-                      <input class="nhsuk-radios__input" id="chargeablestatuscat-b" name="chargeablestatuscat" type="radio" value="Cat B" aria-describedby="chargeablestatuscat-b-hint" {% if patient.ovmChargeablestatuscat === "Cat B" %}checked{% endif %}>
-                      <label class="nhsuk-label nhsuk-radios__label" for="chargeablestatuscat-b">
+                      <input class="nhsuk-radios__input" id="ovmChargeablestatuscat-b" name="ovmChargeablestatuscat" type="radio" value="Cat B" aria-describedby="ovmChargeablestatuscat-b-hint" {% if patient.ovmChargeablestatuscat === "Cat B" %}checked{% endif %}>
+                      <label class="nhsuk-label nhsuk-radios__label" for="ovmChargeablestatuscat-b">
                         Cat B
                       </label>
-                      <span class="nhsuk-hint nhsuk-radios__hint" id="chargeablestatuscat-b-hint">
+                      <span class="nhsuk-hint nhsuk-radios__hint" id="ovmChargeablestatuscat-b-hint">
                         Resident in the UK, in possession of a valid visa AND (surcharge paid OR exempt)
                       </span>
                     </div>
 
                     <div class="nhsuk-radios__item">
-                      <input class="nhsuk-radios__input" id="chargeablestatuscat-c" name="chargeablestatuscat" type="radio" value="Cat C" aria-describedby="chargeablestatuscat-c-hint" {% if patient.ovmChargeablestatuscat === "Cat C: Charge exempt (EHIC/PRC/S2)" %}checked{% endif %}>
-                      <label class="nhsuk-label nhsuk-radios__label" for="chargeablestatuscat-c">
+                      <input class="nhsuk-radios__input" id="ovmChargeablestatuscat-c" name="ovmChargeablestatuscat" type="radio" value="Cat C: Charge exempt (EHIC/PRC/S2)" aria-describedby="ovmChargeablestatuscat-c-hint" {% if patient.ovmChargeablestatuscat === "Cat C: Charge exempt (EHIC/PRC/S2)" %}checked{% endif %}>
+                      <label class="nhsuk-label nhsuk-radios__label" for="ovmChargeablestatuscat-c">
                         Cat C
                       </label>
-                      <span class="nhsuk-hint nhsuk-radios__hint" id="chargeablestatuscat-c-hint">
+                      <span class="nhsuk-hint nhsuk-radios__hint" id="ovmChargeablestatuscat-c-hint">
                         Ordinarily resident in another EEA country AND (EHIC/PRC/S2 OR exempt)
                       </span>
                     </div>
 
                     <div class="nhsuk-radios__item">
-                      <input class="nhsuk-radios__input" id="chargeablestatuscat-d" name="chargeablestatuscat" type="radio" value="Cat D" aria-describedby="chargeablestatuscat-d-hint" {% if patient.ovmChargeablestatuscat === "Cat D" %}checked{% endif %}>
-                      <label class="nhsuk-label nhsuk-radios__label" for="chargeablestatuscat-d">
+                      <input class="nhsuk-radios__input" id="ovmChargeablestatuscat-d" name="ovmChargeablestatuscat" type="radio" value="Cat D" aria-describedby="ovmChargeablestatuscat-d-hint" {% if patient.ovmChargeablestatuscat === "Cat D" %}checked{% endif %}>
+                      <label class="nhsuk-label nhsuk-radios__label" for="ovmChargeablestatuscat-d">
                         Cat D
                       </label>
-                      <span class="nhsuk-hint nhsuk-radios__hint" id="chargeablestatuscat-d-hint">
+                      <span class="nhsuk-hint nhsuk-radios__hint" id="ovmChargeablestatuscat-d-hint">
                         Ordinarily resident in another EEA country AND (No EHIC/PRC/S2 OR not exempt)
                       </span>
                     </div>
 
                     <div class="nhsuk-radios__item">
-                      <input class="nhsuk-radios__input" id="chargeablestatuscat-e" name="chargeablestatuscat" type="radio" value="Cat E" aria-describedby="chargeablestatuscat-e-hint" {% if patient.ovmChargeablestatuscat === "Cat E" %}checked{% endif %}>
-                      <label class="nhsuk-label nhsuk-radios__label" for="chargeablestatuscat-e">
+                      <input class="nhsuk-radios__input" id="ovmChargeablestatuscat-e" name="ovmChargeablestatuscat" type="radio" value="Cat E" aria-describedby="ovmChargeablestatuscat-e-hint" {% if patient.ovmChargeablestatuscat === "Cat E" %}checked{% endif %}>
+                      <label class="nhsuk-label nhsuk-radios__label" for="ovmChargeablestatuscat-e">
                         Cat E
                       </label>
-                      <span class="nhsuk-hint nhsuk-radios__hint" id="chargeablestatuscat-e-hint">
+                      <span class="nhsuk-hint nhsuk-radios__hint" id="ovmChargeablestatuscat-e-hint">
                         Not ordinarily resident in the UK, not paid, but exempt by personal status or treatment
                       </span>
                     </div>
 
                     <div class="nhsuk-radios__item">
-                      <input class="nhsuk-radios__input" id="chargeablestatuscat-f" name="chargeablestatuscat" type="radio" value="Cat F" aria-describedby="chargeablestatuscat-f-hint" {% if patient.ovmChargeablestatuscat === "Cat F" %}checked{% endif %}>
-                      <label class="nhsuk-label nhsuk-radios__label" for="chargeablestatuscat-f">
+                      <input class="nhsuk-radios__input" id="ovmChargeablestatuscat-f" name="ovmChargeablestatuscat" type="radio" value="Cat F" aria-describedby="ovmChargeablestatuscat-f-hint" {% if patient.ovmChargeablestatuscat === "Cat F" %}checked{% endif %}>
+                      <label class="nhsuk-label nhsuk-radios__label" for="ovmChargeablestatuscat-f">
                         Cat F
                       </label>
-                      <span class="nhsuk-hint nhsuk-radios__hint" id="chargeablestatuscat-f-hint">
+                      <span class="nhsuk-hint nhsuk-radios__hint" id="ovmChargeablestatuscat-f-hint">
                         Not ordinarily resident in the UK or EEA, not paid, not exempt by personal status or treatment
                       </span>
                     </div>
 
                     <div class="nhsuk-radios__item">
-                      <input class="nhsuk-radios__input" id="chargeablestatuscat-p" name="chargeablestatuscat" type="radio" value="Cat P" aria-describedby="chargeablestatuscat-p-hint" {% if patient.ovmChargeablestatuscat === "Cat P" %}checked{% endif %}>
-                      <label class="nhsuk-label nhsuk-radios__label" for="chargeablestatuscat-p">
+                      <input class="nhsuk-radios__input" id="ovmChargeablestatuscat-p" name="ovmChargeablestatuscat" type="radio" value="Cat P" aria-describedby="ovmChargeablestatuscat-p-hint" {% if patient.ovmChargeablestatuscat === "Cat P" %}checked{% endif %}>
+                      <label class="nhsuk-label nhsuk-radios__label" for="ovmChargeablestatuscat-p">
                         Cat P
                       </label>
-                      <span class="nhsuk-hint nhsuk-radios__hint" id="chargeablestatuscat-p-hint">
+                      <span class="nhsuk-hint nhsuk-radios__hint" id="ovmChargeablestatuscat-p-hint">
                         Decision pending
                       </span>
                     </div>
 
                     <div class="nhsuk-radios__item">
-                      <input class="nhsuk-radios__input" id="chargeablestatuscat-none" name="chargeablestatuscat" type="radio" value="None" {% if patient.ovmChargeablestatuscat === "None" %}checked{% endif %}>
-                      <label class="nhsuk-label nhsuk-radios__label" for="chargeablestatuscat-none">
+                      <input class="nhsuk-radios__input" id="ovmChargeablestatuscat-none" name="ovmChargeablestatuscat" type="radio" value="None" {% if patient.ovmChargeablestatuscat === "None" %}checked{% endif %}>
+                      <label class="nhsuk-label nhsuk-radios__label" for="ovmChargeablestatuscat-none">
                         None
                       </label>
                     </div>
@@ -302,7 +302,7 @@ Overseas visitor manager record
                 Address line 1
               </label>
               <input class="nhsuk-input nhsuk-input--width-20" id="ovmAddress1" name="ovmAddress1"
-                     type="text" value="{{ patient['ovmAddress2'] or '45 Southway' }}">
+                     type="text" value="{{ patient['ovmAddress1'] or '45 Southway' }}">
             </div>
 
             <div class="nhsuk-form-group">
@@ -379,7 +379,7 @@ Overseas visitor manager record
                 <label class="nhsuk-label" for="ovmPassportCountry">
                   Country of issue
                 </label>
-                <input class="nhsuk-input nhsuk-input--width-20" id="ovmPassportCountry" name="ovmPassportCountry" type="text" value="Antigua and Barbuda">
+                <input class="nhsuk-input nhsuk-input--width-20" id="ovmPassportCountry" name="ovmPassportCountry" type="text" value="{{ patient['ovmPassportCountry'] or 'Antigua & Barbuda' }}">
               </div>
 
               <div class="nhsuk-form-group">
@@ -460,7 +460,7 @@ Overseas visitor manager record
                             Contacted reference
                           </label>
                           <input class="nhsuk-input nhsuk-input--width-20" id="ovmHOContactedRef" name="ovmHOContactedRef"
-                                 type="text" value="">
+                                 type="text" value="{{ patient['ovmHOContactedRef'] or 'FI7328329' }}">
                         </div>
 
                         <div class="nhsuk-form-group">
@@ -723,7 +723,7 @@ Overseas visitor manager record
                 6. PRC Personal Id No
               </label>
               <input class="nhsuk-input nhsuk-input--width-20" id="ovmPRCPersonalId" name="ovmPRCPersonalId" type="text"
-                     value="{{ patient['ovmPRCCountryIssue'] or '123456' }}">
+                     value="{{ patient['ovmPRCPersonalId'] or '123456' }}">
             </div>
           </div>
           <div class="scra-card-content">

@@ -1,5 +1,8 @@
-{% extends 'layouts/layout-application.html' %} {% block pageTitle %} Patient
-details {% endblock %} {% block beforeContent %}
+{% extends 'layouts/layout-application.html' %}
+
+{% block pageTitle %} Patient details {% endblock %}
+
+{% block beforeContent %}
 
 <div class="nhsuk-full-width-container">
   <div class="scra-bordered-tabs-container">
@@ -23,12 +26,16 @@ details {% endblock %} {% block beforeContent %}
   </div>
 </div>
 
-{% endblock %} {% block content %}
+{% endblock %}
+
+
+{% block content %}
+
 <div class="nhsuk-width-container">
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
       <div class="nhsuk-back-link">
-        <a class="nhsuk-back-link__link" href="edit-names">
+        <a class="nhsuk-back-link__link" href="patient-details-ovm-status-edit-all">
           <svg
             class="nhsuk-icon nhsuk-icon__chevron-left"
             xmlns="http://www.w3.org/2000/svg"
@@ -115,8 +122,7 @@ details {% endblock %} {% block beforeContent %}
                           Was previously
                         </dt>
                         <dd class="nhsuk-summary-list__value">
-                          <p> {{ patient['ovmDateSeen'][0] }}-{{ month  }}-{{ patient['ovmDateSeen'][2] }}
-                             </p>
+                          <p> {{ patient['ovmDateSeen'][0] }}-{{ patient['ovmDateSeen'][1] }}-{{ patient['ovmDateSeen'][2] }}</p>
                         </dd>
                   
                       </div>
@@ -125,7 +131,7 @@ details {% endblock %} {% block beforeContent %}
                       </dt>
                       <dd class="nhsuk-summary-list__value">
                         <p>
-                          {{ data['ovmDateSeen'][0] }}-{{ month  }}-{{ data['ovmDateSeen'][2] }}
+                          {{ data['ovmDateSeen'][0] }}-{{ data['ovmDateSeen'][1] }}-{{ data['ovmDateSeen'][2] }}
                         </p>
                       </dd></div>
                     </dl>
@@ -250,7 +256,7 @@ details {% endblock %} {% block beforeContent %}
                           Was previously
                         </dt>
                         <dd class="nhsuk-summary-list__value">
-                          <p>  {{ patient['ovmDateEntry'] }}
+                          <p>  {{ patient['ovmDateEntry'][0] }}-{{ patient['ovmDateEntry'][1] }}-{{ patient['ovmDateEntry'][2] }}
                              </p>
                         </dd>
                   
@@ -260,7 +266,7 @@ details {% endblock %} {% block beforeContent %}
                       </dt>
                       <dd class="nhsuk-summary-list__value">
                         <p>
-                          {{ data['ovmDateEntry'] }}
+                          {{ data['ovmDateEntry'][0] }}-{{ data['ovmDateEntry'][1] }}-{{ data['ovmDateEntry'][2] }}
                         </p>
                       </dd></div>
                     </dl>
@@ -859,7 +865,7 @@ details {% endblock %} {% block beforeContent %}
                                             </dt>
                                             <dd class="nhsuk-summary-list__value">
                                               <p>
-                                                {{ data['ovmPRCValidToDate'][0]  }}-{{ data['ovmPRCValidToDate'][1]  }}-{{ data['ovmPRCValidToDate'][2]  }}
+                                                {{ data['ovmPRCValidToDate'][0] }}-{{ data['ovmPRCValidToDate'][1] }}-{{ data['ovmPRCValidToDate'][2] }}
                                               </p>
                                             </dd></div>
                                           </dl>
@@ -874,7 +880,7 @@ details {% endblock %} {% block beforeContent %}
                                                   Was previously
                                                 </dt>
                                                 <dd class="nhsuk-summary-list__value">
-                                                  <p> {{ patient['ovmS1status']  }}
+                                                  <p> {{ patient['ovmS1status'] }}
                                                      </p>
                                                 </dd>
                                           
@@ -910,7 +916,7 @@ details {% endblock %} {% block beforeContent %}
                                                 </dt>
                                                 <dd class="nhsuk-summary-list__value">
                                                   <p>
-                                                    {{ data['ovmS2CountryIssue']  }}
+                                                    {{ data['ovmS2CountryIssue'] }}
                                                   </p>
                                                 </dd></div>
                                               </dl>
@@ -950,7 +956,7 @@ details {% endblock %} {% block beforeContent %}
                                                         Was previously
                                                       </dt>
                                                       <dd class="nhsuk-summary-list__value">
-                                                        <p> {{ patient['ovmS2ValidToDate'][0]}}-{{ patient['ovmS2ValidToDate'][1]}}-{{ patient['ovmS2ValidToDate'][2]}}
+                                                        <p> {{ patient['ovmS2ValidToDate'][0] }}-{{ patient['ovmS2ValidToDate'][1] }}-{{ patient['ovmS2ValidToDate'][2] }}
                                                            </p>
                                                       </dd>
                                                 
@@ -960,7 +966,7 @@ details {% endblock %} {% block beforeContent %}
                                                     </dt>
                                                     <dd class="nhsuk-summary-list__value">
                                                       <p>
-                                                        {{ data['ovmS2ValidToDate'][0]}}-{{ data['ovmS2ValidToDate'][1]}}-{{ data['ovmS2ValidToDate'][2]}}
+                                                        {{ data['ovmS2ValidToDate'][0] }}-{{ data['ovmS2ValidToDate'][1] }}-{{ data['ovmS2ValidToDate'][2] }}
                                                       </p>
                                                     </dd></div>
                                                   </dl>
@@ -968,32 +974,12 @@ details {% endblock %} {% block beforeContent %}
                 </dl>
               </div>
             </div>
-            <a
-            class="nhsuk-button"
-            id="confirm-name-changes-btn"
-            href="patient-details-ovm"
-            >Confirm changes</a
-          >
-            </div>
+            <a class="nhsuk-button" id="confirm-name-changes-btn" href="patient-details-ovm">Confirm changes</a>
+    </div>
 
           </div>
         </div>
-          
 
-
-        
-      
-
-
-
-
-
-
-
-       
-      
-
-    
     </div>
   </div>
 </div>
