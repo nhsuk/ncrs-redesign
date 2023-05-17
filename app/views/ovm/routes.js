@@ -73,14 +73,24 @@ module.exports = (router) => {
     }
 
     res.locals.returnedPatientsList = returnedPatientsList;
+    // req.session.data['patient'] = patient;
+
     next();
   });
 
+  // move patient data into data store
   router.post("/ovm/patient-details-ovm-status-edit-all-post", function (req, res) {
-    const nhsNumber = req.body["nhs-number"];
-
+    let nhsNumber = req.session.data["nhs-number"];
+    let patientList = require("../../data/patients-list.js");
+    let patientsData = {};
+    patientsData = patientList[nhsNumber]
+    req.session.data['patient'] = patientsData;
     res.redirect(`/ovm/confirm-changes-all-changes`);
   });
 
+  router.post("/ovm/confirm-changes-all-changes-post", function (req, res) {
+    //
+    res.redirect(`/ovm/patient-details-ovm`);
+  });
 
 };
