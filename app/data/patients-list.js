@@ -64,7 +64,7 @@ const patients = {
     gender: "Female",
     dob: "06-Sep-1968",
     ovmChargeablestatus: "maybe",
-    ovmChargeablestatuscat: "Cat C: Charge exempt (EHIC/PRC/S2)",
+    ovmChargeablestatuscat: "Cat P: Decision pending",
     ovmDateSeen: ["02", "07", "2020"],
     ovmNationality: "Antigua & Barbuda",
     ovmPurposeEntry: "Study",
