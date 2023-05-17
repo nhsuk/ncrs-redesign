@@ -311,6 +311,24 @@ Overseas visitor manager status
                     {{ patient['ovmEHICExpDate'][0] or '02' }}-{{ patient['ovmEHICExpDate'][1] or '07' }}-{{ patient['ovmEHICExpDate'][2] or '2020' }}
                   </dd>
                 </div>
+
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    9. EHIC valid from date
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    {{ patient['ovmPRCValidFromDate'][0] or '02' }}-{{ patient['ovmPRCValidFromDate'][1] or '07' }}-{{ patient['ovmPRCValidFromDate'][2] or '2020' }}
+                  </dd>
+                </div>
+
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    9. EHIC valid to date
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    {{ patient['ovmPRCValidToDate'][0] or '02' }}-{{ patient['ovmPRCValidToDate'][1] or '07' }}-{{ patient['ovmPRCValidToDate'][2] or '2022' }}
+                  </dd>
+                </div>
                 
               </dl>
 

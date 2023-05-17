@@ -61,6 +61,8 @@ const patients = {
     ovmEHICInstitutionId: '123456',
     ovmEHICCardNum: '123456',
     ovmEHICExpDate: ['01','07','2020'],
+    ovmEHICValidFromDate: ['01','07','2020'],
+    ovmEHICValidToDate: ['01','07','2022'],
     ovmPRCCountryIssue: 'Jersey',
     ovmPRCPersonalId: '123456',
     ovmPRCInstitutionId: '123456',
