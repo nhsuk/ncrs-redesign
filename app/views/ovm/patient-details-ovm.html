@@ -1,5 +1,43 @@
 {% extends 'layouts/layout-application.html' %}
 
+{% if data['ovmDateSeen'][1] %}
+  {% set ovmDateSeenMonth = data.patient['ovmDateSeen'][1] | returnMonth %}
+{% endif %}
+{% if data['ovmDateEntry'][1] %}
+  {% set ovmDateEntryMonth = data.patient['ovmDateEntry'][1] | returnMonth %}
+{% endif %}
+{% if data['ovmPassportExp'][1] %}
+  {% set ovmPassportExpMonth = data.patient['ovmPassportExp'][1] | returnMonth %}
+{% endif %}
+{% if data['ovmHOContactedDate'][1] %}
+  {% set ovmHOContactedDateMonth = data.patient['ovmHOContactedDate'][1] | returnMonth %}
+{% endif %}
+{% if data['ovmEHICExpDate'][1] %}
+  {% set ovmEHICExpDateMonth = data.patient['ovmEHICExpDate'][1] | returnMonth %}
+{% endif %}
+{% if data['ovmEHICValidFromDate'][1] %}
+  {% set ovmEHICValidFromDateMonth = data.patient['ovmEHICValidFromDate'][1] | returnMonth %}
+{% endif %}
+{% if data['ovmEHICValidToDate'][1] %}
+  {% set ovmEHICValidToDateMonth = data.patient['ovmEHICValidToDate'][1] | returnMonth %}
+{% endif %}
+{% if data['ovmPRCExpDate'][1] %}
+  {% set ovmPRCExpDateMonth = data.patient['ovmPRCExpDate'][1] | returnMonth %}
+{% endif %}
+{% if data['ovmPRCValidFromDate'][1] %}
+  {% set ovmPRCValidFromDateMonth = data.patient['ovmPRCValidFromDate'][1] | returnMonth %}
+{% endif %}
+{% if data['ovmPRCValidToDate'][1] %}
+  {% set ovmPRCValidToDateMonth = data.patient['ovmPRCValidToDate'][1] | returnMonth %}
+{% endif %}
+{% if data['ovmS2ValidFromDate'][1] %}
+  {% set ovmS2ValidFromDateMonth = data.patient['ovmS2ValidFromDate'][1] | returnMonth %}
+{% endif %}
+{% if data['ovmS2ValidToDate'][1] %}
+  {% set ovmS2ValidToDateMonth = data.patient['ovmS2ValidToDate'][1] | returnMonth %}
+{% endif %}
+
+
 {% block pageTitle %}
 Overseas visitor manager status
 {% endblock %}
@@ -48,7 +86,7 @@ Overseas visitor manager status
 
       <div class="nhsuk-u-reading-widthx">
 
-        <h1 class="nhsuk-heading-xl">Overseas visitor manager status</h1>
+        <h1 class="nhsuk-heading-l">Overseas visitor manager status</h1>
 
         <nav class="nhsuk-contents-list" role="navigation" aria-label="Pages in this guide">
           <h2 class="nhsuk-u-visually-hidden">Contents</h2>
@@ -65,7 +103,7 @@ Overseas visitor manager status
         <section id="category">
           <div class="chargeable-status-container">
             <span class="chargeable-status-tag">
-              {{ patient.ovmChargeablestatuscat or 'Cat C: Charge exempt (EHIC/PRC/S2)' }}
+              {{ data.patient.ovmChargeablestatuscat or 'Cat C: Charge exempt (EHIC/PRC/S2)' }}
             </span>
             <p class="pds-edit-link">
               <a href="patient-details-ovm-status-edit-all#chargeablestatus">Edit</a>
@@ -90,7 +128,7 @@ Overseas visitor manager status
                     Date patient seen
                   </dt>
                   <dd class="nhsuk-summary-list__value">
-                    {{ patient['ovmDateSeen'][0] or '02' }}-{{ month or 'Aug' }}-{{ patient['ovmDateSeen'][2] or '2020' }}
+                    {{ data.patient['ovmDateSeen'][0] or '02' }}-{{ ovmDateSeenMonth or 'Aug' }}-{{ patient['ovmDateSeen'][2] or '2020' }}
                   </dd>
                 </div>
 
@@ -126,7 +164,7 @@ Overseas visitor manager status
                     Date of entry
                   </dt>
                   <dd class="nhsuk-summary-list__value">
-                    {{ patient['ovmDateEntry'] or '01-Aug-2020' }}
+                    {{ data.patient['ovmDateEntry'][0] or '02' }}-{{ ovmDateEntryMonth or 'Aug' }}-{{ patient['ovmDateEntry'][2] or '2020' }}
                   </dd>
                 </div>
 
@@ -215,7 +253,7 @@ Overseas visitor manager status
                     Passport expiry date
                   </dt>
                   <dd class="nhsuk-summary-list__value">
-                    {{ patient['ovmPassportExp'][0] or '02' }}-{{ ovmPassportExpMonth or 'Aug' }}-{{ patient['ovmPassportExp'][2] or '2020' }}
+                    {{ patient['ovmPassportExp'][0] or '01' }}-{{ ovmPassportExpMonth or 'Aug' }}-{{ patient['ovmPassportExp'][2] or '2022' }}
                   </dd>
                 </div>
 
@@ -233,7 +271,7 @@ Overseas visitor manager status
                   </dd>
                 </div>
 
-                {% if patient['ovmHOContacted'] === 'Yes' %}
+                {% if patient['ovmHOContacted'] === 'yes' %}
                   <div class="nhsuk-summary-list__row">
                     <dt class="nhsuk-summary-list__key">
                       Contacted reference
@@ -248,7 +286,7 @@ Overseas visitor manager status
                       Date contacted
                     </dt>
                     <dd class="nhsuk-summary-list__value">
-                      {{ patient['ovmHOContactedDate'][0] or '02' }}-{{ patient['ovmHOContactedDate'][1] or '07' }}-{{ patient['ovmHOContactedDate'][2] or '2020' }}
+                      {{ patient['ovmHOContactedDate'][0] or '01' }}-{{ ovmHOContactedDateMonth or 'Aug' }}-{{ patient['ovmHOContactedDate'][2] or '2020' }}
                     </dd>
                   </div>
                 {% endif %}
@@ -308,7 +346,7 @@ Overseas visitor manager status
                     9. EHIC expiry date
                   </dt>
                   <dd class="nhsuk-summary-list__value">
-                    {{ patient['ovmEHICExpDate'][0] or '02' }}-{{ patient['ovmEHICExpDate'][1] or '07' }}-{{ patient['ovmEHICExpDate'][2] or '2020' }}
+                    {{ patient['ovmEHICExpDate'][0] or '01' }}-{{ ovmEHICExpDateMonth or 'Aug' }}-{{ patient['ovmEHICExpDate'][2] or '2020' }}
                   </dd>
                 </div>
 
@@ -317,7 +355,7 @@ Overseas visitor manager status
                     9. EHIC valid from date
                   </dt>
                   <dd class="nhsuk-summary-list__value">
-                    {{ patient['ovmPRCValidFromDate'][0] or '02' }}-{{ patient['ovmPRCValidFromDate'][1] or '07' }}-{{ patient['ovmPRCValidFromDate'][2] or '2020' }}
+                    {{ patient['ovmEHICValidFromDate'][0] or '01' }}-{{ ovmEHICValidFromDateMonth or 'Aug' }}-{{ patient['ovmEHICValidFromDate'][2] or '2020' }}
                   </dd>
                 </div>
 
@@ -326,10 +364,10 @@ Overseas visitor manager status
                     9. EHIC valid to date
                   </dt>
                   <dd class="nhsuk-summary-list__value">
-                    {{ patient['ovmPRCValidToDate'][0] or '02' }}-{{ patient['ovmPRCValidToDate'][1] or '07' }}-{{ patient['ovmPRCValidToDate'][2] or '2022' }}
+                    {{ patient['ovmEHICValidToDate'][0] or '01' }}-{{ ovmEHICValidToDateMonth or 'Aug' }}-{{ patient['ovmEHICValidToDate'][2] or '2022' }}
                   </dd>
                 </div>
-                
+
               </dl>
 
               <h3 class="nhsuk-heading-m">Provisional Replacement Certificate</h3>
@@ -376,7 +414,7 @@ Overseas visitor manager status
                     9. PRC expiry date
                   </dt>
                   <dd class="nhsuk-summary-list__value">
-                    {{ patient['ovmPRCExpDate'][0] or '02' }}-{{ patient['ovmPRCExpDate'][1] or '07' }}-{{ patient['ovmPRCExpDate'][2] or '2020' }}
+                    {{ patient['ovmPRCExpDate'][0] or '02' }}-{{ ovmPRCExpDateMonth or 'Aug' }}-{{ patient['ovmPRCExpDate'][2] or '2020' }}
                   </dd>
                 </div>
 
@@ -385,7 +423,7 @@ Overseas visitor manager status
                     a. PRC valid from date
                   </dt>
                   <dd class="nhsuk-summary-list__value">
-                    {{ patient['ovmPRCValidFromDate'][0] or '02' }}-{{ patient['ovmPRCValidFromDate'][1] or '07' }}-{{ patient['ovmPRCValidFromDate'][2] or '2020' }}
+                    {{ patient['ovmPRCValidFromDate'][0] or '02' }}-{{ ovmPRCValidFromDateMonth or 'Aug' }}-{{ patient['ovmPRCValidFromDate'][2] or '2020' }}
                   </dd>
                 </div>
 
@@ -394,7 +432,7 @@ Overseas visitor manager status
                     b. PRC valid to date
                   </dt>
                   <dd class="nhsuk-summary-list__value">
-                    {{ patient['ovmPRCValidToDate'][0] or '02' }}-{{ patient['ovmPRCValidToDate'][1] or '07' }}-{{ patient['ovmPRCValidToDate'][2] or '2020' }}
+                    {{ patient['ovmPRCValidToDate'][0] or '02' }}-{{ ovmPRCValidToDateMonth or 'Aug' }}-{{ patient['ovmPRCValidToDate'][2] or '2022' }}
                   </dd>
                 </div>
 
@@ -430,7 +468,7 @@ Overseas visitor manager status
                     S2 valid from
                   </dt>
                   <dd class="nhsuk-summary-list__value">
-                    {{ patient['ovmS2ValidFromDate'][0] or '02' }}-{{ patient['ovmS2ValidFromDate'][1] or '07' }}-{{ patient['ovmS2ValidFromDate'][2] or '2020' }}
+                    {{ patient['ovmS2ValidFromDate'][0] or '01' }}-{{ ovmS2ValidFromDateMonth or 'Aug' }}-{{ patient['ovmS2ValidFromDate'][2] or '2020' }}
                   </dd>
                 </div>
 
@@ -439,7 +477,7 @@ Overseas visitor manager status
                     S2 valid to
                   </dt>
                   <dd class="nhsuk-summary-list__value">
-                    {{ patient['ovmS2ValidToDate'][0] or '02' }}-{{ patient['ovmS2ValidToDate'][1] or '07' }}-{{ patient['ovmS2ValidToDate'][2] or '2020' }}
+                    {{ patient['ovmS2ValidToDate'][0] or '02' }}-{{ ovmS2ValidToDateMonth or 'Aug' }}-{{ patient['ovmS2ValidToDate'][2] or '2022' }}
                   </dd>
                 </div>
 
