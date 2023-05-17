@@ -21,6 +21,21 @@ module.exports = function (env) {
     var d = moment().add(number, type).format(dateFormat)
     return d;
   }
+
+  filters.returnMonth = (input) => {
+    var dateFormat = "MMMM"
+    var d = moment().month(input-1).format(dateFormat)
+    return d;
+  }
+
+  filters.ukMobile = (input) => {
+    // remove whitespace
+    input = input.replace(/\s/g,'')
+    // add the space back in
+    var number = input.substring(0, 5) + " " + input.substring(5)
+    return number;
+  }
+
   
   /* ------------------------------------------------------------------
     add your methods to the filters obj below this comment block:
