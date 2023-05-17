@@ -452,7 +452,7 @@ Overseas visitor manager record
                         </label>
                       </div>
 
-                      <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden"
+                      <div class="nhsuk-radios__conditional {% if patient.ovmHOContacted !== "yes" %}nhsuk-radios__conditional--hidden{% endif %}"
                            id="conditional-contacted-1">
 
                         <div class="nhsuk-form-group">
