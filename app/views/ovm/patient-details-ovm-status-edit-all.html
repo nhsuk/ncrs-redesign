@@ -65,7 +65,7 @@ Overseas visitor manager record
                   <div class="nhsuk-radios">
 
                     <div class="nhsuk-radios__item">
-                      <input class="nhsuk-radios__input" id="ovmChargeablestatuscat-a" name="ovmChargeablestatuscat" type="radio" value="Cat A" aria-describedby="ovmChargeablestatuscat-a-hint" {% if patient.ovmChargeablestatuscat === "Cat A" %}checked{% endif %}>
+                      <input class="nhsuk-radios__input" id="ovmChargeablestatuscat-a" name="ovmChargeablestatuscat" type="radio" value="Cat A: UK Resident" aria-describedby="ovmChargeablestatuscat-a-hint" {% if data.patient.ovmChargeablestatuscat === "Cat A: UK Resident" %}checked{% endif %}>
                       <label class="nhsuk-label nhsuk-radios__label" for="ovmChargeablestatuscat-a">
                         Cat A
                       </label>
@@ -75,7 +75,7 @@ Overseas visitor manager record
                     </div>
 
                     <div class="nhsuk-radios__item">
-                      <input class="nhsuk-radios__input" id="ovmChargeablestatuscat-b" name="ovmChargeablestatuscat" type="radio" value="Cat B" aria-describedby="ovmChargeablestatuscat-b-hint" {% if patient.ovmChargeablestatuscat === "Cat B" %}checked{% endif %}>
+                      <input class="nhsuk-radios__input" id="ovmChargeablestatuscat-b" name="ovmChargeablestatuscat" type="radio" value="Cat B" aria-describedby="ovmChargeablestatuscat-b-hint" {% if data.patient.ovmChargeablestatuscat === "Cat B" %}checked{% endif %}>
                       <label class="nhsuk-label nhsuk-radios__label" for="ovmChargeablestatuscat-b">
                         Cat B
                       </label>
@@ -85,7 +85,7 @@ Overseas visitor manager record
                     </div>
 
                     <div class="nhsuk-radios__item">
-                      <input class="nhsuk-radios__input" id="ovmChargeablestatuscat-c" name="ovmChargeablestatuscat" type="radio" value="Cat C: Charge exempt (EHIC/PRC/S2)" aria-describedby="ovmChargeablestatuscat-c-hint" {% if patient.ovmChargeablestatuscat === "Cat C: Charge exempt (EHIC/PRC/S2)" %}checked{% endif %}>
+                      <input class="nhsuk-radios__input" id="ovmChargeablestatuscat-c" name="ovmChargeablestatuscat" type="radio" value="Cat C: Charge exempt (EHIC/PRC/S2)" aria-describedby="ovmChargeablestatuscat-c-hint" {% if data.patient.ovmChargeablestatuscat === "Cat C: Charge exempt (EHIC/PRC/S2)" %}checked{% endif %}>
                       <label class="nhsuk-label nhsuk-radios__label" for="ovmChargeablestatuscat-c">
                         Cat C
                       </label>
@@ -95,7 +95,7 @@ Overseas visitor manager record
                     </div>
 
                     <div class="nhsuk-radios__item">
-                      <input class="nhsuk-radios__input" id="ovmChargeablestatuscat-d" name="ovmChargeablestatuscat" type="radio" value="Cat D" aria-describedby="ovmChargeablestatuscat-d-hint" {% if patient.ovmChargeablestatuscat === "Cat D" %}checked{% endif %}>
+                      <input class="nhsuk-radios__input" id="ovmChargeablestatuscat-d" name="ovmChargeablestatuscat" type="radio" value="Cat D" aria-describedby="ovmChargeablestatuscat-d-hint" {% if data.patient.ovmChargeablestatuscat === "Cat D" %}checked{% endif %}>
                       <label class="nhsuk-label nhsuk-radios__label" for="ovmChargeablestatuscat-d">
                         Cat D
                       </label>
@@ -105,7 +105,7 @@ Overseas visitor manager record
                     </div>
 
                     <div class="nhsuk-radios__item">
-                      <input class="nhsuk-radios__input" id="ovmChargeablestatuscat-e" name="ovmChargeablestatuscat" type="radio" value="Cat E" aria-describedby="ovmChargeablestatuscat-e-hint" {% if patient.ovmChargeablestatuscat === "Cat E" %}checked{% endif %}>
+                      <input class="nhsuk-radios__input" id="ovmChargeablestatuscat-e" name="ovmChargeablestatuscat" type="radio" value="Cat E" aria-describedby="ovmChargeablestatuscat-e-hint" {% if data.patient.ovmChargeablestatuscat === "Cat E" %}checked{% endif %}>
                       <label class="nhsuk-label nhsuk-radios__label" for="ovmChargeablestatuscat-e">
                         Cat E
                       </label>
@@ -115,7 +115,7 @@ Overseas visitor manager record
                     </div>
 
                     <div class="nhsuk-radios__item">
-                      <input class="nhsuk-radios__input" id="ovmChargeablestatuscat-f" name="ovmChargeablestatuscat" type="radio" value="Cat F" aria-describedby="ovmChargeablestatuscat-f-hint" {% if patient.ovmChargeablestatuscat === "Cat F" %}checked{% endif %}>
+                      <input class="nhsuk-radios__input" id="ovmChargeablestatuscat-f" name="ovmChargeablestatuscat" type="radio" value="Cat F: Not exempt" aria-describedby="ovmChargeablestatuscat-f-hint" {% if data.patient.ovmChargeablestatuscat === "Cat F: Not exempt" %}checked{% endif %}>
                       <label class="nhsuk-label nhsuk-radios__label" for="ovmChargeablestatuscat-f">
                         Cat F
                       </label>
@@ -125,7 +125,7 @@ Overseas visitor manager record
                     </div>
 
                     <div class="nhsuk-radios__item">
-                      <input class="nhsuk-radios__input" id="ovmChargeablestatuscat-p" name="ovmChargeablestatuscat" type="radio" value="Cat P" aria-describedby="ovmChargeablestatuscat-p-hint" {% if patient.ovmChargeablestatuscat === "Cat P" %}checked{% endif %}>
+                      <input class="nhsuk-radios__input" id="ovmChargeablestatuscat-p" name="ovmChargeablestatuscat" type="radio" value="Cat P: Decision pending" aria-describedby="ovmChargeablestatuscat-p-hint" {% if data.patient.ovmChargeablestatuscat === "Cat P: Decision pending" %}checked{% endif %}>
                       <label class="nhsuk-label nhsuk-radios__label" for="ovmChargeablestatuscat-p">
                         Cat P
                       </label>
@@ -135,7 +135,7 @@ Overseas visitor manager record
                     </div>
 
                     <div class="nhsuk-radios__item">
-                      <input class="nhsuk-radios__input" id="ovmChargeablestatuscat-none" name="ovmChargeablestatuscat" type="radio" value="None" {% if patient.ovmChargeablestatuscat === "None" %}checked{% endif %}>
+                      <input class="nhsuk-radios__input" id="ovmChargeablestatuscat-none" name="ovmChargeablestatuscat" type="radio" value="None" {% if data.patient.ovmChargeablestatuscat === "None" %}checked{% endif %}>
                       <label class="nhsuk-label nhsuk-radios__label" for="ovmChargeablestatuscat-none">
                         None
                       </label>
@@ -176,7 +176,7 @@ Overseas visitor manager record
                     Day
                   </label>
                   <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
-                         id="ovmDateSeen-day" name="[ovmDateSeen]" type="text" pattern="[0-9]*" inputmode="numeric" spellcheck="false" value="{{ patient['ovmDateSeen'][0] or '02' }}">
+                         id="ovmDateSeen-day" name="[ovmDateSeen]" type="text" pattern="[0-9]*" inputmode="numeric" spellcheck="false" value="{{ data.patient['ovmDateSeen'][0] or '02' }}">
                 </div>
               </div>
               <div class="nhsuk-date-input__item">
@@ -185,7 +185,7 @@ Overseas visitor manager record
                     Month
                   </label>
                   <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
-                         id="ovmDateSeen-month" name="[ovmDateSeen]" type="text" pattern="[0-9]*" inputmode="numeric" spellcheck="false" value="{{ patient['ovmDateSeen'][1] or '07' }}">
+                         id="ovmDateSeen-month" name="[ovmDateSeen]" type="text" pattern="[0-9]*" inputmode="numeric" spellcheck="false" value="{{ data.patient['ovmDateSeen'][1] or '07' }}">
                 </div>
               </div>
               <div class="nhsuk-date-input__item">
@@ -194,7 +194,7 @@ Overseas visitor manager record
                     Year
                   </label>
                   <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4"
-                         id="ovmDateSeen-year" name="[ovmDateSeen]" type="text" pattern="[0-9]*" inputmode="numeric" spellcheck="false" value="{{ patient['ovmDateSeen'][2] or '2020' }}">
+                         id="ovmDateSeen-year" name="[ovmDateSeen]" type="text" pattern="[0-9]*" inputmode="numeric" spellcheck="false" value="{{ data.patient['ovmDateSeen'][2] or '2020' }}">
                 </div>
               </div>
             </div>
@@ -206,13 +206,13 @@ Overseas visitor manager record
               Purpose of entry
             </label>
             <select class="nhsuk-select" id="ovmPurposeEntry" name="ovmPurposeEntry">
-              <option selected value="Study">Study</option>
-              <option value="Work">Work</option>
-              <option value="Leisure">Leisure</option>
-              <option value="Intend to settle">Intend to settle</option>
-              <option value="Dependent">Dependent</option>
-              <option value="Visiting family">Visiting family</option>
-              <option value="Other">Other</option>
+              <option {% if data.patient.ovmPurposeEntry === "Study" %}selected{% endif %} value="Study">Study</option>
+              <option {% if data.patient.ovmPurposeEntry === "Work" %}selected{% endif %} value="Work">Work</option>
+              <option {% if data.patient.ovmPurposeEntry === "Leisure" %}selected{% endif %} value="Leisure">Leisure</option>
+              <option {% if data.patient.ovmPurposeEntry === "Intend to settle" %}selected{% endif %} value="Intend to settle">Intend to settle</option>
+              <option {% if data.patient.ovmPurposeEntry === "Dependant" %}selected{% endif %} value="Dependent">Dependent</option>
+              <option {% if data.patient.ovmPurposeEntry === "Visiting family" %}selected{% endif %} value="Visiting family">Visiting family</option>
+              <option {% if data.patient.ovmPurposeEntry === "Other" %}selected{% endif %} value="Other">Other</option>
             </select>
           </div>
 
@@ -220,7 +220,7 @@ Overseas visitor manager record
             <label class="nhsuk-label nhsuk-label__strong" for="ovmPurposeEntryOther">
               Other purpose of entry
             </label>
-            <input class="nhsuk-input nhsuk-input--width-10" id="ovmPurposeEntryOther" name="ovmPurposeEntryOther" type="text" value="{{ patient['ovmPurposeEntryOther'] or '' }}">
+            <input class="nhsuk-input nhsuk-input--width-10" id="ovmPurposeEntryOther" name="ovmPurposeEntryOther" type="text" value="{{ data.patient['ovmPurposeEntryOther'] or '' }}">
           </div>
 
           <div class="nhsuk-form-group">
@@ -262,7 +262,7 @@ Overseas visitor manager record
                     Day
                   </label>
                   <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
-                         id="ovmDateEntry-day" name="[ovmDateEntry]" type="text" pattern="[0-9]*" inputmode="numeric" spellcheck="false" value="{{ patient['ovmDateEntry'][0] or '02' }}">
+                         id="ovmDateEntry-day" name="[ovmDateEntry]" type="text" pattern="[0-9]*" inputmode="numeric" spellcheck="false" value="{{ data.patient['ovmDateEntry'][0] or '01' }}">
                 </div>
               </div>
               <div class="nhsuk-date-input__item">
@@ -271,7 +271,7 @@ Overseas visitor manager record
                     Month
                   </label>
                   <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
-                         id="ovmDateEntry-month" name="[ovmDateEntry]" type="text" pattern="[0-9]*" inputmode="numeric" spellcheck="false" value="{{ patient['ovmDateEntry'][1] or '07' }}">
+                         id="ovmDateEntry-month" name="[ovmDateEntry]" type="text" pattern="[0-9]*" inputmode="numeric" spellcheck="false" value="{{ data.patient['ovmDateEntry'][1] or '07' }}">
                 </div>
               </div>
               <div class="nhsuk-date-input__item">
@@ -280,7 +280,7 @@ Overseas visitor manager record
                     Year
                   </label>
                   <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4"
-                         id="ovmDateEntry-year" name="[ovmDateEntry]" type="text" pattern="[0-9]*" inputmode="numeric" spellcheck="false" value="{{ patient['ovmDateEntry'][2] or '2020' }}">
+                         id="ovmDateEntry-year" name="[ovmDateEntry]" type="text" pattern="[0-9]*" inputmode="numeric" spellcheck="false" value="{{ data.patient['ovmDateEntry'][2] or '2020' }}">
                 </div>
               </div>
             </div>
@@ -302,7 +302,7 @@ Overseas visitor manager record
                 Address line 1
               </label>
               <input class="nhsuk-input nhsuk-input--width-20" id="ovmAddress1" name="ovmAddress1"
-                     type="text" value="{{ patient['ovmAddress1'] or '45 Southway' }}">
+                     type="text" value="{{ data.patient['ovmAddress1'] or '45 Southway' }}">
             </div>
 
             <div class="nhsuk-form-group">
@@ -310,7 +310,7 @@ Overseas visitor manager record
                 Address line 2
               </label>
               <input class="nhsuk-input nhsuk-input--width-20" id="ovmAddress2" name="ovmAddress2"
-                     type="text" value="{{ patient['ovmAddress2'] or 'Manor Park' }}">
+                     type="text" value="{{ data.patient['ovmAddress2'] or 'Manor Park' }}">
             </div>
 
             <div class="nhsuk-form-group">
@@ -318,7 +318,7 @@ Overseas visitor manager record
                 Address line 3 (optional)
               </label>
               <input class="nhsuk-input nhsuk-input--width-20" id="ovmAddress3" name="ovmAddress3"
-                     type="text" value="{{ patient['ovmAddress3'] or '' }}">
+                     type="text" value="{{ data.patient['ovmAddress3'] or '' }}">
             </div>
 
             <div class="nhsuk-form-group">
@@ -326,7 +326,7 @@ Overseas visitor manager record
                 Address line 4 (optional)
               </label>
               <input class="nhsuk-input nhsuk-input--width-20" id="ovmAddress4" name="ovmAddress4"
-                     type="text" value="{{ patient['ovmAddress4'] or '' }}">
+                     type="text" value="{{ data.patient['ovmAddress4'] or '' }}">
             </div>
 
             <div class="nhsuk-form-group">
@@ -372,14 +372,14 @@ Overseas visitor manager record
                   Passport number
                 </label>
                 <input class="nhsuk-input nhsuk-input--width-20" id="ovmPassportNum" name="ovmPassportNum"
-                       type="text" value="{{ patient['ovmPassportNum'] or '485 777 3456' }}">
+                       type="text" value="{{ data.patient['ovmPassportNum'] or '485 777 3456' }}">
               </div>
 
               <div class="nhsuk-form-group">
                 <label class="nhsuk-label" for="ovmPassportCountry">
                   Country of issue
                 </label>
-                <input class="nhsuk-input nhsuk-input--width-20" id="ovmPassportCountry" name="ovmPassportCountry" type="text" value="{{ patient['ovmPassportCountry'] or 'Antigua & Barbuda' }}">
+                <input class="nhsuk-input nhsuk-input--width-20" id="ovmPassportCountry" name="ovmPassportCountry" type="text" value="{{ data.patient['ovmPassportCountry'] or 'Antigua & Barbuda' }}">
               </div>
 
               <div class="nhsuk-form-group">
@@ -400,7 +400,7 @@ Overseas visitor manager record
                           Day
                         </label>
                         <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
-                               id="ovmPassportExp-day" name="[ovmPassportExp]" type="text" pattern="[0-9]*" inputmode="numeric" spellcheck="false" value="{{ patient['ovmPassportExp'][0] or '02' }}">
+                               id="ovmPassportExp-day" name="[ovmPassportExp]" type="text" pattern="[0-9]*" inputmode="numeric" spellcheck="false" value="{{ data.patient['ovmPassportExp'][0] or '02' }}">
                       </div>
                     </div>
                     <div class="nhsuk-date-input__item">
@@ -409,7 +409,7 @@ Overseas visitor manager record
                           Month
                         </label>
                         <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
-                               id="ovmPassportExp-month" name="[ovmPassportExp]" type="text" pattern="[0-9]*" inputmode="numeric" spellcheck="false" value="{{ patient['ovmPassportExp'][1] or '07' }}">
+                               id="ovmPassportExp-month" name="[ovmPassportExp]" type="text" pattern="[0-9]*" inputmode="numeric" spellcheck="false" value="{{ data.patient['ovmPassportExp'][1] or '07' }}">
                       </div>
                     </div>
                     <div class="nhsuk-date-input__item">
@@ -418,7 +418,7 @@ Overseas visitor manager record
                           Year
                         </label>
                         <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4"
-                               id="ovmPassportExp-year" name="[ovmPassportExp]" type="text" pattern="[0-9]*" inputmode="numeric" spellcheck="false" value="{{ patient['ovmPassportExp'][2] or '2020' }}">
+                               id="ovmPassportExp-year" name="[ovmPassportExp]" type="text" pattern="[0-9]*" inputmode="numeric" spellcheck="false" value="{{ data.patient['ovmPassportExp'][2] or '2020' }}">
                       </div>
                     </div>
                   </div>
@@ -446,13 +446,13 @@ Overseas visitor manager record
                     <div class="nhsuk-radios nhsuk-radios">
 
                       <div class="nhsuk-radios__item">
-                        <input aria-controls="conditional-contacted-1" aria-expanded="false" class="nhsuk-radios__input" id="ovmHOContacted-yes" name="ovmHOContacted" type="radio" value="yes" {% if patient.ovmHOContacted === "yes" %}checked{% endif %}>
+                        <input aria-controls="conditional-contacted-1" aria-expanded="false" class="nhsuk-radios__input" id="ovmHOContacted-yes" name="ovmHOContacted" type="radio" value="yes" {% if data.patient.ovmHOContacted === "yes" %}checked{% endif %}>
                         <label class="nhsuk-label nhsuk-radios__label" for="ovmHOContacted-yes">
                           Yes
                         </label>
                       </div>
 
-                      <div class="nhsuk-radios__conditional {% if patient.ovmHOContacted !== "yes" %}nhsuk-radios__conditional--hidden{% endif %}"
+                      <div class="nhsuk-radios__conditional {% if data.patient.ovmHOContacted !== "yes" %}nhsuk-radios__conditional--hidden{% endif %}"
                            id="conditional-contacted-1">
 
                         <div class="nhsuk-form-group">
@@ -460,7 +460,7 @@ Overseas visitor manager record
                             Contacted reference
                           </label>
                           <input class="nhsuk-input nhsuk-input--width-20" id="ovmHOContactedRef" name="ovmHOContactedRef"
-                                 type="text" value="{{ patient['ovmHOContactedRef'] or 'FI7328329' }}">
+                                 type="text" value="{{ data.patient['ovmHOContactedRef'] or 'FI7328329' }}">
                         </div>
 
                         <div class="nhsuk-form-group">
@@ -477,7 +477,7 @@ Overseas visitor manager record
                                     Day
                                   </label>
                                   <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
-                                         id="ovmHOContactedDate-day" name="[ovmHOContactedDate]" type="text" pattern="[0-9]*" inputmode="numeric" spellcheck="false" value="{{ patient['ovmHOContactedDate'][0] or '' }}">
+                                         id="ovmHOContactedDate-day" name="[ovmHOContactedDate]" type="text" pattern="[0-9]*" inputmode="numeric" spellcheck="false" value="{{ data.patient['ovmHOContactedDate'][0] or '' }}">
                                 </div>
                               </div>
                               <div class="nhsuk-date-input__item">
@@ -486,7 +486,7 @@ Overseas visitor manager record
                                     Month
                                   </label>
                                   <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
-                                         id="ovmHOContactedDate-month" name="[ovmHOContactedDate]" type="text" pattern="[0-9]*" inputmode="numeric" spellcheck="false" value="{{ patient['ovmHOContactedDate'][1] or '' }}">
+                                         id="ovmHOContactedDate-month" name="[ovmHOContactedDate]" type="text" pattern="[0-9]*" inputmode="numeric" spellcheck="false" value="{{ data.patient['ovmHOContactedDate'][1] or '' }}">
                                 </div>
                               </div>
                               <div class="nhsuk-date-input__item">
@@ -495,7 +495,7 @@ Overseas visitor manager record
                                     Year
                                   </label>
                                   <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4"
-                                         id="ovmHOContactedDate-year" name="[ovmHOContactedDate]" type="text" pattern="[0-9]*" inputmode="numeric" spellcheck="false" value="{{ patient['ovmHOContactedDate'][2] or '' }}">
+                                         id="ovmHOContactedDate-year" name="[ovmHOContactedDate]" type="text" pattern="[0-9]*" inputmode="numeric" spellcheck="false" value="{{ data.patient['ovmHOContactedDate'][2] or '' }}">
                                 </div>
                               </div>
                             </div>
@@ -533,7 +533,7 @@ Overseas visitor manager record
               <label class="nhsuk-label" for="ovmEHICCountryIssue">
                 EHIC Country of issue
               </label>
-              <input class="nhsuk-input nhsuk-input--width-20" id="ovmEHICCountryIssue" name="ovmEHICCountryIssue" type="text" value="{{ patient['ovmEHICCountryIssue'] or 'Jersey' }}">
+              <input class="nhsuk-input nhsuk-input--width-20" id="ovmEHICCountryIssue" name="ovmEHICCountryIssue" type="text" value="{{ data.patient['ovmEHICCountryIssue'] or 'Jersey' }}">
             </div>
           </div>
 
@@ -542,7 +542,7 @@ Overseas visitor manager record
               <label class="nhsuk-label" for="ovmEHICPersonalId">
                 6. EHIC Personal Id No
               </label>
-              <input class="nhsuk-input nhsuk-input--width-20" id="ovmEHICPersonalId" name="ovmEHICPersonalId" type="text" value="{{ patient['ovmEHICPersonalId'] or '123456' }}">
+              <input class="nhsuk-input nhsuk-input--width-20" id="ovmEHICPersonalId" name="ovmEHICPersonalId" type="text" value="{{ data.patient['ovmEHICPersonalId'] or '123456' }}">
             </div>
           </div>
 
@@ -551,7 +551,7 @@ Overseas visitor manager record
               <label class="nhsuk-label" for="ovmEHICInstitutionId">
                 7. EHIC Institution Id
               </label>
-              <input class="nhsuk-input nhsuk-input--width-20" id="ovmEHICInstitutionId" name="ovmEHICInstitutionId" type="text" value="{{ patient['ovmEHICInstitutionId'] or '123456' }}">
+              <input class="nhsuk-input nhsuk-input--width-20" id="ovmEHICInstitutionId" name="ovmEHICInstitutionId" type="text" value="{{ data.patient['ovmEHICInstitutionId'] or '123456' }}">
             </div>
           </div>
 
@@ -560,7 +560,7 @@ Overseas visitor manager record
               <label class="nhsuk-label" for="ovmEHICCardNum">
                 8. EHIC card number
               </label>
-              <input class="nhsuk-input nhsuk-input--width-20" id="ovmEHICCardNum" name="ovmEHICCardNum" type="text" value="{{ patient['ovmEHICCardNum'] or '123456' }}">
+              <input class="nhsuk-input nhsuk-input--width-20" id="ovmEHICCardNum" name="ovmEHICCardNum" type="text" value="{{ data.patient['ovmEHICCardNum'] or '123456' }}">
             </div>
           </div>
 
@@ -580,7 +580,7 @@ Overseas visitor manager record
                         Day
                       </label>
                       <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
-                             id="ovmEHICExpDate-day" name="[ovmEHICExpDate]" type="text" pattern="[0-9]*" inputmode="numeric" spellcheck="false" value="{{ patient['ovmEHICExpDate'][0] or '02' }}">
+                             id="ovmEHICExpDate-day" name="[ovmEHICExpDate]" type="text" pattern="[0-9]*" inputmode="numeric" spellcheck="false" value="{{ data.patient['ovmEHICExpDate'][0] or '02' }}">
                     </div>
                   </div>
                   <div class="nhsuk-date-input__item">
@@ -589,7 +589,7 @@ Overseas visitor manager record
                         Month
                       </label>
                       <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
-                             id="ovmEHICExpDate-month" name="[ovmEHICExpDate]" type="text" pattern="[0-9]*" inputmode="numeric" spellcheck="false" value="{{ patient['ovmEHICExpDate'][1] or '09' }}">
+                             id="ovmEHICExpDate-month" name="[ovmEHICExpDate]" type="text" pattern="[0-9]*" inputmode="numeric" spellcheck="false" value="{{ data.patient['ovmEHICExpDate'][1] or '09' }}">
                     </div>
                   </div>
                   <div class="nhsuk-date-input__item">
@@ -598,7 +598,7 @@ Overseas visitor manager record
                         Year
                       </label>
                       <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4"
-                             id="ovmEHICExpDate-year" name="[ovmEHICExpDate]" type="text" pattern="[0-9]*" inputmode="numeric" spellcheck="false" value="{{ patient['ovmEHICExpDate'][2] or '2022' }}">
+                             id="ovmEHICExpDate-year" name="[ovmEHICExpDate]" type="text" pattern="[0-9]*" inputmode="numeric" spellcheck="false" value="{{ data.patient['ovmEHICExpDate'][2] or '2022' }}">
                     </div>
                   </div>
                 </div>
@@ -622,7 +622,7 @@ Overseas visitor manager record
                       Day
                     </label>
                     <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
-                           id="ovmEHICValidFromDate-day" name="[ovmEHICValidFromDate]" type="text" pattern="[0-9]*" inputmode="numeric" spellcheck="false" value="{{ patient['ovmEHICValidFromDate'][0] or '02' }}">
+                           id="ovmEHICValidFromDate-day" name="[ovmEHICValidFromDate]" type="text" pattern="[0-9]*" inputmode="numeric" spellcheck="false" value="{{ data.patient['ovmEHICValidFromDate'][0] or '02' }}">
                   </div>
                 </div>
                 <div class="nhsuk-date-input__item">
@@ -631,7 +631,7 @@ Overseas visitor manager record
                       Month
                     </label>
                     <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
-                           id="ovmEHICValidFromDate-month" name="[ovmEHICValidFromDate]" type="text" pattern="[0-9]*" inputmode="numeric" spellcheck="false" value="{{ patient['ovmEHICValidFromDate'][1] or '09' }}">
+                           id="ovmEHICValidFromDate-month" name="[ovmEHICValidFromDate]" type="text" pattern="[0-9]*" inputmode="numeric" spellcheck="false" value="{{ data.patient['ovmEHICValidFromDate'][1] or '09' }}">
                   </div>
                 </div>
                 <div class="nhsuk-date-input__item">
@@ -640,7 +640,7 @@ Overseas visitor manager record
                       Year
                     </label>
                     <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4"
-                           id="ovmEHICValidFromDate-year" name="[ovmEHICValidFromDate]" type="text" pattern="[0-9]*" inputmode="numeric" spellcheck="false" value="{{ patient['ovmEHICValidFromDate'][2] or '2020' }}">
+                           id="ovmEHICValidFromDate-year" name="[ovmEHICValidFromDate]" type="text" pattern="[0-9]*" inputmode="numeric" spellcheck="false" value="{{ data.patient['ovmEHICValidFromDate'][2] or '2020' }}">
                   </div>
                 </div>
               </div>
@@ -663,7 +663,7 @@ Overseas visitor manager record
                       Day
                     </label>
                     <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
-                           id="ovmEHICValidToDate-day" name="[ovmEHICValidToDate]" type="text" pattern="[0-9]*" inputmode="numeric" spellcheck="false" value="{{ patient['ovmEHICValidToDate'][0] or '02' }}">
+                           id="ovmEHICValidToDate-day" name="[ovmEHICValidToDate]" type="text" pattern="[0-9]*" inputmode="numeric" spellcheck="false" value="{{ data.patient['ovmEHICValidToDate'][0] or '02' }}">
                   </div>
                 </div>
                 <div class="nhsuk-date-input__item">
@@ -672,7 +672,7 @@ Overseas visitor manager record
                       Month
                     </label>
                     <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
-                           id="ovmEHICValidToDate-month" name="[ovmEHICValidToDate]" type="text" pattern="[0-9]*" inputmode="numeric" spellcheck="false" value="{{ patient['ovmEHICValidToDate'][1] or '09' }}">
+                           id="ovmEHICValidToDate-month" name="[ovmEHICValidToDate]" type="text" pattern="[0-9]*" inputmode="numeric" spellcheck="false" value="{{ data.patient['ovmEHICValidToDate'][1] or '09' }}">
                   </div>
                 </div>
                 <div class="nhsuk-date-input__item">
@@ -681,7 +681,7 @@ Overseas visitor manager record
                       Year
                     </label>
                     <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4"
-                           id="ovmEHICValidToDate-year" name="[ovmEHICValidToDate]" type="text" pattern="[0-9]*" inputmode="numeric" spellcheck="false" value="{{ patient['ovmEHICValidToDate'][2] or '2022' }}">
+                           id="ovmEHICValidToDate-year" name="[ovmEHICValidToDate]" type="text" pattern="[0-9]*" inputmode="numeric" spellcheck="false" value="{{ data.patient['ovmEHICValidToDate'][2] or '2022' }}">
                   </div>
                 </div>
               </div>
@@ -714,7 +714,7 @@ Overseas visitor manager record
                 2. PRC Country of issue
               </label>
               <input class="nhsuk-input nhsuk-input--width-20" id="ovmPRCCountryIssue" name="ovmPRCCountryIssue" type="text"
-                     value="{{ patient['ovmPRCCountryIssue'] or 'Jersey' }}">
+                     value="{{ data.patient['ovmPRCCountryIssue'] or 'Jersey' }}">
             </div>
           </div>
           <div class="scra-card-content">
@@ -723,7 +723,7 @@ Overseas visitor manager record
                 6. PRC Personal Id No
               </label>
               <input class="nhsuk-input nhsuk-input--width-20" id="ovmPRCPersonalId" name="ovmPRCPersonalId" type="text"
-                     value="{{ patient['ovmPRCPersonalId'] or '123456' }}">
+                     value="{{ data.patient['ovmPRCPersonalId'] or '123456' }}">
             </div>
           </div>
           <div class="scra-card-content">
@@ -732,7 +732,7 @@ Overseas visitor manager record
                 7. PRC Institution Id
               </label>
               <input class="nhsuk-input nhsuk-input--width-20" id="ovmPRCInstitutionId" name="ovmPRCInstitutionId" type="text"
-                     value="{{ patient['ovmPRCInstitutionId'] or '123456' }}">
+                     value="{{ data.patient['ovmPRCInstitutionId'] or '123456' }}">
             </div>
           </div>
           <div class="scra-card-content">
@@ -741,7 +741,7 @@ Overseas visitor manager record
                 8. PRC card number
               </label>
               <input class="nhsuk-input nhsuk-input--width-20" id="ovmPRCCardNum" name="ovmPRCCardNum" type="text"
-                     value="{{ patient['ovmPRCCardNum'] or '123456' }}">
+                     value="{{ data.patient['ovmPRCCardNum'] or '123456' }}">
             </div>
           </div>
 
@@ -761,7 +761,7 @@ Overseas visitor manager record
                         Day
                       </label>
                       <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
-                             id="ovmPRCExpDate-day" name="[ovmPRCExpDate]" type="text" pattern="[0-9]*" inputmode="numeric" spellcheck="false" value="{{ patient['ovmPRCExpDate'][0] or '02' }}">
+                             id="ovmPRCExpDate-day" name="[ovmPRCExpDate]" type="text" pattern="[0-9]*" inputmode="numeric" spellcheck="false" value="{{ data.patient['ovmPRCExpDate'][0] or '02' }}">
                     </div>
                   </div>
                   <div class="nhsuk-date-input__item">
@@ -770,7 +770,7 @@ Overseas visitor manager record
                         Month
                       </label>
                       <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
-                             id="ovmPRCExpDate-month" name="[ovmPRCExpDate]" type="text" pattern="[0-9]*" inputmode="numeric" spellcheck="false" value="{{ patient['ovmPRCExpDate'][1] or '09' }}">
+                             id="ovmPRCExpDate-month" name="[ovmPRCExpDate]" type="text" pattern="[0-9]*" inputmode="numeric" spellcheck="false" value="{{ data.patient['ovmPRCExpDate'][1] or '09' }}">
                     </div>
                   </div>
                   <div class="nhsuk-date-input__item">
@@ -779,7 +779,7 @@ Overseas visitor manager record
                         Year
                       </label>
                       <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4"
-                             id="ovmPRCExpDate-year" name="[ovmPRCExpDate]" type="text" pattern="[0-9]*" inputmode="numeric" spellcheck="false" value="{{ patient['ovmPRCExpDate'][2] or '2022' }}">
+                             id="ovmPRCExpDate-year" name="[ovmPRCExpDate]" type="text" pattern="[0-9]*" inputmode="numeric" spellcheck="false" value="{{ data.patient['ovmPRCExpDate'][2] or '2022' }}">
                     </div>
                   </div>
                 </div>
@@ -803,7 +803,7 @@ Overseas visitor manager record
                       Day
                     </label>
                     <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
-                           id="ovmPRCValidFromDate-day" name="[ovmPRCValidFromDate]" type="text" pattern="[0-9]*" inputmode="numeric" spellcheck="false" value="{{ patient['ovmPRCValidFromDate'][0] or '02' }}">
+                           id="ovmPRCValidFromDate-day" name="[ovmPRCValidFromDate]" type="text" pattern="[0-9]*" inputmode="numeric" spellcheck="false" value="{{ data.patient['ovmPRCValidFromDate'][0] or '02' }}">
                   </div>
                 </div>
                 <div class="nhsuk-date-input__item">
@@ -812,7 +812,7 @@ Overseas visitor manager record
                       Month
                     </label>
                     <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
-                           id="ovmPRCValidFromDate-month" name="[ovmPRCValidFromDate]" type="text" pattern="[0-9]*" inputmode="numeric" spellcheck="false" value="{{ patient['ovmPRCValidFromDate'][1] or '09' }}">
+                           id="ovmPRCValidFromDate-month" name="[ovmPRCValidFromDate]" type="text" pattern="[0-9]*" inputmode="numeric" spellcheck="false" value="{{ data.patient['ovmPRCValidFromDate'][1] or '09' }}">
                   </div>
                 </div>
                 <div class="nhsuk-date-input__item">
@@ -821,7 +821,7 @@ Overseas visitor manager record
                       Year
                     </label>
                     <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4"
-                           id="ovmPRCValidFromDate-year" name="[ovmPRCValidFromDate]" type="text" pattern="[0-9]*" inputmode="numeric" spellcheck="false" value="{{ patient['ovmPRCValidFromDate'][2] or '2020' }}">
+                           id="ovmPRCValidFromDate-year" name="[ovmPRCValidFromDate]" type="text" pattern="[0-9]*" inputmode="numeric" spellcheck="false" value="{{ data.patient['ovmPRCValidFromDate'][2] or '2020' }}">
                   </div>
                 </div>
               </div>
@@ -844,7 +844,7 @@ Overseas visitor manager record
                       Day
                     </label>
                     <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
-                           id="ovmPRCValidToDate-day" name="[ovmPRCValidToDate]" type="text" pattern="[0-9]*" inputmode="numeric" spellcheck="false" value="{{ patient['ovmPRCValidToDate'][0] or '02' }}">
+                           id="ovmPRCValidToDate-day" name="[ovmPRCValidToDate]" type="text" pattern="[0-9]*" inputmode="numeric" spellcheck="false" value="{{ data.patient['ovmPRCValidToDate'][0] or '02' }}">
                   </div>
                 </div>
                 <div class="nhsuk-date-input__item">
@@ -853,7 +853,7 @@ Overseas visitor manager record
                       Month
                     </label>
                     <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
-                           id="ovmPRCValidToDate-month" name="[ovmPRCValidToDate]" type="text" pattern="[0-9]*" inputmode="numeric" spellcheck="false" value="{{ patient['ovmPRCValidToDate'][1] or '09' }}">
+                           id="ovmPRCValidToDate-month" name="[ovmPRCValidToDate]" type="text" pattern="[0-9]*" inputmode="numeric" spellcheck="false" value="{{ data.patient['ovmPRCValidToDate'][1] or '09' }}">
                   </div>
                 </div>
                 <div class="nhsuk-date-input__item">
@@ -862,7 +862,7 @@ Overseas visitor manager record
                       Year
                     </label>
                     <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4"
-                           id="ovmPRCValidToDate-year" name="[ovmPRCValidToDate]" type="text" pattern="[0-9]*" inputmode="numeric" spellcheck="false" value="{{ patient['ovmPRCValidToDate'][2] or '2022' }}">
+                           id="ovmPRCValidToDate-year" name="[ovmPRCValidToDate]" type="text" pattern="[0-9]*" inputmode="numeric" spellcheck="false" value="{{ data.patient['ovmPRCValidToDate'][2] or '2022' }}">
                   </div>
                 </div>
               </div>
@@ -881,7 +881,7 @@ Overseas visitor manager record
                 S2 country of issue
               </label>
               <input class="nhsuk-input nhsuk-input--width-20" id="ovmS2CountryIssue" name="ovmS2CountryIssue" type="text"
-                     value="{{ patient['ovmS2CountryIssue'] or '123456' }}">
+                     value="{{ data.patient['ovmS2CountryIssue'] or '123456' }}">
             </div>
           </div>
 
@@ -901,7 +901,7 @@ Overseas visitor manager record
                         Day
                       </label>
                       <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
-                             id="ovmS2ValidFromDate-day" name="[ovmS2ValidFromDate]" type="text" pattern="[0-9]*" inputmode="numeric" spellcheck="false" value="{{ patient['ovmS2ValidFromDate'][0] or '02' }}">
+                             id="ovmS2ValidFromDate-day" name="[ovmS2ValidFromDate]" type="text" pattern="[0-9]*" inputmode="numeric" spellcheck="false" value="{{ data.patient['ovmS2ValidFromDate'][0] or '02' }}">
                     </div>
                   </div>
                   <div class="nhsuk-date-input__item">
@@ -910,7 +910,7 @@ Overseas visitor manager record
                         Month
                       </label>
                       <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
-                             id="ovmS2ValidFromDate-month" name="[ovmS2ValidFromDate]" type="text" pattern="[0-9]*" inputmode="numeric" spellcheck="false" value="{{ patient['ovmS2ValidFromDate'][1] or '09' }}">
+                             id="ovmS2ValidFromDate-month" name="[ovmS2ValidFromDate]" type="text" pattern="[0-9]*" inputmode="numeric" spellcheck="false" value="{{ data.patient['ovmS2ValidFromDate'][1] or '09' }}">
                     </div>
                   </div>
                   <div class="nhsuk-date-input__item">
@@ -919,7 +919,7 @@ Overseas visitor manager record
                         Year
                       </label>
                       <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4"
-                             id="ovmS2ValidFromDate-year" name="[ovmS2ValidFromDate]" type="text" pattern="[0-9]*" inputmode="numeric" spellcheck="false" value="{{ patient['ovmS2ValidFromDate'][2] or '2020' }}">
+                             id="ovmS2ValidFromDate-year" name="[ovmS2ValidFromDate]" type="text" pattern="[0-9]*" inputmode="numeric" spellcheck="false" value="{{ data.patient['ovmS2ValidFromDate'][2] or '2020' }}">
                     </div>
                   </div>
                 </div>
@@ -942,7 +942,7 @@ Overseas visitor manager record
                         Day
                       </label>
                       <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
-                             id="ovmS2ValidToDate-day" name="[ovmS2ValidToDate]" type="text" pattern="[0-9]*" inputmode="numeric" spellcheck="false" value="{{ patient['ovmS2ValidToDate'][0] or '02' }}">
+                             id="ovmS2ValidToDate-day" name="[ovmS2ValidToDate]" type="text" pattern="[0-9]*" inputmode="numeric" spellcheck="false" value="{{ data.patient['ovmS2ValidToDate'][0] or '02' }}">
                     </div>
                   </div>
                   <div class="nhsuk-date-input__item">
@@ -951,7 +951,7 @@ Overseas visitor manager record
                         Month
                       </label>
                       <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
-                             id="ovmS2ValidToDate-month" name="[ovmS2ValidToDate]" type="text" pattern="[0-9]*" inputmode="numeric" spellcheck="false" value="{{ patient['ovmS2ValidToDate'][1] or '09' }}">
+                             id="ovmS2ValidToDate-month" name="[ovmS2ValidToDate]" type="text" pattern="[0-9]*" inputmode="numeric" spellcheck="false" value="{{ data.patient['ovmS2ValidToDate'][1] or '09' }}">
                     </div>
                   </div>
                   <div class="nhsuk-date-input__item">
@@ -960,7 +960,7 @@ Overseas visitor manager record
                         Year
                       </label>
                       <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4"
-                             id="ovmS2ValidToDate-year" name="[ovmS2ValidToDate]" type="text" pattern="[0-9]*" inputmode="numeric" spellcheck="false" value="{{ patient['ovmS2ValidToDate'][2] or '2022' }}">
+                             id="ovmS2ValidToDate-year" name="[ovmS2ValidToDate]" type="text" pattern="[0-9]*" inputmode="numeric" spellcheck="false" value="{{ data.patient['ovmS2ValidToDate'][2] or '2022' }}">
                     </div>
                   </div>
                 </div>

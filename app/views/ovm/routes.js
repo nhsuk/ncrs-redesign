@@ -25,57 +25,14 @@ module.exports = (router) => {
   });
 
 
-  router.get("/ovm/patient-details-ovm", function (req, res, next) {
-    const nhsNumber = req.query["nhs-number"];
-    const { gender, firstName, lastName, dob, dobTo, dobFrom, postcode } =
-      req.query;
+  router.get("/ovm/patient-overview-ovm", function (req, res, next) {
+    let nhsNumber = req.session.data["nhs-number"];
+    let patientList = require("../../data/patients-list.js");
+    let patientsData = {};
+    patientsData = patientList[nhsNumber]
+    req.session.data['patient'] = patientsData;
 
-    const isBasicSearch = gender && lastName && dob;
-    const isAdvancedSearch =
-      gender && firstName && lastName && dobTo && dobFrom && postcode;
-    const isPostcodeSearch = postcode && !isAdvancedSearch && !isBasicSearch;
-    const isNhsNumberSearch = nhsNumber && !isAdvancedSearch && !isBasicSearch;
-
-    const returnedPatientsList = {};
-    for (const [patientNhsNumber, patient] of Object.entries(patientList)) {
-      // Basic Details Search
-      if (
-        isBasicSearch &&
-        gender === patient.gender &&
-        lastName === patient.lastName &&
-        dob === patient.dob
-      ) {
-        returnedPatientsList[patientNhsNumber] = patient;
-        continue;
-      }
-      // Advanced Details Search
-      if (
-        isAdvancedSearch &&
-        (gender === patient.gender || gender === "Not known") &&
-        firstName === patient.firstName &&
-        lastName === patient.lastName &&
-        moment(new Date(dobFrom)).isBefore(new Date(patient.dob)) &&
-        moment(new Date(dobTo)).isAfter(new Date(patient.dob)) &&
-        postcode === patient.postcode
-      ) {
-        returnedPatientsList[patientNhsNumber] = patient;
-        continue;
-      }
-      // Postcode Details Search
-      if (isPostcodeSearch && postcode === patient.postcode) {
-        returnedPatientsList[patientNhsNumber] = patient;
-        continue;
-      }
-      // NHS Number search
-      if (isNhsNumberSearch && patientNhsNumber == nhsNumber) {
-        returnedPatientsList[patientNhsNumber] = patient;
-      }
-    }
-
-    res.locals.returnedPatientsList = returnedPatientsList;
-    // req.session.data['patient'] = patient;
-
-    next();
+    return res.render('ovm/patient-overview-ovm')
   });
 
   // move patient data into data store

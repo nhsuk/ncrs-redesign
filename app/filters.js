@@ -23,7 +23,7 @@ module.exports = function (env) {
   }
 
   filters.returnMonth = (input) => {
-    var dateFormat = "MMMM"
+    var dateFormat = "MMM"
     var d = moment().month(input-1).format(dateFormat)
     return d;
   }
