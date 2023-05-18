@@ -1,5 +1,6 @@
 {% extends 'layouts/layout-application.html' %}
 
+{# months for old data #}
 {% if data.patient['ovmDateSeen'][1] %}
   {% set ovmDateSeenMonth = data.patient['ovmDateSeen'][1] | returnMonth %}
 {% endif %}
@@ -37,7 +38,46 @@
   {% set ovmS2ValidToDateMonth = data.patient['ovmS2ValidToDate'][1] | returnMonth %}
 {% endif %}
 
-{% block pageTitle %} Patient details {% endblock %}
+{# months for new data #}
+{% if data['ovmDateSeen'][1] %}
+  {% set ovmDateSeenMonthNew = data['ovmDateSeen'][1] | returnMonth %}
+{% endif %}
+{% if data['ovmDateEntry'][1] %}
+  {% set ovmDateEntryMonthNew = data['ovmDateEntry'][1] | returnMonth %}
+{% endif %}
+{% if data['ovmPassportExp'][1] %}
+  {% set ovmPassportExpMonthNew = data['ovmPassportExp'][1] | returnMonth %}
+{% endif %}
+{% if data['ovmHOContactedDate'][1] %}
+  {% set ovmHOContactedDateMonthNew = data['ovmHOContactedDate'][1] | returnMonth %}
+{% endif %}
+{% if data['ovmEHICExpDate'][1] %}
+  {% set ovmEHICExpDateMonthNew = data['ovmEHICExpDate'][1] | returnMonth %}
+{% endif %}
+{% if data['ovmEHICValidFromDate'][1] %}
+  {% set ovmEHICValidFromDateMonthNew = data['ovmEHICValidFromDate'][1] | returnMonth %}
+{% endif %}
+{% if data['ovmEHICValidToDate'][1] %}
+  {% set ovmEHICValidToDateMonthNew = data['ovmEHICValidToDate'][1] | returnMonth %}
+{% endif %}
+{% if data['ovmPRCExpDate'][1] %}
+  {% set ovmPRCExpDateMonthNew = data['ovmPRCExpDate'][1] | returnMonth %}
+{% endif %}
+{% if data['ovmPRCValidFromDate'][1] %}
+  {% set ovmPRCValidFromDateMonthNew = data['ovmPRCValidFromDate'][1] | returnMonth %}
+{% endif %}
+{% if data['ovmPRCValidToDate'][1] %}
+  {% set ovmPRCValidToDateMonthNew = data['ovmPRCValidToDate'][1] | returnMonth %}
+{% endif %}
+{% if data['ovmS2ValidFromDate'][1] %}
+  {% set ovmS2ValidFromDateMonthNew = data['ovmS2ValidFromDate'][1] | returnMonth %}
+{% endif %}
+{% if data['ovmS2ValidToDate'][1] %}
+  {% set ovmS2ValidToDateMonthNew = data['ovmS2ValidToDate'][1] | returnMonth %}
+{% endif %}
+
+
+{% block pageTitle %} Review and confirm your changes {% endblock %}
 
 {% block beforeContent %}
 
@@ -141,7 +181,7 @@
 
       {% endif %}
 
-     {% if data['ovmDateSeen'] === data.patient['ovmDateSeen'] and data['ovmNationality'] === data.patient['ovmNationality'] and data['ovmPurposeEntry'] === data.patient['ovmPurposeEntry'] and data['ovmPurposeEntryOther'] === data.patient['ovmPurposeEntryOther'] and data['ovmDateEntry'] === data.patient['ovmDateEntry'] and data['ovmAddress1'] === data.patient['ovmAddress1'] and data['ovmAddress2'] === data.patient['ovmAddress2'] and data['ovmAddress3'] === data.patient['ovmAddress3'] and data['ovmAddress4'] === data.patient['ovmAddress4'] and data['ovmHomeCountry'] === data.patient['ovmHomeCountry'] %}
+     {% if data['ovmDateSeen'][0] === data.patient['ovmDateSeen'][0] and data['ovmDateSeen'][1] === data.patient['ovmDateSeen'][1] and data['ovmDateSeen'][2] === data.patient['ovmDateSeen'][2] and data['ovmNationality'] === data.patient['ovmNationality'] and data['ovmPurposeEntry'] === data.patient['ovmPurposeEntry'] and data['ovmPurposeEntryOther'] === data.patient['ovmPurposeEntryOther'] and data['ovmDateEntry'][0] === data.patient['ovmDateEntry'][0] and data['ovmDateEntry'][1] === data.patient['ovmDateEntry'][1] and data['ovmDateEntry'][2] === data.patient['ovmDateEntry'][2] and data['ovmAddress1'] === data.patient['ovmAddress1'] and data['ovmAddress2'] === data.patient['ovmAddress2'] and data['ovmAddress3'] === data.patient['ovmAddress3'] and data['ovmAddress4'] === data.patient['ovmAddress4'] and data['ovmHomeCountry'] === data.patient['ovmHomeCountry'] %}
 
       {% else %}
       <div class="scra-card">
@@ -150,7 +190,9 @@
           <div class="scra-card-content"> <dl class="nhsuk-summary-list">
 
 
-            {% if data['ovmDateSeen'] !== data.patient['ovmDateSeen'] %}
+            {% if data['ovmDateSeen'][0] === data.patient['ovmDateSeen'][0] and data['ovmDateSeen'][1] === data.patient['ovmDateSeen'][1] and data['ovmDateSeen'][2] === data.patient['ovmDateSeen'][2] %}
+
+            {% else %}
             <div class="nhsuk-form-group">
               <h4 class="nhsuk-heading-s">Date patient seen</h4>
 
@@ -170,11 +212,13 @@
                 </dt>
                 <dd class="nhsuk-summary-list__value">
                   <p>
-                    {{ data['ovmDateSeen'][0] }}-{{ ovmDateSeenMonth }}-{{ data['ovmDateSeen'][2] }}
+                    {{ data['ovmDateSeen'][0] }}-{{ ovmDateSeenMonthNew }}-{{ data['ovmDateSeen'][2] }}
                   </p>
                 </dd></div>
               </dl>
-              <input class="nhsuk-input" name="patient[ovmDateSeen]" type="hidden" value="{{ data.ovmDateSeen }}">
+              <input class="nhsuk-input" name="patient[ovmDateSeen][0]" type="hidden" value="{{ data.ovmDateSeen[0] }}">
+              <input class="nhsuk-input" name="patient[ovmDateSeen][1]" type="hidden" value="{{ data.ovmDateSeen[1] }}">
+              <input class="nhsuk-input" name="patient[ovmDateSeen][2]" type="hidden" value="{{ data.ovmDateSeen[2] }}">
             </div>
             {% endif %}
 
@@ -286,7 +330,7 @@
             {% endif %}
 
 
-            {% if data['ovmDateEntry'][0] === data.patient['ovmDateEntry'][0] and data['ovmDateEntry'][1] === data.patient['ovmDateEntry'][1] and data['ovmDateEntry'][1] === data.patient['ovmDateEntry'][1] %}
+            {% if data['ovmDateEntry'][0] === data.patient['ovmDateEntry'][0] and data['ovmDateEntry'][1] === data.patient['ovmDateEntry'][1] and data['ovmDateEntry'][2] === data.patient['ovmDateEntry'][2] %}
 
             {% else %}
             <div class="nhsuk-form-group">
@@ -309,7 +353,7 @@
                 </dt>
                 <dd class="nhsuk-summary-list__value">
                   <p>
-                    {{ data['ovmDateEntry'][0] }}-{{ ovmDateEntryMonth }}-{{ data['ovmDateEntry'][2] }}
+                    {{ data['ovmDateEntry'][0] }}-{{ ovmDateEntryMonthNew }}-{{ data['ovmDateEntry'][2] }}
                   </p>
                 </dd></div>
               </dl>
@@ -573,7 +617,7 @@
                     Was previously
                   </dt>
                   <dd class="nhsuk-summary-list__value">
-                    <p> {{ data.patient['ovmPassportExp'][0] or '02' }}-{{ ovmPassportExpMonth or 'Aug' }}-{{ data.patient['ovmPassportExp'][2] or '2020' }}
+                    <p> {{ data.patient['ovmPassportExp'][0] or '02' }}-{{ ovmPassportExpMonth }}-{{ data.patient['ovmPassportExp'][2] or '2020' }}
                        </p>
                   </dd>
 
@@ -583,7 +627,7 @@
                 </dt>
                 <dd class="nhsuk-summary-list__value">
                   <p>
-                    {{ data['ovmPassportExp'][0] or '02' }}-{{ ovmPassportExpMonth or 'Aug' }}-{{ data['ovmPassportExp'][2] or '2020' }}
+                    {{ data['ovmPassportExp'][0] or '02' }}-{{ ovmPassportExpMonthNew }}-{{ data['ovmPassportExp'][2] or '2020' }}
                   </p>
                 </dd></div>
               </dl>
@@ -671,7 +715,7 @@
                     Was previously
                   </dt>
                   <dd class="nhsuk-summary-list__value">
-                    <p>  {{ data.patient['ovmHOContactedDate'][0] or '02' }}-{{ ovmHOContactedDateMonth or 'Jul' }}-{{ data.patient['ovmHOContactedDate'][2] or '2020' }}
+                    <p>  {{ data.patient['ovmHOContactedDate'][0] }}-{{ ovmHOContactedDateMonth }}-{{ data.patient['ovmHOContactedDate'][2] }}
                        </p>
                   </dd>
 
@@ -681,7 +725,7 @@
                 </dt>
                 <dd class="nhsuk-summary-list__value">
                   <p>
-                    {{ data['ovmHOContactedDate'][0] or '02' }}-{{ ovmHOContactedDateMonth or 'Jul' }}-{{ data['ovmHOContactedDate'][2] or '2020' }}
+                    {{ data['ovmHOContactedDate'][0] }}-{{ ovmHOContactedDateMonthNew }}-{{ data['ovmHOContactedDate'][2] }}
                   </p>
                 </dd></div>
               </dl>
@@ -696,540 +740,621 @@
 
       {% endif %}
 
-      {% if data['ovmEHICCountryIssue'] === data.patient['ovmEHICCountryIssue'] and data['ovmEHICPersonalId'] === data.patient['ovmEHICPersonalId'] and data['ovmEHICPersonalId'] === data.patient['ovmEHICPersonalId'] and data['ovmEHICCardNum'] === data.patient['ovmEHICCardNum'] and data['ovmEHICExpDate'][0] === data.patient['ovmEHICExpDate'][0] and data['ovmPRCCountryIssue'] === data.patient['ovmPRCCountryIssue'] and data['ovmPRCCountryIssue'] === data.patient['ovmPRCCountryIssue'] and data['ovmPRCPersonalId'] === data.patient['ovmPRCPersonalId'] and data['ovmPRCInstitutionId'] === data.patient['ovmPRCInstitutionId'] and data['ovmPRCCardNum'] === data.patient['ovmPRCCardNum'] and data['ovmPRCExpDate'][0] === data.patient['ovmPRCExpDate'][0] and data['ovmPRCValidFromDate'][0] === data.patient['ovmPRCValidFromDate'][0] and data['ovmPRCValidToDate'][0] === data.patient['ovmPRCValidToDate'][0] and data['ovmS1status'] === data.patient['ovmS1status'] and data['ovmS2CountryIssue'] === data.patient['ovmS2CountryIssue'] and data['ovmS2ValidFromDate'] === data.patient['ovmS2ValidFromDate'] and data['ovmS2ValidToDate'] === data.patient['ovmS2ValidToDate'] %}
+      {% if data['ovmEHICCountryIssue'] === data.patient['ovmEHICCountryIssue'] and data['ovmEHICPersonalId'] === data.patient['ovmEHICPersonalId'] and data['ovmEHICPersonalId'] === data.patient['ovmEHICPersonalId'] and data['ovmEHICCardNum'] === data.patient['ovmEHICCardNum'] and data['ovmEHICExpDate'][0] === data.patient['ovmEHICExpDate'][0] and data['ovmEHICExpDate'][1] === data.patient['ovmEHICExpDate'][1] and data['ovmEHICExpDate'][2] === data.patient['ovmEHICExpDate'][2] and data['ovmEHICValidFromDate'][0] === data.patient['ovmEHICValidFromDate'][0] and data['ovmEHICValidFromDate'][1] === data.patient['ovmEHICValidFromDate'][1] and data['ovmEHICValidFromDate'][2] === data.patient['ovmEHICValidFromDate'][2] and data['ovmEHICValidToDate'][0] === data.patient['ovmEHICValidToDate'][0] and data['ovmEHICValidToDate'][1] === data.patient['ovmEHICValidToDate'][1] and data['ovmEHICValidToDate'][2] === data.patient['ovmEHICValidToDate'][2] and data['ovmPRCCountryIssue'] === data.patient['ovmPRCCountryIssue'] and data['ovmPRCCountryIssue'] === data.patient['ovmPRCCountryIssue'] and data['ovmPRCPersonalId'] === data.patient['ovmPRCPersonalId'] and data['ovmPRCInstitutionId'] === data.patient['ovmPRCInstitutionId'] and data['ovmPRCCardNum'] === data.patient['ovmPRCCardNum'] and data['ovmPRCExpDate'][0] === data.patient['ovmPRCExpDate'][0] and data['ovmPRCExpDate'][1] === data.patient['ovmPRCExpDate'][1] and data['ovmPRCExpDate'][2] === data.patient['ovmPRCExpDate'][2] and data['ovmPRCValidFromDate'][0] === data.patient['ovmPRCValidFromDate'][0] and data['ovmPRCValidFromDate'][1] === data.patient['ovmPRCValidFromDate'][1] and data['ovmPRCValidFromDate'][2] === data.patient['ovmPRCValidFromDate'][2] and data['ovmPRCValidToDate'][0] === data.patient['ovmPRCValidToDate'][0] and data['ovmPRCValidToDate'][1] === data.patient['ovmPRCValidToDate'][1] and data['ovmPRCValidToDate'][2] === data.patient['ovmPRCValidToDate'][2] and data['ovmS1status'] === data.patient['ovmS1status'] and data['ovmS2CountryIssue'] === data.patient['ovmS2CountryIssue'] and data['ovmS2ValidFromDate'][0] === data.patient['ovmS2ValidFromDate'][0] and data['ovmS2ValidFromDate'][1] === data.patient['ovmS2ValidFromDate'][1] and data['ovmS2ValidFromDate'][2] === data.patient['ovmS2ValidFromDate'][2] and data['ovmS2ValidToDate'][0] === data.patient['ovmS2ValidToDate'][0] and data['ovmS2ValidToDate'][1] === data.patient['ovmS2ValidToDate'][1] and data['ovmS2ValidToDate'][2] === data.patient['ovmS2ValidToDate'][2] %}
 
       {% else %}
-            <div class="scra-card">
-              <div class="scra-card-header"> <h2 class="nhsuk-card__heading">
-                Entitlement evidence</h2> </div>
-                <div class="scra-card-content"> <dl class="nhsuk-summary-list">
-
-
-                  {% if data['ovmEHICCountryIssue'] !== data.patient['ovmEHICCountryIssue'] %}
-
-                  <div class="nhsuk-form-group">
-                    <h4 class="nhsuk-heading-m">EHIC Country of issue</h4>
-                  
-                    <dl class="nhsuk-summary-list">
-                  
-                      <div class="nhsuk-summary-list__row">
-                        <dt class="nhsuk-summary-list__key">
-                          Was previously
-                        </dt>
-                        <dd class="nhsuk-summary-list__value">
-                          <p> {{ data.patient['ovmEHICCountryIssue'] }}
-                             </p>
-                        </dd>
-                  
-                      </div>
-                      <div class="nhsuk-summary-list__row">  <dt class="nhsuk-summary-list__key">
-                        Updated to
-                      </dt>
-                      <dd class="nhsuk-summary-list__value">
-                        <p>
-                          {{ data['ovmEHICCountryIssue'] }}
-                        </p>
-                      </dd></div>
-                    </dl>
-                    <input class="nhsuk-input" name="patient[ovmEHICCountryIssue]" type="hidden" value="{{ data.ovmEHICCountryIssue }}">
-                  </div>
-
-                  {% endif %}
-
-
-                  {% if data['ovmEHICPersonalId'] !== data.patient['ovmEHICPersonalId'] %}
-
-                  <div class="nhsuk-form-group">
-                    <h4 class="nhsuk-heading-m">EHIC Personal ID No</h4>
-
-                    <dl class="nhsuk-summary-list">
-
-                      <div class="nhsuk-summary-list__row">
-                        <dt class="nhsuk-summary-list__key">
-                          Was previously
-                        </dt>
-                        <dd class="nhsuk-summary-list__value">
-                          <p> {{ data.patient['ovmEHICPersonalId'] }}
-                             </p>
-                        </dd>
-
-                      </div>
-                      <div class="nhsuk-summary-list__row">  <dt class="nhsuk-summary-list__key">
-                        Updated to
-                      </dt>
-                      <dd class="nhsuk-summary-list__value">
-                        <p>
-                          {{ data['ovmEHICPersonalId'] or '123456' }}
-                        </p>
-                      </dd></div>
-                    </dl>
-                    <input class="nhsuk-input" name="patient[ovmEHICPersonalId]" type="hidden" value="{{ data.ovmEHICPersonalId }}">
-                  </div>
-
-                  {% endif %}
-
-
-                  {% if data['ovmEHICPersonalId'] !== data.patient['ovmEHICPersonalId'] %}
-
-                  <div class="nhsuk-form-group">
-                    <h4 class="nhsuk-heading-m">EHIC Institution ID</h4>
-
-                    <dl class="nhsuk-summary-list">
-
-                      <div class="nhsuk-summary-list__row">
-                        <dt class="nhsuk-summary-list__key">
-                          Was previously
-                        </dt>
-                        <dd class="nhsuk-summary-list__value">
-                          <p> {{ data.patient['ovmEHICInstitutionId'] }}
-                             </p>
-                        </dd>
-
-                      </div>
-                      <div class="nhsuk-summary-list__row">  <dt class="nhsuk-summary-list__key">
-                        Updated to
-                      </dt>
-                      <dd class="nhsuk-summary-list__value">
-                        <p>
-                          {{ data['ovmEHICInstitutionId'] }}
-                        </p>
-                      </dd></div>
-                    </dl>
-                    <input class="nhsuk-input" name="patient[ovmEHICInstitutionId]" type="hidden" value="{{ data.ovmEHICInstitutionId }}">
-                  </div>
-
-                  {% endif %}
-
-
-                  {% if data['ovmEHICCardNum'] !== data.patient['ovmEHICCardNum'] %}
-
-                  <div class="nhsuk-form-group">
-                    <h4 class="nhsuk-heading-m">EHIC card number</h4>
-
-                    <dl class="nhsuk-summary-list">
-
-                      <div class="nhsuk-summary-list__row">
-                        <dt class="nhsuk-summary-list__key">
-                          Was previously
-                        </dt>
-                        <dd class="nhsuk-summary-list__value">
-                          <p> {{ data.patient['ovmEHICCardNum']  }}
-                             </p>
-                        </dd>
-
-                      </div>
-                      <div class="nhsuk-summary-list__row">  <dt class="nhsuk-summary-list__key">
-                        Updated to
-                      </dt>
-                      <dd class="nhsuk-summary-list__value">
-                        <p>
-                          {{ data['ovmEHICCardNum']  }}
-                        </p>
-                      </dd></div>
-                    </dl>
-                    <input class="nhsuk-input" name="patient[ovmEHICCardNum]" type="hidden" value="{{ data.ovmEHICCardNum }}">
-                  </div>
-
-                  {% endif %}
-
-
-                  {% if data['ovmEHICExpDate'][0] === data.patient['ovmEHICExpDate'][0] and data['ovmEHICExpDate'][1] === data.patient['ovmEHICExpDate'][1] and data['ovmEHICExpDate'][2] === data.patient['ovmEHICExpDate'][2] %}
-
-                  {% else %}
-                  <div class="nhsuk-form-group">
-                    <h4 class="nhsuk-heading-m">EHIC expiry date</h4>
-
-                    <dl class="nhsuk-summary-list">
-
-                      <div class="nhsuk-summary-list__row">
-                        <dt class="nhsuk-summary-list__key">
-                          Was previously
-                        </dt>
-                        <dd class="nhsuk-summary-list__value">
-                          <p> {{ data.patient['ovmEHICExpDate'][0]  }}-{{ ovmEHICExpDateMonth or 'Jul'  }}-{{ data.patient['ovmEHICExpDate'][2]  }}
-                             </p>
-                        </dd>
-
-                      </div>
-                      <div class="nhsuk-summary-list__row">  <dt class="nhsuk-summary-list__key">
-                        Updated to
-                      </dt>
-                      <dd class="nhsuk-summary-list__value">
-                        <p>
-                          {{ data['ovmEHICExpDate'][0]  }}-{{ ovmEHICExpDateMonth or 'Jul'  }}-{{ data['ovmEHICExpDate'][2]  }}
-                        </p>
-                      </dd></div>
-                    </dl>
-                    <input class="nhsuk-input" name="patient[ovmEHICExpDate]" type="hidden" value="{{ data.ovmEHICExpDate }}">
-                  </div>
-
-                  {% endif %}
-
-
-                  {% if data['ovmPRCCountryIssue'] !== data.patient['ovmPRCCountryIssue'] %}
-
-                  <div class="nhsuk-form-group">
-                    <h4 class="nhsuk-heading-m">PRC Country of issue</h4>
-
-                    <dl class="nhsuk-summary-list">
-
-                      <div class="nhsuk-summary-list__row">
-                        <dt class="nhsuk-summary-list__key">
-                          Was previously
-                        </dt>
-                        <dd class="nhsuk-summary-list__value">
-                          <p> {{ data.patient['ovmPRCCountryIssue']  }}
-                             </p>
-                        </dd>
-
-                      </div>
-                      <div class="nhsuk-summary-list__row">  <dt class="nhsuk-summary-list__key">
-                        Updated to
-                      </dt>
-                      <dd class="nhsuk-summary-list__value">
-                        <p>
-                          {{ data['ovmPRCCountryIssue'] }}
-                        </p>
-                      </dd></div>
-                    </dl>
-                    <input class="nhsuk-input" name="patient[ovmPRCCountryIssue]" type="hidden" value="{{ data.ovmPRCCountryIssue }}">
-                  </div>
-
-                  {% endif %}
-
-
-                  {% if data['ovmPRCPersonalId'] !== data.patient['ovmPRCPersonalId'] %}
-
-                  <div class="nhsuk-form-group">
-                    <h4 class="nhsuk-heading-m">PRC Personal ID No</h4>
-
-                    <dl class="nhsuk-summary-list">
-
-                      <div class="nhsuk-summary-list__row">
-                        <dt class="nhsuk-summary-list__key">
-                          Was previously
-                        </dt>
-                        <dd class="nhsuk-summary-list__value">
-                          <p> {{ data.patient['ovmPRCPersonalId']  }}
-                             </p>
-                        </dd>
-
-                      </div>
-                      <div class="nhsuk-summary-list__row">  <dt class="nhsuk-summary-list__key">
-                        Updated to
-                      </dt>
-                      <dd class="nhsuk-summary-list__value">
-                        <p>
-                          {{ data['ovmPRCPersonalId']  }}
-                        </p>
-                      </dd></div>
-                    </dl>
-                    <input class="nhsuk-input" name="patient[ovmPRCPersonalId]" type="hidden" value="{{ data.ovmPRCPersonalId }}">
-                  </div>
-
-                  {% endif %}
-
-
-                  {% if data['ovmPRCInstitutionId'] !== data.patient['ovmPRCInstitutionId'] %}
-          
-                  <div class="nhsuk-form-group">
-                    <h4 class="nhsuk-heading-m">PRC Institution ID</h4>
-
-                    <dl class="nhsuk-summary-list">
-
-                      <div class="nhsuk-summary-list__row">
-                        <dt class="nhsuk-summary-list__key">
-                          Was previously
-                        </dt>
-                        <dd class="nhsuk-summary-list__value">
-                          <p> {{ data.patient['ovmPRCInstitutionId'] }}
-                             </p>
-                        </dd>
-
-                      </div>
-                      <div class="nhsuk-summary-list__row">  <dt class="nhsuk-summary-list__key">
-                        Updated to
-                      </dt>
-                      <dd class="nhsuk-summary-list__value">
-                        <p>
-                          {{ data['ovmPRCInstitutionId'] }}
-                        </p>
-                      </dd></div>
-                    </dl>
-                    <input class="nhsuk-input" name="patient[ovmPRCInstitutionId]" type="hidden" value="{{ data.ovmPRCInstitutionId }}">
-                  </div>
-
-                  {% endif %}
-
-
-                  {% if data['ovmPRCCardNum'] !== data.patient['ovmPRCCardNum'] %}
-
-                  <div class="nhsuk-form-group">
-                    <h4 class="nhsuk-heading-m">PRC card number</h4>
-
-                    <dl class="nhsuk-summary-list">
-
-                      <div class="nhsuk-summary-list__row">
-                        <dt class="nhsuk-summary-list__key">
-                          Was previously
-                        </dt>
-                        <dd class="nhsuk-summary-list__value">
-                          <p> {{ data.patient['ovmPRCCardNum'] }}
-                             </p>
-                        </dd>
-
-                      </div>
-                      <div class="nhsuk-summary-list__row">  <dt class="nhsuk-summary-list__key">
-                        Updated to
-                      </dt>
-                      <dd class="nhsuk-summary-list__value">
-                        <p>
-                          {{ data['ovmPRCCardNum']  }}
-                        </p>
-                      </dd></div>
-                    </dl>
-                    <input class="nhsuk-input" name="patient[ovmPRCCardNum]" type="hidden" value="{{ data.ovmPRCCardNum }}">
-                  </div>
-
-                  {% endif %}
-
-
-                  {% if data['ovmPRCExpDate'][0] === data.patient['ovmPRCExpDate'][0] and data['ovmPRCExpDate'][1] === data.patient['ovmPRCExpDate'][1] and data['ovmPRCExpDate'][2] === data.patient['ovmPRCExpDate'][2] %}
-
-                  {% else %}
-
-                  <div class="nhsuk-form-group">
-                    <h4 class="nhsuk-heading-m">PRC expiry date</h4>
-
-                    <dl class="nhsuk-summary-list">
-
-                      <div class="nhsuk-summary-list__row">
-                        <dt class="nhsuk-summary-list__key">
-                          Was previously
-                        </dt>
-                        <dd class="nhsuk-summary-list__value">
-                          <p> {{ data.patient['ovmPRCExpDate'][0]  }}-{{ ovmPRCExpDateMonth or 'Jul' }}-{{ data.patient['ovmPRCExpDate'][2]  }}
-                             </p>
-                        </dd>
-
-                      </div>
-                      <div class="nhsuk-summary-list__row">  <dt class="nhsuk-summary-list__key">
-                        Updated to
-                      </dt>
-                      <dd class="nhsuk-summary-list__value">
-                        <p>
-                          {{ data['ovmPRCExpDate'][0]  }}-{{ ovmPRCExpDateMonth or 'Jul' }}-{{ data['ovmPRCExpDate'][2]  }}
-                        </p>
-                      </dd></div>
-                    </dl>
-                    <input class="nhsuk-input" name="patient[ovmPRCExpDate]" type="hidden" value="{{ data.ovmPRCExpDate }}">
-                  </div>
-
-                  {% endif %}
-
-
-                  {% if data['ovmPRCValidFromDate'][0] === data.patient['ovmPRCValidFromDate'][0] and data['ovmPRCValidFromDate'][1] === data.patient['ovmPRCValidFromDate'][1] and data['ovmPRCValidFromDate'][2] === data.patient['ovmPRCValidFromDate'][2] %}
-
-                  {% else %}
-
-                  <div class="nhsuk-form-group">
-                    <h4 class="nhsuk-heading-m">PRC valid from date</h4>
-
-                    <dl class="nhsuk-summary-list">
-
-                      <div class="nhsuk-summary-list__row">
-                        <dt class="nhsuk-summary-list__key">
-                          Was previously
-                        </dt>
-                        <dd class="nhsuk-summary-list__value">
-                          <p> {{ data.patient['ovmPRCValidFromDate'][0] }}-{{ ovmPRCValidFromDateMonth or 'Jul' }}-{{ data.patient['ovmPRCValidFromDate'][2]  }}
-                             </p>
-                        </dd>
-
-                      </div>
-                      <div class="nhsuk-summary-list__row">  <dt class="nhsuk-summary-list__key">
-                        Updated to
-                      </dt>
-                      <dd class="nhsuk-summary-list__value">
-                        <p>
-                          {{ data['ovmPRCValidFromDate'][0]  }}-{{ ovmPRCValidFromDateMonth or 'Jul' }}-{{ data['ovmPRCValidFromDate'][2] }}
-                        </p>
-                      </dd></div>
-                    </dl>
-                    <input class="nhsuk-input" name="patient[ovmPRCValidFromDate]" type="hidden" value="{{ data.ovmPRCValidFromDate }}">
-                  </div>
-
-                  {% endif %}
-
-
-                  {% if data['ovmPRCValidToDate'][0] === data.patient['ovmPRCValidToDate'][0] and data['ovmPRCValidToDate'][1] === data.patient['ovmPRCValidToDate'][1] and data['ovmPRCValidToDate'][2] === data.patient['ovmPRCValidToDate'][2] %}
-
-                  {% else %}
-
-                  <div class="nhsuk-form-group">
-                    <h4 class="nhsuk-heading-m">PRC valid to date</h4>
-
-                    <dl class="nhsuk-summary-list">
-
-                      <div class="nhsuk-summary-list__row">
-                        <dt class="nhsuk-summary-list__key">
-                          Was previously
-                        </dt>
-                        <dd class="nhsuk-summary-list__value">
-                          <p> {{ data.patient['ovmPRCValidToDate'][0]  }}-{{ ovmPRCValidToDateMonth or 'Jul' }}-{{ data.patient['ovmPRCValidToDate'][2]  }}
-                             </p>
-                        </dd>
-
-                      </div>
-                      <div class="nhsuk-summary-list__row">  <dt class="nhsuk-summary-list__key">
-                        Updated to
-                      </dt>
-                      <dd class="nhsuk-summary-list__value">
-                        <p>
-                          {{ data['ovmPRCValidToDate'][0] }}-{{ data['ovmPRCValidToDate'][1] }}-{{ data['ovmPRCValidToDate'][2] }}
-                        </p>
-                      </dd></div>
-                    </dl>
-                    <input class="nhsuk-input" name="patient[ovmPRCValidToDate]" type="hidden" value="{{ data.ovmPRCValidToDate }}">
-                  </div>
-
-                  {% endif %}
-
-
-                  {% if data['ovmS1status'] !== data.patient['ovmS1status'] %}
-
-                  <div class="nhsuk-form-group">
-                    <h4 class="nhsuk-heading-m">S1 Status</h4>
-
-                    <dl class="nhsuk-summary-list">
-
-                      <div class="nhsuk-summary-list__row">
-                        <dt class="nhsuk-summary-list__key">
-                          Was previously
-                        </dt>
-                        <dd class="nhsuk-summary-list__value">
-                          <p> {{ data.patient['ovmS1status'] }}
-                             </p>
-                        </dd>
-
-                      </div>
-                      <div class="nhsuk-summary-list__row">  <dt class="nhsuk-summary-list__key">
-                        Updated to
-                      </dt>
-                      <dd class="nhsuk-summary-list__value">
-                        <p>
-                          {{ data['ovmS1status'] }}
-                        </p>
-                      </dd></div>
-                    </dl>
-                    <input class="nhsuk-input" name="patient[ovmS1status]" type="hidden" value="{{ data.ovmS1status }}">
-                  </div>
-
-                  {% endif %}
-
-
-                  {% if data['ovmS2CountryIssue'] !== data.patient['ovmS2CountryIssue'] %}
-
-                  <div class="nhsuk-form-group">
-                    <h4 class="nhsuk-heading-m">S2 Country of issue</h4>
-
-                    <dl class="nhsuk-summary-list">
-
-                      <div class="nhsuk-summary-list__row">
-                        <dt class="nhsuk-summary-list__key">
-                          Was previously
-                        </dt>
-                        <dd class="nhsuk-summary-list__value">
-                          <p> {{ data.patient['ovmS2CountryIssue'] }}
-                             </p>
-                        </dd>
-
-                      </div>
-                      <div class="nhsuk-summary-list__row">  <dt class="nhsuk-summary-list__key">
-                        Updated to
-                      </dt>
-                      <dd class="nhsuk-summary-list__value">
-                        <p>
-                          {{ data['ovmS2CountryIssue'] }}
-                        </p>
-                      </dd></div>
-                    </dl>
-                    <input class="nhsuk-input" name="patient[ovmS2CountryIssue]" type="hidden" value="{{ data.ovmS2CountryIssue }}">
-                  </div>
-
-                  {% endif %}
-
-
-                  {% if data['ovmS2ValidFromDate'][0] === data.patient['ovmS2ValidFromDate'][0] and data['ovmS2ValidFromDate'][1] === data.patient['ovmS2ValidFromDate'][1] and data['ovmS2ValidFromDate'][2] === data.patient['ovmS2ValidFromDate'][2] %}
-
-                  {% else %}
-
-                  <div class="nhsuk-form-group">
-                    <h4 class="nhsuk-heading-m">S2 valid from</h4>
-
-                    <dl class="nhsuk-summary-list">
-
-                      <div class="nhsuk-summary-list__row">
-                        <dt class="nhsuk-summary-list__key">
-                          Was previously
-                        </dt>
-                        <dd class="nhsuk-summary-list__value">
-                          <p> {{ data.patient['ovmS2ValidFromDate'][0] }}-{{ ovmS2ValidFromDateMonth or 'Jul' }}-{{ data.patient['ovmS2ValidFromDate'][2] }}
-                             </p>
-                        </dd>
-
-                      </div>
-                      <div class="nhsuk-summary-list__row">  <dt class="nhsuk-summary-list__key">
-                        Updated to
-                      </dt>
-                      <dd class="nhsuk-summary-list__value">
-                        <p>
-                          {{ data['ovmS2ValidFromDate'][0] }}-{{ ovmS2ValidFromDateMonth or 'Jul' }}-{{ data['ovmS2ValidFromDate'][2] }}
-                        </p>
-                      </dd></div>
-                    </dl>
-                    <input class="nhsuk-input" name="patient[ovmS2ValidFromDate]" type="hidden" value="{{ data.ovmS2ValidFromDate }}">
-                  </div>
-
-                  {% endif %}
-
-
-                  {% if data['ovmS2ValidToDate'][0] === data.patient['ovmS2ValidToDate'][0] and data['ovmS2ValidToDate'][1] === data.patient['ovmS2ValidToDate'][1] and data['ovmS2ValidToDate'][2] === data.patient['ovmS2ValidToDate'][2] %}
-
-                  {% else %}
-
-                  <div class="nhsuk-form-group">
-                    <h4 class="nhsuk-heading-m">S2 Valid to</h4>
-
-                    <dl class="nhsuk-summary-list">
-
-                      <div class="nhsuk-summary-list__row">
-                        <dt class="nhsuk-summary-list__key">
-                          Was previously
-                        </dt>
-                        <dd class="nhsuk-summary-list__value">
-                          <p> {{ data.patient['ovmS2ValidToDate'][0] }}-{{ ovmS2ValidToDateMonth or 'Jul' }}-{{ data.patient['ovmS2ValidToDate'][2] }}
-                             </p>
-                        </dd>
-
-                      </div>
-                      <div class="nhsuk-summary-list__row">  <dt class="nhsuk-summary-list__key">
-                        Updated to
-                      </dt>
-                      <dd class="nhsuk-summary-list__value">
-                        <p>
-                          {{ data['ovmS2ValidToDate'][0] }}-{{ ovmS2ValidToDateMonth or 'Jul' }}-{{ data['ovmS2ValidToDate'][2] }}
-                        </p>
-                      </dd></div>
-                    </dl>
-                    <input class="nhsuk-input" name="patient[ovmS2ValidToDate]" type="hidden" value="{{ data.ovmS2ValidToDate }}">
-                  </div>
-
-                  {% endif %}
-
-                </dl>
-              </div>
+      <div class="scra-card">
+        <div class="scra-card-header"> <h2 class="nhsuk-card__heading">
+          Entitlement evidence</h2> </div>
+          <div class="scra-card-content"> <dl class="nhsuk-summary-list">
+
+
+            {% if data['ovmEHICCountryIssue'] !== data.patient['ovmEHICCountryIssue'] %}
+
+            <div class="nhsuk-form-group">
+              <h4 class="nhsuk-heading-m">EHIC Country of issue</h4>
+
+              <dl class="nhsuk-summary-list">
+
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Was previously
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    <p> {{ data.patient['ovmEHICCountryIssue'] }}
+                       </p>
+                  </dd>
+
+                </div>
+                <div class="nhsuk-summary-list__row">  <dt class="nhsuk-summary-list__key">
+                  Updated to
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  <p>
+                    {{ data['ovmEHICCountryIssue'] }}
+                  </p>
+                </dd></div>
+              </dl>
+              <input class="nhsuk-input" name="patient[ovmEHICCountryIssue]" type="hidden" value="{{ data.ovmEHICCountryIssue }}">
             </div>
+
+            {% endif %}
+
+
+            {% if data['ovmEHICPersonalId'] !== data.patient['ovmEHICPersonalId'] %}
+
+            <div class="nhsuk-form-group">
+              <h4 class="nhsuk-heading-m">EHIC Personal ID No</h4>
+
+              <dl class="nhsuk-summary-list">
+
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Was previously
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    <p> {{ data.patient['ovmEHICPersonalId'] }}
+                       </p>
+                  </dd>
+
+                </div>
+                <div class="nhsuk-summary-list__row">  <dt class="nhsuk-summary-list__key">
+                  Updated to
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  <p>
+                    {{ data['ovmEHICPersonalId'] }}
+                  </p>
+                </dd></div>
+              </dl>
+              <input class="nhsuk-input" name="patient[ovmEHICPersonalId]" type="hidden" value="{{ data.ovmEHICPersonalId }}">
+            </div>
+
+            {% endif %}
+
+
+            {% if data['ovmEHICPersonalId'] !== data.patient['ovmEHICPersonalId'] %}
+
+            <div class="nhsuk-form-group">
+              <h4 class="nhsuk-heading-m">EHIC Institution ID</h4>
+
+              <dl class="nhsuk-summary-list">
+
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Was previously
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    <p> {{ data.patient['ovmEHICInstitutionId'] }}
+                       </p>
+                  </dd>
+
+                </div>
+                <div class="nhsuk-summary-list__row">  <dt class="nhsuk-summary-list__key">
+                  Updated to
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  <p>
+                    {{ data['ovmEHICInstitutionId'] }}
+                  </p>
+                </dd></div>
+              </dl>
+              <input class="nhsuk-input" name="patient[ovmEHICInstitutionId]" type="hidden" value="{{ data.ovmEHICInstitutionId }}">
+            </div>
+
+            {% endif %}
+
+
+            {% if data['ovmEHICCardNum'] !== data.patient['ovmEHICCardNum'] %}
+
+            <div class="nhsuk-form-group">
+              <h4 class="nhsuk-heading-m">EHIC card number</h4>
+
+              <dl class="nhsuk-summary-list">
+
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Was previously
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    <p> {{ data.patient['ovmEHICCardNum']  }}
+                       </p>
+                  </dd>
+
+                </div>
+                <div class="nhsuk-summary-list__row">  <dt class="nhsuk-summary-list__key">
+                  Updated to
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  <p>
+                    {{ data['ovmEHICCardNum']  }}
+                  </p>
+                </dd></div>
+              </dl>
+              <input class="nhsuk-input" name="patient[ovmEHICCardNum]" type="hidden" value="{{ data.ovmEHICCardNum }}">
+            </div>
+
+            {% endif %}
+
+
+            {% if data['ovmEHICExpDate'][0] === data.patient['ovmEHICExpDate'][0] and data['ovmEHICExpDate'][1] === data.patient['ovmEHICExpDate'][1] and data['ovmEHICExpDate'][2] === data.patient['ovmEHICExpDate'][2] %}
+
+            {% else %}
+            <div class="nhsuk-form-group">
+              <h4 class="nhsuk-heading-m">EHIC expiry date</h4>
+
+              <dl class="nhsuk-summary-list">
+
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Was previously
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    <p> {{ data.patient['ovmEHICExpDate'][0]  }}-{{ ovmEHICExpDateMonth }}-{{ data.patient['ovmEHICExpDate'][2]  }}
+                       </p>
+                  </dd>
+
+                </div>
+                <div class="nhsuk-summary-list__row">  <dt class="nhsuk-summary-list__key">
+                  Updated to
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  <p>
+                    {{ data['ovmEHICExpDate'][0]  }}-{{ ovmEHICExpDateMonthNew  }}-{{ data['ovmEHICExpDate'][2]  }}
+                  </p>
+                </dd></div>
+              </dl>
+              <input class="nhsuk-input" name="patient[ovmEHICExpDate][0]" type="hidden" value="{{ data.ovmEHICExpDate[0] }}">
+              <input class="nhsuk-input" name="patient[ovmEHICExpDate][1]" type="hidden" value="{{ data.ovmEHICExpDate[1] }}">
+              <input class="nhsuk-input" name="patient[ovmEHICExpDate][2]" type="hidden" value="{{ data.ovmEHICExpDate[2] }}">
+            </div>
+
+            {% endif %}
+
+            {% if data['ovmEHICValidFromDate'][0] === data.patient['ovmEHICValidFromDate'][0] and data['ovmEHICValidFromDate'][1] === data.patient['ovmEHICValidFromDate'][1] and data['ovmEHICValidFromDate'][2] === data.patient['ovmEHICValidFromDate'][2] %}
+
+            {% else %}
+            <div class="nhsuk-form-group">
+              <h4 class="nhsuk-heading-m">EHIC valid from date</h4>
+
+              <dl class="nhsuk-summary-list">
+
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Was previously
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    <p> {{ data.patient['ovmEHICValidFromDate'][0]  }}-{{ ovmEHICValidFromDateMonth }}-{{ data.patient['ovmEHICValidFromDate'][2]  }}
+                    </p>
+                  </dd>
+
+                </div>
+                <div class="nhsuk-summary-list__row">  <dt class="nhsuk-summary-list__key">
+                  Updated to
+                </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    <p>
+                      {{ data['ovmEHICValidFromDate'][0]  }}-{{ ovmEHICValidFromDateMonthNew  }}-{{ data['ovmEHICValidFromDate'][2]  }}
+                    </p>
+                  </dd></div>
+              </dl>
+              <input class="nhsuk-input" name="patient[ovmEHICValidFromDate][0]" type="hidden" value="{{ data.ovmEHICValidFromDate[0] }}">
+              <input class="nhsuk-input" name="patient[ovmEHICValidFromDate][1]" type="hidden" value="{{ data.ovmEHICValidFromDate[1] }}">
+              <input class="nhsuk-input" name="patient[ovmEHICValidFromDate][2]" type="hidden" value="{{ data.ovmEHICValidFromDate[2] }}">
+            </div>
+
+            {% endif %}
+
+
+            {% if data['ovmEHICValidToDate'][0] === data.patient['ovmEHICValidToDate'][0] and data['ovmEHICValidToDate'][1] === data.patient['ovmEHICValidToDate'][1] and data['ovmEHICValidToDate'][2] === data.patient['ovmEHICValidToDate'][2] %}
+
+            {% else %}
+            <div class="nhsuk-form-group">
+              <h4 class="nhsuk-heading-m">EHIC valid to date</h4>
+
+              <dl class="nhsuk-summary-list">
+
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Was previously
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    <p> {{ data.patient['ovmEHICValidToDate'][0]  }}-{{ ovmEHICValidToDateMonth }}-{{ data.patient['ovmEHICValidToDate'][2]  }}
+                    </p>
+                  </dd>
+
+                </div>
+                <div class="nhsuk-summary-list__row">  <dt class="nhsuk-summary-list__key">
+                  Updated to
+                </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    <p>
+                      {{ data['ovmEHICValidToDate'][0]  }}-{{ ovmEHICValidToDateMonthNew  }}-{{ data['ovmEHICValidToDate'][2]  }}
+                    </p>
+                  </dd></div>
+              </dl>
+              <input class="nhsuk-input" name="patient[ovmEHICValidToDate][0]" type="hidden" value="{{ data.ovmEHICValidToDate[0] }}">
+              <input class="nhsuk-input" name="patient[ovmEHICValidToDate][1]" type="hidden" value="{{ data.ovmEHICValidToDate[1] }}">
+              <input class="nhsuk-input" name="patient[ovmEHICValidToDate][2]" type="hidden" value="{{ data.ovmEHICValidToDate[2] }}">
+            </div>
+
+            {% endif %}
+
+
+            {% if data['ovmPRCCountryIssue'] !== data.patient['ovmPRCCountryIssue'] %}
+
+            <div class="nhsuk-form-group">
+              <h4 class="nhsuk-heading-m">PRC Country of issue</h4>
+
+              <dl class="nhsuk-summary-list">
+
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Was previously
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    <p> {{ data.patient['ovmPRCCountryIssue']  }}
+                       </p>
+                  </dd>
+
+                </div>
+                <div class="nhsuk-summary-list__row">  <dt class="nhsuk-summary-list__key">
+                  Updated to
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  <p>
+                    {{ data['ovmPRCCountryIssue'] }}
+                  </p>
+                </dd></div>
+              </dl>
+              <input class="nhsuk-input" name="patient[ovmPRCCountryIssue]" type="hidden" value="{{ data.ovmPRCCountryIssue }}">
+            </div>
+
+            {% endif %}
+
+
+            {% if data['ovmPRCPersonalId'] !== data.patient['ovmPRCPersonalId'] %}
+
+            <div class="nhsuk-form-group">
+              <h4 class="nhsuk-heading-m">PRC Personal ID No</h4>
+
+              <dl class="nhsuk-summary-list">
+
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Was previously
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    <p> {{ data.patient['ovmPRCPersonalId']  }}
+                       </p>
+                  </dd>
+
+                </div>
+                <div class="nhsuk-summary-list__row">  <dt class="nhsuk-summary-list__key">
+                  Updated to
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  <p>
+                    {{ data['ovmPRCPersonalId']  }}
+                  </p>
+                </dd></div>
+              </dl>
+              <input class="nhsuk-input" name="patient[ovmPRCPersonalId]" type="hidden" value="{{ data.ovmPRCPersonalId }}">
+            </div>
+
+            {% endif %}
+
+
+            {% if data['ovmPRCInstitutionId'] !== data.patient['ovmPRCInstitutionId'] %}
+
+            <div class="nhsuk-form-group">
+              <h4 class="nhsuk-heading-m">PRC Institution ID</h4>
+
+              <dl class="nhsuk-summary-list">
+
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Was previously
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    <p> {{ data.patient['ovmPRCInstitutionId'] }}
+                       </p>
+                  </dd>
+
+                </div>
+                <div class="nhsuk-summary-list__row">  <dt class="nhsuk-summary-list__key">
+                  Updated to
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  <p>
+                    {{ data['ovmPRCInstitutionId'] }}
+                  </p>
+                </dd></div>
+              </dl>
+              <input class="nhsuk-input" name="patient[ovmPRCInstitutionId]" type="hidden" value="{{ data.ovmPRCInstitutionId }}">
+            </div>
+
+            {% endif %}
+
+
+            {% if data['ovmPRCCardNum'] !== data.patient['ovmPRCCardNum'] %}
+
+            <div class="nhsuk-form-group">
+              <h4 class="nhsuk-heading-m">PRC card number</h4>
+
+              <dl class="nhsuk-summary-list">
+
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Was previously
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    <p> {{ data.patient['ovmPRCCardNum'] }}
+                       </p>
+                  </dd>
+
+                </div>
+                <div class="nhsuk-summary-list__row">  <dt class="nhsuk-summary-list__key">
+                  Updated to
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  <p>
+                    {{ data['ovmPRCCardNum']  }}
+                  </p>
+                </dd></div>
+              </dl>
+              <input class="nhsuk-input" name="patient[ovmPRCCardNum]" type="hidden" value="{{ data.ovmPRCCardNum }}">
+            </div>
+
+            {% endif %}
+
+
+            {% if data['ovmPRCExpDate'][0] === data.patient['ovmPRCExpDate'][0] and data['ovmPRCExpDate'][1] === data.patient['ovmPRCExpDate'][1] and data['ovmPRCExpDate'][2] === data.patient['ovmPRCExpDate'][2] %}
+
+            {% else %}
+
+            <div class="nhsuk-form-group">
+              <h4 class="nhsuk-heading-m">PRC expiry date</h4>
+
+              <dl class="nhsuk-summary-list">
+
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Was previously
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    <p> {{ data.patient['ovmPRCExpDate'][0] }}-{{ ovmPRCExpDateMonth }}-{{ data.patient['ovmPRCExpDate'][2] }}
+                       </p>
+                  </dd>
+
+                </div>
+                <div class="nhsuk-summary-list__row">  <dt class="nhsuk-summary-list__key">
+                  Updated to
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  <p>
+                    {{ data['ovmPRCExpDate'][0] }}-{{ ovmPRCExpDateMonthNew }}-{{ data['ovmPRCExpDate'][2] }}
+                  </p>
+                </dd></div>
+              </dl>
+              <input class="nhsuk-input" name="patient[ovmPRCExpDate][0]" type="hidden" value="{{ data.ovmPRCExpDate[0] }}">
+              <input class="nhsuk-input" name="patient[ovmPRCExpDate][1]" type="hidden" value="{{ data.ovmPRCExpDate[1] }}">
+              <input class="nhsuk-input" name="patient[ovmPRCExpDate][2]" type="hidden" value="{{ data.ovmPRCExpDate[2] }}">
+            </div>
+
+            {% endif %}
+
+
+            {% if data['ovmPRCValidFromDate'][0] === data.patient['ovmPRCValidFromDate'][0] and data['ovmPRCValidFromDate'][1] === data.patient['ovmPRCValidFromDate'][1] and data['ovmPRCValidFromDate'][2] === data.patient['ovmPRCValidFromDate'][2] %}
+
+            {% else %}
+
+            <div class="nhsuk-form-group">
+              <h4 class="nhsuk-heading-m">PRC valid from date</h4>
+
+              <dl class="nhsuk-summary-list">
+
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Was previously
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    <p> {{ data.patient['ovmPRCValidFromDate'][0] }}-{{ ovmPRCValidFromDateMonth }}-{{ data.patient['ovmPRCValidFromDate'][2] }}
+                       </p>
+                  </dd>
+
+                </div>
+                <div class="nhsuk-summary-list__row">  <dt class="nhsuk-summary-list__key">
+                  Updated to
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  <p>
+                    {{ data['ovmPRCValidFromDate'][0]  }}-{{ ovmPRCValidFromDateMonthNew }}-{{ data['ovmPRCValidFromDate'][2] }}
+                  </p>
+                </dd></div>
+              </dl>
+              <input class="nhsuk-input" name="patient[ovmPRCValidFromDate][0]" type="hidden" value="{{ data.ovmPRCValidFromDate[0] }}">
+              <input class="nhsuk-input" name="patient[ovmPRCValidFromDate][1]" type="hidden" value="{{ data.ovmPRCValidFromDate[1] }}">
+              <input class="nhsuk-input" name="patient[ovmPRCValidFromDate][2]" type="hidden" value="{{ data.ovmPRCValidFromDate[2] }}">
+            </div>
+
+            {% endif %}
+
+
+            {% if data['ovmPRCValidToDate'][0] === data.patient['ovmPRCValidToDate'][0] and data['ovmPRCValidToDate'][1] === data.patient['ovmPRCValidToDate'][1] and data['ovmPRCValidToDate'][2] === data.patient['ovmPRCValidToDate'][2] %}
+
+            {% else %}
+
+            <div class="nhsuk-form-group">
+              <h4 class="nhsuk-heading-m">PRC valid to date</h4>
+
+              <dl class="nhsuk-summary-list">
+
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Was previously
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    <p> {{ data.patient['ovmPRCValidToDate'][0]  }}-{{ ovmPRCValidToDateMonth }}-{{ data.patient['ovmPRCValidToDate'][2]  }}
+                       </p>
+                  </dd>
+
+                </div>
+                <div class="nhsuk-summary-list__row">  <dt class="nhsuk-summary-list__key">
+                  Updated to
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  <p>
+                    {{ data['ovmPRCValidToDate'][0] }}-{{ ovmPRCValidToDateMonthNew }}-{{ data['ovmPRCValidToDate'][2] }}
+                  </p>
+                </dd></div>
+              </dl>
+              <input class="nhsuk-input" name="patient[ovmPRCValidToDate][0]" type="hidden" value="{{ data.ovmPRCValidToDate[0] }}">
+              <input class="nhsuk-input" name="patient[ovmPRCValidToDate][1]" type="hidden" value="{{ data.ovmPRCValidToDate[1] }}">
+              <input class="nhsuk-input" name="patient[ovmPRCValidToDate][2]" type="hidden" value="{{ data.ovmPRCValidToDate[2] }}">
+            </div>
+
+            {% endif %}
+
+
+            {% if data['ovmS1status'] !== data.patient['ovmS1status'] %}
+
+            <div class="nhsuk-form-group">
+              <h4 class="nhsuk-heading-m">S1 Status</h4>
+
+              <dl class="nhsuk-summary-list">
+
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Was previously
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    <p> {{ data.patient['ovmS1status'] }}
+                       </p>
+                  </dd>
+
+                </div>
+                <div class="nhsuk-summary-list__row">  <dt class="nhsuk-summary-list__key">
+                  Updated to
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  <p>
+                    {{ data['ovmS1status'] }}
+                  </p>
+                </dd></div>
+              </dl>
+              <input class="nhsuk-input" name="patient[ovmS1status]" type="hidden" value="{{ data.ovmS1status }}">
+            </div>
+
+            {% endif %}
+
+
+            {% if data['ovmS2CountryIssue'] !== data.patient['ovmS2CountryIssue'] %}
+
+            <div class="nhsuk-form-group">
+              <h4 class="nhsuk-heading-m">S2 Country of issue</h4>
+
+              <dl class="nhsuk-summary-list">
+
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Was previously
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    <p> {{ data.patient['ovmS2CountryIssue'] }}
+                       </p>
+                  </dd>
+
+                </div>
+                <div class="nhsuk-summary-list__row">  <dt class="nhsuk-summary-list__key">
+                  Updated to
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  <p>
+                    {{ data['ovmS2CountryIssue'] }}
+                  </p>
+                </dd></div>
+              </dl>
+              <input class="nhsuk-input" name="patient[ovmS2CountryIssue]" type="hidden" value="{{ data.ovmS2CountryIssue }}">
+            </div>
+
+            {% endif %}
+
+
+            {% if data['ovmS2ValidFromDate'][0] === data.patient['ovmS2ValidFromDate'][0] and data['ovmS2ValidFromDate'][1] === data.patient['ovmS2ValidFromDate'][1] and data['ovmS2ValidFromDate'][2] === data.patient['ovmS2ValidFromDate'][2] %}
+
+            {% else %}
+
+            <div class="nhsuk-form-group">
+              <h4 class="nhsuk-heading-m">S2 valid from</h4>
+
+              <dl class="nhsuk-summary-list">
+
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Was previously
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    <p> {{ data.patient['ovmS2ValidFromDate'][0] }}-{{ ovmS2ValidFromDateMonth }}-{{ data.patient['ovmS2ValidFromDate'][2] }}
+                       </p>
+                  </dd>
+
+                </div>
+                <div class="nhsuk-summary-list__row">  <dt class="nhsuk-summary-list__key">
+                  Updated to
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  <p>
+                    {{ data['ovmS2ValidFromDate'][0] }}-{{ ovmS2ValidFromDateMonthNew }}-{{ data['ovmS2ValidFromDate'][2] }}
+                  </p>
+                </dd></div>
+              </dl>
+              <input class="nhsuk-input" name="patient[ovmS2ValidFromDate][0]" type="hidden" value="{{ data.ovmS2ValidFromDate[0] }}">
+              <input class="nhsuk-input" name="patient[ovmS2ValidFromDate][1]" type="hidden" value="{{ data.ovmS2ValidFromDate[1] }}">
+              <input class="nhsuk-input" name="patient[ovmS2ValidFromDate][2]" type="hidden" value="{{ data.ovmS2ValidFromDate[2] }}">
+            </div>
+
+            {% endif %}
+
+
+            {% if data['ovmS2ValidToDate'][0] === data.patient['ovmS2ValidToDate'][0] and data['ovmS2ValidToDate'][1] === data.patient['ovmS2ValidToDate'][1] and data['ovmS2ValidToDate'][2] === data.patient['ovmS2ValidToDate'][2] %}
+
+            {% else %}
+
+            <div class="nhsuk-form-group">
+              <h4 class="nhsuk-heading-m">S2 Valid to</h4>
+
+              <dl class="nhsuk-summary-list">
+
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Was previously
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    <p> {{ data.patient['ovmS2ValidToDate'][0] }}-{{ ovmS2ValidToDateMonth }}-{{ data.patient['ovmS2ValidToDate'][2] }}
+                       </p>
+                  </dd>
+
+                </div>
+                <div class="nhsuk-summary-list__row">  <dt class="nhsuk-summary-list__key">
+                  Updated to
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  <p>
+                    {{ data['ovmS2ValidToDate'][0] }}-{{ ovmS2ValidToDateMonthNew }}-{{ data['ovmS2ValidToDate'][2] }}
+                  </p>
+                </dd></div>
+              </dl>
+              <input class="nhsuk-input" name="patient[ovmS2ValidToDate][0]" type="hidden" value="{{ data.ovmS2ValidToDate[0] }}">
+              <input class="nhsuk-input" name="patient[ovmS2ValidToDate][1]" type="hidden" value="{{ data.ovmS2ValidToDate[1] }}">
+              <input class="nhsuk-input" name="patient[ovmS2ValidToDate][2]" type="hidden" value="{{ data.ovmS2ValidToDate[2] }}">
+            </div>
+
+            {% endif %}
+
+          </dl>
+        </div>
+      </div>
 
       {% endif %}
 

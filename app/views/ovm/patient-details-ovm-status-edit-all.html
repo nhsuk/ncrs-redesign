@@ -692,20 +692,6 @@ Overseas visitor manager record
 
 
           <div class="scra-card-header pds-edit-card-header nhsuk-u-margin-bottom-4 nhsuk-u-margin-top-6">
-            <h2 class="nhsuk-heading-m">S1 Registration for Health Care cover</h2>
-          </div>
-
-          <div class="scra-card-content">
-            <div class="nhsuk-form-group">
-              <label class="nhsuk-label" for="ovmS1status">
-                S1 status
-              </label>
-              <input class="nhsuk-input nhsuk-input--width-20" id="ovmS1status" name="ovmS1status" type="text"
-                     value="{{ patient['ovmS1status'] or 'No S1 confirmed by patient' }}">
-            </div>
-          </div>
-
-          <div class="scra-card-header pds-edit-card-header nhsuk-u-margin-bottom-4 nhsuk-u-margin-top-6">
             <h2 class="nhsuk-heading-m" id="patient-details-usual-name">Provisional Replacement Certificate</h2>
           </div>
           <div class="scra-card-content">
@@ -873,6 +859,21 @@ Overseas visitor manager record
 
 
           <div class="scra-card-header pds-edit-card-header nhsuk-u-margin-bottom-4 nhsuk-u-margin-top-6">
+            <h2 class="nhsuk-heading-m">S1 Registration for Health Care cover</h2>
+          </div>
+
+          <div class="scra-card-content">
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label" for="ovmS1status">
+                S1 status
+              </label>
+              <input class="nhsuk-input nhsuk-input--width-20" id="ovmS1status" name="ovmS1status" type="text"
+                     value="{{ patient['ovmS1status'] or 'No S1 confirmed by patient' }}">
+            </div>
+          </div>
+
+
+          <div class="scra-card-header pds-edit-card-header nhsuk-u-margin-bottom-4 nhsuk-u-margin-top-6">
             <h2 class="nhsuk-heading-m" id="patient-details-preferred-name">S2 Entitlement to Scheduled Treatment</h2>
           </div>
           <div class="scra-card-content">
@@ -974,12 +975,12 @@ Overseas visitor manager record
         </div>
 
         <button class="nhsuk-button full-width" type="submit">
-          Save changes
+          Review changes
         </button>
 
-        <a href="patient-details-ovm" class="nhsuk-button nhsuk-button--secondary full-width" type="submit">
-          Cancel
-        </a>
+<!--        <a href="patient-details-ovm" class="nhsuk-button nhsuk-button&#45;&#45;secondary full-width" type="submit">-->
+<!--          Cancel-->
+<!--        </a>-->
 
       </form>
 
