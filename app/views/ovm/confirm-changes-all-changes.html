@@ -729,7 +729,9 @@
                   </p>
                 </dd></div>
               </dl>
-              <input class="nhsuk-input" name="patient[ovmHOContactedDate]" type="hidden" value="{{ data.ovmHOContactedDate }}">
+              <input class="nhsuk-input" name="patient[ovmHOContactedDate][0]" type="hidden" value="{{ data.ovmHOContactedDate[0] }}">
+              <input class="nhsuk-input" name="patient[ovmHOContactedDate][1]" type="hidden" value="{{ data.ovmHOContactedDate[1] }}">
+              <input class="nhsuk-input" name="patient[ovmHOContactedDate][2]" type="hidden" value="{{ data.ovmHOContactedDate[2] }}">
             </div>
 
             {% endif %}
