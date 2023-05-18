@@ -10,20 +10,6 @@ function formatName(str) {
 }
 
 module.exports = (router) => {
-  router.post("/search/nhs-number-search", function (req, res) {
-    const nhsNumber = req.body["nhs-number"];
-
-    req.session.data.errors = {};
-
-    // If there is no submitted option
-    if (!nhsNumber) {
-      req.session.data.errors["nhs-number"] = true;
-      return res.redirect("/search/nhs-number-search");
-    }
-
-    res.redirect(`/search/search-results?nhs-number=${nhsNumber}`);
-  });
-
 
   router.get("/ovm/patient-overview-ovm", function (req, res, next) {
     let nhsNumber = req.session.data["nhs-number"];
@@ -46,7 +32,10 @@ module.exports = (router) => {
   });
 
   router.post("/ovm/confirm-changes-all-changes-post", function (req, res) {
-    //
+    // create a record of the changes to show in the history
+    let changeTracker = JSON.parse(JSON.stringify(req.body.patient));
+    console.log(changeTracker)
+    req.session.data['changeTracker'] = changeTracker;
     res.redirect(`/ovm/patient-details-ovm`);
   });
 
