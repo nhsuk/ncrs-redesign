@@ -46,7 +46,8 @@ data['ovmS2ValidFromDate'][1] %} {% set ovmS2ValidFromDateMonthNew =
 data['ovmS2ValidFromDate'][1] | returnMonth %} {% endif %} {% if
 data['ovmS2ValidToDate'][1] %} {% set ovmS2ValidToDateMonthNew =
 data['ovmS2ValidToDate'][1] | returnMonth %} {% endif %} {% block pageTitle %}
-Review and confirm your changes {% endblock %} {% block beforeContent %}
+Review and confirm your changes {% endblock %} {% block beforeContent %}{%
+include "./includes/banner.html" %}
 
 <div class="nhsuk-full-width-container">
   <div class="scra-bordered-tabs-container">
