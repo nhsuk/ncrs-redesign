@@ -191,7 +191,11 @@ details {% endblock %} {% block beforeContent %}
             <div class="nhsuk-grid-column-one-quarter">
               <div class="card-content-section">
                 <span class="card-content-label">Usual Name:</span>
-                <span class="card-content-name">William Shakespeare</span>
+                <span
+                  class="card-content-name"
+                  value="{{ data.patient['firstName']or 'William Shakespeare' }}"
+                  >{{ patient.firstName }} {{ patient.lastName.toUpperCase() }}
+                </span>
               </div>
             </div>
           </div>
@@ -235,8 +239,8 @@ details {% endblock %} {% block beforeContent %}
               <div class="card-content-section">
                 <span class="card-content-label">Gender:</span>
                 <span class="card-content-detail card-content-detail-gender"
-                  >Male</span
-                >
+                  >{{ patient.gender }}
+                </span>
               </div>
             </div>
             <div
@@ -255,7 +259,7 @@ details {% endblock %} {% block beforeContent %}
               <div class="card-content-section">
                 <span class="card-content-label">Date of birth:</span>
                 <span class="card-content-detail card-content-detail-dob"
-                  >01-Dec-1970</span
+                  >{{ patient.dob }}</span
                 >
               </div>
             </div>
@@ -282,7 +286,7 @@ details {% endblock %} {% block beforeContent %}
               <div class="card-content-section">
                 <span class="card-content-label">Address:</span>
                 <span class="card-content-detail card-content-detail-address"
-                  >1 Town Street</span
+                  >{{ patient.address }}</span
                 >
               </div>
             </div>
