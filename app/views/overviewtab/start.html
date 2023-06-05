@@ -1,0 +1,46 @@
+{% extends 'layouts/layout-transactional.html' %} {% block pageTitle %} NCRS
+redesign - Index {% endblock %} {% block beforeContent %}
+
+<section class="nhsuk-hero">
+  <div class="nhsuk-width-container nhsuk-hero--border">
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-two-thirds">
+        <div class="nhsuk-hero__wrapper">
+          <h1 class="nhsuk-u-margin-bottom-3">NCRS redesign</h1>
+          <p class="nhsuk-body-l nhsuk-u-margin-bottom-0">Overview tab</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %} {% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+    <div class="section">
+      <h2 class="nhs-heading-l">About this prototype</h2>
+
+      <h5 class="nhsuk-body">
+        Final version of the overview tab prototype in NCRS. This prototype
+        models different navigation dependent on job role.
+      </h5>
+    </div>
+
+    <h2 class="nhsuk-heading-l">Prototype scenarios</h2>
+
+    <ul class="nhsuk-list">
+      <li><a class="link-text" href="#">Clinical</a></li>
+      <li><a class="link-text" href="#">Admin</a></li>
+    </ul>
+  </div>
+
+  <div class="nhsuk-grid-column-one-third">
+    <div class="scra-card">
+      <h2 class="nhsuk-heading-m">Prototypes</h2>
+      <p>
+        <a href="#">Other related prototype?</a>
+      </p>
+    </div>
+  </div>
+</div>
+{% endblock %}
