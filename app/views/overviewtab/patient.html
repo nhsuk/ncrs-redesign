@@ -269,7 +269,7 @@ details {% endblock %} {% block beforeContent %}
               <div class="card-content-section">
                 <span class="card-content-label">Place of birth:</span>
                 <span class="card-content-detail card-content-detail-pob"
-                  >Stratford-upon-Avon</span
+                  >{{ patient.placeOfBirth }}</span
                 >
               </div>
             </div>
@@ -316,7 +316,9 @@ details {% endblock %} {% block beforeContent %}
             >
               <div class="card-content-section">
                 <span class="card-content-label">Name:</span>
-                <span class="card-content-detail">Anne Hathaway</span>
+                <span class="card-content-detail"
+                  >{{ patient.contactName }}</span
+                >
               </div>
             </div>
             <div
@@ -324,7 +326,9 @@ details {% endblock %} {% block beforeContent %}
             >
               <div class="card-content-section">
                 <span class="card-content-label">Relationship:</span>
-                <span class="card-content-detail">Wife</span>
+                <span class="card-content-detail"
+                  >{{ patient.contactRelation }}</span
+                >
               </div>
             </div>
             <div
@@ -333,7 +337,7 @@ details {% endblock %} {% block beforeContent %}
               <div class="card-content-section">
                 <span class="card-content-label">Address:</span>
                 <span class="card-content-detail card-content-detail-address"
-                  >1 Town Street</span
+                  >{{ patient.contactAddress }}</span
                 >
               </div>
             </div>
@@ -343,7 +347,7 @@ details {% endblock %} {% block beforeContent %}
               <div class="card-content-section">
                 <span class="card-content-label">Telephone:</span>
                 <span class="card-content-detail card-content-detail"
-                  >01234 567 890</span
+                  >{{ patient.contactPhone }}</span
                 >
               </div>
             </div>
