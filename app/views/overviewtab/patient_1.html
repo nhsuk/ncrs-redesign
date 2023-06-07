@@ -1,0 +1,254 @@
+{% extends 'layouts/layout-application.html' %} {% block pageTitle %} Patient
+details {% endblock %} {% block beforeContent %}
+
+<div class="nhsuk-full-width-container">
+  <div class="scra-bordered-tabs-container">
+    <div class="nhsuk-width-container-fluid">
+      <ul class="scra-bordered-tabs">
+        <li class="scra-bordered-tabs-item">
+          <a class="scra-bordered-tabs-link" href="overview">Overview</a>
+        </li>
+        <li class="scra-bordered-tabs-item scra-bordered-tabs-item-active">
+          <a class="scra-bordered-tabs-link" href="#">Patient</a>
+        </li>
+        <li class="scra-bordered-tabs-item">
+          <a class="scra-bordered-tabs-link" href="#">Clinical</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+{% endblock %} {% block content %} {% include "includes/mobile-nav.html" %}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-one-half">
+    <div class="scra-card">
+      <div class="scra-card-header">
+        <h3 class="nhsuk-heading-m" id="patient-details-names">Names</h3>
+      </div>
+      <div class="scra-card-content">
+        <div class="nhsuk-grid-row">
+          <div class="nhsuk-grid-column-one-half">
+            <div class="card-content-section">
+              <span class="card-content-label">Usual Name:</span>
+              <span
+                class="card-content-name"
+                value="{{ data.patient['firstName']or 'William Shakespeare' }}"
+                >{{ patient.firstName }} {{ patient.lastName.toUpperCase() }}
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="nhsuk-grid-row">
+          <div class="nhsuk-grid-column-one-half nhsuk-u-one-half-tablet">
+            <div class="card-content-section">
+              <span class="card-content-label">Preferred Name:</span>
+              <span class="card-content-detail">None recorded</span>
+            </div>
+          </div>
+          <div class="nhsuk-grid-column-one-quarter nhsuk-u-one-quarter-tablet">
+            <div class="card-content-section">
+              <span class="card-content-label">Other names:</span>
+              <span class="card-content-detail">None recorded</span>
+            </div>
+          </div>
+          <div class="nhsuk-grid-column-one-quarter nhsuk-u-one-quarter-tablet">
+            <div class="card-content-section">
+              <span class="card-content-label">Previous names:</span>
+              <span class="card-content-detail">None recorded</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="scra-card">
+      <div class="scra-card-header">
+        <h3 class="nhsuk-heading-m" id="patient-details-names">Names</h3>
+      </div>
+      <div class="scra-card-content">
+        <div class="nhsuk-grid-row">
+          <div class="nhsuk-grid-column-one-half">
+            <div class="card-content-section">
+              <span class="card-content-label">Usual Name:</span>
+              <span
+                class="card-content-name"
+                value="{{ data.patient['firstName']or 'William Shakespeare' }}"
+                >{{ patient.firstName }} {{ patient.lastName.toUpperCase() }}
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="nhsuk-grid-row">
+          <div class="nhsuk-grid-column-one-half nhsuk-u-one-half-tablet">
+            <div class="card-content-section">
+              <span class="card-content-label">Preferred Name:</span>
+              <span class="card-content-detail">None recorded</span>
+            </div>
+          </div>
+          <div class="nhsuk-grid-column-one-quarter nhsuk-u-one-quarter-tablet">
+            <div class="card-content-section">
+              <span class="card-content-label">Other names:</span>
+              <span class="card-content-detail">None recorded</span>
+            </div>
+          </div>
+          <div class="nhsuk-grid-column-one-quarter nhsuk-u-one-quarter-tablet">
+            <div class="card-content-section">
+              <span class="card-content-label">Previous names:</span>
+              <span class="card-content-detail">None recorded</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="scra-card">
+      <div class="scra-card-header">
+        <h3 class="nhsuk-heading-m">
+          This patient does not show a requirement for Reasonable Adjustments
+        </h3>
+      </div>
+      <div class="scra-card-content">
+        <div class="nhsuk-grid-row">
+          <div class="nhsuk-grid-column-full">
+            <div class="nhsuk-u-reading-width">
+              <form action="ra-start-page">
+                <p>
+                  The NHS has a legal duty to make it easy for disabled and
+                  non-disabled individuals to use health and care services, as
+                  stated by the
+                  <a
+                    href="https://www.gov.uk/guidance/equality-act-2010-guidance"
+                    target="_blank"
+                    >Equality Act (2010) (opens in a new tab)</a
+                  >.
+                </p>
+                <p>
+                  A Reasonable Adjustments record ensures patients with physical
+                  and mental impairments have equal access to healthcare
+                  services.
+                </p>
+                <details class="nhsuk-details">
+                  <summary class="nhsuk-details__summary">
+                    <span class="nhsuk-details__summary-text">
+                      Read more about Reasonable Adjustments
+                    </span>
+                  </summary>
+                  <div class="nhsuk-details__text">
+                    <p>
+                      A Reasonable Adjustments record can show potential
+                      adjustments for a patient. These may include (but aren't
+                      limited to):
+                    </p>
+                    <ul>
+                      <li>
+                        communication needs (supported by the
+                        <a
+                          href="https://www.england.nhs.uk/ourwork/accessibleinfo/"
+                          target="_blank"
+                          >Accessibility Standard (opens in a new tab)</a
+                        >)
+                      </li>
+                      <li>adjustments to the environment</li>
+                      <li>
+                        impairments, to help undersyand the necessary
+                        adjustments
+                      </li>
+                    </ul>
+                  </div>
+                </details>
+                <p>
+                  If you believe this patient requires a Reasonable Adjustments
+                  record, you can create one.
+                </p>
+                <button class="nhsuk-button" type="submit">
+                  Create a Reasonable Adjustments record
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="nhsuk-grid-column-one-half">
+    <div class="scra-card">
+      <div class="scra-card-header">
+        <h3 class="nhsuk-heading-m" id="patient-details-names">Names</h3>
+      </div>
+      <div class="scra-card-content">
+        <div class="nhsuk-grid-row">
+          <div class="nhsuk-grid-column-one-half">
+            <div class="card-content-section">
+              <span class="card-content-label">Usual Name:</span>
+              <span
+                class="card-content-name"
+                value="{{ data.patient['firstName']or 'William Shakespeare' }}"
+                >{{ patient.firstName }} {{ patient.lastName.toUpperCase() }}
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="nhsuk-grid-row">
+          <div class="nhsuk-grid-column-one-half nhsuk-u-one-half-tablet">
+            <div class="card-content-section">
+              <span class="card-content-label">Preferred Name:</span>
+              <span class="card-content-detail">None recorded</span>
+            </div>
+          </div>
+          <div class="nhsuk-grid-column-one-quarter nhsuk-u-one-quarter-tablet">
+            <div class="card-content-section">
+              <span class="card-content-label">Other names:</span>
+              <span class="card-content-detail">None recorded</span>
+            </div>
+          </div>
+          <div class="nhsuk-grid-column-one-quarter nhsuk-u-one-quarter-tablet">
+            <div class="card-content-section">
+              <span class="card-content-label">Previous names:</span>
+              <span class="card-content-detail">None recorded</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="scra-card">
+      <div class="scra-card-header">
+        <h3 class="nhsuk-heading-m" id="patient-details-names">Names</h3>
+      </div>
+      <div class="scra-card-content">
+        <div class="nhsuk-grid-row">
+          <div class="nhsuk-grid-column-one-half">
+            <div class="card-content-section">
+              <span class="card-content-label">Usual Name:</span>
+              <span
+                class="card-content-name"
+                value="{{ data.patient['firstName']or 'William Shakespeare' }}"
+                >{{ patient.firstName }} {{ patient.lastName.toUpperCase() }}
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="nhsuk-grid-row">
+          <div class="nhsuk-grid-column-one-half nhsuk-u-one-half-tablet">
+            <div class="card-content-section">
+              <span class="card-content-label">Preferred Name:</span>
+              <span class="card-content-detail">None recorded</span>
+            </div>
+          </div>
+          <div class="nhsuk-grid-column-one-quarter nhsuk-u-one-quarter-tablet">
+            <div class="card-content-section">
+              <span class="card-content-label">Other names:</span>
+              <span class="card-content-detail">None recorded</span>
+            </div>
+          </div>
+          <div class="nhsuk-grid-column-one-quarter nhsuk-u-one-quarter-tablet">
+            <div class="card-content-section">
+              <span class="card-content-label">Previous names:</span>
+              <span class="card-content-detail">None recorded</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
