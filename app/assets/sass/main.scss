@@ -1,59 +1,59 @@
-
-
 // Import NHS.UK frontend library
 
-@import 'node_modules/nhsuk-frontend/packages/nhsuk';
-@import 'components/timelines';
+@import "node_modules/nhsuk-frontend/packages/nhsuk";
+@import "components/timelines";
 
 @import "components/tags-v2"; // taken from BETA work from
 @import "components/tags-v3"; // taken from the latest NHSUK beta styles
 
-
 // Import GOV.UK front end library
 $govuk-font-family: inherit;
-@import 'node_modules/govuk-frontend/components/tabs/tabs';
-@import 'node_modules/govuk-frontend/components/accordion/accordion';
+@import "node_modules/govuk-frontend/components/tabs/tabs";
+@import "node_modules/govuk-frontend/components/accordion/accordion";
 
 // Patterns that are not in the NHS.UK frontend library
-@import 'patterns/check-your-answers';
+@import "patterns/check-your-answers";
 
 // Components that are not in the NHS.UK frontend library
-@import 'components/panel-confirmation';
-@import 'components/related-nav';
+@import "components/panel-confirmation";
+@import "components/related-nav";
 
 // Add your extra styles here...
 
-@import 'tools/scra-grid';
-@import 'components/dev-mode';
+@import "tools/scra-grid";
+@import "components/dev-mode";
 
-@import 'components/global-components';
-@import 'components/full-width-container';
-@import 'components/white-header';
-@import 'components/custom-header-components';
-@import 'components/patient-banner';
-@import 'components/custom-banner-components';
-@import 'components/hero';
-@import 'components/tabs';
-@import 'components/forms';
-@import 'components/search-results';
-@import 'components/overview';
-@import 'components/accordion';
-@import 'components/card';
-@import 'components/table';
-@import 'components/scrolltop';
-@import 'components/buttons';
-@import 'components/summary-list';
-@import 'components/panels';
-@import 'components/promos';
-@import 'components/sections';
-@import 'components/modals';
-@import 'components/floating-elements';
-@import 'components/typography';
-@import 'components/small-checkboxes';
-@import 'components/covid19-banner';
-@import 'components/error-summary';
-@import 'components/mobile-navigation';
-@import 'components/ovm';
-@import 'components/conditional-reveal';
+@import "components/global-components";
+@import "components/full-width-container";
+@import "components/white-header";
+@import "components/custom-header-components";
+@import "components/patient-banner";
+@import "components/custom-banner-components";
+@import "components/hero";
+@import "components/tabs";
+@import "components/forms";
+@import "components/search-results";
+@import "components/overview";
+@import "components/accordion";
+@import "components/card";
+@import "components/table";
+@import "components/scrolltop";
+@import "components/buttons";
+@import "components/summary-list";
+@import "components/panels";
+@import "components/promos";
+@import "components/sections";
+@import "components/modals";
+@import "components/floating-elements";
+@import "components/typography";
+@import "components/small-checkboxes";
+@import "components/covid19-banner";
+@import "components/error-summary";
+@import "components/mobile-navigation";
+@import "components/ovm";
+@import "components/conditional-reveal";
 
-
+.cancel-link {
+  text-align: center;
+  vertical-align: middle;
+}
