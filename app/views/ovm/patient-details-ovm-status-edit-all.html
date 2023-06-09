@@ -454,13 +454,13 @@ Overseas visitor manager record
                     <div class="nhsuk-radios nhsuk-radios">
 
                       <div class="nhsuk-radios__item">
-                        <input aria-controls="conditional-contacted-1" aria-expanded="false" class="nhsuk-radios__input" id="ovmHOContacted-yes" name="ovmHOContacted" type="radio" value="yes" {% if data.patient.ovmHOContacted === "yes" %}checked{% endif %}>
+                        <input aria-controls="conditional-contacted-1" aria-expanded="false" class="nhsuk-radios__input" id="ovmHOContacted-yes" name="ovmHOContacted" type="radio" value="Yes" {% if data.patient.ovmHOContacted === "Yes" %}checked{% endif %}>
                         <label class="nhsuk-label nhsuk-radios__label" for="ovmHOContacted-yes">
                           Yes
                         </label>
                       </div>
 
-                      <div class="nhsuk-radios__conditional {% if data.patient.ovmHOContacted !== "yes" %}nhsuk-radios__conditional--hidden{% endif %}"
+                      <div class="nhsuk-radios__conditional {% if data.patient.ovmHOContacted !== "Yes" %}nhsuk-radios__conditional--hidden{% endif %}"
                            id="conditional-contacted-1">
 
                         <div class="nhsuk-form-group">
@@ -514,7 +514,7 @@ Overseas visitor manager record
                       </div>
 
                       <div class="nhsuk-radios__item">
-                        <input class="nhsuk-radios__input" id="ovmHOContacted-no" name="ovmHOContacted" type="radio" value="no">
+                        <input class="nhsuk-radios__input" id="ovmHOContacted-no" name="ovmHOContacted" type="radio" value="No"{% if data.patient.ovmHOContacted === "No" %}checked{% endif %}>
                         <label class="nhsuk-label nhsuk-radios__label" for="ovmHOContacted-no">
                           No
                         </label>

@@ -139,7 +139,7 @@ const patients = {
     ovmPassportNum: "485 777 3456",
     ovmPassportCountry: "Antigua & Barbuda",
     ovmPassportExp: ["02", "07", "2020"],
-    ovmHOContacted: "yes",
+    ovmHOContacted: "Yes",
     ovmHOContactedRef: "FI7328329",
     ovmHOContactedDate: ["01", "07", "2020"],
     ovmEHICCountryIssue: "Jersey",
