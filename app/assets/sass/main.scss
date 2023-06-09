@@ -57,3 +57,23 @@ $govuk-font-family: inherit;
   text-align: center;
   vertical-align: middle;
 }
+
+.primary-actions {
+  float: left;
+}
+
+.centered {
+  float: left;
+  text-align: center; 
+  display:block; 
+  width:120px;
+  margin: 15px auto;
+}
+
+@media only screen and (max-width: 375px) {
+  .centered {
+      float: left;
+      clear: both;
+      width: 0px;
+  }
+}
