@@ -84,11 +84,353 @@ status {% endblock %} {% block beforeContent %} {% include
             </div>
             <div class="scra-card-content">
               <p>There is no current OVM record for this patient.</p>
-              <a class="nhsuk-button" id="create-record-btn" href="#"
-                >Create a record</a
-              >
+              <div class="nhsuk-action-link">
+                <a class="nhsuk-action-link__link" href="#">
+                  <svg
+                    class="nhsuk-icon nhsuk-icon__arrow-right-circle"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                    width="36"
+                    height="36"
+                  >
+                    <path d="M0 0h24v24H0z" fill="none"></path>
+                    <path
+                      d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"
+                    ></path>
+                  </svg>
+                  <span class="nhsuk-action-link__text">Create a record</span>
+                </a>
+              </div>
             </div>
           </div>
+        </section>
+
+        {# <section id="ovm-last-edit" class="nhsuk-u-margin-top-8">
+          <div class="scra-card">
+            <div class="scra-card-header">
+              <h3 class="nhsuk-heading-l" id="ovm-last-edit-name">Last edited by</h3>
+            </div>
+            <div class="scra-card-content">
+              <dl class="nhsuk-summary-list">
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    User
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    John Bann
+                  </dd>
+
+                </div>
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Organisation
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    NELPCT out of hours
+                  </dd>
+
+                </div>
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Date updated
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    02-Aug-2020
+                  </dd>
+
+                </div>
+
+              </dl>
+
+            </div>
+          </div>
+        </section> #}
+
+        {# TODO: create a new history item if it exists #}
+
+        <section id="ovm-historical-edits" class="nhsuk-u-margin-top-8">
+          <div class="scra-card nhsuk-u-margin-bottom-0 nhsuk-u-padding-bottom-0" style="border-bottom: 4px solid #005eb8;">
+            <div class="scra-card-header">
+              <h3 class="nhsuk-heading-l" id="ovm-historical-edits-name">Previous updates</h3>
+            </div>
+
+            <div class="scra-card-content">
+              <dl class="nhsuk-summary-list nhsuk-u-margin-bottom-0">
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    User
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    Richard Joseph
+                  </dd>
+
+                </div>
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Organisation
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    NELPCT out of hours
+                  </dd>
+
+                </div>
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Date updated
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    09-Apr-2023 10:20
+                  </dd>
+
+                </div>
+              </dl>
+            </div>
+
+            <details class="nhsuk-details nhsuk-expander nhsuk-u-margin-bottom-0">
+              <summary class="nhsuk-details__summary nhsuk-u-padding-left-0">
+                <span class="nhsuk-details__summary-text">
+                  View more information
+                </span>
+              </summary>
+              <div class="nhsuk-details__text nhsuk-u-padding-left-0">
+                <dl class="nhsuk-summary-list">
+                  <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">Date Patient Seen</dt>
+                    <dd class="nhsuk-summary-list__value">09-Apr-2023</dd>
+                  </div>
+
+                  <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                      Country or Nationality
+                    </dt>
+                    <dd class="nhsuk-summary-list__value">GB - Overseas citizen</dd>
+                  </div>
+
+                  <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">OVM Chargeable Status</dt>
+                    <dd class="nhsuk-summary-list__value">
+                      None
+                    </dd>
+                  </div>
+
+                  <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">HO E&E Contacted</dt>
+                    <dd class="nhsuk-summary-list__value">No</dd>
+                  </div>
+
+                  <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                      S1 Status
+                    </dt>
+                    <dd class="nhsuk-summary-list__value">No S1 confirmed by patient</dd>
+                  </div>
+
+                  <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">S2 Country of Issue</dt>
+                    <dd class="nhsuk-summary-list__value">GB - Protected person</dd>
+                  </div>
+
+                  <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">Passport country of Issue</dt>
+                    <dd class="nhsuk-summary-list__value">Angola</dd>
+                  </div>
+
+                  <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">PRC country of Issue</dt>
+                    <dd class="nhsuk-summary-list__value">GB - Overseas citizen</dd>
+                  </div>
+                </dl>
+              </div>
+            </details>
+
+          </div>
+
+          <div class="scra-card nhsuk-u-margin-bottom-0 nhsuk-u-padding-bottom-0" style="border-bottom: 4px solid #005eb8;"">
+            <div class="scra-card-content">
+              <dl class="nhsuk-summary-list nhsuk-u-margin-bottom-0">
+
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    User
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    Rick Morales
+                  </dd>
+                </div>
+
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Organisation
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    NELPCT out of hours
+                  </dd>
+                </div>
+
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Date updated
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    12-Sep-2022 12:45
+                  </dd>
+                </div>
+
+              </dl>
+            </div>
+
+            <details class="nhsuk-details nhsuk-expander nhsuk-u-margin-bottom-0">
+              <summary class="nhsuk-details__summary nhsuk-u-padding-left-0">
+                <span class="nhsuk-details__summary-text">
+                  View more information
+                </span>
+              </summary>
+              <div class="nhsuk-details__text nhsuk-u-padding-left-0">
+                <dl class="nhsuk-summary-list">
+                  <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">Date Patient Seen</dt>
+                    <dd class="nhsuk-summary-list__value">12-Sep-2022</dd>
+                  </div>
+
+                  <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                      Country or Nationality
+                    </dt>
+                    <dd class="nhsuk-summary-list__value">GB - Overseas citizen</dd>
+                  </div>
+
+                  <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">OVM Chargeable Status</dt>
+                    <dd class="nhsuk-summary-list__value">
+                      None
+                    </dd>
+                  </div>
+
+                  <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">HO E&E Contacted</dt>
+                    <dd class="nhsuk-summary-list__value">No</dd>
+                  </div>
+
+                  <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                      S1 Status
+                    </dt>
+                    <dd class="nhsuk-summary-list__value">No S1 confirmed by patient</dd>
+                  </div>
+
+                  <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">S2 Country of Issue</dt>
+                    <dd class="nhsuk-summary-list__value">GB - Protected person</dd>
+                  </div>
+
+                  <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">Passport country of Issue</dt>
+                    <dd class="nhsuk-summary-list__value">Angola</dd>
+                  </div>
+
+                  <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">PRC country of Issue</dt>
+                    <dd class="nhsuk-summary-list__value">GB - Overseas citizen</dd>
+                  </div>
+                </dl>
+              </div>
+            </details>
+
+          </div>
+
+          <div class="scra-card">
+            <div class="scra-card-content">
+              <dl class="nhsuk-summary-list nhsuk-u-margin-bottom-0">
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    User
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    Edward Hilmer
+                  </dd>
+
+                </div>
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Organisation
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    NELPCT out of hours
+                  </dd>
+
+                </div>
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Date updated
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    23-Sep-2020 13:04
+                  </dd>
+
+                </div>
+              </dl>
+            </div>
+
+            <details class="nhsuk-details nhsuk-expander nhsuk-u-margin-bottom-0">
+              <summary class="nhsuk-details__summary nhsuk-u-padding-left-0">
+                <span class="nhsuk-details__summary-text">
+                  View more information
+                </span>
+              </summary>
+              <div class="nhsuk-details__text nhsuk-u-padding-left-0">
+                <dl class="nhsuk-summary-list">
+                  <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">Date Patient Seen</dt>
+                    <dd class="nhsuk-summary-list__value">23-Sep-2020</dd>
+                  </div>
+
+                  <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                      Country or Nationality
+                    </dt>
+                    <dd class="nhsuk-summary-list__value">GB - Overseas citizen</dd>
+                  </div>
+
+                  <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">OVM Chargeable Status</dt>
+                    <dd class="nhsuk-summary-list__value">
+                      None
+                    </dd>
+                  </div>
+
+                  <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">HO E&E Contacted</dt>
+                    <dd class="nhsuk-summary-list__value">No</dd>
+                  </div>
+
+                  <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                      S1 Status
+                    </dt>
+                    <dd class="nhsuk-summary-list__value">No S1 confirmed by patient</dd>
+                  </div>
+
+                  <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">S2 Country of Issue</dt>
+                    <dd class="nhsuk-summary-list__value">GB - Protected person</dd>
+                  </div>
+
+                  <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">Passport country of Issue</dt>
+                    <dd class="nhsuk-summary-list__value">Angola</dd>
+                  </div>
+
+                  <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">PRC country of Issue</dt>
+                    <dd class="nhsuk-summary-list__value">GB - Overseas citizen</dd>
+                  </div>
+                </dl>
+              </div>
+            </details>
+
+          </div>
+
         </section>
 
         <!--
