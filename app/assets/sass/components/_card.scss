@@ -67,13 +67,13 @@
 }
 
 .alert-card__heading-container {
-  background-color: $color_nhsuk-warm-yellow!important;
-  color: $color_nhsuk-black!important;
+  background-color: $color_nhsuk-warm-yellow !important;
+  color: $color_nhsuk-black !important;
 }
 
 .alert-card__arrow:after,
 .alert-card__arrow:before {
-  border: solid 32px $color_nhsuk-warm-yellow!important;
+  border: solid 32px $color_nhsuk-warm-yellow !important;
 }
 
 // Patient Details
@@ -82,12 +82,11 @@
   display: inline-block;
 }
 
-
 .ndop-card-header > * {
   display: inline-block;
 }
 
-.nic-reference-container > *{
+.nic-reference-container > * {
   display: inline-block;
 }
 
@@ -102,7 +101,7 @@
 
 .scra-cards__subheading {
   color: $color_nhsuk-grey-1;
-  @include nhsuk-responsive-margin(4, 'bottom');
+  @include nhsuk-responsive-margin(4, "bottom");
 }
 
 .nrl-card__wrapper {
@@ -118,32 +117,32 @@
 }
 
 .nrl-card__heading {
-  font-size: 14px!important;
+  font-size: 14px !important;
 }
-@media screen and (min-width:768px) {
+@media screen and (min-width: 768px) {
   .nrl-card__heading {
-    font-size: 16px!important;
+    font-size: 16px !important;
   }
 }
 
 .nrl-card__description {
-  font-size: 14px!important;
+  font-size: 14px !important;
   color: $color_nhsuk-black;
   margin-bottom: 8px;
 }
-@media screen and (min-width:768px) {
+@media screen and (min-width: 768px) {
   .nrl-card__description {
-    font-size: 16px!important;
+    font-size: 16px !important;
   }
 }
 
 .nrl-card__date {
   color: $color_nhsuk-grey-2;
-  font-size: 12px!important;
+  font-size: 12px !important;
 }
-@media screen and (min-width:768px) {
+@media screen and (min-width: 768px) {
   .nrl-card__date {
-    font-size: 14px!important;
+    font-size: 14px !important;
   }
 }
 
@@ -178,7 +177,7 @@
 .pds-edit-support-text {
   color: $color_nhsuk-grey-1;
 }
-@media screen and (min-width:768px) {
+@media screen and (min-width: 768px) {
   .pds-edit-card-header > * {
     margin-bottom: 8px;
   }
@@ -196,7 +195,7 @@
   display: none;
 }
 
-.bachelor-name-support-text{
+.bachelor-name-support-text {
   display: none;
 }
 
@@ -232,6 +231,99 @@
 }
 
 .remove-adjustment-link {
-  color: $nhsuk-error-color!important;
+  color: $nhsuk-error-color !important;
   font-weight: 400;
+}
+
+//overview tab 2
+//clickable cards
+.nhsuk-card {
+  margin-bottom: 40px;
+  background: #fff;
+  border: 1px solid #d8dde0;
+  position: relative;
+  width: 100%;
+}
+
+@media (min-width: 40.0625em) {
+  .nhsuk-card {
+    margin-bottom: 48px;
+  }
+}
+
+@media print {
+  .nhsuk-card__img {
+    display: none;
+  }
+}
+
+.nhsuk-card__content {
+  padding: 24px;
+}
+
+.nhsuk-card__content > *:first-child {
+  margin-top: 0;
+}
+
+.nhsuk-card__content > *:last-child {
+  margin-bottom: 0;
+}
+
+@media (min-width: 40.0625em) {
+  .nhsuk-card__content {
+    padding: 32px;
+  }
+}
+
+.nhsuk-card__heading,
+.nhsuk-card__metadata,
+.nhsuk-card__description {
+  margin-bottom: 16px;
+}
+
+.nhsuk-card--clickable {
+  border-bottom-width: 4px;
+}
+
+.nhsuk-card--clickable .nhsuk-card__heading a::before,
+.nhsuk-card--clickable .nhsuk-card__link::before {
+  background-color: rgba(255, 255, 255, 0);
+  bottom: 0;
+  content: "";
+  display: block;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.nhsuk-card--clickable:active {
+  border-color: #aeb7bd;
+  bottom: -1px;
+}
+
+.nhsuk-card-group {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+  padding: 0;
+}
+
+@media (max-width: 48.0525em) {
+  .nhsuk-card-group {
+    margin-bottom: 40px;
+  }
+}
+
+.nhsuk-card-group + h2,
+.nhsuk-card-group + .nhsuk-heading-l,
+.nhsuk-card-group + h3,
+.nhsuk-card-group + .nhsuk-heading-m {
+  padding-top: 0;
+}
+
+.nhsuk-card-group__item {
+  display: flex;
+  list-style-type: none;
+  margin-bottom: 0;
 }
