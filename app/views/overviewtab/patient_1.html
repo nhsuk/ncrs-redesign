@@ -20,7 +20,26 @@ details {% endblock %} {% block beforeContent %}
 </div>
 
 {% endblock %} {% block content %} {% include "includes/mobile-nav.html" %}
+<!--Back link needs to go back to search results if navigated to via the search results-->
 
+<div class="nhsuk-back-link">
+  <a
+    class="nhsuk-back-link__link"
+    href="patient-demographics#chargeable-status"
+  >
+    <svg
+      class="nhsuk-icon nhsuk-icon__chevron-left"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+    >
+      <path
+        d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"
+      ></path>
+    </svg>
+    Back</a
+  >
+</div>
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-one-half">
     <!-- name card-->
@@ -193,8 +212,10 @@ details {% endblock %} {% block beforeContent %}
   </div>
 
   <!--2nd column-->
-  <!-- Address-->
+
   <div class="nhsuk-grid-column-one-half">
+    <!-- address-->
+
     <div class="scra-card">
       <div class="scra-card-header">
         <h3 class="nhsuk-heading-m" id="patient-details-names">Addresses</h3>
@@ -242,6 +263,61 @@ details {% endblock %} {% block beforeContent %}
             <p>What goes here?</p>
           </div>
         </details>
+      </div>
+    </div>
+    <!--contact details-->
+    <div class="scra-card">
+      <div class="scra-card-header">
+        <h3 class="nhsuk-heading-m" id="patient-details-names">
+          Contact details
+        </h3>
+      </div>
+      <div class="scra-card-content">
+        <dl class="nhsuk-summary-list">
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Contact preferences</dt>
+            <dd class="nhsuk-summary-list__value">Telephone</dd>
+          </div>
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Written Contact Preferences</dt>
+            <dd class="nhsuk-summary-list__value">Large print</dd>
+          </div>
+          
+            
+        </dl>
+        <h3 class="nhsuk-heading-m" id="patient-details-names">
+          Telephone </h3>
+        <dl class="nhsuk-summary-list">
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Main home</dt>
+            <dd class="nhsuk-summary-list__value">06958495837<br />
+              <em>From 15-Apr-2017 </em></dd>
+          </div>
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Mobile</dt>
+            <dd class="nhsuk-summary-list__value">0498495849059 <br />
+              <em>From 15-Apr-2017 </em></dd> </div>
+            </dl>
+            <h3 class="nhsuk-heading-m" id="patient-details-names">
+              Email </h3>
+            <dl class="nhsuk-summary-list">
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">Main home</dt>
+                <dd class="nhsuk-summary-list__value">test@email.com<br />
+                  <em>From 15-Apr-2017 </em></dd>
+              </div>
+    
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">Fax</dt>
+                <dd class="nhsuk-summary-list__value">Not recorded </dd> </div>
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">Textphone</dt>
+                  <dd class="nhsuk-summary-list__value">Not recorded </dd> </div>
+
+                </dl>
+          </div>
       </div>
     </div>
   </div>
