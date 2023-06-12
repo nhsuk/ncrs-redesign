@@ -1,6 +1,8 @@
-{% extends 'layouts/layout-transactional.html' %} {% block pageTitle %} NCRS
-redesign - Index {% endblock %} {% block beforeContent %}
+{% extends 'layouts/layout-transactional.html' %}
 
+{% block pageTitle %} NCRS redesign - Index {% endblock %}
+
+{% block beforeContent %}
 <section class="nhsuk-hero">
   <div class="nhsuk-width-container nhsuk-hero--border">
     <div class="nhsuk-grid-row">
@@ -13,8 +15,10 @@ redesign - Index {% endblock %} {% block beforeContent %}
     </div>
   </div>
 </section>
+{% endblock %}
 
-{% endblock %} {% block content %}
+
+{% block content %}
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-two-thirds">
     <div class="section">
@@ -24,6 +28,8 @@ redesign - Index {% endblock %} {% block beforeContent %}
         Your user researcher will tell you which option to select
       </h5>
     </div>
+
+    <form action="nhs-number-search" method="post" class="form">
 
     <div class="nhsuk-form-group">
       <fieldset class="nhsuk-fieldset">
@@ -35,12 +41,12 @@ redesign - Index {% endblock %} {% block beforeContent %}
           <div class="nhsuk-radios__item">
             <input
               class="nhsuk-radios__input"
-              id="patient details page"
-              name="example"
+              id="patient-details-page"
+              name="scenario"
               type="radio"
               value="patient details page"
             />
-            <label class="nhsuk-label nhsuk-radios__label" for="example-1">
+            <label class="nhsuk-label nhsuk-radios__label" for="patient-details-page">
               Option 1
             </label>
           </div>
@@ -48,12 +54,12 @@ redesign - Index {% endblock %} {% block beforeContent %}
           <div class="nhsuk-radios__item">
             <input
               class="nhsuk-radios__input"
-              id="overview tab 1"
-              name="example"
+              id="overview-tab-1"
+              name="scenario"
               type="radio"
               value="overview tab"
             />
-            <label class="nhsuk-label nhsuk-radios__label" for="example-1">
+            <label class="nhsuk-label nhsuk-radios__label" for="overview-tab-1">
               Option 2
             </label>
           </div>
@@ -61,12 +67,12 @@ redesign - Index {% endblock %} {% block beforeContent %}
           <div class="nhsuk-radios__item">
             <input
               class="nhsuk-radios__input"
-              id="overview tab 2"
-              name="example"
+              id="overview-tab-2"
+              name="scenario"
               type="radio"
               value="overview tab 2"
             />
-            <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+            <label class="nhsuk-label nhsuk-radios__label" for="overview-tab-2">
               Option 3
             </label>
           </div>
@@ -76,6 +82,7 @@ redesign - Index {% endblock %} {% block beforeContent %}
     <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
       Save and continue
     </button>
+    </form>
   </div>
 </div>
 {% endblock %}
