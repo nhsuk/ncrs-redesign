@@ -193,18 +193,56 @@ details {% endblock %} {% block beforeContent %}
   </div>
 
   <!--2nd column-->
+  <!-- Address-->
   <div class="nhsuk-grid-column-one-half">
     <div class="scra-card">
       <div class="scra-card-header">
-        <h3 class="nhsuk-heading-m" id="patient-details-names">Name</h3>
+        <h3 class="nhsuk-heading-m" id="patient-details-names">Addresses</h3>
       </div>
-      <div class="scra-card-content"></div>
-    </div>
-    <div class="scra-card">
-      <div class="scra-card-header">
-        <h3 class="nhsuk-heading-m" id="patient-details-names">Names</h3>
+      <div class="scra-card-content">
+        <dl class="nhsuk-summary-list">
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Usual address</dt>
+            <dd class="nhsuk-summary-list__value">
+              Vantage House <br />
+              21-23 Willington Street
+              <br />
+              Leeds <br />
+              LS1 4DL
+              <br />
+              <em>From 15-Apr-2017 </em>
+            </dd>
+          </div>
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Correspondence Addresses</dt>
+            <dd class="nhsuk-summary-list__value">
+              14 Cherry Drive <br />
+              Canterbury<br />
+              CT2 8HF<br />
+              <em>From 15-Apr-2017 </em>
+            </dd>
+          </div>
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Temporary Address</dt>
+            <dd class="nhsuk-summary-list__value">
+              None recorded <br />
+              <em>From 15-Apr-2017 </em>
+            </dd>
+          </div>
+        </dl>
+        <details class="nhsuk-details nhsuk-expander">
+          <summary class="nhsuk-details__summary">
+            <span class="nhsuk-details__summary-text">
+              View Address history
+            </span>
+          </summary>
+          <div class="nhsuk-details__text">
+            <p>What goes here?</p>
+          </div>
+        </details>
       </div>
-      <div class="scra-card-content"></div>
     </div>
   </div>
 </div>
