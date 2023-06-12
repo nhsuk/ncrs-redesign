@@ -170,8 +170,8 @@ module.exports = (router) => {
 
   router.get("/overviewtab/search-results", function (req, res, next) {
     const nhsNumber = req.query["nhs-number"];
-  //  const { gender, firstName, lastName, dob, dobTo, dobFrom, postcode } =
-  //    req.query;
+   const { gender, firstName, lastName, dob, dobTo, dobFrom, postcode } =
+      req.query;
 
  //   const isBasicSearch = gender && lastName && dob;
  //   const isAdvancedSearch =

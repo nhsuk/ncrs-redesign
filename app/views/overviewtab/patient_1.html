@@ -23,84 +23,86 @@ details {% endblock %} {% block beforeContent %}
 
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-one-half">
+    <!-- name card-->
     <div class="scra-card">
       <div class="scra-card-header">
         <h3 class="nhsuk-heading-m" id="patient-details-names">Names</h3>
       </div>
       <div class="scra-card-content">
-        <div class="nhsuk-grid-row">
-          <div class="nhsuk-grid-column-one-half">
-            <div class="card-content-section">
-              <span class="card-content-label">Usual Name:</span>
-              <span
-                class="card-content-name"
-                value="{{ data.patient['firstName']or 'William Shakespeare' }}"
-                >{{ patient.firstName }} {{ patient.lastName.toUpperCase() }}
-              </span>
-            </div>
+        <dl class="nhsuk-summary-list">
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Usual name</dt>
+            <dd class="nhsuk-summary-list__value">
+              {{ patient.firstName }} {{ patient.lastName.toUpperCase() }}
+              <br />
+              <em>From 15-Apr-2017 </em>
+            </dd>
           </div>
-        </div>
-        <div class="nhsuk-grid-row">
-          <div class="nhsuk-grid-column-one-half nhsuk-u-one-half-tablet">
-            <div class="card-content-section">
-              <span class="card-content-label">Preferred Name:</span>
-              <span class="card-content-detail">None recorded</span>
-            </div>
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Preferred name</dt>
+            <dd class="nhsuk-summary-list__value">
+              None recorded <br />
+              <em>From 15-Apr-2017 </em>
+            </dd>
           </div>
-          <div class="nhsuk-grid-column-one-quarter nhsuk-u-one-quarter-tablet">
-            <div class="card-content-section">
-              <span class="card-content-label">Other names:</span>
-              <span class="card-content-detail">None recorded</span>
-            </div>
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Birth name</dt>
+            <dd class="nhsuk-summary-list__value">
+              None recorded <br />
+              <em>From 15-Apr-2017 </em>
+            </dd>
           </div>
-          <div class="nhsuk-grid-column-one-quarter nhsuk-u-one-quarter-tablet">
-            <div class="card-content-section">
-              <span class="card-content-label">Previous names:</span>
-              <span class="card-content-detail">None recorded</span>
-            </div>
+        </dl>
+        <details class="nhsuk-details nhsuk-expander">
+          <summary class="nhsuk-details__summary">
+            <span class="nhsuk-details__summary-text"> View name history </span>
+          </summary>
+          <div class="nhsuk-details__text">
+            <p>What goes here?</p>
           </div>
-        </div>
+        </details>
       </div>
     </div>
+
+    <!--Key details -->
     <div class="scra-card">
       <div class="scra-card-header">
-        <h3 class="nhsuk-heading-m" id="patient-details-names">Names</h3>
+        <h3 class="nhsuk-heading-m" id="patient-details-names">Key details</h3>
       </div>
       <div class="scra-card-content">
-        <div class="nhsuk-grid-row">
-          <div class="nhsuk-grid-column-one-half">
-            <div class="card-content-section">
-              <span class="card-content-label">Usual Name:</span>
-              <span
-                class="card-content-name"
-                value="{{ data.patient['firstName']or 'William Shakespeare' }}"
-                >{{ patient.firstName }} {{ patient.lastName.toUpperCase() }}
-              </span>
-            </div>
+        <dl class="nhsuk-summary-list">
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Gender</dt>
+            <dd class="nhsuk-summary-list__value">Male</dd>
           </div>
-        </div>
-        <div class="nhsuk-grid-row">
-          <div class="nhsuk-grid-column-one-half nhsuk-u-one-half-tablet">
-            <div class="card-content-section">
-              <span class="card-content-label">Preferred Name:</span>
-              <span class="card-content-detail">None recorded</span>
-            </div>
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">NHS Number</dt>
+            <dd class="nhsuk-summary-list__value">1234567890</dd>
           </div>
-          <div class="nhsuk-grid-column-one-quarter nhsuk-u-one-quarter-tablet">
-            <div class="card-content-section">
-              <span class="card-content-label">Other names:</span>
-              <span class="card-content-detail">None recorded</span>
-            </div>
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Date of Birth</dt>
+            <dd class="nhsuk-summary-list__value">18-Mar-2013</dd>
           </div>
-          <div class="nhsuk-grid-column-one-quarter nhsuk-u-one-quarter-tablet">
-            <div class="card-content-section">
-              <span class="card-content-label">Previous names:</span>
-              <span class="card-content-detail">None recorded</span>
-            </div>
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Birth order</dt>
+            <dd class="nhsuk-summary-list__value">1</dd>
           </div>
-        </div>
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Place of birth</dt>
+            <dd class="nhsuk-summary-list__value">Albania</dd>
+          </div>
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Language</dt>
+            <dd class="nhsuk-summary-list__value">Ukranian</dd>
+          </div>
+        </dl>
       </div>
     </div>
+    <!--Reasonable adjustments block-->
     <div class="scra-card">
       <div class="scra-card-header">
         <h3 class="nhsuk-heading-m">
@@ -170,84 +172,20 @@ details {% endblock %} {% block beforeContent %}
       </div>
     </div>
   </div>
+
+  <!--2nd column-->
   <div class="nhsuk-grid-column-one-half">
     <div class="scra-card">
       <div class="scra-card-header">
         <h3 class="nhsuk-heading-m" id="patient-details-names">Name</h3>
       </div>
-      <div class="scra-card-content">
-        <div class="nhsuk-grid-row">
-          <div class="nhsuk-grid-column-one-half">
-            <div class="card-content-section">
-              <span class="card-content-label">Usual Name:</span>
-              <span
-                class="card-content-name"
-                value="{{ data.patient['firstName']or 'William Shakespeare' }}"
-                >{{ patient.firstName }} {{ patient.lastName.toUpperCase() }}
-              </span>
-            </div>
-          </div>
-        </div>
-        <div class="nhsuk-grid-row">
-          <div class="nhsuk-grid-column-one-half nhsuk-u-one-quater-tablet">
-            <div class="card-content-section">
-              <span class="card-content-label">Preferred Name:</span>
-              <span class="card-content-detail">None recorded</span>
-            </div>
-          </div>
-          <div class="nhsuk-grid-column-one-quarter nhsuk-u-one-quarter-tablet">
-            <div class="card-content-section">
-              <span class="card-content-label">Other names:</span>
-              <span class="card-content-detail">None recorded</span>
-            </div>
-          </div>
-          <div class="nhsuk-grid-column-one-quarter nhsuk-u-one-quarter-tablet">
-            <div class="card-content-section">
-              <span class="card-content-label">Previous names:</span>
-              <span class="card-content-detail">None recorded</span>
-            </div>
-          </div>
-        </div>
-      </div>
+      <div class="scra-card-content"></div>
     </div>
     <div class="scra-card">
       <div class="scra-card-header">
         <h3 class="nhsuk-heading-m" id="patient-details-names">Names</h3>
       </div>
-      <div class="scra-card-content">
-        <div class="nhsuk-grid-row">
-          <div class="nhsuk-grid-column-one-half">
-            <div class="card-content-section">
-              <span class="card-content-label">Usual Name:</span>
-              <span
-                class="card-content-name"
-                value="{{ data.patient['firstName']or 'William Shakespeare' }}"
-                >{{ patient.firstName }} {{ patient.lastName.toUpperCase() }}
-              </span>
-            </div>
-          </div>
-        </div>
-        <div class="nhsuk-grid-row">
-          <div class="nhsuk-grid-column-one-half nhsuk-u-one-half-tablet">
-            <div class="card-content-section">
-              <span class="card-content-label">Preferred Name:</span>
-              <span class="card-content-detail">None recorded</span>
-            </div>
-          </div>
-          <div class="nhsuk-grid-column-one-quarter nhsuk-u-one-quarter-tablet">
-            <div class="card-content-section">
-              <span class="card-content-label">Other names:</span>
-              <span class="card-content-detail">None recorded</span>
-            </div>
-          </div>
-          <div class="nhsuk-grid-column-one-quarter nhsuk-u-one-quarter-tablet">
-            <div class="card-content-section">
-              <span class="card-content-label">Previous names:</span>
-              <span class="card-content-detail">None recorded</span>
-            </div>
-          </div>
-        </div>
-      </div>
+      <div class="scra-card-content"></div>
     </div>
   </div>
 </div>
