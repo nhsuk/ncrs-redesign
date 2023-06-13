@@ -26,46 +26,50 @@ redesign - Index {% endblock %} {% block beforeContent %}
     </div>
 
     <form action="nhs-number-search" method="post" class="form">
+      <div class="nhsuk-form-group">
+        <fieldset class="nhsuk-fieldset">
+          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+            <h1 class="nhsuk-fieldset__heading">Choose an option</h1>
+          </legend>
 
-    <div class="nhsuk-form-group">
-      <fieldset class="nhsuk-fieldset">
-        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
-          <h1 class="nhsuk-fieldset__heading">Choose an option</h1>
-        </legend>
-
-        <div class="nhsuk-radios">
-          <div class="nhsuk-radios__item">
-            <input
+          <div class="nhsuk-radios">
+            <div class="nhsuk-radios__item">
+              <input
                 class="nhsuk-radios__input"
-                id="patient-details-page"
+                id="overview-tab-2"
                 name="scenario"
                 type="radio"
-                value="patient details page"
-            />
-            <label class="nhsuk-label nhsuk-radios__label" for="patient-details-page">
-              Option 1
-            </label>
-          </div>
+                value="overview tab 2"
+              />
+              <label
+                class="nhsuk-label nhsuk-radios__label"
+                for="overview-tab-2"
+              >
+                Option 1
+              </label>
+            </div>
 
-          <div class="nhsuk-radios__item">
-            <input
+            <div class="nhsuk-radios__item">
+              <input
                 class="nhsuk-radios__input"
                 id="overview-tab-1"
                 name="scenario"
                 type="radio"
                 value="overview tab"
-            />
-            <label class="nhsuk-label nhsuk-radios__label" for="overview-tab-1">
-              Option 2
-            </label>
+              />
+              <label
+                class="nhsuk-label nhsuk-radios__label"
+                for="overview-tab-1"
+              >
+                Option 2
+              </label>
+            </div>
           </div>
-        </div>
-      </fieldset>
-    </div>
-    <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
-      Save and continue
-    </button>
-
+        </fieldset>
+      </div>
+      <button class="nhsuk-button" data-module="nhsuk-button" type="submit">
+        Save and continue
+      </button>
     </form>
   </div>
   {% endblock %}
