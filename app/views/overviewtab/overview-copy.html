@@ -1,7 +1,6 @@
 {% extends 'layouts/layout-application.html' %} {% block pageTitle %} Dashboard
 {% endblock %} {% block beforeContent %}{% include "./includes/banner.html" %}
 <div class="nhsuk-full-width-container">
-  
   <div class="scra-bordered-tabs-container">
     <div class="nhsuk-width-container-fluid">
       <ul class="scra-bordered-tabs">
@@ -23,7 +22,6 @@
 </div>
 
 {% endblock %} {% block content %}
-
 <div class="nhsuk-back-link">
   <a
     class="nhsuk-back-link__link"
@@ -42,12 +40,12 @@
     Return to search results</a
   >
 </div>
-
-<!--Alerts banner-->
 <div class="nhsuk-grid-row nhsuk-card-group">
+  
   <div
     class="nhsuk-grid-column-one-quarter nhsuk-grid-column-tablet-landscape-one-third nhsuk-promo-group__item nhsuk-promo-group__alerts-item nhsuk-u-margin-bottom-3"
   >
+
     <div class="nhsuk-promo nhsuk-promo--alert nhsuk-promo--small">
       <a class="nhsuk-promo__link-wrapper" href="#">
         <div class="nhsuk-promo__content">
@@ -63,6 +61,7 @@
     class="nhsuk-grid-column-one-quarter nhsuk-grid-column-tablet-landscape-one-third nhsuk-promo-group__item nhsuk-promo-group__alerts-item nhsuk-u-margin-bottom-3"
   >
     <div class="nhsuk-promo nhsuk-promo--alert nhsuk-promo--small">
+      
       <a class="nhsuk-promo__link-wrapper" href="#">
         <div class="nhsuk-promo__content">
           <h3 class="nhsuk-promo__heading">
@@ -88,90 +87,72 @@
     </div>
   </div>
 </div>
-
-<!--MAIN PAGE -->
-<div class="nhsuk-grid-row nhsuk-card-group">
-  <div
-    class="nhsuk-grid-column-one-quarter nhsuk-grid-column-tablet-landscape-one-third nhsuk-grid-column-tablet-one-half nhsuk-card-group__item nhsuk-u-margin-bottom-3"
-  >
-    <div class="nhsuk-card nhsuk-card--clickable">
-      <div class="nhsuk-card__content">
-        <h2 class="nhsuk-card__heading nhsuk-heading-s">
-          <a class="nhsuk-card__link" href="#">Demographics</a>
-        </h2>
-        <p class="nhsuk-card__description">Do we need a description?</p>
-      </div>
-    </div>
+<div class="nhsuk-full-width-container">
+  <div class="nhsuk-grid-column-one-third nhsuk-grid-column-tablet-landscape-one-third">
+    <h3 class="nhsuk-heading-s">Key demographics information</h3>
+    <ul class="nhsuk-grid-row nhsuk-card-group">
+      <li class="nhsuk-card-group__item">
+        <div class="nhsuk-card nhsuk-card--clickable">
+          <div class="nhsuk-card__content">
+            <h2 class="nhsuk-card__heading nhsuk-heading-s">
+              <a class="nhsuk-card__link" href="#">Demographics</a>
+            </h2>
+            <p class="nhsuk-card__description">Do we need a description?</p>
+          </div>
+        </div>
+      </li>
   </div>
-  <div
-    class="nhsuk-grid-column-one-quarter nhsuk-grid-column-tablet-landscape-one-third nhsuk-grid-column-tablet-one-half nhsuk-card-group__item"
-  >
-    <div class="nhsuk-card nhsuk-card--clickable">
-      <div class="nhsuk-card__content">
-        <h2 class="nhsuk-card__heading nhsuk-heading-s">
-          <a class="nhsuk-card__link" href="#">Summary Care Record</a>
-        </h2>
-        <p class="nhsuk-card__description">Do we need a description?</p>
-      </div>
-    </div>
+  
+  <div class="nhsuk-grid-column-one-third nhsuk-grid-column-tablet-landscape-one-third">
+    <h3 class="nhsuk-heading-s">Key demographics information</h3>
+    <ul class="nhsuk-grid-row nhsuk-card-group">
+      <li class="nhsuk-card-group__item">
+        <div class="nhsuk-card nhsuk-card--clickable">
+          <div class="nhsuk-card__content">
+            <h2 class="nhsuk-card__heading nhsuk-heading-s">
+              <a class="nhsuk-card__link" href="#">Demographics</a>
+            </h2>
+            <p class="nhsuk-card__description">Do we need a description?</p>
+          </div>
+        </div>
+      </li>
   </div>
-  <div
-    class="nhsuk-grid-column-one-quarter nhsuk-grid-column-tablet-landscape-one-third nhsuk-grid-column-tablet-one-half nhsuk-card-group__item"
-  >
-    <div class="nhsuk-card nhsuk-card--clickable">
-      <div class="nhsuk-card__content">
-        <h2 class="nhsuk-card__heading nhsuk-heading-s">
-          <a class="nhsuk-card__link" href="#">Documents</a>
-        </h2>
-        <p class="nhsuk-card__description">None available</p>
-      </div>
-    </div>
+  <div class="nhsuk-grid-column-one-third nhsuk-grid-column-tablet-landscape-one-third">
+    <h3 class="nhsuk-heading-s">Key demographics information</h3>
+    <ul class="nhsuk-grid-row nhsuk-card-group">
+      <li class="nhsuk-card-group__item">
+        <div class="nhsuk-card nhsuk-card--clickable">
+          <div class="nhsuk-card__content">
+            <h4 class="nhsuk-card__heading nhsuk-heading-s">
+              <a class="nhsuk-card__link" href="#">Demographics</a>
+            </h4>
+            <p class="nhsuk-card__description">Do we need a description?</p>
+          </div>
+        </div>
+      </li>
+      <li class="nhsuk-card-group__item">
+        <div class="nhsuk-card nhsuk-card--clickable">
+          <div class="nhsuk-card__content">
+            <h4 class="nhsuk-card__heading nhsuk-heading-s">
+              <a class="nhsuk-card__link" href="#">Demographics</a>
+            </h4>
+            <p class="nhsuk-card__description">Do we need a description?</p>
+          </div>
+        </div>
+      </li>
   </div>
-</div>
-<div class="nhsuk-grid-row nhsuk-card-group">
-  <div
-    class="nhsuk-grid-column-one-quarter nhsuk-grid-column-tablet-landscape-one-third nhsuk-grid-column-tablet-one-half nhsuk-card-group__item nhsuk-u-margin-bottom-3"
-  >
-    <div class="nhsuk-card nhsuk-card--clickable">
-      <div class="nhsuk-card__content">
-        <h2 class="nhsuk-card__heading nhsuk-heading-s">
-          <a class="nhsuk-card__link" href="#">GP and care providers</a>
-        </h2>
-        <p class="nhsuk-card__description">Do we need a description?</p>
-      </div>
-    </div>
-  </div>
-  <div
-    class="nhsuk-grid-column-one-quarter nhsuk-grid-column-tablet-landscape-one-third nhsuk-grid-column-tablet-one-half nhsuk-card-group__item"
-  >
-    <div class="nhsuk-card nhsuk-card--clickable">
-      <div class="nhsuk-card__content">
-        <h2 class="nhsuk-card__heading nhsuk-heading-s">
-          <a class="nhsuk-card__link" href="#">COVID 19 vaccinations</a>
-        </h2>
-        <p class="nhsuk-card__description">Do we need a description?</p>
-      </div>
-    </div>
-  </div>
-  <div
-    class="nhsuk-grid-column-one-quarter nhsuk-grid-column-tablet-landscape-one-third nhsuk-grid-column-tablet-one-half nhsuk-card-group__item"
-  >
-    <div class="nhsuk-card nhsuk-card--clickable">
-      <div class="nhsuk-card__content">
-        <h2 class="nhsuk-card__heading nhsuk-heading-s">
-          <a class="nhsuk-card__link" href="#">End of life plans</a>
-        </h2>
-        <p class="nhsuk-card__description">Do we need a description?</p>
-      </div>
-    </div>
-  </div>
-</div>
 
 
 
 
 
-<!--LEAVE THIS MODAL BELOW-->
+
+
+
+
+<div class="nhsuk-grid-row">
+
+  
   <div id="myModal" class="modal">
     <!-- Modal content -->
 
