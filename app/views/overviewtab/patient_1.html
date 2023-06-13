@@ -41,7 +41,10 @@ details {% endblock %} {% block beforeContent %}
   >
 </div>
 <!-- Main grid-->
-<div class="nhsuk-grid-row">
+<div class="nhsuk-full-width-container">
+
+  <!--Key demographics card group-->
+  <h3 class="nhsuk-heading-m">Key demographics information</h3>
 <ul class="nhsuk-grid-row nhsuk-card-group">
 <!--Name card-->
   <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
@@ -137,7 +140,9 @@ details {% endblock %} {% block beforeContent %}
   </div>
 </li>
 
-<!--Card <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+<!--Card put back if needed
+  
+  <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
   <div class="scra-card">
     <div class="scra-card-header">
       <h3 class="nhsuk-heading-m" id="patient-details-names">
@@ -275,13 +280,441 @@ details {% endblock %} {% block beforeContent %}
 
 
 </div>
-
-
-
-
+<!--GP and care provider information group-->
+<div class="nhsuk-full-width-container">
+  <h3 class="nhsuk-heading-m">GP and care providers </h3>
+<ul class="nhsuk-grid-row nhsuk-card-group">
+  <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+    <div class="scra-card">
+      <div class="scra-card-header">
+        <h3 class="nhsuk-heading-m" id="patient-details-names">General practice</h3>
+      </div>
+      <div class="scra-card-content">
+        <dl class="nhsuk-summary-list">
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Practice name</dt>
+            <dd class="nhsuk-summary-list__value">
+              GRANGE PARK SURGERY
+            
+            </dd>
+          </div>
+  
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Organisation code</dt>
+            <dd class="nhsuk-summary-list__value">
+              B83019
+            </dd>
+          </div>
+  
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Address</dt>
+            <dd class="nhsuk-summary-list__value">
+              GRANGE ROAD <br />
+              BURLEY IN WHARFEDALE <br />
+              ILKLEY <br />
+              WEST YORKSHIRE <br />
+              LS29 7HG <br />
+              <em>From 15-Apr-2017 </em>
+            </dd>
+          </div>
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Telephone</dt>
+            <dd class="nhsuk-summary-list__value">
+              <em>Not recorded</em>
+            </dd>
+          </div>
+        </dl>
+        <details class="nhsuk-details nhsuk-expander">
+          <summary class="nhsuk-details__summary">
+            <span class="nhsuk-details__summary-text"> View General Practice history </span>
+          </summary>
+          <div class="nhsuk-details__text">
+            <p>What goes here?</p>
+          </div>
+        </details>
+        <details class="nhsuk-details nhsuk-expander">
+          <summary class="nhsuk-details__summary">
+            <span class="nhsuk-details__summary-text"> Show commissioning organisation and high level health geography </span>
+          </summary>
+          <div class="nhsuk-details__text">
+            <p>What goes here?</p>
+          </div>
+        </details>
+        <h3 class="nhsuk-heading-m" id="patient-details-names">GPs registered at this practice</h3>
+        <dl class="nhsuk-summary-list">
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Name</dt>
+            <dd class="nhsuk-summary-list__value">
+              Mr Alan Milford
+            </dd>
+          </div>
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">GP Code</dt>
+            <dd class="nhsuk-summary-list__value">
+              G5675671
+            </dd>
+          </div>
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">GMC code</dt>
+            <dd class="nhsuk-summary-list__value">
+              <em>Not recorded</em>
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+  </li>
+ <!--Nomination/Prescription info-->
+  <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+    <div class="scra-card">
+      <div class="scra-card-header">
+        <h3 class="nhsuk-heading-m" id="patient-details-names">Nominated Pharmacy</h3>
+      </div>
+      <div class="scra-card-content">
+        <dl class="nhsuk-summary-list">
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Name</dt>
+            <dd class="nhsuk-summary-list__value">
+              ASDA STORED LTD  <br />
+              <em>From 15-Apr-2017 </em>
+            
+            </dd>
+          </div>
+  
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Organisation code</dt>
+            <dd class="nhsuk-summary-list__value">
+              FXa06
+            </dd>
+          </div>
+  
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Address</dt>
+            <dd class="nhsuk-summary-list__value">
+              ASDA STORE <br />
+              BURLEY IN WHARFEDALE <br />
+              ILKLEY <br />
+              WEST YORKSHIRE <br />
+              LS29 7HG <br />
+              <em>From 15-Apr-2017 </em>
+            </dd>
+          </div>
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Telephone</dt>
+            <dd class="nhsuk-summary-list__value">
+              03847293493
+            </dd>
+          </div>
+        </dl>
+       
+      
+        <h3 class="nhsuk-heading-m" id="patient-details-names">Dispensing doctor</h3>
+        <dl class="nhsuk-summary-list">
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Name</dt>
+            <dd class="nhsuk-summary-list__value">
+              No dispensing doctor information recorded for this patient.
+            </dd>
+          </div>
+          </dl>
+        
+          <h3 class="nhsuk-heading-m" id="patient-details-names">Nominated medical appliance</h3>
+          <dl class="nhsuk-summary-list">
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">Name</dt>
+              <dd class="nhsuk-summary-list__value">
+                AMCARE LTD <br />
+                <em>From 15-Apr-2017 </em>
+              </dd>
+            </div>  
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">Organisation code</dt>
+              <dd class="nhsuk-summary-list__value">
+                FXa06
+              </dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">Address</dt>
+              <dd class="nhsuk-summary-list__value">
+                GRANGE ROAD <br />
+                BURLEY IN WHARFEDALE <br />
+                ILKLEY <br />
+                WEST YORKSHIRE <br />
+                LS29 7HG <br />
+                <em>From 15-Apr-2017 </em>
+              </dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">Telephone</dt>
+              <dd class="nhsuk-summary-list__value">
+                <em>Not recorded</em>
+              </dd>
+            </div>
+          
+        </dl>
+      </div>
+    </div>
+  </li>
+</ul>
+</div>
+<!--Contacts and next of kin-->
+<div class="nhsuk-full-width-container">
+  <h3 class="nhsuk-heading-m">Contacts and next of kin </h3>
+<ul class="nhsuk-grid-row nhsuk-card-group">
+  <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+    <div class="scra-card">
+      <div class="scra-card-header">
+        <h3 class="nhsuk-heading-m" id="patient-details-names">Not recorded</h3>
+      </div>
+      <div class="scra-card-content">
+        <dl class="nhsuk-summary-list">
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Relationship</dt>
+            <dd class="nhsuk-summary-list__value">
+              Partner <em>(Personal relationship)</em>
+            
+            </dd>
+          </div>
+  
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">NHS Number</dt>
+            <dd class="nhsuk-summary-list__value">
+              9871231234
+            </dd>
+          </div>
+  
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Address</dt>
+            <dd class="nhsuk-summary-list__value">
+              GRANGE ROAD <br />
+              BURLEY IN WHARFEDALE <br />
+              ILKLEY <br />
+              WEST YORKSHIRE <br />
+              LS29 7HG <br />
+              <em>From 15-Apr-2017 </em>
+            </dd>
+          </div>
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Telephone</dt>
+            <dd class="nhsuk-summary-list__value">
+              <em>Not recorded</em>
+            </dd>
+          </div>
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Email</dt>
+            <dd class="nhsuk-summary-list__value">
+              <em>Not recorded</em>
+            </dd>
+          </div>
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Language</dt>
+            <dd class="nhsuk-summary-list__value">
+              <em>Not recorded</em>
+            </dd>
+          </div>
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Preferred method of contact</dt>
+            <dd class="nhsuk-summary-list__value">
+              <em>Not recorded</em>
+            </dd>
+          </div>
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Written contact preferences</dt>
+            <dd class="nhsuk-summary-list__value">
+              <em>Not recorded</em>
+            </dd>
+          </div>
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Copy correspondence</dt>
+            <dd class="nhsuk-summary-list__value">
+              <em>Not recorded</em>
+            </dd>
+          </div>
+        </dl>
+      
+ 
+      </div>
+    </div>
+  </li>
+ <!--Next contact-->
+  <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+    <div class="scra-card">
+      <div class="scra-card-header">
+        <h3 class="nhsuk-heading-m" id="patient-details-names">1. Mrs Smith Jemima</h3>
+      </div>
+      <div class="scra-card-content">
+        <dl class="nhsuk-summary-list">
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Relationship</dt>
+            <dd class="nhsuk-summary-list__value">
+              Partner <em>(Personal relationship)</em>
+            
+            </dd>
+          </div>
+  
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">NHS Number</dt>
+            <dd class="nhsuk-summary-list__value">
+              9871231234
+            </dd>
+          </div>
+  
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Address</dt>
+            <dd class="nhsuk-summary-list__value">
+              GRANGE ROAD <br />
+              BURLEY IN WHARFEDALE <br />
+              ILKLEY <br />
+              WEST YORKSHIRE <br />
+              LS29 7HG <br />
+              <em>From 15-Apr-2017 </em>
+            </dd>
+          </div>
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Telephone</dt>
+            <dd class="nhsuk-summary-list__value">
+              <em>Not recorded</em>
+            </dd>
+          </div>
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Email</dt>
+            <dd class="nhsuk-summary-list__value">
+              <em>Not recorded</em>
+            </dd>
+          </div>
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Language</dt>
+            <dd class="nhsuk-summary-list__value">
+              <em>Not recorded</em>
+            </dd>
+          </div>
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Preferred method of contact</dt>
+            <dd class="nhsuk-summary-list__value">
+              <em>Not recorded</em>
+            </dd>
+          </div>
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Written contact preferences</dt>
+            <dd class="nhsuk-summary-list__value">
+              <em>Not recorded</em>
+            </dd>
+          </div>
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Copy correspondence</dt>
+            <dd class="nhsuk-summary-list__value">
+              <em>Not recorded</em>
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+  </li>
+</ul>
+</div>
 <!--information sharing cards-->
-<div class="nhsuk-grid-row">
-  <ul class="nhsuk-grid-row nhsuk-card-group">
+<div class="nhsuk-full-width-container">
+  <h3 class="nhsuk-heading-m">Information flags </h3>
+
+<ul class="nhsuk-grid-row nhsuk-card-group">
+<!--Child protection alert-->
+<li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+  <a name="care-alert"></a>
+    <div class="section" id="care-alert-section">
+      <h2 class="nhsuk-heading-l" id="child-protection">Child protection</h2>
+      <div class="scra-card">
+        <div class="scra-card-header">
+          <h3 class="nhsuk-heading-m">View child protection information</h3>
+        </div>
+        <div class="scra-card-content">
+          <div class="nhsuk-u-reading-width">
+            <p>
+              The patient’s child protection information includes details about the type of protection order, the responsible local authority, contact numbers and who has previously viewed the information.
+            </p>
+            <div class="nhsuk-action-link nhsuk-u-margin-top-5">
+              <a class="nhsuk-action-link__link" href="./check-care-setting-simple">
+                <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M0 0h24v24H0z" fill="none"></path>
+                  <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
+                </svg>
+                <span class="nhsuk-action-link__text">View child protection information</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</li>
+<!--FGM alert-->
+<li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+  <a name="care-alert"></a>
+    <div class="section" id="care-alert-section">
+      <h2 class="nhsuk-heading-l" id="child-protection">Female Genital Mutilation</h2>
+      <div class="scra-card">
+        <div class="scra-card-header">
+          <h3 class="nhsuk-heading-m">This child has a family history of female genital mutilation</h3>
+        </div>
+        <div class="scra-card-content">
+          <div class="nhsuk-u-reading-width">
+            <p>
+              Family history is known to be relevant when safeguarding against FGM. Bear this in mind in relation to your wider safeguarding responsibilities. If you have any concerns about this patient you should: 
+              <ul>
+                <li>Follow your local safeguarding procedures</li>
+                <li>Speak with your manager or safeguarding lead</li>
+                <li>Consult the <a href="£">safeguarding women and girls at risk of FGMS</a>guidance on the GOV.UK website</li>
+              </ul>
+            </p>
+            <div class="nhsuk-action-link nhsuk-u-margin-top-5">
+              <a class="nhsuk-action-link__link" href="./check-care-setting-simple">
+                <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M0 0h24v24H0z" fill="none"></path>
+                  <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
+                </svg>
+                <span class="nhsuk-action-link__text">View FGM information sharing indicator</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+</li>
+<!--NEW RA card -->
+<li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+  <a name="care-alert"></a>
+    <div class="section" id="care-alert-section">
+      <h2 class="nhsuk-heading-l" id="child-protection">Reasonable adjustment flag</h2>
+      <div class="scra-card">
+        <div class="scra-card-header">
+          <h3 class="nhsuk-heading-m">View reasonable adjustment flag</h3>
+        </div>
+        <div class="scra-card-content">
+          <div class="nhsuk-u-reading-width">
+            <p>
+              A Reasonable Adjustment Flag exists for this patient. The Equality Act (2010) states that the NHS and other public organisations have a duty to provide equal access to all services. This is called making reasonable adjustments. For example, providing wheelchair access. The Reasonable Adjustment Flag provides details of reasonable adjustments that should be considered when providing care for a patient. 
+            </p>
+            <div class="nhsuk-action-link nhsuk-u-margin-top-5">
+              <a class="nhsuk-action-link__link" href="./check-care-setting-simple">
+                <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M0 0h24v24H0z" fill="none"></path>
+                  <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
+                </svg>
+                <span class="nhsuk-action-link__text">Reasonable adjustment flag</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+</li>
+
+
+<!-- This reasonable adjustment flag might not be needed -->
+<!--Reasonable adjustments card-->
+<!--
     <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
       <div class="scra-card">
         <div class="scra-card-header">
@@ -352,10 +785,12 @@ details {% endblock %} {% block beforeContent %}
         </div>
       </div>
     </li>
+
+  -->
   </ul>
   </div>
 
-  <!--2nd column-->
+
 
     
     </div>
