@@ -1,7 +1,3 @@
-{%- set patientRowHref -%} {%- if data['redirect-back'] -%} {{-
-data['redirect-back'] -}} {%- else -%} /search/patient-overview {%- endif -%}
-{%- endset -%}
-
 {% if data['scenario'] %}
   {% if data['scenario'] === "overview tab 2" %}
     {% set link = "/overviewtab/overview2" %}
@@ -12,12 +8,10 @@ data['redirect-back'] -}} {%- else -%} /search/patient-overview {%- endif -%}
   {% endif %}
 {% endif %}
 
-
 <tr
   role="row"
   class="patient-search-result"
-  data-href="{{ patientRowHref }}?nhs-number=c"
->
+  data-href="{{ link or '/overviewtab/overview' }}">
   <td role="gridcell">
     <span class="table-heading" aria-hidden="true">Name</span>
     <span>
