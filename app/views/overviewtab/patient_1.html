@@ -14,6 +14,9 @@ details {% endblock %} {% block beforeContent %}{% include "./includes/banner.ht
         <li class="scra-bordered-tabs-item">
           <a class="scra-bordered-tabs-link" href="clinical">Clinical</a>
         </li>
+        <li class="scra-bordered-tabs-item">
+          <a class="scra-bordered-tabs-link" href="#">Documents</a>
+        </li>
       </ul>
     </div>
   </div>
@@ -621,179 +624,76 @@ details {% endblock %} {% block beforeContent %}{% include "./includes/banner.ht
 </div>
 <!--information sharing cards-->
 <div class="nhsuk-full-width-container">
-  <h3 class="nhsuk-heading-m">Information flags </h3>
+  <h3 class="nhsuk-heading-m">Chargeable status</h3>
 
 <ul class="nhsuk-grid-row nhsuk-card-group">
-<!--Child protection alert-->
+<!--Chargeable status-->
 <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
-  <a name="care-alert"></a>
-    <div class="section" id="care-alert-section">
-      <h2 class="nhsuk-heading-l" id="child-protection">Child protection</h2>
-      <div class="scra-card">
-        <div class="scra-card-header">
-          <h3 class="nhsuk-heading-m">View child protection information</h3>
-        </div>
-        <div class="scra-card-content">
+  
+  <div class="scra-card">
+    <div class="scra-card-header"></div>
+    <div class="scra-card-content">
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-full">
           <div class="nhsuk-u-reading-width">
-            <p>
-              The patient’s child protection information includes details about the type of protection order, the responsible local authority, contact numbers and who has previously viewed the information.
+            <h3 class="nhsuk-heading-m">Home Office status</h3>
+            <p class="nhsuk-body">
+              View the current relevant status held by the Home Office for
+              the patient.
             </p>
-            <div class="nhsuk-action-link nhsuk-u-margin-top-5">
-              <a class="nhsuk-action-link__link" href="./check-care-setting-simple">
-                <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+            <div class="nhsuk-action-link">
+              <a
+                class="nhsuk-action-link__link"
+                href="patient-details-home-office"
+              >
+                <svg
+                  class="nhsuk-icon nhsuk-icon__arrow-right-circle"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
                   <path d="M0 0h24v24H0z" fill="none"></path>
-                  <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
+                  <path
+                    d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"
+                  ></path>
                 </svg>
-                <span class="nhsuk-action-link__text">View child protection information</span>
+                <span class="nhsuk-action-link__text"
+                  >View Home Office status</span
+                >
+              </a>
+            </div>
+            <h3 class="nhsuk-heading-m">
+              Overseas visitor management status
+            </h3>
+            <p class="nhsuk-body">
+              View the overseas visitor management status for the patient.
+            </p>
+            <div class="nhsuk-action-link">
+              <a class="nhsuk-action-link__link" href="patient-details-ovm">
+                <svg
+                  class="nhsuk-icon nhsuk-icon__arrow-right-circle"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path d="M0 0h24v24H0z" fill="none"></path>
+                  <path
+                    d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"
+                  ></path>
+                </svg>
+                <span class="nhsuk-action-link__text"
+                  >View Overseas visitor management status</span
+                >
               </a>
             </div>
           </div>
         </div>
       </div>
     </div>
-</li>
-<!--FGM alert-->
-<li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
-  <a name="care-alert"></a>
-    <div class="section" id="care-alert-section">
-      <h2 class="nhsuk-heading-l" id="child-protection">Female Genital Mutilation</h2>
-      <div class="scra-card">
-        <div class="scra-card-header">
-          <h3 class="nhsuk-heading-m">This child has a family history of female genital mutilation</h3>
-        </div>
-        <div class="scra-card-content">
-          <div class="nhsuk-u-reading-width">
-            <p>
-              Family history is known to be relevant when safeguarding against FGM. Bear this in mind in relation to your wider safeguarding responsibilities. If you have any concerns about this patient you should: 
-              <ul>
-                <li>Follow your local safeguarding procedures</li>
-                <li>Speak with your manager or safeguarding lead</li>
-                <li>Consult the <a href="£">safeguarding women and girls at risk of FGMS</a>guidance on the GOV.UK website</li>
-              </ul>
-            </p>
-            <div class="nhsuk-action-link nhsuk-u-margin-top-5">
-              <a class="nhsuk-action-link__link" href="./check-care-setting-simple">
-                <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M0 0h24v24H0z" fill="none"></path>
-                  <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
-                </svg>
-                <span class="nhsuk-action-link__text">View FGM information sharing indicator</span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-</li>
-<!--NEW RA card -->
-<li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
-  <a name="care-alert"></a>
-    <div class="section" id="care-alert-section">
-      <h2 class="nhsuk-heading-l" id="child-protection">Reasonable adjustment flag</h2>
-      <div class="scra-card">
-        <div class="scra-card-header">
-          <h3 class="nhsuk-heading-m">View reasonable adjustment flag</h3>
-        </div>
-        <div class="scra-card-content">
-          <div class="nhsuk-u-reading-width">
-            <p>
-              A Reasonable Adjustment Flag exists for this patient. The Equality Act (2010) states that the NHS and other public organisations have a duty to provide equal access to all services. This is called making reasonable adjustments. For example, providing wheelchair access. The Reasonable Adjustment Flag provides details of reasonable adjustments that should be considered when providing care for a patient. 
-            </p>
-            <div class="nhsuk-action-link nhsuk-u-margin-top-5">
-              <a class="nhsuk-action-link__link" href="./check-care-setting-simple">
-                <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M0 0h24v24H0z" fill="none"></path>
-                  <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
-                </svg>
-                <span class="nhsuk-action-link__text">Reasonable adjustment flag</span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-
+  </div>
 </li>
 
 
-<!-- This reasonable adjustment flag might not be needed -->
-<!--Reasonable adjustments card-->
-<!--
-    <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
-      <div class="scra-card">
-        <div class="scra-card-header">
-          <h3 class="nhsuk-heading-m">
-            This patient does not show a requirement for Reasonable Adjustments
-          </h3>
-        </div>
-        <div class="scra-card-content">
-          <div class="nhsuk-grid-row">
-            <div class="nhsuk-grid-column-full">
-              <div class="nhsuk-u-reading-width">
-                <form action="ra-start-page">
-                  <p>
-                    The NHS has a legal duty to make it easy for disabled and
-                    non-disabled individuals to use health and care services, as
-                    stated by the
-                    <a
-                      href="https://www.gov.uk/guidance/equality-act-2010-guidance"
-                      target="_blank"
-                      >Equality Act (2010) (opens in a new tab)</a
-                    >.
-                  </p>
-                  <p>
-                    A Reasonable Adjustments record ensures patients with physical
-                    and mental impairments have equal access to healthcare
-                    services.
-                  </p>
-                  <details class="nhsuk-details">
-                    <summary class="nhsuk-details__summary">
-                      <span class="nhsuk-details__summary-text">
-                        Read more about Reasonable Adjustments
-                      </span>
-                    </summary>
-                    <div class="nhsuk-details__text">
-                      <p>
-                        A Reasonable Adjustments record can show potential
-                        adjustments for a patient. These may include (but aren't
-                        limited to):
-                      </p>
-                      <ul>
-                        <li>
-                          communication needs (supported by the
-                          <a
-                            href="https://www.england.nhs.uk/ourwork/accessibleinfo/"
-                            target="_blank"
-                            >Accessibility Standard (opens in a new tab)</a
-                          >)
-                        </li>
-                        <li>adjustments to the environment</li>
-                        <li>
-                          impairments, to help undersyand the necessary
-                          adjustments
-                        </li>
-                      </ul>
-                    </div>
-                  </details>
-                  <p>
-                    If you believe this patient requires a Reasonable Adjustments
-                    record, you can create one.
-                  </p>
-                  <button class="nhsuk-button" type="submit">
-                    Create a Reasonable Adjustments record
-                  </button>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </li>
-
-  -->
   </ul>
   </div>
 
