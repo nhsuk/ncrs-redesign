@@ -1,0 +1,368 @@
+{% extends 'layouts/layout-application.html' %} {% block pageTitle %} Dashboard
+{% endblock %} {% block beforeContent %}
+
+<div class="nhsuk-full-width-container">
+  <div class="scra-bordered-tabs-container">
+    <div class="nhsuk-width-container-fluid">
+      <ul class="scra-bordered-tabs">
+        <li class="scra-bordered-tabs-item">
+          <a class="scra-bordered-tabs-link" href="#">Overview</a>
+        </li>
+        <li class="scra-bordered-tabs-item">
+          <a class="scra-bordered-tabs-link" href="#">Patient</a>
+        </li>
+        <li class="scra-bordered-tabs-item scra-bordered-tabs-item-active">
+          <a class="scra-bordered-tabs-link" href="#">Clinical</a>
+        </li>
+        <li class="scra-bordered-tabs-item">
+          <a class="scra-bordered-tabs-link" href="#">Documents</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+{% endblock %} {% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-one-quarter">
+    <div class="govuk-accordion" data-module="accordion" id="accordion-default">
+      <div class="govuk-accordion__section govuk-accordion__section--expanded">
+        <div class="govuk-accordion__section-header scra-accordion__header">
+          <h2 class="govuk-accordion__section-heading scra-accordion__heading">
+            <span
+              class="govuk-accordion__section-button scra-accordion__section-button"
+              id="accordion-default-heading-1"
+            >
+              Summary Care Record
+            </span>
+          </h2>
+        </div>
+        <div
+          id="accordion-default-content-1"
+          class="govuk-accordion__section-content scra-accordion__section-content"
+          aria-labelledby="accordion-default-heading-1"
+        >
+          <ul>
+            <li>
+              <a class="scra-accordion__link" href="#"
+                >Allergies & Sensitivities</a
+              >
+            </li>
+            <li>
+              <a class="scra-accordion__link" href="#">Acute Medications</a>
+            </li>
+            <li>
+              <a class="scra-accordion__link" href="#"
+                >Current Repeat Medications</a
+              >
+            </li>
+            <li>
+              <a class="scra-accordion__link" href="#"
+                >Past Repeat Medications</a
+              >
+            </li>
+            <li>
+              <a class="scra-accordion__link" href="#">Diagnoses</a>
+            </li>
+            <li>
+              <a class="scra-accordion__link" href="#">Observations</a>
+            </li>
+            <li>
+              <a class="scra-accordion__link" href="#">Treatments</a>
+            </li>
+            <li>
+              <a class="scra-accordion__link" href="#">Care events</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="govuk-accordion__section govuk-accordion__section--expanded">
+        <div class="govuk-accordion__section-header scra-accordion__header">
+          <h2 class="govuk-accordion__section-heading scra-accordion__heading">
+            <span
+              class="govuk-accordion__section-button scra-accordion__section-button"
+              id="accordion-default-heading-1"
+            >
+              Information flags
+            </span>
+          </h2>
+        </div>
+        <div
+          id="accordion-default-content-1"
+          class="govuk-accordion__section-content scra-accordion__section-content"
+          aria-labelledby="accordion-default-heading-1"
+        >
+          <ul>
+            <li>
+              <a class="scra-accordion__link" href="#"
+                >Child protection</a
+              >
+            </li>
+            <li>
+              <a class="scra-accordion__link" href="#">Female genital mutilation</a>
+            </li>
+            
+          
+            <li>
+              <a class="scra-accordion__link" href="#">Reasonable adjustment</a>
+            </li>
+            
+            
+             
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="nhsuk-grid-column-three-quarters">
+    <h1 class="nhsuk-heading-l">Summary Care Record</h1>
+    <div class="scra-card">
+      <div class="scra-card-header">
+        <h2 class="nhsuk-heading-m">Allergies & sensitivities</h2>
+      </div>
+      <div class="scra-card-content">
+        <div class="nhsuk-table-responsive">
+          <table class="nhsuk-table">
+            <caption class="nhsuk-table__caption">
+              Allergies, sensitivites and supporting information
+            </caption>
+            <thead class="nhsuk-table__head">
+              <tr class="nhsuk-table__row">
+                <th class="nhsuk-table__header" scope="col">Date</th>
+                <th class="nhsuk-table__header" scope="col">Description</th>
+                <th class="nhsuk-table__header" scope="col">Certainty</th>
+                <th class="nhsuk-table__header" scope="col">Severity</th>
+                <th class="nhsuk-table__header" scope="col">
+                  Supporting information
+                </th>
+              </tr>
+            </thead>
+            <tbody class="nhsuk-table__body">
+              <tr class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">08-Jan-1995</td>
+                <td class="nhsuk-table__cell">House dust mite allergy</td>
+                <td class="nhsuk-table__cell"></td>
+                <td class="nhsuk-table__cell"></td>
+                <td class="nhsuk-table__cell">Allergic rhinitis</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="scra-card">
+      <div class="scra-card-header">
+        <h2 class="nhsuk-heading-m">
+          Acute medications (issued in the last 12 months)
+        </h2>
+      </div>
+      <div class="scra-card-content">
+        <div class="nhsuk-table-responsive">
+          <table class="nhsuk-table">
+            <caption class="nhsuk-table__caption">
+              Acute medications issued in the last 12 months
+            </caption>
+            <thead class="nhsuk-table__head">
+              <tr class="nhsuk-table__row">
+                <th class="nhsuk-table__header" scope="col">Type</th>
+                <th class="nhsuk-table__header" scope="col">Date</th>
+                <th class="nhsuk-table__header" scope="col">Medication item</th>
+                <th class="nhsuk-table__header" scope="col">
+                  Dosage instructions
+                </th>
+                <th class="nhsuk-table__header" scope="col">Quantity</th>
+              </tr>
+            </thead>
+            <tbody class="nhsuk-table__body">
+              <tr class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Acute Medication</td>
+                <td class="nhsuk-table__cell">26-May-2018</td>
+                <td class="nhsuk-table__cell">Diclofenac 75mg tablets</td>
+                <td class="nhsuk-table__cell">take three daily</td>
+                <td class="nhsuk-table__cell">28 tablets</td>
+              </tr>
+              <tr class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Acute Medication</td>
+                <td class="nhsuk-table__cell">01-Oct-2018</td>
+                <td class="nhsuk-table__cell">Ranitidine 150mg tablets</td>
+                <td class="nhsuk-table__cell">take once daily at bedtime</td>
+                <td class="nhsuk-table__cell">28 tablets</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    
+      <h3 class="nhsuk-heading-m">Information flags </h3>
+      <a name="care-alert"></a>
+        <div class="section" id="care-alert-section">
+          <h2 class="nhsuk-heading-l" id="child-protection">Child protection</h2>
+          <div class="scra-card">
+            <div class="scra-card-header">
+              <h3 class="nhsuk-heading-m">View child protection information</h3>
+            </div>
+            <div class="scra-card-content">
+              
+                <p>
+                  The patient’s child protection information includes details about the type of protection order, the responsible local authority, contact numbers and who has previously viewed the information.
+                </p>
+                <div class="nhsuk-action-link nhsuk-u-margin-top-5">
+                  <a class="nhsuk-action-link__link" href="./check-care-setting-simple">
+                    <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M0 0h24v24H0z" fill="none"></path>
+                      <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
+                    </svg>
+                    <span class="nhsuk-action-link__text">View child protection information</span>
+                  </a>
+                </div>
+              
+            </div>
+          </div>
+        </div>
+        <a name="care-alert"></a>
+        <div class="section" id="care-alert-section">
+          <h2 class="nhsuk-heading-l" id="child-protection">Female Genital Mutilation</h2>
+          <div class="scra-card">
+            <div class="scra-card-header">
+              <h3 class="nhsuk-heading-m">This child has a family history of female genital mutilation</h3>
+            </div>
+            <div class="scra-card-content">
+              
+                <p>
+                  Family history is known to be relevant when safeguarding against FGM. Bear this in mind in relation to your wider safeguarding responsibilities. If you have any concerns about this patient you should: 
+                  <ul>
+                    <li>Follow your local safeguarding procedures</li>
+                    <li>Speak with your manager or safeguarding lead</li>
+                    <li>Consult the <a href="£">safeguarding women and girls at risk of FGMS</a>guidance on the GOV.UK website</li>
+                  </ul>
+                </p>
+                <div class="nhsuk-action-link nhsuk-u-margin-top-5">
+                  <a class="nhsuk-action-link__link" href="./check-care-setting-simple">
+                    <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M0 0h24v24H0z" fill="none"></path>
+                      <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
+                    </svg>
+                    <span class="nhsuk-action-link__text">View FGM information sharing indicator</span>
+                  </a>
+                </div>
+              
+            </div>
+          </div>
+        </div>
+        <a name="care-alert"></a>
+        <div class="section" id="care-alert-section">
+          <h2 class="nhsuk-heading-l" id="child-protection">Reasonable adjustment flag</h2>
+          <div class="scra-card">
+            <div class="scra-card-header">
+              <h3 class="nhsuk-heading-m">View reasonable adjustment flag</h3>
+            </div>
+            <div class="scra-card-content">
+              
+                <p>
+                  A Reasonable Adjustment Flag exists for this patient. The Equality Act (2010) states that the NHS and other public organisations have a duty to provide equal access to all services. This is called making reasonable adjustments. For example, providing wheelchair access. The Reasonable Adjustment Flag provides details of reasonable adjustments that should be considered when providing care for a patient. 
+                </p>
+                <div class="nhsuk-action-link nhsuk-u-margin-top-5">
+                  <a class="nhsuk-action-link__link" href="./check-care-setting-simple">
+                    <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M0 0h24v24H0z" fill="none"></path>
+                      <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
+                    </svg>
+                    <span class="nhsuk-action-link__text">Reasonable adjustment flag</span>
+                  </a>
+                </div>
+              
+            </div>
+          </div>
+        </div>
+    
+
+
+    <ul class="nhsuk-grid-row nhsuk-card-group">
+    
+ 
+    
+    <!-- This reasonable adjustment flag might not be needed -->
+    <!--Reasonable adjustments card-->
+    <!--
+        <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+          <div class="scra-card">
+            <div class="scra-card-header">
+              <h3 class="nhsuk-heading-m">
+                This patient does not show a requirement for Reasonable Adjustments
+              </h3>
+            </div>
+            <div class="scra-card-content">
+              <div class="nhsuk-grid-row">
+                <div class="nhsuk-grid-column-full">
+                  <div class="nhsuk-u-reading-width">
+                    <form action="ra-start-page">
+                      <p>
+                        The NHS has a legal duty to make it easy for disabled and
+                        non-disabled individuals to use health and care services, as
+                        stated by the
+                        <a
+                          href="https://www.gov.uk/guidance/equality-act-2010-guidance"
+                          target="_blank"
+                          >Equality Act (2010) (opens in a new tab)</a
+                        >.
+                      </p>
+                      <p>
+                        A Reasonable Adjustments record ensures patients with physical
+                        and mental impairments have equal access to healthcare
+                        services.
+                      </p>
+                      <details class="nhsuk-details">
+                        <summary class="nhsuk-details__summary">
+                          <span class="nhsuk-details__summary-text">
+                            Read more about Reasonable Adjustments
+                          </span>
+                        </summary>
+                        <div class="nhsuk-details__text">
+                          <p>
+                            A Reasonable Adjustments record can show potential
+                            adjustments for a patient. These may include (but aren't
+                            limited to):
+                          </p>
+                          <ul>
+                            <li>
+                              communication needs (supported by the
+                              <a
+                                href="https://www.england.nhs.uk/ourwork/accessibleinfo/"
+                                target="_blank"
+                                >Accessibility Standard (opens in a new tab)</a
+                              >)
+                            </li>
+                            <li>adjustments to the environment</li>
+                            <li>
+                              impairments, to help undersyand the necessary
+                              adjustments
+                            </li>
+                          </ul>
+                        </div>
+                      </details>
+                      <p>
+                        If you believe this patient requires a Reasonable Adjustments
+                        record, you can create one.
+                      </p>
+                      <button class="nhsuk-button" type="submit">
+                        Create a Reasonable Adjustments record
+                      </button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+    
+      -->
+      </ul>
+      </div>
+    
+  </div>
+</div>
+{% endblock %}
