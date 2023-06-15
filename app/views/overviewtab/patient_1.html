@@ -17,14 +17,16 @@ details {% endblock %} {% block beforeContent %}{% include "./includes/banner.ht
           <a class="scra-bordered-tabs-link" href="{{ link or '/overviewtab/overview' }}">Overview</a>
         </li>
         <li class="scra-bordered-tabs-item scra-bordered-tabs-item-active">
-          <a class="scra-bordered-tabs-link" href="#">Patient</a>
+          <a class="scra-bordered-tabs-link" href="#">Patient details</a>
         </li>
         <li class="scra-bordered-tabs-item">
           <a class="scra-bordered-tabs-link" href="clinical">Clinical</a>
         </li>
+        {% if patient.viewdocs === "yes" %}
         <li class="scra-bordered-tabs-item">
           <a class="scra-bordered-tabs-link" href="#">Documents</a>
         </li>
+        {% endif %}
       </ul>
     </div>
   </div>
@@ -631,9 +633,10 @@ details {% endblock %} {% block beforeContent %}{% include "./includes/banner.ht
 </ul>
 </div>
 <!--information sharing cards-->
+{% if patient.chargeableStatusInfo === "yes" %}
 <div class="nhsuk-full-width-container">
   <h3 class="nhsuk-heading-m">Chargeable status</h3>
-
+  
 <ul class="nhsuk-grid-row nhsuk-card-group">
 <!--Chargeable status-->
 <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
@@ -703,6 +706,7 @@ details {% endblock %} {% block beforeContent %}{% include "./includes/banner.ht
 
 
   </ul>
+  {% endif %}
   </div>
 
 

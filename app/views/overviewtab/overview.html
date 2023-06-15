@@ -8,14 +8,16 @@
           <a class="scra-bordered-tabs-link" href="#">Overview</a>
         </li>
         <li class="scra-bordered-tabs-item">
-          <a class="scra-bordered-tabs-link" href="patient_1">Patient</a>
+          <a class="scra-bordered-tabs-link" href="patient_1">Patient details</a>
         </li>
         <li class="scra-bordered-tabs-item">
           <a class="scra-bordered-tabs-link" href="clinical">Clinical</a>
         </li>
+        {% if patient.viewdocs === "yes" %}
         <li class="scra-bordered-tabs-item">
           <a class="scra-bordered-tabs-link" href="#">Documents</a>
         </li>
+        {% endif %}
       </ul>
     </div>
   </div>
@@ -38,6 +40,7 @@
   >
 </div>
 <div class="nhsuk-grid-row nhsuk-promo-group">
+  {% if patient.CPISinfo === "yes" %} 
   <div
     class="nhsuk-grid-column-one-quarter nhsuk-grid-column-tablet-landscape-one-third nhsuk-promo-group__item nhsuk-promo-group__alerts-item nhsuk-u-margin-bottom-3"
   >
@@ -52,9 +55,13 @@
       </a>
     </div>
   </div>
+  {% endif %}
+
+  {% if patient.fgmInfo === "yes" %}
   <div
     class="nhsuk-grid-column-one-quarter nhsuk-grid-column-tablet-landscape-one-third nhsuk-promo-group__item nhsuk-promo-group__alerts-item nhsuk-u-margin-bottom-3"
   >
+  
     <div class="nhsuk-promo nhsuk-promo--alert nhsuk-promo--small">
       <a class="nhsuk-promo__link-wrapper" href="#">
         <div class="nhsuk-promo__content">
@@ -66,6 +73,8 @@
       </a>
     </div>
   </div>
+  {% endif %}
+  {% if patient.RAinfo === "yes" %}
   <div
     class="nhsuk-grid-column-one-quarter nhsuk-grid-column-tablet-landscape-one-third nhsuk-promo-group__item nhsuk-promo-group__alerts-item nhsuk-u-margin-bottom-3"
   >
@@ -80,6 +89,7 @@
       </a>
     </div>
   </div>
+  {% endif %}
 </div>
 
 <div class="nhsuk-grid-row nhsuk-card-group">
@@ -170,16 +180,18 @@
             <a href="#">Reasonable adjustment</a>
           </li>
         </li>
+        {% endif %}
 
-{% endif %}
-          
+        {% if patient.BNAinfo === "yes" %}     
         <li class="overview-card__list-item">
           <a href="#">Birth notification application</a>
         </li>
+        {% endif %}
         </ul>
       </div>
     </div>
   </div>
+  {% if patient.viewdocs === "yes" %}
   <div
     class="nhsuk-grid-column-one-quarter nhsuk-grid-column-tablet-landscape-one-third nhsuk-grid-column-tablet-one-half nhsuk-card-group__item"
   >
@@ -208,7 +220,7 @@
       </div>
     </div>
   </div>
-
+  {% endif %}
   <div id="myModal" class="modal">
     <!-- Modal content -->
 
