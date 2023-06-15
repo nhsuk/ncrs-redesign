@@ -112,9 +112,11 @@
           <li class="overview-card__list-item">
             <a href="#">Power of attorney</a>
           </li>
+          {% if patient.chargeableStatusInfo === "yes" %}
           <li class="overview-card__list-item">
             <a href="#">Chargeability status</a>
           </li>
+          {% endif %}
         </ul>
       </div>
     </div>
@@ -148,18 +150,29 @@
           <li class="overview-card__list-item">
             <a href="#">Covid 19 vaccinations</a>
           </li>
+          {% if patient.fgmInfo === "yes" %}
           <li class="overview-card__list-item">
             <a href="#"
               >Female genital mutilation</a
             >
           </li>
+          {% endif %}
+          
+          {% if patient.CPISinfo === "yes" %}
           <li class="overview-card__list-item">
             <a href="#">Child care alert</a>
           </li>
+          {% endif %}
+          
+          {% if patient.RAinfo === "yes" %}
+
           <li class="overview-card__list-item">
             <a href="#">Reasonable adjustment</a>
           </li>
         </li>
+
+{% endif %}
+          
         <li class="overview-card__list-item">
           <a href="#">Birth notification application</a>
         </li>
