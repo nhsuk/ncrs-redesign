@@ -97,16 +97,16 @@
               >
             </li>
             {% endif %}
-            
+            {% if patient.fgmInfo === "yes" %}
             <li>
               <a class="scra-accordion__link" href="#">Female genital mutilation</a>
             </li>
-            
-          
+            {% endif %}
+            {% if patient.RAinfo === "yes" %}
             <li>
               <a class="scra-accordion__link" href="#">Reasonable adjustment</a>
             </li>
-            
+            {% endif %}
             
              
           </ul>
@@ -159,7 +159,7 @@
 
 
     
-      
+    {% if patient.CPISinfo === "yes" %}
       <a name="care-alert"></a>
         <div class="section" id="care-alert-section">
           <h2 class="nhsuk-heading-l" id="child-protection">Child protection</h2>
@@ -185,6 +185,8 @@
             </div>
           </div>
         </div>
+        {% endif %}
+        {% if patient.fgmInfo === "yes" %}
         <a name="care-alert"></a>
         <div class="section" id="care-alert-section">
           <h2 class="nhsuk-heading-l" id="child-protection">Female Genital Mutilation</h2>
@@ -215,6 +217,8 @@
             </div>
           </div>
         </div>
+        {% endif %}
+        {% if patient.RAinfo === "yes" %}
         <a name="care-alert"></a>
         <div class="section" id="care-alert-section">
           <h2 class="nhsuk-heading-l" id="child-protection">Reasonable adjustment flag</h2>
@@ -240,6 +244,8 @@
             </div>
           </div>
         </div>
+        {% endif %}
+        {% if patient.BNAinfo === "yes" %}   
         <a name="care-alert"></a>
         <div class="section" id="care-alert-section">
           <h2 class="nhsuk-heading-l" id="child-protection">Birth Notification</h2>
@@ -273,7 +279,7 @@
             </div>
           </div>
         </div>
-
+        {% endif %}
 
     <ul class="nhsuk-grid-row nhsuk-card-group">
     
