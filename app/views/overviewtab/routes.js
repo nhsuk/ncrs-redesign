@@ -12,7 +12,7 @@ function formatName(str) {
 module.exports = (router) => {
   router.post("/overviewtab/nhs-number-search", function (req, res) {
     const nhsNumber = req.body["nhs-number"];
-    const scenario = req.session.data["scenario"]
+    const scenario = req.session.data["scenario"];
 
     req.session.data.errors = {};
 
@@ -192,5 +192,23 @@ module.exports = (router) => {
 
     res.locals.returnedPatientsList = returnedPatientsList;
     next();
+  });
+
+  //back links that disappear when not navigated to from search bar
+  router.get("/overviewtab/overview", function (req, res, next) {
+    let showsearch = req.query.search;
+    if (showsearch === "true") {
+      var searchLink = "true";
+    } else {
+      var searchLink = "false";
+    }
+
+    //to delete data
+    req.session.data.search = "";
+
+    //go to overview
+    return res.render("overviewtab/overview", {
+      backtoresults: searchLink,
+    });
   });
 };
