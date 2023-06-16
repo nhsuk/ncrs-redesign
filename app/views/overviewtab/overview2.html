@@ -25,11 +25,11 @@
 </div>
 
 {% endblock %} {% block content %}
-
+{% if backtoresults === "true" %}
 <div class="nhsuk-back-link">
   <a
     class="nhsuk-back-link__link"
-    href="search-results"
+    href="search-results?nhs-number={{ patient.nhsNumber }}"
   >
     <svg
       class="nhsuk-icon nhsuk-icon__chevron-left"
@@ -44,7 +44,7 @@
     Return to search results</a
   >
 </div>
-
+{% endif %}
 <!--Alerts banner-->
 <div class="nhsuk-grid-row nhsuk-card-group">
   {% if patient.CPISinfo === "yes" %}

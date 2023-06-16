@@ -1,7 +1,8 @@
 {% if data['scenario'] %} {% if data['scenario'] === "overview tab 2" %} {% set
-link = "/overviewtab/overview2" %} {% elif data['scenario'] === "patient details
-page" %} {% set link = "/overviewtab/patient_1" %} {% else %} {% set link =
-"/overviewtab/overview?search=true" %} {% endif %} {% endif %}
+link = "/overviewtab/overview2?search=true" %} {% elif data['scenario'] ===
+"patient details page" %} {% set link = "/overviewtab/patient_1?search=true" %}
+{% else %} {% set link = "/overviewtab/overview?search=true" %} {% endif %} {%
+endif %}
 
 <tr
   role="row"

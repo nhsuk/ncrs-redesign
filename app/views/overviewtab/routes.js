@@ -195,6 +195,7 @@ module.exports = (router) => {
   });
 
   //back links that disappear when not navigated to from search bar
+  //for overview1
   router.get("/overviewtab/overview", function (req, res, next) {
     let showsearch = req.query.search;
     if (showsearch === "true") {
@@ -208,6 +209,24 @@ module.exports = (router) => {
 
     //go to overview
     return res.render("overviewtab/overview", {
+      backtoresults: searchLink,
+    });
+  });
+
+  //for overview2
+  router.get("/overviewtab/overview2", function (req, res, next) {
+    let showsearch = req.query.search;
+    if (showsearch === "true") {
+      var searchLink = "true";
+    } else {
+      var searchLink = "false";
+    }
+
+    //to delete data
+    req.session.data.search = "";
+
+    //go to overview2
+    return res.render("overviewtab/overview2", {
       backtoresults: searchLink,
     });
   });

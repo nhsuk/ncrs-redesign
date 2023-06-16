@@ -34,11 +34,11 @@ details {% endblock %} {% block beforeContent %}{% include "./includes/banner.ht
 
 {% endblock %} {% block content %} {% include "includes/mobile-nav.html" %}
 <!--Back link needs to go back to search results if navigated to via the search results-->
-
+{% if backtoresults === "true" %}
 <div class="nhsuk-back-link">
   <a
     class="nhsuk-back-link__link"
-    href="javascript:history.back()"
+    href="search-results?nhs-number={{ patient.nhsNumber }}"
   >
     <svg
       class="nhsuk-icon nhsuk-icon__chevron-left"
@@ -53,6 +53,8 @@ details {% endblock %} {% block beforeContent %}{% include "./includes/banner.ht
     Back</a
   >
 </div>
+{% endif %}
+
 <!-- Main grid-->
 <div class="nhsuk-full-width-container">
 
