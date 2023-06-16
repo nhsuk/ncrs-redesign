@@ -1,9 +1,10 @@
-.role-type, .role-location {
+.role-type,
+.role-location {
   font-size: 90%;
 }
 
 .app-promo--grey a {
-    background: #f0f4f5;
+  background: #f0f4f5;
 }
 
 /* Alerts promos */
@@ -22,6 +23,7 @@
   .nhsuk-promo__link-wrapper {
     box-shadow: -4px 0 0 0 $color_nhsuk-black;
     border: none;
+    background-color: $color_nhsuk-warm-yellow;
   }
   .nhsuk-promo__link-wrapper:hover {
     .nhsuk-promo__heading {
