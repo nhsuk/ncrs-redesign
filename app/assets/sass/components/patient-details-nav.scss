@@ -1,0 +1,111 @@
+#patient-nav {
+  background-color: $color_nhsuk-blue;
+  left: 0;
+  right: 0;
+  margin-bottom: 28px;
+  padding: 16px 0;
+  z-index: 1;
+}
+@media screen and (min-width: 1024px) {
+  .patient-nav-wrapper {
+    display: none;
+  }
+}
+
+#patient-nav,
+.patient-nav-wrapper {
+  min-height: 80px;
+  margin-bottom: 28px;
+  @media screen and (max-width: 1600px) {
+    min-height: 128px;
+  }
+}
+
+.nav-stick {
+  position: fixed;
+  top: 0;
+}
+
+.patient-nav-container {
+  display: flex;
+  @media screen and (max-width: 1600px) {
+    flex-wrap: wrap;
+  }
+}
+
+.patient-nav-section {
+  margin: auto;
+}
+@media screen and (max-width: 1600px) {
+  #patient-nav-section-1 {
+    order: 2;
+  }
+
+  #patient-nav-section-2 {
+    order: 1;
+  }
+}
+
+.patient-nav-select {
+  label {
+    display: inline-block;
+    color: $color_nhsuk-white;
+  }
+
+  select {
+    position: relative;
+    display: inline-block;
+  }
+  margin-bottom: 0 !important;
+}
+
+.patient-nav-patient-details {
+  color: $color_nhsuk-white;
+  margin-bottom: 0;
+}
+@media screen and (min-width: 1024px) {
+  .patient-nav-patient-details:last-child {
+    text-align: right;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .patient-nav-patient-details:last-child {
+    margin-bottom: 8px;
+  }
+}
+/* Refactoring alternative desktop nav */
+/* #sticky-desktop-nav {
+  background-color: $color_nhsuk-blue;
+  left: 0;
+  right: 0;
+  margin-bottom: 28px;
+  padding: 16px 0;
+  z-index: 1;
+}
+
+.sidebar-prompt-container {
+  display: inline-block;
+  padding: 10px;
+  .nhsuk-header__menu-toggle {
+    display: block;
+  }
+}
+
+.sidebar-prompt {
+  color: $color_nhsuk-white;
+}
+
+.sidebar-prompt-icon {
+  vertical-align: middle;
+}
+
+.sidebar-prompt-text {
+  margin-bottom: 8px;
+}
+
+.menu-currently-viewing {
+  color: $color_nhsuk-white;
+  span {
+    display: block;
+  }
+} */
