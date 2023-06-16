@@ -32,7 +32,7 @@
   </div>
 </div>
 
-{% endblock %} {% block content %}
+{% endblock %} {% block content %} {% include "includes/mobile-nav.html" %}
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-one-quarter">
     <div class="govuk-accordion" data-module="accordion" id="accordion-default">
@@ -63,55 +63,37 @@
                 >Covid 19 Vaccinations information</a
               >
             </li>
-           
-        
-            
-           
-           
-            
-           
-          </ul>
-        </div>
-      </div>
-      <div class="govuk-accordion__section govuk-accordion__section--expanded">
-        <div class="govuk-accordion__section-header scra-accordion__header">
-          <h2 class="govuk-accordion__section-heading scra-accordion__heading">
-            <span
-              class="govuk-accordion__section-button scra-accordion__section-button"
-              id="accordion-default-heading-1"
-            >
-              Additional 
-            </span>
-          </h2>
-        </div>
-        <div
-          id="accordion-default-content-1"
-          class="govuk-accordion__section-content scra-accordion__section-content"
-          aria-labelledby="accordion-default-heading-1"
-        >
-          <ul>
             {% if patient.CPISinfo === "yes" %}
             <li>
-              <a class="scra-accordion__link" href="#"
+              <a class="scra-accordion__link" href="#child protection"
                 >Child protection</a
               >
             </li>
             {% endif %}
             {% if patient.fgmInfo === "yes" %}
             <li>
-              <a class="scra-accordion__link" href="#">Female genital mutilation</a>
+              <a class="scra-accordion__link" href="#FGM info">Female genital mutilation</a>
             </li>
             {% endif %}
             {% if patient.RAinfo === "yes" %}
             <li>
-              <a class="scra-accordion__link" href="#">Reasonable adjustment</a>
+              <a class="scra-accordion__link" href="#RA info">Reasonable adjustment</a>
+            </li>
+            {% endif %}
+            {% if patient.BNAinfo === "yes" %}
+            <li>
+              <a class="scra-accordion__link" href="#BNA">Birth notification application</a>
             </li>
             {% endif %}
             
-             
+           
+           
+            
+           
           </ul>
         </div>
       </div>
+    
     </div>
   </div>
 
@@ -137,6 +119,7 @@
       </div>
     </div>
     <h1 class="nhsuk-heading-l">COVID-19 Vaccination Information</h1>
+    <a name="c"></a>
     <div class="scra-card">
       <div class="scra-card-header">
         <h2 class="nhsuk-heading-m">COVID-19 Vaccination Information</h2>
@@ -146,7 +129,7 @@
           Essential information about a patient's coronavirus vaccination history. This is the information recorded by the organisation(s) administering the COVID-19 vaccination(s) and may differ from the information provided to the patient, held on the patient's GP record, and/or Summary Care Record (SCR). It is possible that the patient may have had COVID-19 vaccination events that are not yet available here.
         </p>
         <div class="nhsuk-action-link nhsuk-u-margin-top-5">
-          <a class="nhsuk-action-link__link" href="./check-care-setting-simple">
+          <a class="nhsuk-action-link__link" href="#">
             <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
               <path d="M0 0h24v24H0z" fill="none"></path>
               <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
@@ -160,7 +143,7 @@
 
     
     {% if patient.CPISinfo === "yes" %}
-      <a name="care-alert"></a>
+      <a name="child protection"></a>
         <div class="section" id="care-alert-section">
           <h2 class="nhsuk-heading-l" id="child-protection">Child protection</h2>
           <div class="scra-card">
@@ -187,7 +170,7 @@
         </div>
         {% endif %}
         {% if patient.fgmInfo === "yes" %}
-        <a name="care-alert"></a>
+        <a name="FGM info"></a>
         <div class="section" id="care-alert-section">
           <h2 class="nhsuk-heading-l" id="child-protection">Female Genital Mutilation</h2>
           <div class="scra-card">
@@ -219,7 +202,7 @@
         </div>
         {% endif %}
         {% if patient.RAinfo === "yes" %}
-        <a name="care-alert"></a>
+        <a name="RA info"></a>
         <div class="section" id="care-alert-section">
           <h2 class="nhsuk-heading-l" id="child-protection">Reasonable adjustment flag</h2>
           <div class="scra-card">
@@ -246,7 +229,7 @@
         </div>
         {% endif %}
         {% if patient.BNAinfo === "yes" %}   
-        <a name="care-alert"></a>
+        <a name="BNA"></a>
         <div class="section" id="care-alert-section">
           <h2 class="nhsuk-heading-l" id="child-protection">Birth Notification</h2>
           <div class="scra-card">
