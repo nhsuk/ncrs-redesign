@@ -230,4 +230,22 @@ module.exports = (router) => {
       backtoresults: searchLink,
     });
   });
+
+  //for patient details1
+  router.get("/overviewtab/patient_1", function (req, res, next) {
+    let showsearch = req.query.search;
+    if (showsearch === "true") {
+      var searchLink = "true";
+    } else {
+      var searchLink = "false";
+    }
+
+    //to delete data
+    req.session.data.search = "";
+
+    //go to overview2
+    return res.render("overviewtab/patient_1", {
+      backtoresults: searchLink,
+    });
+  });
 };
