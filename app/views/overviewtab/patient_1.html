@@ -129,14 +129,14 @@ details {% endblock %} {% block beforeContent %}{% include "./includes/banner.ht
           </dd>
         </div>
       </dl>
-      <details class="nhsuk-details nhsuk-expander">
+     <!--<details class="nhsuk-details nhsuk-expander">
         <summary class="nhsuk-details__summary nhsuk-u-padding-0">
           <span class="nhsuk-details__summary-text"> View name history </span>
         </summary>
         <div class="nhsuk-details__text">
           <p>What goes here?</p>
         </div>
-      </details>
+      </details>--> 
     </div>
   </div>
 </li>
@@ -263,7 +263,32 @@ details {% endblock %} {% block beforeContent %}{% include "./includes/banner.ht
           </span>
         </summary>
         <div class="nhsuk-details__text">
-          <p>What goes here?</p>
+          <dl class="nhsuk-summary-list nhsuk-u-margin-bottom-3">
+      
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">Address</dt>
+              <dd class="nhsuk-summary-list__value">
+                4 BRITCHITT ROAD <br />
+               
+                
+                SHEFFIELD <br />
+                S17 4QN <br />
+                <em>From 24-Apr-2017 to 14-Jun-2023 </em>
+              </dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">Correspondence address</dt>
+              <dd class="nhsuk-summary-list__value">
+                <em>Not recorded</em>
+              </dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">Temporary address</dt>
+              <dd class="nhsuk-summary-list__value">
+                <em>Not recorded</em>
+              </dd>
+            </div>
+          </dl>
         </div>
       </details>
     </div>
@@ -383,7 +408,45 @@ details {% endblock %} {% block beforeContent %}{% include "./includes/banner.ht
             <span class="nhsuk-details__summary-text"> View General Practice history </span>
           </summary>
           <div class="nhsuk-details__text">
-            <p>What goes here?</p>
+            
+            <dl class="nhsuk-summary-list nhsuk-u-margin-bottom-3">
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">Practice Name</dt>
+                <dd class="nhsuk-summary-list__value">
+                  GREYSTONES MEDICAL CENTRE <br/>
+                  <em>From 08-Feb-2017 to 14-Jun-1999</em>
+                </dd>
+              </div>
+             
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">Address</dt>
+                <dd class="nhsuk-summary-list__value">
+                  33 GREYSTONES ROAD <br/>
+                  SHEFFIELD <br/>
+                  SOUTH YORKSHIRE <br/>
+                  S11 7BJ
+                </dd>
+              </div>
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">Organisation Code</dt>
+                <dd class="nhsuk-summary-list__value">
+                  C88652
+                </dd>
+              </div>
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">Reason for removal</dt>
+                <dd class="nhsuk-summary-list__value">
+                  <em>Not recorded</em>
+                </dd>
+              </div>
+            </dl>
+
+
+
+
+
+
+
           </div>
         </details>
         <details class="nhsuk-details nhsuk-expander">
@@ -391,7 +454,52 @@ details {% endblock %} {% block beforeContent %}{% include "./includes/banner.ht
             <span class="nhsuk-details__summary-text"> Show commissioning organisation and high level health geography </span>
           </summary>
           <div class="nhsuk-details__text">
-            <p>What goes here?</p>
+           
+            <h3 class="nhsuk-heading-m" id="patient-details-names">Commissioning organisation</h3>
+            <dl class="nhsuk-summary-list nhsuk-u-margin-bottom-3">
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">Organisation Name</dt>
+                <dd class="nhsuk-summary-list__value">
+                  AIREDALE PCT
+                </dd>
+              </div>
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">Organisation Code</dt>
+                <dd class="nhsuk-summary-list__value">
+                  5AW
+                </dd>
+              </div>
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">Address</dt>
+                <dd class="nhsuk-summary-list__value">
+                  NEW MILL VICTORIA ROAD SHIPLEY WEST YORKSHIRE
+                </dd>
+              </div>
+            </dl>
+
+            <h3 class="nhsuk-heading-m" id="patient-details-names">High Level Health Geography</h3>
+            <dl class="nhsuk-summary-list nhsuk-u-margin-bottom-3">
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">Organisation Name</dt>
+                <dd class="nhsuk-summary-list__value">
+                  WEST YORKSHIRE STRATEGIC HA
+                </dd>
+              </div>
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">Organisation Code</dt>
+                <dd class="nhsuk-summary-list__value">
+                  Q12
+                </dd>
+              </div>
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">Address</dt>
+                <dd class="nhsuk-summary-list__value">
+                  BLENHEIM HOUSE DUNCOMBE STREET LEEDS WEST YORKSHIRE
+                </dd>
+              </div>
+            </dl>
+
+
           </div>
         </details>
         <h3 class="nhsuk-heading-m" id="patient-details-names">GPs registered at this practice</h3>
