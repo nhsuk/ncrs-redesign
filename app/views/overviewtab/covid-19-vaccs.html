@@ -1,3 +1,10 @@
+{% if data['scenario'] %}
+  {% if data['scenario'] === "overview tab 2" %}
+    {% set link = "/overviewtab/overview2" %}
+  {% else %}
+    {% set link = "/overviewtab/overview" %}
+  {% endif %}
+{% endif %}
 {% extends 'layouts/layout-application.html' %} {% block pageTitle %} Create a
 Reasonable Adjustments record {% endblock %} {% block beforeContent %}
 
@@ -6,15 +13,15 @@ Reasonable Adjustments record {% endblock %} {% block beforeContent %}
     <div class="nhsuk-width-container-fluid">
       <ul class="scra-bordered-tabs">
         <li class="scra-bordered-tabs-item">
-          <a class="scra-bordered-tabs-link" href="patient-overview"
+          <a class="scra-bordered-tabs-link" href="{{ link or '/overviewtab/overview' }}"
             >Overview</a
           >
         </li>
         <li class="scra-bordered-tabs-item">
-          <a class="scra-bordered-tabs-link" href="patient-details">Patient</a>
+          <a class="scra-bordered-tabs-link" href="patient_1">Patient</a>
         </li>
         <li class="scra-bordered-tabs-item scra-bordered-tabs-item-active">
-          <a class="scra-bordered-tabs-link" href="patient-clinical"
+          <a class="scra-bordered-tabs-link" href="clinical"
             >Clinical</a
           >
         </li>
@@ -29,7 +36,7 @@ Reasonable Adjustments record {% endblock %} {% block beforeContent %}
     <div class="nhsuk-grid-column-full">
       
         <div class="nhsuk-back-link">
-          <a class="nhsuk-back-link__link" href="patient-details">
+          <a class="nhsuk-back-link__link" href="clinical">
             <svg
               class="nhsuk-icon nhsuk-icon__chevron-left"
               xmlns="http://www.w3.org/2000/svg"
@@ -40,7 +47,7 @@ Reasonable Adjustments record {% endblock %} {% block beforeContent %}
                 d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"
               ></path>
             </svg>
-            Go back to Patient details</a
+            Go back to Clinical tab</a
           >
         </div>
         <h1 class="nhsuk-heading-xl">
