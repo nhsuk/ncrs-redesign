@@ -102,9 +102,7 @@
 <!--MAIN PAGE -->
 <div class="nhsuk-grid-row">
 <!-- Column 1 -->
-  <div
-    class="nhsuk-grid-column-one-quarter nhsuk-grid-column-tablet-landscape-one-third"
-  >
+  <div class="nhsuk-grid-column-one-quarter nhsuk-grid-column-tablet-landscape-one-third">
 
 
   <div class="nhsuk-care-card nhsuk-care-card--non-urgent overview-card nhsuk-u-margin-0">
@@ -182,7 +180,7 @@
 <div class="nhsuk-card nhsuk-card--clickable nhsuk-u-padding-2 nhsuk-u-margin-bottom-2">
   <div class="nhsuk-card__content nhsuk-u-padding-3">
     <h5 class="nhsuk-u-margin-bottom-1">
-      <a class="nhsuk-card__link" data-target="#myModal" data-toggle="modal" class="open_modal" href="#myModal">Summary Care Record</a>
+      <a class="nhsuk-card__link open_modal" data-target="#myModal" data-toggle="modal" href="#myModal">Summary Care Record</a>
     </h5>
     
   </div>
@@ -235,104 +233,12 @@
         </div>
         </div>
         {% endif %}
-<!-- 2 column card group
-<ul class="nhsuk-grid-row nhsuk-card-group">
-  <li class="nhsuk-grid-column nhsuk-card-group__item">
-    
 
-  </li>
-  <li class="nhsuk-grid-column nhsuk-card-group__item">
-   </li>
-
-  <li class="nhsuk-grid-column nhsuk-card-group__item">
-
-  </li>
-    <li class="nhsuk-grid-column nhsuk-card-group__item"></li>
-      <li class="nhsuk-grid-column nhsuk-card-group__item">  </li>
-        <li class="nhsuk-grid-column nhsuk-card-group__item"> </li>
-        
-</ul>
--->
 
 </div>
 
-<!---
-<div class="nhsuk-card nhsuk-card--clickable nhsuk-u-padding-2 nhsuk-u-margin-bottom-2">
-  <div class="nhsuk-card__content">
-    <h5>
-      <a class="nhsuk-card__link" href="#">COVID 19 Vaccinations</a>
-    </h5>
-    
-  </div>
-</div>
 
-<div class="nhsuk-card nhsuk-card--clickable nhsuk-u-padding-2 nhsuk-u-margin-bottom-2">
-  <div class="nhsuk-card__content">
-    <h5>
-      <a class="nhsuk-card__link" href="#">Birth Notification Application</a>
-    </h5>
-    
-  </div>
-</div>
-<div class="nhsuk-card nhsuk-card--clickable nhsuk-u-padding-2 nhsuk-u-margin-bottom-2">
-  <div class="nhsuk-card__content">
-    <h5>
-      <a class="nhsuk-card__link" href="#">Child protection information</a>
-    </h5>
-    
-  </div>
-  </div>
-  <div class="nhsuk-card nhsuk-card--clickable nhsuk-u-padding-2 nhsuk-u-margin-bottom-2">
-    <div class="nhsuk-card__content">
-      <h5>
-        <a class="nhsuk-card__link" href="#">Female genital mutilation</a>
-      </h5>
-      
-    </div>
-    </div>
-    <div class="nhsuk-card nhsuk-card--clickable nhsuk-u-padding-2 nhsuk-u-margin-bottom-2">
-      <div class="nhsuk-card__content">
-        <h5>
-          <a class="nhsuk-card__link" href="#">Reasonable adjustments</a>
-        </h5>
-        
-      </div>
-      </div>
 
-</div>
-
-<!-- colimn 3-->
-<!---
-<div
-class="nhsuk-grid-column-one-quarter nhsuk-grid-column-tablet-landscape-one-third"
-><h3></br></h3>
-<div class="nhsuk-card nhsuk-card--clickable nhsuk-u-padding-2 nhsuk-u-margin-bottom-2">
-<div class="nhsuk-card__content">
-  <h5>
-    <a class="nhsuk-card__link" href="#">Child protection information</a>
-  </h5>
-  
-</div>
-</div>
-<div class="nhsuk-card nhsuk-card--clickable nhsuk-u-padding-2 nhsuk-u-margin-bottom-2">
-<div class="nhsuk-card__content">
-  <h5>
-    <a class="nhsuk-card__link" href="#">Female genital mutilation</a>
-  </h5>
-  
-</div>
-</div>
-<div class="nhsuk-card nhsuk-card--clickable nhsuk-u-padding-2 nhsuk-u-margin-bottom-2">
-<div class="nhsuk-card__content">
-  <h5>
-    <a class="nhsuk-card__link" href="#">Reasonable adjustments</a>
-  </h5>
-  
-</div>
-</div>
-
-</div>
--->
 <!--Column 4-->
 {% if patient.viewdocs === "yes" %}
 <div
@@ -375,9 +281,6 @@ class="nhsuk-grid-column-one-quarter nhsuk-grid-column-tablet-landscape-one-thir
 </div>
 {% endif %}
 
-</div>
-
-</div>
 
 
 
@@ -539,6 +442,9 @@ class="nhsuk-grid-column-one-quarter nhsuk-grid-column-tablet-landscape-one-thir
       </div>
     </div>
   </div>
+
+
+
 </div>
 
 {% endblock %}
