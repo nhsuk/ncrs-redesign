@@ -2,7 +2,7 @@
 link = "/overviewtab/overview2" %} {% else %} {% set link =
 "/overviewtab/overview" %} {% endif %} {% endif %} {% extends
 'layouts/layout-application-ncrs.html' %} {% block pageTitle %} Patient details
-{% endblock %} {% block beforeContent %}
+{% endblock %} {% block beforeContent %}{% include "./includes/banner.html" %}
 
 <div class="nhsuk-full-width-container">
   <div class="scra-bordered-tabs-container">

@@ -1,13 +1,9 @@
-{% if data['scenario'] %}
-  {% if data['scenario'] === "overview tab 2" %}
-    {% set link = "/overviewtab/overview2" %}
-  {% else %}
-    {% set link = "/overviewtab/overview" %}
-  {% endif %}
-{% endif %}
-
-{% extends 'layouts/layout-application.html' %} {% block pageTitle %} Female
-genital mutilation (FGM) {% endblock %} {% block beforeContent %}
+{% if data['scenario'] %} {% if data['scenario'] === "overview tab 2" %} {% set
+link = "/overviewtab/overview2" %} {% else %} {% set link =
+"/overviewtab/overview" %} {% endif %} {% endif %} {% extends
+'layouts/layout-application.html' %} {% block pageTitle %} Female genital
+mutilation (FGM) {% endblock %} {% block beforeContent %}{% include
+"./includes/banner.html" %}
 
 <div class="nhsuk-full-width-container">
   <div class="scra-bordered-tabs-container">
@@ -23,7 +19,7 @@ genital mutilation (FGM) {% endblock %} {% block beforeContent %}
         <li class="scra-bordered-tabs-item">
           <a class="scra-bordered-tabs-link" href="patient_1">Patient</a>
         </li>
-        <li class="scra-bordered-tabs-item">
+        <li class="scra-bordered-tabs-item scra-bordered-tabs-item-active">
           <a class="scra-bordered-tabs-link" href="clinical">Clinical</a>
         </li>
         <li class="scra-bordered-tabs-item">
