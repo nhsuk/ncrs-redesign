@@ -22,9 +22,11 @@ application {% endblock %} {% block beforeContent %}{% include
         <li class="scra-bordered-tabs-item scra-bordered-tabs-item-active">
           <a class="scra-bordered-tabs-link" href="clinical">Clinical</a>
         </li>
+        {% if patient.viewdocs === "yes" %}
         <li class="scra-bordered-tabs-item">
           <a class="scra-bordered-tabs-link" href="#">Documents</a>
         </li>
+        {% endif %}
       </ul>
     </div>
   </div>
