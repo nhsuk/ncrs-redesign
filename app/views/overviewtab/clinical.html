@@ -108,7 +108,10 @@
           Summary Care Records (SCR) are an electronic record of important patient information, created from GP medical records. Additional Information in the SCR, such as details of long-term conditions, significant medical history, or specific communications needs, is now included by default for patients with an SCR, unless they have previously told the NHS that they did not want this information to be shared.
         </p>
         <div class="nhsuk-action-link nhsuk-u-margin-top-5">
-          <a class="nhsuk-action-link__link" href="#">
+          <a class="nhsuk-action-link__link nhsuk-card__link open_modal"
+          data-target="#myModal"
+          data-toggle="modal"
+          href="#myModal">
             <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
               <path d="M0 0h24v24H0z" fill="none"></path>
               <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
@@ -266,6 +269,164 @@
 
       </div>
     
+  </div>
+</div>
+
+
+<!--Modal-->
+<div id="myModal" class="modal">
+  <!-- Modal content -->
+
+  <div class="modal-content">
+    <div class="nhsuk-width-container-fluid">
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-full-width">
+          <span class="close">&times;</span>
+          <h3>
+            Has this patient given permission to view their Summary Care
+            Record?
+          </h3>
+        </div>
+      </div>
+
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-one-third">
+          <a
+            class="nhsuk-button nhsuk-button--blue"
+            type="submit"
+            style="width: 100%"
+            href="SCR"
+          >
+            Yes
+          </a>
+          <p>View record</p>
+        </div>
+        <div class="nhsuk-grid-column-one-third">
+          <button
+            class="nhsuk-button nhsuk-button--reverse close-btn"
+            type="submit"
+            style="width: 100%"
+          >
+            No
+          </button>
+          <p>Access refused</p>
+        </div>
+        <div class="nhsuk-grid-column-one-third">
+          <button
+            class="nhsuk-button nhsuk-button--red emergency-btn"
+            type="submit"
+            style="width: 100%"
+          >
+            Emergency access
+          </button>
+          <p>
+            The usual legal, ethical, and professional obligations apply when
+            accessing a patient's clinical record
+          </p>
+        </div>
+      </div>
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-one-third">
+          <div class="nhsuk-form-group" id="explanation-form-group">
+            <label class="nhsuk-label" for="explanation">
+              Provide more information
+            </label>
+            <span class="nhsuk-hint" id="explanation-hint">
+              Add any extra information you wish to add about the access
+            </span>
+            <textarea
+              class="nhsuk-textarea"
+              id="explanation"
+              name="explanation"
+              rows="3"
+              aria-describedby="explanation-hint"
+            ></textarea>
+          </div>
+        </div>
+        <div class="nhsuk-grid-column-two-thirds">
+          <p>
+            <a href="#">I need to access the record for other reasons</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="myModalEmergency" class="modal">
+  <!-- Modal content -->
+
+  <div class="modal-content">
+    <div class="nhsuk-width-container-fluid">
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-full-width">
+          <span class="close">&times;</span>
+          <h3>Accessing in an emergency</h3>
+        </div>
+      </div>
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-form-group" id="explanation-form-group">
+          <label class="nhsuk-label" for="more-detail"> Explanation </label>
+          <span class="nhsuk-hint" id="more-detail-hint">
+            Please provide an explanation for accessing the patient's record
+          </span>
+          <span class="nhsuk-error-message hidden" id="ptv-char-length-error">
+            <span class="nhsuk-u-visually-hidden">Error:</span> Explanation
+            must be between 4 and 50 characters
+          </span>
+          <span
+            class="nhsuk-error-message hidden"
+            id="ptv-char-forbidden-error"
+          >
+            <span class="nhsuk-u-visually-hidden">Error:</span> Explanation
+            must only include characters: A-Z, a-z, 0-9, space, -, '
+          </span>
+          <textarea
+            class="nhsuk-textarea"
+            id="more-detail"
+            name="more-detail"
+            rows="5"
+            aria-describedby="more-detail-hint"
+          ></textarea>
+        </div>
+      </div>
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-full-width">
+          <div class="nhsuk-grid-column-one-half">
+            <a
+              class="nhsuk-button nhsuk-button--blue"
+              id="submit-ptv"
+              type="submit"
+              style="width: 100%"
+              href="SCR"
+            >
+              Continue
+            </a>
+          </div>
+          <div class="nhsuk-grid-column-one-half">
+            <button
+              class="nhsuk-button nhsuk-button--reverse close-btn"
+              type="submit"
+              style="width: 100%"
+            >
+              Cancel
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-two-thirds">
+          <div class="nhsuk-warning-callout">
+            <h3 class="nhsuk-warning-callout__label">Privacy information</h3>
+            <p>
+              Any inappropriate breach of patient confidentiality will be a
+              matter for disciplinary and potentially legal and/or
+              professional proceedings. If in doubt speak to your manager or
+              privacy officer.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 {% endblock %}
