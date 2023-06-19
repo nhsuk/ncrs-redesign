@@ -185,9 +185,9 @@ const patients = {
   4126104984: {
     firstName: "Justina",
     lastName: "Collop",
-    fgmInfo: "no",
+    fgmInfo: "yes",
     RAinfo: "yes",
-    CPISinfo: "no",
+    CPISinfo: "yes",
     BNAinfo: "no",
     viewdocs: "no",
     viewSCR: "yes",
