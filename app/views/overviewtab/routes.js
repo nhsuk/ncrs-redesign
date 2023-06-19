@@ -10,7 +10,7 @@ function formatName(str) {
 }
 
 module.exports = (router) => {
-  router.post("/overviewtab/nhs-number-search", function (req, res) {
+  router.post("/overviewtab/nhs-number-search-post", function (req, res) {
     const nhsNumber = req.body["nhs-number"];
     const scenario = req.session.data["scenario"];
 
