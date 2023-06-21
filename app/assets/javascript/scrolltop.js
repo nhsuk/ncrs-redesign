@@ -125,7 +125,7 @@ jQuery(document).ready(function ($) {
   }
 
   $("#mobile-nav-select").change(function () {
-    var targetPosition = $($(this).val()).offset().top - 100;
+    var targetPosition = $($(this).val()).offset().top -300;
     $("html,body").animate(
       {
         scrollTop: targetPosition,

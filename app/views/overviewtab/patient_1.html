@@ -92,279 +92,285 @@ details {% endblock %} {% block beforeContent %}{% include "./includes/banner.ht
 <!-- Main grid-->
 <div class="nhsuk-full-width-container">
 
+
   <!--Key demographics card group-->
-  <h3 class="nhsuk-heading-m">Key demographics information</h3>
-<ul class="nhsuk-grid-row nhsuk-card-group">
-<!--Name card-->
-<section id="name-card" title="name-card"></section>
+  <h2 class="nhsuk-heading-m">Key demographics information</h2>
+
+  <ul class="nhsuk-grid-row nhsuk-card-group">
+  <!--Name card-->
+
+    <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+    <div class="scra-card">
+      <section id="name-card" title="name-card"></section>
+      <div class="scra-card-header">
+        <h3 class="nhsuk-heading-m" id="patient-details-names">Names</h3>
+      </div>
+      <div class="scra-card-content">
+        <dl class="nhsuk-summary-list ">
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Usual name</dt>
+            <dd class="nhsuk-summary-list__value">
+              {{ patient.firstName }} {{ patient.lastName.toUpperCase() }}
+              <br />
+              <em>From 15-Apr-2017 </em>
+            </dd>
+          </div>
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Preferred name</dt>
+            <dd class="nhsuk-summary-list__value">
+              None recorded <br />
+              <em>From 15-Apr-2017 </em>
+            </dd>
+          </div>
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Birth name</dt>
+            <dd class="nhsuk-summary-list__value">
+              None recorded <br />
+              <em>From 15-Apr-2017 </em>
+            </dd>
+          </div>
+        </dl>
+       <!--<details class="nhsuk-details nhsuk-expander">
+          <summary class="nhsuk-details__summary nhsuk-u-padding-0">
+            <span class="nhsuk-details__summary-text"> View name history </span>
+          </summary>
+          <div class="nhsuk-details__text">
+            <p>What goes here?</p>
+          </div>
+        </details>-->
+      </div>
+    </div>
+  </li>
+  <!--Key details-->
   <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
-  <div class="scra-card">
-    <div class="scra-card-header">
-      <h3 class="nhsuk-heading-m" id="patient-details-names">Names</h3>
+
+    <div class="scra-card">
+      <section id="key-details-card" title="key-details-card"></section>
+      <div class="scra-card-header">
+        <h3 class="nhsuk-heading-m" id="patient-details-names">Key details</h3>
+      </div>
+      <div class="scra-card-content">
+        <dl class="nhsuk-summary-list nhsuk-u-margin-bottom-3">
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Gender</dt>
+            <dd class="nhsuk-summary-list__value">Male</dd>
+          </div>
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">NHS Number</dt>
+            <dd class="nhsuk-summary-list__value">1234567890</dd>
+          </div>
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Date of Birth</dt>
+            <dd class="nhsuk-summary-list__value">18-Mar-2013</dd>
+          </div>
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Birth order</dt>
+            <dd class="nhsuk-summary-list__value">1</dd>
+          </div>
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Place of birth</dt>
+            <dd class="nhsuk-summary-list__value">Albania</dd>
+          </div>
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Language</dt>
+            <dd class="nhsuk-summary-list__value">Ukranian</dd>
+          </div>
+        </dl>
+        <h3 class="nhsuk-heading-m" id="patient-details-names">
+          Summary Care Record/Consent Preference
+        </h3>
+        <dl class="nhsuk-summary-list nhsuk-u-margin-bottom-3">
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">SCR Consent preference</dt>
+            <dd class="nhsuk-summary-list__value">
+              Premission to view required
+            </dd>
+          </div>
+        </dl>
+      </div>
     </div>
-    <div class="scra-card-content">
-      <dl class="nhsuk-summary-list ">
-        <div class="nhsuk-summary-list__row">
-          <dt class="nhsuk-summary-list__key">Usual name</dt>
-          <dd class="nhsuk-summary-list__value">
-            {{ patient.firstName }} {{ patient.lastName.toUpperCase() }}
-            <br />
-            <em>From 15-Apr-2017 </em>
-          </dd>
-        </div>
+  </li>
 
-        <div class="nhsuk-summary-list__row">
-          <dt class="nhsuk-summary-list__key">Preferred name</dt>
-          <dd class="nhsuk-summary-list__value">
-            None recorded <br />
-            <em>From 15-Apr-2017 </em>
-          </dd>
-        </div>
+  <!--Card put back if needed
 
-        <div class="nhsuk-summary-list__row">
-          <dt class="nhsuk-summary-list__key">Birth name</dt>
-          <dd class="nhsuk-summary-list__value">
-            None recorded <br />
-            <em>From 15-Apr-2017 </em>
-          </dd>
-        </div>
-      </dl>
-     <!--<details class="nhsuk-details nhsuk-expander">
-        <summary class="nhsuk-details__summary nhsuk-u-padding-0">
-          <span class="nhsuk-details__summary-text"> View name history </span>
-        </summary>
-        <div class="nhsuk-details__text">
-          <p>What goes here?</p>
-        </div>
-      </details>--> 
+    <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+    <div class="scra-card">
+      <div class="scra-card-header">
+        <h3 class="nhsuk-heading-m" id="patient-details-names">
+          Summary Care Record/Consent Preference
+        </h3>
+      </div>
+      <div class="scra-card-content">
+        <dl class="nhsuk-summary-list">
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">SCR Consent preference</dt>
+            <dd class="nhsuk-summary-list__value">
+              Premission to view required
+            </dd>
+          </div>
+        </dl>
+      </div>
     </div>
-  </div>
-</li>
-<!--Key details-->
-<li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
-  <section id="key-details-card" title="key-details-card"></section>
-  <div class="scra-card">
-    <div class="scra-card-header">
-      <h3 class="nhsuk-heading-m" id="patient-details-names">Key details</h3>
-    </div>
-    <div class="scra-card-content">
-      <dl class="nhsuk-summary-list nhsuk-u-margin-bottom-3">
-        <div class="nhsuk-summary-list__row">
-          <dt class="nhsuk-summary-list__key">Gender</dt>
-          <dd class="nhsuk-summary-list__value">Male</dd>
-        </div>
 
-        <div class="nhsuk-summary-list__row">
-          <dt class="nhsuk-summary-list__key">NHS Number</dt>
-          <dd class="nhsuk-summary-list__value">1234567890</dd>
-        </div>
+  </li> -->
+  <!--Consent preferences-->
 
-        <div class="nhsuk-summary-list__row">
-          <dt class="nhsuk-summary-list__key">Date of Birth</dt>
-          <dd class="nhsuk-summary-list__value">18-Mar-2013</dd>
-        </div>
-        <div class="nhsuk-summary-list__row">
-          <dt class="nhsuk-summary-list__key">Birth order</dt>
-          <dd class="nhsuk-summary-list__value">1</dd>
-        </div>
-        <div class="nhsuk-summary-list__row">
-          <dt class="nhsuk-summary-list__key">Place of birth</dt>
-          <dd class="nhsuk-summary-list__value">Albania</dd>
-        </div>
-        <div class="nhsuk-summary-list__row">
-          <dt class="nhsuk-summary-list__key">Language</dt>
-          <dd class="nhsuk-summary-list__value">Ukranian</dd>
-        </div>
-      </dl>
-      <h3 class="nhsuk-heading-m" id="patient-details-names">
-        Summary Care Record/Consent Preference
-      </h3>
-      <dl class="nhsuk-summary-list nhsuk-u-margin-bottom-3">
-        <div class="nhsuk-summary-list__row">
-          <dt class="nhsuk-summary-list__key">SCR Consent preference</dt>
-          <dd class="nhsuk-summary-list__value">
-            Premission to view required
-          </dd>
-        </div>
-      </dl>
-    </div>
-  </div>
-</li>
 
-<!--Card put back if needed
-  
+  <!--addresses-->
   <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
-  <div class="scra-card">
-    <div class="scra-card-header">
-      <h3 class="nhsuk-heading-m" id="patient-details-names">
-        Summary Care Record/Consent Preference
-      </h3>
-    </div>
-    <div class="scra-card-content">
-      <dl class="nhsuk-summary-list">
-        <div class="nhsuk-summary-list__row">
-          <dt class="nhsuk-summary-list__key">SCR Consent preference</dt>
-          <dd class="nhsuk-summary-list__value">
-            Premission to view required
-          </dd>
-        </div>
-      </dl>
-    </div>
-  </div>
 
-</li> -->
-<!--Consent preferences-->
+    <div class="scra-card">
+      <section id="addresses-card" title="addresses-card"></section>
+      <div class="scra-card-header">
+        <h3 class="nhsuk-heading-m" id="patient-details-names">Addresses</h3>
+      </div>
+      <div class="scra-card-content">
+        <dl class="nhsuk-summary-list nhsuk-u-margin-bottom-3">
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Usual address</dt>
+            <dd class="nhsuk-summary-list__value">
+              Vantage House <br />
+              21-23 Willington Street
+              <br />
+              Leeds <br />
+              LS1 4DL
+              <br />
+              <em>From 15-Apr-2017 </em>
+            </dd>
+          </div>
 
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Correspondence Addresses</dt>
+            <dd class="nhsuk-summary-list__value">
+              14 Cherry Drive <br />
+              Canterbury<br />
+              CT2 8HF<br />
+              <em>From 15-Apr-2017 </em>
+            </dd>
+          </div>
 
-<!--addresses-->
-<li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
-  <section id="addresses-card" title="addresses-card"></section>
-  <div class="scra-card">
-    <div class="scra-card-header">
-      <h3 class="nhsuk-heading-m" id="patient-details-names">Addresses</h3>
-    </div>
-    <div class="scra-card-content">
-      <dl class="nhsuk-summary-list nhsuk-u-margin-bottom-3">
-        <div class="nhsuk-summary-list__row">
-          <dt class="nhsuk-summary-list__key">Usual address</dt>
-          <dd class="nhsuk-summary-list__value">
-            Vantage House <br />
-            21-23 Willington Street
-            <br />
-            Leeds <br />
-            LS1 4DL
-            <br />
-            <em>From 15-Apr-2017 </em>
-          </dd>
-        </div>
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Temporary Address</dt>
+            <dd class="nhsuk-summary-list__value">
+              None recorded <br />
+              <em>From 15-Apr-2017 </em>
+            </dd>
+          </div>
+        </dl>
+        <details class="nhsuk-details nhsuk-expander">
+          <summary class="nhsuk-details__summary nhsuk-u-padding-0">
+            <span class="nhsuk-details__summary-text">
+              View Address history
+            </span>
+          </summary>
+          <div class="nhsuk-details__text">
+            <dl class="nhsuk-summary-list nhsuk-u-margin-bottom-3">
 
-        <div class="nhsuk-summary-list__row">
-          <dt class="nhsuk-summary-list__key">Correspondence Addresses</dt>
-          <dd class="nhsuk-summary-list__value">
-            14 Cherry Drive <br />
-            Canterbury<br />
-            CT2 8HF<br />
-            <em>From 15-Apr-2017 </em>
-          </dd>
-        </div>
-
-        <div class="nhsuk-summary-list__row">
-          <dt class="nhsuk-summary-list__key">Temporary Address</dt>
-          <dd class="nhsuk-summary-list__value">
-            None recorded <br />
-            <em>From 15-Apr-2017 </em>
-          </dd>
-        </div>
-      </dl>
-      <details class="nhsuk-details nhsuk-expander">
-        <summary class="nhsuk-details__summary nhsuk-u-padding-0">
-          <span class="nhsuk-details__summary-text">
-            View Address history
-          </span>
-        </summary>
-        <div class="nhsuk-details__text">
-          <dl class="nhsuk-summary-list nhsuk-u-margin-bottom-3">
-      
-            <div class="nhsuk-summary-list__row">
-              <dt class="nhsuk-summary-list__key">Address</dt>
-              <dd class="nhsuk-summary-list__value">
-                4 BRITCHITT ROAD <br />
-               
-                
-                SHEFFIELD <br />
-                S17 4QN <br />
-                <em>From 24-Apr-2017 to 14-Jun-2023 </em>
-              </dd>
-            </div>
-            <div class="nhsuk-summary-list__row">
-              <dt class="nhsuk-summary-list__key">Correspondence address</dt>
-              <dd class="nhsuk-summary-list__value">
-                <em>Not recorded</em>
-              </dd>
-            </div>
-            <div class="nhsuk-summary-list__row">
-              <dt class="nhsuk-summary-list__key">Temporary address</dt>
-              <dd class="nhsuk-summary-list__value">
-                <em>Not recorded</em>
-              </dd>
-            </div>
-          </dl>
-        </div>
-      </details>
-    </div>
-  </div>
-</li>
-<!--contact details-->
-<section id="contact-details-nok" title="contact-details-nok"></section>
-<li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
-  <div class="scra-card">
-    <div class="scra-card-header">
-      <h3 class="nhsuk-heading-m" id="patient-details-names">
-        Contact details
-      </h3>
-    </div>
-    <div class="scra-card-content">
-      <dl class="nhsuk-summary-list nhsuk-u-margin-bottom-3">
-        <div class="nhsuk-summary-list__row">
-          <dt class="nhsuk-summary-list__key">Contact preferences</dt>
-          <dd class="nhsuk-summary-list__value">Telephone</dd>
-        </div>
-
-        <div class="nhsuk-summary-list__row">
-          <dt class="nhsuk-summary-list__key">Written Contact Preferences</dt>
-          <dd class="nhsuk-summary-list__value">Large print</dd>
-        </div>
-        
-          
-      </dl>
-      <h3 class="nhsuk-heading-m" id="patient-details-names">
-        Telephone </h3>
-      <dl class="nhsuk-summary-list">
-        <div class="nhsuk-summary-list__row">
-          <dt class="nhsuk-summary-list__key">Main home</dt>
-          <dd class="nhsuk-summary-list__value">06958495837<br />
-            <em>From 15-Apr-2017 </em></dd>
-        </div>
-
-        <div class="nhsuk-summary-list__row">
-          <dt class="nhsuk-summary-list__key">Mobile</dt>
-          <dd class="nhsuk-summary-list__value">0498495849059 <br />
-            <em>From 15-Apr-2017 </em></dd> </div>
-          </dl>
-          <h3 class="nhsuk-heading-m" id="patient-details-names">
-            Email </h3>
-          <dl class="nhsuk-summary-list">
-            <div class="nhsuk-summary-list__row">
-              <dt class="nhsuk-summary-list__key">Main home</dt>
-              <dd class="nhsuk-summary-list__value">test@email.com<br />
-                <em>From 15-Apr-2017 </em></dd>
-            </div>
-  
-            <div class="nhsuk-summary-list__row">
-              <dt class="nhsuk-summary-list__key">Fax</dt>
-              <dd class="nhsuk-summary-list__value">Not recorded </dd> </div>
               <div class="nhsuk-summary-list__row">
-                <dt class="nhsuk-summary-list__key">Textphone</dt>
-                <dd class="nhsuk-summary-list__value">Not recorded </dd> </div>
+                <dt class="nhsuk-summary-list__key">Address</dt>
+                <dd class="nhsuk-summary-list__value">
+                  4 BRITCHITT ROAD <br />
 
-              </dl>
-        </div>
+
+                  SHEFFIELD <br />
+                  S17 4QN <br />
+                  <em>From 24-Apr-2017 to 14-Jun-2023 </em>
+                </dd>
+              </div>
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">Correspondence address</dt>
+                <dd class="nhsuk-summary-list__value">
+                  <em>Not recorded</em>
+                </dd>
+              </div>
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">Temporary address</dt>
+                <dd class="nhsuk-summary-list__value">
+                  <em>Not recorded</em>
+                </dd>
+              </div>
+            </dl>
+          </div>
+        </details>
+      </div>
     </div>
+  </li>
+  <!--contact details-->
 
-</li>
-
-</ul>
-
-
-
-</div>
-<!--GP and care provider information group-->
-<div class="nhsuk-full-width-container">
-  <h3 class="nhsuk-heading-m">GP and care providers </h3>
-  <section id="GP-card" title="GP-card"></section>
-<ul class="nhsuk-grid-row nhsuk-card-group">
   <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
     <div class="scra-card">
+      <section id="contact-details-nok" title="contact-details-nok"></section>
+      <div class="scra-card-header">
+        <h3 class="nhsuk-heading-m" id="patient-details-names">
+          Contact details
+        </h3>
+      </div>
+      <div class="scra-card-content">
+        <dl class="nhsuk-summary-list nhsuk-u-margin-bottom-3">
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Contact preferences</dt>
+            <dd class="nhsuk-summary-list__value">Telephone</dd>
+          </div>
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Written Contact Preferences</dt>
+            <dd class="nhsuk-summary-list__value">Large print</dd>
+          </div>
+
+
+        </dl>
+        <h3 class="nhsuk-heading-m" id="patient-details-names">
+          Telephone </h3>
+        <dl class="nhsuk-summary-list">
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Main home</dt>
+            <dd class="nhsuk-summary-list__value">06958495837<br />
+              <em>From 15-Apr-2017 </em></dd>
+          </div>
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">Mobile</dt>
+            <dd class="nhsuk-summary-list__value">0498495849059 <br />
+              <em>From 15-Apr-2017 </em></dd> </div>
+            </dl>
+            <h3 class="nhsuk-heading-m" id="patient-details-names">
+              Email </h3>
+            <dl class="nhsuk-summary-list">
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">Main home</dt>
+                <dd class="nhsuk-summary-list__value">test@email.com<br />
+                  <em>From 15-Apr-2017 </em></dd>
+              </div>
+
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">Fax</dt>
+                <dd class="nhsuk-summary-list__value">Not recorded </dd> </div>
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">Textphone</dt>
+                  <dd class="nhsuk-summary-list__value">Not recorded </dd> </div>
+
+                </dl>
+          </div>
+      </div>
+
+  </li>
+
+  </ul>
+
+
+  <h2 class="nhsuk-heading-m">GP and care providers </h2>
+
+
+<ul class="nhsuk-grid-row nhsuk-card-group">
+
+
+  <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+    <div class="scra-card">
+      <section id="GP-card" title="GP-card"></section>
       <div class="scra-card-header">
         <h3 class="nhsuk-heading-m" id="patient-details-names">General practice</h3>
       </div>
@@ -440,12 +446,6 @@ details {% endblock %} {% block beforeContent %}{% include "./includes/banner.ht
                 </dd>
               </div>
             </dl>
-
-
-
-
-
-
 
           </div>
         </details>
@@ -528,8 +528,9 @@ details {% endblock %} {% block beforeContent %}{% include "./includes/banner.ht
   </li>
  <!--Nomination/Prescription info-->
   <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
-    <section id="nominations-card" title="nominations-card"></section>
+
     <div class="scra-card">
+      <section id="nominations-card" title="nominations-card"></section>
       <div class="scra-card-header">
         <h3 class="nhsuk-heading-m" id="patient-details-names">Nominated Pharmacy</h3>
       </div>
@@ -619,14 +620,15 @@ details {% endblock %} {% block beforeContent %}{% include "./includes/banner.ht
     </div>
   </li>
 </ul>
-</div>
-<!--Contacts and next of kin-->
-<div class="nhsuk-full-width-container">
-  <h3 class="nhsuk-heading-m">Contacts and next of kin </h3>
+
+  <h2 class="nhsuk-heading-m">Contacts and next of kin </h2>
+
 <ul class="nhsuk-grid-row nhsuk-card-group">
-  <section id="contacts-card" title="contacts-card"></section>
+
+
   <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
     <div class="scra-card">
+      <section id="contacts-card" title="contacts-card"></section>
       <div class="scra-card-header">
         <h3 class="nhsuk-heading-m" id="patient-details-names">Not recorded</h3>
       </div>
@@ -775,17 +777,17 @@ details {% endblock %} {% block beforeContent %}{% include "./includes/banner.ht
     </div>
   </li>
 </ul>
-</div>
+
 <!--information sharing cards-->
 {% if patient.chargeableStatusInfo === "yes" %}
-<div class="nhsuk-full-width-container">
-  <h3 class="nhsuk-heading-m">Chargeable status</h3>
+  <h2 class="nhsuk-heading-m">Chargeable status</h2>
   
 <ul class="nhsuk-grid-row nhsuk-card-group">
 <!--Chargeable status-->
 <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
   
-  <div class="scra-card">  <section id="ovm-card" title="ovm-card"></section>
+  <div class="scra-card">
+    <section id="ovm-card" title="ovm-card"></section>
     <div class="scra-card-header"></div>
     <div class="scra-card-content">
       <div class="nhsuk-grid-row">
@@ -851,12 +853,10 @@ details {% endblock %} {% block beforeContent %}{% include "./includes/banner.ht
 
   </ul>
   {% endif %}
-  </div>
-
-
 
     
     </div>
+
   </div>
 </div>
 {% endblock %}
