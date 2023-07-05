@@ -1,6 +1,6 @@
 {% if data['scenario'] %} {% if data['scenario'] === "overview tab 2" %} {% set
-link = "/overviewtab/overview2" %} {% else %} {% set link =
-"/overviewtab/overview" %} {% endif %} {% endif %} {% extends
+link = "overview2" %} {% else %} {% set link =
+"overview" %} {% endif %} {% endif %} {% extends
 'layouts/layout-application.html' %} {% block pageTitle %} Reasonable
 adjustments {% endblock %} {% block beforeContent %}{% include
 "./includes/banner.html" %}
@@ -12,7 +12,7 @@ adjustments {% endblock %} {% block beforeContent %}{% include
         <li class="scra-bordered-tabs-item">
           <a
             class="scra-bordered-tabs-link"
-            href="{{ link or '/overviewtab/overview' }}"
+            href="{{ link or 'overview' }}"
             >Overview</a
           >
         </li>

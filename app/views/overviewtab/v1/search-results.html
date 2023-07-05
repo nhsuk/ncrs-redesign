@@ -23,14 +23,14 @@
     <div class="nhsuk-width-container">
       <ol class="nhsuk-breadcrumb__list">
         <li class="nhsuk-breadcrumb__item">
-          <a class="nhsuk-breadcrumb__link" id="find-patient" href="/overviewtab/nhs-number-search{% if redirectBack %}?redirect-back={{ redirectBack }}{% endif %}">Find a patient</a>
+          <a class="nhsuk-breadcrumb__link" id="find-patient" href="nhs-number-search{% if redirectBack %}?redirect-back={{ redirectBack }}{% endif %}">Find a patient</a>
         </li>
         <li class="nhsuk-breadcrumb__item">
           <a class="nhsuk-breadcrumb__link" href="#">Search results</a>
         </li>
       </ol>
       <p class="nhsuk-breadcrumb__back">
-        <a class="nhsuk-breadcrumb__backlink" href="/overviewtab/nhs-number-search{% if redirectBack %}?redirect-back={{ redirectBack }}{% endif %}">Find a patient</a>
+        <a class="nhsuk-breadcrumb__backlink" href="nhs-number-search{% if redirectBack %}?redirect-back={{ redirectBack }}{% endif %}">Find a patient</a>
       </p>
     </div>
   </nav>
@@ -70,7 +70,7 @@
           </thead>
           <tbody class="patient-results">
             {% for patientNhsNumber, patient in returnedPatientsList %}
-              {% include "overviewtab/includes/search-result-row.html" %}
+              {% include "./includes/search-result-row.html" %}
             {% endfor %}
           </tbody>
         </table>

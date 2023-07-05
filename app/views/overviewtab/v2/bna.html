@@ -1,0 +1,120 @@
+{% if data['scenario'] %} {% if data['scenario'] === "overview tab 2" %} {% set
+link = "overview2" %} {% else %} {% set link =
+"overview" %} {% endif %} {% endif %} {% extends
+'layouts/layout-application.html' %} {% block pageTitle %} Birth notification
+application {% endblock %} {% block beforeContent %}{% include
+"./includes/banner.html" %}
+
+<div class="nhsuk-full-width-container">
+  <div class="scra-bordered-tabs-container">
+    <div class="nhsuk-width-container-fluid">
+      <ul class="scra-bordered-tabs">
+        <li class="scra-bordered-tabs-item">
+          <a
+            class="scra-bordered-tabs-link"
+            href="{{ link or 'overview' }}"
+            >Overview</a
+          >
+        </li>
+        <li class="scra-bordered-tabs-item">
+          <a class="scra-bordered-tabs-link" href="patient_1">Patient</a>
+        </li>
+        <li class="scra-bordered-tabs-item scra-bordered-tabs-item-active">
+          <a class="scra-bordered-tabs-link" href="clinical">Clinical</a>
+        </li>
+        {% if patient.viewdocs === "yes" %}
+        <li class="scra-bordered-tabs-item">
+          <a class="scra-bordered-tabs-link" href="documents">Documents</a>
+        </li>
+        {% endif %}
+      </ul>
+    </div>
+  </div>
+</div>
+
+{% endblock %} {% block content %}
+
+<div class="nhsuk-width-container">
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-back-link">
+      <a class="nhsuk-back-link__link" href="clinical">
+        <svg
+          class="nhsuk-icon nhsuk-icon__chevron-left"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <path
+            d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"
+          ></path>
+        </svg>
+        Back to clinical
+      </a>
+    </div>
+    <div class="nhsuk-grid-column-full">
+      <div class="nhsuk-u-reading-width">
+        <h2 class="nhsuk-heading-l">
+          <span role="text">Enter notifier details</span>
+          <span class="nhsuk-caption-l nhsuk-caption--bottom">Step 1 of 5</span>
+        </h2>
+        <p class="nhsuk-body">
+          Details of the person and organisation notifying the birth. Your
+          details have been automatically populated but you can change these if
+          you are creating this birth notification on behalf of someone else.
+        </p>
+
+        <form id="bna" action="#" method="POST">
+          <h2>Notifying person</h2>
+          <dl class="nhsuk-summary-list">
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">First name</dt>
+              <dd class="nhsuk-summary-list__value">Gpsystem</dd>
+
+              <dd class="nhsuk-summary-list__actions">
+                <a href="#">
+                  Change<span class="nhsuk-u-visually-hidden"> First name</span>
+                </a>
+              </dd>
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">Last name</dt>
+              <dd class="nhsuk-summary-list__value">HEALTHCHECK</dd>
+
+              <dd class="nhsuk-summary-list__actions">
+                <a href="#">
+                  Change<span class="nhsuk-u-visually-hidden"> Last name</span>
+                </a>
+              </dd>
+            </div>
+          </dl>
+
+          <h2>Organisation</h2>
+          <dl class="nhsuk-summary-list">
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key">Organisation</dt>
+              <dd class="nhsuk-summary-list__value">
+                NHS CONNECTING FOR HEALTH(X09)
+              </dd>
+
+              <dd class="nhsuk-summary-list__actions">
+                <a href="#">
+                  Change<span class="nhsuk-u-visually-hidden">
+                    Organisation</span
+                  >
+                </a>
+              </dd>
+            </div>
+          </dl>
+          <div class="btn-group">
+            <button class="nhsuk-button" type="submit">Next</button>
+
+            <p class="cancel-btn-link"><a href="#">Cancel</a></p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

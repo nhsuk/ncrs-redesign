@@ -1,18 +1,18 @@
 {% if data['scenario'] %} {% if data['scenario'] === "overview tab 2" %} {% set
-link = "/overviewtab/overview2?search=true" %} {% elif data['scenario'] ===
-"patient details page" %} {% set link = "/overviewtab/patient_1?search=true" %}
-{% else %} {% set link = "/overviewtab/overview?search=true" %} {% endif %} {%
+link = "overview2?search=true" %} {% elif data['scenario'] ===
+"patient details page" %} {% set link = "patient_1?search=true" %}
+{% else %} {% set link = "overview?search=true" %} {% endif %} {%
 endif %}
 
 <tr
   role="row"
   class="patient-search-result"
-  data-href="{{ link or '/overviewtab/overview' }}"
+  data-href="{{ link or 'overview' }}"
 >
   <td role="gridcell">
     <span class="table-heading" aria-hidden="true">Name</span>
     <span>
-      <a href="{{ link or '/overviewtab/overview' }}" class="name-results-td">
+      <a href="{{ link or 'overview' }}" class="name-results-td">
         {{ patient.firstName }} {{ patient.lastName.toUpperCase() }}
       </a>
     </span>

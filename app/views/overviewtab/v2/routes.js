@@ -1,7 +1,7 @@
 const moment = require("moment");
 moment.locale("en-gb");
 
-const patientList = require("../../data/patients-list.js");
+const patientList = require("../../../data/patients-list.js");
 
 function formatName(str) {
   return str
@@ -10,7 +10,7 @@ function formatName(str) {
 }
 
 module.exports = (router) => {
-  router.post("/overviewtab/nhs-number-search-post", function (req, res) {
+  router.post("/overviewtab/v2/nhs-number-search-post", function (req, res) {
     const nhsNumber = req.body["nhs-number"];
     const scenario = req.session.data["scenario"];
 
@@ -19,13 +19,13 @@ module.exports = (router) => {
     // If there is no submitted option
     if (!nhsNumber) {
       req.session.data.errors["nhs-number"] = true;
-      return res.redirect("/overviewtab/nhs-number-search");
+      return res.redirect("/overviewtab/v2/nhs-number-search");
     }
 
-    res.redirect(`/overviewtab/search-results?nhs-number=${nhsNumber}`);
+    res.redirect(`/overviewtab/v2/search-results?nhs-number=${nhsNumber}`);
   });
 
-  router.post("/overviewtab/basic-details-search", function (req, res) {
+  router.post("/overviewtab/v2/basic-details-search", function (req, res) {
     const gender = req.body["gender"];
     const lastName = req.body["last-name"];
     const dobDay = req.body["dob-day"];
@@ -45,7 +45,7 @@ module.exports = (router) => {
     }
 
     if (Object.keys(req.session.data.errors).length) {
-      return res.redirect("/overviewtab/basic-details-search");
+      return res.redirect("/overviewtab/v2/basic-details-search");
     }
 
     // Format the data provided ready for processing
@@ -57,10 +57,10 @@ module.exports = (router) => {
       lastName: formatName(lastName),
       dob: formattedDob,
     });
-    res.redirect(`/overviewtab/search-results?${params}`);
+    res.redirect(`/overviewtab/v2/search-results?${params}`);
   });
 
-  router.post("/overviewtab/advanced-details-search", function (req, res) {
+  router.post("/overviewtab/v2/advanced-details-search", function (req, res) {
     const gender = req.body["gender"];
     const firstName = req.body["first-name"];
     const lastName = req.body["last-name"];
@@ -100,7 +100,7 @@ module.exports = (router) => {
     }
 
     if (Object.keys(req.session.data.errors).length) {
-      return res.redirect("/overviewtab/advanced-details-search");
+      return res.redirect("/overviewtab/v2/advanced-details-search");
     }
 
     const formattedPostcode = addressPostcode.toUpperCase().replace(/\s/g, "");
@@ -120,10 +120,10 @@ module.exports = (router) => {
       dobTo,
       widenSearch,
     });
-    res.redirect(`/overviewtab/search-results?${params}`);
+    res.redirect(`/overviewtab/v2/search-results?${params}`);
   });
 
-  router.post("/overviewtab/postcode-search", function (req, res) {
+  router.post("/overviewtab/v2/postcode-search", function (req, res) {
     const addressPostcode = req.body["postcode-only"];
     req.session.data.errors = {};
 
@@ -132,7 +132,7 @@ module.exports = (router) => {
     }
 
     if (Object.keys(req.session.data.errors).length) {
-      return res.redirect("/overviewtab/postcode-search");
+      return res.redirect("/overviewtab/v2/postcode-search");
     }
 
     // Format the data provided ready for processing
@@ -140,10 +140,10 @@ module.exports = (router) => {
     const params = new URLSearchParams({
       postcode: formattedPostcode,
     });
-    res.redirect(`/overviewtab/search-results?${params}`);
+    res.redirect(`/overviewtab/v2/search-results?${params}`);
   });
 
-  router.get("/overviewtab/search-results", function (req, res, next) {
+  router.get("/overviewtab/v2/search-results", function (req, res, next) {
     const nhsNumber = req.query["nhs-number"];
     const { gender, firstName, lastName, dob, dobTo, dobFrom, postcode } =
       req.query;
@@ -196,7 +196,7 @@ module.exports = (router) => {
 
   //back links that disappear when not navigated to from search bar
   //for overview1
-  router.get("/overviewtab/overview", function (req, res, next) {
+  router.get("/overviewtab/v2/overview", function (req, res, next) {
     let showsearch = req.query.search;
     if (showsearch === "true") {
       var searchLink = "true";
@@ -208,13 +208,13 @@ module.exports = (router) => {
     req.session.data.search = "";
 
     //go to overview
-    return res.render("overviewtab/overview", {
+    return res.render("overviewtab/v2/overview", {
       backtoresults: searchLink,
     });
   });
 
   //for overview2
-  router.get("/overviewtab/overview2", function (req, res, next) {
+  router.get("/overviewtab/v2/overview2", function (req, res, next) {
     let showsearch = req.query.search;
     if (showsearch === "true") {
       var searchLink = "true";
@@ -226,13 +226,13 @@ module.exports = (router) => {
     req.session.data.search = "";
 
     //go to overview2
-    return res.render("overviewtab/overview2", {
+    return res.render("overviewtab/v2/overview2", {
       backtoresults: searchLink,
     });
   });
 
   //for patient details1
-  router.get("/overviewtab/patient_1", function (req, res, next) {
+  router.get("/overviewtab/v2/patient_1", function (req, res, next) {
     let showsearch = req.query.search;
     if (showsearch === "true") {
       var searchLink = "true";
@@ -244,7 +244,7 @@ module.exports = (router) => {
     req.session.data.search = "";
 
     //go to overview2
-    return res.render("overviewtab/patient_1", {
+    return res.render("overviewtab/v2/patient_1", {
       backtoresults: searchLink,
     });
   });
