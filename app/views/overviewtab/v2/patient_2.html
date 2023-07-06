@@ -29,14 +29,16 @@ details {% endblock %} {% block beforeContent %}{% include "./includes/banner.ht
         {% endif %}
       </ul>
     </div>
+ 
   </div>
+
 </div>
 
 {% endblock %} {% block content %} 
 
 
 <!--Back link needs to go back to search results if navigated to via the search results-->
-{% if backtoresults === "true" %}
+
 <div class="nhsuk-back-link">
   <a
     class="nhsuk-back-link__link"
@@ -55,7 +57,7 @@ details {% endblock %} {% block beforeContent %}{% include "./includes/banner.ht
     Back to search results</a
   >
 </div>
-{% endif %}
+
 
 <!-- Main grid-->
 <div class="nhsuk-full-width-container">
@@ -131,6 +133,7 @@ details {% endblock %} {% block beforeContent %}{% include "./includes/banner.ht
             <dt class="nhsuk-summary-list__key">NHS Number</dt>
             <dd class="nhsuk-summary-list__value">1234567890</dd>
           </div>
+        
 
           <div class="nhsuk-summary-list__row">
             <dt class="nhsuk-summary-list__key">Date of Birth</dt>
@@ -148,6 +151,7 @@ details {% endblock %} {% block beforeContent %}{% include "./includes/banner.ht
             <dt class="nhsuk-summary-list__key">Language</dt>
             <dd class="nhsuk-summary-list__value">Ukranian</dd>
           </div>
+         
         </dl>
         <h3 class="nhsuk-heading-m" id="patient-details-names">
           Summary Care Record/Consent Preference
