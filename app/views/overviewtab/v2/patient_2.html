@@ -72,22 +72,22 @@ details {% endblock %} {% block beforeContent %}{% include "./includes/banner.ht
       <div class="nhsuk-radios">
         <div class="nhsuk-radios__item">
           <input
-            class="nhsuk-radios__input"
+            class="nhsuk-grid-column-one-quarter nhsuk-radios__input"
             id="key-details-and-names"
-            name="scenario"
+            name="show"
             type="radio"
             value="key details and names"
           />
-          <label class="nhsuk-label nhsuk-radios__label" for="key-details-and-names">
+          <label class="nhsuk-label nhsuk-radios__label" for="key-details-and-names" ">
             Key details and names
           </label>
         </div>
 
         <div class="nhsuk-radios__item">
           <input
-            class="nhsuk-radios__input"
+            class="nhsuk-grid-column-one-quarter nhsuk-radios__input"
             id="addresses-and-contact-details"
-            name="scenario"
+            name="show"
             type="radio"
             value="addresses and contact details"
           />
@@ -98,9 +98,9 @@ details {% endblock %} {% block beforeContent %}{% include "./includes/banner.ht
 
         <div class="nhsuk-radios__item">
           <input
-            class="nhsuk-radios__input"
+            class="nhsuk-grid-column-one-quarter nhsuk-radios__input"
             id="GP-and-care-providers"
-            name="scenario"
+            name="show"
             type="radio"
             value="GP and care providers"
           />
@@ -111,9 +111,9 @@ details {% endblock %} {% block beforeContent %}{% include "./includes/banner.ht
 
         <div class="nhsuk-radios__item">
           <input
-            class="nhsuk-radios__input"
+            class="nhsuk-grid-column-one-quarter nhsuk-radios__input"
             id="contacts-and-next-of-kin"
-            name="scenario"
+            name="show"
             type="radio"
             value="contacts and next of kin"
           />
@@ -131,7 +131,7 @@ details {% endblock %} {% block beforeContent %}{% include "./includes/banner.ht
 
 
 <div class="nhsuk-full-width-container"><div class="nhsuk-form-group">
-  <ul class="nhsuk-grid-row">
+  <ul class="nhsuk-grid-row" style="list-style: none;">
     <li class="nhsuk-grid-column-one-quarter"><a href=#> Key details and names</a></li>
     <li class="nhsuk-grid-column-one-quarter"><a href=#> Addresses and contact details</a></li>
     <li class="nhsuk-grid-column-one-quarter"> <a href=#> GP and care providers</a> </li>
