@@ -248,4 +248,12 @@ module.exports = (router) => {
       backtoresults: searchLink,
     });
   });
+ // router.post("/overviewtab/v2/patient_2", function (req, res) {
+   // const display = req.session.data["show"];
+    
+
+    //res.redirect(`/overviewtab/v2/patient_2`);
+  //});
+
+
 };
