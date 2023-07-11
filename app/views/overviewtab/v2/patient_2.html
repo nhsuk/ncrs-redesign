@@ -125,6 +125,21 @@ details {% endblock %} {% block beforeContent %}{% include "./includes/banner.ht
             Contacts and next of kin
           </label>
         </div>
+        {% if patient.chargeableStatusInfo === "yes" %}
+        <div class="nhsuk-radios__item">
+          <input
+            class="nhsuk-grid-column-one-quarter nhsuk-radios__input"
+            id="chargeable-status"
+            name="show"
+            type="radio"
+            value="chargeable status" 
+            {{ checked("show", "chargeable status") }}
+          />
+          <label class="nhsuk-label nhsuk-radios__label" for="chargeable-status">
+            Contacts and next of kin
+          </label>
+        </div>
+        {% endif %}
       </div>
     </fieldset>
   </div>
@@ -138,11 +153,12 @@ details {% endblock %} {% block beforeContent %}{% include "./includes/banner.ht
  
 
   <!--Key demographics card group-->
+  {% if data['show'] === "key details and names" %}
   <h2 class="nhsuk-heading-s">Key demographics information</h2>
 
   <ul class="nhsuk-grid-row nhsuk-card-group">
  <!--Key details-->
- {% if data['show'] === "key details and names" %}
+
  <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
 
   <div class="scra-card">
@@ -245,6 +261,7 @@ details {% endblock %} {% block beforeContent %}{% include "./includes/banner.ht
       </div>
     </div>
   </li>
+  </ul>
  {% endif %}
 
   <!--Card put back if needed
@@ -271,8 +288,9 @@ details {% endblock %} {% block beforeContent %}{% include "./includes/banner.ht
   </li> -->
   <!--Consent preferences-->
 
-
+  {% if data['show'] === "addresses and contact details" %}
   <!--addresses-->
+  <ul class="nhsuk-grid-row nhsuk-card-group">
   <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
 
     <div class="scra-card">
@@ -433,10 +451,10 @@ details {% endblock %} {% block beforeContent %}{% include "./includes/banner.ht
       </div>
 
   </li>
-
+  
   </ul>
-
-
+  {% endif %}
+  {% if data['show'] === "GP and care providers" %}
   <h2 class="nhsuk-heading-m">GP and care providers </h2>
 
 
@@ -726,7 +744,9 @@ details {% endblock %} {% block beforeContent %}{% include "./includes/banner.ht
     </div>
   </li>
 </ul>
+{% endif %}
 
+{% if data['show'] === "contacts and next of kin" %}
   <h2 class="nhsuk-heading-m">Contacts and next of kin </h2>
 
 <ul class="nhsuk-grid-row nhsuk-card-group">
@@ -883,9 +903,10 @@ details {% endblock %} {% block beforeContent %}{% include "./includes/banner.ht
     </div>
   </li>
 </ul>
+{% endif %}
 
 <!--information sharing cards-->
-{% if patient.chargeableStatusInfo === "yes" %}
+{% if data['show'] === "chargeable status" %}
   <h2 class="nhsuk-heading-m">Chargeable status</h2>
   
 <ul class="nhsuk-grid-row nhsuk-card-group">
