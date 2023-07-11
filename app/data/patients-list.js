@@ -12,7 +12,7 @@ const patients = {
     chargeableStatusInfo: "no",
     address: "1 Town Street",
     county: "Warwickshire",
-    postcode: "AB1 2CD",
+    postcode: "AB12CD",
     gender: "Male",
     dob: "30-Jan-2018",
     preferredName: "Willy",

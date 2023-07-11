@@ -123,7 +123,7 @@ module.exports = (router) => {
     res.redirect(`/overviewtab/v2/search-results?${params}`);
   });
 
-  router.post("/overviewtab/v2/postcode-search", function (req, res) {
+  router.post("/overviewtab/v2/postcode-search-post", function (req, res) {
     const addressPostcode = req.body["postcode-only"];
     req.session.data.errors = {};
 
@@ -248,12 +248,9 @@ module.exports = (router) => {
       backtoresults: searchLink,
     });
   });
- // router.post("/overviewtab/v2/patient_2", function (req, res) {
-   // const display = req.session.data["show"];
-    
+  // router.post("/overviewtab/v2/patient_2", function (req, res) {
+  // const display = req.session.data["show"];
 
-    //res.redirect(`/overviewtab/v2/patient_2`);
+  //res.redirect(`/overviewtab/v2/patient_2`);
   //});
-
-
 };

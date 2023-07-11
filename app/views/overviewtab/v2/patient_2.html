@@ -162,7 +162,7 @@ details {% endblock %} {% block beforeContent %}{% include "./includes/banner.ht
  <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
 
   <div class="scra-card">
-    <section id="key-details-card" title="key-details-card"></section>
+    <section id="key-details-card" title="key-details-card">
     <div class="scra-card-header">
       <h3 class="nhsuk-heading-s
       " id="patient-details-names">Key details</h3>
@@ -262,6 +262,7 @@ details {% endblock %} {% block beforeContent %}{% include "./includes/banner.ht
     </div>
   </li>
   </ul>
+</section>
  {% endif %}
 
   <!--Card put back if needed
@@ -457,13 +458,13 @@ details {% endblock %} {% block beforeContent %}{% include "./includes/banner.ht
   {% if data['show'] === "GP and care providers" %}
   <h2 class="nhsuk-heading-m">GP and care providers </h2>
 
-
+  <section id="GP-card" title="GP-card">
 <ul class="nhsuk-grid-row nhsuk-card-group">
 
 
   <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
     <div class="scra-card">
-      <section id="GP-card" title="GP-card"></section>
+      
       <div class="scra-card-header">
         <h3 class="nhsuk-heading-m" id="patient-details-names">General practice</h3>
       </div>
@@ -744,17 +745,19 @@ details {% endblock %} {% block beforeContent %}{% include "./includes/banner.ht
     </div>
   </li>
 </ul>
+</section>
 {% endif %}
 
 {% if data['show'] === "contacts and next of kin" %}
-  <h2 class="nhsuk-heading-m">Contacts and next of kin </h2>
 
+<h2 class="nhsuk-heading-m">Contacts and next of kin </h2>
+<section id="contacts-card" title="contacts-card">
 <ul class="nhsuk-grid-row nhsuk-card-group">
 
 
   <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
     <div class="scra-card">
-      <section id="contacts-card" title="contacts-card"></section>
+      
       <div class="scra-card-header">
         <h3 class="nhsuk-heading-m" id="patient-details-names">Not recorded</h3>
       </div>
@@ -903,6 +906,7 @@ details {% endblock %} {% block beforeContent %}{% include "./includes/banner.ht
     </div>
   </li>
 </ul>
+</section>
 {% endif %}
 
 <!--information sharing cards-->
