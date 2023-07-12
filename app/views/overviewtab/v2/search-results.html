@@ -61,6 +61,22 @@ endblock %} {% block beforeContent %}
   </div>
 
   <div class="nhsuk-grid-column-full">
+    <!--search bar-->
+    <div class="nhsuk-grid-column-one-half">
+      <p></p>
+    </div>
+    <div class="nhsuk-grid-column-one-half">
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="example"> Search all columns </label>
+        <input
+          class="nhsuk-input nhsuk-u-width-two-thirds"
+          id="example"
+          name="example"
+          type="text"
+        />
+      </div>
+    </div>
+
     {% if returnedPatientsList | length %}
     <div class="search-results-container">
       <table id="search-results-table" class="responsive-table" role="grid">

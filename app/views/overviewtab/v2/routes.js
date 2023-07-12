@@ -196,58 +196,60 @@ module.exports = (router) => {
 
   //back links that disappear when not navigated to from search bar
   //for overview1
-  router.get("/overviewtab/v2/overview", function (req, res, next) {
-    let showsearch = req.query.search;
-    if (showsearch === "true") {
-      var searchLink = "true";
-    } else {
-      var searchLink = "false";
-    }
+  // router.get("/overviewtab/v2/overview", function (req, res, next) {
+  //  let showsearch = req.query.search;
+  // if (showsearch === "true") {
+  //   var searchLink = "true";
+  // } else {
+  //  var searchLink = "false";
+  // }
 
-    //to delete data
-    req.session.data.search = "";
+  //to delete data
+  //  req.session.data.search = "";
 
-    //go to overview
-    return res.render("overviewtab/v2/overview", {
-      backtoresults: searchLink,
-    });
-  });
+  //go to overview
+  //  return res.render("overviewtab/v2/overview", {
+  //   backtoresults: searchLink,
+  //  });
+  // });
 
   //for overview2
-  router.get("/overviewtab/v2/overview2", function (req, res, next) {
-    let showsearch = req.query.search;
-    if (showsearch === "true") {
-      var searchLink = "true";
-    } else {
-      var searchLink = "false";
-    }
+  // router.get("/overviewtab/v2/overview2", function (req, res, next) {
+  //  let showsearch = req.query.search;
+  //  if (showsearch === "true") {
+  //   var searchLink = "true";
+  //   } else {
+  //   var searchLink = "false";
+  //  }
 
-    //to delete data
-    req.session.data.search = "";
+  //   //to delete data
+  //   req.session.data.search = "";
 
-    //go to overview2
-    return res.render("overviewtab/v2/overview2", {
-      backtoresults: searchLink,
-    });
-  });
+  //  //go to overview2
+  //    return res.render("overviewtab/v2/overview2", {
+  //    backtoresults: searchLink,
+  //  });
+  // });
 
   //for patient details1
-  router.get("/overviewtab/v2/patient_1", function (req, res, next) {
-    let showsearch = req.query.search;
-    if (showsearch === "true") {
-      var searchLink = "true";
-    } else {
-      var searchLink = "false";
-    }
+  // router.get("/overviewtab/v2/patient_2", function (req, res, next) {
+  //  let showsearch = req.query.search;
+  //  if (showsearch === "true") {
+  //    var searchLink = "true";
+  //  } else {
+  //    var searchLink = "false";
+  //  }
 
-    //to delete data
-    req.session.data.search = "";
+  //to delete data
+  //    req.session.data.search = "";
 
-    //go to overview2
-    return res.render("overviewtab/v2/patient_1", {
-      backtoresults: searchLink,
-    });
-  });
+  //go to overview2
+  //  return res.render("overviewtab/v2/patient_2", {
+  //   backtoresults: searchLink,
+  // });
+  //  });
+
+  
   // router.post("/overviewtab/v2/patient_2", function (req, res) {
   // const display = req.session.data["show"];
 

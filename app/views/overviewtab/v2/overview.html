@@ -8,7 +8,7 @@
           <a class="scra-bordered-tabs-link" href="#">Overview</a>
         </li>
         <li class="scra-bordered-tabs-item">
-          <a class="scra-bordered-tabs-link" href="patient_1">Patient details</a>
+          <a class="scra-bordered-tabs-link" href="patient_2?show=key%20details%20and%20names">Patient details</a>
         </li>
         <li class="scra-bordered-tabs-item">
           <a class="scra-bordered-tabs-link" href="clinical">Clinical</a>
@@ -116,18 +116,18 @@
       <div class="nhsuk-care-card__content overview-card__content">
         <ul class="overview-card__list">
           <li class="overview-card__list-item">
-            <a href="patient_1#name-card">Demographics</a>
+            <a href="patient_2?show=key%20details%20and%20names">Demographics</a>
           </li>
           <li class="overview-card__list-item">
-            <a href="patient_1#GP-card">GP and Care providers</a>
+            <a href="patient_2?show=GP%20and%20care%20providers">GP and Care providers</a>
           </li>
           <li class="overview-card__list-item">
-            <a href="patient_1#contacts-card">Contacts & next of kin</a>
+            <a href="patient_2?show=contacts%20and%20next%20of%20kin">Contacts & next of kin</a>
           </li>
           
           {% if patient.chargeableStatusInfo === "yes" %}
           <li class="overview-card__list-item">
-            <a href="#">Chargeability status</a>
+            <a href="patient_2?show=chargeable%20status">Chargeability status</a>
           </li>
           {% endif %}
         </ul>
