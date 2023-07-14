@@ -74,11 +74,11 @@ Find a patient
 
       <!--- Postcode text input --->
 
-      <form action="postcode-search-post" id="postcode-search-results" method="POST">
+    <form action="postcode-search-post" id="postcode-search-results" method="POST">
 
       <div id="nhsuk-form-group-postcode-only" class="nhsuk-form-group{% if errors['postcode-only'] %} nhsuk-form-group--error{% endif %}">
 
-        <label class="nhsuk-label nhsuk-label__strong" for="postcode-search">
+        <label class="nhsuk-label nhsuk-label__strong" for="postcode-only-input">
           Postcode
         </label>
         {% if errors['postcode-only'] %}
@@ -89,11 +89,11 @@ Find a patient
         <input class="nhsuk-input nhsuk-input--width-10{% if errors['postcode-only'] %} nhsuk-input--error{% endif %}" id="postcode-only-input" name="postcode-only" type="text">
       </div>
 
-      
-
 
       <div class="nhsuk-form-group">
+
         <details class="nhsuk-details">
+
           <summary class="nhsuk-details__summary">
             <span class="nhsuk-details__summary-text">
               Find postcode with address details
@@ -102,27 +102,18 @@ Find a patient
 
           <div class="nhsuk-details__text">
  
-              <label class="nhsuk-label" for="address-name-number">
-                Enter part of an address or a postcode
-              </label>
-              <div class="nhsuk-hint" id="example-hint">
-                  Start typing to search and select an address. <br> Enter as many details as you know.              </div>
-              <input class="nhsuk-input nhsuk-input--width-20" id="address-name-number" name="address-name-number" type="text">
-           
-              <a href="" id="address-lookup-search-input--clear" class="typeahead-search__clear" role="button" aria-label="Clear Typeahead Input" tabindex="0">Clear</a>
-             
-<br>
-<br>
-            <button class="nhsuk-button nhsuk-button--ers nhsuk-button--ers_secondary" aria-disabled="false" id="address-lookup-search-apply" type="submit">Select</button>
-          </div> 
-                
-         
-      
+            <label class="nhsuk-label" for="address-name-number">
+              Enter part of an address or a postcode
+            </label>
+            <div class="nhsuk-hint" id="example-hint">Start typing to search and select an address. <br> Enter as many details as you know.</div>
+            <input class="nhsuk-input nhsuk-input--width-20" id="address-name-number" name="address-name-number" type="text">
 
-           
-         
-  </div>
-</details>
+            <a href="" id="address-lookup-search-input--clear" class="typeahead-search__clear" role="button" aria-label="Clear Typeahead Input" tabindex="0">Clear</a>
+
+            <div class="nhsuk-u-margin-top-4"><button class="nhsuk-button nhsuk-button--ers nhsuk-button--ers_secondary nhsuk-u-margin-bottom-0" aria-disabled="false" id="address-lookup-search-apply" type="submit">Select</button></div>
+          </div>
+
+        </details>
 
 
       <!--- Date of birth text input --->
@@ -241,7 +232,6 @@ Find a patient
         </fieldset>
       </div>
     </div>
-  </div>
 
       <div class="nhsuk-form-group">
         <div class="nhsuk-grid-row">

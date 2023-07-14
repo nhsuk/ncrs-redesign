@@ -1,5 +1,5 @@
 const search = {
-  {
+  1234567890: {
     firstName: "William",
     lastName: "Shakespeare",
     address: "1 Town Street",
@@ -7,29 +7,25 @@ const search = {
     postcode: "AB12CD",
     gender: "Male",
     dob: "30-Jan-2018",
-    nhsnumber: "1234567890"
   },
-  {
-    firstName: "hilliam",
-    lastName: "Shakespeare",
+  9550972968: {
+    firstName: "Elisha",
+    lastName: "Sapsed",
     address: "2 Town Street",
     county: "Warwickshire",
     postcode: "AB12CD",
     gender: "Male",
-    dob: "30-Jan-2018",
-    nhsnumber: "1234567891"
-    
+    dob: "6-Sep-1968",
   },
-  {
-    firstName: "Milliam",
-    lastName: "Shakespeare",
+  5974163354: {
+    firstName: "Jordanna",
+    lastName: "Collop",
     address: "3 Town Street",
     county: "Warwickshire",
     postcode: "AB12CD",
-    gender: "Male",
-    dob: "30-Jan-2018",
-    nhsnumber: "1234567892"
-  }
+    gender: "Female",
+    dob: "27-Feb-2006",
+  },
 };  
 
 function parseDate(formattedDate) {

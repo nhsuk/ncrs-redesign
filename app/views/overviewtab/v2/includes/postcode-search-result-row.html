@@ -11,7 +11,7 @@ link = "overview" %} {% endif %} {% endif %}
   <td role="gridcell">
     <span class="table-heading" aria-hidden="true">Name</span>
     <span>
-      <a href="{{ link or 'overview' }}" class="name-results-td">
+      <a href="patient_2?nnhs-number={{ search.nhsNumber }}" class="name-results-td">
         {{ search.firstName }} {{ search.lastName.toUpperCase() }}
       </a>
     </span>
@@ -35,8 +35,8 @@ link = "overview" %} {% endif %} {% endif %}
   <td role="gridcell">
     <span class="table-heading" aria-hidden="true">NHS Number</span>
     <span class="nhs-no-results-td">
-      {{- searchNhsNumber.substr(0, 3) }} {{ searchNhsNumber.substr(3, 3) }} {{
-      searchNhsNumber.substr(6, 4) -}}
+      {{ search.nhsNumber.substr(0, 3) }} {{ search.nhsNumber.substr(3, 3) }} {{
+      search.nhsNumber.substr(6, 4) -}}
     </span>
   </td>
 </tr>
