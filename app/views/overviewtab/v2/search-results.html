@@ -62,24 +62,15 @@ endblock %} {% block beforeContent %}
 
   <div class="nhsuk-grid-column-full">
     <!--search bar-->
-    <!-- <div class="nhsuk-form-group" style="float: right">
+    <div class="nhsuk-form-group">
       <label class="nhsuk-label" for="example"> Search all columns </label>
-      <input class="nhsuk-input" id="example" name="example" type="text" />
-    <button class="nhsuk-search__submit" type="submit">
-        <svg
-          class="nhsuk-icon nhsuk-icon__search"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          aria-hidden="true"
-          focusable="false"
-        >
-          <path
-            d="M19.71 18.29l-4.11-4.1a7 7 0 1 0-1.41 1.41l4.1 4.11a1 1 0 0 0 1.42 0 1 1 0 0 0 0-1.42zM5 10a5 5 0 1 1 5 5 5 5 0 0 1-5-5z"
-          ></path>
-        </svg>
-        <span class="nhsuk-u-visually-hidden">Search</span>
-      </button>
-    </div>-->
+      <input
+        class="nhsuk-input nhsuk-u-width-one-third"
+        id="example"
+        name="example"
+        type="text"
+      />
+    </div>
     <!--<form
       class="nhsuk-header__search-form"
       id="search"
@@ -118,6 +109,8 @@ endblock %} {% block beforeContent %}
         <span class="nhsuk-u-visually-hidden">Search</span>
       </button>
     </form>-->
+
+    <!--
     <div class="nhsuk-header__search" style="float: right">
       <button
         class="nhsuk-header__search-toggle"
@@ -191,7 +184,7 @@ endblock %} {% block beforeContent %}
           </button>
         </form>
       </div>
-    </div>
+    </div> -->
 
     {% if returnedPatientsList | length %}
     <div class="search-results-container">

@@ -2,6 +2,7 @@ const moment = require("moment");
 moment.locale("en-gb");
 
 const patientList = require("../../../data/patients-list.js");
+//const searchList = require("../../../data/search-folks.js");
 
 function formatName(str) {
   return str
@@ -132,7 +133,7 @@ module.exports = (router) => {
     }
 
     if (Object.keys(req.session.data.errors).length) {
-      return res.redirect("/overviewtab/v2/postcode-search");
+      return res.redirect("/overviewtab/v2/postcode-search-post");
     }
 
     // Format the data provided ready for processing
@@ -140,9 +141,65 @@ module.exports = (router) => {
     const params = new URLSearchParams({
       postcode: formattedPostcode,
     });
-    res.redirect(`/overviewtab/v2/search-results?${params}`);
+    res.redirect(`/overviewtab/v2/postcode-search-results?${params}`);
   });
 
+  router.get(
+    "/overviewtab/v2/postcode-search-results",
+    function (req, res, next) {
+      const nhsNumber = req.query["nhs-number"];
+      const { gender, firstName, lastName, dob, dobTo, dobFrom, postcode } =
+        req.query;
+
+      const isBasicSearch = gender && lastName && dob;
+      const isAdvancedSearch =
+        gender && firstName && lastName && dobTo && dobFrom && postcode;
+      const isPostcodeSearch = postcode && !isAdvancedSearch && !isBasicSearch;
+      const isNhsNumberSearch =
+        nhsNumber && !isAdvancedSearch && !isBasicSearch;
+
+      const returnedPatientsList = {};
+      for (const [patientNhsNumber, patient] of Object.entries(patientList)) {
+        // Basic Details Search
+        if (
+          isBasicSearch &&
+          gender === patient.gender &&
+          lastName === patient.lastName &&
+          dob === patient.dob
+        ) {
+          returnedPatientsList[patientNhsNumber] = patient;
+          continue;
+        }
+        // Advanced Details Search
+        if (
+          isAdvancedSearch &&
+          (gender === patient.gender || gender === "Not known") &&
+          firstName === patient.firstName &&
+          lastName === patient.lastName &&
+          moment(new Date(dobFrom)).isBefore(new Date(patient.dob)) &&
+          moment(new Date(dobTo)).isAfter(new Date(patient.dob)) &&
+          postcode === patient.postcode
+        ) {
+          returnedPatientsList[patientNhsNumber] = patient;
+          continue;
+        }
+        // Postcode Details Search
+        if (isPostcodeSearch && postcode === patient.postcode) {
+          returnedPatientsList[patientNhsNumber] = patient;
+          continue;
+        }
+        // NHS Number search
+        if (isNhsNumberSearch && patientNhsNumber == nhsNumber) {
+          returnedPatientsList[patientNhsNumber] = patient;
+        }
+      }
+
+      res.locals.returnedPatientsList = returnedPatientsList;
+      next();
+    }
+  );
+
+  // for normal search
   router.get("/overviewtab/v2/search-results", function (req, res, next) {
     const nhsNumber = req.query["nhs-number"];
     const { gender, firstName, lastName, dob, dobTo, dobFrom, postcode } =
@@ -249,7 +306,6 @@ module.exports = (router) => {
   // });
   //  });
 
-  
   // router.post("/overviewtab/v2/patient_2", function (req, res) {
   // const display = req.session.data["show"];
 
