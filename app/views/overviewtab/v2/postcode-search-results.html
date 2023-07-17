@@ -1,11 +1,7 @@
-{% extends 'layouts/layout.html' %}
-{% block pageTitle %} Find a patient {%endblock %}
-
-{% block headCss %}
-<link rel="stylesheet" href="/css/accessible-autocomplete.min.css">
-{% endblock %}
-
-{% block beforeContent %}
+{% extends 'layouts/layout.html' %} {% block pageTitle %} Find a patient
+{%endblock %} {% block headCss %}
+<link rel="stylesheet" href="/css/accessible-autocomplete.min.css" />
+{% endblock %} {% block beforeContent %}
 <section class="nhsuk-hero">
   <div class="nhsuk-width-container">
     <div class="nhsuk-grid-row">
@@ -51,41 +47,43 @@
     <h2 class="nhsuk-heading-l">Search results</h2>
     {% if returnedPatientsList | length %}
     <h3 class="nhsuk-heading-xs">
-      We found {{ returnedPatientsList | length }} result{% if returnedPatientsList | length > 1 %}s{% endif %}.
+      We found {{ returnedPatientsList | length }} result{% if
+      returnedPatientsList | length > 1 %}s{% endif %}.
     </h3>
     {% else %}
     <h3 class="nhsuk-heading-xs">Sorry. We couldn't find any patients.</h3>
     {% endif %}
     <p>
       If you can't find the patient you're looking for you can
-      <a id="refine-search-link" href="javascript:window.history.back()">refine your search</a>
+      <a id="refine-search-link" href="javascript:window.history.back()"
+        >refine your search</a
+      >
       or <a href="nhs-number-search">perform a new search</a>.
     </p>
   </div>
 
   <div class="nhsuk-grid-column-one-half">
-
     <!--search bar-->
     <div class="nhsuk-form-group">
-
       <!-- accessible autocomplete -->
-      <label class="nhsuk-label" for="filter-search">Search within results</label>
+      <label class="nhsuk-label" for="filter-search"
+        >Search within results</label
+      >
 
       <select id="filter-search">
         <option value=""></option>
 
         {% for patientNhsNumber, patient in returnedPatientsList %}
-          <option value="{{ patient.nhsNumber }}">{{ patient.firstName }} {{ patient.lastName }} {{ patient.dob }}</option>
+        <option value="{{ patient.nhsNumber }}">
+          {{ patient.firstName }} {{ patient.lastName }} {{ patient.gender }} {{
+          patient.dob }} {{ patient.address }}
+        </option>
         {%- endfor %}
-
       </select>
-
     </div>
-
   </div>
 
-    <div class="nhsuk-grid-column-full">
-
+  <div class="nhsuk-grid-column-full">
     {% if returnedPatientsList | length %}
     <div class="search-results-container">
       <table id="search-results-table" class="responsive-table" role="grid">
@@ -102,9 +100,8 @@
           </tr>
         </thead>
         <tbody class="patient-results">
-          {% for patientNhsNumber, patient in returnedPatientsList %}
-            {% include "./includes/search-result-row.html" %}
-          {% endfor %}
+          {% for patientNhsNumber, patient in returnedPatientsList %} {% include
+          "./includes/search-result-row.html" %} {% endfor %}
         </tbody>
       </table>
       <div class="table-foot">
@@ -120,27 +117,27 @@
 </div>
 
 <style type="text/css">
-    
-.autocomplete__hint, 
-.autocomplete__input {
+  .autocomplete__hint,
+  .autocomplete__input {
     background-color: #fff;
-}
-
+  }
 </style>
 
-<script type="text/javascript" src="/js/accessible-autocomplete.min.js"></script>
+<script
+  type="text/javascript"
+  src="/js/accessible-autocomplete.min.js"
+></script>
 
 <script type="text/javascript">
-
-  let e = document.querySelector('#filter-search')
+  let e = document.querySelector("#filter-search");
 
   accessibleAutocomplete.enhanceSelectElement({
     autoselect: true,
     selectElement: e,
-    id: 'filter-search',
-    name: 'searchfilter',
-    defaultValue: '',
-    displayMenu: 'overlay',
+    id: "filter-search",
+    name: "searchfilter",
+    defaultValue: "",
+    displayMenu: "overlay",
     showAllValues: true,
     showNoOptionsFound: false,
     minLength: 1,
@@ -149,12 +146,11 @@
         (o) => o.innerText === val
       );
       if (option) {
-        console.log('selected: ' + option.value);
+        console.log("selected: " + option.value);
         window.location.href = "patient_2?nhs-number=" + option.value;
       }
-    }
-  })
+    },
+  });
 </script>
-
 
 {% endblock %}
