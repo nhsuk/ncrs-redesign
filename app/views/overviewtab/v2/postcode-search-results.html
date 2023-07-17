@@ -1,5 +1,9 @@
-{% extends 'layouts/layout.html' %} {% block pageTitle %} Find a patient
-{%endblock %} {% block headCss %}
+{% if data['scenario'] %} {% if data['scenario'] === "overview tab 2" %} {% set
+link = "overview2?nhs-number=" %} {% elif data['scenario'] === "patient details
+page 2" %} {% set link = "patient_2?show=key%20details%20and%20names" %} {% else
+%} {% set link = "overview?nhs-number=" %} {% endif %} {% endif %} {% extends
+'layouts/layout.html' %} {% block pageTitle %} Find a patient {%endblock %} {%
+block headCss %}
 <link rel="stylesheet" href="/css/accessible-autocomplete.min.css" />
 {% endblock %} {% block beforeContent %}
 <section class="nhsuk-hero">
@@ -147,7 +151,8 @@
       );
       if (option) {
         console.log("selected: " + option.value);
-        window.location.href = "patient_2?nhs-number=" + option.value;
+        window.location.href =
+          "{{ link or 'patient_2?nhs-number=' }}" + option.value;
       }
     },
   });
