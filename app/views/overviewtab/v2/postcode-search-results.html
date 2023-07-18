@@ -71,7 +71,7 @@ block headCss %}
     <div class="nhsuk-form-group">
       <!-- accessible autocomplete -->
       <label class="nhsuk-label" for="filter-search"
-        >Search within results</label
+        ><strong>Search within results</strong></label
       >
 
       <select id="filter-search">
@@ -84,6 +84,7 @@ block headCss %}
         </option>
         {%- endfor %}
       </select>
+      <a href="#" style="float: right">Clear</a>
     </div>
   </div>
 
