@@ -80,7 +80,7 @@ block headCss %}
         {% for patientNhsNumber, patient in returnedPatientsList %}
         <option value="{{ patient.nhsNumber }}">
           {{ patient.firstName }} {{ patient.lastName }} {{ patient.gender }} {{
-          patient.dob }} {{ patient.address }}
+          patient.dob }} {{ patient.address }} {{ patientNhsNumber }}
         </option>
         {%- endfor %}
       </select>
