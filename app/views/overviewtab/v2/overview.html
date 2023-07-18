@@ -26,7 +26,7 @@
 {% endblock %} {% block content %}
 
     
-{% if backtoresults === "true" %}
+
 <div class="nhsuk-back-link">
   <a class="nhsuk-back-link__link" href="postcode-search-results?postcode={{ patient.postcode }}">
     <svg
@@ -42,7 +42,7 @@
     Return to search results</a
   >
 </div>
-{% endif %}
+
 
 <div class="nhsuk-grid-row nhsuk-promo-group">
   {% if patient.CPISinfo === "yes" %} 
