@@ -15,7 +15,7 @@ const search = {
     county: "Warwickshire",
     postcode: "AB12CD",
     gender: "Female",
-    dob: "6-Sep-1968",
+    dob: "06-Sep-1968",
   },
   5974163354: {
     firstName: "Jordanna",
