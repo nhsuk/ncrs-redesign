@@ -1,7 +1,14 @@
-{% if data['scenario'] %} {% if data['scenario'] === "overview tab 2" %} {% set
-link = "overview2?nhs-number=" %} {% elif data['scenario'] === "patient details
-page 2" %} {% set link = "patient_2?show=key%20details%20and%20names" %} {% else
-%} {% set link = "overview?nhs-number=" %} {% endif %} {% endif %} {% extends
+{% if data['scenario'] %} 
+{% if data['scenario'] === "overview tab 2" %} 
+{% set link = "overview2?nhs-number=" %} 
+{% elif data['scenario'] === "patient details page 2" %} 
+{% set link = "patient_2?nhs-number=" %} 
+{% else %} 
+{% set link = "overview?nhs-number=" %} 
+{% endif %} 
+{% endif %} 
+
+{% extends
 'layouts/layout.html' %} {% block pageTitle %} Find a patient {%endblock %} {%
 block headCss %}
 <link rel="stylesheet" href="/css/accessible-autocomplete.min.css" />
@@ -70,7 +77,7 @@ block headCss %}
     <!--search bar-->
     <div class="nhsuk-form-group">
       <!-- accessible autocomplete -->
-      <label class="nhsuk-label" for="filter-search"
+       <label class="nhsuk-label" for="filter-search"
         ><strong>Search within results</strong></label
       >
 
@@ -84,7 +91,7 @@ block headCss %}
         </option>
         {%- endfor %}
       </select>
-      <a href="#" style="float: right">Clear</a>
+    
     </div>
   </div>
 
@@ -118,9 +125,14 @@ block headCss %}
       </div>
     </div>
     {% endif %}
+    
   </div>
 </div>
 
+
+
+
+      
 <style type="text/css">
   .autocomplete__hint,
   .autocomplete__input {
@@ -153,10 +165,14 @@ block headCss %}
       if (option) {
         console.log("selected: " + option.value);
         window.location.href =
-          "{{ link or 'patient_2?nhs-number=' }}" + option.value;
+          "{{ link }}" + option.value;
       }
     },
   });
 </script>
 
-{% endblock %}
+
+      {% endblock %}
+    </div>
+  </div>
+</div>
