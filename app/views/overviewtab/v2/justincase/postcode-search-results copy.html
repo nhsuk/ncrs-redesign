@@ -80,7 +80,7 @@ block headCss %}
       <label class="nhsuk-label" for="searchWithincolumns">
         <strong>Search within results</strong>
       </label>
-      <div class="nhsuk-hint">
+      <div class="nhsuk-hint" id="searchWithincolumns">
         Start typing for a patient using name, address details, date of birth or NHS
         number.
       </div>
@@ -95,6 +95,24 @@ block headCss %}
         />
         <button id="clearbutton" type="reset">Clear</button>
       </form>
+
+      <!-- accessible autocomplete -->
+   <label class="nhsuk-label" for="filter-search"
+        ><strong>Search within results</strong></label
+      >
+
+      <select id="filter-search">
+        <option value=""></option>
+
+        {% for patientNhsNumber, patient in returnedPatientsList %}
+        <option value="{{ patient.nhsNumber }}">
+          {{ patient.firstName }} {{ patient.lastName }} {{ patient.gender }} {{
+          patient.dob }} {{ patient.address }} {{ patientNhsNumber }}
+        </option>
+        {%- endfor %}
+      </select>
+    
+    </div>
   </div>
 
   <div class="nhsuk-grid-column-full">
@@ -131,38 +149,48 @@ block headCss %}
   </div>
 </div>
 
+
+
+
+
+<style type="text/css">
+  .autocomplete__hint,
+  .autocomplete__input {
+    background-color: #fff;
+  }
+</style>
+
+<script
+  type="text/javascript"
+  src="/js/accessible-autocomplete.min.js"
+></script>
+
 <script type="text/javascript">
-  // Get the input element and table
-  const input = document.getElementById("searchWithincolumns");
-  const table = document.getElementById("search-results-table");
-  // Add event listener for the input event
-  input.addEventListener("keyup", function (event) {
-  const searchText = event.target.value.toLowerCase(); // Convert input value to lowercase for case-insensitive search
-  // Loop through all table rows
-  const rows = table.getElementsByTagName("tr");
-  for (let i = 0; i < rows.length; i++) {
-  const row = rows[i];
-  const cells = row.getElementsByTagName("td");
-  let matchFound = false;
-  // Loop through all table cells in the current row
-  for (let j = 0; j < cells.length; j++) {
-  const cell = cells[j];
-  const cellText = cell.textContent.toLowerCase();
-  // Check if the cell contains the search text
-  if (cellText.includes(searchText)) {
-  matchFound = true;
-  break;
-  }
-  }
-  // Show/hide the row based on the match
-  if (matchFound) {
-  row.style.display = "";
-  } else {
-  row.style.display = "none";
-  }
-  }
+  let e = document.querySelector("#filter-search");
+
+  accessibleAutocomplete.enhanceSelectElement({
+    autoselect: true,
+    selectElement: e,
+    id: "filter-search",
+    name: "searchfilter",
+    defaultValue: "",
+    displayMenu: "overlay",
+    showAllValues: true,
+    showNoOptionsFound: false,
+    minLength: 1,
+    onConfirm: (val) => {
+      const option = Array.from(e.querySelectorAll("option")).find(
+        (o) => o.innerText === val
+      );
+      if (option) {
+        console.log("selected: " + option.value);
+        window.location.href =
+          "{{ link }}" + option.value;
+      }
+    },
   });
-  </script>
+</script>
+  
 
       {% endblock %}
     </div>
