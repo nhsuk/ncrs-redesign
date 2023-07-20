@@ -72,9 +72,10 @@ block headCss %}
       or <a href="nhs-number-search">perform a new search</a>.
     </p>
   </div>
-
-  <div class="nhsuk-grid-column-one-half">
+  
+  <div class="nhsuk-grid-column-three-quarters">
     <!--search bar-->
+    {% if returnedPatientsList | length %}
     <div class="nhsuk-form-group">
 
       <label class="nhsuk-label" for="searchWithincolumns">
@@ -95,7 +96,7 @@ block headCss %}
         />
         <button id="clearbutton" type="reset">Clear</button>
       </form>
-  </div>
+  </div> {% endif %}
 
   <div class="nhsuk-grid-column-full">
     {% if returnedPatientsList | length %}
