@@ -239,6 +239,16 @@ module.exports = (router) => {
     next();
   });
 
+  //router.get("/overviewtab/v2/patient_2", function (req, res, next) {
+   //  let formin = req.session.data['show'];
+   
+  
+   
+    // res.render("overviewtab/v2/patient_2#contact-card") 
+    // });
+
+
+
   //back links that disappear when not navigated to from search bar
   //for overview1
   // router.get("/overviewtab/v2/overview", function (req, res, next) {
