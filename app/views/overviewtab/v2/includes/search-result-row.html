@@ -1,7 +1,8 @@
-{% if data['scenario'] %} {% if data['scenario'] === "overview tab 2" %} {% set
-link = "overview2" %} {% elif data['scenario'] === "patient details page 2" %}
-{% set link = "patient_2?show=key%20details%20and%20names" %} {% else %} {% set
-link = "overview" %} {% endif %} {% endif %}
+{% if data['scenario'] %} {% if data['scenario'] === "overview tab 2" %} 
+{% set link = "overview2?show=" %} 
+{% elif data['scenario'] === "patient details page 2" %}
+{% set link = "patient_2?show=key%20details%20and%20names" %} {% else %}
+{% set link = "overview?show=" %} {% endif %} {% endif %}
 
 <tr
   role="row"
@@ -11,7 +12,10 @@ link = "overview" %} {% endif %} {% endif %}
   <td role="gridcell">
     <span class="table-heading" aria-hidden="true">Name</span>
     <span>
-      <a href="{{ link or 'overview' }}" class="name-results-td">
+      <a
+        href="{{ link or 'overview' }}&nhs-number={{ patient.nhsNumber }}"
+        class="name-results-td"
+      >
         {{ patient.firstName }} {{ patient.lastName.toUpperCase() }}
       </a>
     </span>
