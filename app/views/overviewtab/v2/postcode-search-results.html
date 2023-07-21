@@ -94,7 +94,7 @@ block headCss %}
           aria-describedby="searchWithincolumns"
           value=""
         />
-        <button id="clearbutton" type="reset">Clear</button>
+        <a id="clearbutton" >Clear</a>
       </form>
   </div> {% endif %}
 </div>
@@ -133,6 +133,30 @@ block headCss %}
 
 
 <script type="text/javascript">
+//clear input when clear clicked
+const clearplease = document.getElementById("clearbutton");
+const input2 = document.getElementById("searchWithincolumns");
+function clearInput() {
+            const prevValue = input2.value;
+            input2.value = "";
+            const event = new Event("keyup");
+            input2.dispatchEvent(event);
+            if (input2.value !== prevValue) {
+                const changeEvent = new Event("change");
+                input2.dispatchEvent(changeEvent);
+            }
+        }
+
+        // Add a click event listener to the clear link
+        clearplease.addEventListener("click", function(event) {
+            event.preventDefault(); // Prevent the default link behavior
+            clearInput();
+        });
+
+     
+
+
+// hide rows as you type
   // Get the input element and table
   const input = document.getElementById("searchWithincolumns");
   const table = document.getElementById("search-results-table");
