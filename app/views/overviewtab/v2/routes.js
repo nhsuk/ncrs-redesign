@@ -239,13 +239,13 @@ module.exports = (router) => {
     next();
   });
 
-  //router.get("/overviewtab/v2/patient_2", function (req, res, next) {
-   //  let formin = req.session.data['show'];
+ // router.get("/overviewtab/v2/patient_2", function (req, res, next) {
+   // let formin = req.session.data['show'];
    
   
    
-    // res.render("overviewtab/v2/patient_2#contact-card") 
-    // });
+   // res.render("overviewtab/v2/patient_2#radios-here") 
+   //  });
 
 
 
