@@ -1,0 +1,432 @@
+{% if data['scenario'] %}
+  {% if data['scenario'] === "overview tab 2" %}
+    {% set link = "overview2" %}
+  {% else %}
+    {% set link = "overview" %}
+  {% endif %}
+{% endif %}
+
+{% extends 'layouts/layout-application.html' %} {% block pageTitle %} Dashboard
+{% endblock %} {% block beforeContent %}{% include "./includes/banner.html" %}
+
+<div class="nhsuk-full-width-container">
+  <div class="scra-bordered-tabs-container">
+    <div class="nhsuk-width-container-fluid">
+      <ul class="scra-bordered-tabs">
+        <li class="scra-bordered-tabs-item">
+          <a class="scra-bordered-tabs-link" href="{{ link or 'overview' }}">Overview</a>
+        </li>
+        <li class="scra-bordered-tabs-item">
+          <a class="scra-bordered-tabs-link" href="patient_2?show=key%20details%20and%20names">Patient details</a>
+        </li>
+        <li class="scra-bordered-tabs-item scra-bordered-tabs-item-active">
+          <a class="scra-bordered-tabs-link" href="#">Clinical</a>
+        </li>
+        {% if patient.viewdocs === "yes" %}
+        <li class="scra-bordered-tabs-item">
+          <a class="scra-bordered-tabs-link" href="documents">Documents</a>
+        </li>
+        {% endif %}
+      </ul>
+    </div>
+  </div>
+</div>
+
+{% endblock %} {% block content %} {% include "includes/mobile-nav.html" %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-one-quarter">
+    <div class="govuk-accordion" data-module="accordion" id="accordion-default">
+      <div class="govuk-accordion__section govuk-accordion__section--expanded">
+        <div class="govuk-accordion__section-header scra-accordion__header">
+          <h2 class="govuk-accordion__section-heading scra-accordion__heading">
+            <span
+              class="govuk-accordion__section-button scra-accordion__section-button"
+              id="accordion-default-heading-1"
+            >
+              Clinical
+            </span>
+          </h2>
+        </div>
+        <div
+          id="accordion-default-content-1"
+          class="govuk-accordion__section-content scra-accordion__section-content"
+          aria-labelledby="accordion-default-heading-1"
+        >
+          <ul>
+            <li>
+              <a class="scra-accordion__link" href="#"
+                >Summary Care Record</a
+              >
+            </li>
+            <li>
+              <a class="scra-accordion__link" href="#"
+                >Covid 19 Vaccinations information</a
+              >
+            </li>
+            {% if patient.CPISinfo === "yes" %}
+            <li>
+              <a class="scra-accordion__link" href="#child protection"
+                >Child protection</a
+              >
+            </li>
+            {% endif %}
+            {% if patient.fgmInfo === "yes" %}
+            <li>
+              <a class="scra-accordion__link" href="#FGM info">Female genital mutilation</a>
+            </li>
+            {% endif %}
+            {% if patient.RAinfo === "yes" %}
+            <li>
+              <a class="scra-accordion__link" href="#RA info">Reasonable adjustment</a>
+            </li>
+            {% endif %}
+            {% if patient.BNAinfo === "yes" %}
+            <li>
+              <a class="scra-accordion__link" href="#BNA">Birth notification application</a>
+            </li>
+            {% endif %}
+            
+           
+           
+            
+           
+          </ul>
+        </div>
+      </div>
+    
+    </div>
+  </div>
+
+  <div class="nhsuk-grid-column-three-quarters">
+    <h1 class="nhsuk-heading-l">Summary Care Record</h1>
+    <div class="scra-card">
+      <div class="scra-card-header">
+        <h2 class="nhsuk-heading-m">Summary Care Record</h2>
+      </div>
+      <div class="scra-card-content">
+        <p>
+          Summary Care Records (SCR) are an electronic record of important patient information, created from GP medical records. Additional Information in the SCR, such as details of long-term conditions, significant medical history, or specific communications needs, is now included by default for patients with an SCR, unless they have previously told the NHS that they did not want this information to be shared.
+        </p>
+        <div class="nhsuk-action-link nhsuk-u-margin-top-5">
+          <a class="nhsuk-action-link__link nhsuk-card__link open_modal"
+          data-target="#myModal"
+          data-toggle="modal"
+          href="#myModal">
+            <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M0 0h24v24H0z" fill="none"></path>
+              <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
+            </svg>
+            <span class="nhsuk-action-link__text">View Summary Care Record with additional information</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <h1 class="nhsuk-heading-l">COVID-19 Vaccination Information</h1>
+    <a name="c"></a>
+    <div class="scra-card">
+      <div class="scra-card-header">
+        <h2 class="nhsuk-heading-m">COVID-19 Vaccination Information</h2>
+      </div>
+      <div class="scra-card-content">
+        <p>
+          Essential information about a patient's coronavirus vaccination history. This is the information recorded by the organisation(s) administering the COVID-19 vaccination(s) and may differ from the information provided to the patient, held on the patient's GP record, and/or Summary Care Record (SCR). It is possible that the patient may have had COVID-19 vaccination events that are not yet available here.
+        </p>
+        <div class="nhsuk-action-link nhsuk-u-margin-top-5">
+          <a class="nhsuk-action-link__link" href="covid-19-vaccs">
+            <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M0 0h24v24H0z" fill="none"></path>
+              <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
+            </svg>
+            <span class="nhsuk-action-link__text">View COVID-19 Vaccination Information</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+
+    
+    {% if patient.CPISinfo === "yes" %}
+      <a name="child protection"></a>
+        <div class="section" id="care-alert-section">
+          <h2 class="nhsuk-heading-l" id="child-protection">Child protection</h2>
+          <div class="scra-card">
+            <div class="scra-card-header">
+              <h3 class="nhsuk-heading-m">View child protection information</h3>
+            </div>
+            <div class="scra-card-content">
+              
+                <p>
+                  The patient’s child protection information includes details about the type of protection order, the responsible local authority, contact numbers and who has previously viewed the information.
+                </p>
+                <div class="nhsuk-action-link nhsuk-u-margin-top-5">
+                  <a class="nhsuk-action-link__link" href="child-care-check-care-setting">
+                    <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M0 0h24v24H0z" fill="none"></path>
+                      <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
+                    </svg>
+                    <span class="nhsuk-action-link__text">View child protection information</span>
+                  </a>
+                </div>
+              
+            </div>
+          </div>
+        </div>
+        {% endif %}
+        {% if patient.fgmInfo === "yes" %}
+        <a name="FGM info"></a>
+        <div class="section" id="care-alert-section">
+          <h2 class="nhsuk-heading-l" id="fgm-protection">Female Genital Mutilation</h2>
+          <div class="scra-card">
+            <div class="scra-card-header">
+              <h3 class="nhsuk-heading-m">This child has a family history of female genital mutilation</h3>
+            </div>
+            <div class="scra-card-content">
+              
+                <p>
+                  Family history is known to be relevant when safeguarding against FGM. Bear this in mind in relation to your wider safeguarding responsibilities. If you have any concerns about this patient you should: 
+                  <ul>
+                    <li>Follow your local safeguarding procedures</li>
+                    <li>Speak with your manager or safeguarding lead</li>
+                    <li>Consult the <a href="£">safeguarding women and girls at risk of FGMS</a>guidance on the GOV.UK website</li>
+                  </ul>
+                </p>
+                <div class="nhsuk-action-link nhsuk-u-margin-top-5">
+                  <a class="nhsuk-action-link__link" href="fgm-indicator">
+                    <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M0 0h24v24H0z" fill="none"></path>
+                      <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
+                    </svg>
+                    <span class="nhsuk-action-link__text">View FGM information sharing indicator</span>
+                  </a>
+                </div>
+              
+            </div>
+          </div>
+        </div>
+        {% endif %}
+        {% if patient.RAinfo === "yes" %}
+        <a name="RA info"></a>
+        <div class="section" id="care-alert-section">
+          <h2 class="nhsuk-heading-l" id="child-protection">Reasonable adjustment flag</h2>
+          <div class="scra-card">
+            <div class="scra-card-header">
+              <h3 class="nhsuk-heading-m">View reasonable adjustment flag</h3>
+            </div>
+            <div class="scra-card-content">
+              
+                <p>
+                  A Reasonable Adjustment Flag exists for this patient. The Equality Act (2010) states that the NHS and other public organisations have a duty to provide equal access to all services. This is called making reasonable adjustments. For example, providing wheelchair access. The Reasonable Adjustment Flag provides details of reasonable adjustments that should be considered when providing care for a patient. 
+                </p>
+                <div class="nhsuk-action-link nhsuk-u-margin-top-5">
+                  <a class="nhsuk-action-link__link" href="ra-page">
+                    <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M0 0h24v24H0z" fill="none"></path>
+                      <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
+                    </svg>
+                    <span class="nhsuk-action-link__text">Reasonable adjustment flag</span>
+                  </a>
+                </div>
+              
+            </div>
+          </div>
+        </div>
+        {% endif %}
+        {% if patient.BNAinfo === "yes" %}   
+        <a name="BNA"></a>
+        <div class="section" id="care-alert-section">
+          <h2 class="nhsuk-heading-l" id="child-protection">Birth Notification</h2>
+          <div class="scra-card">
+            <div class="scra-card-header">
+              <h3 class="nhsuk-heading-m">Create a birth notification</h3>
+            </div>
+            <div class="scra-card-content">
+              
+                <p>
+                  Use this feature to submit a birth notification for this patient. You will be asked to provide details of:  
+                  <ul>
+                    <li>the person notifying the birth</li>
+                    <li>where the birth occurred</li>
+                    <li>the baby and the birth</li>
+                    <li>the baby's usual address and contact information</li>
+                    <li>a separate discharge address if this is necessary</li>
+                  </ul>
+                  There are 5 steps to complete.
+                </p>
+                <div class="nhsuk-action-link nhsuk-u-margin-top-5">
+                  <a class="nhsuk-action-link__link" href="bna">
+                    <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M0 0h24v24H0z" fill="none"></path>
+                      <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
+                    </svg>
+                    <span class="nhsuk-action-link__text">Create a birth notification</span>
+                  </a>
+                </div>
+              
+            </div>
+          </div>
+        </div>
+        {% endif %}
+
+      </div>
+    
+  </div>
+</div>
+
+
+<!--Modal-->
+<div id="myModal" class="modal">
+  <!-- Modal content -->
+
+  <div class="modal-content">
+    <div class="nhsuk-width-container-fluid">
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-full-width">
+          <span class="close">&times;</span>
+          <h3>
+            Has this patient given permission to view their Summary Care
+            Record?
+          </h3>
+        </div>
+      </div>
+
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-one-third">
+          <a
+            class="nhsuk-button nhsuk-button--blue"
+            type="submit"
+            style="width: 100%"
+            href="SCR"
+          >
+            Yes
+          </a>
+          <p>View record</p>
+        </div>
+        <div class="nhsuk-grid-column-one-third">
+          <button
+            class="nhsuk-button nhsuk-button--reverse close-btn"
+            type="submit"
+            style="width: 100%"
+          >
+            No
+          </button>
+          <p>Access refused</p>
+        </div>
+        <div class="nhsuk-grid-column-one-third">
+          <button
+            class="nhsuk-button nhsuk-button--red emergency-btn"
+            type="submit"
+            style="width: 100%"
+          >
+            Emergency access
+          </button>
+          <p>
+            The usual legal, ethical, and professional obligations apply when
+            accessing a patient's clinical record
+          </p>
+        </div>
+      </div>
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-one-third">
+          <div class="nhsuk-form-group" id="explanation-form-group">
+            <label class="nhsuk-label" for="explanation">
+              Provide more information
+            </label>
+            <span class="nhsuk-hint" id="explanation-hint">
+              Add any extra information you wish to add about the access
+            </span>
+            <textarea
+              class="nhsuk-textarea"
+              id="explanation"
+              name="explanation"
+              rows="3"
+              aria-describedby="explanation-hint"
+            ></textarea>
+          </div>
+        </div>
+        <div class="nhsuk-grid-column-two-thirds">
+          <p>
+            <a href="#">I need to access the record for other reasons</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="myModalEmergency" class="modal">
+  <!-- Modal content -->
+
+  <div class="modal-content">
+    <div class="nhsuk-width-container-fluid">
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-full-width">
+          <span class="close">&times;</span>
+          <h3>Accessing in an emergency</h3>
+        </div>
+      </div>
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-form-group" id="explanation-form-group">
+          <label class="nhsuk-label" for="more-detail"> Explanation </label>
+          <span class="nhsuk-hint" id="more-detail-hint">
+            Please provide an explanation for accessing the patient's record
+          </span>
+          <span class="nhsuk-error-message hidden" id="ptv-char-length-error">
+            <span class="nhsuk-u-visually-hidden">Error:</span> Explanation
+            must be between 4 and 50 characters
+          </span>
+          <span
+            class="nhsuk-error-message hidden"
+            id="ptv-char-forbidden-error"
+          >
+            <span class="nhsuk-u-visually-hidden">Error:</span> Explanation
+            must only include characters: A-Z, a-z, 0-9, space, -, '
+          </span>
+          <textarea
+            class="nhsuk-textarea"
+            id="more-detail"
+            name="more-detail"
+            rows="5"
+            aria-describedby="more-detail-hint"
+          ></textarea>
+        </div>
+      </div>
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-full-width">
+          <div class="nhsuk-grid-column-one-half">
+            <a
+              class="nhsuk-button nhsuk-button--blue"
+              id="submit-ptv"
+              type="submit"
+              style="width: 100%"
+              href="SCR"
+            >
+              Continue
+            </a>
+          </div>
+          <div class="nhsuk-grid-column-one-half">
+            <button
+              class="nhsuk-button nhsuk-button--reverse close-btn"
+              type="submit"
+              style="width: 100%"
+            >
+              Cancel
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-two-thirds">
+          <div class="nhsuk-warning-callout">
+            <h3 class="nhsuk-warning-callout__label">Privacy information</h3>
+            <p>
+              Any inappropriate breach of patient confidentiality will be a
+              matter for disciplinary and potentially legal and/or
+              professional proceedings. If in doubt speak to your manager or
+              privacy officer.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

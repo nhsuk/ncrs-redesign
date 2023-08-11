@@ -1,0 +1,180 @@
+{% extends 'layouts/layout-application.html' %} {% block pageTitle %} Dashboard
+{% endblock %} {% block beforeContent %}{% include "./includes/banner.html" %}
+
+<div class="nhsuk-full-width-container">
+  <div class="scra-bordered-tabs-container">
+    <div class="nhsuk-width-container-fluid">
+      <ul class="scra-bordered-tabs">
+        <li class="scra-bordered-tabs-item">
+          <a class="scra-bordered-tabs-link" href="#">Overview</a>
+        </li>
+        <li class="scra-bordered-tabs-item">
+          <a class="scra-bordered-tabs-link" href="patient_2?show=key%20details%20and%20names">Patient details</a>
+        </li>
+        <li class="scra-bordered-tabs-item scra-bordered-tabs-item-active">
+          <a class="scra-bordered-tabs-link" href="clinical">Clinical</a>
+        </li>
+        {% if patient.viewdocs === "yes" %}
+        <li class="scra-bordered-tabs-item">
+          <a class="scra-bordered-tabs-link" href="documents">Documents</a>
+        </li>
+        {% endif %}
+      </ul>
+    </div>
+  </div>
+</div>
+
+{% endblock %} {% block content %}
+<div class="nhsuk-grid-row">
+  
+  <div class="nhsuk-grid-column-one-quarter">
+    
+    <div class="govuk-accordion" data-module="accordion" id="accordion-default">
+      <div class="govuk-accordion__section govuk-accordion__section--expanded">
+        <div class="govuk-accordion__section-header scra-accordion__header">
+          <h2 class="govuk-accordion__section-heading scra-accordion__heading">
+            <span
+              class="govuk-accordion__section-button scra-accordion__section-button"
+              id="accordion-default-heading-1"
+            >
+              Summary Care Record
+            </span>
+          </h2>
+        </div>
+        <div
+          id="accordion-default-content-1"
+          class="govuk-accordion__section-content scra-accordion__section-content"
+          aria-labelledby="accordion-default-heading-1"
+        >
+          <ul>
+            <li>
+              <a class="scra-accordion__link" href="#"
+                >Allergies & Sensitivities</a
+              >
+            </li>
+            <li>
+              <a class="scra-accordion__link" href="#">Acute Medications</a>
+            </li>
+            <li>
+              <a class="scra-accordion__link" href="#"
+                >Current Repeat Medications</a
+              >
+            </li>
+            <li>
+              <a class="scra-accordion__link" href="#"
+                >Past Repeat Medications</a
+              >
+            </li>
+            <li>
+              <a class="scra-accordion__link" href="#">Diagnoses</a>
+            </li>
+            <li>
+              <a class="scra-accordion__link" href="#">Observations</a>
+            </li>
+            <li>
+              <a class="scra-accordion__link" href="#">Treatments</a>
+            </li>
+            <li>
+              <a class="scra-accordion__link" href="#">Care events</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    
+    </div>
+  </div>
+
+  <div class="nhsuk-grid-column-three-quarters">
+    <h1 class="nhsuk-heading-l">Summary Care Record</h1>
+    <div class="scra-card">
+      <div class="scra-card-header">
+        <h2 class="nhsuk-heading-m">Allergies & sensitivities</h2>
+      </div>
+      <div class="scra-card-content">
+        <div class="nhsuk-table-responsive">
+          <table class="nhsuk-table">
+            <caption class="nhsuk-table__caption">
+              Allergies, sensitivites and supporting information
+            </caption>
+            <thead class="nhsuk-table__head">
+              <tr class="nhsuk-table__row">
+                <th class="nhsuk-table__header" scope="col">Date</th>
+                <th class="nhsuk-table__header" scope="col">Description</th>
+                <th class="nhsuk-table__header" scope="col">Certainty</th>
+                <th class="nhsuk-table__header" scope="col">Severity</th>
+                <th class="nhsuk-table__header" scope="col">
+                  Supporting information
+                </th>
+              </tr>
+            </thead>
+            <tbody class="nhsuk-table__body">
+              <tr class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">08-Jan-1995</td>
+                <td class="nhsuk-table__cell">House dust mite allergy</td>
+                <td class="nhsuk-table__cell"></td>
+                <td class="nhsuk-table__cell"></td>
+                <td class="nhsuk-table__cell">Allergic rhinitis</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="scra-card">
+      <div class="scra-card-header">
+        <h2 class="nhsuk-heading-m">
+          Acute medications (issued in the last 12 months)
+        </h2>
+      </div>
+      <div class="scra-card-content">
+        <div class="nhsuk-table-responsive">
+          <table class="nhsuk-table">
+            <caption class="nhsuk-table__caption">
+              Acute medications issued in the last 12 months
+            </caption>
+            <thead class="nhsuk-table__head">
+              <tr class="nhsuk-table__row">
+                <th class="nhsuk-table__header" scope="col">Type</th>
+                <th class="nhsuk-table__header" scope="col">Date</th>
+                <th class="nhsuk-table__header" scope="col">Medication item</th>
+                <th class="nhsuk-table__header" scope="col">
+                  Dosage instructions
+                </th>
+                <th class="nhsuk-table__header" scope="col">Quantity</th>
+              </tr>
+            </thead>
+            <tbody class="nhsuk-table__body">
+              <tr class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Acute Medication</td>
+                <td class="nhsuk-table__cell">26-May-2018</td>
+                <td class="nhsuk-table__cell">Diclofenac 75mg tablets</td>
+                <td class="nhsuk-table__cell">take three daily</td>
+                <td class="nhsuk-table__cell">28 tablets</td>
+              </tr>
+              <tr class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Acute Medication</td>
+                <td class="nhsuk-table__cell">01-Oct-2018</td>
+                <td class="nhsuk-table__cell">Ranitidine 150mg tablets</td>
+                <td class="nhsuk-table__cell">take once daily at bedtime</td>
+                <td class="nhsuk-table__cell">28 tablets</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    
+
+     
+       
+       
+    
+
+
+      </div>
+    
+  </div>
+</div>
+{% endblock %}

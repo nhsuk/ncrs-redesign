@@ -25,6 +25,7 @@ require("./views/ovm/routes.js")(router);
 require("./views/overviewtab/v1/routes.js")(router);
 require("./views/overviewtab/v2/routes.js")(router);
 require("./views/overviewtab/v3/routes.js")(router);
+require("./views/overviewtab/feedback/routes.js")(router);
 // Dev Mode - Used to show routing by scenario other than user driven
 
 function devModeRoute(req, res, next) {
