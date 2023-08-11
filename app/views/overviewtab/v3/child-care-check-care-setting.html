@@ -1,0 +1,111 @@
+{% if data['scenario'] %}
+  {% if data['scenario'] === "overview tab 2" %}
+    {% set link = "overview2" %}
+  {% else %}
+    {% set link = "overview" %}
+  {% endif %}
+{% endif %}
+{% extends 'layouts/layout-application-ncrs.html' %}
+
+{% block pageTitle %}
+Patient details
+{% endblock %}
+
+{% block beforeContent %}{% include "./includes/banner.html" %}
+
+<div class="nhsuk-full-width-container">
+  <div class='scra-bordered-tabs-container'>
+    <div class="nhsuk-width-container-fluid">
+      <ul class="scra-bordered-tabs">
+        <li class="scra-bordered-tabs-item">
+          <a class="scra-bordered-tabs-link" href="{{ link or 'overview' }}">Overview</a>
+        </li>
+        <li class="scra-bordered-tabs-item">
+          <a class="scra-bordered-tabs-link" href="patient_2?show=key%20details%20and%20names">Patient details</a>
+        </li>
+        <li class="scra-bordered-tabs-item scra-bordered-tabs-item-active">
+          <a class="scra-bordered-tabs-link" href="clinical">Clinical</a>
+        </li>
+        {% if patient.viewdocs === "yes" %}
+        <li class="scra-bordered-tabs-item">
+          <a class="scra-bordered-tabs-link" href="documents">Documents</a>
+        </li>
+        {% endif %}
+      </ul>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-width-container">
+
+    <div class="section">
+      <div class="nhsuk-back-link">
+        <a class="nhsuk-back-link__link" href="clinical">
+          <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+          </svg>
+            Back to clinical
+          </a>
+      </div>
+      <div class="nhsuk-grid-column-three-quarters">
+      <label>
+      <h1 class="nhsuk-label-wrapper">
+        <label class="nhsuk-label nhsuk-label--l nhsuk-u-margin-bottom-4" for="example-heading">
+          Do you want to notify this patient's local authority?
+        </label>
+      </h1>
+      
+      <p>By selecting 'Yes' you will create a record of this patient's access to healthcare services.</p>
+ 
+      <details class="nhsuk-details">
+        <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">
+          Why are we asking this?
+          </span>
+        </summary>
+        <div class="nhsuk-details__text">
+          <p>This record is used to identify and safeguard unborn babies and children who are subject to local authority child protection in England.
+            <p>The information is then shared with the relevant local authority for safeguarding purposes.</p>
+        </div>
+      </details>
+
+      <div class="nhsuk-form-group">
+        <fieldset class="nhsuk-fieldset">
+          <div class="nhsuk-radios">
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="example-hints-1" name="example-hints" type="radio" value="gateway" aria-describedby="example-hints-1-item-hint">
+              <label class="nhsuk-label nhsuk-radios__label" for="example-hints-1">Yes</label>
+              <div class="nhsuk-hint nhsuk-radios__hint" id="example-hints-1-item-hint"></div>
+            </div>
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="example-hints-2" name="example-hints" type="radio" value="verify" aria-describedby="example-hints-2-item-hint">
+              <label class="nhsuk-label nhsuk-radios__label" for="example-hints-2">No</label>
+              <div class="nhsuk-hint nhsuk-radios__hint" id="example-hints-2-item-hint"></div>
+            </div>
+
+    </div>
+  </fieldset>
+
+</div>
+
+<br>
+
+<form action="child-care-alert-simple">
+  <button class="nhsuk-button" type="submit">
+  Continue
+  </button>
+</form>
+
+    </div>
+  </div>
+
+
+</div>
+{% endblock %}

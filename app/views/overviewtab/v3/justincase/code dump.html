@@ -1,0 +1,64 @@
+<label class="nhsuk-label" for="searchWithincolumns">
+  <strong>Search within results</strong>
+</label>
+<div class="nhsuk-hint" id="searchWithincolumns">
+  Start typing for a patient using name, address details, date of birth or NHS
+  number.
+</div>
+<form>
+  <input
+    class="nhsuk-input nhsuk-u-width-one-half"
+    id="searchWithincolumns"
+    name="searchWithincolumns"
+    type="text"
+    aria-describedby="searchWithincolumns"
+    value=""
+  />
+  <button id="clearbutton" type="reset">Clear</button>
+</form>
+
+<script type="text/javascript">
+  // Get the input element and table
+  const input = document.getElementById("searchWithincolumns");
+  const table = document.getElementById("search-results-table");
+  // Add event listener for the input event
+  input.addEventListener("text", function () {
+    const searchText = input.value.toLowerCase(); // Convert input value to lowercase for case-insensitive search
+    // Loop through all table rows
+    const rows = table.getElementsByTagName("tr");
+    for (let i = 0; i < rows.length; i++) {
+      const row = rows[i];
+      const cells = row.getElementsByTagName("td");
+      let matchFound = false;
+      // Loop through all table cells in the current row
+      for (let j = 0; j < cells.length; j++) {
+        const cell = cells[j];
+        const cellText = cell.textContent.toLowerCase();
+        // Check if the cell contains the search text
+        if (cellText.includes(searchText)) {
+          matchFound = true;
+          break;
+        }
+      }
+      // Show/hide the row based on the match
+      if (matchFound) {
+        row.style.display = "";
+      } else {
+        row.style.display = "none";
+      }
+    }
+  });
+</script>
+
+
+const input = document.getElementById("searchWithincolumns");
+const rows = document.querySelectorAll ("tbody tr");
+// Add event listener for the input event
+input.addEventListener('keyup', function (event) {
+  const searchText = event.target.value.toLowerCase(); // Convert input value to lowercase for case-insensitive search
+  // Loop through all table rows
+  rows.foreach(row) => {
+    row.querySelector("td").textContent.toLowerCase().startsWith(searchText)?(row.style.display = "table-row") : (row.style.display = "none");
+  };
+});
+</script>
