@@ -352,15 +352,46 @@
   border: 1px solid #005eb8;
   position: center;
   text-align: left;
-  padding: 4;
+  padding: 0;
   width: 100%;
   color:#fff
 }
 
+.nhsuk-feedback__content {
+  padding: 24px;
+}
+
+.nhsuk-feedback__content > *:first-child {
+  margin-top: 0;
+}
+
+.nhsuk-feedback__content > *:last-child {
+  margin-bottom: 0;
+}
+
+@media (min-width: 40.0625em) {
+  .nhsuk-feedback__content {
+    padding: 32px;
+  }
+}
+
+.nhsuk-feedback__heading,
+.nhsuk-feedback__metadata,
+.nhsuk-feedback__description {
+  margin-bottom: 5px;
+}
+
+
 .nhsuk-feedback--button{
-  margin-bottom: 40px;
+  margin: 5px;
   background: #005eb8;
+  box-shadow: 0 4px 0 #003087;
   border: 1px solid #fff;
-  position: relative;
-  width: 100%;
+  position: inline-block;
+  padding: 20px 14px;
+  font-size: 14px;
+  text-align: center;
+  line-height: 0.2;
+  width: fit-content;
+  color:#fff
 }
