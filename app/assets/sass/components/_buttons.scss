@@ -250,3 +250,33 @@ cursor: pointer;}
   overflow: hidden;
   display: inline-block;
 }
+
+.nhsuk-button--lightblue {
+  background-color: #005eb8;
+  box-shadow: 0 4px 0 #003087;
+  color:#fff;
+  border: 1px solid #fff;
+}
+
+.nhsuk-button--lightblue:hover, .nhsuk-button--blue:active, .nhsuk-button--blue:focus {
+  background-color: #003087;
+  box-shadow: 0 4px 0 #003087;
+  color:#fff;
+  border: 1px solid #fff;
+}
+
+
+//old button
+.nhsuk-feedback--button{
+  margin: 5px;
+  background: #005eb8;
+  box-shadow: 0 4px 0 #003087;
+  border: 1px solid #fff;
+  position: inline-block;
+  padding: 20px 14px;
+  font-size: 14px;
+  text-align: center;
+  line-height: 0.2;
+  width: fit-content;
+  color:#fff
+}

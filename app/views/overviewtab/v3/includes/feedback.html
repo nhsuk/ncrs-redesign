@@ -1,0 +1,70 @@
+<div class="nhsuk-width-container-fluid">
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-one-quarter nhsuk-grid-column-tablet-landscape-one-third nhsuk-grid-column-tablet-one-half nhsuk-card-group__item">
+    
+      <div class="nhsuk-card--feedback"> 
+        <div class="nhsuk-card__content"> 
+          <div class="nhsuk-card__heading" id="textTohide">
+            Were you able to complete your tasks today?
+          </div>
+          <div class="nhsuk-card__heading" id="textToshow" display="visually-hidden">
+            Thanks for letting us know.
+          </div>
+            <button class="nhsuk-button nhsuk-button--lightblue" type="submit" id="taskComplete">
+            Yes
+          </button>
+          <button class="nhsuk-button nhsuk-button--lightblue" type="submit" id="feedbackPlease">No</button>   
+          <div class="nhsuk-form-group" id="extraInfo">
+            <label class="nhsuk-label" for="example">
+              Can you provide more detail?
+            </label>
+            <div class="nhsuk-hint" id="example-hint">
+              Do not include personal or patient information, for example, someone's NHS number or medical details.
+            </div>
+            <textarea class="nhsuk-textarea" id="example" name="example" rows="5" aria-describedby="example-hint"></textarea>
+          </div>  
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+//References
+const taskcomplete = document.getElementById('taskComplete');
+const feedbackPlease = document.getElementById('feedbackPlease')
+const textTochange = document.getElementById('textTohide');
+const textToshow = document.getElementById('textToshow');
+//Event listerner
+taskcomplete.addEventListener('click', function () {
+    // Check the current display property value
+    if (textTochange.style.display === '' || elementToToggle.style.display === 'none') {
+        // If it's currently visible, hide it
+        textTochange.style.display = 'none';
+        textToshow.style.display = 'block';
+    } else {
+        // If it's currently invisible, show it
+        textTochange.style.display = 'block';
+        textToshow.style.display = 'none';
+    }
+    taskcomplete.style.display = 'none';
+    feedbackPlease.style.display = 'none';
+});
+
+feedbackPlease.addEventListener('click', function () {
+    // Check the current display property value
+    if (textTochange.style.display === '' || elementToToggle.style.display === 'none') {
+        // If it's currently visible, hide it
+        textTochange.style.display = 'none';
+        textToshow.style.display = 'none';
+        
+    } else {
+        // If it's currently invisible, show it
+        textTochange.style.display = 'block';
+        textToshow.style.display = 'none';
+    }
+    taskcomplete.style.display = 'none';
+    feedbackPlease.style.display = 'none';
+});
+</script>
