@@ -39,31 +39,18 @@ const textToshow = document.getElementById('textToshow');
 //Event listerner
 taskcomplete.addEventListener('click', function () {
     // Check the current display property value
-    if (textTochange.style.display === '' || elementToToggle.style.display === 'none') {
-        // If it's currently visible, hide it
-        textTochange.style.display = 'none';
-        textToshow.style.display = 'block';
-    } else {
-        // If it's currently invisible, show it
-        textTochange.style.display = 'block';
-        textToshow.style.display = 'none';
-    }
+ 
+    textTochange.style.display = 'none';
+        textToshow.style.display = 'block'
     taskcomplete.style.display = 'none';
     feedbackPlease.style.display = 'none';
 });
 
 feedbackPlease.addEventListener('click', function () {
     // Check the current display property value
-    if (textTochange.style.display === '' || elementToToggle.style.display === 'none') {
-        // If it's currently visible, hide it
-        textTochange.style.display = 'none';
-        textToshow.style.display = 'none';
-        
-    } else {
-        // If it's currently invisible, show it
-        textTochange.style.display = 'block';
-        textToshow.style.display = 'none';
-    }
+  
+    textTochange.style.display = 'none';
+        textToshow.style.display = 'none'
     taskcomplete.style.display = 'none';
     feedbackPlease.style.display = 'none';
 });
