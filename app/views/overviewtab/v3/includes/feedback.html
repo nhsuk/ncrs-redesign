@@ -7,21 +7,22 @@
           <div class="nhsuk-card__heading" id="textTohide">
             Were you able to complete your tasks today?
           </div>
-          <div class="nhsuk-card__heading" id="textToshow" display='none'>
+          <div class="nhsuk-card__heading" id="textToshow" style.display='none'>
             Thanks for letting us know.
           </div>
             <button class="nhsuk-button nhsuk-button--lightblue" type="submit" id="taskComplete">
             Yes
           </button>
           <button class="nhsuk-button nhsuk-button--lightblue" type="submit" id="feedbackPlease">No</button>   
-          <div class="nhsuk-form-group" id="extraInfo" display="none">
+          <div class="nhsuk-form-group" id="extraInfo">
             <label class="nhsuk-label" for="example">
               Can you provide more detail?
             </label>
-            <div class="nhsuk-hint" id="example-hint">
+            <div class="nhsuk-hint" style="color: #fff" id="example-hint">
               Do not include personal or patient information, for example, someone's NHS number or medical details.
             </div>
             <textarea class="nhsuk-textarea" id="example" name="example" rows="5" aria-describedby="example-hint"></textarea>
+            <button class="nhsuk-button nhsuk-button--lightblue" type="submit" id="subMit">Submit feedback</button> 
           </div>  
         </div>
         </div>
@@ -36,9 +37,15 @@ const taskcomplete = document.getElementById('taskComplete');
 const feedbackPlease = document.getElementById('feedbackPlease')
 const textTochange = document.getElementById('textTohide');
 const textToshow = document.getElementById('textToshow');
+const FeedbackBox = document.getElementById('extraInfo')
+const FeedbackSubmit =document.getElementById('subMit')
+//make things invisible
+textToshow.style.display='none';
+FeedbackBox.style.display='none';
+
 //Event listerner
 taskcomplete.addEventListener('click', function () {
-    // Check the current display property value
+    // Show thank you when yes submitted
  
     textTochange.style.display = 'none';
         textToshow.style.display = 'block'
@@ -47,11 +54,22 @@ taskcomplete.addEventListener('click', function () {
 });
 
 feedbackPlease.addEventListener('click', function () {
-    // Check the current display property value
+    // Show feedback when no clicked
   
     textTochange.style.display = 'none';
         textToshow.style.display = 'none'
     taskcomplete.style.display = 'none';
     feedbackPlease.style.display = 'none';
+    FeedbackBox.style.display='block';
 });
+FeedbackSubmit.addEventListener('click', function () {
+    // Show feedback when no clicked
+  
+    textTochange.style.display = 'none';
+        textToshow.style.display = 'block';
+    taskcomplete.style.display = 'none';
+    feedbackPlease.style.display = 'none';
+    FeedbackBox.style.display='none';
+});
+
 </script>
