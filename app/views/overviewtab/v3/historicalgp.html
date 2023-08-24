@@ -1,0 +1,168 @@
+{% if data['scenario'] %}
+  {% if data['scenario'] === "overview tab 2" %}
+    {% set link = "overview2" %}
+  {% else %}
+    {% set link = "overview" %}
+  {% endif %}
+{% endif %}
+
+{% extends 'layouts/layout-application.html' %} {% block pageTitle %} Patient
+details {% endblock %} {% block beforeContent %}{% include "./includes/banner.html" %}
+
+<div class="nhsuk-full-width-container">
+  <div class="scra-bordered-tabs-container">
+    <div class="nhsuk-width-container-fluid">
+      <ul class="scra-bordered-tabs">
+        <li class="scra-bordered-tabs-item">
+          <a class="scra-bordered-tabs-link" href="{{ link or 'overview' }}">Overview</a>
+        </li>
+        <li class="scra-bordered-tabs-item scra-bordered-tabs-item-active">
+          <a class="scra-bordered-tabs-link" href="#">Patient details</a>
+        </li>
+        <li class="scra-bordered-tabs-item">
+          <a class="scra-bordered-tabs-link" href="clinical">Clinical</a>
+        </li>
+        {% if patient.viewdocs === "yes" %}
+        <li class="scra-bordered-tabs-item">
+          <a class="scra-bordered-tabs-link" href="documents">Documents</a>
+        </li>
+        {% endif %}
+      </ul>
+    </div>
+ 
+  </div>
+
+</div>
+
+{% endblock %} {% block content %} 
+<!--back link-->
+<div class="nhsuk-back-link">
+  <a
+    class="nhsuk-back-link__link"
+    href="patient_2"
+  >
+    <svg
+      class="nhsuk-icon nhsuk-icon__chevron-left"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+    >
+      <path
+        d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"
+      ></path>
+    </svg>
+    Back to patient details</a
+  >
+
+</div>
+
+<h2>GP Practice history</h2>
+
+
+<div class="nhs-screening-whole-timeline">
+  <div class="nhs-screening-whole-timeline__item">
+
+    <div class="moj-timeline__header">
+      <h2 class="nhs-screening-whole-timeline__title">Greystones Medical Centre</h2>
+
+      <p class="nhs-screening-whole-timeline__by">(Organisation code: C88652)</p>
+
+    </div>
+
+    <p class="nhs-screening-whole-timeline__date">
+      <time datetime="2019-06-14T14:01:00.000Z">From 08-Feb-2017 to 13-Jun-2018</time>
+    </p>
+
+    <div class="nhs-screening-whole-timeline__description"><b>Address:</b> 33 GREYSTONES ROAD,SHEFFIELD, SOUTH YORKSHIRE, S11 7BJ</div>
+    <div class="nhs-screening-whole-timeline__description"><b>Reason for removal:</b> <em>None recorded</em></div> 
+  
+      
+
+  </div>
+
+  <div class="nhs-screening-whole-timeline__item">
+
+    <div class="moj-timeline__header">
+      <h2 class="nhs-screening-whole-timeline__title">Greystones Medical Centre</h2>
+
+      <p class="nhs-screening-whole-timeline__by">(Organisation code: C88652)</p>
+
+    </div>
+
+    <p class="nhs-screening-whole-timeline__date">
+      <time datetime="2019-06-07T12:32:00.000Z">From 08-Feb-2017 to 13-Jun-2018</time>
+    </p>
+
+    <div class="nhs-screening-whole-timeline__description"><b>Address:</b> 33 GREYSTONES ROAD,SHEFFIELD, SOUTH YORKSHIRE, S11 7BJ</div>
+    <div class="nhs-screening-whole-timeline__description"><b>Reason for removal:</b> <em>None recorded</em></div>
+  </div>
+
+  <div class="nhs-screening-whole-timeline__item">
+
+    <div class="moj-timeline__header">
+      <h2 class="nhs-screening-whole-timeline__title">Greystones Medical Centre</h2>
+
+      <p class="nhs-screening-whole-timeline__by">(Organisation code: C88652)</p>
+
+    </div>
+
+    <p class="nhs-screening-whole-timeline__date">
+      <time datetime="2019-06-06T09:12:00.000Z">From 08-Feb-2017 to 13-Jun-2018</time>
+    </p>
+
+    <div class="nhs-screening-whole-timeline__description"><b>Address:</b> 33 GREYSTONES ROAD,SHEFFIELD, SOUTH YORKSHIRE, S11 7BJ </div>
+    <div class="nhs-screening-whole-timeline__description"><b>Reason for removal:</b> <em>None recorded</em></div>
+  </div>
+
+  <div class="nhs-screening-whole-timeline__item">
+
+    <div class="moj-timeline__header">
+      <h2 class="nhs-screening-whole-timeline__title">Greystones Medical Centre</h2>
+
+      <p class="nhs-screening-whole-timeline__by">(Organisation code: C88652)</p>
+
+    </div>
+
+    <p class="nhs-screening-whole-timeline__date">
+      <time datetime="2019-06-07T12:32:00.000Z">From 08-Feb-2017 to 13-Jun-2018</time>
+    </p>
+
+    <div class="nhs-screening-whole-timeline__description"><b>Address:</b> 33 GREYSTONES ROAD,SHEFFIELD, SOUTH YORKSHIRE, S11 7BJ</div>
+    <div class="nhs-screening-whole-timeline__description"><b>Reason for removal:</b> <em>None recorded</em></div>
+  </div>
+
+  <div class="nhs-screening-whole-timeline__item">
+
+    <div class="moj-timeline__header">
+      <h2 class="nhs-screening-whole-timeline__title">Greystones Medical Centre</h2>
+
+      <p class="nhs-screening-whole-timeline__by">(Organisation code: C88652)</p>
+
+    </div>
+
+    <p class="nhs-screening-whole-timeline__date">
+      <time datetime="2019-06-07T12:32:00.000Z">From 08-Feb-2017 to 13-Jun-2018</time>
+    </p>
+
+    <div class="nhs-screening-whole-timeline__description"><b>Address:</b> 33 GREYSTONES ROAD,SHEFFIELD, SOUTH YORKSHIRE, S11 7BJ</div>
+    <div class="nhs-screening-whole-timeline__description"><b>Reason for removal:</b> <em>None recorded</em></div>
+  </div>
+
+  <div class="nhs-screening-whole-timeline__item">
+
+    <div class="moj-timeline__header">
+      <h2 class="nhs-screening-whole-timeline__title">Greystones Medical Centre</h2>
+
+      <p class="nhs-screening-whole-timeline__by">(Organisation code: C88652)</p>
+
+    </div>
+
+    <p class="nhs-screening-whole-timeline__date">
+      <time datetime="2019-06-07T12:32:00.000Z">From 08-Feb-2017 to 13-Jun-2018</time>
+    </p>
+
+    <div class="nhs-screening-whole-timeline__description"><b>Address:</b> 33 GREYSTONES ROAD,SHEFFIELD, SOUTH YORKSHIRE, S11 7BJ</div>
+    <div class="nhs-screening-whole-timeline__description"><b>Reason for removal:</b> <em>None recorded</em></div>
+  </div>
+</div>
+{% endblock %}
