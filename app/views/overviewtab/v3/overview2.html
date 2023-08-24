@@ -97,212 +97,136 @@
 
 <!--MAIN PAGE -->
 <div class="nhsuk-grid-row">
-  <!-- Column 1 -->
   <div
-    class="nhsuk-grid-column-one-quarter nhsuk-grid-column-tablet-landscape-one-third"
+  class="nhsuk-grid-column-one-half nhsuk-grid-column-tablet-landscape-one-half nhsuk-grid-column-tablet-full-width nhsuk-card-group__item nhsuk-u-margin-bottom-3"
+>
+
+<div class="nhsuk-care-card nhsuk-care-card--non-urgent overview-card">  
+  <div
+  class="overview-card__heading-container-v3"
+> 
+<h1 class="overview-card__heading-v3">
+  <span role="text"
+    ><span class="nhsuk-u-visually-hidden">Summary Care Record </span
+    >Summary care record</span
   >
-    <div
-      class="nhsuk-care-card nhsuk-care-card--non-urgent overview-card nhsuk-u-margin-0"
-    >
-      <div
-        class="nhsuk-care-card__heading-container overview-card__heading-container"
-      >
-        <h1 class="nhsuk-care-card__heading overview-card__heading">
-          <span role="text"
-            ><span class="nhsuk-u-visually-hidden">Patient details </span
-            >Patient details</span
-          >
-        </h1>
-      </div>
-    </div>
-    <!--<h2>Patient details</h2>--->
-    <div
-      class="nhsuk-card nhsuk-card--clickable nhsuk-u-padding-2 nhsuk-u-margin-bottom-2"
-    >
-      <div class="nhsuk-card__content nhsuk-u-padding-1">
-        <h5 class="nhsuk-u-margin-bottom-1">
-          <a
-            class="nhsuk-card__link"
-            href="patient_2?show=key%20details%20and%20names"
-            >Demographics</a
-          >
-        </h5>
-      </div>
-    </div>
-    <div
-      class="nhsuk-card nhsuk-card--clickable nhsuk-u-padding-2 nhsuk-u-margin-bottom-2"
-    >
-      <div class="nhsuk-card__content nhsuk-u-padding-1">
-        <h5 class="nhsuk-u-margin-bottom-1">
-          <a
-            class="nhsuk-card__link"
-            href="patient_2?show=GP%20and%20care%20providers"
-            >GP and Care providers</a
-          >
-        </h5>
-      </div>
-    </div>
-    <div
-      class="nhsuk-card nhsuk-card--clickable nhsuk-u-padding-2 nhsuk-u-margin-bottom-2"
-    >
-      <div class="nhsuk-card__content nhsuk-u-padding-1">
-        <h5 class="nhsuk-u-margin-bottom-1">
-          <a
-            class="nhsuk-card__link"
-            href="patient_2?show=contacts%20and%20next%20of%20kin"
-            >Contacts and next of kin</a
-          >
-        </h5>
-      </div>
-    </div>
-    {% if patient.chargeableStatusInfo === "yes" %}
-    <div
-      class="nhsuk-card nhsuk-card--clickable nhsuk-u-padding-2 nhsuk-u-margin-bottom-2"
-    >
-      <div class="nhsuk-card__content nhsuk-u-padding-3">
-        <h5 class="nhsuk-u-margin-bottom-1">
-          <a class="nhsuk-card__link" href="patient_2?show=chargeable%20status"
-            >Chargeable status</a
-          >
-        </h5>
-      </div>
-    </div>
-    {% endif %}
+</h1>
+</div>
+<div class="nhsuk-care-card__content overview-card__content-v3">
+  <div class="nhsuk-action-link">
+    <a class="nhsuk-action-link__link" href="https://www.nhs.uk/service-search/minor-injuries-unit/locationsearch/551">
+      <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">
+        <path d="M0 0h24v24H0z" fill="none"></path>
+        <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
+      </svg>
+      <span class="nhsuk-action-link__text">Access the summary care record</span>
+    </a>
   </div>
-  <!--Column 2-->
+</div>
+</div>
+
+</div>
+<div
+class="nhsuk-grid-column-one-half nhsuk-grid-column-tablet-landscape-one-half nhsuk-grid-column-tablet-full-width nhsuk-card-group__item nhsuk-u-margin-bottom-3"
+>
+<div class="nhsuk-care-card nhsuk-care-card--non-urgent overview-card">  
   <div
-    class="nhsuk-grid-column-one-quarter nhsuk-grid-column-tablet-landscape-one-third"
+  class="overview-card__heading-container-v3"
+> 
+<h1 class="overview-card__heading-v3">
+  <span role="text"
+    ><span class="nhsuk-u-visually-hidden">Patient details </span
+    >Patient details</span
   >
+</h1>
+</div>
+<div class="nhsuk-care-card__content overview-card__content-v3">
+  <ul class="overview-card__list">
+    <li class="overview-card__list-item">
+      <a href="documents">Mental health plans</a>
+    </li>
+    <li class="overview-card__list-item">
+      <a href="documents">End of life care plans</a>
+    </li>
+  
+  </ul>
+</div>
+  </div>
+</div>
+</div>
+
+
+<div class="nhsuk-grid-row">
+  <div
+  class="nhsuk-grid-column-one-half nhsuk-grid-column-tablet-landscape-one-half nhsuk-grid-column-tablet-full-width nhsuk-card-group__item nhsuk-u-margin-bottom-3"
+>
+  <div class="nhsuk-care-card nhsuk-care-card--non-urgent overview-card">  
     <div
-      class="nhsuk-care-card nhsuk-care-card--non-urgent overview-card nhsuk-u-margin-0"
+    class="overview-card__heading-container-v3"
+  > 
+  <h1 class="overview-card__heading-v3">
+    <span role="text"
+      ><span class="nhsuk-u-visually-hidden">Documents </span
+      >Documents</span
     >
-      <div
-        class="nhsuk-care-card__heading-container overview-card__heading-container"
-      >
-        <h1 class="nhsuk-care-card__heading overview-card__heading">
-          <span role="text"
-            ><span class="nhsuk-u-visually-hidden">Clinical </span
-            >Clinical</span
-          >
-        </h1>
+  </h1>
+ 
+
+</div>
+<div class="nhsuk-care-card__content overview-card__content-v3">
+  <ul class="nhsuk-grid-row nhsuk-card-group">
+    <li class="nhsuk-grid-column-one-quarter nhsuk-card-group__item nhsuk-u-margin-bottom-0">
+  
+      <div class="nhsuk-card nhsuk-card--clickable">
+        <div class="nhsuk-card__content">
+          <p class="nhsuk-heading-xl nhsuk-u-font-size-32 nhsuk-u-margin-bottom-1">91 <span class="nhsuk-u-visually-hidden">Mental health care plans</span></p><a href="#" class="nhsuk-card__link nhsuk-u-font-weight-normal nhsuk-u-font-size-19 nhsuk-link--no-visited-state">Mental health care plans</a>
+        </div>
       </div>
-    </div>
-    <!--<h2>Clinical</h2>-->
-    <div
-      class="nhsuk-card nhsuk-card--clickable nhsuk-u-padding-2 nhsuk-u-margin-bottom-2"
-    >
-      <div class="nhsuk-card__content nhsuk-u-padding-1">
-        <h5 class="nhsuk-u-margin-bottom-1">
-          <a
-            class="nhsuk-card__link open_modal"
-            data-target="#myModal"
-            data-toggle="modal"
-            href="#myModal"
-            >Summary Care Record</a
-          >
-        </h5>
+  
+    </li>
+    <li class="nhsuk-grid-column-one-quarter nhsuk-card-group__item nhsuk-u-margin-bottom-0">
+  
+      <div class="nhsuk-card nhsuk-card--clickable">
+        <div class="nhsuk-card__content">
+          <p class="nhsuk-heading-xl nhsuk-u-font-size-32 nhsuk-u-margin-bottom-1">23 <span class="nhsuk-u-visually-hidden">End of life care plans</span></p><a href="#" class="nhsuk-card__link nhsuk-u-font-weight-normal nhsuk-u-font-size-19 nhsuk-link--no-visited-state">End of life care plans</a>
+        </div>
       </div>
-    </div>
-    <div
-      class="nhsuk-card nhsuk-card--clickable nhsuk-u-padding-2 nhsuk-u-margin-bottom-2"
-    >
-      <div class="nhsuk-card__content nhsuk-u-padding-1">
-        <h5 class="nhsuk-u-margin-bottom-1">
-          <a class="nhsuk-card__link" href="covid-19-vaccs"
-            >Covid Vaccinations</a
-          >
-        </h5>
+  
+    </li>
+    <li class="nhsuk-grid-column-one-quarter nhsuk-card-group__item nhsuk-u-margin-bottom-0">
+  
+      <div class="nhsuk-card nhsuk-card--clickable">
+        <div class="nhsuk-card__content">
+          <p class="nhsuk-heading-xl nhsuk-u-font-size-32 nhsuk-u-margin-bottom-1">8 <span class="nhsuk-u-visually-hidden">DNAR</span></p><a href="#" class="nhsuk-card__link nhsuk-u-font-weight-normal nhsuk-u-font-size-19 nhsuk-link--no-visited-state">DNAR</a>
+        </div>
       </div>
-    </div>
-    {% if patient.BNAinfo === "yes" %}
-    <div
-      class="nhsuk-card nhsuk-card--clickable nhsuk-u-padding-2 nhsuk-u-margin-bottom-2"
-    >
-      <div class="nhsuk-card__content nhsuk-u-padding-1">
-        <h5 class="nhsuk-u-margin-bottom-1">
-          <a class="nhsuk-card__link" href="bna">Create birth notification</a>
-        </h5>
+  
+    </li>
+    <li class="nhsuk-grid-column-one-quarter nhsuk-card-group__item nhsuk-u-margin-bottom-0">
+  
+      <div class="nhsuk-card nhsuk-card--clickable">
+        <div class="nhsuk-card__content">
+          <p class="nhsuk-heading-xl nhsuk-u-font-size-32 nhsuk-u-margin-bottom-1">33 <span class="nhsuk-u-visually-hidden">Other documents</span></p><a href="#" class="nhsuk-card__link nhsuk-u-font-weight-normal nhsuk-u-font-size-19 nhsuk-link--no-visited-state">Other documents</a>
+        </div>
       </div>
-    </div>
-    {% endif %} {% if patient.CPISinfo === "yes" %}
-    <div
-      class="nhsuk-card nhsuk-card--clickable nhsuk-u-padding-2 nhsuk-u-margin-bottom-2"
-    >
-      <div class="nhsuk-card__content nhsuk-u-padding-1">
-        <h5 class="nhsuk-u-margin-bottom-1">
-          <a class="nhsuk-card__link" href="child-care-check-care-setting"
-            >Child protection information</a
-          >
-        </h5>
-      </div>
-    </div>
-    {% endif %} {% if patient.fgmInfo === "yes" %}
-    <div
-      class="nhsuk-card nhsuk-card--clickable nhsuk-u-padding-2 nhsuk-u-margin-bottom-2"
-    >
-      <div class="nhsuk-card__content nhsuk-u-padding-1">
-        <h5 class="nhsuk-u-margin-bottom-1">
-          <a class="nhsuk-card__link" href="fgm-indicator"
-            >Female genital mutilation</a
-          >
-        </h5>
-      </div>
-    </div>
-    {% endif %} {% if patient.RAinfo === "yes" %}
-    <div
-      class="nhsuk-card nhsuk-card--clickable nhsuk-u-padding-2 nhsuk-u-margin-bottom-2"
-    >
-      <div class="nhsuk-card__content nhsuk-u-padding-1">
-        <h5 class="nhsuk-u-margin-bottom-1">
-          <a class="nhsuk-card__link" href="ra-page">Reasonable adjustments</a>
-        </h5>
-      </div>
-    </div>
-    {% endif %}
+  
+    </li>
+  </ul>
+  </div>
+</div>
+</div>
+   
+  
+
+
+
   </div>
 
-  <!--Column 4-->
-  {% if patient.viewdocs === "yes" %}
-  <div
-    class="nhsuk-grid-column-one-quarter nhsuk-grid-column-tablet-landscape-one-third"
-  >
-    <div
-      class="nhsuk-care-card nhsuk-care-card--non-urgent overview-card nhsuk-u-margin-0"
-    >
-      <div
-        class="nhsuk-care-card__heading-container overview-card__heading-container"
-      >
-        <h1 class="nhsuk-care-card__heading overview-card__heading">
-          <span role="text"
-            ><span class="nhsuk-u-visually-hidden">Documents </span
-            >Documents</span
-          >
-        </h1>
-      </div>
-    </div>
-    <!-- <h2>Available documents</h2>-->
-    <div
-      class="nhsuk-card nhsuk-card--clickable nhsuk-u-padding-2 nhsuk-u-margin-bottom-2"
-    >
-      <div class="nhsuk-card__content nhsuk-u-padding-1">
-        <h5 class="nhsuk-u-margin-bottom-1">
-          <a class="nhsuk-card__link" href="documents"
-            >Mental health care plans</a
-          >
-        </h5>
-      </div>
-    </div>
-    <div
-      class="nhsuk-card nhsuk-card--clickable nhsuk-u-padding-2 nhsuk-u-margin-bottom-2"
-    >
-      <div class="nhsuk-card__content nhsuk-u-padding-1">
-        <h5 class="nhsuk-u-margin-bottom-1">
-          <a class="nhsuk-card__link" href="documents">End of life plans</a>
-        </h5>
-      </div>
-    </div>
-  </div>
-  {% endif %}
+
+  
+  
+
+  
 
   <!--LEAVE THIS MODAL BELOW-->
   <div id="myModal" class="modal">
@@ -461,6 +385,6 @@
       </div>
     </div>
   </div>
-</div>
 
+{% include "./includes/feedback.html" %}
 {% endblock %}
