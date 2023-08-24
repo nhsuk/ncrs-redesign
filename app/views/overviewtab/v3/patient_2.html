@@ -193,6 +193,11 @@ details {% endblock %} {% block beforeContent %}{% include "./includes/banner.ht
 
 <div class="nhsuk-grid-column-three-quarters">
   <!--Key details card-->
+  <h2 class="nhsuk-heading-m">Demographic information</h2>
+  <strong class="nhsuk-tag nhsuk-tag--red nhsuk-u-margin-bottom-3">
+    Permission to view summary care record required
+  </strong> 
+  
   <div class="scra-card">
     <div class="scra-card-header">
     <h3 class="nhsuk-heading-s
@@ -225,21 +230,13 @@ details {% endblock %} {% block beforeContent %}{% include "./includes/banner.ht
           <dd class="nhsuk-summary-list__value">Ukranian</dd>
         </div>
       </dl>
-    <h3 class="nhsuk-heading-m" id="patient-details-names">
-    Summary Care Record/Consent Preference
-    </h3>
-    <dl class="nhsuk-summary-list nhsuk-u-margin-bottom-3">
-    <div class="nhsuk-summary-list__row">
-    <dt class="nhsuk-summary-list__key">SCR Consent preference</dt>
-    <dd class="nhsuk-summary-list__value">
-    Premission to view required
-    </dd>
-    </div>
-    </dl>
+  
+    
     </div>
   </div>
 <!-- end of key details-->
 <!-- Name information-->
+<h2 class="nhsuk-heading-m">Names </h2>
 <div class="scra-card">
   <div class="scra-card-header">
   <h3 class="nhsuk-heading-s" id="patient-details-names">Names</h3>
@@ -364,6 +361,7 @@ S17 4QN <br />
 </div>
 </div>
 <!--contact-->
+
 <div class="scra-card">
   <section id="contact-details-nok" title="contact"></section>
   <div class="scra-card-header">
